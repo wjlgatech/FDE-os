@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ideation: FDE-os</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --bg:#fafaf5; --surface:#ffffff; --ink:#1a1a1a; --muted:#5b5f66;
+    --line:#e6e4da; --accent:#3553ff; --accent-soft:#eef0ff; --accent-text:#21349c;
+    --warn-soft:#fdf0e6; --warn-text:#9a5a18; --ok-soft:#e9f6ee; --ok-text:#1d6b3b;
+    --chip:#f1f0e8; --radius:10px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --bg:#14151a; --surface:#1c1e25; --ink:#ecedf0; --muted:#9aa0ab;
+      --line:#2b2e37; --accent:#8ea2ff; --accent-soft:#23284a; --accent-text:#bcc7ff;
+      --warn-soft:#3a2c1d; --warn-text:#e6b277; --ok-soft:#1d3326; --ok-text:#8fd6a6; --chip:#262932; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:15px;line-height:1.62;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:920px;margin-inline:auto;padding:48px 24px 80px}
+  p,li{max-width:72ch}
+  code,.mono{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.86em}
+  h1{font-size:2rem;line-height:1.15;margin:0 0 .4rem;letter-spacing:-.02em}
+  h2{font-size:1.3rem;margin:2.6rem 0 .9rem;letter-spacing:-.01em;padding-bottom:.4rem;border-bottom:1px solid var(--line)}
+  h3{font-size:1.08rem;margin:0 0 .2rem;letter-spacing:-.01em}
+  .eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-text)}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .lede{font-size:1.05rem;color:var(--muted);max-width:74ch}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 6px}
+  .pill{display:inline-flex;align-items:center;gap:6px;background:var(--chip);border:1px solid var(--line);
+    border-radius:999px;padding:3px 11px;font-size:.78rem;color:var(--muted)}
+  .pill b{color:var(--ink);font-weight:600}
+  .stats{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 4px}
+  .stat{flex:1;min-width:120px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px}
+  .stat .n{font-size:1.5rem;font-weight:700;letter-spacing:-.02em}
+  .stat .l{font-size:.74rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+  section{margin-top:6px}
+  .ground{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:4px 20px}
+  .axes li{margin:.2rem 0}
+  .jump{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 18px;margin:0 0 22px}
+  .jump ol{margin:.2rem 0 0;padding-left:1.2rem}
+  .jump li{margin:.18rem 0}
+  article.idea{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px 22px;margin:0 0 18px}
+  .idhead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:.5rem}
+  .idchip{font-family:'JetBrains Mono',monospace;font-weight:600;font-size:.8rem;color:var(--accent-text);
+    background:var(--accent-soft);border:1px solid var(--line);border-radius:999px;padding:2px 10px}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin:.2rem 0 .8rem}
+  .chip{font-size:.74rem;border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--chip);color:var(--muted)}
+  .chip b{color:var(--ink)}
+  dl{margin:.6rem 0 0}
+  dt{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:.7rem}
+  dd{margin:.15rem 0 0}
+  .basis{border-left:3px solid var(--accent);padding-left:12px}
+  .tag{font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--accent-text)}
+  figure{margin:1rem 0 .2rem;text-align:center}
+  figure svg{max-width:100%;height:auto}
+  figcaption{font-size:.78rem;color:var(--muted);margin-top:.4rem}
+  table{border-collapse:collapse;width:100%;margin:.4rem 0;font-size:.92rem}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+  .fold{font-size:.82rem;color:var(--muted);margin-top:.6rem}
+  footer.composition-signal{margin-top:42px;padding-top:16px;border-top:1px solid var(--line);
+    font-size:.78rem;color:var(--muted)}
+  .svgtxt{fill:var(--ink);font-family:'Inter',sans-serif}
+  .svgmut{fill:var(--muted);font-family:'Inter',sans-serif}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <span class="eyebrow">Compound Engineering · Ideation</span>
+  <h1>FDE-os — a JD-validated FDE academy, cross-agent tooling, and a field-practice flywheel</h1>
+  <p class="lede">Strongest directions worth building first, ranked and critiqued. A discovery
+  document — not a plan. Each idea carries a verifiable basis and known downsides so you can pick
+  a direction, then commit one to <code>ce-brainstorm</code>. Revised 2026-06-18 to add Objective 3
+  (the field-practice feedback flywheel) and the <code>data-architecture</code> cloud reference.</p>
+
+  <div class="meta">
+    <span class="pill"><b>Date</b> <time datetime="2026-06-17">2026-06-17</time></span>
+    <span class="pill"><b>Topic</b> fde-os</span>
+    <span class="pill"><b>Mode</b> elsewhere-software</span>
+    <span class="pill"><b>Focus</b> JD-validated FDE course + cross-agent tooling + field-practice flywheel</span>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="n">~54</div><div class="l">raw ideas</div></div>
+    <div class="stat"><div class="n">12</div><div class="l">survivors</div></div>
+    <div class="stat"><div class="n">9</div><div class="l">cut / folded</div></div>
+    <div class="stat"><div class="n">6</div><div class="l">axes covered</div></div>
+  </div>
+
+  <section>
+    <h2>Topic Context</h2>
+    <div class="ground">
+      <p><strong>The build.</strong> FDE-os is a new, empty project (<code>~/Documents/Projects/FDE-os</code>)
+      with three objectives: <strong>(1)</strong> a <em>personalizable, multi-mastery-level</em> course that
+      upskills a person toward Forward-Deployed-Engineer roles, validated by the question <em>"given a
+      job description, does this course train the person well enough to land that job?"</em>;
+      <strong>(2)</strong> FDE tooling — skills, plugins, dynamic workflows, hooks — for AI coding agents
+      (Claude, Codex, Hermes, OpenClaw); and <strong>(3)</strong> a <em>field-practice feedback flywheel</em>
+      — real engineers run the Objective-2 tooling inside real customer engagements, the tooling
+      auto-journals their real use cases, struggles, and problem-solving, and that field signal feeds back
+      to improve Objectives 1 and 2.</p>
+      <p><strong>Three grounding sources.</strong> <em>ai-engineering-from-scratch</em> is the blueprint for
+      <em>how</em> to build a curriculum-as-repo: a phase/lesson tree where every lesson has
+      <code>docs/en.md</code> + runnable <code>code/</code> + a 6-question <code>quiz.json</code> + an
+      <code>outputs/</code> artifact; a non-negotiable <strong>"Build It / Use It"</strong> spine
+      (first principles, then the production library); docs as source-of-truth with a generated website
+      (<code>site/build.js</code>); CI invariant tooling (<code>audit_lessons.py</code>,
+      <code>build_catalog.py</code>, <code>scaffold-lesson.sh</code>, <code>install_skills.py</code>); and
+      seed personalization skills (<code>find-your-level</code>, <code>check-understanding</code>).</p>
+      <p><strong>The domain content</strong> comes from the Interview Kickstart FDE program (a 23-week live
+      cohort): an AI-Engineering spine (agents, RAG, multi-agent, MCP/A2A, observability/eval/safety,
+      fine-tuning) plus the distinctly-FDE craft — customer discovery, SoW &amp; pricing, RBAC/“plumbing”,
+      governance/compliance, evals-as-deploy-gate, incident handover — taught across three clouds
+      (OpenAI+Azure, Google ADK+Vertex, Claude+Bedrock), ending in interview prep.</p>
+      <p><strong>The target outcome</strong> is exemplified by the Google Cloud <em>Forward Deployed
+      Engineer IV, GenAI</em> JD: an embedded builder who ships bespoke agentic systems inside the
+      customer’s environment, removing production blockers (integration, data-readiness, state-management);
+      min quals 3 yrs Python + ML, applied AI around pretrained models (prompt/fine-tune/RAG/tool-orchestration),
+      cloud deploy; preferred multi-agent frameworks (LangGraph/CrewAI/ADK), ReAct/self-reflection/hierarchical
+      delegation, LLM-native metrics (tokens/sec, cost/request), tracing. A 4-level ladder (I→IV→Staff) exists.</p>
+      <p><strong>Central tensions.</strong> (a) IK is a <em>live cohort</em>; the ask is <em>self-serve and
+      personalizable</em> — so the "customer" and "instructor" must be supplied by agents. (b)
+      ai-engineering-from-scratch teaches AI <em>from scratch</em>, but the FDE role needs the <em>top</em>
+      of that stack <em>plus</em> customer-facing craft that pure-eng curricula omit — and that craft has
+      no "raw math" to derive from. (c) The JD-fit ask is a generalization of <code>find-your-level</code>:
+      map a <em>JD</em> (not a person) to a required-competency set, diff it, gate readiness.</p>
+      <p><strong>Objective 3 — the feedback flywheel.</strong> This is a <em>designed-in</em> loop, not the
+      "wait for alumni" idea cut in the first pass: the journaling rides on the Objective-2 tooling
+      practitioners already run, so field signal exists the moment anyone uses a tool. It literally embodies
+      the Google JD ("act as a critical feedback loop, transforming real-world field insights into the
+      product roadmap") — FDE-os teaches the feedback-loop competency by <em>being</em> one. Privacy is
+      load-bearing: real engagements carry NDAs, PII, and SOC2/HIPAA/FedRAMP/GDPR constraints, so the
+      journal must capture the <em>engineering struggle</em> (what broke, which pattern fixed it) without
+      leaking customer specifics — redaction at capture time, reusing the Presidio competency the course
+      already teaches. The captured corpus is the highest-fidelity fuel for the simulator (I5), the
+      eval-gate (I4), and the self-authoring loop (I6): fictional scenarios decay; real ones don't.</p>
+      <p><strong>The cloud reference — <code>github.com/wjlgatech/data-architecture</code>.</strong> An
+      open-source <em>Claude plugin</em> = "Data Architect School," a 5-day curriculum delivered AS skills
+      (skills / knowledge-base / schemas / templates / examples, JSON-validated, MIT). It serves FDE-os
+      twice: as the <em>cloud/data content</em> the JD demands ("data readiness" is a named production
+      blocker) — Medallion Lakehouse, Data Vault 2.0 / Star / 3NF, Data Mesh/Fabric/Lambda, Azure-primary
+      (Databricks, Synapse, Delta Lake, ADF, Event Hub, MLflow) with AWS/GCP refs, governance
+      (MDM, HIPAA/GDPR, zero-trust, break-glass audit), and the NewLife Hospital case (200M+ FHIR records,
+      multi-jurisdiction compliance, $127M NPV roadmap) — and as a <em>second delivery-model reference</em>:
+      a curriculum shaped natively as a schema-validated plugin-of-skills, a packaging that FDE-os tooling
+      (Objective 2) can adopt directly.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Topic Axes</h2>
+    <ol class="axes">
+      <li><strong>Curriculum content &amp; structure</strong> — what to teach + the lesson/phase/Build-It-Use-It model + mastery levels.</li>
+      <li><strong>JD-fit &amp; personalization engine</strong> — JD → competency map → gap diff → personalized path → "ready for THIS job?" gate.</li>
+      <li><strong>Assessment &amp; proof-of-mastery</strong> — quizzes, capstones, eval-anchored rubrics, portfolio, interview-readiness, certification.</li>
+      <li><strong>FDE agent tooling layer</strong> — skills/plugins/workflows/hooks for Claude/Codex/Hermes/OpenClaw; cross-agent portability.</li>
+      <li><strong>Authoring, generation &amp; maintenance</strong> — how course + tools get built and stay fresh.</li>
+      <li><strong>Field practice &amp; feedback flywheel</strong> — real engagements → auto-journaled signal → improvement of objectives 1 &amp; 2 (Objective 3).</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Ranked Ideas</h2>
+    <div class="jump">
+      <strong>Jump to:</strong>
+      <ol>
+        <li><a href="#i1">JD-Compiler: a job description is the input format</a> · JD-fit</li>
+        <li><a href="#i2">One mastery scale (CEFR ↔ FDE ladder ↔ JD level)</a> · Content/structure</li>
+        <li><a href="#i3">FDE-Craft as first-class content + a “Deploy-It” rung</a> · Content/structure</li>
+        <li><a href="#i4">Eval-as-Gate proof-of-mastery</a> · Assessment</li>
+        <li><a href="#i5">The Customer Simulator (standardized-customer agent)</a> · Assessment</li>
+        <li><a href="#i6">Self-authoring pipeline (PDF/JD → audited lessons)</a> · Authoring</li>
+        <li><a href="#i7">Write-once, run-on-four-runtimes artifact compiler</a> · Tooling</li>
+        <li><a href="#i8">Field-Journal event log — the flywheel hub</a> · Field flywheel</li>
+        <li><a href="#i9">Redact-at-capture, anchored to the diff</a> · Tooling</li>
+        <li><a href="#i10">Pain-to-ticket compiler + freshness decay</a> · Authoring / flywheel</li>
+        <li><a href="#i11">Engineer-owned field portfolio — the incentive engine</a> · Field flywheel</li>
+        <li><a href="#i12">Adopt data-architecture as the Data &amp; Cloud track + packaging spec</a> · Content / tooling</li>
+      </ol>
+    </div>
+
+    <!-- IDEA 1 -->
+    <article class="idea" id="i1">
+      <div class="idhead"><span class="idchip">I1</span><h3>JD-Compiler: a job description is the input format, not a fixed curriculum</h3></div>
+      <div class="chips"><span class="chip"><b>Axis</b> JD-fit &amp; personalization</span><span class="chip"><b>Confidence</b> 85%</span><span class="chip"><b>Complexity</b> High</span></div>
+      <p>Generalize <code>find-your-level</code> (10 questions → starting phase) into <code>parse-jd</code>:
+      paste any FDE job description, the engine extracts a required-competency vector, diffs it against the
+      learner’s proven state, and emits the minimal lesson path <em>plus a hard "ready for THIS job?" gate
+      that can refuse</em> — "Not ready for FDE-IV: 0 of 3 multi-agent-pattern proofs (ReAct, self-reflection,
+      hierarchical delegation)." Two refinements the frames converged on: <strong>crux-first ranking</strong>
+      (name the single gating competency, not a flat 12-item gap list) and a <strong>JD-matched evidence
+      dossier</strong> (reuse the <code>site/build.js</code> generator to render the learner’s
+      <code>outputs/</code> against a specific posting — the artifact that actually lands the job).</p>
+      <figure>
+        <svg viewBox="0 0 760 150" role="img" aria-label="Pipeline: a JD compiles to a competency vector, diffs against the learner, and emits a path plus a pass/fail gate.">
+          <rect x="8" y="50" width="120" height="50" rx="8" fill="var(--accent-soft)" stroke="var(--line)"/>
+          <text x="68" y="73" text-anchor="middle" font-size="13" font-weight="600" class="svgtxt">JD (paste)</text>
+          <text x="68" y="90" text-anchor="middle" font-size="11" class="svgmut">Google FDE-IV</text>
+          <rect x="170" y="50" width="140" height="50" rx="8" fill="var(--surface)" stroke="var(--line)"/>
+          <text x="240" y="72" text-anchor="middle" font-size="12" font-weight="600" class="svgtxt">Competency vector</text>
+          <text x="240" y="89" text-anchor="middle" font-size="11" class="svgmut">RAG · multi-agent · RBAC</text>
+          <rect x="352" y="50" width="120" height="50" rx="8" fill="var(--surface)" stroke="var(--line)"/>
+          <text x="412" y="72" text-anchor="middle" font-size="12" font-weight="600" class="svgtxt">Diff vs learner</text>
+          <text x="412" y="89" text-anchor="middle" font-size="11" class="svgmut">find the crux</text>
+          <rect x="514" y="20" width="130" height="44" rx="8" fill="var(--surface)" stroke="var(--line)"/>
+          <text x="579" y="46" text-anchor="middle" font-size="12" font-weight="600" class="svgtxt">Personalized path</text>
+          <rect x="514" y="86" width="130" height="44" rx="8" fill="var(--ok-soft)" stroke="var(--line)"/>
+          <text x="579" y="106" text-anchor="middle" font-size="12" font-weight="600" class="svgtxt">Readiness gate</text>
+          <text x="579" y="121" text-anchor="middle" font-size="10" class="svgmut">PASS / NOT-READY</text>
+          <line x1="128" y1="75" x2="168" y2="75" stroke="var(--accent)" stroke-width="2" marker-end="url(#ar1)"/>
+          <line x1="310" y1="75" x2="350" y2="75" stroke="var(--accent)" stroke-width="2" marker-end="url(#ar1)"/>
+          <line x1="472" y1="70" x2="512" y2="48" stroke="var(--accent)" stroke-width="2" marker-end="url(#ar1)"/>
+          <line x1="472" y1="80" x2="512" y2="104" stroke="var(--accent)" stroke-width="2" marker-end="url(#ar1)"/>
+          <defs><marker id="ar1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--accent)"/></marker></defs>
+        </svg>
+        <figcaption>The compiler is the spine: one JD parser feeds the path, the gate, and (idea I6) the curriculum-coverage check.</figcaption>
+      </figure>
+      <dl>
+        <dt>Basis</dt><dd class="basis"><span class="tag">direct:</span> grounding — "The JD-fit ask = a generalization of <code>find-your-level</code>: map a JD to a required-competency set, diff against the learner, and emit a personalized path + readiness gate." The Google JD supplies the competency vocabulary (LangGraph/CrewAI/ADK, ReAct/self-reflection/hierarchical delegation); the I→Staff ladder makes "ready for level N" meaningful.</dd>
+        <dt>Rationale</dt><dd>This is the project’s literal validation question made executable. Most courses can only say "you’re making progress"; a gate that can say <em>no</em>, with a named crux, is the entire reason FDE-os exists — and it differentiates a function (<code>JD → path → proof</code>) from yet another course.</dd>
+        <dt>Downsides</dt><dd>Competency extraction from prose JDs is fuzzy and needs a stable taxonomy (see I2). A wrong "not-ready" verdict erodes trust fast. The "Residency-Match" extension (rank real open jobs) presumes a job/learner marketplace that doesn’t exist yet — defer it.</dd>
+      </dl>
+    </article>
+
+    <!-- IDEA 2 -->
+    <article class="idea" id="i2">
+      <div class="idhead"><span class="idchip">I2</span><h3>One mastery scale: collapse CEFR ↔ FDE ladder ↔ JD level into a single number</h3></div>
+      <div class="chips"><span class="chip"><b>Axis</b> Curriculum content &amp; structure</span><span class="chip"><b>Confidence</b> 88%</span><span class="chip"><b>Complexity</b> Low</span></div>
+      <p>The user named three things separately — "mastery levels," the FDE career ladder (I/II/III/IV/Staff),
+      and JD seniority — but they are the same latent variable. Define <strong>one</strong> provider-agnostic
+      competency-depth scale, expressed as CEFR-style <em>can-do descriptors</em>: <em>L-II — "can build a
+      RAG agent against a clean dataset under supervision"; L-IV — "can independently scope, price, and ship
+      a multi-tenant agent into a regulated customer cloud with a handover runbook."</em> Every lesson tags
+      the depth it reaches; the same RAG lesson reads differently at L-II vs L-IV. The readiness gate (I1)
+      becomes a numeric comparison instead of a fuzzy mapping.</p>
+      <figure>
+        <svg viewBox="0 0 620 120" role="img" aria-label="Three separate scales collapse into one shared competency-depth scale.">
+          <rect x="8" y="14" width="150" height="28" rx="6" fill="var(--surface)" stroke="var(--line)"/><text x="83" y="33" text-anchor="middle" font-size="12" class="svgtxt">"mastery levels"</text>
+          <rect x="8" y="48" width="150" height="28" rx="6" fill="var(--surface)" stroke="var(--line)"/><text x="83" y="67" text-anchor="middle" font-size="12" class="svgtxt">FDE ladder I→Staff</text>
+          <rect x="8" y="82" width="150" height="28" rx="6" fill="var(--surface)" stroke="var(--line)"/><text x="83" y="101" text-anchor="middle" font-size="12" class="svgtxt">JD seniority</text>
+          <rect x="392" y="46" width="218" height="32" rx="8" fill="var(--accent-soft)" stroke="var(--line)"/>
+          <text x="501" y="66" text-anchor="middle" font-size="13" font-weight="600" class="svgtxt">one can-do depth scale</text>
+          <line x1="158" y1="28" x2="390" y2="58" stroke="var(--accent)" stroke-width="2" marker-end="url(#ar2)"/>
+          <line x1="158" y1="62" x2="390" y2="62" stroke="var(--accent)" stroke-width="2" marker-end="url(#ar2)"/>
+          <line x1="158" y1="96" x2="390" y2="66" stroke="var(--accent)" stroke-width="2" marker-end="url(#ar2)"/>
+          <defs><marker id="ar2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--accent)"/></marker></defs>
+        </svg>
+        <figcaption>Collapsing three scales into one removes a translation layer every later feature would otherwise pay.</figcaption>
+      </figure>
+      <dl>
+        <dt>Basis</dt><dd class="basis"><span class="tag">direct:</span> grounding — "mastery levels map naturally onto the FDE ladder (I→IV→Staff) and to JD levels." <span class="tag">external:</span> CEFR (the global language-fluency framework) proved that outcome-described, provider-agnostic "can-do" levels become a shared vocabulary employers trust without knowing the school.</dd>
+        <dt>Rationale</dt><dd>This is the cheapest, most foundational primitive — the enabling substrate for I1’s gate, I3’s per-level lesson reads, and I5’s grading. Choosing the scale early makes every downstream feature a comparison on one axis instead of N pairwise mappings.</dd>
+        <dt>Downsides</dt><dd>Authoring credible, discriminating can-do descriptors per competency is real editorial work; vague descriptors collapse the scale’s value. Calibrating "L-IV" to what hiring managers actually mean requires JD-corpus evidence to avoid drift.</dd>
+      </dl>
+    </article>
+
+    <!-- IDEA 3 -->
+    <article class="idea" id="i3">
+      <div class="idhead"><span class="idchip">I3</span><h3>FDE-Craft as first-class content — extend Build-It/Use-It with a “Deploy-It” rung</h3></div>
+      <div class="chips"><span class="chip"><b>Axis</b> Curriculum content &amp; structure</span><span class="chip"><b>Confidence</b> 84%</span><span class="chip"><b>Complexity</b> Medium</span></div>
+      <p>The reference repo’s spine is "Build It (from scratch) / Use It (production library)." FDE work needs
+      a third rung the pure-eng repo never required: <strong>Ship It Into a Customer Environment</strong> —
+      the same artifact deployed under per-tenant RBAC, identity (Entra/workload identity), audit logging, a
+      kill-switch, and a simulated SOC2/HIPAA constraint. And the distinctly-FDE craft (discovery, SoW &amp;
+      pricing, governance, handover) is taught "from scratch" = <em>from first principles</em>, not from math:
+      the learner drafts a one-page problem brief, a risk-buffered SoW, a DECISIONS.md, an RCA — each shipping
+      as a reusable <code>outputs/</code> artifact, satisfying the repo invariant. <span class="fold">Folds in
+      the "pattern-core + stack-adapter" idea: factor each lesson into a cloud-neutral core (ReAct,
+      planner-executor-critic, RBAC-at-tool-boundary) plus thin adapters, so Use-It runs on the learner’s
+      <em>target</em> cloud (GCP→Vertex, Azure→Foundry) without 3× lesson sprawl.</span></p>
+      <dl>
+        <dt>Basis</dt><dd class="basis"><span class="tag">direct:</span> grounding — "FDE craft is the differentiator and the hardest to teach from scratch"; the IK FDE Spine enumerates the exact deliverables (problem brief, DECISIONS.md, RACI, 4-milestone SoW, RBAC at tool boundary, kill-switches, autonomy ladder). The JD centers the whole role on "production reality inside the customer’s env," which Build-It/Use-It alone omits.</dd>
+        <dt>Rationale</dt><dd>This is the moat. Every from-scratch AI course teaches RAG and agents; almost none teach the field craft that defines the FDE role. Extending the repo’s sacred invariant (rather than discarding it) keeps a proven structure while adding the differentiator.</dd>
+        <dt>Downsides</dt><dd>Craft has no objective "correct answer" the way code does — grading discovery/SoW quality needs the simulator (I5) and rubrics. "Deploy-It" against real RBAC/compliance is heavy infra to simulate convincingly; risk of teaching cargo-cult governance if the simulation is shallow.</dd>
+      </dl>
+    </article>
+
+    <!-- IDEA 4 -->
+    <article class="idea" id="i4">
+      <div class="idhead"><span class="idchip">I4</span><h3>Eval-as-Gate proof-of-mastery — the rubric IS a production deploy-gate</h3></div>
+      <div class="chips"><span class="chip"><b>Axis</b> Assessment &amp; proof-of-mastery</span><span class="chip"><b>Confidence</b> 86%</span><span class="chip"><b>Complexity</b> Medium</span></div>
+      <p>The FDE curriculum teaches "eval-as-CI-deploy-gate" as <em>content</em>; turn that same machinery
+      inward. A capstone "passes" mastery only when the learner’s agent clears an automated eval suite
+      (DeepEval/LangSmith rubrics, a cost-per-request ceiling, guardrail/PII checks, an autonomy-tier
+      assertion) — exactly the gate a real FDE must build for a customer. Proof-of-mastery becomes a green
+      eval transcript, not a quiz score or instructor sign-off, removing subjective grading for the
+      production phases. An employer could re-run the same gate on the candidate’s repo and trust the result.</p>
+      <dl>
+        <dt>Basis</dt><dd class="basis"><span class="tag">direct:</span> grounding — IK Spine teaches observability/eval/safety (LangSmith, DeepEval, Guardrails AI) and the FDE Spine teaches "eval-as-CI-deploy-gate"; the reference repo already runs <code>lesson_run.py</code> / <code>audit_lessons.py</code> as CI-blocking invariants, so "the test is the gate" is in the repo’s DNA.</dd>
+        <dt>Rationale</dt><dd>The JD explicitly wants "not just demos." A 6-question quiz proves recall; an eval-gate proves the thing an FDE is hired for — shipping an agent that survives production checks. One eval-harness investment serves teaching, grading, and portfolio proof at once.</dd>
+        <dt>Downsides</dt><dd>Writing fair, non-gameable eval suites per capstone is hard; learners may overfit to the gate. Eval infra (LLM-as-judge, golden sets) has its own cost and flakiness. Best paired with I5 so customer-craft (not just code) is also gated.</dd>
+      </dl>
+    </article>
+
+    <!-- IDEA 5 -->
+    <article class="idea" id="i5">
+      <div class="idhead"><span class="idchip">I5</span><h3>The Customer Simulator — a standardized-customer agent that fights back</h3></div>
+      <div class="chips"><span class="chip"><b>Axis</b> Assessment &amp; proof-of-mastery</span><span class="chip"><b>Confidence</b> 80%</span><span class="chip"><b>Complexity</b> High</span></div>
+      <p>The hardest-to-replicate part of FDE training is the <em>customer</em>. Build an agent that plays a
+      standardized stakeholder — the evasive VP, the security-paranoid CISO, the budget-cutting procurement
+      lead — each with a hidden problem, a fixed budget, a real cloud/compliance posture, and a RACI map.
+      The learner runs the 90-minute discovery workshop, a procurement drill, and an injected incident
+      fire-drill; a rubric agent scores the artifacts they produce. Track it as accumulating, per-scenario
+      "sim hours" mapped to the I2 ladder, with an after-action review on each capstone run.</p>
+      <figure>
+        <svg viewBox="0 0 620 132" role="img" aria-label="A loop: customer agent presents a scenario, the learner runs discovery and ships, a rubric scores, sim-hours accrue.">
+          <rect x="18" y="50" width="130" height="48" rx="24" fill="var(--warn-soft)" stroke="var(--line)"/><text x="83" y="70" text-anchor="middle" font-size="12" font-weight="600" class="svgtxt">Customer agent</text><text x="83" y="86" text-anchor="middle" font-size="10" class="svgmut">hidden constraints</text>
+          <rect x="200" y="50" width="130" height="48" rx="8" fill="var(--surface)" stroke="var(--line)"/><text x="265" y="70" text-anchor="middle" font-size="12" font-weight="600" class="svgtxt">Learner</text><text x="265" y="86" text-anchor="middle" font-size="10" class="svgmut">discovery · SoW · ship</text>
+          <rect x="382" y="50" width="120" height="48" rx="8" fill="var(--surface)" stroke="var(--line)"/><text x="442" y="70" text-anchor="middle" font-size="12" font-weight="600" class="svgtxt">Rubric agent</text><text x="442" y="86" text-anchor="middle" font-size="10" class="svgmut">score artifacts</text>
+          <rect x="540" y="50" width="62" height="48" rx="8" fill="var(--ok-soft)" stroke="var(--line)"/><text x="571" y="72" text-anchor="middle" font-size="11" font-weight="600" class="svgtxt">sim</text><text x="571" y="86" text-anchor="middle" font-size="11" font-weight="600" class="svgtxt">hours</text>
+          <line x1="148" y1="74" x2="198" y2="74" stroke="var(--accent)" stroke-width="2" marker-end="url(#ar3)"/>
+          <line x1="330" y1="74" x2="380" y2="74" stroke="var(--accent)" stroke-width="2" marker-end="url(#ar3)"/>
+          <line x1="502" y1="74" x2="538" y2="74" stroke="var(--accent)" stroke-width="2" marker-end="url(#ar3)"/>
+          <path d="M442 50 C442 18, 83 18, 83 48" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#ar3b)"/>
+          <text x="262" y="28" text-anchor="middle" font-size="10" class="svgmut">next scenario, harder</text>
+          <defs>
+            <marker id="ar3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--accent)"/></marker>
+            <marker id="ar3b" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--muted)"/></marker>
+          </defs>
+        </svg>
+        <figcaption>The simulator supplies the "other side of the table" a self-serve course otherwise can’t — turning un-quizzable craft into a logged, accumulating proof.</figcaption>
+      </figure>
+      <dl>
+        <dt>Basis</dt><dd class="basis"><span class="tag">external:</span> the medical OSCE (standardized-patient stations, Harden 1975) and US Army after-action review (TC 25-20) are the proven structures for certifying interpersonal/under-failure competence that written exams can’t. <span class="tag">reasoned:</span> IK delivers this craft in a <em>live cohort</em> where humans play the customer; a self-serve course literally cannot offer discovery/procurement practice without an agent playing that role — and the project already commits to agent runtimes.</dd>
+        <dt>Rationale</dt><dd>It unlocks the entire FDE Spine (the differentiator) for self-serve delivery and is the self-serve answer to the cohort program’s strongest feature.</dd>
+        <dt>Downsides</dt><dd>A persona agent that’s too easy is worthless; calibrating realistic difficulty and fair scoring is the core risk. Highest build complexity of the survivors — sequence it after I2/I3 give it a scale and artifacts to grade.</dd>
+      </dl>
+    </article>
+
+    <!-- IDEA 6 -->
+    <article class="idea" id="i6">
+      <div class="idhead"><span class="idchip">I6</span><h3>Self-authoring pipeline — PDF/JD in, audited lessons out</h3></div>
+      <div class="chips"><span class="chip"><b>Axis</b> Authoring, generation &amp; maintenance</span><span class="chip"><b>Confidence</b> 80%</span><span class="chip"><b>Complexity</b> Medium</span></div>
+      <p>Hand-authoring at curriculum scale is the maintenance bottleneck. Build an authoring agent that
+      ingests a JD or a domain PDF (like the IK FDE PDF), extracts competencies, checks them against the
+      catalog, and either maps to existing lessons or scaffolds new ones via <code>scaffold-lesson.sh</code> —
+      pre-filled with the Build-It/Use-It skeleton, a 6-question quiz, and an artifact target. Crucially,
+      <code>audit_lessons.py</code> (already CI-blocking) becomes the <em>accept gate</em> that rejects any
+      malformed generation. The human shifts from author to reviewer-of-machine-output; run the same JD
+      parser over a corpus to surface coverage gaps that auto-file as authoring tickets.</p>
+      <dl>
+        <dt>Basis</dt><dd class="basis"><span class="tag">direct:</span> grounding axis 5 explicitly names "agent-generated lessons from JDs/PDFs," and the repo ships <code>scaffold-lesson.sh</code> + <code>build_catalog.py</code> + <code>audit_lessons.py</code> as the exact rails such a generator would target. <span class="tag">reasoned:</span> a rigid, machine-checkable lesson schema + a CI invariant auditor is precisely the precondition that makes LLM-generated content safe to ship — the auditor catches malformed generations, so generation cost drops without quality dropping.</dd>
+        <dt>Rationale</dt><dd>The JD landscape moves fast (LangGraph/CrewAI/ADK are all recent). A hand-maintained curriculum decays; closing the loop "new JD → catalog gap → generated stub" makes the curriculum self-extending and keeps the JD-fit engine (I1) honest as roles drift.</dd>
+        <dt>Downsides</dt><dd>The auditor checks <em>structure</em>, not pedagogical <em>truth</em> — generated lessons can pass CI while being subtly wrong, so human review stays load-bearing. Garbage-PDF-in risks garbage-lessons-out. Don’t over-build the corpus-scraping "coverage oracle" before there’s a curriculum to measure.</dd>
+      </dl>
+    </article>
+
+    <!-- IDEA 7 -->
+    <article class="idea" id="i7">
+      <div class="idhead"><span class="idchip">I7</span><h3>Write-once, run-on-four-runtimes — the FDE artifact compiler</h3></div>
+      <div class="chips"><span class="chip"><b>Axis</b> FDE agent tooling layer</span><span class="chip"><b>Confidence</b> 70%</span><span class="chip"><b>Complexity</b> High</span></div>
+      <p>This is the second half of the ask. Author each FDE-craft artifact once in a runtime-neutral spec
+      (a "scope-a-customer" skill, an "RBAC-tool-boundary" hook, a "cost-shape estimator" workflow, an
+      "incident-RCA" runbook) and <em>compile</em> it to Claude skill / Codex / Hermes / OpenClaw formats —
+      the way <code>site/build.js</code> compiles markdown to <code>data.js</code>. Ship each with a
+      <strong>portability conformance test</strong>: the artifact’s proof-of-value is a measured before/after
+      pass-rate delta on a held-out FDE task across at least two of the four runtimes (the "agent-as-student"
+      acceptance test). An FDE never controls which agent stack the customer runs, so write-once/run-anywhere
+      is exactly the plumbing the role rewards.</p>
+      <figure>
+        <svg viewBox="0 0 640 150" role="img" aria-label="One neutral artifact spec compiles to four agent runtimes, each validated by a conformance test.">
+          <rect x="20" y="55" width="150" height="46" rx="8" fill="var(--accent-soft)" stroke="var(--line)"/><text x="95" y="76" text-anchor="middle" font-size="12" font-weight="600" class="svgtxt">neutral artifact spec</text><text x="95" y="92" text-anchor="middle" font-size="10" class="svgmut">authored once</text>
+          <rect x="300" y="8" width="150" height="30" rx="6" fill="var(--surface)" stroke="var(--line)"/><text x="375" y="28" text-anchor="middle" font-size="12" class="svgtxt">Claude skill</text>
+          <rect x="300" y="44" width="150" height="30" rx="6" fill="var(--surface)" stroke="var(--line)"/><text x="375" y="64" text-anchor="middle" font-size="12" class="svgtxt">Codex</text>
+          <rect x="300" y="80" width="150" height="30" rx="6" fill="var(--surface)" stroke="var(--line)"/><text x="375" y="100" text-anchor="middle" font-size="12" class="svgtxt">Hermes skill</text>
+          <rect x="300" y="116" width="150" height="30" rx="6" fill="var(--surface)" stroke="var(--line)"/><text x="375" y="136" text-anchor="middle" font-size="12" class="svgtxt">OpenClaw plugin</text>
+          <rect x="492" y="55" width="130" height="46" rx="8" fill="var(--ok-soft)" stroke="var(--line)"/><text x="557" y="76" text-anchor="middle" font-size="12" font-weight="600" class="svgtxt">conformance test</text><text x="557" y="92" text-anchor="middle" font-size="10" class="svgmut">pass-rate delta</text>
+          <line x1="170" y1="74" x2="298" y2="23" stroke="var(--accent)" stroke-width="1.8" marker-end="url(#ar4)"/>
+          <line x1="170" y1="76" x2="298" y2="59" stroke="var(--accent)" stroke-width="1.8" marker-end="url(#ar4)"/>
+          <line x1="170" y1="80" x2="298" y2="95" stroke="var(--accent)" stroke-width="1.8" marker-end="url(#ar4)"/>
+          <line x1="170" y1="82" x2="298" y2="131" stroke="var(--accent)" stroke-width="1.8" marker-end="url(#ar4)"/>
+          <line x1="450" y1="78" x2="490" y2="78" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ar4b)"/>
+          <defs>
+            <marker id="ar4" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--accent)"/></marker>
+            <marker id="ar4b" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--muted)"/></marker>
+          </defs>
+        </svg>
+        <figcaption>The conformance test gives portability teeth: a skill that doesn’t lift agent pass-rate on a held-out task is dead on arrival.</figcaption>
+      </figure>
+      <dl>
+        <dt>Basis</dt><dd class="basis"><span class="tag">direct:</span> grounding — <code>install_skills.py</code> "copies course outputs into a target agent dir as skills," and "cross-agent portability (4 different agent runtimes) is a real design axis"; the docs→site compile is the existing precedent. <span class="tag">reasoned:</span> flipping the "student" to the agent gives every artifact an objective, automatable acceptance test instead of self-declared value.</dd>
+        <dt>Rationale</dt><dd>Directly serves the JD’s "ship bespoke agentic solutions inside the customer’s env" — the learner’s reward for a lesson is a working tool installable into whatever agent the customer runs, with proof it helps.</dd>
+        <dt>Downsides</dt><dd>Lowest-confidence survivor: the four runtimes’ skill/hook formats differ enough that a clean neutral IR is non-trivial, and today’s precedent (<code>install_skills.py</code>) only <em>copies</em>, it doesn’t compile. Premature to design the IR before a single artifact exists — build one artifact for one runtime first, then generalize.</dd>
+      </dl>
+    </article>
+
+    <!-- IDEA 8 -->
+    <article class="idea" id="i8">
+      <div class="idhead"><span class="idchip">I8</span><h3>Field-Journal event log — the flywheel hub (Objective 3)</h3></div>
+      <div class="chips"><span class="chip"><b>Axis</b> Field practice &amp; feedback flywheel</span><span class="chip"><b>Confidence</b> 85%</span><span class="chip"><b>Complexity</b> Medium</span></div>
+      <p>The core of Objective 3 is a single asset: a structured, redacted <strong>engagement event log</strong>.
+      As an engineer runs the Objective-2 tooling in a real engagement, each tool call, struggle, and recovery
+      is emitted as one typed record — <code>{struggle_type, pattern_invoked, tool_called, error_class,
+      recovery_move, time_to_fix}</code> — with all customer entities replaced by typed placeholders. One asset,
+      four consumers: it mints <strong>I4</strong> eval cases, <strong>I5</strong> simulator scenarios,
+      <strong>I6</strong> curriculum-gap tickets, and <strong>I7</strong> artifact-fix issues. Build the schema
+      once; every downstream survivor reads from it, so each field hour makes all four sharper.</p>
+      <figure>
+        <svg viewBox="0 0 640 230" role="img" aria-label="A flywheel: field engagement emits a redacted event log that feeds the eval-gate, simulator, self-authoring, and compiler, which improve the tooling used in the next engagement.">
+          <rect x="245" y="14" width="150" height="46" rx="8" fill="var(--warn-soft)" stroke="var(--line)"/><text x="320" y="34" text-anchor="middle" font-size="12" font-weight="600" class="svgtxt">Real engagement</text><text x="320" y="50" text-anchor="middle" font-size="10" class="svgmut">engineer + Obj-2 tools</text>
+          <rect x="245" y="92" width="150" height="46" rx="8" fill="var(--accent-soft)" stroke="var(--line)"/><text x="320" y="112" text-anchor="middle" font-size="12" font-weight="600" class="svgtxt">Event log (redacted)</text><text x="320" y="128" text-anchor="middle" font-size="10" class="svgmut">one typed schema</text>
+          <rect x="40" y="170" width="120" height="44" rx="8" fill="var(--surface)" stroke="var(--line)"/><text x="100" y="190" text-anchor="middle" font-size="11" font-weight="600" class="svgtxt">I4 eval cases</text><text x="100" y="205" text-anchor="middle" font-size="10" class="svgmut">real failures</text>
+          <rect x="175" y="170" width="120" height="44" rx="8" fill="var(--surface)" stroke="var(--line)"/><text x="235" y="190" text-anchor="middle" font-size="11" font-weight="600" class="svgtxt">I5 scenarios</text><text x="235" y="205" text-anchor="middle" font-size="10" class="svgmut">real customers</text>
+          <rect x="345" y="170" width="120" height="44" rx="8" fill="var(--surface)" stroke="var(--line)"/><text x="405" y="190" text-anchor="middle" font-size="11" font-weight="600" class="svgtxt">I6 gap tickets</text><text x="405" y="205" text-anchor="middle" font-size="10" class="svgmut">what to teach</text>
+          <rect x="480" y="170" width="120" height="44" rx="8" fill="var(--surface)" stroke="var(--line)"/><text x="540" y="190" text-anchor="middle" font-size="11" font-weight="600" class="svgtxt">I7 fixes</text><text x="540" y="205" text-anchor="middle" font-size="10" class="svgmut">what to mend</text>
+          <line x1="320" y1="60" x2="320" y2="90" stroke="var(--accent)" stroke-width="2" marker-end="url(#arf)"/>
+          <line x1="290" y1="138" x2="120" y2="168" stroke="var(--accent)" stroke-width="1.8" marker-end="url(#arf)"/>
+          <line x1="305" y1="138" x2="245" y2="168" stroke="var(--accent)" stroke-width="1.8" marker-end="url(#arf)"/>
+          <line x1="335" y1="138" x2="395" y2="168" stroke="var(--accent)" stroke-width="1.8" marker-end="url(#arf)"/>
+          <line x1="350" y1="138" x2="520" y2="168" stroke="var(--accent)" stroke-width="1.8" marker-end="url(#arf)"/>
+          <path d="M600 192 C628 150, 470 30, 397 34" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arfb)"/>
+          <text x="558" y="96" text-anchor="middle" font-size="10" class="svgmut">better tools</text>
+          <text x="558" y="110" text-anchor="middle" font-size="10" class="svgmut">next engagement</text>
+          <defs>
+            <marker id="arf" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--accent)"/></marker>
+            <marker id="arfb" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--muted)"/></marker>
+          </defs>
+        </svg>
+        <figcaption>One redacted schema is the hub; the more it is written, the more every other survivor appreciates — and the loop closes back onto the tools used in the next engagement.</figcaption>
+      </figure>
+      <dl>
+        <dt>Basis</dt><dd class="basis"><span class="tag">direct:</span> grounding — "structured, machine-usable signal: pain points → curriculum gap tickets (feeds I6) and tool failure reports → artifact fixes (feeds I7)"; "highest-fidelity source of new Customer-Simulator (I5) scenarios and new eval-gate (I4) test cases." Reuses the repo’s <code>outputs/</code>-index aggregation pattern.</dd>
+        <dt>Rationale</dt><dd>This is the leverage point of Objective 3. Without one canonical schema, each survivor grows its own ad-hoc ingest and the data fragments; with it, the marginal cost of a new consumer is a query, not a pipeline.</dd>
+        <dt>Downsides</dt><dd>Schema design is a one-way door — get the typed fields wrong and every consumer inherits the gap. Cold-start: the log is empty until people use the tools in the field (mitigated by I11’s incentive and I12’s case-study seed data).</dd>
+      </dl>
+    </article>
+
+    <!-- IDEA 9 -->
+    <article class="idea" id="i9">
+      <div class="idhead"><span class="idchip">I9</span><h3>Redact-at-capture, anchored to the diff — born-clean journaling</h3></div>
+      <div class="chips"><span class="chip"><b>Axis</b> FDE agent tooling layer</span><span class="chip"><b>Confidence</b> 84%</span><span class="chip"><b>Complexity</b> Medium</span></div>
+      <p>Make the journal a <code>PostToolUse</code>/<code>Stop</code> hook that <em>never writes raw transcript</em>.
+      Every captured turn passes through a local Presidio + abstraction pass <em>before</em> a byte touches disk:
+      customer names → <code>&lt;CUSTOMER&gt;</code>, schemas → shape-only, secrets dropped, prose rewritten to
+      "the engineering struggle." Better still, anchor capture to the engineer’s <strong>git activity</strong>
+      rather than LLM chatter: record the delta from a failing state to a passing one (failing test → commits →
+      passing test, plus the tool calls in that window). A fix-shaped diff is intrinsically low-PII, structured,
+      and maps 1:1 onto an I4 eval case or I5 scenario.</p>
+      <dl>
+        <dt>Basis</dt><dd class="basis"><span class="tag">direct:</span> grounding — "redaction/abstraction at capture time is mandatory, not optional … reuse Presidio on the journal itself"; the base course already teaches Presidio PII redaction. <span class="tag">reasoned:</span> transcripts are high-entropy and PII-dense; git diffs are low-entropy and structured, and git is already running in every engagement, so anchoring there adds zero new capture surface.</dd>
+        <dt>Rationale</dt><dd>This is the precondition for the whole flywheel: if raw customer data physically cannot be written, a customer’s security team can plausibly approve the capture path — without that sign-off, field journaling never happens. It also dogfoods the exact redaction competency the course sells.</dd>
+        <dt>Downsides</dt><dd>Redaction is never perfect — a residual-leak audit and a kill-switch are mandatory, and over-redaction can strip the signal that made the struggle teachable. Git-anchoring misses non-code struggles (a botched discovery call), so it complements, not replaces, the I5 simulator capture.</dd>
+      </dl>
+    </article>
+
+    <!-- IDEA 10 -->
+    <article class="idea" id="i10">
+      <div class="idhead"><span class="idchip">I10</span><h3>Pain-to-ticket compiler + freshness decay — the loop’s back half</h3></div>
+      <div class="chips"><span class="chip"><b>Axis</b> Authoring / field flywheel</span><span class="chip"><b>Confidence</b> 82%</span><span class="chip"><b>Complexity</b> Medium</span></div>
+      <p>The flywheel’s failure mode is that signal pools and nobody acts. Add the back half: a scheduled job
+      clusters abstracted struggles across all engineers and emits two ranked queues — <em>curriculum gap
+      tickets</em> (struggle types with no matching lesson → feed I6, prioritized by how many distinct customers
+      hit them) and <em>tool-failure reports</em> (skills that errored or were abandoned → feed I7). The same
+      provenance data drives a <strong>decay score</strong>: tag every I4 eval case and I5 scenario as
+      <code>fictional</code> vs <code>field-derived</code> with a last-seen-in-field timestamp; down-rank stale
+      fictional cases and promote recurring real ones. The corpus self-curates toward what engineers hit
+      <em>this quarter</em>.</p>
+      <dl>
+        <dt>Basis</dt><dd class="basis"><span class="tag">direct:</span> grounding — "pain points → curriculum gap tickets (feeds I6)"; "fictional scenarios decay; real ones don’t." Reuses the repo’s <code>audit_lessons.py</code>/<code>build_catalog.py</code> CI-invariant aggregation pattern as the harness.</dd>
+        <dt>Rationale</dt><dd>Without this, capture is a write-only log. Frequency-ranked tickets turn "practice → curriculum improvement" from aspiration into a mechanical roadmap the field votes on; decay scoring adds the forgetting that keeps I4/I5 from testing problems nobody faces anymore — a self-curating eval set competitors with static banks can’t match.</dd>
+        <dt>Downsides</dt><dd>Clustering quality is the whole game — bad clustering produces noisy or duplicate tickets that erode trust. Frequency bias can bury rare-but-critical struggles (a single catastrophic compliance failure outranks 12 trivial ones); needs a severity dimension, not just count.</dd>
+      </dl>
+    </article>
+
+    <!-- IDEA 11 -->
+    <article class="idea" id="i11">
+      <div class="idhead"><span class="idchip">I11</span><h3>Engineer-owned field portfolio — the incentive engine</h3></div>
+      <div class="chips"><span class="chip"><b>Axis</b> Field practice &amp; feedback flywheel</span><span class="chip"><b>Confidence</b> 83%</span><span class="chip"><b>Complexity</b> Low</span></div>
+      <p>The flywheel only spins if engineers leave journaling on during real, NDA-bound work — and they won’t
+      if it feels like surveillance-for-the-platform. Invert ownership: the journal is the engineer’s
+      <em>private</em> asset first, always building their personal retro corpus and a portfolio/evidence stream
+      locally (auto-generating STAR-format interview stories, mapped onto the I2 mastery scale and the FDE
+      I→IV ladder). Contributing to the shared improvement corpus is a separate, explicit, per-entry opt-in
+      that re-runs a stricter abstraction pass. Personal value funds collective compounding; sharing is a
+      bonus, not the price of entry.</p>
+      <dl>
+        <dt>Basis</dt><dd class="basis"><span class="tag">direct:</span> grounding — "the journal is also a per-engineer asset: a portfolio/evidence stream and a personal retro corpus"; base grounding’s STAR career track and the FDE ladder as mastery levels. <span class="tag">reasoned:</span> flywheels die at cold-start when the data source is extractive; making the default benefit personal aligns the incentive with the person doing the work, so adoption survives a customer’s legal team.</dd>
+        <dt>Rationale</dt><dd>This is what keeps I8 fed. It also closes the loop back to Objective 1: the same telemetry that improves the course is, sliced per-person, the JD-matched evidence dossier (I1) that lands the next job.</dd>
+        <dt>Downsides</dt><dd>Opt-in sharing means the shared corpus may stay sparse if few contribute — needs a genuinely compelling personal payoff and possibly aggregate-only contribution modes. Local-first storage shifts some security burden onto the engineer’s own machine.</dd>
+      </dl>
+    </article>
+
+    <!-- IDEA 12 -->
+    <article class="idea" id="i12">
+      <div class="idhead"><span class="idchip">I12</span><h3>Adopt <code>data-architecture</code> as the Data &amp; Cloud track + packaging spec</h3></div>
+      <div class="chips"><span class="chip"><b>Axis</b> Content / tooling</span><span class="chip"><b>Confidence</b> 85%</span><span class="chip"><b>Complexity</b> Low–Medium</span></div>
+      <p>The JD names "data readiness" as a top production blocker, and a finished, MIT-licensed Claude plugin
+      already teaches it. <strong>Vendor <code>wjlgatech/data-architecture</code> as FDE-os’s "Data &amp; Cloud
+      Foundations" track</strong> — Medallion Lakehouse, DV2.0/Star/3NF, Data Mesh, Azure-primary stack,
+      governance — via <code>install_skills.py</code>-style wiring rather than re-authoring five days of content.
+      Wrap each imported skill with a thin Build-It/Use-It + Deploy-It (I3) shim. Two compounding bonuses:
+      its <strong>NewLife Hospital case</strong> (200M+ FHIR records, multi-jurisdiction compliance, NPV
+      roadmap) is a turnkey I5 simulator engagement and cold-start seed for the flywheel; and its
+      <strong>schema-validated plugin-of-skills shape</strong> becomes the canonical package format the I7
+      cross-agent compiler targets and emits.</p>
+      <dl>
+        <dt>Basis</dt><dd class="basis"><span class="tag">direct:</span> grounding — data-architecture is a "ready-made Data &amp; Cloud Foundations track to plug into the FDE curriculum rather than re-author"; it is "built natively as a Claude plugin of skills … FDE-os tooling (Objective 2) could adopt/extend this plugin-of-skills packaging directly"; the JD names data readiness; <code>install_skills.py</code> already copies outputs into agent dirs.</dd>
+        <dt>Rationale</dt><dd>Highest-leverage content move available: an entire validated track for the cost of integration glue, and its case studies are pre-built realistic scenarios — exactly the non-fictional fuel I4/I5 want before a single real engagement happens, seeding the flywheel’s cold start. Standardizing on its JSON-schema bundles gives I7 a typed surface to compile and lint.</dd>
+        <dt>Downsides</dt><dd>It is Azure-primary; a GCP-targeted FDE candidate (the Google JD) needs GCP coverage the plugin only references — pairs with I3’s pattern-core/stack-adapter factoring. Vendoring a third-party repo adds an upstream dependency to track, and its skill shape may need adaptation to match FDE-os’s lesson contract.</dd>
+      </dl>
+    </article>
+  </section>
+
+  <section>
+    <h2>Rejection Summary</h2>
+    <table>
+      <thead><tr><th>#</th><th>Idea</th><th>Reason</th></tr></thead>
+      <tbody>
+        <tr><td>R1</td><td>Coverage Oracle + competency semver (scrape live-JD corpus → coverage heatmap; version competencies so stack-drift opens upgrade PRs)</td><td>Premature for an empty repo (needs a populated curriculum + dependency graph + JD corpus); bundles two features; the JD-parser half folds into I1.</td></tr>
+        <tr><td>R2</td><td>Capstone-first, just-in-time content (start inside a real engagement; pull lessons only on a blocker)</td><td>A pedagogy fork that contradicts the structured phase/lesson tree the rest of the set assumes — better explored as a brainstorm variant than shipped as a co-equal feature.</td></tr>
+        <tr><td>R3→</td><td>Alumni field-feedback loop (cut in pass 1 as premature)</td><td><strong>Promoted, not rejected.</strong> The user elevated it to Objective 3 and broadened it from "graduates" to practitioners journaling during live engagements — now I8/I10/I11. The cold-start objection is answered: capture rides on Objective-2 tooling that exists day one.</td></tr>
+        <tr><td>F1</td><td>Agent-as-student benchmark</td><td>Folded into I7 as its conformance/acceptance test rather than a standalone idea.</td></tr>
+        <tr><td>F2</td><td>Pattern-core + stack-adapter lesson factoring</td><td>Folded into I3 (same content-architecture decision); resurfaced in I12 for GCP coverage.</td></tr>
+        <tr><td>F3</td><td>JD-matched portfolio dossier + Residency-Match placement</td><td>Dossier folded into I1 as the learner-facing output; the stable-matching placement deferred (needs a job marketplace).</td></tr>
+        <tr><td>F4</td><td>Struggle-is-the-diff (git-anchored capture)</td><td>Folded into I9 as its low-PII capture mechanism.</td></tr>
+        <tr><td>F5</td><td>Scenario decay detector</td><td>Folded into I10 (the loop’s back half — freshness/decay scoring).</td></tr>
+        <tr><td>F6</td><td>Plugin-of-skills packaging spec + two-shape (site ⇄ plugin) convergence</td><td>Folded into I12 (adopt data-architecture’s schema-validated bundle as the I7 compiler’s canonical format).</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer class="composition-signal">Composed 2026-06-17 by ce-ideate, revised 2026-06-18 (added Objective 3 + cloud reference) · sources: <code>ai-engineering-from-scratch</code> repo, <code>FDE-sample-training.pdf</code> (Interview Kickstart), Google Cloud FDE-IV GenAI job description, <code>github.com/wjlgatech/data-architecture</code>. 8 frame agents → ~54 raw ideas → adversarial verification → 12 survivors across 6 axes.</footer>
+
+</div>
+</body>
+</html>
