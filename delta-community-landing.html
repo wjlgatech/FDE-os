@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delta — The home for Forward Deployed Engineers</title>
+<style>
+  :root{
+    --sand:#e7d6b8; --sand-dim:#b9a785;
+    --ink:#0e0f0c; --ink-2:#16180f;
+    --amber:#e8a13a; --amber-soft:#f2c879;
+    --bloom:#5fae6b; --bloom-soft:#8fd39a;
+    --paper:#f6efe1; --muted:#8a8775;
+    --line:rgba(231,214,184,.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:
+      radial-gradient(1100px 600px at 50% -10%, rgba(232,161,58,.16), transparent 60%),
+      radial-gradient(900px 700px at 90% 110%, rgba(95,174,107,.14), transparent 55%),
+      var(--ink);
+    color:var(--sand);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px}
+  .serif{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif}
+
+  /* nav */
+  nav{display:flex;align-items:center;justify-content:space-between;padding:26px 0}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.02em}
+  .delta-mark{
+    width:30px;height:30px;display:grid;place-items:center;border-radius:7px;
+    background:linear-gradient(150deg,var(--amber),var(--bloom));color:var(--ink);
+    font-weight:800;font-size:18px
+  }
+  .nav-cta{font-size:14px;color:var(--sand-dim);text-decoration:none;border:1px solid var(--line);
+    padding:8px 14px;border-radius:999px;transition:.2s}
+  .nav-cta:hover{color:var(--sand);border-color:var(--amber-soft)}
+
+  /* hero */
+  header.hero{padding:64px 0 40px;text-align:center}
+  .eyebrow{display:inline-block;font-size:13px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--amber-soft);border:1px solid var(--line);padding:6px 14px;border-radius:999px;margin-bottom:26px}
+  h1{font-size:clamp(38px,7vw,68px);line-height:1.04;letter-spacing:-.02em;color:var(--paper);font-weight:600}
+  h1 .grad{background:linear-gradient(120deg,var(--amber-soft),var(--bloom-soft));
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{max-width:600px;margin:24px auto 0;font-size:clamp(17px,2.4vw,21px);color:var(--sand-dim)}
+
+  /* form */
+  .signup{margin:38px auto 8px;max-width:480px;display:flex;gap:10px}
+  .signup input{flex:1;background:rgba(246,239,225,.06);border:1px solid var(--line);
+    color:var(--paper);padding:14px 16px;border-radius:12px;font-size:15px;outline:none}
+  .signup input::placeholder{color:var(--muted)}
+  .signup input:focus{border-color:var(--amber-soft)}
+  .btn{background:linear-gradient(140deg,var(--amber),var(--bloom));color:var(--ink);font-weight:700;
+    border:0;padding:14px 22px;border-radius:12px;font-size:15px;cursor:pointer;white-space:nowrap;transition:.2s}
+  .btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+  .micro{font-size:13px;color:var(--muted);margin-top:12px}
+  .alt{margin-top:18px}
+  .alt a{color:var(--sand-dim);text-decoration:none;border-bottom:1px dashed var(--line);font-size:14px}
+  .alt a:hover{color:var(--amber-soft)}
+
+  /* thesis strip */
+  .thesis{margin:64px 0;padding:34px;border:1px solid var(--line);border-radius:18px;
+    background:linear-gradient(180deg,rgba(246,239,225,.04),transparent)}
+  .thesis p{font-size:clamp(18px,2.6vw,23px);color:var(--paper)}
+  .thesis .who{margin-top:14px;color:var(--sand-dim);font-size:16px}
+
+  /* pillars */
+  .section-label{text-align:center;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .section-title{text-align:center;font-size:clamp(26px,4vw,36px);color:var(--paper);font-weight:600;margin-bottom:36px}
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{border:1px solid var(--line);border-radius:16px;padding:26px;background:rgba(22,24,15,.5);position:relative}
+  .card .ico{font-size:22px;margin-bottom:14px}
+  .card h3{color:var(--paper);font-size:19px;margin-bottom:8px;font-weight:600}
+  .card p{font-size:15px;color:var(--sand-dim)}
+  .card .tag{position:absolute;top:18px;right:18px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .card.here{border-color:rgba(95,174,107,.5);background:linear-gradient(180deg,rgba(95,174,107,.10),rgba(22,24,15,.5))}
+  .card.here .tag{color:var(--bloom-soft)}
+
+  /* gap callout */
+  .gap{margin:64px 0;text-align:center}
+  .gap h2{font-size:clamp(24px,4vw,34px);color:var(--paper);font-weight:600;line-height:1.2}
+  .gap p{max-width:620px;margin:16px auto 0;color:var(--sand-dim);font-size:17px}
+
+  /* final cta */
+  .final{text-align:center;padding:56px 0 30px}
+  .final h2{font-size:clamp(26px,4.5vw,40px);color:var(--paper);font-weight:600}
+  .final .sub{margin-top:14px}
+
+  footer{border-top:1px solid var(--line);margin-top:40px;padding:28px 0 56px;text-align:center;color:var(--muted);font-size:14px}
+  footer .iso{color:var(--bloom-soft)}
+
+  @media(max-width:680px){
+    .pillars{grid-template-columns:1fr}
+    .signup{flex-direction:column}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <div class="brand"><span class="delta-mark">Δ</span> Delta</div>
+    <a class="nav-cta" href="#join">Become a founding member</a>
+  </nav>
+
+  <header class="hero">
+    <span class="eyebrow">For Forward Deployed Engineers</span>
+    <h1>The last mile is <span class="grad">the whole race.</span></h1>
+    <p class="sub">The model is brilliant. The deployment is brutal. Delta is the home for the engineers who get on the plane, sit inside the mess, and make AI actually work where the work actually happens.</p>
+
+    <form class="signup" id="join" onsubmit="return joinDelta(event)">
+      <input type="email" id="email" placeholder="you@company.com" required aria-label="Email">
+      <button class="btn" type="submit">Join the field →</button>
+    </form>
+    <div class="micro" id="formNote">Founding members get the full essay series, the toolkit early, and a seat in the community before the doors open.</div>
+    <div class="alt"><a href="#" id="discordLink">or jump straight into the chat →</a></div>
+  </header>
+
+  <div class="thesis">
+    <p class="serif">In 2006, Palantir made a heretical bet: don't pull the problem back to headquarters — send the engineer forward, into the room where the work happens. They called the role <em>Delta</em>. Twenty years later, every AI lab is racing to copy it, and almost all of them copy it wrong.</p>
+    <p class="who">Delta is where the people who do it right find each other.</p>
+  </div>
+
+  <div class="section-label">What you're joining</div>
+  <h2 class="section-title">One field. Three doors.</h2>
+  <div class="pillars">
+    <div class="card">
+      <div class="tag">Learn</div>
+      <div class="ico">📚</div>
+      <h3>The Course</h3>
+      <p>The FDE craft, made learnable. Read the room, build the thing that works by Friday, feed it back into product. The instincts Palantir trained with a plane ticket — turned into something you can study.</p>
+    </div>
+    <div class="card">
+      <div class="tag">Build</div>
+      <div class="ico">🛠️</div>
+      <h3>The Toolkit</h3>
+      <p>The open-source stack a Delta actually deploys: MCP servers, agent skills, eval harnesses, deployment scaffolding. The “paved superhighway” half of the model — in code you can fork.</p>
+    </div>
+    <div class="card here">
+      <div class="tag">You are here</div>
+      <div class="ico">🌱</div>
+      <h3>The Community</h3>
+      <p>Where forward deployed engineers trade the real stuff: the 2 a.m. production fires, the political knife-fights, the wins nobody outside the building will ever hear about. The wisdom that only exists in the field.</p>
+    </div>
+  </div>
+
+  <div class="gap">
+    <h2>There is no home for forward deployed engineers.</h2>
+    <p>We checked. No subreddit. No Discord. No Slack. The hardest, most in-demand job in AI — and the people doing it have nowhere to gather. So we're building the lot. Found early enough that your name is on the wall.</p>
+  </div>
+
+  <div class="final">
+    <div class="section-label">Isaiah 35 · the desert blooms</div>
+    <h2>Barren processes. Generative work.</h2>
+    <p class="sub">That's the whole job, and the whole point. Come build it with us.</p>
+    <form class="signup" onsubmit="return joinDelta(event)">
+      <input type="email" id="email2" placeholder="you@company.com" required aria-label="Email">
+      <button class="btn" type="submit">Become a founding member →</button>
+    </form>
+  </div>
+
+  <footer>
+    Δ Delta — <span class="iso">the last mile is the whole race</span><br>
+    A love12xfuture project · Forward Deployed Engineering, done right.
+  </footer>
+
+</div>
+
+<script>
+  // --- WIRE THESE UP ---
+  // 1) Email capture: replace with your Substack/ConvertKit/Tally form action or API.
+  // 2) Discord/chat: paste your invite URL below.
+  var DISCORD_INVITE = "#"; // <-- paste invite link here
+  document.getElementById('discordLink').setAttribute('href', DISCORD_INVITE);
+
+  function joinDelta(e){
+    e.preventDefault();
+    var inp = e.target.querySelector('input[type=email]');
+    var email = (inp && inp.value || '').trim();
+    if(!email) return false;
+    // TODO: POST `email` to your list provider. For now, confirm + (optionally) route to chat.
+    var note = document.getElementById('formNote');
+    if(note){ note.textContent = "You're in, " + email + ". Watch your inbox — founding-member details incoming."; note.style.color = "var(--bloom-soft)"; }
+    e.target.reset();
+    return false;
+  }
+</script>
+</body>
+</html>
