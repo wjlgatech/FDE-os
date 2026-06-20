@@ -1,0 +1,35 @@
+name: link-freshness
+
+# Keep the repo's external references honest. Fails only on dead links (404/410/dns);
+# bot-walled refusals (403/429) are warnings, not failures.
+
+on:
+  schedule:
+    - cron: "0 13 * * 1"  # Mondays 13:00 UTC
+  workflow_dispatch: {}
+  pull_request:
+    paths:
+      - "README.md"
+      - "field-kits/README.md"
+      - "FDE-research-synthesis.md"
+      - "scripts/check_freshness.py"
+
+jobs:
+  freshness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Check link freshness
+        run: |
+          python3 scripts/check_freshness.py \
+            README.md field-kits/README.md FDE-research-synthesis.md \
+            --report freshness-report.md
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: freshness-report
+          path: freshness-report.md
