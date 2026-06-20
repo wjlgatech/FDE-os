@@ -19,6 +19,10 @@ All notable changes to FDE-os are recorded here. Format follows
 - **U3 — FDE knowledge spine:** `knowledge/fde-spine.graph.json` + `.html` generated from
   `FDE-research-synthesis.md` — 12 concepts (all 7 research Parts), 39 evidence nodes, 51 edges.
   _Why: the canonical spine every Delta post and course lesson draws from._
+- **U4 — `true-scorer` skill:** the TRUE 0–3 rubric as a runnable publish gate
+  (`skills/true-scorer/`, 8 passing tests). Deterministic gate (total ≥ 10 AND every letter ≥ 2)
+  + structural heuristic baseline an agent refines; scores Post #1 at 12/12. _Why: no Delta post
+  ships un-scored (R2)._
 
 ### Investigated / Rejected
 - **`living-repo` as the vault knowledge-graph builder** — rejected: its parser is GFM-table-only
