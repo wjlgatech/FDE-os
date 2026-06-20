@@ -12,6 +12,13 @@ All notable changes to FDE-os are recorded here. Format follows
   self-contained link-freshness CI (`scripts/check_freshness.py` +
   `.github/workflows/freshness.yml`) that fails only on 404/410/dns-failure and warns on
   bot-walled (403/429) links. _Why: keep the repo's external references honest automatically._
+- **U2 — `knowledgefy` skill:** local-first, offline, deterministic prose-vault → knowledge
+  spine (`skills/knowledgefy/`, stdlib only, 6 passing tests). Headings → `concept` nodes,
+  inline + bare-URL citations → `evidence` nodes; `graph.json` + self-contained `file://` HTML.
+  _Why: the verified gap living-repo (table-only) and kgfy (needs engine) leave._
+- **U3 — FDE knowledge spine:** `knowledge/fde-spine.graph.json` + `.html` generated from
+  `FDE-research-synthesis.md` — 12 concepts (all 7 research Parts), 39 evidence nodes, 51 edges.
+  _Why: the canonical spine every Delta post and course lesson draws from._
 
 ### Investigated / Rejected
 - **`living-repo` as the vault knowledge-graph builder** — rejected: its parser is GFM-table-only
