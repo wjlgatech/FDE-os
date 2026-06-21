@@ -8,6 +8,8 @@ All notable changes to FDE-os are recorded here. Format follows
 ### Added
 - Staged roadmap plan: `docs/plans/2026-06-20-001-feat-fde-os-staged-roadmap-plan.md`
   (6 stages, Delta-content-first spine), reviewed by 6 persona agents.
+- **`AGENTS.md`** — agent-facing guide (repo map, native skills, conventions, stage gates);
+  `README.md` synced with what Stage 0 shipped + a repository-structure table.
 - **U1 — repo spine + CI:** `skills/`, `course/`, `flywheel/`, `knowledge/` homes;
   self-contained link-freshness CI (`scripts/check_freshness.py` +
   `.github/workflows/freshness.yml`) that fails only on 404/410/dns-failure and warns on

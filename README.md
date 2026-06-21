@@ -17,10 +17,25 @@ FDE-os has **three objectives**:
 
 ## Status
 
-Greenfield. The first artifact is a ranked, critiqued **ideation document** — 12 surviving
-directions across 6 axes, each with a verifiable basis and known downsides.
+**Stage 0 shipped** (the production foundation). A reviewed six-stage roadmap drives the build:
+[`docs/plans/2026-06-20-001-feat-fde-os-staged-roadmap-plan.md`](docs/plans/2026-06-20-001-feat-fde-os-staged-roadmap-plan.md)
+(Delta-content-first; each post ships a Field Kit + a war-story prompt, so writing the series
+builds the toolkit and seeds the community).
 
-➡️ **[docs/ideation/2026-06-17-fde-os-ideation.html](docs/ideation/2026-06-17-fde-os-ideation.html)** — open in a browser.
+What's live now:
+
+- **`skills/knowledgefy`** — local-first, offline, deterministic: a prose research vault → a
+  navigable knowledge spine (`graph.json` + self-contained `file://` HTML). No engine, no network.
+- **`skills/true-scorer`** — the TRUE 0–3 rubric as a runnable publish gate (total ≥ 10 AND every
+  letter ≥ 2). No Delta post ships un-scored.
+- **`knowledge/fde-spine.*`** — the canonical FDE knowledge spine built from the research vault
+  (12 concepts across all 7 research threads, 39 evidence nodes, 51 edges).
+- **Link-freshness CI** (`scripts/check_freshness.py` + `.github/workflows/freshness.yml`) — keeps
+  the repo's external references honest (fails only on dead links; bot-walls are warnings).
+
+The discovery artifact that started it all — a ranked, critiqued **ideation document** (12
+directions across 6 axes) — is at
+➡️ **[docs/ideation/2026-06-17-fde-os-ideation.html](docs/ideation/2026-06-17-fde-os-ideation.html)**.
 
 ## Delta — the content flywheel
 
@@ -54,9 +69,22 @@ Because each article ships a Field Kit, **writing the series builds the toolkit*
 - **Google Cloud Forward Deployed Engineer (GenAI)** — a target-outcome job description the course validates against.
 - **[wjlgatech/data-architecture](https://github.com/wjlgatech/data-architecture)** — the cloud/data track (medallion lakehouse, governance, FHIR case studies) and a plugin-of-skills packaging reference.
 
+## Repository structure
+
+| Path | What it is |
+|---|---|
+| `Delta-*.md`, `FDE-research-synthesis.md` | Content artifacts + the cited research vault (the spine's input) |
+| `field-kits/` | Forkable Field Kits — one per Delta post (the "R" in TRUE) |
+| `skills/` | FDE-os-native agent skills — built only where existing skills leave a gap (`knowledgefy`, `true-scorer`; `field-kit-generator` lands in Stage 2) |
+| `knowledge/` | Generated knowledge spine (`fde-spine.graph.json` + `.html`) |
+| `flywheel/` | Objective-3 infra + content-production runbook/metrics (mostly Stage 1–3) |
+| `course/` | Objective-1 JD-validated course (Stage 4 — reserved home, not yet built) |
+| `scripts/` | Repo tooling (`check_freshness.py`) |
+| `docs/plans/`, `docs/ideation/` | The roadmap plan and the originating ideation doc |
+
 ## What's next
 
-The ideation doc is a discovery artifact, not a plan. The next step is to commit one direction to a
-requirements doc (`ce-brainstorm`), then plan and build it. Suggested first build order for the
-flywheel: privacy-redacted capture (I9) + the engineer-owned portfolio incentive (I11) → the
-field-journal hub (I8) → the pain-to-ticket back half (I10).
+Stage 0 (foundation) is shipped. **Stage 1 — Prove the Loop**: stand up the owned hub (email list
++ Delta chat), publish Post #1 across the spine (gated by `true-scorer`), and instrument the
+funnel. Stages 3–5 (flywheel infra, course, cross-agent compiler) are **gated on Stage-2
+traction** (Gate B) — see the roadmap plan's "Stage Gates & Kill Signals".
