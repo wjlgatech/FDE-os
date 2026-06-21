@@ -8,6 +8,9 @@ All notable changes to FDE-os are recorded here. Format follows
 ### Added
 - Staged roadmap plan: `docs/plans/2026-06-20-001-feat-fde-os-staged-roadmap-plan.md`
   (6 stages, Delta-content-first spine), reviewed by 6 persona agents.
+- **`STATUS.md`** — the one-glance "where are we now" board (done / blocked / next, keyed by U-ID
+  + PR). Establishes the 3-layer convention: CHANGELOG = what shipped, plan = decisions (immutable),
+  STATUS = the glance. _Why: track progress without turning the plan into a drift-prone checklist._
 - **U8 — `field-kit-generator` skill:** scaffolds + lints a Delta Field Kit to convention
   (Field Kit menu, names-source, marks-RISKS, folder layout); delegates synthesis to `skillfy`
   (thin wrapper, KTD5). 9 passing tests; lint passes the real Post #1 kit and fails malformed

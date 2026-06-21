@@ -90,7 +90,11 @@ Because each article ships a Field Kit, **writing the series builds the toolkit*
 
 ## What's next
 
-Stage 0 (foundation) is shipped. **Stage 1 — Prove the Loop**: stand up the owned hub (email list
-+ Delta chat), publish Post #1 across the spine (gated by `true-scorer`), and instrument the
-funnel. Stages 3–5 (flywheel infra, course, cross-agent compiler) are **gated on Stage-2
-traction** (Gate B) — see the roadmap plan's "Stage Gates & Kill Signals".
+**Where are we right now? → [`STATUS.md`](STATUS.md)** — the one-glance done / blocked / next board.
+(The roadmap plan holds the *decisions* and stays immutable; `CHANGELOG.md` is the full build log;
+`STATUS.md` is the glance. Progress lives in git, never as checkboxes in the plan.)
+
+In short: Stage 0 (foundation) is shipped and most of Stage 1's *code* is in. **Stage 1 — Prove the
+Loop** now needs the go-live ops (publish Post #1, wire the Kit form) before **Gate A** can be read.
+Stages 3–5 are **gated on Stage-2 traction** (Gate B) — see the roadmap plan's "Stage Gates & Kill
+Signals".

@@ -49,6 +49,7 @@ skill only when a spike shows the existing ones genuinely fall short (see KTD3 i
 - **Branches:** never commit to `main`. One branch per stage (`feat/fde-os-stage-N`), scoped PRs. After a squash-merge, rebuild the next stage's branch fresh from `main` (cherry-picking replayed commits fights the squash).
 - **Secrets:** the owned-hub provider (ConvertKit/Kit) form id / keys live in env or the form's public action URL — never commit a secret. `.gitignore` excludes `.env`.
 - **Docs sync (required, same change):** any feature change updates `CHANGELOG.md` (with an `Investigated / Rejected` note when an approach was killed), `README.md`, and this `AGENTS.md`. A plan doc does not substitute for the README.
+- **Progress tracking:** the roadmap plan is a **decision artifact — never edit it to record progress** (no `[x]` boxes; it drifts and creates merge noise). Three layers instead: `CHANGELOG.md` = what shipped, the plan = decisions/U-IDs, **`STATUS.md` = the one-glance "where are we now"**. When a PR lands a unit, move its row in `STATUS.md` to Done with the PR number; git stays the source of truth.
 
 ## Stage gates
 
