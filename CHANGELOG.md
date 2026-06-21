@@ -52,11 +52,13 @@ All notable changes to FDE-os are recorded here. Format follows
   `__pycache__/*.pyc` files that slipped into the Stage 0 merge.
 
 ### Fixed
-- **Two unverifiable citations in the research vault** — the new freshness CI caught two
-  `newsroom.accenture.com/news/2026/...` URLs returning 404 (backing an Accenture-FDE-practices
-  claim with quotes + a 32% stat). Flagged inline as SOURCES UNVERIFIED (not deleted, no invented
-  replacement) and regenerated the spine (evidence 39→37). _Why: a dead/possibly-fabricated
-  citation in the vault would propagate into Delta posts, violating R4 (no un-sourced facts)._
+- **Two truncated citations in the research vault** — the freshness CI flagged two
+  `newsroom.accenture.com/news/2026/...` URLs as 404. Web-verified the underlying claim: it is
+  **real and well-sourced** (Accenture+Microsoft FDE Practice, Mar 18 2026; ServiceNow+Accenture
+  FDE Program, Knowledge 2026 May 6 2026 — corroborated by Businesswire/Nasdaq/ServiceNow). Root
+  cause was a URL **truncated mid-slug with `...`** in the vault, not a bad claim. Restored the
+  full canonical URLs (both 200 OK) and regenerated the spine (evidence back to 39). _Why: R4 —
+  keep the vault's facts live-sourced, but don't cut a true claim over a typo'd link._
 
 ### Investigated / Rejected
 - **`living-repo` as the vault knowledge-graph builder** — rejected: its parser is GFM-table-only
