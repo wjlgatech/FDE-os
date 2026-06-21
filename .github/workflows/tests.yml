@@ -1,0 +1,50 @@
+name: tests
+
+# Runs the skill test suites + the Field Kit convention lint on every push/PR.
+# Deterministic and offline — no network, no engine (matches the skills' design).
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    paths:
+      - "skills/**"
+      - "field-kits/**"
+      - ".github/workflows/tests.yml"
+  workflow_dispatch: {}
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run all skill test suites
+        run: |
+          # Discover every skills/<name>/tests dir and run its unittest suite.
+          # Fail the job if any suite fails; report which.
+          set -e
+          found=0
+          for tdir in skills/*/tests; do
+            [ -d "$tdir" ] || continue
+            found=1
+            echo "::group::$tdir"
+            python3 -m unittest discover -s "$tdir" -p 'test_*.py' -v
+            echo "::endgroup::"
+          done
+          if [ "$found" = "0" ]; then
+            echo "No skill test suites found — failing so a missing-tests regression is visible."
+            exit 1
+          fi
+
+  field-kit-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Lint Field Kits against the convention
+        run: python3 skills/field-kit-generator/scripts/field_kit_generator.py lint field-kits/
