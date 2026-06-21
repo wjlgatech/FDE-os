@@ -43,7 +43,7 @@ skill only when a spike shows the existing ones genuinely fall short (see KTD3 i
 
 ## Conventions
 
-- **Tests:** stdlib `unittest`, per skill. Run: `python3 -m unittest discover -s skills/<name>/tests -p 'test_*.py'`. Python 3.11. No third-party deps — keep skills stdlib-only and offline-by-default.
+- **Tests:** stdlib `unittest`, per skill. Run: `python3 -m unittest discover -s skills/<name>/tests -p 'test_*.py'`. Python 3.11. No third-party deps — keep skills stdlib-only and offline-by-default. **CI (`.github/workflows/tests.yml`) auto-discovers every `skills/*/tests` suite + runs the Field Kit lint on each push/PR** — a new skill is covered automatically if it follows the `skills/<name>/tests/test_*.py` layout.
 - **Determinism:** generated artifacts (the spine) must be byte-reproducible (sorted keys, stable ids). There is a test for this; don't break it.
 - **Security:** anything touching field/customer data (Stage 3+) is born-clean — redact at capture, allow-list what may persist, fail-closed. Never route journal/portfolio data into an external engine.
 - **Branches:** never commit to `main`. One branch per stage (`feat/fde-os-stage-N`), scoped PRs. After a squash-merge, rebuild the next stage's branch fresh from `main` (cherry-picking replayed commits fights the squash).

@@ -8,6 +8,9 @@ All notable changes to FDE-os are recorded here. Format follows
 ### Added
 - Staged roadmap plan: `docs/plans/2026-06-20-001-feat-fde-os-staged-roadmap-plan.md`
   (6 stages, Delta-content-first spine), reviewed by 6 persona agents.
+- **Test CI** (`.github/workflows/tests.yml`) — auto-discovers and runs every `skills/*/tests`
+  suite + the Field Kit convention lint on each push/PR. _Why: 23 tests existed but nothing ran
+  them automatically; closes U8's "wire the lint into CI" loose end and the no-test-CI gap._
 - **`STATUS.md`** — the one-glance "where are we now" board (done / blocked / next, keyed by U-ID
   + PR). Establishes the 3-layer convention: CHANGELOG = what shipped, plan = decisions (immutable),
   STATUS = the glance. _Why: track progress without turning the plan into a drift-prone checklist._

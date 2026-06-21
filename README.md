@@ -33,8 +33,9 @@ What's live now:
   Stage 2 — the content (posts 2–4) stays gated on Stage-2 traction._
 - **`knowledge/fde-spine.*`** — the canonical FDE knowledge spine built from the research vault
   (12 concepts across all 7 research threads, 39 evidence nodes, 51 edges).
-- **Link-freshness CI** (`scripts/check_freshness.py` + `.github/workflows/freshness.yml`) — keeps
-  the repo's external references honest (fails only on dead links; bot-walls are warnings).
+- **CI** — `tests.yml` runs every skill's test suite + the Field Kit convention lint on each
+  push/PR; `freshness.yml` (`scripts/check_freshness.py`) keeps external references honest (fails
+  only on dead links; bot-walls are warnings).
 - **Owned-hub wiring + metrics** (Stage 1 infra) — `delta-community-landing.html` posts to a
   ConvertKit/Kit form (no client-side secret; GDPR/unsubscribe baseline), and `flywheel/metrics.md`
   holds the per-post funnel plus the **Gate A / Gate B** traction thresholds.
