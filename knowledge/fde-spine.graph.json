@@ -1,8 +1,8 @@
 {
   "counts": {
     "concepts": 12,
-    "edges": 51,
-    "evidence": 39
+    "edges": 49,
+    "evidence": 37
   },
   "edges": [
     {
@@ -108,16 +108,6 @@
     {
       "source": "part-4-analysts-academics-the-economic-engine-underneath",
       "target": "ev-mckinsey-com-r-the-ai-era",
-      "type": "cites"
-    },
-    {
-      "source": "part-4-analysts-academics-the-economic-engine-underneath",
-      "target": "ev-newsroom-accenture-com-ing-practice",
-      "type": "cites"
-    },
-    {
-      "source": "part-4-analysts-academics-the-economic-engine-underneath",
-      "target": "ev-newsroom-accenture-com-ring-program",
       "type": "cites"
     },
     {
@@ -527,20 +517,6 @@
       "source_file": "",
       "type": "evidence",
       "url": "https://newsletter.pragmaticengineer.com/p/forward-deployed-engineers"
-    },
-    {
-      "id": "ev-newsroom-accenture-com-ing-practice",
-      "label": "newsroom.accenture.com",
-      "source_file": "",
-      "type": "evidence",
-      "url": "https://newsroom.accenture.com/news/2026/accenture-launches-microsoft-forward-deployed-engineering-practice"
-    },
-    {
-      "id": "ev-newsroom-accenture-com-ring-program",
-      "label": "newsroom.accenture.com",
-      "source_file": "",
-      "type": "evidence",
-      "url": "https://newsroom.accenture.com/news/2026/servicenow-and-accenture-launch-forward-deployed-engineering-program"
     },
     {
       "id": "ev-openai-com-shington-dc",
