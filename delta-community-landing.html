@@ -165,7 +165,9 @@
 
   <footer>
     Δ Delta — <span class="iso">the last mile is the whole race</span><br>
-    A love12xfuture project · Forward Deployed Engineering, done right.
+    A love12xfuture project · Forward Deployed Engineering, done right.<br>
+    <span class="iso">We email you the series and nothing else. Unsubscribe any time — one click in
+    every email. We never share your address. (GDPR / CAN-SPAM compliant.)</span>
   </footer>
 
 </div>
@@ -177,15 +179,43 @@
   var DISCORD_INVITE = "#"; // <-- paste invite link here
   document.getElementById('discordLink').setAttribute('href', DISCORD_INVITE);
 
+  // Owned hub = the email list. Provider: ConvertKit / Kit.
+  // We POST to the PUBLIC form-action endpoint, which accepts an email client-side WITHOUT
+  // exposing the API secret (correct for a static page with no backend). Drop in your form id:
+  var KIT_FORM_ID = "REPLACE_WITH_KIT_FORM_ID";
+  var KIT_ENDPOINT = "https://app.kit.com/forms/" + KIT_FORM_ID + "/subscriptions";
+
+  function setNote(msg, ok){
+    var note = document.getElementById('formNote');
+    if(note){ note.textContent = msg; note.style.color = ok ? "var(--bloom-soft)" : "var(--muted)"; }
+  }
+
   function joinDelta(e){
     e.preventDefault();
     var inp = e.target.querySelector('input[type=email]');
     var email = (inp && inp.value || '').trim();
     if(!email) return false;
-    // TODO: POST `email` to your list provider. For now, confirm + (optionally) route to chat.
-    var note = document.getElementById('formNote');
-    if(note){ note.textContent = "You're in, " + email + ". Watch your inbox — founding-member details incoming."; note.style.color = "var(--bloom-soft)"; }
-    e.target.reset();
+    var btn = e.target.querySelector('button[type=submit]');
+    if(btn){ btn.disabled = true; }
+
+    if(KIT_FORM_ID === "REPLACE_WITH_KIT_FORM_ID"){
+      // Not yet configured — confirm locally so the page is testable before go-live.
+      setNote("You're in, " + email + ". (Provider not wired yet — set KIT_FORM_ID.)", true);
+      e.target.reset(); if(btn){ btn.disabled = false; } return false;
+    }
+
+    var body = new FormData();
+    body.append("email_address", email);
+    fetch(KIT_ENDPOINT, { method: "POST", body: body, headers: { "Accept": "application/json" } })
+      .then(function(r){ return r.ok ? r.json() : Promise.reject(r.status); })
+      .then(function(){
+        setNote("You're in, " + email + ". Watch your inbox — confirm your email to get founding-member details.", true);
+        e.target.reset();
+      })
+      .catch(function(){
+        setNote("Something went wrong — try again, or email us directly. Your address wasn't saved.", false);
+      })
+      .finally(function(){ if(btn){ btn.disabled = false; } });
     return false;
   }
 </script>

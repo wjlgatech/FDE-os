@@ -18,7 +18,7 @@ prompt (seeds Objective 3). Content production *is* product production.
 |---|---|
 | `skills/` | FDE-os-native skills. Built only where existing skills leave a verified gap. Each has `SKILL.md` + (where runnable) `scripts/` + `tests/`. |
 | `knowledge/` | Generated spine (`fde-spine.*`). Regenerate with `knowledgefy`; don't hand-edit. |
-| `flywheel/` | Objective-3 infra + production runbook/metrics. Security-sensitive (Stage 3 handles real customer data, born-clean redaction). |
+| `flywheel/` | Objective-3 infra + production runbook/metrics. `metrics.md` is the per-post funnel + the Gate A/B thresholds (the only owned metric is email conversions). Security-sensitive (Stage 3 handles real customer data, born-clean redaction). |
 | `course/` | Objective-1 course. Stage 4 — reserved, gated on Stage-2 traction. |
 | `field-kits/` | Forkable Field Kits, one per post. Convention: `field-kits/<slug>/SKILL.md`, names its source article, marks unknowns as RISKS (never invent). |
 | `scripts/` | Repo tooling (`check_freshness.py`). |
@@ -43,7 +43,8 @@ skill only when a spike shows the existing ones genuinely fall short (see KTD3 i
 - **Tests:** stdlib `unittest`, per skill. Run: `python3 -m unittest discover -s skills/<name>/tests -p 'test_*.py'`. Python 3.11. No third-party deps — keep skills stdlib-only and offline-by-default.
 - **Determinism:** generated artifacts (the spine) must be byte-reproducible (sorted keys, stable ids). There is a test for this; don't break it.
 - **Security:** anything touching field/customer data (Stage 3+) is born-clean — redact at capture, allow-list what may persist, fail-closed. Never route journal/portfolio data into an external engine.
-- **Branches:** never commit to `main`. One branch per stage (`feat/fde-os-stage-N`), stacked. PRs are per-stage and scoped.
+- **Branches:** never commit to `main`. One branch per stage (`feat/fde-os-stage-N`), scoped PRs. After a squash-merge, rebuild the next stage's branch fresh from `main` (cherry-picking replayed commits fights the squash).
+- **Secrets:** the owned-hub provider (ConvertKit/Kit) form id / keys live in env or the form's public action URL — never commit a secret. `.gitignore` excludes `.env`.
 - **Docs sync (required, same change):** any feature change updates `CHANGELOG.md` (with an `Investigated / Rejected` note when an approach was killed), `README.md`, and this `AGENTS.md`. A plan doc does not substitute for the README.
 
 ## Stage gates

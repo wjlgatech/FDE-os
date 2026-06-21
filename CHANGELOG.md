@@ -25,6 +25,19 @@ All notable changes to FDE-os are recorded here. Format follows
   (`skills/true-scorer/`, 8 passing tests). Deterministic gate (total ≥ 10 AND every letter ≥ 2)
   + structural heuristic baseline an agent refines; scores Post #1 at 12/12. _Why: no Delta post
   ships un-scored (R2)._
+- **U5 — owned-hub wiring (code):** `delta-community-landing.html` CTA now POSTs to ConvertKit/Kit's
+  public form-action endpoint (no secret exposed client-side); async success/error handling +
+  GDPR/unsubscribe footer note. Form id is a stub (`KIT_FORM_ID`) pending go-live; unconfigured
+  state confirms locally so the page stays testable. _Why: own the list (KTD2); subscriber PII
+  needs a compliant baseline (R3)._
+- **U7 — pipeline metrics ledger:** `flywheel/metrics.md` — per-post funnel (reach, saves,
+  read-through, owned-list conversions, kit forks, war-story replies, kit-usefulness) plus the
+  encoded **Gate A** (Stage 1→2) and **Gate B** (Stage 2→3/4) thresholds. _Why: make the
+  traction-funds-heavy-stages bet falsifiable, not automatic._
+
+### Changed
+- Added `.gitignore` (Python `__pycache__`/`*.pyc`, OS cruft, `.env` secrets) and untracked the
+  `__pycache__/*.pyc` files that slipped into the Stage 0 merge.
 
 ### Investigated / Rejected
 - **`living-repo` as the vault knowledge-graph builder** — rejected: its parser is GFM-table-only
