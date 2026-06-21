@@ -1,0 +1,625 @@
+{
+  "counts": {
+    "concepts": 12,
+    "edges": 51,
+    "evidence": 39
+  },
+  "edges": [
+    {
+      "source": "part-1-the-origin-palantir-s-delta-highest-confidence-section",
+      "target": "ev-blog-palantir-com-951cb59a5a96",
+      "type": "cites"
+    },
+    {
+      "source": "part-1-the-origin-palantir-s-delta-highest-confidence-section",
+      "target": "ev-blog-palantir-com-ad44c2a6e87",
+      "type": "cites"
+    },
+    {
+      "source": "part-1-the-origin-palantir-s-delta-highest-confidence-section",
+      "target": "ev-nabeelqu-co-on-palantir",
+      "type": "cites"
+    },
+    {
+      "source": "part-1-the-origin-palantir-s-delta-highest-confidence-section",
+      "target": "ev-newsletter-pragmaticengineer-com-ed-engineers",
+      "type": "cites"
+    },
+    {
+      "source": "part-1-the-origin-palantir-s-delta-highest-confidence-section",
+      "target": "ev-shyamsankar-com-ar-com-about",
+      "type": "cites"
+    },
+    {
+      "source": "part-1-the-origin-palantir-s-delta-highest-confidence-section",
+      "target": "ev-ted-com-shyam-sankar",
+      "type": "cites"
+    },
+    {
+      "source": "part-1-the-origin-palantir-s-delta-highest-confidence-section",
+      "target": "ev-tedmabrey-substack-com-isnt-an-fde",
+      "type": "cites"
+    },
+    {
+      "source": "part-2-the-ai-labs-what-they-actually-post",
+      "target": "ev-google-com-google-cloud",
+      "type": "cites"
+    },
+    {
+      "source": "part-2-the-ai-labs-what-they-actually-post",
+      "target": "ev-job-boards-greenhouse-io-jobs-6784515",
+      "type": "cites"
+    },
+    {
+      "source": "part-2-the-ai-labs-what-they-actually-post",
+      "target": "ev-job-boards-greenhouse-io-s-4985877008",
+      "type": "cites"
+    },
+    {
+      "source": "part-2-the-ai-labs-what-they-actually-post",
+      "target": "ev-openai-com-shington-dc",
+      "type": "cites"
+    },
+    {
+      "source": "part-2-the-ai-labs-what-they-actually-post",
+      "target": "ev-podcasts-apple-com-000726402888",
+      "type": "cites"
+    },
+    {
+      "source": "part-2-the-ai-labs-what-they-actually-post",
+      "target": "ev-youtube-com-yltsqbzkg2s",
+      "type": "cites"
+    },
+    {
+      "source": "part-3-yc-founders-fde-as-go-to-market-wedge",
+      "target": "ev-a16z-com-led-growth",
+      "type": "cites"
+    },
+    {
+      "source": "part-3-yc-founders-fde-as-go-to-market-wedge",
+      "target": "ev-build-a16z-com-lowships-fde",
+      "type": "cites"
+    },
+    {
+      "source": "part-3-yc-founders-fde-as-go-to-market-wedge",
+      "target": "ev-ycombinator-com-h-bob-mcgrew",
+      "type": "cites"
+    },
+    {
+      "source": "part-3-yc-founders-fde-as-go-to-market-wedge",
+      "target": "ev-youtu-be-zyw-ya0k3xo",
+      "type": "cites"
+    },
+    {
+      "source": "part-4-analysts-academics-the-economic-engine-underneath",
+      "target": "ev-bain-com-report-2025",
+      "type": "cites"
+    },
+    {
+      "source": "part-4-analysts-academics-the-economic-engine-underneath",
+      "target": "ev-bcg-com-ech-services",
+      "type": "cites"
+    },
+    {
+      "source": "part-4-analysts-academics-the-economic-engine-underneath",
+      "target": "ev-deloitte-com-neering-html",
+      "type": "cites"
+    },
+    {
+      "source": "part-4-analysts-academics-the-economic-engine-underneath",
+      "target": "ev-mckinsey-com-r-the-ai-era",
+      "type": "cites"
+    },
+    {
+      "source": "part-4-analysts-academics-the-economic-engine-underneath",
+      "target": "ev-newsroom-accenture-com-ing-practice",
+      "type": "cites"
+    },
+    {
+      "source": "part-4-analysts-academics-the-economic-engine-underneath",
+      "target": "ev-newsroom-accenture-com-ring-program",
+      "type": "cites"
+    },
+    {
+      "source": "part-4-analysts-academics-the-economic-engine-underneath",
+      "target": "ev-sequoiacap-com-ew-software",
+      "type": "cites"
+    },
+    {
+      "source": "part-5-the-debate-don-t-smooth-this-over",
+      "target": "ev-bloomberry-com-t-i-learned",
+      "type": "cites"
+    },
+    {
+      "source": "part-5-the-debate-don-t-smooth-this-over",
+      "target": "ev-news-ycombinator-com-id-47542553",
+      "type": "cites"
+    },
+    {
+      "source": "part-5-the-debate-don-t-smooth-this-over",
+      "target": "ev-news-ycombinator-com-id-47951082",
+      "type": "cites"
+    },
+    {
+      "source": "part-5-the-debate-don-t-smooth-this-over",
+      "target": "ev-realfast-ai-ard-deployed",
+      "type": "cites"
+    },
+    {
+      "source": "part-6-open-source-repos-infra-tooling",
+      "target": "ev-github-com-col-registry",
+      "type": "cites"
+    },
+    {
+      "source": "part-6-open-source-repos-infra-tooling",
+      "target": "ev-github-com-fde-roadmap",
+      "type": "cites"
+    },
+    {
+      "source": "part-6-open-source-repos-infra-tooling",
+      "target": "ev-github-com-mcp-servers",
+      "type": "cites"
+    },
+    {
+      "source": "part-6-open-source-repos-infra-tooling",
+      "target": "ev-github-com-ocol-servers",
+      "type": "cites"
+    },
+    {
+      "source": "part-6-open-source-repos-infra-tooling",
+      "target": "ev-github-com-owin-fastmcp",
+      "type": "cites"
+    },
+    {
+      "source": "part-6-open-source-repos-infra-tooling",
+      "target": "ev-github-com-use-langfuse",
+      "type": "cites"
+    },
+    {
+      "source": "part-7-education-community",
+      "target": "ev-adasci-org-ngineer-cfde",
+      "type": "cites"
+    },
+    {
+      "source": "part-7-education-community",
+      "target": "ev-build-a16z-com-lowships-fde",
+      "type": "cites"
+    },
+    {
+      "source": "part-7-education-community",
+      "target": "ev-claudecertifications-com-cations-com",
+      "type": "cites"
+    },
+    {
+      "source": "part-7-education-community",
+      "target": "ev-fde-academy-fde-academy",
+      "type": "cites"
+    },
+    {
+      "source": "part-7-education-community",
+      "target": "ev-futurense-com-engineering",
+      "type": "cites"
+    },
+    {
+      "source": "part-7-education-community",
+      "target": "ev-sundeepteki-org-ngineer-html",
+      "type": "cites"
+    },
+    {
+      "source": "contrarian-angles-for-the-post-arguments-not-verified-facts",
+      "target": "the-forward-deployed-engineer-research-synthesis",
+      "type": "part_of"
+    },
+    {
+      "source": "part-1-the-origin-palantir-s-delta-highest-confidence-section",
+      "target": "the-forward-deployed-engineer-research-synthesis",
+      "type": "part_of"
+    },
+    {
+      "source": "part-2-the-ai-labs-what-they-actually-post",
+      "target": "the-forward-deployed-engineer-research-synthesis",
+      "type": "part_of"
+    },
+    {
+      "source": "part-3-yc-founders-fde-as-go-to-market-wedge",
+      "target": "the-forward-deployed-engineer-research-synthesis",
+      "type": "part_of"
+    },
+    {
+      "source": "part-4-analysts-academics-the-economic-engine-underneath",
+      "target": "the-forward-deployed-engineer-research-synthesis",
+      "type": "part_of"
+    },
+    {
+      "source": "part-5-the-debate-don-t-smooth-this-over",
+      "target": "the-forward-deployed-engineer-research-synthesis",
+      "type": "part_of"
+    },
+    {
+      "source": "part-6-open-source-repos-infra-tooling",
+      "target": "the-forward-deployed-engineer-research-synthesis",
+      "type": "part_of"
+    },
+    {
+      "source": "part-7-education-community",
+      "target": "the-forward-deployed-engineer-research-synthesis",
+      "type": "part_of"
+    },
+    {
+      "source": "source-reliability-ledger",
+      "target": "the-forward-deployed-engineer-research-synthesis",
+      "type": "part_of"
+    },
+    {
+      "source": "tl-dr-what-the-evidence-actually-says",
+      "target": "the-forward-deployed-engineer-research-synthesis",
+      "type": "part_of"
+    },
+    {
+      "source": "tweet-length-summary-options",
+      "target": "the-forward-deployed-engineer-research-synthesis",
+      "type": "part_of"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "contrarian-angles-for-the-post-arguments-not-verified-facts",
+      "label": "Contrarian angles for the post (arguments, not verified facts)",
+      "level": 2,
+      "source_file": "",
+      "type": "concept"
+    },
+    {
+      "id": "part-1-the-origin-palantir-s-delta-highest-confidence-section",
+      "label": "Part 1 — The origin: Palantir's \"Delta\" (highest-confidence section)",
+      "level": 2,
+      "source_file": "",
+      "type": "concept"
+    },
+    {
+      "id": "part-2-the-ai-labs-what-they-actually-post",
+      "label": "Part 2 — The AI labs (what they actually post)",
+      "level": 2,
+      "source_file": "",
+      "type": "concept"
+    },
+    {
+      "id": "part-3-yc-founders-fde-as-go-to-market-wedge",
+      "label": "Part 3 — YC & founders (FDE as go-to-market wedge)",
+      "level": 2,
+      "source_file": "",
+      "type": "concept"
+    },
+    {
+      "id": "part-4-analysts-academics-the-economic-engine-underneath",
+      "label": "Part 4 — Analysts & academics (the economic engine underneath)",
+      "level": 2,
+      "source_file": "",
+      "type": "concept"
+    },
+    {
+      "id": "part-5-the-debate-don-t-smooth-this-over",
+      "label": "Part 5 — The debate (don't smooth this over)",
+      "level": 2,
+      "source_file": "",
+      "type": "concept"
+    },
+    {
+      "id": "part-6-open-source-repos-infra-tooling",
+      "label": "Part 6 — Open-source repos, infra & tooling",
+      "level": 2,
+      "source_file": "",
+      "type": "concept"
+    },
+    {
+      "id": "part-7-education-community",
+      "label": "Part 7 — Education & community",
+      "level": 2,
+      "source_file": "",
+      "type": "concept"
+    },
+    {
+      "id": "source-reliability-ledger",
+      "label": "Source reliability ledger",
+      "level": 2,
+      "source_file": "",
+      "type": "concept"
+    },
+    {
+      "id": "the-forward-deployed-engineer-research-synthesis",
+      "label": "The Forward Deployed Engineer: Research Synthesis",
+      "level": 1,
+      "source_file": "",
+      "type": "concept"
+    },
+    {
+      "id": "tl-dr-what-the-evidence-actually-says",
+      "label": "TL;DR — what the evidence actually says",
+      "level": 2,
+      "source_file": "",
+      "type": "concept"
+    },
+    {
+      "id": "tweet-length-summary-options",
+      "label": "Tweet-length summary options",
+      "level": 2,
+      "source_file": "",
+      "type": "concept"
+    },
+    {
+      "id": "ev-a16z-com-led-growth",
+      "label": "a16z.com",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://a16z.com/services-led-growth/"
+    },
+    {
+      "id": "ev-adasci-org-ngineer-cfde",
+      "label": "adasci.org",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://adasci.org/certifications/certified-forward-deployed-engineer-cfde"
+    },
+    {
+      "id": "ev-bain-com-report-2025",
+      "label": "bain.com",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://www.bain.com/insights/will-agentic-ai-disrupt-saas-technology-report-2025/"
+    },
+    {
+      "id": "ev-bcg-com-ech-services",
+      "label": "bcg.com",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://www.bcg.com/publications/2026/the-200-billion-dollar-ai-opportunity-in-tech-services"
+    },
+    {
+      "id": "ev-blog-palantir-com-951cb59a5a96",
+      "label": "blog.palantir.com",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://blog.palantir.com/a-day-in-the-life-of-a-palantir-deployment-strategist-951cb59a5a96"
+    },
+    {
+      "id": "ev-blog-palantir-com-ad44c2a6e87",
+      "label": "blog.palantir.com",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://blog.palantir.com/dev-versus-delta-demystifying-engineering-roles-at-palantir-ad44c2a6e87"
+    },
+    {
+      "id": "ev-bloomberry-com-t-i-learned",
+      "label": "bloomberry.com",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://bloomberry.com/blog/i-analyzed-1000-forward-deployed-engineer-jobs-what-i-learned/"
+    },
+    {
+      "id": "ev-build-a16z-com-lowships-fde",
+      "label": "build.a16z.com",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://build.a16z.com/fellowships/fde"
+    },
+    {
+      "id": "ev-claudecertifications-com-cations-com",
+      "label": "claudecertifications.com",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://claudecertifications.com/"
+    },
+    {
+      "id": "ev-deloitte-com-neering-html",
+      "label": "deloitte.com",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://www.deloitte.com/us/en/services/consulting/articles/agentic-ai-impact-on-software-engineering.html"
+    },
+    {
+      "id": "ev-fde-academy-fde-academy",
+      "label": "fde.academy",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://fde.academy/"
+    },
+    {
+      "id": "ev-futurense-com-engineering",
+      "label": "futurense.com",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://futurense.com/iit-roorkee/pg-certificate-in-forward-deployed-ai-engineering"
+    },
+    {
+      "id": "ev-github-com-col-registry",
+      "label": "github.com",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://github.com/modelcontextprotocol/registry"
+    },
+    {
+      "id": "ev-github-com-fde-roadmap",
+      "label": "github.com",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://github.com/pierpaolo28/Awesome-FDE-Roadmap"
+    },
+    {
+      "id": "ev-github-com-mcp-servers",
+      "label": "github.com",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://github.com/punkpeye/awesome-mcp-servers"
+    },
+    {
+      "id": "ev-github-com-ocol-servers",
+      "label": "github.com",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://github.com/modelcontextprotocol/servers"
+    },
+    {
+      "id": "ev-github-com-owin-fastmcp",
+      "label": "github.com",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://github.com/jlowin/fastmcp"
+    },
+    {
+      "id": "ev-github-com-use-langfuse",
+      "label": "github.com",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://github.com/langfuse/langfuse"
+    },
+    {
+      "id": "ev-google-com-google-cloud",
+      "label": "google.com",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://www.google.com/about/careers/applications/jobs/results/81652014060053190-forward-deployed-engineer,-applied-ai,-google-cloud"
+    },
+    {
+      "id": "ev-job-boards-greenhouse-io-jobs-6784515",
+      "label": "job-boards.greenhouse.io",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://job-boards.greenhouse.io/deepmind/jobs/6784515"
+    },
+    {
+      "id": "ev-job-boards-greenhouse-io-s-4985877008",
+      "label": "job-boards.greenhouse.io",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4985877008"
+    },
+    {
+      "id": "ev-mckinsey-com-r-the-ai-era",
+      "label": "mckinsey.com",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/the-agentic-organization-contours-of-the-next-paradigm-for-the-ai-era"
+    },
+    {
+      "id": "ev-nabeelqu-co-on-palantir",
+      "label": "nabeelqu.co",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://nabeelqu.co/reflections-on-palantir"
+    },
+    {
+      "id": "ev-news-ycombinator-com-id-47542553",
+      "label": "news.ycombinator.com",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://news.ycombinator.com/item?id=47542553"
+    },
+    {
+      "id": "ev-news-ycombinator-com-id-47951082",
+      "label": "news.ycombinator.com",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://news.ycombinator.com/item?id=47951082"
+    },
+    {
+      "id": "ev-newsletter-pragmaticengineer-com-ed-engineers",
+      "label": "newsletter.pragmaticengineer.com",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://newsletter.pragmaticengineer.com/p/forward-deployed-engineers"
+    },
+    {
+      "id": "ev-newsroom-accenture-com-ing-practice",
+      "label": "newsroom.accenture.com",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://newsroom.accenture.com/news/2026/accenture-launches-microsoft-forward-deployed-engineering-practice"
+    },
+    {
+      "id": "ev-newsroom-accenture-com-ring-program",
+      "label": "newsroom.accenture.com",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://newsroom.accenture.com/news/2026/servicenow-and-accenture-launch-forward-deployed-engineering-program"
+    },
+    {
+      "id": "ev-openai-com-shington-dc",
+      "label": "openai.com",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://openai.com/careers/forward-deployed-engineer-gov-washington-dc/"
+    },
+    {
+      "id": "ev-podcasts-apple-com-000726402888",
+      "label": "podcasts.apple.com",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://podcasts.apple.com/us/podcast/inside-openai-enterprise-forward-deployed-engineering/id1727278168?i=1000726402888"
+    },
+    {
+      "id": "ev-realfast-ai-ard-deployed",
+      "label": "realfast.ai",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://www.realfast.ai/blog/best-engineers-becoming-consultants-forward-deployed"
+    },
+    {
+      "id": "ev-sequoiacap-com-ew-software",
+      "label": "sequoiacap.com",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://sequoiacap.com/article/services-the-new-software/"
+    },
+    {
+      "id": "ev-shyamsankar-com-ar-com-about",
+      "label": "shyamsankar.com",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://www.shyamsankar.com/about"
+    },
+    {
+      "id": "ev-sundeepteki-org-ngineer-html",
+      "label": "sundeepteki.org",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://www.sundeepteki.org/forward-deployed-engineer.html"
+    },
+    {
+      "id": "ev-ted-com-shyam-sankar",
+      "label": "ted.com",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://www.ted.com/speakers/shyam_sankar"
+    },
+    {
+      "id": "ev-tedmabrey-substack-com-isnt-an-fde",
+      "label": "tedmabrey.substack.com",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://tedmabrey.substack.com/p/sorry-that-isnt-an-fde"
+    },
+    {
+      "id": "ev-ycombinator-com-h-bob-mcgrew",
+      "label": "ycombinator.com",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://www.ycombinator.com/library/Mt-the-fde-playbook-for-ai-startups-with-bob-mcgrew"
+    },
+    {
+      "id": "ev-youtu-be-zyw-ya0k3xo",
+      "label": "youtu.be",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://youtu.be/Zyw-YA0k3xo"
+    },
+    {
+      "id": "ev-youtube-com-yltsqbzkg2s",
+      "label": "youtube.com",
+      "source_file": "",
+      "type": "evidence",
+      "url": "https://www.youtube.com/watch?v=yLTSqBzKG2s"
+    }
+  ],
+  "schema": "knowledgefy/1",
+  "source": "FDE-research-synthesis.md"
+}
