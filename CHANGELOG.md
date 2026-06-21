@@ -51,6 +51,13 @@ All notable changes to FDE-os are recorded here. Format follows
 - Added `.gitignore` (Python `__pycache__`/`*.pyc`, OS cruft, `.env` secrets) and untracked the
   `__pycache__/*.pyc` files that slipped into the Stage 0 merge.
 
+### Fixed
+- **Two unverifiable citations in the research vault** — the new freshness CI caught two
+  `newsroom.accenture.com/news/2026/...` URLs returning 404 (backing an Accenture-FDE-practices
+  claim with quotes + a 32% stat). Flagged inline as SOURCES UNVERIFIED (not deleted, no invented
+  replacement) and regenerated the spine (evidence 39→37). _Why: a dead/possibly-fabricated
+  citation in the vault would propagate into Delta posts, violating R4 (no un-sourced facts)._
+
 ### Investigated / Rejected
 - **`living-repo` as the vault knowledge-graph builder** — rejected: its parser is GFM-table-only
   and extracted just 5 nodes from `FDE-research-synthesis.md`, missing all 12 headings and 40
