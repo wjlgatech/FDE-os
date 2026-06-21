@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# OS / editor
+.DS_Store
+*.swp
+
+# Local env / secrets (never commit the Kit form key or provider creds)
+.env
+.env.local
