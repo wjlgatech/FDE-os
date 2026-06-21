@@ -33,6 +33,9 @@ prompt (seeds Objective 3). Content production *is* product production.
 - **`true-scorer`** — the TRUE rubric (T/R/U/E, 0–3 each) as a publish gate. **Gate: total ≥ 10
   AND every letter ≥ 2** (the AND is the point — a perfect total with one weak letter blocks).
   Run: `python3 skills/true-scorer/scripts/score.py <draft.md>` or `--scores T=3,R=3,U=2,E=2`.
+- **`field-kit-generator`** — scaffolds + lints a Field Kit to convention (menu / names-source /
+  marks-RISKS); the actual synthesis is `skillfy`'s job (thin wrapper, KTD5). The `lint` subcommand
+  is the field-kits index-lint U1 referenced. Run: `… field_kit_generator.py generate <slug> --type … --source … --summary …` or `… lint field-kits/`.
 
 **Reuse vs design:** existing skills (`living-knowledge`, `skillfy`, `dreammaketrue`,
 `knowledge-graph`, `living-repo`) are the production engine and are NOT vendored. Design a native
