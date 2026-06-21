@@ -8,6 +8,12 @@ All notable changes to FDE-os are recorded here. Format follows
 ### Added
 - Staged roadmap plan: `docs/plans/2026-06-20-001-feat-fde-os-staged-roadmap-plan.md`
   (6 stages, Delta-content-first spine), reviewed by 6 persona agents.
+- **U8 — `field-kit-generator` skill:** scaffolds + lints a Delta Field Kit to convention
+  (Field Kit menu, names-source, marks-RISKS, folder layout); delegates synthesis to `skillfy`
+  (thin wrapper, KTD5). 9 passing tests; lint passes the real Post #1 kit and fails malformed
+  ones. Its `lint` subcommand is the field-kits index-lint U1 referenced but hadn't shipped.
+  _Why: every post ships exactly one convention-correct Field Kit (R1). Tooling built ahead;
+  Stage 2 content (posts 2–4) stays gated on Gate B._
 - **`AGENTS.md`** — agent-facing guide (repo map, native skills, conventions, stage gates);
   `README.md` synced with what Stage 0 shipped + a repository-structure table.
 - **U1 — repo spine + CI:** `skills/`, `course/`, `flywheel/`, `knowledge/` homes;

@@ -28,6 +28,9 @@ What's live now:
   navigable knowledge spine (`graph.json` + self-contained `file://` HTML). No engine, no network.
 - **`skills/true-scorer`** — the TRUE 0–3 rubric as a runnable publish gate (total ≥ 10 AND every
   letter ≥ 2). No Delta post ships un-scored.
+- **`skills/field-kit-generator`** — scaffolds + lints a Delta Field Kit to convention (the Field
+  Kit menu, names-its-source, marks-RISKS); delegates skill synthesis to `skillfy`. _Tooling for
+  Stage 2 — the content (posts 2–4) stays gated on Stage-2 traction._
 - **`knowledge/fde-spine.*`** — the canonical FDE knowledge spine built from the research vault
   (12 concepts across all 7 research threads, 39 evidence nodes, 51 edges).
 - **Link-freshness CI** (`scripts/check_freshness.py` + `.github/workflows/freshness.yml`) — keeps
