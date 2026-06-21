@@ -14,6 +14,10 @@ All notable changes to FDE-os are recorded here. Format follows
 - **`STATUS.md`** — the one-glance "where are we now" board (done / blocked / next, keyed by U-ID
   + PR). Establishes the 3-layer convention: CHANGELOG = what shipped, plan = decisions (immutable),
   STATUS = the glance. _Why: track progress without turning the plan into a drift-prone checklist._
+- **`flywheel/go-live-runbook.md`** — the ~30-min human checklist that unblocks Stage 1 (wire the
+  Kit form, stand up the rooms, publish Post #1) and the exact Gate-A criteria to record. _Why:
+  every remaining roadmap unit is gated behind these owner-only ops actions; this makes them
+  frictionless instead of a vague "blocked on you."_
 - **U8 — `field-kit-generator` skill:** scaffolds + lints a Delta Field Kit to convention
   (Field Kit menu, names-source, marks-RISKS, folder layout); delegates synthesis to `skillfy`
   (thin wrapper, KTD5). 9 passing tests; lint passes the real Post #1 kit and fails malformed

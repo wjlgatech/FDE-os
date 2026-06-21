@@ -22,6 +22,7 @@ _Last updated: 2026-06-21 (after PR #3)._
 ## 🔴 Blocked on you — Stage 1 go-live (ops, not code)
 
 These are outward actions on your accounts; nothing here is a code task.
+**→ Step-by-step: [`flywheel/go-live-runbook.md`](flywheel/go-live-runbook.md)** (a ~30-min checklist).
 
 - **U5 go-live** — create the ConvertKit/Kit form, set `KIT_FORM_ID` in
   `delta-community-landing.html`; stand up the Delta Discord; create `r/ForwardDeployed`.
