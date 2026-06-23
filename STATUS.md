@@ -23,6 +23,8 @@ _Last updated: 2026-06-21 (after PR #3)._
 
 - **Reflection AI FDE** — JD captured + dual-tier prep curriculum (human knowledge + agent tools per
   competency) + flagship `agentic-solution-architect` skill. (`course/target-jds/`, `course/prep/`.)
+- **CVS Agentic AI Engineer** — JD captured + dual-tier prep; **eval cluster deepened** into a full
+  RAG-evaluation lesson + the runnable **`rag-eval-harness`** skill (17 tests, offline gate).
 - _Pattern for future JDs: drop a JD → I distill it into a target + prep curriculum + tools._
 
 ## 🔴 Blocked on you — Stage 1 go-live (ops, not code)

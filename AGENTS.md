@@ -36,6 +36,8 @@ prompt (seeds Objective 3). Content production *is* product production.
 - **`field-kit-generator`** — scaffolds + lints a Field Kit to convention (menu / names-source /
   marks-RISKS); the actual synthesis is `skillfy`'s job (thin wrapper, KTD5). The `lint` subcommand
   is the field-kits index-lint U1 referenced. Run: `… field_kit_generator.py generate <slug> --type … --source … --summary …` or `… lint field-kits/`.
+- **`rag-eval-harness`** — offline/deterministic RAG eval: retrieval metrics + grounding/hallucination
+  proxy + citation coverage + a pass/fail gate (the true-scorer pattern). Run: `… rag_eval.py score <eval_set.json> --k 5 --thresholds "recall@k=0.7,grounding=0.8"`. Deterministic core, no network; LLM-judge is an opt-in layer.
 
 **Reuse vs design:** existing skills (`living-knowledge`, `skillfy`, `dreammaketrue`,
 `knowledge-graph`, `living-repo`) are the production engine and are NOT vendored. Design a native

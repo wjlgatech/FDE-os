@@ -1,0 +1,22 @@
+[
+  {
+    "query": "What is the first-line treatment for type 2 diabetes?",
+    "retrieved": [
+      {"id": "c1", "text": "Metformin is the first-line pharmacologic treatment for type 2 diabetes.", "relevant": true},
+      {"id": "c2", "text": "Insulin is used in type 1 diabetes.", "relevant": false}
+    ],
+    "gold_context_ids": ["c1"],
+    "answer": "Metformin is the first-line treatment for type 2 diabetes.",
+    "citations": ["c1"]
+  },
+  {
+    "query": "Can ibuprofen be taken with lisinopril?",
+    "retrieved": [
+      {"id": "d1", "text": "NSAIDs like ibuprofen can reduce the effectiveness of ACE inhibitors such as lisinopril.", "relevant": true},
+      {"id": "d2", "text": "Lisinopril treats high blood pressure.", "relevant": false}
+    ],
+    "gold_context_ids": ["d1"],
+    "answer": "Ibuprofen can reduce the effectiveness of lisinopril, so caution is advised.",
+    "citations": ["d1"]
+  }
+]
