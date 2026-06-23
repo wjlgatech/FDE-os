@@ -74,6 +74,7 @@ Because each article ships a Field Kit, **writing the series builds the toolkit*
 - **[ai-engineering-from-scratch](https://github.com/rohitg00/ai-engineering-from-scratch)** — the blueprint for *how* to build a curriculum-as-repo (lesson tree, Build-It/Use-It spine, every lesson ships a reusable artifact, generated site, CI invariants).
 - **Interview Kickstart FDE program** — domain content reference (the 23-week FDE curriculum).
 - **Google Cloud Forward Deployed Engineer (GenAI)** — a target-outcome job description the course validates against.
+- **[Reflection AI — Forward Deployed Engineer](course/target-jds/reflection-ai-fde.md)** — a second JD target, with a worked dual-tier prep curriculum ([`course/prep/reflection-ai-fde-prep.md`](course/prep/reflection-ai-fde-prep.md)): every competency ships human knowledge **and** a forkable agent tool.
 - **[wjlgatech/data-architecture](https://github.com/wjlgatech/data-architecture)** — the cloud/data track (medallion lakehouse, governance, FHIR case studies) and a plugin-of-skills packaging reference.
 
 ## Repository structure
@@ -85,7 +86,7 @@ Because each article ships a Field Kit, **writing the series builds the toolkit*
 | `skills/` | FDE-os-native agent skills — built only where existing skills leave a gap (`knowledgefy`, `true-scorer`; `field-kit-generator` lands in Stage 2) |
 | `knowledge/` | Generated knowledge spine (`fde-spine.graph.json` + `.html`) |
 | `flywheel/` | Objective-3 infra + content-production runbook/metrics (mostly Stage 1–3) |
-| `course/` | Objective-1 JD-validated course (Stage 4 — reserved home, not yet built) |
+| `course/` | Objective-1 JD-validated course. `target-jds/` = JD validation targets; `prep/` = worked dual-tier prep curricula (human knowledge + agent tools). The full Stage-4 course engine is still gated. |
 | `scripts/` | Repo tooling (`check_freshness.py`) |
 | `docs/plans/`, `docs/ideation/` | The roadmap plan and the originating ideation doc |
 

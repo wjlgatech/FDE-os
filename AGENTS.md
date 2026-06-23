@@ -19,7 +19,7 @@ prompt (seeds Objective 3). Content production *is* product production.
 | `skills/` | FDE-os-native skills. Built only where existing skills leave a verified gap. Each has `SKILL.md` + (where runnable) `scripts/` + `tests/`. |
 | `knowledge/` | Generated spine (`fde-spine.*`). Regenerate with `knowledgefy`; don't hand-edit. |
 | `flywheel/` | Objective-3 infra + production runbook/metrics. `metrics.md` is the per-post funnel + the Gate A/B thresholds (the only owned metric is email conversions). Security-sensitive (Stage 3 handles real customer data, born-clean redaction). |
-| `course/` | Objective-1 course. Stage 4 — reserved, gated on Stage-2 traction. |
+| `course/` | Objective-1 course. `target-jds/` = JD validation targets; `prep/` = worked dual-tier prep curricula (each competency = human knowledge + a forkable agent tool + an eval gate). The full Stage-4 course *engine* is still gated; per-JD prep material is built on request. |
 | `field-kits/` | Forkable Field Kits, one per post. Convention: `field-kits/<slug>/SKILL.md`, names its source article, marks unknowns as RISKS (never invent). |
 | `scripts/` | Repo tooling (`check_freshness.py`). |
 | `docs/plans/` | The roadmap. Decision artifact — do not encode progress here; progress lives in git. |

@@ -19,6 +19,12 @@ _Last updated: 2026-06-21 (after PR #3)._
 | U7 | Pipeline metrics ledger + Gate A/B thresholds | PR #2 |
 | U8 | `field-kit-generator` skill (+ field-kits index-lint) | PR #3 |
 
+## 📗 Objective 1 — prep material (user-directed, ungated)
+
+- **Reflection AI FDE** — JD captured + dual-tier prep curriculum (human knowledge + agent tools per
+  competency) + flagship `agentic-solution-architect` skill. (`course/target-jds/`, `course/prep/`.)
+- _Pattern for future JDs: drop a JD → I distill it into a target + prep curriculum + tools._
+
 ## 🔴 Blocked on you — Stage 1 go-live (ops, not code)
 
 These are outward actions on your accounts; nothing here is a code task.

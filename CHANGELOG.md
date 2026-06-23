@@ -55,6 +55,14 @@ All notable changes to FDE-os are recorded here. Format follows
 - Added `.gitignore` (Python `__pycache__`/`*.pyc`, OS cruft, `.env` secrets) and untracked the
   `__pycache__/*.pyc` files that slipped into the Stage 0 merge.
 
+- **Objective-1 prep material (JD-validated):** `course/target-jds/reflection-ai-fde.md` (the
+  Reflection AI FDE JD as a structured course-validation target) + `course/prep/reflection-ai-fde-prep.md`
+  (a dual-tier prep curriculum: every competency ships human knowledge **and** a forkable agent tool,
+  plus an eval-as-gate readiness rubric) + a flagship agent tool
+  `course/prep/tools/agentic-solution-architect/SKILL.md` (Site Survey → agent architecture, composes
+  with the Delta Discovery Protocol). _Why: makes Objective 1 concrete against a real JD; the TRUE
+  model means prepping for the role also builds the applicant's cross-agent toolkit (Objective 2)._
+
 ### Fixed
 - **Two truncated citations in the research vault** — the freshness CI flagged two
   `newsroom.accenture.com/news/2026/...` URLs as 404. Web-verified the underlying claim: it is
