@@ -31,6 +31,9 @@ What's live now:
 - **`skills/field-kit-generator`** — scaffolds + lints a Delta Field Kit to convention (the Field
   Kit menu, names-its-source, marks-RISKS); delegates skill synthesis to `skillfy`. _Tooling for
   Stage 2 — the content (posts 2–4) stays gated on Stage-2 traction._
+- **`skills/rag-eval-harness`** — offline, deterministic RAG/agent eval: retrieval metrics
+  (precision@k, recall@k, MRR, hit-rate) + a grounding/hallucination proxy + citation coverage, with
+  a CI-able pass/fail gate. _Built for the CVS prep's deepened eval cluster; reusable anywhere._
 - **`knowledge/fde-spine.*`** — the canonical FDE knowledge spine built from the research vault
   (12 concepts across all 7 research threads, 39 evidence nodes, 51 edges).
 - **CI** — `tests.yml` runs every skill's test suite + the Field Kit convention lint on each
@@ -75,6 +78,7 @@ Because each article ships a Field Kit, **writing the series builds the toolkit*
 - **Interview Kickstart FDE program** — domain content reference (the 23-week FDE curriculum).
 - **Google Cloud Forward Deployed Engineer (GenAI)** — a target-outcome job description the course validates against.
 - **[Reflection AI — Forward Deployed Engineer](course/target-jds/reflection-ai-fde.md)** — a second JD target, with a worked dual-tier prep curriculum ([`course/prep/reflection-ai-fde-prep.md`](course/prep/reflection-ai-fde-prep.md)): every competency ships human knowledge **and** a forkable agent tool.
+- **[CVS Health — Agentic AI Engineer](course/target-jds/cvs-agentic-ai-engineer.md)** — a third JD target ([prep](course/prep/cvs-agentic-ai-engineer-prep.md)), with one cluster deepened into a full [RAG-evaluation lesson](course/prep/lessons/rag-evaluation.md) + the runnable `rag-eval-harness` skill.
 - **[wjlgatech/data-architecture](https://github.com/wjlgatech/data-architecture)** — the cloud/data track (medallion lakehouse, governance, FHIR case studies) and a plugin-of-skills packaging reference.
 
 ## Repository structure

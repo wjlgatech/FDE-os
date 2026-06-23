@@ -63,6 +63,16 @@ All notable changes to FDE-os are recorded here. Format follows
   with the Delta Discovery Protocol). _Why: makes Objective 1 concrete against a real JD; the TRUE
   model means prepping for the role also builds the applicant's cross-agent toolkit (Objective 2)._
 
+- **CVS Agentic AI Engineer JD prep + deepened eval cluster:**
+  `course/target-jds/cvs-agentic-ai-engineer.md` (structured JD target, honestly framed as
+  FDE-adjacent) + `course/prep/cvs-agentic-ai-engineer-prep.md` (dual-tier curriculum) +
+  `course/prep/lessons/rag-evaluation.md` (a full concept-first lesson on evaluating RAG/agent
+  systems) + **`skills/rag-eval-harness`** — a runnable, offline, deterministic eval skill (17
+  tests): retrieval metrics (precision@k, recall@k, MRR, hit-rate) + grounding/hallucination proxy
+  + citation coverage + a CI-able pass/fail gate. _Why: makes the JD→prep pattern repeatable and
+  deepens one cluster from spec into shipped lessons + a real tool (eval is the load-bearing
+  applied-AI skill, doubly so for healthcare)._
+
 ### Fixed
 - **Two truncated citations in the research vault** — the freshness CI flagged two
   `newsroom.accenture.com/news/2026/...` URLs as 404. Web-verified the underlying claim: it is
