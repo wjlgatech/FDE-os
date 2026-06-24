@@ -34,6 +34,8 @@ What's live now:
 - **`skills/rag-eval-harness`** — offline, deterministic RAG/agent eval: retrieval metrics
   (precision@k, recall@k, MRR, hit-rate) + a grounding/hallucination proxy + citation coverage, with
   a CI-able pass/fail gate. _Built for the CVS prep's deepened eval cluster; reusable anywhere._
+- **`skills/fde-mcp-server`** — a runnable, stdlib **Claude MCP server** (stdio JSON-RPC) exposing
+  FDE-os's skills as MCP tools. _A real "1+ Claude MCP integrations" example; fork it for your own._
 - **`knowledge/fde-spine.*`** — the canonical FDE knowledge spine built from the research vault
   (12 concepts across all 7 research threads, 39 evidence nodes, 51 edges).
 - **CI** — `tests.yml` runs every skill's test suite + the Field Kit convention lint on each

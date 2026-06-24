@@ -26,8 +26,9 @@ Suggested order: 4 (SWE foundation) → 1 (agents) → 2 (RAG) → 3 (eval) → 
   patterns; **the Model Context Protocol** (what an MCP server/client is, why it standardizes tools).
 - 🛠️ **Tool:** **build a real Claude MCP server** exposing one enterprise capability (a DB query, a
   knowledge lookup, a ticket action) — this directly satisfies the JD's hard "1+ Claude MCP
-  integrations" requirement *and* is a portfolio centerpiece. (Field Kit menu: MCP server spec;
-  scaffold the convention with [`field-kit-generator`](../../skills/field-kit-generator/SKILL.md).)
+  integrations" requirement *and* is a portfolio centerpiece. **Worked, runnable example to fork:**
+  [`skills/fde-mcp-server`](../../skills/fde-mcp-server/SKILL.md) — a stdlib MCP server (stdio
+  JSON-RPC) that exposes FDE-os's own skills as tools; add your own tool to its `TOOLS` registry.
 - ✅ **Prove:** a working multi-step agent using your MCP server across ≥2 tools, with a memory story.
 
 ## Cluster 2 — RAG & retrieval

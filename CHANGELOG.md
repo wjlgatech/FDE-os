@@ -73,6 +73,12 @@ All notable changes to FDE-os are recorded here. Format follows
   deepens one cluster from spec into shipped lessons + a real tool (eval is the load-bearing
   applied-AI skill, doubly so for healthcare)._
 
+- **`skills/fde-mcp-server`** — a minimal, dependency-free **Claude MCP server** (stdio JSON-RPC 2.0)
+  exposing FDE-os's skills as MCP tools (`true_score`, `rag_eval`). Implements
+  initialize/tools/list/tools/call with a pure, unit-tested `handle_request` (11 tests); verified
+  end-to-end over real stdio. _Why: a runnable answer to the common JD hard-requirement "1+ Claude
+  MCP integrations", and it dogfoods the repo (skills become callable tools)._
+
 ### Fixed
 - **Two truncated citations in the research vault** — the freshness CI flagged two
   `newsroom.accenture.com/news/2026/...` URLs as 404. Web-verified the underlying claim: it is
