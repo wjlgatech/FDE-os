@@ -1,7 +1,12 @@
-# The most copied job in AI doesn't have a school. So I'm building one — and it keeps catching its own mistakes.
+# The fastest-growing job in AI has no school. So I'm building one — that learns.
 
 *Long-form. ~7 min. Concrete enough for a sharp 15-year-old, honest enough for an AI director who's
 seen a hundred decks.*
+
+> **Published version:** the final, edited-for-LinkedIn cut lives here —
+> https://www.linkedin.com/pulse/fastest-growing-job-ai-has-school-so-im-building-one-learns-wu-phd-uoasc/
+> This repo copy is the working draft; the human edits there (data-led title, the operational loop
+> below, the probabilistic-urgency framing) are folded back in.
 
 ---
 
@@ -36,19 +41,27 @@ part of the kitchen. They taste the dish, read the table, walk back, and tell th
 too salty for table six — and the chef changes the duck. The person at the edge, touching the
 customer, is wired straight back into the thing being made.
 
-That wire is the entire job. Call it the **Delta Loop**:
+That wire is the entire job. Call it the **Delta Loop** — and notice it's an *operational* loop, not
+a vibe:
 
-> Deploy → learn the messy truth a spec can't capture → build the hacky thing that works → codify it
-> back into the product → repeat.
+> **Deploy** → **Observe** the messy truth a spec can't capture → **Build** the hacky thing that
+> works → **Validate** it against the operator's real success metric → **Productize** the win back
+> into the core → **Repeat**.
 
-Service stops being downstream of product. It becomes an *input* to it.
+Service stops being downstream of product. It becomes an *input* to it. (Hold onto "Validate" — it's
+about to matter twice.)
 
 That bet built a company running **80% gross margins** in 2023, while Accenture — the gold standard
 of the actual services business — runs about **32%**. Palantir looked like a consulting shop and
-earned like software. Now every AI lab on earth is racing to copy the role, because the model is
-brilliant and cheap, and the last mile — making it actually *land* inside a real company — is where
-all the value pooled. (MIT found **95%** of enterprise AI pilots show no measurable business impact.
-The model was never the bottleneck. Landing it is.)
+earned like software.
+
+Now every AI lab on earth is racing to copy the role — and AI itself is *why the urgency spiked*.
+Traditional software is deterministic: same input, same output, ship it once. A model is
+**probabilistic**: it's confidently right, confidently wrong, and shaped by data and context you only
+see *inside* the customer's building. You cannot QA that from headquarters. Someone has to be there
+to **validate** it against reality — the same "Validate" step from the loop above, now load-bearing
+for the whole industry. That's why MIT found **95%** of enterprise AI pilots show no measurable
+business impact. The model was never the bottleneck. Landing it — and checking it landed — is.
 
 ## So what is FDE-os, actually?
 
