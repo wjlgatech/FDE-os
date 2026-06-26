@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 320" width="880" height="320" role="img" aria-label="FDE-os staged roadmap: Stage 0 and 1 shipped, Gate A, Stage 2, Gate B, then Stages 3 to 5 gated">
+  <rect x="1" y="1" width="878" height="318" rx="16" fill="#F0EEE6" stroke="#E2DDD0"/>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" fill="#1A1A18">
+    <text x="40" y="50" font-size="25" font-weight="600">Staged roadmap — cheap proof before expensive commitment</text>
+    <text x="40" y="76" font-size="14" fill="#6E6A62">Traction gates fund the heavy stages. Miss a gate → iterate, don't proceed.</text>
+
+    <!-- baseline -->
+    <line x1="60" y1="170" x2="840" y2="170" stroke="#D8D2C4" stroke-width="2"/>
+
+    <!-- Stage 0 (shipped) -->
+    <rect x="46" y="142" width="120" height="58" rx="11" fill="#C26B49" stroke="#A9542F" stroke-width="1.5"/>
+    <text x="106" y="167" font-size="13.5" font-weight="600" text-anchor="middle" fill="#FFFFFF">Stage 0</text>
+    <text x="106" y="186" font-size="10.5" text-anchor="middle" fill="#FBEFE8">Foundation</text>
+
+    <!-- Stage 1 (code shipped, publish pending) -->
+    <rect x="186" y="142" width="120" height="58" rx="11" fill="#E7C7B6" stroke="#C9805F" stroke-width="1.5"/>
+    <text x="246" y="167" font-size="13.5" font-weight="600" text-anchor="middle" fill="#7A3F23">Stage 1</text>
+    <text x="246" y="186" font-size="10.5" text-anchor="middle" fill="#8A4D30">Prove the loop</text>
+
+    <!-- Gate A -->
+    <rect x="334" y="148" width="44" height="44" rx="6" transform="rotate(45 356 170)" fill="#C26B49" stroke="#A9542F" stroke-width="1.5"/>
+    <text x="356" y="174" font-size="13" font-weight="700" text-anchor="middle" fill="#FFFFFF">A</text>
+    <text x="356" y="214" font-size="10.5" text-anchor="middle" fill="#9B4B2C" font-weight="600">Gate A</text>
+
+    <!-- Stage 2 (gated) -->
+    <rect x="406" y="142" width="120" height="58" rx="11" fill="#FBFAF6" stroke="#CDB7AA" stroke-width="1.5" stroke-dasharray="3 4"/>
+    <text x="466" y="167" font-size="13.5" font-weight="600" text-anchor="middle">Stage 2</text>
+    <text x="466" y="186" font-size="10.5" text-anchor="middle" fill="#6E6A62">Systematize</text>
+
+    <!-- Gate B -->
+    <rect x="554" y="148" width="44" height="44" rx="6" transform="rotate(45 576 170)" fill="#FBFAF6" stroke="#C9805F" stroke-width="1.5"/>
+    <text x="576" y="174" font-size="13" font-weight="700" text-anchor="middle" fill="#9B4B2C">B</text>
+    <text x="576" y="214" font-size="10.5" text-anchor="middle" fill="#9B4B2C" font-weight="600">Gate B</text>
+
+    <!-- Stages 3-5 (gated group) -->
+    <rect x="626" y="130" width="214" height="82" rx="12" fill="#F4EFE4" stroke="#CDB7AA" stroke-width="1.5" stroke-dasharray="3 4"/>
+    <text x="733" y="150" font-size="11" font-weight="700" letter-spacing="1" fill="#6E6A62" text-anchor="middle">GATED — OWN PLANS</text>
+    <text x="641" y="174" font-size="11.5" text-anchor="middle">Stage 3</text>
+    <text x="641" y="190" font-size="9.5" fill="#6E6A62" text-anchor="middle">flywheel</text>
+    <text x="733" y="174" font-size="11.5" text-anchor="middle">Stage 4</text>
+    <text x="733" y="190" font-size="9.5" fill="#6E6A62" text-anchor="middle">course</text>
+    <text x="822" y="174" font-size="11.5" text-anchor="middle">Stage 5</text>
+    <text x="822" y="190" font-size="9.5" fill="#6E6A62" text-anchor="middle">compiler</text>
+
+    <!-- legend -->
+    <g font-size="12" fill="#6E6A62">
+      <rect x="46" y="266" width="16" height="16" rx="4" fill="#C26B49"/>
+      <text x="70" y="279">shipped</text>
+      <rect x="150" y="266" width="16" height="16" rx="4" fill="#E7C7B6" stroke="#C9805F"/>
+      <text x="174" y="279">in progress (code in, publish pending)</text>
+      <rect x="436" y="266" width="16" height="16" rx="4" fill="#FBFAF6" stroke="#CDB7AA" stroke-dasharray="3 3"/>
+      <text x="460" y="279">gated — needs its own plan</text>
+      <rect x="676" y="268" width="13" height="13" rx="3" transform="rotate(45 682 274)" fill="#C26B49"/>
+      <text x="700" y="279">traction gate</text>
+    </g>
+  </g>
+</svg>
