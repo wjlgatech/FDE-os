@@ -6,6 +6,11 @@ All notable changes to FDE-os are recorded here. Format follows
 ## [Unreleased]
 
 ### Added
+- **`docs/marketing/` — copy about the project, gated by its own tools.** A long-form (~7 min)
+  article + two ~185-word feed posts about FDE-os: 15-yo-legible, director-deep, with a sense of
+  humor. Dogfooded through the project's own gates before shipping — the article scores **11/12**
+  via `true-scorer`, both short posts **4/4** via `criteria-scorer` (+ a reusable `viral-post-criteria.json`).
+  _Why: a project about eval-gated honesty should gate its own marketing; the scores are the proof._
 - **`ARCHITECTURE.md` + three Anthropic-style README infographics.** New system-design doc, and
   hand-authored SVG infographics (`docs/assets/flywheel.svg`, `architecture.svg`, `roadmap.svg`) in a
   cream/ink/rust palette, embedded in README. Self-contained backgrounds (render in GitHub light AND

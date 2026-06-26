@@ -26,6 +26,7 @@ prompt (seeds Objective 3). Content production *is* product production.
 | `docs/plans/` | The roadmap. Decision artifact — do not encode progress here; progress lives in git. |
 | `docs/research/` | External sources (`sources/`) + critical evals. Honesty rule: a repost is not independent corroboration — note it (same R4 discipline as the vault). |
 | `ARCHITECTURE.md`, `docs/assets/` | System-design doc + the README infographics (hand-authored SVG, cream/ink/rust Anthropic-style; self-contained backgrounds so they render in GitHub light AND dark mode; no `<script>`/external refs so the GitHub sanitizer keeps them). |
+| `docs/marketing/` | Copy *about the project* (long-form article + short posts). House rule: 15-yo-legible, director-deep, funny — and gate each piece with `true-scorer`/`criteria-scorer` before shipping (we dogfood our own marketing). |
 
 ## Native skills (current)
 

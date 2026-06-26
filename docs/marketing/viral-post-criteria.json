@@ -1,0 +1,6 @@
+[
+  {"question": "Leads with / contains a concrete number?", "type": "must_contain_number"},
+  {"question": "Closes with a real question?", "type": "must_match", "value": "\\?\\s*$|\\?\\s*\\n"},
+  {"question": "Under the ~230-word feed sweet spot?", "type": "max_words", "value": 230},
+  {"question": "Free of 2026-suppressed engagement-bait?", "type": "must_not_match", "value": ["\\bagree\\?", "thoughts\\?", "comment yes", "tag someone", "comment below"]}
+]
