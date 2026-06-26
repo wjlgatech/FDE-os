@@ -85,6 +85,13 @@ All notable changes to FDE-os are recorded here. Format follows
   viral Post #1's first-comment link needs a real public URL to point at — the page existed only
   locally before, which blocked publishing._
 
+- **`docs/research/` — external-source vault + critical evals.** Saved + deep-researched the 2026
+  "Agent Loops that fix themselves" guide (Aakash Gupta et al.; reposted verbatim by Ng & Saboo —
+  flagged as one source, not two) and its reference repo `aakashg/pm-github-workflow-repo`. Wrote a
+  critical evaluation vs. FDE-os: core is real + tri-objective-aligned, framing is hype; identified
+  the one missing primitive (an explicit eval-loop with a keep/revert run-log). _Why: methodology
+  input that directly informs the roadmap; kept separate from the FDE-domain vault._
+
 ### Fixed
 - **Landing-page signup now actually captures + never lies.** The unwired form previously told a
   live visitor "You're in" while saving nothing. Reworked the handler: set `KIT_FORM_ID` *or*
