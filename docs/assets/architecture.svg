@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 560" width="880" height="560" role="img" aria-label="FDE-os system architecture: knowledge, eval gates, packaging and surface, over a CI and git foundation">
+  <rect x="1" y="1" width="878" height="558" rx="16" fill="#F0EEE6" stroke="#E2DDD0"/>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" fill="#1A1A18">
+    <text x="40" y="50" font-size="25" font-weight="600">System architecture</text>
+    <text x="40" y="76" font-size="14" fill="#6E6A62">Seven offline, tested skills over a CI + git foundation. Each layer feeds the next.</text>
+
+    <!-- arrow marker triangles drawn inline per use -->
+
+    <!-- BAND 1 — KNOWLEDGE -->
+    <text x="40" y="112" font-size="12" font-weight="700" letter-spacing="1.5" fill="#C26B49">① KNOWLEDGE</text>
+    <rect x="40"  y="122" width="170" height="56" rx="11" fill="#FBFAF6" stroke="#D8D2C4" stroke-width="1.5"/>
+    <text x="125" y="148" font-size="14.5" font-weight="600" text-anchor="middle">Research vault</text>
+    <text x="125" y="166" font-size="11" fill="#6E6A62" text-anchor="middle">cited FDE sources</text>
+
+    <rect x="262" y="122" width="160" height="56" rx="11" fill="#EAD3C6" stroke="#C9805F" stroke-width="1.5"/>
+    <text x="342" y="148" font-size="14.5" font-weight="600" text-anchor="middle" fill="#9B4B2C">knowledgefy</text>
+    <text x="342" y="166" font-size="11" fill="#9B4B2C" text-anchor="middle">prose → graph</text>
+
+    <rect x="474" y="122" width="210" height="56" rx="11" fill="#FBFAF6" stroke="#D8D2C4" stroke-width="1.5"/>
+    <text x="579" y="148" font-size="14.5" font-weight="600" text-anchor="middle">Knowledge spine</text>
+    <text x="579" y="166" font-size="11" fill="#6E6A62" text-anchor="middle">graph.json + offline HTML</text>
+
+    <g stroke="#C26B49" stroke-width="2.5" fill="#C26B49">
+      <line x1="210" y1="150" x2="256" y2="150"/><polygon points="256,145 266,150 256,155"/>
+      <line x1="422" y1="150" x2="468" y2="150"/><polygon points="468,145 478,150 468,155"/>
+    </g>
+
+    <!-- BAND 2 — EVAL GATES -->
+    <text x="40" y="216" font-size="12" font-weight="700" letter-spacing="1.5" fill="#C26B49">② EVAL GATES</text>
+    <rect x="40" y="226" width="540" height="96" rx="12" fill="#ECE7DB" stroke="#Dcd5c6" stroke-width="1.5"/>
+    <text x="56" y="248" font-size="11.5" fill="#6E6A62">scorers — gate quality before anything ships</text>
+    <g>
+      <rect x="56"  y="258" width="160" height="48" rx="9" fill="#FBFAF6" stroke="#D8D2C4" stroke-width="1.5"/>
+      <text x="136" y="280" font-size="13.5" font-weight="600" text-anchor="middle">true-scorer</text>
+      <text x="136" y="296" font-size="10.5" fill="#6E6A62" text-anchor="middle">TRUE 0–3 rubric</text>
+
+      <rect x="228" y="258" width="160" height="48" rx="9" fill="#FBFAF6" stroke="#D8D2C4" stroke-width="1.5"/>
+      <text x="308" y="280" font-size="13.5" font-weight="600" text-anchor="middle">criteria-scorer</text>
+      <text x="308" y="296" font-size="10.5" fill="#6E6A62" text-anchor="middle">binary pass/fail</text>
+
+      <rect x="400" y="258" width="164" height="48" rx="9" fill="#FBFAF6" stroke="#D8D2C4" stroke-width="1.5"/>
+      <text x="482" y="280" font-size="13.5" font-weight="600" text-anchor="middle">rag-eval-harness</text>
+      <text x="482" y="296" font-size="10.5" fill="#6E6A62" text-anchor="middle">retrieval + grounding</text>
+    </g>
+
+    <g stroke="#C26B49" stroke-width="2.5" fill="#C26B49">
+      <line x1="580" y1="274" x2="624" y2="274"/><polygon points="624,269 634,274 624,279"/>
+    </g>
+    <rect x="638" y="244" width="202" height="60" rx="11" fill="#EAD3C6" stroke="#C9805F" stroke-width="1.5"/>
+    <text x="739" y="270" font-size="14.5" font-weight="600" text-anchor="middle" fill="#9B4B2C">eval-loop</text>
+    <text x="739" y="289" font-size="11" fill="#9B4B2C" text-anchor="middle">keep / revert + run-log</text>
+
+    <!-- BAND 3 — PACKAGE & SURFACE -->
+    <text x="40" y="360" font-size="12" font-weight="700" letter-spacing="1.5" fill="#C26B49">③ PACKAGE &amp; SURFACE</text>
+    <rect x="40"  y="370" width="250" height="58" rx="11" fill="#FBFAF6" stroke="#D8D2C4" stroke-width="1.5"/>
+    <text x="165" y="396" font-size="14" font-weight="600" text-anchor="middle">field-kit-generator</text>
+    <text x="165" y="414" font-size="11" fill="#6E6A62" text-anchor="middle">scaffold + lint Field Kits</text>
+
+    <rect x="315" y="370" width="250" height="58" rx="11" fill="#FBFAF6" stroke="#D8D2C4" stroke-width="1.5"/>
+    <text x="440" y="396" font-size="14" font-weight="600" text-anchor="middle">fde-mcp-server</text>
+    <text x="440" y="414" font-size="11" fill="#6E6A62" text-anchor="middle">skills → MCP tools for agents</text>
+
+    <rect x="590" y="370" width="250" height="58" rx="11" fill="#FBFAF6" stroke="#D8D2C4" stroke-width="1.5"/>
+    <text x="715" y="396" font-size="14" font-weight="600" text-anchor="middle">Live landing page</text>
+    <text x="715" y="414" font-size="11" fill="#6E6A62" text-anchor="middle">GitHub Pages</text>
+
+    <!-- FOUNDATION -->
+    <rect x="40" y="462" width="800" height="74" rx="12" fill="#E7D7CE" stroke="#C9805F" stroke-width="1.5"/>
+    <text x="440" y="492" font-size="14" font-weight="600" text-anchor="middle" fill="#9B4B2C">Foundation — every change is gated and remembered</text>
+    <text x="440" y="514" font-size="12" fill="#7A4D38" text-anchor="middle">CI: tests · Field-Kit lint · link-freshness        ·        git is memory: scoped PRs, CHANGELOG, STATUS</text>
+  </g>
+</svg>

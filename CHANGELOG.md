@@ -6,6 +6,12 @@ All notable changes to FDE-os are recorded here. Format follows
 ## [Unreleased]
 
 ### Added
+- **`ARCHITECTURE.md` + three Anthropic-style README infographics.** New system-design doc, and
+  hand-authored SVG infographics (`docs/assets/flywheel.svg`, `architecture.svg`, `roadmap.svg`) in a
+  cream/ink/rust palette, embedded in README. Self-contained backgrounds (render in GitHub light AND
+  dark mode), no scripts/external refs (survive GitHub's SVG sanitizer); verified via screenshot.
+  _Why: the repo grew to 7 skills + CI + site + course + research with no single visual/system
+  overview; the roadmap plan stays immutable, so the architecture doc is the right home for it._
 - **`skills/criteria-scorer` + `skills/eval-loop` — the self-improving artifact primitive.** From the
   agent-loops critical eval: `criteria-scorer` scores any artifact against binary pass/fail criteria
   (typed, mechanically-checkable predicates) → 0–1 + a gate (11 tests); `eval-loop` turns scored

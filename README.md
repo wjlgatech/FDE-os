@@ -15,6 +15,8 @@ FDE-os has **three objectives**:
    engagements; the tooling auto-journals their real use cases, struggles, and problem-solving
    (privacy-redacted at capture); that field signal feeds back to improve Objectives 1 and 2.
 
+![FDE-os flywheel: one flywheel, three objectives](docs/assets/flywheel.svg)
+
 ## Status
 
 **Stage 0 shipped** (the production foundation). A reviewed six-stage roadmap drives the build:
@@ -56,6 +58,13 @@ What's live now:
 The discovery artifact that started it all — a ranked, critiqued **ideation document** (12
 directions across 6 axes) — is at
 ➡️ **[docs/ideation/2026-06-17-fde-os-ideation.html](docs/ideation/2026-06-17-fde-os-ideation.html)**.
+
+## Architecture
+
+Seven offline, tested skills over a CI + git foundation — knowledge → eval gates → packaging, each
+layer feeding the next. Full system design: **[ARCHITECTURE.md](ARCHITECTURE.md)**.
+
+![FDE-os system architecture](docs/assets/architecture.svg)
 
 ## Delta — the content flywheel
 
@@ -110,6 +119,8 @@ Because each article ships a Field Kit, **writing the series builds the toolkit*
 **Where are we right now? → [`STATUS.md`](STATUS.md)** — the one-glance done / blocked / next board.
 (The roadmap plan holds the *decisions* and stays immutable; `CHANGELOG.md` is the full build log;
 `STATUS.md` is the glance. Progress lives in git, never as checkboxes in the plan.)
+
+![FDE-os staged roadmap with traction gates](docs/assets/roadmap.svg)
 
 In short: Stage 0 (foundation) is shipped and most of Stage 1's *code* is in. **Stage 1 — Prove the
 Loop** now needs the go-live ops (publish Post #1, wire the Kit form) before **Gate A** can be read.
