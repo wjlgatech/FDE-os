@@ -1,0 +1,7 @@
+[
+  {"question": "Does it include a concrete number? (the single biggest quality lever)", "type": "must_contain_number"},
+  {"question": "Does it cite a source or link for the claim?", "type": "must_cite"},
+  {"question": "Is it under 60 words? (tight launch copy)", "type": "max_words", "value": 60},
+  {"question": "Does it use before/after framing?", "type": "must_match", "value": "before.*after"},
+  {"question": "Is it free of empty buzzwords?", "type": "must_not_match", "value": ["synergy", "leverage", "paradigm", "revolutionary", "game-?changer"]}
+]

@@ -6,6 +6,13 @@ All notable changes to FDE-os are recorded here. Format follows
 ## [Unreleased]
 
 ### Added
+- **`skills/criteria-scorer` + `skills/eval-loop` — the self-improving artifact primitive.** From the
+  agent-loops critical eval: `criteria-scorer` scores any artifact against binary pass/fail criteria
+  (typed, mechanically-checkable predicates) → 0–1 + a gate (11 tests); `eval-loop` turns scored
+  versions into a kept winner + a run-log (Round │ Change │ Score │ Verdict), keeping only strict
+  improvements and reverting regressions, git as memory (8 tests). Plan:
+  `docs/plans/2026-06-26-001-feat-eval-loop-and-criteria-scorer-plan.md`. _Why: FDE-os had the scorers
+  and the memory but not the explicit eval-loop; now it does — deterministic, offline, dogfoodable._
 - Staged roadmap plan: `docs/plans/2026-06-20-001-feat-fde-os-staged-roadmap-plan.md`
   (6 stages, Delta-content-first spine), reviewed by 6 persona agents.
 - **Test CI** (`.github/workflows/tests.yml`) — auto-discovers and runs every `skills/*/tests`
