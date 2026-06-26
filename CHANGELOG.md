@@ -5,6 +5,14 @@ All notable changes to FDE-os are recorded here. Format follows
 
 ## [Unreleased]
 
+### Changed
+- **Folded the published long-form's human edits back into the repo (the flywheel closing).** After
+  the article was published on LinkedIn, captured the editing taste it revealed — data-led title, an
+  operational `Deploy → Observe → Build → Validate → Productize → Repeat` loop, and a probabilistic-
+  nature "why now" framing — into `docs/marketing/fde-os-longform-article.md` (re-scored 11/12, still
+  PASS) and systematized it as reusable defaults in `Delta-viral-playbook.md`. _Why: the human's 10%
+  taste is exactly the field signal the flywheel is meant to capture and reuse._
+
 ### Added
 - **`docs/marketing/` — copy about the project, gated by its own tools.** A long-form (~7 min)
   article + two ~185-word feed posts about FDE-os: 15-yo-legible, director-deep, with a sense of

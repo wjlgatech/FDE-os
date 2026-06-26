@@ -43,5 +43,16 @@ DO: lead with one big number OR one analogy (not both); coin/borrow a term; give
 
 DON'T: use "Agree?/Thoughts?/Comment YES/Tag someone" (2026 classifier suppresses it); write LLM cadence ("it's not X, it's Y," "not just smart — it's required"); put links in body; stack stats; exceed ~2,500 chars; post twice within 4h; leave a bare hot take without a stat on the next line.
 
+## Lessons from the first published long-form edit (fold these into future drafts)
+
+Captured from the human's edits to the AI-drafted FDE-os long-form (the
+[published cut](https://www.linkedin.com/pulse/fastest-growing-job-ai-has-school-so-im-building-one-learns-wu-phd-uoasc/)).
+These are now defaults, not afterthoughts:
+
+- **Title leads with the data framing, not the clever framing.** "most copied job" → "**fastest-growing** job" (ties to the 1,165% stat). Foreground the live hook — "...one **that learns**."
+- **Name process loops as operational steps, capitalized.** Soft verbs read as a vibe; named steps read as rigor to a technical director. `Deploy → Observe → Build → Validate → Productize → Repeat` beats "deploy → learn → build → codify." Bonus: reuse a step's word later (here, "Validate") to tie the model to the argument.
+- **Frame "why now" through AI's probabilistic nature.** Deterministic software ships once; a probabilistic model is confidently wrong and must be *validated in the field* — a sharper hook than the bare 95%-stall stat (use the stat as the payoff, not the premise).
+- **Tighten relentlessly.** The human cut, never padded.
+
 ## Verification note
 1,165% and the comp figures are Bloomberry single-source (methodology shown) — solid but not multi-confirmed. Lead with them for punch; the Qureshi/a16z/Sequoia/MIT figures are firmer. Full sourcing + flags in FDE-research-synthesis.md.
