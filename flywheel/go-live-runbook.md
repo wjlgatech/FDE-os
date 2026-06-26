@@ -13,7 +13,7 @@ Order matters: hub before post (so the post has somewhere to convert to).
 1. Create a free **ConvertKit / Kit** account → create a **Form** (type: inline/embed).
 2. From the form's settings, copy its **Form ID** (the number in the form's action URL,
    `app.kit.com/forms/<THIS>/subscriptions`).
-3. In `delta-community-landing.html`, replace `KIT_FORM_ID = "REPLACE_WITH_KIT_FORM_ID"` with that id.
+3. In `index.html`, replace `KIT_FORM_ID = "REPLACE_WITH_KIT_FORM_ID"` with that id.
 4. In Kit: set up a one-email **welcome sequence** that includes the Delta chat invite link.
 5. Confirm the GDPR/unsubscribe footer is intact (it already ships in the page).
 6. **Test:** open the page, submit your own email → you should land in Kit and get the welcome email.

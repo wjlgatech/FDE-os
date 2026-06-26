@@ -41,7 +41,9 @@ What's live now:
 - **CI** — `tests.yml` runs every skill's test suite + the Field Kit convention lint on each
   push/PR; `freshness.yml` (`scripts/check_freshness.py`) keeps external references honest (fails
   only on dead links; bot-walls are warnings).
-- **Owned-hub wiring + metrics** (Stage 1 infra) — `delta-community-landing.html` posts to a
+- **Live landing page** → **https://wjlgatech.github.io/FDE-os/** — the Delta community door,
+  served from `index.html` via GitHub Pages. This is the URL Post #1's first-comment link points at.
+- **Owned-hub wiring + metrics** (Stage 1 infra) — `index.html` posts to a
   ConvertKit/Kit form (no client-side secret; GDPR/unsubscribe baseline), and `flywheel/metrics.md`
   holds the per-post funnel plus the **Gate A / Gate B** traction thresholds.
 
@@ -72,7 +74,7 @@ Because each article ships a Field Kit, **writing the series builds the toolkit*
 | [`Delta-TRUE-article-spec.md`](Delta-TRUE-article-spec.md) | The TRUE article template + Field Kit menu + 0–3 eval rubric |
 | [`Delta-viral-playbook.md`](Delta-viral-playbook.md) | Hook templates, post skeleton, stat bank, do/don't |
 | [`Delta-community-strategy.md`](Delta-community-strategy.md) | Hub-and-spoke community topology + participation ladder |
-| [`delta-community-landing.html`](delta-community-landing.html) | The community door (landing page) |
+| [`index.html`](index.html) | The community door (landing page) |
 
 ## References
 

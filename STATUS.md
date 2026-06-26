@@ -33,7 +33,7 @@ These are outward actions on your accounts; nothing here is a code task.
 **→ Step-by-step: [`flywheel/go-live-runbook.md`](flywheel/go-live-runbook.md)** (a ~30-min checklist).
 
 - **U5 go-live** — create the ConvertKit/Kit form, set `KIT_FORM_ID` in
-  `delta-community-landing.html`; stand up the Delta Discord; create `r/ForwardDeployed`.
+  `index.html`; stand up the Delta Discord; create `r/ForwardDeployed`.
 - **U6** — publish Post #1 (Signal + Newsletter), link the Field Kit, post the war-story prompt.
   Pre-publish gate: `true-scorer` (already passes 12/12).
 - → then **read Gate A** together (Post #1 earned real traction, not just "the pipeline ran").
