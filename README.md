@@ -36,6 +36,11 @@ What's live now:
   a CI-able pass/fail gate. _Built for the CVS prep's deepened eval cluster; reusable anywhere._
 - **`skills/fde-mcp-server`** — a runnable, stdlib **Claude MCP server** (stdio JSON-RPC) exposing
   FDE-os's skills as MCP tools. _A real "1+ Claude MCP integrations" example; fork it for your own._
+- **`skills/criteria-scorer`** — score any artifact against binary pass/fail criteria (word count,
+  required regex, forbidden buzzwords, has-a-number, has-a-citation) → 0–1 + a gate. The general
+  third scorer alongside `true-scorer` and `rag-eval-harness`.
+- **`skills/eval-loop`** — the **self-improving loop primitive**: score artifact versions, keep the
+  winner, revert regressions, append a run-log (Round │ Change │ Score │ Verdict). Git is the memory.
 - **`knowledge/fde-spine.*`** — the canonical FDE knowledge spine built from the research vault
   (12 concepts across all 7 research threads, 39 evidence nodes, 51 edges).
 - **CI** — `tests.yml` runs every skill's test suite + the Field Kit convention lint on each

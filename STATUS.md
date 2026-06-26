@@ -5,7 +5,14 @@
 (stable U-IDs) and stays immutable; [`CHANGELOG.md`](CHANGELOG.md) is the full build log. This file
 is just the glance — update it in the same PR that lands a unit.
 
-_Last updated: 2026-06-21 (after PR #3)._
+_Last updated: 2026-06-26._
+
+## 🧰 Native skills shipped (Objective 2 tooling)
+
+`knowledgefy` · `true-scorer` · `field-kit-generator` · `rag-eval-harness` · `fde-mcp-server` ·
+**`criteria-scorer`** · **`eval-loop`** (the self-improving loop primitive — from the
+[agent-loops critical eval](docs/research/agent-loops-critical-eval.md)). All offline, tested,
+CI-gated.
 
 ## ✅ Done — on `main`
 

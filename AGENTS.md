@@ -43,6 +43,11 @@ prompt (seeds Objective 3). Content production *is* product production.
 - **`fde-mcp-server`** — a stdlib MCP server (stdio JSON-RPC) exposing FDE-os skills as MCP tools
   (`true_score`, `rag_eval`). `handle_request` is pure (testable); add a tool via the `TOOLS` registry.
   A runnable "1+ Claude MCP integrations" reference. Spawned by an MCP host; see SKILL.md for config.
+- **`criteria-scorer`** — binary pass/fail criteria scorer (typed predicates: word count, regex,
+  buzzword list, has-number, has-citation) → 0–1 + `gate()`. Pure `score_artifact`/`gate` for reuse.
+- **`eval-loop`** — keep/revert loop + run-log (Round │ Change │ Score │ Verdict). Tested core is
+  `decide(rounds)`/`render_run_log`; scoring is pluggable (`score-each` wires any scorer via `{file}`).
+  Assisted, not autonomous — humans own taste, gates own the floor.
 
 **Reuse vs design:** existing skills (`living-knowledge`, `skillfy`, `dreammaketrue`,
 `knowledge-graph`, `living-repo`) are the production engine and are NOT vendored. Design a native
