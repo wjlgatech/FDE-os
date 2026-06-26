@@ -30,7 +30,9 @@ GONE_STATUSES = {404, 410}
 WARN_STATUSES = {401, 403, 405, 406, 429, 999}
 
 URL_RE = re.compile(r"https?://[^\s)>\]\"'`]+")
-TRAILING = ".,;:!?)]}>\"'"
+# Strip trailing punctuation AND markdown emphasis markers (`**url**`, `_url_`) that the
+# bare-URL regex greedily captures — a trailing `*` is markdown, not part of the link.
+TRAILING = ".,;:!?)]}>\"'*_"
 
 
 def extract_urls(paths: list[str]) -> list[tuple[str, str]]:

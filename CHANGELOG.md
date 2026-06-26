@@ -86,6 +86,9 @@ All notable changes to FDE-os are recorded here. Format follows
   locally before, which blocked publishing._
 
 ### Fixed
+- **Freshness checker stripped markdown emphasis from bare URLs** — a `**https://…**` (bold) link
+  was captured with its trailing `**`, producing a false 404. Added `*` and `_` to the trailing-strip
+  set. Caught by the checker flagging its own README URL.
 - **Two truncated citations in the research vault** — the freshness CI flagged two
   `newsroom.accenture.com/news/2026/...` URLs as 404. Web-verified the underlying claim: it is
   **real and well-sourced** (Accenture+Microsoft FDE Practice, Mar 18 2026; ServiceNow+Accenture
