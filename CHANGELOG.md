@@ -86,6 +86,11 @@ All notable changes to FDE-os are recorded here. Format follows
   locally before, which blocked publishing._
 
 ### Fixed
+- **Landing-page signup now actually captures + never lies.** The unwired form previously told a
+  live visitor "You're in" while saving nothing. Reworked the handler: set `KIT_FORM_ID` *or*
+  `FORMSPREE_ID` for automated capture; until then a signup opens the visitor's mail app addressed to
+  `OWNER_EMAIL` (no lead dropped, honest copy). _Why: the page is publicly live — a false success on
+  a static page with no backend silently loses real founding-member leads._
 - **Freshness checker stripped markdown emphasis from bare URLs** — a `**https://…**` (bold) link
   was captured with its trailing `**`, producing a false 404. Added `*` and `_` to the trailing-strip
   set. Caught by the checker flagging its own README URL.

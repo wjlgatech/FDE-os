@@ -22,7 +22,7 @@ prompt (seeds Objective 3). Content production *is* product production.
 | `course/` | Objective-1 course. `target-jds/` = JD validation targets; `prep/` = worked dual-tier prep curricula (each competency = human knowledge + a forkable agent tool + an eval gate). The full Stage-4 course *engine* is still gated; per-JD prep material is built on request. |
 | `field-kits/` | Forkable Field Kits, one per post. Convention: `field-kits/<slug>/SKILL.md`, names its source article, marks unknowns as RISKS (never invent). |
 | `scripts/` | Repo tooling (`check_freshness.py`). |
-| `index.html` | The Delta community landing page — served live via GitHub Pages at https://wjlgatech.github.io/FDE-os/. `.nojekyll` keeps Pages from running Jekyll. The Kit form id (`KIT_FORM_ID`) is the one go-live edit. |
+| `index.html` | The Delta community landing page — served live via GitHub Pages at https://wjlgatech.github.io/FDE-os/. `.nojekyll` keeps Pages from running Jekyll. Email capture: set `KIT_FORM_ID` **or** `FORMSPREE_ID` to automate; until then signups route to `OWNER_EMAIL` via a `mailto:` fallback (a static site has no backend, so capture needs an owned endpoint — never a false "you're in"). |
 | `docs/plans/` | The roadmap. Decision artifact — do not encode progress here; progress lives in git. |
 
 ## Native skills (current)

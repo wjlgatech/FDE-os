@@ -10,13 +10,18 @@ Order matters: hub before post (so the post has somewhere to convert to).
 
 ## Step 1 — Wire the email list (~10 min)  · unblocks U5
 
-1. Create a free **ConvertKit / Kit** account → create a **Form** (type: inline/embed).
-2. From the form's settings, copy its **Form ID** (the number in the form's action URL,
-   `app.kit.com/forms/<THIS>/subscriptions`).
-3. In `index.html`, replace `KIT_FORM_ID = "REPLACE_WITH_KIT_FORM_ID"` with that id.
-4. In Kit: set up a one-email **welcome sequence** that includes the Delta chat invite link.
-5. Confirm the GDPR/unsubscribe footer is intact (it already ships in the page).
-6. **Test:** open the page, submit your own email → you should land in Kit and get the welcome email.
+**The page already captures leads today** — until a provider is wired, a signup opens the visitor's
+email app pre-addressed to `OWNER_EMAIL` (set in `index.html`). No lead is dropped. To automate it,
+set **one** id (Kit *or* Formspree) in the `index.html` config block:
+
+- **Kit (newsletter-native, recommended):** free ConvertKit/Kit account → a Form → copy its **Form
+  ID** (the number in `app.kit.com/forms/<THIS>/subscriptions`) → set `KIT_FORM_ID = "<id>"`. Then add
+  a one-email **welcome sequence** with the Delta chat invite.
+- **Formspree (fastest, form-to-inbox):** free Formspree form → copy its id (`formspree.io/f/<THIS>`)
+  → set `FORMSPREE_ID = "<id>"`. Submissions land in your inbox/dashboard.
+
+Also paste your **Discord invite** into `DISCORD_INVITE`. The GDPR/unsubscribe footer already ships.
+**Test:** submit your own email → with a provider set you land in it; with none set your mail app opens.
 
 ## Step 2 — Stand up the rooms (~5 min)  · unblocks U5
 
