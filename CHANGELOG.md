@@ -79,7 +79,16 @@ All notable changes to FDE-os are recorded here. Format follows
   end-to-end over real stdio. _Why: a runnable answer to the common JD hard-requirement "1+ Claude
   MCP integrations", and it dogfoods the repo (skills become callable tools)._
 
+- **Live website (GitHub Pages):** renamed the landing page `delta-community-landing.html` →
+  `index.html`, added `.nojekyll`, and enabled GitHub Pages so the Delta community door is live at
+  **https://wjlgatech.github.io/FDE-os/**. Updated all mutable references to the new path. _Why: the
+  viral Post #1's first-comment link needs a real public URL to point at — the page existed only
+  locally before, which blocked publishing._
+
 ### Fixed
+- **Freshness checker stripped markdown emphasis from bare URLs** — a `**https://…**` (bold) link
+  was captured with its trailing `**`, producing a false 404. Added `*` and `_` to the trailing-strip
+  set. Caught by the checker flagging its own README URL.
 - **Two truncated citations in the research vault** — the freshness CI flagged two
   `newsroom.accenture.com/news/2026/...` URLs as 404. Web-verified the underlying claim: it is
   **real and well-sourced** (Accenture+Microsoft FDE Practice, Mar 18 2026; ServiceNow+Accenture
