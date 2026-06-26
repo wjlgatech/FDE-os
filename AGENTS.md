@@ -24,6 +24,7 @@ prompt (seeds Objective 3). Content production *is* product production.
 | `scripts/` | Repo tooling (`check_freshness.py`). |
 | `index.html` | The Delta community landing page — served live via GitHub Pages at https://wjlgatech.github.io/FDE-os/. `.nojekyll` keeps Pages from running Jekyll. Email capture: set `KIT_FORM_ID` **or** `FORMSPREE_ID` to automate; until then signups route to `OWNER_EMAIL` via a `mailto:` fallback (a static site has no backend, so capture needs an owned endpoint — never a false "you're in"). |
 | `docs/plans/` | The roadmap. Decision artifact — do not encode progress here; progress lives in git. |
+| `docs/research/` | External sources (`sources/`) + critical evals. Honesty rule: a repost is not independent corroboration — note it (same R4 discipline as the vault). |
 
 ## Native skills (current)
 
