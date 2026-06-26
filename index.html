@@ -173,21 +173,30 @@
 </div>
 
 <script>
-  // --- WIRE THESE UP ---
-  // 1) Email capture: replace with your Substack/ConvertKit/Tally form action or API.
-  // 2) Discord/chat: paste your invite URL below.
-  var DISCORD_INVITE = "#"; // <-- paste invite link here
+  // --- WIRE THESE UP (set ANY ONE id to make capture automatic) ---
+  // Until a provider id is set, signups route to OWNER_EMAIL via the visitor's email app —
+  // so a real lead is never silently dropped and the page never falsely claims a save.
+  var OWNER_EMAIL  = "wjlgatech@gmail.com";  // where signups land until a provider is wired
+  var KIT_FORM_ID  = "";                      // ConvertKit/Kit form id -> app.kit.com/forms/<id>/subscriptions
+  var FORMSPREE_ID = "";                      // Formspree form id      -> formspree.io/f/<id>
+  var DISCORD_INVITE = "#";                   // paste your Discord invite URL
   document.getElementById('discordLink').setAttribute('href', DISCORD_INVITE);
-
-  // Owned hub = the email list. Provider: ConvertKit / Kit.
-  // We POST to the PUBLIC form-action endpoint, which accepts an email client-side WITHOUT
-  // exposing the API secret (correct for a static page with no backend). Drop in your form id:
-  var KIT_FORM_ID = "REPLACE_WITH_KIT_FORM_ID";
-  var KIT_ENDPOINT = "https://app.kit.com/forms/" + KIT_FORM_ID + "/subscriptions";
 
   function setNote(msg, ok){
     var note = document.getElementById('formNote');
     if(note){ note.textContent = msg; note.style.color = ok ? "var(--bloom-soft)" : "var(--muted)"; }
+  }
+
+  function postCapture(url, body, email, btn){
+    fetch(url, { method: "POST", body: body, headers: { "Accept": "application/json" } })
+      .then(function(r){ return r.ok ? r.json() : Promise.reject(r.status); })
+      .then(function(){
+        setNote("You're in, " + email + ". Watch your inbox — confirm your email to get founding-member details.", true);
+      })
+      .catch(function(){
+        setNote("Something went wrong — try again, or email " + OWNER_EMAIL + " directly. Your address wasn't saved.", false);
+      })
+      .finally(function(){ if(btn){ btn.disabled = false; } });
   }
 
   function joinDelta(e){
@@ -198,24 +207,23 @@
     var btn = e.target.querySelector('button[type=submit]');
     if(btn){ btn.disabled = true; }
 
-    if(KIT_FORM_ID === "REPLACE_WITH_KIT_FORM_ID"){
-      // Not yet configured — confirm locally so the page is testable before go-live.
-      setNote("You're in, " + email + ". (Provider not wired yet — set KIT_FORM_ID.)", true);
-      e.target.reset(); if(btn){ btn.disabled = false; } return false;
+    if(KIT_FORM_ID){
+      var kb = new FormData(); kb.append("email_address", email);
+      postCapture("https://app.kit.com/forms/" + KIT_FORM_ID + "/subscriptions", kb, email, btn);
+    } else if(FORMSPREE_ID){
+      var fb = new FormData(); fb.append("email", email); fb.append("_subject", "New Delta founding member");
+      postCapture("https://formspree.io/f/" + FORMSPREE_ID, fb, email, btn);
+    } else {
+      // No provider wired yet — route the lead to OWNER_EMAIL via the visitor's mail app. Honest:
+      // we don't claim a silent save; the visitor finishes by hitting send.
+      var subject = encodeURIComponent("Join Delta — founding member");
+      var bodyTxt = encodeURIComponent("Add me to the Delta list: " + email);
+      window.location.href = "mailto:" + OWNER_EMAIL + "?subject=" + subject + "&body=" + bodyTxt;
+      setNote("Almost there — your email app is opening. Hit send and you're on the founding list.", true);
+      if(btn){ btn.disabled = false; }
+      return false;
     }
-
-    var body = new FormData();
-    body.append("email_address", email);
-    fetch(KIT_ENDPOINT, { method: "POST", body: body, headers: { "Accept": "application/json" } })
-      .then(function(r){ return r.ok ? r.json() : Promise.reject(r.status); })
-      .then(function(){
-        setNote("You're in, " + email + ". Watch your inbox — confirm your email to get founding-member details.", true);
-        e.target.reset();
-      })
-      .catch(function(){
-        setNote("Something went wrong — try again, or email us directly. Your address wasn't saved.", false);
-      })
-      .finally(function(){ if(btn){ btn.disabled = false; } });
+    e.target.reset();
     return false;
   }
 </script>
