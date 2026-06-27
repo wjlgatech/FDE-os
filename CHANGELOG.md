@@ -6,6 +6,14 @@ All notable changes to FDE-os are recorded here. Format follows
 ## [Unreleased]
 
 ### Changed
+- **Redesigned the landing page (`index.html`) in Anthropic's house style.** Replaced the dark
+  ink/amber/green gradient theme with a warm-ivory editorial system: `Newsreader` serif display
+  headlines + `Hanken Grotesk` body, a single clay accent (`#CC785C`), flat surfaces, hairline
+  borders, generous whitespace, and a staggered hero fade-up (reduced-motion–safe). All copy, the
+  signup form logic, and the JS config block (`OWNER_EMAIL`/`KIT_FORM_ID`/`FORMSPREE_ID`/
+  `DISCORD_INVITE`) are unchanged — purely a visual reskin, verified via headless-Chrome screenshot.
+  _Why: the previous design read as generic dark-SaaS; the site is the project's first impression and
+  the front door of the go-live flywheel, so it should look like the calm, credible thing it is._
 - **Folded the published long-form's human edits back into the repo (the flywheel closing).** After
   the article was published on LinkedIn, captured the editing taste it revealed — data-led title, an
   operational `Deploy → Observe → Build → Validate → Productize → Repeat` loop, and a probabilistic-

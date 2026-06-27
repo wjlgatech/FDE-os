@@ -50,6 +50,8 @@ What's live now:
   only on dead links; bot-walls are warnings).
 - **Live landing page** → **https://wjlgatech.github.io/FDE-os/** — the Delta community door,
   served from `index.html` via GitHub Pages. This is the URL Post #1's first-comment link points at.
+  Styled in the same **Anthropic-style design system as the README infographics** — warm ivory paper,
+  charcoal ink, a single clay accent (`#CC785C`), `Newsreader` serif display + `Hanken Grotesk` body.
 - **Owned-hub wiring + metrics** (Stage 1 infra) — `index.html` captures signups: set `KIT_FORM_ID`
   *or* `FORMSPREE_ID` for automated capture (no client-side secret; GDPR/unsubscribe baseline), and
   until then a signup routes to `OWNER_EMAIL` via the visitor's mail app (no lead dropped). The funnel
