@@ -91,7 +91,8 @@ def parse_file(path: str, rel: str, used_ids: set[str], nodes: list, edges: list
                           used_ids, nodes, edges, seen_evidence)
 
 
-def _add_evidence(url, label, concept_id, rel, used_ids, nodes, edges, seen_evidence) -> None:
+def _add_evidence(url: str, label: str, concept_id: str, rel: str, used_ids: set,
+                  nodes: list, edges: list, seen_evidence: dict) -> None:
     if url in seen_evidence:
         eid = seen_evidence[url]
     else:

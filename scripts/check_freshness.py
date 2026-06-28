@@ -71,10 +71,9 @@ def probe(url: str) -> tuple[str, str]:
             code = exc.code
             if code in GONE_STATUSES:
                 return ("GONE", f"{code}")
+            if (bot_walled or code in WARN_STATUSES) and method == "HEAD":
+                continue  # bot wall / refusal on HEAD — try GET once more
             if bot_walled or code in WARN_STATUSES:
-                # bot wall / refusal — try GET once more, else WARN
-                if method == "HEAD":
-                    continue
                 return ("WARN", f"{code} (bot-walled)" if bot_walled else f"{code}")
             # Other 4xx/5xx: WARN (don't fail CI on a flaky upstream)
             if method == "GET":

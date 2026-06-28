@@ -6,6 +6,15 @@ All notable changes to FDE-os are recorded here. Format follows
 ## [Unreleased]
 
 ### Changed
+- **Codebase quality pass (`anyagent analyze`-guided): 67 → 70/100, tests green throughout.** Fully
+  type-annotated the remaining functions in `fde-mcp-server/server.py`, `rag_eval.py`, and
+  `knowledgefy.py` (typing 82% → 100%) and flattened two 4-deep nests — `check_freshness.probe`
+  (merged the bot-wall HEAD guard) and `eval_loop.decide` (extracted `_max_gain`) — taking nesting
+  96% → 100%. Behavior-preserving (annotations + control-flow only); the `anyagent refactor` auto-pass
+  was rejected because its one score-raising edit regressed tests. The residual `structure 0%` is the
+  scorer's class-bias against a deliberately procedural CLI codebase — not chased, since bolting
+  classes onto small scripts would be over-engineering. _Why: keep the offline skill scripts crisp and
+  fully typed without inventing abstractions the code doesn't need._
 - **Redesigned the landing page (`index.html`) in Anthropic's house style.** Replaced the dark
   ink/amber/green gradient theme with a warm-ivory editorial system: `Newsreader` serif display
   headlines + `Hanken Grotesk` body, a single clay accent (`#CC785C`), flat surfaces, hairline
@@ -22,6 +31,17 @@ All notable changes to FDE-os are recorded here. Format follows
   taste is exactly the field signal the flywheel is meant to capture and reuse._
 
 ### Added
+- **`contribute.html` — an agentic contributor page where non-technical people can interact and
+  contribute.** Two no-login, no-backend capabilities, styled in the Anthropic system: (1) a **Delta
+  guide** chat grounded in an in-page knowledge base of FDE-os facts — keyword retrieval that answers
+  only from what it knows and hands off to a human rather than bluffing; (2) a five-step conversational
+  **field-note intake** that structures a deployment war-story into `{problem, context, tried, outcome,
+  tags}` and posts it as a **one-click prefilled GitHub issue** (with copy/Discord fallbacks), plus a
+  seeded "recent field notes" wall. Linked from the `index.html` nav and the Community card. _Why: the
+  flywheel needs field signal from real practitioners; this turns a passerby into a contributor without
+  asking them to code._ Investigated/rejected: `anyagent build/refine` scaffolded only a generic
+  AgentFlow **backend** (single placeholder tool, 65/100, plateaued) — it doesn't produce a designed,
+  grounded web frontend, so the page was hand-built per the skill's "edit the files directly" guidance.
 - **`docs/marketing/` — copy about the project, gated by its own tools.** A long-form (~7 min)
   article + two ~185-word feed posts about FDE-os: 15-yo-legible, director-deep, with a sense of
   humor. Dogfooded through the project's own gates before shipping — the article scores **11/12**

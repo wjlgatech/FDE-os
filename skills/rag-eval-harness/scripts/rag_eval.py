@@ -61,7 +61,7 @@ def precision_at_k(item: dict, k: int) -> float:
     return hits / len(topk)
 
 
-def recall_at_k(item: dict, k: int):
+def recall_at_k(item: dict, k: int) -> float | None:
     gold = set(item.get("gold_context_ids", []))
     if not gold:
         return None  # recall undefined without the full relevant set
@@ -106,7 +106,7 @@ def grounding_score(item: dict, sentence_threshold: float = 0.5) -> float:
     return grounded / len(sentences)
 
 
-def citation_coverage(item: dict):
+def citation_coverage(item: dict) -> float | None:
     """Fraction of cited ids that are actually in the retrieved set. None if no citations given."""
     cites = item.get("citations")
     if not cites:
