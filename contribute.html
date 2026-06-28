@@ -73,6 +73,27 @@
     padding:7px 12px;border-radius:999px;cursor:pointer;transition:.2s}
   .chip:hover{border-color:var(--clay);color:var(--clay-deep)}
 
+  /* guide power mode */
+  .mode-toggle{margin-left:auto;font-family:inherit;font-size:12.5px;color:var(--muted);
+    background:var(--paper-3);border:1px solid var(--line);border-radius:999px;padding:5px 11px;
+    cursor:pointer;transition:.2s}
+  .mode-toggle:hover{border-color:var(--clay);color:var(--clay-deep)}
+  .mode-toggle.live{color:var(--clay-deep);border-color:var(--clay)}
+  .settings{display:none;padding:16px 22px;border-bottom:1px solid var(--line);background:var(--paper-2)}
+  .settings.open{display:block}
+  .settings .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
+  .settings label{font-size:13px;color:var(--ink);font-weight:600;min-width:62px}
+  .settings select,.settings input{background:var(--paper);border:1px solid var(--line);color:var(--ink);
+    padding:9px 12px;border-radius:9px;font-size:14px;font-family:inherit;outline:none}
+  .settings input{flex:1;min-width:180px}
+  .settings select:focus,.settings input:focus{border-color:var(--clay)}
+  .settings .hint{font-size:12.5px;color:var(--muted);line-height:1.5}
+  .settings .hint a{color:var(--clay-deep)}
+  .settings .mini{font-family:inherit;font-size:13px;padding:8px 14px;border-radius:9px;cursor:pointer;border:0}
+  .settings .mini.save{background:var(--ink);color:var(--paper)}
+  .settings .mini.clear{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .typing .body{color:var(--muted);font-style:italic}
+
   /* contribute progress */
   .steps{display:flex;gap:7px;padding:16px 22px 0}
   .steps i{height:4px;flex:1;border-radius:2px;background:var(--line);transition:.3s}
@@ -121,10 +142,42 @@
     <div class="label">Ask anything</div>
     <h2 class="serif">The Delta guide</h2>
     <p class="lede">A plain-language guide to the forward-deployed world. It answers only from what
-    Delta actually knows — and when it doesn't know, it says so and points you to a human. No bluffing.</p>
+    Delta actually knows — and when it doesn't know, it says so and points you to a human. No bluffing.
+    Want fuller, conversational answers? Flip on <b>⚡ Power mode</b> with your own free model key —
+    the model only ever sees retrieved Delta facts, so it stays grounded too.</p>
 
     <div class="panel">
-      <div class="panel-head"><span class="dot"></span> Delta guide</div>
+      <div class="panel-head"><span class="dot"></span> Delta guide
+        <button class="mode-toggle" id="modeToggle" type="button" onclick="toggleSettings()">⚡ Power mode</button>
+      </div>
+      <div class="settings" id="settings">
+        <div class="row">
+          <label for="llmProvider">Model</label>
+          <select id="llmProvider" onchange="onProviderChange()">
+            <option value="">Grounded guide (no key, offline)</option>
+            <option value="gemini">Google Gemini — free, no card</option>
+            <option value="groq">Groq — fastest, free</option>
+            <option value="custom">Custom (OpenAI-compatible / NIM proxy)</option>
+          </select>
+        </div>
+        <div class="row" id="llmKeyRow" style="display:none">
+          <label for="llmKey">Key</label>
+          <input id="llmKey" type="password" placeholder="paste your free API key" autocomplete="off">
+        </div>
+        <div class="row" id="llmModelRow" style="display:none">
+          <label for="llmModel">Model id</label>
+          <input id="llmModel" placeholder="gemini-2.5-flash">
+          <input id="llmBase" placeholder="base url (custom only)" style="display:none">
+        </div>
+        <div class="row">
+          <button class="mini save" type="button" onclick="saveLLM()">Use this model</button>
+          <button class="mini clear" type="button" onclick="clearLLM()">Back to grounded</button>
+        </div>
+        <p class="hint">Real answers are still <b>grounded in what Delta knows</b> — the model only sees
+        retrieved facts, so it won't make things up. Your key stays in <b>this browser only</b> (localStorage),
+        is never sent to us, and is never in the page source. Free Gemini key:
+        <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a>.</p>
+      </div>
       <div class="stream" id="stream" aria-live="polite"></div>
       <div class="chips" id="chips"></div>
       <form class="composer" id="askForm" onsubmit="return ask(event)">
@@ -211,14 +264,84 @@
   var STOP = {the:1,a:1,an:1,is:1,are:1,was:1,to:1,of:1,and:1,or:1,in:1,on:1,for:1,what:0,with:1,as:1,at:1,by:1,it:1,do:1,does:1,i:1,you:1,me:1,my:1,we:1,how:0,can:0};
   function toks(s){ return (s.toLowerCase().match(/[a-z0-9]+/g)||[]).filter(function(w){return w.length>1 && STOP[w]!==1;}); }
 
-  function answer(q){
-    var qt = toks(q); if(!qt.length) return FALLBACK;
-    var best=null, bestScore=0;
-    KB.forEach(function(e){
+  function scored(q){
+    var qt=toks(q);
+    return KB.map(function(e){
       var s=0; qt.forEach(function(w){ if(e.k.indexOf(w)>-1) s++; });
-      if(s>bestScore){ bestScore=s; best=e; }
-    });
-    return bestScore>=2 ? best.a : (bestScore===1 && best ? best.a : FALLBACK);
+      return {e:e, s:s};
+    }).sort(function(a,b){ return b.s-a.s; });
+  }
+  // Offline answer: best single KB hit, else honest refusal. (zero-key default)
+  function answer(q){
+    if(!toks(q).length) return FALLBACK;
+    var top=scored(q)[0];
+    return top.s>=1 ? top.e.a : FALLBACK;
+  }
+  function stripTags(h){ return h.replace(/<[^>]+>/g,''); }
+
+  /* ---------------- optional real LLM (RAG-grounded, BYO key) ---------------- */
+  // Presets: OpenAI-compatible base + a verified-live default model. Key is the user's own,
+  // kept in localStorage only — never shipped in this page, never sent anywhere but the provider.
+  var PRESETS={
+    gemini:{base:"https://generativelanguage.googleapis.com/v1beta/openai",model:"gemini-2.5-flash"},
+    groq:{base:"https://api.groq.com/openai/v1",model:"llama-3.3-70b-versatile"},
+    custom:{base:"",model:""}
+  };
+  var LLM=null; // {provider, base, model, key}
+  function loadLLM(){ try{ LLM=JSON.parse(localStorage.getItem('delta_llm')||'null'); }catch(_){ LLM=null; } updateModeBadge(); }
+  function updateModeBadge(){
+    var t=document.getElementById('modeToggle');
+    if(LLM&&LLM.key){ t.classList.add('live'); t.textContent="⚡ "+LLM.provider+" · live"; }
+    else { t.classList.remove('live'); t.textContent="⚡ Power mode"; }
+  }
+  function toggleSettings(){
+    var s=document.getElementById('settings'); s.classList.toggle('open');
+    if(LLM){ document.getElementById('llmProvider').value=LLM.provider; onProviderChange();
+      document.getElementById('llmKey').value=LLM.key||''; document.getElementById('llmModel').value=LLM.model||''; }
+  }
+  function onProviderChange(){
+    var p=document.getElementById('llmProvider').value;
+    var on=!!p;
+    document.getElementById('llmKeyRow').style.display=on?'flex':'none';
+    document.getElementById('llmModelRow').style.display=on?'flex':'none';
+    document.getElementById('llmBase').style.display=(p==='custom')?'block':'none';
+    if(p&&PRESETS[p]){ document.getElementById('llmModel').value=PRESETS[p].model;
+      document.getElementById('llmBase').value=PRESETS[p].base; }
+  }
+  function saveLLM(){
+    var p=document.getElementById('llmProvider').value;
+    if(!p){ clearLLM(); return; }
+    var key=document.getElementById('llmKey').value.trim();
+    var model=document.getElementById('llmModel').value.trim()||PRESETS[p].model;
+    var base=(p==='custom'?document.getElementById('llmBase').value.trim():PRESETS[p].base);
+    if(!key||!base){ alert('Need a key and a base url.'); return; }
+    LLM={provider:p,base:base,model:model,key:key};
+    localStorage.setItem('delta_llm',JSON.stringify(LLM));
+    updateModeBadge(); document.getElementById('settings').classList.remove('open');
+    bubble('stream','guide',"Power mode on — I'll answer with <b>"+model+"</b>, still grounded in what Delta knows.");
+  }
+  function clearLLM(){ LLM=null; localStorage.removeItem('delta_llm'); updateModeBadge();
+    document.getElementById('settings').classList.remove('open'); }
+
+  // RAG: feed the model ONLY retrieved KB facts; instruct it to refuse beyond them.
+  function askLLM(q){
+    var ctx=scored(q).slice(0,3).filter(function(x){return x.s>0;}).map(function(x){return "- "+stripTags(x.e.a);});
+    var context=ctx.length?ctx.join("\n"):"(no relevant facts found)";
+    var sys="You are the Delta guide on a community site for Forward Deployed Engineers (FDEs). "+
+      "Answer in warm, plain language for a non-technical reader, in 2-4 sentences. "+
+      "Use ONLY the CONTEXT facts below. If they do not cover the question, say you don't know and "+
+      "suggest opening a question for a human — never invent facts.\n\nCONTEXT:\n"+context;
+    return fetch(LLM.base.replace(/\/$/,'')+"/chat/completions",{
+      method:"POST",
+      headers:{"Content-Type":"application/json","Authorization":"Bearer "+LLM.key},
+      body:JSON.stringify({model:LLM.model,messages:[{role:"system",content:sys},{role:"user",content:q}],
+        temperature:0.3,max_tokens:300})
+    }).then(function(r){ if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); })
+      .then(function(d){
+        var t=(d.choices&&d.choices[0]&&d.choices[0].message&&d.choices[0].message.content||"").trim();
+        if(!t) throw new Error("empty");
+        return t.replace(/</g,'&lt;');
+      });
   }
 
   /* ---------------- chat rendering ---------------- */
@@ -230,12 +353,27 @@
     stream.appendChild(m); stream.scrollTop=stream.scrollHeight;
   }
 
+  function typingOn(){
+    var s=document.getElementById('stream');
+    var m=document.createElement('div'); m.className='msg guide typing'; m.id='typing';
+    m.innerHTML='<div class="av">Δ</div><div class="body">thinking…</div>';
+    s.appendChild(m); s.scrollTop=s.scrollHeight;
+  }
+  function typingOff(){ var t=document.getElementById('typing'); if(t) t.remove(); }
+
   function ask(e){
     e.preventDefault();
     var inp=document.getElementById('askInput'); var q=inp.value.trim(); if(!q) return false;
     bubble('stream','user',q.replace(/</g,'&lt;'));
     inp.value='';
-    setTimeout(function(){ bubble('stream','guide', answer(q)); }, 220);
+    if(LLM&&LLM.key){
+      typingOn();
+      askLLM(q).then(function(html){ typingOff(); bubble('stream','guide',html); })
+        .catch(function(){ typingOff();
+          bubble('stream','guide', answer(q)+" <span style='color:var(--muted)'>(answered from the grounded guide — the model was unreachable)</span>"); });
+    } else {
+      setTimeout(function(){ bubble('stream','guide', answer(q)); }, 220);
+    }
     return false;
   }
 
@@ -351,7 +489,7 @@
   }
 
   /* ---------------- boot ---------------- */
-  initGuide(); initContribute(); initRecent();
+  loadLLM(); initGuide(); initContribute(); initRecent();
 </script>
 </body>
 </html>

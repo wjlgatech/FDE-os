@@ -92,7 +92,7 @@ Because each article ships a Field Kit, **writing the series builds the toolkit*
 | [`Delta-viral-playbook.md`](Delta-viral-playbook.md) | Hook templates, post skeleton, stat bank, do/don't |
 | [`Delta-community-strategy.md`](Delta-community-strategy.md) | Hub-and-spoke community topology + participation ladder |
 | [`index.html`](index.html) | The community door (landing page) |
-| [`contribute.html`](contribute.html) | The **agentic contributor page** — a no-login, no-code page where non-technical visitors chat with a knowledge-grounded "Delta guide" (refuses rather than bluffs) and turn a war-story into a structured field note posted as a one-click GitHub issue. Static (GitHub Pages), Anthropic-styled. |
+| [`contribute.html`](contribute.html) | The **agentic contributor page** — a no-login, no-code page where non-technical visitors chat with a knowledge-grounded "Delta guide" (refuses rather than bluffs) and turn a war-story into a structured field note posted as a one-click GitHub issue. Static (GitHub Pages), Anthropic-styled. Optional **⚡ Power mode**: bring your own free LLM key (Gemini/Groq/…) for RAG-grounded conversational answers — key stays in your browser, never committed. |
 
 ## References
 

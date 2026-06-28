@@ -6,6 +6,16 @@ All notable changes to FDE-os are recorded here. Format follows
 ## [Unreleased]
 
 ### Changed
+- **`contribute.html` Delta guide gains an optional, RAG-grounded real LLM ("⚡ Power mode").** The
+  zero-key grounded guide stays the default; a visitor can flip on Power mode and paste their **own
+  free** model key (Gemini / Groq / any OpenAI-compatible endpoint or a NIM proxy) to get fluent,
+  conversational answers. The model only ever receives **retrieved KB facts** as context with a strict
+  "use only this, never invent" system prompt — so it stays grounded — and any error degrades back to
+  the keyword guide. The key lives in **localStorage only**: never committed, never sent to us, never
+  in page source (the safe pattern for a static GitHub Pages site with no backend). Endpoint + model id
+  (`gemini-2.5-flash`) and browser CORS from the Pages origin were probed live before wiring, per the
+  `free-llm` skill. _Why: empower the guide for real conversations without putting a secret in a public
+  page or standing up a backend; grounding-via-RAG keeps the "never bluffs" promise intact._
 - **Codebase quality pass (`anyagent analyze`-guided): 67 → 70/100, tests green throughout.** Fully
   type-annotated the remaining functions in `fde-mcp-server/server.py`, `rag_eval.py`, and
   `knowledgefy.py` (typing 82% → 100%) and flattened two 4-deep nests — `check_freshness.probe`
