@@ -29,6 +29,13 @@ import sys
 SCORE_RE = re.compile(r"(?:score[^0-9]*)?(\d+(?:\.\d+)?)%?", re.IGNORECASE)
 
 
+def _max_gain(cur: tuple | None, label: str, delta: float) -> tuple:
+    """Keep the larger of the current best (label, delta) gain and a new candidate."""
+    if cur is None or delta > cur[1]:
+        return (label, delta)
+    return cur
+
+
 def decide(rounds: list[dict]) -> dict:
     """Core keep/revert logic. rounds = [{label, change, score}, ...] in order.
 
@@ -50,8 +57,7 @@ def decide(rounds: list[dict]) -> dict:
         elif score > best_score:
             delta = round(score - best_score, 4)
             verdict = "accept"
-            if best_gain is None or delta > best_gain[1]:
-                best_gain = (label, delta)
+            best_gain = _max_gain(best_gain, label, delta)
             best_score, best_label = score, label
         else:
             verdict, delta = "revert", round(score - best_score, 4)

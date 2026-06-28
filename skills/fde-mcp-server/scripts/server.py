@@ -22,6 +22,8 @@ import importlib.util
 import json
 import os
 import sys
+from types import ModuleType
+from typing import Optional, TextIO
 
 PROTOCOL_VERSION = "2025-06-18"
 SERVER_INFO = {"name": "fde-os", "version": "0.1.0"}
@@ -32,7 +34,7 @@ ERR_METHOD_NOT_FOUND = -32601
 ERR_INVALID_PARAMS = -32602
 
 
-def _load(rel_script: str, mod_name: str):
+def _load(rel_script: str, mod_name: str) -> ModuleType:
     """Lazy-import a sibling skill script by repo-relative path."""
     path = os.path.join(_ROOT, rel_script)
     spec = importlib.util.spec_from_file_location(mod_name, path)
@@ -110,15 +112,15 @@ TOOLS = {
 
 # ----------------------------------------------------------------- JSON-RPC dispatch
 
-def _result(req_id, result):
+def _result(req_id: object, result: object) -> dict:
     return {"jsonrpc": "2.0", "id": req_id, "result": result}
 
 
-def _error(req_id, code, message):
+def _error(req_id: object, code: int, message: str) -> dict:
     return {"jsonrpc": "2.0", "id": req_id, "error": {"code": code, "message": message}}
 
 
-def handle_request(req: dict):
+def handle_request(req: dict) -> Optional[dict]:
     """Pure dispatch. Returns a JSON-RPC response dict, or None for notifications."""
     method = req.get("method")
     req_id = req.get("id")
@@ -162,7 +164,7 @@ def handle_request(req: dict):
     return _error(req_id, ERR_METHOD_NOT_FOUND, f"method not found: {method}")
 
 
-def run(stdin=None, stdout=None):  # pragma: no cover - thin stdio loop
+def run(stdin: Optional[TextIO] = None, stdout: Optional[TextIO] = None) -> None:  # pragma: no cover - thin stdio loop
     stdin = stdin or sys.stdin
     stdout = stdout or sys.stdout
     for line in stdin:

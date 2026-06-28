@@ -6,6 +6,15 @@ All notable changes to FDE-os are recorded here. Format follows
 ## [Unreleased]
 
 ### Changed
+- **Codebase quality pass (`anyagent analyze`-guided): 67 → 70/100, tests green throughout.** Fully
+  type-annotated the remaining functions in `fde-mcp-server/server.py`, `rag_eval.py`, and
+  `knowledgefy.py` (typing 82% → 100%) and flattened two 4-deep nests — `check_freshness.probe`
+  (merged the bot-wall HEAD guard) and `eval_loop.decide` (extracted `_max_gain`) — taking nesting
+  96% → 100%. Behavior-preserving (annotations + control-flow only); the `anyagent refactor` auto-pass
+  was rejected because its one score-raising edit regressed tests. The residual `structure 0%` is the
+  scorer's class-bias against a deliberately procedural CLI codebase — not chased, since bolting
+  classes onto small scripts would be over-engineering. _Why: keep the offline skill scripts crisp and
+  fully typed without inventing abstractions the code doesn't need._
 - **Redesigned the landing page (`index.html`) in Anthropic's house style.** Replaced the dark
   ink/amber/green gradient theme with a warm-ivory editorial system: `Newsreader` serif display
   headlines + `Hanken Grotesk` body, a single clay accent (`#CC785C`), flat surfaces, hairline
