@@ -31,6 +31,17 @@ All notable changes to FDE-os are recorded here. Format follows
   taste is exactly the field signal the flywheel is meant to capture and reuse._
 
 ### Added
+- **`contribute.html` — an agentic contributor page where non-technical people can interact and
+  contribute.** Two no-login, no-backend capabilities, styled in the Anthropic system: (1) a **Delta
+  guide** chat grounded in an in-page knowledge base of FDE-os facts — keyword retrieval that answers
+  only from what it knows and hands off to a human rather than bluffing; (2) a five-step conversational
+  **field-note intake** that structures a deployment war-story into `{problem, context, tried, outcome,
+  tags}` and posts it as a **one-click prefilled GitHub issue** (with copy/Discord fallbacks), plus a
+  seeded "recent field notes" wall. Linked from the `index.html` nav and the Community card. _Why: the
+  flywheel needs field signal from real practitioners; this turns a passerby into a contributor without
+  asking them to code._ Investigated/rejected: `anyagent build/refine` scaffolded only a generic
+  AgentFlow **backend** (single placeholder tool, 65/100, plateaued) — it doesn't produce a designed,
+  grounded web frontend, so the page was hand-built per the skill's "edit the files directly" guidance.
 - **`docs/marketing/` — copy about the project, gated by its own tools.** A long-form (~7 min)
   article + two ~185-word feed posts about FDE-os: 15-yo-legible, director-deep, with a sense of
   humor. Dogfooded through the project's own gates before shipping — the article scores **11/12**

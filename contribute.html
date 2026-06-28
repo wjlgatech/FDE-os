@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contribute — Delta, the home for Forward Deployed Engineers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F0EDE4; --paper-2:#F7F4EC; --paper-3:#FBF9F3;
+    --ink:#1A1915; --ink-soft:#46423A; --muted:#7A7466;
+    --clay:#CC785C; --clay-deep:#B05B3C; --line:#E0D9C9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink-soft);
+    font-family:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  .wrap{max-width:820px;margin:0 auto;padding:0 28px}
+  .serif{font-family:"Newsreader",Georgia,serif}
+
+  nav{display:flex;align-items:center;justify-content:space-between;padding:30px 0}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:600;font-size:18px;color:var(--ink);text-decoration:none}
+  .delta-mark{width:30px;height:30px;display:grid;place-items:center;border-radius:8px;
+    background:var(--clay);color:var(--paper);font-weight:600;font-size:17px;line-height:1}
+  .nav-cta{font-size:15px;color:var(--ink);text-decoration:none;padding:9px 16px;border-radius:999px;
+    border:1px solid var(--line);transition:.2s}
+  .nav-cta:hover{border-color:var(--clay);background:var(--paper-3)}
+
+  header.hero{padding:54px 0 30px;max-width:680px}
+  .eyebrow{display:inline-block;font-size:13px;letter-spacing:.16em;text-transform:uppercase;
+    font-weight:600;color:var(--clay);margin-bottom:22px}
+  h1{font-family:"Newsreader",Georgia,serif;font-size:clamp(38px,6.4vw,62px);line-height:1.04;
+    letter-spacing:-.018em;color:var(--ink);font-weight:500}
+  h1 em{font-style:italic;color:var(--clay)}
+  .sub{max-width:580px;margin:24px 0 0;font-size:clamp(17px,2.2vw,20px);color:var(--ink-soft)}
+
+  section.block{margin:56px 0}
+  .label{font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--clay);margin-bottom:10px}
+  .block h2{font-family:"Newsreader",Georgia,serif;font-size:clamp(26px,4vw,36px);color:var(--ink);
+    font-weight:500;letter-spacing:-.012em;margin-bottom:8px}
+  .block .lede{color:var(--ink-soft);font-size:17px;max-width:620px;margin-bottom:24px}
+
+  /* panel */
+  .panel{border:1px solid var(--line);border-radius:18px;background:var(--paper-3);overflow:hidden}
+  .panel-head{display:flex;align-items:center;gap:10px;padding:16px 22px;border-bottom:1px solid var(--line);
+    background:var(--paper-2);font-weight:600;color:var(--ink);font-size:15px}
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--clay)}
+
+  /* chat */
+  .stream{padding:20px 22px;min-height:120px;max-height:380px;overflow-y:auto;display:flex;flex-direction:column;gap:14px}
+  .msg{display:flex;gap:11px;align-items:flex-start;font-size:15.5px;line-height:1.55}
+  .msg .av{flex:0 0 28px;width:28px;height:28px;border-radius:7px;display:grid;place-items:center;
+    font-size:13px;font-weight:600;margin-top:1px}
+  .msg.guide .av{background:var(--clay);color:var(--paper);font-family:"Newsreader",serif}
+  .msg.user .av{background:var(--ink);color:var(--paper)}
+  .msg .body{background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:11px 15px;color:var(--ink)}
+  .msg.user .body{background:transparent;border-color:transparent;color:var(--ink-soft)}
+  .msg .body a{color:var(--clay-deep)}
+  .composer{display:flex;gap:10px;padding:16px 22px;border-top:1px solid var(--line)}
+  .composer input{flex:1;background:var(--paper);border:1px solid var(--line);color:var(--ink);
+    padding:13px 15px;border-radius:11px;font-size:15px;font-family:inherit;outline:none;transition:.2s}
+  .composer input:focus{border-color:var(--clay);box-shadow:0 0 0 3px rgba(204,120,92,.14)}
+  .btn{background:var(--ink);color:var(--paper);font-weight:600;font-family:inherit;border:0;
+    padding:13px 20px;border-radius:11px;font-size:15px;cursor:pointer;white-space:nowrap;transition:.2s}
+  .btn:hover{background:var(--clay-deep);transform:translateY(-1px)}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .btn.ghost:hover{border-color:var(--clay);background:var(--paper-3);color:var(--ink)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;padding:0 22px 18px}
+  .chip{font-size:13px;color:var(--ink);background:var(--paper-2);border:1px solid var(--line);
+    padding:7px 12px;border-radius:999px;cursor:pointer;transition:.2s}
+  .chip:hover{border-color:var(--clay);color:var(--clay-deep)}
+
+  /* contribute progress */
+  .steps{display:flex;gap:7px;padding:16px 22px 0}
+  .steps i{height:4px;flex:1;border-radius:2px;background:var(--line);transition:.3s}
+  .steps i.on{background:var(--clay)}
+  .field-actions{display:flex;gap:10px;flex-wrap:wrap;padding:6px 22px 20px}
+  .note-preview{margin:0 22px 20px;background:var(--paper-2);border:1px solid var(--line);border-radius:12px;
+    padding:16px 18px;font-size:14.5px;color:var(--ink);white-space:pre-wrap;display:none}
+  .note-preview.show{display:block}
+  .note-preview b{color:var(--clay-deep)}
+
+  /* recent notes */
+  .notes{display:grid;gap:14px}
+  .note{border:1px solid var(--line);border-radius:14px;padding:20px 22px;background:var(--paper-3)}
+  .note .tags{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:10px}
+  .note .tag{font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--clay);
+    background:var(--paper-2);border:1px solid var(--line);padding:4px 9px;border-radius:999px}
+  .note h4{font-family:"Newsreader",serif;color:var(--ink);font-size:18px;font-weight:500;margin-bottom:6px}
+  .note p{font-size:14.5px;color:var(--ink-soft)}
+  .note .by{margin-top:10px;font-size:13px;color:var(--muted)}
+
+  footer{border-top:1px solid var(--line);margin-top:40px;padding:32px 0 56px;text-align:center;
+    color:var(--muted);font-size:14px;line-height:1.7}
+  footer a{color:var(--clay-deep);text-decoration:none}
+
+  @media(max-width:640px){.composer{flex-direction:column}.field-actions{flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <a class="brand" href="index.html"><span class="delta-mark">Δ</span> Delta</a>
+    <a class="nav-cta" href="index.html">← Back to the field</a>
+  </nav>
+
+  <header class="hero">
+    <span class="eyebrow">Interact · Contribute</span>
+    <h1>Bring the <em>field</em> with you.</h1>
+    <p class="sub">No login, no code. Ask the Delta guide anything about forward-deployed work — or
+    turn one real war-story into a field note the whole community learns from. You don't have to be
+    technical to make this place smarter.</p>
+  </header>
+
+  <!-- ============ THE GUIDE ============ -->
+  <section class="block">
+    <div class="label">Ask anything</div>
+    <h2 class="serif">The Delta guide</h2>
+    <p class="lede">A plain-language guide to the forward-deployed world. It answers only from what
+    Delta actually knows — and when it doesn't know, it says so and points you to a human. No bluffing.</p>
+
+    <div class="panel">
+      <div class="panel-head"><span class="dot"></span> Delta guide</div>
+      <div class="stream" id="stream" aria-live="polite"></div>
+      <div class="chips" id="chips"></div>
+      <form class="composer" id="askForm" onsubmit="return ask(event)">
+        <input id="askInput" placeholder="e.g. What even is a forward deployed engineer?" aria-label="Ask the guide" autocomplete="off">
+        <button class="btn" type="submit">Ask →</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ CONTRIBUTE ============ -->
+  <section class="block">
+    <div class="label">Add to the record</div>
+    <h2 class="serif">Contribute a field note</h2>
+    <p class="lede">The wisdom of this job only exists in the field. Walk through five short questions
+    and the guide structures your story into a clean field note — then posts it (one click) as a
+    GitHub issue the community can read, tag, and build on. No GitHub account? Just copy it and send.</p>
+
+    <div class="panel">
+      <div class="panel-head"><span class="dot"></span> Field-note intake</div>
+      <div class="steps" id="steps"><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="stream" id="cStream" aria-live="polite"></div>
+      <form class="composer" id="cForm" onsubmit="return contributeStep(event)">
+        <input id="cInput" placeholder="Type your answer…" aria-label="Your answer" autocomplete="off">
+        <button class="btn" type="submit" id="cBtn">Next →</button>
+      </form>
+      <div class="note-preview" id="notePreview"></div>
+      <div class="field-actions" id="fieldActions" style="display:none">
+        <button class="btn" id="postBtn" type="button" onclick="postIssue()">Post as GitHub issue →</button>
+        <button class="btn ghost" type="button" onclick="copyNote()">Copy field note</button>
+        <button class="btn ghost" type="button" onclick="resetContribute()">Start another</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RECENT ============ -->
+  <section class="block">
+    <div class="label">Already on the wall</div>
+    <h2 class="serif">Recent field notes</h2>
+    <p class="lede">A taste of what contributors share. Yours joins them.</p>
+    <div class="notes" id="recent"></div>
+  </section>
+
+  <footer>
+    Δ Delta — <a href="index.html">the last mile is the whole race</a><br>
+    Contributions post to <a href="https://github.com/wjlgatech/FDE-os/issues" target="_blank" rel="noopener">the FDE-os issue tracker</a>.
+    The guide answers only from what Delta knows; gaps go to a human, never a guess.
+  </footer>
+
+</div>
+
+<script>
+  /* ---------------- config ---------------- */
+  var REPO = "wjlgatech/FDE-os";        // contributions land here as issues
+  var DISCORD = "#";                     // optional: paste a Discord invite
+
+  /* ---------------- the guide: grounded KB (answers ONLY from here) ---------------- */
+  // Each entry: keywords to match + a plain-language answer. No entry matched -> honest refusal.
+  var KB = [
+    { k:["what","fde","forward","deployed","engineer","role","is","mean","definition"],
+      a:"A Forward Deployed Engineer (FDE) is an engineer who goes <b>to the customer</b> instead of building from afar. They sit inside the customer's real environment, figure out the actual problem, and ship something that works there — fast. Palantir pioneered the role in 2006 and called it <em>Delta</em>." },
+    { k:["palantir","delta","origin","history","2006","heretical"],
+      a:"In 2006 Palantir made a heretical bet: don't drag the problem back to headquarters — send the engineer <b>forward</b>, into the room where the work happens. They called that role Delta. Twenty years later nearly every AI lab is copying it." },
+    { k:["last","mile","whole","race","thesis","why","matters","hard"],
+      a:"The model is brilliant; the deployment is brutal. The hard part isn't the AI — it's making it work amid one customer's messy data, politics, and constraints. That 'last mile' <b>is</b> the whole race, and it's exactly what FDEs own." },
+    { k:["delta","community","what","this","site","offer","joining","three","doors"],
+      a:"Delta is the home for forward-deployed engineers, built around three doors: <b>the Course</b> (learn the craft), <b>the Toolkit</b> (open-source agent skills, MCP servers, eval harnesses you can fork), and <b>the Community</b> (war-stories and hard-won wisdom). You're in the Community door right now." },
+    { k:["toolkit","tools","skills","open","source","mcp","eval","fork","code"],
+      a:"The Toolkit is the open stack a Delta actually deploys: MCP servers, agent skills, and eval harnesses — code you can fork. It's the 'paved highway' half of the model, so you're not rebuilding the basics on every engagement." },
+    { k:["course","learn","study","curriculum","craft","teach"],
+      a:"The Course turns the FDE craft into something you can study: read the room, build the thing that works by Friday, feed it back into the product. The instincts Palantir trained with a plane ticket, made learnable." },
+    { k:["contribute","help","add","share","story","war","field","note","how"],
+      a:"Two ways, both no-code: chat with me here, or scroll up to <b>Contribute a field note</b> — answer five short questions and I'll structure your story and post it (one click) as a GitHub issue the community learns from." },
+    { k:["non","technical","code","coding","beginner","new","can","without"],
+      a:"You don't need to code to belong here or to contribute. Sharing a real deployment story — what broke, what you tried, what finally worked — is genuinely valuable field signal. That's what the field-note flow above is for." },
+    { k:["eval","evaluation","gate","score","test","how","know","works"],
+      a:"Evaluation is the load-bearing skill of this job — 'how do we know it works to the operator at 5pm?' Delta's toolkit leans hard on eval-as-gate: deterministic scorers that pass/fail an artifact with evidence, not vibes." },
+    { k:["who","behind","made","built","love12xfuture","owner"],
+      a:"Delta is a love12xfuture project — built in the open around FDE-os, a toolkit + course + community for forward-deployed engineering done right." }
+  ];
+
+  var FALLBACK = "I don't have a confident answer to that from what Delta knows yet — and I'd rather point you to a human than guess. Try rephrasing, or " +
+    "<a href='https://github.com/wjlgatech/FDE-os/issues/new?labels=question&title=Question%20from%20the%20Delta%20guide' target='_blank' rel='noopener'>open a question</a> and a real Delta will answer.";
+
+  var STOP = {the:1,a:1,an:1,is:1,are:1,was:1,to:1,of:1,and:1,or:1,in:1,on:1,for:1,what:0,with:1,as:1,at:1,by:1,it:1,do:1,does:1,i:1,you:1,me:1,my:1,we:1,how:0,can:0};
+  function toks(s){ return (s.toLowerCase().match(/[a-z0-9]+/g)||[]).filter(function(w){return w.length>1 && STOP[w]!==1;}); }
+
+  function answer(q){
+    var qt = toks(q); if(!qt.length) return FALLBACK;
+    var best=null, bestScore=0;
+    KB.forEach(function(e){
+      var s=0; qt.forEach(function(w){ if(e.k.indexOf(w)>-1) s++; });
+      if(s>bestScore){ bestScore=s; best=e; }
+    });
+    return bestScore>=2 ? best.a : (bestScore===1 && best ? best.a : FALLBACK);
+  }
+
+  /* ---------------- chat rendering ---------------- */
+  function bubble(streamId, who, html){
+    var stream=document.getElementById(streamId);
+    var m=document.createElement('div'); m.className='msg '+who;
+    var av=who==='guide'?'Δ':'You'.charAt(0);
+    m.innerHTML='<div class="av">'+(who==='guide'?'Δ':'·')+'</div><div class="body">'+html+'</div>';
+    stream.appendChild(m); stream.scrollTop=stream.scrollHeight;
+  }
+
+  function ask(e){
+    e.preventDefault();
+    var inp=document.getElementById('askInput'); var q=inp.value.trim(); if(!q) return false;
+    bubble('stream','user',q.replace(/</g,'&lt;'));
+    inp.value='';
+    setTimeout(function(){ bubble('stream','guide', answer(q)); }, 220);
+    return false;
+  }
+
+  var SUGGEST=["What is a forward deployed engineer?","Why does the last mile matter?","How do I contribute?","Can I help if I don't code?"];
+  function initGuide(){
+    bubble('stream','guide',"Hi — I'm the Delta guide. Ask me anything about forward-deployed engineering, or tap a question below.");
+    var chips=document.getElementById('chips');
+    SUGGEST.forEach(function(s){
+      var c=document.createElement('span'); c.className='chip'; c.textContent=s;
+      c.onclick=function(){ document.getElementById('askInput').value=s; document.getElementById('askForm').requestSubmit(); };
+      chips.appendChild(c);
+    });
+  }
+
+  /* ---------------- contribute: 5-step conversational intake ---------------- */
+  var STEPS=[
+    {key:"problem", q:"In one line — what was the problem or moment? (e.g. \"RAG looked great in the demo, fell apart on the customer's real PDFs\")"},
+    {key:"context", q:"Where did this happen? Briefly — the environment, the customer, the constraints (on-prem? messy data? tight deadline?)."},
+    {key:"tried",   q:"What did you try? Even the things that didn't work — that's the gold."},
+    {key:"outcome", q:"How did it land? What finally worked, or what's still open?"},
+    {key:"tags",    q:"A few tags, comma-separated (e.g. rag, on-prem, evals, discovery). These help others find it."}
+  ];
+  var cIdx=0, cData={}, cName="";
+
+  function setSteps(n){ var s=document.getElementById('steps').children; for(var i=0;i<s.length;i++) s[i].className = i<n?'on':''; }
+
+  function initContribute(){
+    cIdx=0; cData={};
+    document.getElementById('cStream').innerHTML='';
+    document.getElementById('notePreview').className='note-preview';
+    document.getElementById('fieldActions').style.display='none';
+    document.getElementById('cForm').style.display='flex';
+    document.getElementById('cBtn').textContent='Next →';
+    setSteps(0);
+    bubble('cStream','guide',"Let's turn your story into a field note. "+STEPS[0].q);
+  }
+
+  function contributeStep(e){
+    e.preventDefault();
+    var inp=document.getElementById('cInput'); var v=inp.value.trim(); if(!v) return false;
+    bubble('cStream','user', v.replace(/</g,'&lt;'));
+    cData[STEPS[cIdx].key]=v; inp.value=''; cIdx++; setSteps(cIdx);
+    if(cIdx<STEPS.length){
+      if(cIdx===STEPS.length-1) document.getElementById('cBtn').textContent='Finish →';
+      setTimeout(function(){ bubble('cStream','guide', STEPS[cIdx].q); }, 200);
+    } else {
+      setTimeout(finishContribute, 220);
+    }
+    return false;
+  }
+
+  function titleCase(s){ return s.length>72 ? s.slice(0,69)+'…' : s; }
+
+  function buildNote(){
+    var tags=(cData.tags||'').split(',').map(function(t){return t.trim();}).filter(Boolean);
+    var md="**Problem** — "+cData.problem+"\n\n**Context** — "+cData.context+
+      "\n\n**What I tried** — "+cData.tried+"\n\n**Outcome** — "+cData.outcome+
+      "\n\n**Tags** — "+(tags.length?tags.join(', '):'(none)')+
+      "\n\n_Contributed via the Delta field-note intake._";
+    return {md:md, title:titleCase(cData.problem), tags:tags};
+  }
+
+  function finishContribute(){
+    var n=buildNote();
+    bubble('cStream','guide',"That's a clean field note. Post it as a GitHub issue, or copy it to send any way you like. Thank you — this is exactly the signal the field runs on.");
+    var pv=document.getElementById('notePreview');
+    pv.innerHTML="<b>"+n.title.replace(/</g,'&lt;')+"</b>\n\n"+n.md.replace(/</g,'&lt;');
+    pv.className='note-preview show';
+    document.getElementById('cForm').style.display='none';
+    document.getElementById('fieldActions').style.display='flex';
+  }
+
+  function postIssue(){
+    var n=buildNote();
+    var labels="field-note"+(n.tags.length?","+n.tags.slice(0,3).map(encodeURIComponent).join(','):"");
+    var url="https://github.com/"+REPO+"/issues/new?labels="+labels+
+      "&title="+encodeURIComponent("Field note: "+n.title)+
+      "&body="+encodeURIComponent(n.md);
+    window.open(url,'_blank','noopener');
+  }
+
+  function copyNote(){
+    var n=buildNote();
+    var text="Field note: "+n.title+"\n\n"+n.md;
+    navigator.clipboard.writeText(text).then(function(){
+      var b=event.target; var t=b.textContent; b.textContent="Copied ✓";
+      setTimeout(function(){ b.textContent=t; },1600);
+    });
+  }
+
+  function resetContribute(){ initContribute(); document.getElementById('cInput').focus(); }
+
+  /* ---------------- recent field notes (seed, so the wall feels alive) ---------------- */
+  var RECENT=[
+    {title:"RAG demo dazzled; real PDFs broke it", tags:["rag","evals","on-prem"],
+     body:"Chunking that looked fine on clean docs shredded the customer's scanned, two-column PDFs. An eval set built from THEIR documents — not ours — caught it before the demo.",
+     by:"— a Delta in financial services"},
+    {title:"The data we were promised didn't exist", tags:["discovery","scoping"],
+     body:"Three weeks of architecture assumed a clean events table. It was a nightmare of CSVs in an email inbox. The smallest end-to-end win shipped only once we mapped the real data, not the org chart's version of it.",
+     by:"— a Delta in logistics"},
+    {title:"Air-gapped meant no model API at all", tags:["on-prem","deployment"],
+     body:"The whole agent design assumed a hosted endpoint. The VPC had none. Re-architecting around a local model on day 9 was painful — and exactly the constraint that defines this job.",
+     by:"— a Delta in public sector"}
+  ];
+  function initRecent(){
+    var box=document.getElementById('recent');
+    RECENT.forEach(function(n){
+      var el=document.createElement('div'); el.className='note';
+      el.innerHTML='<div class="tags">'+n.tags.map(function(t){return '<span class="tag">'+t+'</span>';}).join('')+
+        '</div><h4>'+n.title+'</h4><p>'+n.body+'</p><div class="by">'+n.by+'</div>';
+      box.appendChild(el);
+    });
+  }
+
+  /* ---------------- boot ---------------- */
+  initGuide(); initContribute(); initRecent();
+</script>
+</body>
+</html>
