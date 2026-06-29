@@ -6,6 +6,19 @@ All notable changes to FDE-os are recorded here. Format follows
 ## [Unreleased]
 
 ### Added
+- **`skills/invisible-workflow-mapper/` — a tool to uncover the *invisible workflow* before a client
+  can articulate it.** Prompted by a reader of the Delta long-form: *"the biggest failures aren't
+  model failures — they're workflow failures … if it doesn't fit how decisions actually get made, it
+  never gets adopted."* The skill reconstructs an org's **decision workflow** from partial, indirect
+  signals across eight dimensions (four load-bearing: decider, approval chain, evidence ritual,
+  adoption owner), scores **adoption-readiness** (0–1), **infers the likely decision-workflow
+  archetype** (single-strong-owner · consensus-committee · regulated-signoff · shadow-bottom-up ·
+  procurement-gated · metrics-ritual) with its canonical adoption traps, and emits the **oblique
+  probes** to surface what's still unknown — then **gates** (BLOCK until the load-bearing four are
+  known). Deterministic offline core + 12 tests; pairs with and deepens the `delta-discovery-protocol`
+  field kit. Wired into `toolkit.html`; `skills/README.md` index refreshed to list all eight skills.
+  _Why: adoption is decided by workflow fit, not model quality — so surfacing the invisible workflow
+  early is the highest-leverage FDE move, and now it's a runnable, gateable tool._
 - **`course.html` + `toolkit.html` — the other two "doors" now have real landing pages, and all three
   cards on `index.html` are clickable.** Previously only the Community card linked anywhere (the Course
   and Toolkit cards were dead). `course.html` presents the FDE curriculum (the six-cluster competency

@@ -1,0 +1,15 @@
+{
+  "context": {
+    "org": "Regional health insurer",
+    "industry": "regulated healthcare payer",
+    "size": "1,200 employees",
+    "tools": ["ServiceNow", "Excel", "a legacy claims mainframe"],
+    "notes": "Discovery call for an AI claims-triage assistant. Compliance and audit came up unprompted; the ops team mentioned they already keep a side spreadsheet."
+  },
+  "signals": [
+    {"dimension": "incumbent", "observation": "Adjusters triage claims by hand against a 40-page policy PDF; a side Excel tracks edge cases the mainframe can't.", "confidence": 0.8, "source": "kickoff call"},
+    {"dimension": "kill_points", "observation": "Compliance must be able to audit every automated decision; legal review gates anything touching member data.", "confidence": 0.7, "source": "kickoff call"},
+    {"dimension": "trigger", "observation": "Triage happens when a claim lands in the ServiceNow queue.", "confidence": 0.6, "source": "kickoff call"},
+    {"dimension": "decider", "observation": "Unclear who signs off on adopting a new triage tool — the VP of Ops was in the room but deferred to 'governance'.", "confidence": 0.2, "source": "kickoff call"}
+  ]
+}

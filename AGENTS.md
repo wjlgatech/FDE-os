@@ -16,7 +16,7 @@ prompt (seeds Objective 3). Content production *is* product production.
 
 | Path | Role |
 |---|---|
-| `skills/` | FDE-os-native skills. Built only where existing skills leave a verified gap. Each has `SKILL.md` + (where runnable) `scripts/` + `tests/`. |
+| `skills/` | FDE-os-native skills (8: `knowledgefy`, `true-scorer`, `criteria-scorer`, `rag-eval-harness`, `eval-loop`, `field-kit-generator`, `invisible-workflow-mapper`, `fde-mcp-server`). Built only where existing skills leave a verified gap. Each has `SKILL.md` + (where runnable) `scripts/` + `tests/`. `invisible-workflow-mapper` reconstructs an org's decision workflow from signals (adoption-readiness + archetype + probes, deterministic + gated) — deepens the `delta-discovery-protocol` field kit. To extend it, edit the `ARCHETYPES`/`PROBES`/`DIMENSIONS` tables in `scripts/workflow_map.py`. |
 | `knowledge/` | Generated spine (`fde-spine.*`). Regenerate with `knowledgefy`; don't hand-edit. |
 | `flywheel/` | Objective-3 infra + production runbook/metrics. `metrics.md` is the per-post funnel + the Gate A/B thresholds (the only owned metric is email conversions). Security-sensitive (Stage 3 handles real customer data, born-clean redaction). |
 | `course/` | Objective-1 course. `target-jds/` = JD validation targets; `prep/` = worked dual-tier prep curricula (each competency = human knowledge + a forkable agent tool + an eval gate). The full Stage-4 course *engine* is still gated; per-JD prep material is built on request. |
