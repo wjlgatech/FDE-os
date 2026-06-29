@@ -6,6 +6,16 @@ All notable changes to FDE-os are recorded here. Format follows
 ## [Unreleased]
 
 ### Added
+- **FDE-os is now an installable Claude Code plugin.** Added `.claude-plugin/plugin.json` (the repo
+  root *is* the plugin) + `.claude-plugin/marketplace.json`, so the whole toolkit installs with
+  `/plugin marketplace add wjlgatech/FDE-os` → `/plugin install fde-os@fde-os` — no clone, no pip.
+  The nine skills auto-discover from `skills/`, and the `fde-mcp-server` is wired as a stdio MCP
+  server via `${CLAUDE_PLUGIN_ROOT}` so its six tools are callable on install (needs Python 3.11+).
+  Manifests are CI-checked (`tests/test_plugin_manifest.py`, 4 tests: valid JSON, MCP path exists,
+  every skill discoverable, marketplace source resolves); `tests.yml` now also discovers a repo-level
+  `tests/` dir. Install guide at `docs/PLUGIN.md`. _Why: the tool base had skills but no one-command
+  distribution; packaging makes the toolkit installable, and the MCP wiring makes it callable, in one
+  step._
 - **`fde-mcp-server` now exposes 6 skills (was 2); + `workflows/engagement-readiness/` — the first
   composition workflow.** Two tool-base gaps closed. **(a)** The MCP server gained `criteria_score`,
   `eval_loop`, `invisible_workflow_map`, and `jd_compile` alongside the existing `true_score` /

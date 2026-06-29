@@ -10,6 +10,14 @@ customer's environment*, not just in demos.
 > where an in-page **Delta guide** (a real LLM, grounded so it never bluffs) answers your questions and
 > turns a deployment war-story into a one-click field note. Static frontend on GitHub Pages, backed by a
 > free shared-key model proxy on Vercel — runs at ~$0.
+>
+> ### ⚙ Install the toolkit as a Claude Code plugin
+> ```text
+> /plugin marketplace add wjlgatech/FDE-os
+> /plugin install fde-os@fde-os
+> ```
+> The nine skills + the `engagement-readiness` workflow + the `fde-os` MCP server (six callable tools),
+> in one command. Details: [`docs/PLUGIN.md`](docs/PLUGIN.md).
 
 FDE-os has **three objectives**:
 
