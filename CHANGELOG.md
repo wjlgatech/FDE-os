@@ -6,6 +6,19 @@ All notable changes to FDE-os are recorded here. Format follows
 ## [Unreleased]
 
 ### Added
+- **`fde-mcp-server` now exposes 6 skills (was 2); + `workflows/engagement-readiness/` — the first
+  composition workflow.** Two tool-base gaps closed. **(a)** The MCP server gained `criteria_score`,
+  `eval_loop`, `invisible_workflow_map`, and `jd_compile` alongside the existing `true_score` /
+  `rag_eval` — every request→result skill is now callable from any MCP host. (The two filesystem-
+  mutating skills, `knowledgefy` and `field-kit-generator`, stay CLI by design — a stdio tool returns
+  a result, it shouldn't write into the host's tree.) **(b)** A new top-level `workflows/` category
+  with `engagement-readiness`: a dynamic workflow that **composes** `invisible-workflow-mapper` (will
+  it get adopted?) AND `rag-eval-harness` (does it work?) into one **GO / NO-GO** gate — ship only if
+  both pass; an unassessed stage blocks GO. It adds no new scoring (it lazy-imports the skill cores,
+  the `fde-mcp-server` pattern) — composition, not duplication. CI (`tests.yml`) now discovers
+  `workflows/*/tests` too; 6 workflow tests + the expanded MCP suite are green. Wired into `toolkit.html`.
+  _Why: the tool base had skills but no composition or full MCP coverage; this makes the whole toolkit
+  callable and lets skills chain into engagement-level verdicts._
 - **`skills/jd-compiler/` + a JD-grounded competency knowledge base — the thin knowledge base now
   fills from real job descriptions.** Idea I1 ("a JD is the input") made runnable: `jd-compiler`
   deterministically extracts, per JD, which of the FDE competency clusters it requires + the specific

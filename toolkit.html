@@ -125,8 +125,21 @@
         <p>Turn a Site Survey into a proposed agent architecture — the bridge from discovery to “architect agentic solutions.”</p>
       </a>
       <a class="item" href="https://github.com/wjlgatech/FDE-os/tree/main/skills/fde-mcp-server" target="_blank" rel="noopener">
-        <div class="top"><h3>fde-mcp-server</h3><code>MCP · runnable</code><span class="arr">fork →</span></div>
-        <p>A minimal, dependency-free MCP server (stdio, JSON-RPC 2.0) that exposes these skills as callable tools to any MCP host (Claude Desktop, Claude Code).</p>
+        <div class="top"><h3>fde-mcp-server</h3><code>MCP · 6 tools</code><span class="arr">fork →</span></div>
+        <p>A minimal, dependency-free MCP server (stdio, JSON-RPC 2.0) that exposes the toolkit's six request→result skills — true_score, rag_eval, criteria_score, eval_loop, invisible_workflow_map, jd_compile — as callable tools to any MCP host (Claude Desktop, Claude Code).</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="label">Compose</div>
+    <h2 class="serif">Skills are blocks; workflows chain them.</h2>
+    <p class="lede">The first composition tool: an engagement go/no-go that runs two skills and AND-s
+    their gates — because you must clear both failure modes, not one.</p>
+    <div class="list">
+      <a class="item" href="https://github.com/wjlgatech/FDE-os/tree/main/workflows/engagement-readiness" target="_blank" rel="noopener">
+        <div class="top"><h3>engagement-readiness</h3><code>workflow · 6 tests</code><span class="arr">fork →</span></div>
+        <p>Will it get <b>adopted</b>? (invisible-workflow-mapper) AND does it <b>work</b>? (rag-eval-harness) → one GO / NO-GO verdict. Ship only if both pass; an unassessed stage blocks GO. No new scoring — it just sequences the skills.</p>
       </a>
     </div>
   </section>

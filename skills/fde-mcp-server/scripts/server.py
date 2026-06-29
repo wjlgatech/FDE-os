@@ -2,9 +2,12 @@
 """fde-mcp-server — a minimal, dependency-free Model Context Protocol (MCP) server over stdio.
 
 It exposes FDE-os's own skills as MCP tools, so an MCP client (Claude Desktop, Claude Code, any
-MCP host) can call them: score a draft against the TRUE rubric, or evaluate a RAG set. This both
-(a) satisfies the common JD requirement "1+ Claude MCP integrations" with a real, runnable example,
-and (b) dogfoods the repo — the skills become callable tools.
+MCP host) can call them. The six request→result skills are exposed: `true_score`, `rag_eval`,
+`criteria_score`, `eval_loop`, `invisible_workflow_map`, `jd_compile`. (The two artifact-builders
+that mutate the filesystem — `knowledgefy` and `field-kit-generator` — stay CLI by design; a stdio
+tool should return a result, not write files into the host's tree.) This both (a) satisfies the
+common JD requirement "1+ Claude MCP integrations" with a real, runnable example, and (b) dogfoods
+the repo — the skills become callable tools.
 
 Transport: newline-delimited JSON-RPC 2.0 over stdin/stdout (the MCP stdio transport). One JSON
 message per line; messages never contain embedded newlines.
@@ -80,6 +83,56 @@ def _tool_rag_eval(args: dict) -> str:
     return "\n".join(out)
 
 
+def _tool_criteria_score(args: dict) -> str:
+    cs = _load("skills/criteria-scorer/scripts/criteria_score.py", "criteria_score")
+    text = args.get("text")
+    criteria = args.get("criteria")
+    if not text:
+        raise ValueError("provide 'text'")
+    if not isinstance(criteria, list):
+        raise ValueError("provide 'criteria' (a JSON list of {type, value, question})")
+    report = cs.score_artifact(text, criteria)
+    threshold = float(args.get("threshold", 1.0))
+    passed, reasons = cs.gate(report["score"], threshold, report.get("results"))
+    n_pass = sum(1 for r in report["results"] if r["passed"])
+    head = f"criteria score: {report['score']:.2f} ({n_pass}/{report['n']} passed)"
+    return head + "\nVERDICT: " + ("PASS" if passed else "BLOCK — " + "; ".join(reasons))
+
+
+def _tool_eval_loop(args: dict) -> str:
+    el = _load("skills/eval-loop/scripts/eval_loop.py", "eval_loop")
+    rounds = args.get("rounds")
+    if not isinstance(rounds, list) or not rounds:
+        raise ValueError("provide 'rounds' (a non-empty JSON list of {label, change, score})")
+    result = el.decide(rounds)
+    gain = result.get("best_gain")
+    gain_s = f"{gain[0]} (+{gain[1]})" if gain else "none"
+    return (f"eval-loop: winner '{result['winner_label']}' @ {result['winner_score']} "
+            f"over {len(rounds)} round(s); best gain {gain_s}")
+
+
+def _tool_invisible_workflow_map(args: dict) -> str:
+    wm = _load("skills/invisible-workflow-mapper/scripts/workflow_map.py", "workflow_map")
+    data = args.get("data") or {"context": args.get("context", {}), "signals": args.get("signals", [])}
+    if not data.get("signals"):
+        raise ValueError("provide 'signals' (or a 'data' object with signals)")
+    threshold = float(args.get("threshold", 0.6))
+    report = wm.build_map(data, threshold=threshold)
+    return wm.render_md(report, data.get("context"))
+
+
+def _tool_jd_compile(args: dict) -> str:
+    jc = _load("skills/jd-compiler/scripts/jd_compile.py", "jd_compile")
+    text = args.get("text")
+    if text is None and args.get("jd_path"):
+        with open(os.path.join(_ROOT, args["jd_path"]), encoding="utf-8") as fh:
+            text = fh.read()
+    if not text:
+        raise ValueError("provide 'text' or 'jd_path'")
+    jd = jc.compile_jd(text, args.get("name", "jd"))
+    return jc.to_note(jd, source=args.get("name", ""))
+
+
 TOOLS = {
     "true_score": {
         "description": "Score a Delta Field Manual draft against the TRUE rubric (T/R/U/E, 0-3 each) "
@@ -106,6 +159,57 @@ TOOLS = {
             },
         },
         "handler": _tool_rag_eval,
+    },
+    "criteria_score": {
+        "description": "Score any text artifact against a list of binary, mechanically-checkable "
+                       "criteria (min_words, must_match regex, must_contain_number, must_cite, …) → "
+                       "0–1 + a gate naming each failed criterion.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "text": {"type": "string", "description": "the artifact to score"},
+                "criteria": {"type": "array", "description": "list of {type, value, question} criteria"},
+                "threshold": {"type": "number", "description": "pass threshold 0–1 (default 1.0 = all must pass)"},
+            },
+        },
+        "handler": _tool_criteria_score,
+    },
+    "eval_loop": {
+        "description": "Given an ordered list of scored artifact versions, return the kept winner + "
+                       "the largest accepted gain (keep-on-improvement, revert-on-regression).",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "rounds": {"type": "array", "description": "ordered [{label, change, score}, …]; round 0 = baseline"},
+            },
+        },
+        "handler": _tool_eval_loop,
+    },
+    "invisible_workflow_map": {
+        "description": "Reconstruct an org's decision workflow from signals: adoption-readiness score, "
+                       "inferred workflow archetype + its adoption traps, the probes to ask next, and a gate.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "signals": {"type": "array", "description": "[{dimension, observation, confidence, source}, …]"},
+                "context": {"type": "object", "description": "optional {org, industry, size, tools, notes}"},
+                "threshold": {"type": "number", "description": "adoption-readiness gate threshold (default 0.6)"},
+            },
+        },
+        "handler": _tool_invisible_workflow_map,
+    },
+    "jd_compile": {
+        "description": "Compile a Forward-Deployed-Engineer job description into a structured competency "
+                       "profile — which FDE clusters it requires, the specific tools it names, its level.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "text": {"type": "string", "description": "the JD text"},
+                "jd_path": {"type": "string", "description": "repo-relative path to a JD .md (alternative to text)"},
+                "name": {"type": "string", "description": "a label for the role (optional)"},
+            },
+        },
+        "handler": _tool_jd_compile,
     },
 }
 
