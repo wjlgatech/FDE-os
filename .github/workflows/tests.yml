@@ -27,7 +27,7 @@ jobs:
           # Fail the job if any suite fails; report which.
           set -e
           found=0
-          for tdir in skills/*/tests workflows/*/tests; do
+          for tdir in skills/*/tests workflows/*/tests tests; do
             [ -d "$tdir" ] || continue
             found=1
             echo "::group::$tdir"

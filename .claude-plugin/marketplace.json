@@ -1,0 +1,31 @@
+{
+  "name": "fde-os",
+  "owner": {
+    "name": "Paul Wu",
+    "url": "https://github.com/wjlgatech"
+  },
+  "metadata": {
+    "description": "FDE-os — the Forward Deployed Engineer toolkit, as an installable Claude Code plugin.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "fde-os",
+      "description": "Offline, CI-gated agent skills for the FDE craft — discovery (delta-discovery-protocol, invisible-workflow-mapper), evaluation (true-scorer, criteria-scorer, rag-eval-harness, eval-loop), knowledge (knowledgefy, jd-compiler) — plus an MCP server exposing them as callable tools and a composition workflow (engagement-readiness).",
+      "author": {
+        "name": "Paul Wu",
+        "url": "https://github.com/wjlgatech"
+      },
+      "homepage": "https://wjlgatech.github.io/FDE-os/",
+      "tags": [
+        "forward-deployed-engineer",
+        "agent-skills",
+        "evaluation",
+        "discovery",
+        "mcp",
+        "offline"
+      ],
+      "source": "."
+    }
+  ]
+}

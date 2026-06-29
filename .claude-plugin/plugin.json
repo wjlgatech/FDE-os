@@ -1,0 +1,31 @@
+{
+  "name": "fde-os",
+  "version": "0.1.0",
+  "description": "The Forward Deployed Engineer toolkit: offline, CI-gated agent skills for discovery, evaluation, and decision-workflow mapping — plus an MCP server that exposes them as callable tools.",
+  "author": {
+    "name": "Paul Wu",
+    "url": "https://github.com/wjlgatech"
+  },
+  "homepage": "https://wjlgatech.github.io/FDE-os/",
+  "repository": "https://github.com/wjlgatech/FDE-os",
+  "license": "MIT",
+  "keywords": [
+    "forward-deployed-engineer",
+    "fde",
+    "agent-skills",
+    "evaluation",
+    "rag-eval",
+    "discovery",
+    "workflow-mapping",
+    "mcp",
+    "offline",
+    "deterministic"
+  ],
+  "mcpServers": {
+    "fde-os": {
+      "type": "stdio",
+      "command": "python3",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/skills/fde-mcp-server/scripts/server.py"]
+    }
+  }
+}
