@@ -6,6 +6,19 @@ All notable changes to FDE-os are recorded here. Format follows
 ## [Unreleased]
 
 ### Added
+- **`skills/jd-compiler/` + a JD-grounded competency knowledge base — the thin knowledge base now
+  fills from real job descriptions.** Idea I1 ("a JD is the input") made runnable: `jd-compiler`
+  deterministically extracts, per JD, which of the FDE competency clusters it requires + the specific
+  tools/frameworks it names + its level, and aggregates many JDs into a **cross-company demand
+  matrix**. Captured the **Google Cloud FDE (Applied AI/GenAI)** JD (`course/target-jds/google-cloud-fde.md`,
+  from the research synthesis) — now three real targets (Google · Reflection · CVS). Compiled all
+  three into `knowledge/vault/jd-competencies/` (per-JD notes + a synthesis: all six clusters are
+  universal across the three; evaluation/orchestration demanded 3/3; GCP's ADK/Vertex stack-specific
+  to Google) and built a new **competency spine** (`knowledge/jd-competency-spine.*`, 29 concepts /
+  25 edges) via `knowledgefy` — complementary to the 12-concept domain spine, growing the knowledge
+  base from 12 → 41 concepts. 8 tests, offline. Wired into `toolkit.html`; `skills/README` + `knowledge/README`
+  updated. _Why: the demand signal was locked inside prose JDs; this unlocks it into a queryable,
+  growing knowledge base, and the tool itself fills the tool base._
 - **`skills/invisible-workflow-mapper/` — a tool to uncover the *invisible workflow* before a client
   can articulate it.** Prompted by a reader of the Delta long-form: *"the biggest failures aren't
   model failures — they're workflow failures … if it doesn't fit how decisions actually get made, it

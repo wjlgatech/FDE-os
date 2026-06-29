@@ -14,6 +14,7 @@ reused as the production engine and are **not** vendored here.
 | `eval-loop/` | Turn a sequence of scored versions into a kept winner + a run-log (the self-fixing loop) |
 | `field-kit-generator/` | Thin wrapper over `skillfy` enforcing the Field Kit menu + convention |
 | `invisible-workflow-mapper/` | Reconstruct an org's decision workflow from partial signals → adoption-readiness + archetype + probes |
+| `jd-compiler/` | Compile JDs → FDE competency knowledge; aggregate many into a cross-company demand matrix that grows the knowledge spine |
 | `fde-mcp-server/` | A minimal MCP server exposing these skills as callable tools to any MCP host |
 
 Each skill ships a `SKILL.md` and, where it has a runnable core, a `scripts/` entrypoint + `tests/`.
