@@ -4,6 +4,13 @@ An operating system for becoming — and staying — a **Forward Deployed Engine
 embedded builder who scopes, ships, and operates production-grade agentic systems *inside the
 customer's environment*, not just in demos.
 
+> ### ▶ Try the live agentic webapp → **[wjlgatech.github.io/FDE-os](https://wjlgatech.github.io/FDE-os/)**
+> No login, no code. Walk through **three doors** — the **[Course](https://wjlgatech.github.io/FDE-os/course.html)**,
+> the **[Toolkit](https://wjlgatech.github.io/FDE-os/toolkit.html)**, and the **[Community](https://wjlgatech.github.io/FDE-os/contribute.html)**,
+> where an in-page **Delta guide** (a real LLM, grounded so it never bluffs) answers your questions and
+> turns a deployment war-story into a one-click field note. Static frontend on GitHub Pages, backed by a
+> free shared-key model proxy on Vercel — runs at ~$0.
+
 FDE-os has **three objectives**:
 
 1. **A JD-validated, personalizable course.** A multi-mastery-level curriculum that upskills a
