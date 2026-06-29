@@ -50,6 +50,10 @@ What's live now:
   third scorer alongside `true-scorer` and `rag-eval-harness`.
 - **`skills/eval-loop`** — the **self-improving loop primitive**: score artifact versions, keep the
   winner, revert regressions, append a run-log (Round │ Change │ Score │ Verdict). Git is the memory.
+- **`skills/invisible-workflow-mapper`** — reconstruct an org's **decision workflow** from partial
+  signals (before the client can articulate it): adoption-readiness score + inferred archetype + its
+  adoption traps + the oblique probes to ask next, gated. Deepens the `delta-discovery-protocol` kit —
+  because the biggest deployment failures are workflow failures, not model failures.
 - **`knowledge/fde-spine.*`** — the canonical FDE knowledge spine built from the research vault
   (12 concepts across all 7 research threads, 39 evidence nodes, 51 edges).
 - **CI** — `tests.yml` runs every skill's test suite + the Field Kit convention lint on each

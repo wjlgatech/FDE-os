@@ -5,10 +5,15 @@ in the [roadmap plan](../docs/plans/2026-06-20-001-feat-fde-os-staged-roadmap-pl
 skills (`living-knowledge`, `skillfy`, `dreammaketrue`, `knowledge-graph`, `living-repo`) are
 reused as the production engine and are **not** vendored here.
 
-| Skill | Purpose | Status |
-|---|---|---|
-| `knowledgefy/` | Local-first, offline, deterministic: a prose research vault → navigable knowledge spine | building (U2) |
-| `true-scorer/` | The TRUE 0–3 rubric as a runnable publish gate | building (U4) |
-| `field-kit-generator/` | Thin wrapper over `skillfy` enforcing the Field Kit menu + convention | Stage 2 (U8) |
+| Skill | Purpose |
+|---|---|
+| `knowledgefy/` | Local-first, offline, deterministic: a prose research vault → navigable knowledge spine |
+| `true-scorer/` | The TRUE 0–3 rubric as a runnable publish gate |
+| `criteria-scorer/` | Score any artifact against binary, mechanically-checkable pass/fail criteria → 0–1 + gate |
+| `rag-eval-harness/` | Score a RAG/agent eval set offline — retrieval metrics + grounding proxy + citation coverage |
+| `eval-loop/` | Turn a sequence of scored versions into a kept winner + a run-log (the self-fixing loop) |
+| `field-kit-generator/` | Thin wrapper over `skillfy` enforcing the Field Kit menu + convention |
+| `invisible-workflow-mapper/` | Reconstruct an org's decision workflow from partial signals → adoption-readiness + archetype + probes |
+| `fde-mcp-server/` | A minimal MCP server exposing these skills as callable tools to any MCP host |
 
-Each skill ships a `SKILL.md` and, where it has a runnable core, a `scripts/` entrypoint.
+Each skill ships a `SKILL.md` and, where it has a runnable core, a `scripts/` entrypoint + `tests/`.
