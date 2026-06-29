@@ -6,6 +6,17 @@ All notable changes to FDE-os are recorded here. Format follows
 ## [Unreleased]
 
 ### Added
+- **`course.html` + `toolkit.html` — the other two "doors" now have real landing pages, and all three
+  cards on `index.html` are clickable.** Previously only the Community card linked anywhere (the Course
+  and Toolkit cards were dead). `course.html` presents the FDE curriculum (the six-cluster competency
+  map, the JD-validated prep curricula, the readiness scorecard, the RAG-eval lesson, and the
+  `agentic-solution-architect` tool), each linking to the rendered source on GitHub. `toolkit.html`
+  presents the seven offline, CI-gated skills + the Delta Discovery Protocol field kit + the MCP
+  server, grouped (evaluation spine · discovery→architecture→integration · author-your-own) with a
+  "fork →" link each. Both match the Anthropic design system; the three index cards became `<a>`
+  links with aligned bottom CTAs ("Enter the Course →" / "Open the Toolkit →" / "Ask the guide →").
+  _Why: the landing promised three doors but two opened onto nothing — the content existed, only the
+  wiring was missing._
 - **`proxy/delta-guide/` — a deployed shared-key LLM proxy so *every* visitor gets the model (no key
   of their own).** Option B to Power mode's BYO-key (Option A). A single Vercel serverless function
   (`api/guide.js`) holds the free key(s) **server-side** and runs a fallback chain (NVIDIA NIM → Groq →

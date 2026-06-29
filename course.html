@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Course — Delta, the FDE craft made learnable</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F0EDE4; --paper-2:#F7F4EC; --paper-3:#FBF9F3;
+    --ink:#1A1915; --ink-soft:#46423A; --muted:#7A7466;
+    --clay:#CC785C; --clay-deep:#B05B3C; --line:#E0D9C9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink-soft);
+    font-family:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  .wrap{max-width:860px;margin:0 auto;padding:0 28px}
+  .serif{font-family:"Newsreader",Georgia,serif}
+  a{color:var(--clay-deep)}
+
+  nav{display:flex;align-items:center;justify-content:space-between;padding:30px 0}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:600;font-size:18px;color:var(--ink);text-decoration:none}
+  .delta-mark{width:30px;height:30px;display:grid;place-items:center;border-radius:8px;
+    background:var(--clay);color:var(--paper);font-weight:600;font-size:17px;line-height:1}
+  .nav-cta{font-size:15px;color:var(--ink);text-decoration:none;padding:9px 16px;border-radius:999px;
+    border:1px solid var(--line);transition:.2s}
+  .nav-cta:hover{border-color:var(--clay);background:var(--paper-3)}
+
+  header.hero{padding:54px 0 26px;max-width:680px}
+  .eyebrow{display:inline-block;font-size:13px;letter-spacing:.16em;text-transform:uppercase;
+    font-weight:600;color:var(--clay);margin-bottom:22px}
+  h1{font-family:"Newsreader",Georgia,serif;font-size:clamp(38px,6.4vw,62px);line-height:1.04;
+    letter-spacing:-.018em;color:var(--ink);font-weight:500}
+  h1 em{font-style:italic;color:var(--clay)}
+  .sub{max-width:600px;margin:24px 0 0;font-size:clamp(17px,2.2vw,20px);color:var(--ink-soft)}
+
+  section.block{margin:54px 0}
+  .label{font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--clay);margin-bottom:10px}
+  .block h2{font-family:"Newsreader",Georgia,serif;font-size:clamp(26px,4vw,36px);color:var(--ink);
+    font-weight:500;letter-spacing:-.012em;margin-bottom:8px}
+  .block .lede{color:var(--ink-soft);font-size:17px;max-width:640px;margin-bottom:26px}
+
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .cluster{border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--paper-3)}
+  .cluster .n{font-family:"Newsreader",serif;font-size:22px;color:var(--clay);font-weight:500;margin-bottom:8px}
+  .cluster h3{font-size:17px;color:var(--ink);font-weight:600;margin-bottom:6px}
+  .cluster p{font-size:14.5px;color:var(--ink-soft);line-height:1.55}
+
+  .list{display:grid;gap:12px}
+  a.item{display:block;border:1px solid var(--line);border-radius:13px;padding:18px 20px;background:var(--paper-3);
+    text-decoration:none;transition:transform .18s,border-color .18s,box-shadow .18s}
+  a.item:hover{transform:translateY(-2px);border-color:var(--clay);box-shadow:0 12px 26px -18px rgba(26,25,21,.3)}
+  a.item h3{font-family:"Newsreader",serif;font-size:19px;color:var(--ink);font-weight:500;margin-bottom:4px}
+  a.item h3 .arr{color:var(--clay);font-family:"Hanken Grotesk",sans-serif}
+  a.item p{font-size:14.5px;color:var(--ink-soft);line-height:1.55}
+  a.item .tag{display:inline-block;font-size:11px;letter-spacing:.07em;text-transform:uppercase;font-weight:600;
+    color:var(--clay);background:var(--paper-2);border:1px solid var(--line);padding:3px 9px;border-radius:999px;margin-bottom:9px}
+
+  .note{border-left:3px solid var(--clay);background:var(--paper-2);border-radius:0 12px 12px 0;
+    padding:18px 22px;margin-top:8px;font-size:15.5px;color:var(--ink)}
+
+  footer{border-top:1px solid var(--line);margin-top:44px;padding:32px 0 56px;text-align:center;
+    color:var(--muted);font-size:14px;line-height:1.7}
+  footer a{color:var(--clay-deep);text-decoration:none}
+
+  @media(max-width:640px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <a class="brand" href="index.html"><span class="delta-mark">Δ</span> Delta</a>
+    <a class="nav-cta" href="index.html">← Back to the field</a>
+  </nav>
+
+  <header class="hero">
+    <span class="eyebrow">Door 01 · Learn</span>
+    <h1>The FDE craft, made <em>learnable</em>.</h1>
+    <p class="sub">The instincts Palantir trained with a plane ticket — turned into something you can
+    study. Not a generic bootcamp: a curriculum that compiles from a <b>real job description</b>, proves
+    mastery with evals, and leaves you with a portfolio instead of a certificate.</p>
+  </header>
+
+  <section class="block">
+    <div class="label">The competency map</div>
+    <h2 class="serif">Six clusters, one ladder.</h2>
+    <p class="lede">Every Forward Deployed Engineer role decomposes into these. Each cluster ships
+    <b>both halves</b> — the human knowledge you internalize and the agent tool you build as you learn
+    (which becomes the portfolio artifact that proves it).</p>
+    <div class="grid">
+      <div class="cluster"><div class="n">01</div><h3>Production SWE</h3><p>Ship real systems in Python <em>and</em> TypeScript — tests, types, CI, observability. The bar is production, not toy.</p></div>
+      <div class="cluster"><div class="n">02</div><h3>Enterprise / hybrid deploy</h3><p>Docker, Kubernetes, CI/CD across public cloud, VPC, and on-prem. The perimeter constraints that define FDE work.</p></div>
+      <div class="cluster"><div class="n">03</div><h3>Modern AI stack</h3><p>RAG, vector DBs, evaluations, fine-tuning. Evaluation is the load-bearing skill — “how do we know it works at 5pm?”</p></div>
+      <div class="cluster"><div class="n">04</div><h3>Agentic system design</h3><p>Agent loops, tool-use, MCP, orchestration, guardrails — integrated deeply with enterprise infrastructure.</p></div>
+      <div class="cluster"><div class="n">05</div><h3>The FDE craft</h3><p>Discovery, reading the political terrain, finding the data reality, scoping the smallest end-to-end win. High agency.</p></div>
+      <div class="cluster"><div class="n">06</div><h3>Leadership & playbooks</h3><p>(For lead roles.) Define standards, mentor, and codify evolving playbooks that scale the practice.</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="label">Validated against real roles</div>
+    <h2 class="serif">A JD is the input.</h2>
+    <p class="lede">The course doesn’t guess what matters — it’s judged by one question: <em>would
+    someone who finishes this be ready to land this role?</em> Drop a job description, get a target +
+    a prep curriculum + the tools per competency.</p>
+    <div class="list">
+      <a class="item" href="https://github.com/wjlgatech/FDE-os/blob/main/course/prep/reflection-ai-fde-prep.md" target="_blank" rel="noopener">
+        <span class="tag">Prep curriculum</span>
+        <h3>Reflection AI — Forward Deployed Engineer <span class="arr">→</span></h3>
+        <p>The full JD-validated study plan: all six clusters with Learn / Tool / Prove for each, sequenced FDE-craft-first.</p>
+      </a>
+      <a class="item" href="https://github.com/wjlgatech/FDE-os/blob/main/course/prep/cvs-agentic-ai-engineer-prep.md" target="_blank" rel="noopener">
+        <span class="tag">Prep curriculum</span>
+        <h3>CVS — Agentic AI Engineer <span class="arr">→</span></h3>
+        <p>A second target, with the eval cluster deepened into a full RAG-evaluation lesson + runnable harness.</p>
+      </a>
+      <a class="item" href="https://github.com/wjlgatech/FDE-os/tree/main/course/target-jds" target="_blank" rel="noopener">
+        <span class="tag">Target JDs</span>
+        <h3>The captured job descriptions <span class="arr">→</span></h3>
+        <p>Each role distilled into competency clusters — the outcome the prep is reverse-engineered from.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="label">Prove it</div>
+    <h2 class="serif">Eval-as-gate, not a certificate.</h2>
+    <p class="lede">You don’t “finish” the course — you pass its gate. Self-score each cluster against the
+    JD; readiness is a number, and the proof is a deployed artifact plus a forkable agent tool.</p>
+    <div class="list">
+      <a class="item" href="https://github.com/wjlgatech/FDE-os/blob/main/course/prep/reflection-lead-readiness-scorecard.md" target="_blank" rel="noopener">
+        <span class="tag">Readiness gate</span>
+        <h3>Reflection Lead — readiness scorecard <span class="arr">→</span></h3>
+        <p>A JD-anchored 0–3 instrument: score the six clusters, find the binding gap, get a packaging-move plan.</p>
+      </a>
+      <a class="item" href="https://github.com/wjlgatech/FDE-os/blob/main/course/prep/lessons/rag-evaluation.md" target="_blank" rel="noopener">
+        <span class="tag">Lesson</span>
+        <h3>RAG evaluation, end to end <span class="arr">→</span></h3>
+        <p>The deepest lesson: build an eval set from the customer’s own data, with a runnable harness behind it.</p>
+      </a>
+      <a class="item" href="https://github.com/wjlgatech/FDE-os/blob/main/course/prep/tools/agentic-solution-architect/SKILL.md" target="_blank" rel="noopener">
+        <span class="tag">Flagship tool</span>
+        <h3>agentic-solution-architect <span class="arr">→</span></h3>
+        <p>Turns a discovery Site Survey into a proposed agent architecture — exactly the JD’s “architect agentic solutions.”</p>
+      </a>
+    </div>
+    <div class="note">The by-product that gets you hired: a Site Survey, an agent architecture, a deployed
+    service ×2, a RAG system + eval scoreboard, a working multi-tool agent + MCP server — <b>plus the
+    agent tool you built for each.</b> That toolkit is the interview.</div>
+  </section>
+
+  <footer>
+    Δ Delta — <a href="index.html">the last mile is the whole race</a><br>
+    Course content lives in <a href="https://github.com/wjlgatech/FDE-os/tree/main/course" target="_blank" rel="noopener">the open repo</a>.
+    Build the tools → <a href="toolkit.html">the Toolkit</a> · share the field → <a href="contribute.html">the Community</a>.
+  </footer>
+
+</div>
+</body>
+</html>
