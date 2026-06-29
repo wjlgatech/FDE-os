@@ -232,6 +232,8 @@
   /* ---------------- config ---------------- */
   var REPO = "wjlgatech/FDE-os";        // contributions land here as issues
   var DISCORD = "#";                     // optional: paste a Discord invite
+  var GUIDE_PROXY = "https://delta-guide-eosin.vercel.app/api/guide";  // deployed proxy/delta-guide/ (Vercel)
+                                          // → every visitor gets a real grounded model with no key of their own
 
   /* ---------------- the guide: grounded KB (answers ONLY from here) ---------------- */
   // Each entry: keywords to match + a plain-language answer. No entry matched -> honest refusal.
@@ -287,11 +289,18 @@
     groq:{base:"https://api.groq.com/openai/v1",model:"llama-3.3-70b-versatile"},
     custom:{base:"",model:""}
   };
-  var LLM=null; // {provider, base, model, key}
+  var LLM=null; // visitor's own key config {provider, base, model, key}
   function loadLLM(){ try{ LLM=JSON.parse(localStorage.getItem('delta_llm')||'null'); }catch(_){ LLM=null; } updateModeBadge(); }
+  // Resolve the model to use: the visitor's own key wins; else the Delta-hosted proxy (if deployed); else none.
+  function activeLLM(){
+    if(LLM&&LLM.key) return LLM;
+    if(GUIDE_PROXY) return {provider:"hosted", hosted:true, base:GUIDE_PROXY, model:"hosted"};
+    return null;
+  }
   function updateModeBadge(){
-    var t=document.getElementById('modeToggle');
+    var t=document.getElementById('modeToggle'); var a=activeLLM();
     if(LLM&&LLM.key){ t.classList.add('live'); t.textContent="⚡ "+LLM.provider+" · live"; }
+    else if(a&&a.hosted){ t.classList.add('live'); t.textContent="⚡ hosted · live"; }
     else { t.classList.remove('live'); t.textContent="⚡ Power mode"; }
   }
   function toggleSettings(){
@@ -324,19 +333,25 @@
     document.getElementById('settings').classList.remove('open'); }
 
   // RAG: feed the model ONLY retrieved KB facts; instruct it to refuse beyond them.
-  function askLLM(q){
+  // Works for both paths — a visitor's own key (direct to the provider) or the Delta-hosted proxy.
+  function askLLM(q, cfg){
     var ctx=scored(q).slice(0,3).filter(function(x){return x.s>0;}).map(function(x){return "- "+stripTags(x.e.a);});
     var context=ctx.length?ctx.join("\n"):"(no relevant facts found)";
     var sys="You are the Delta guide on a community site for Forward Deployed Engineers (FDEs). "+
       "Answer in warm, plain language for a non-technical reader, in 2-4 sentences. "+
       "Use ONLY the CONTEXT facts below. If they do not cover the question, say you don't know and "+
       "suggest opening a question for a human — never invent facts.\n\nCONTEXT:\n"+context;
-    return fetch(LLM.base.replace(/\/$/,'')+"/chat/completions",{
-      method:"POST",
-      headers:{"Content-Type":"application/json","Authorization":"Bearer "+LLM.key},
-      body:JSON.stringify({model:LLM.model,messages:[{role:"system",content:sys},{role:"user",content:q}],
-        temperature:0.3,max_tokens:300})
-    }).then(function(r){ if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); })
+    var messages=[{role:"system",content:sys},{role:"user",content:q}];
+    var url, headers={"Content-Type":"application/json"}, payload;
+    if(cfg.hosted){                                  // proxy holds the key; send no secret
+      url=cfg.base; payload={messages:messages,temperature:0.3,max_tokens:300};
+    } else {                                         // visitor's own key, straight to the provider
+      url=cfg.base.replace(/\/$/,'')+"/chat/completions";
+      headers["Authorization"]="Bearer "+cfg.key;
+      payload={model:cfg.model,messages:messages,temperature:0.3,max_tokens:300};
+    }
+    return fetch(url,{method:"POST",headers:headers,body:JSON.stringify(payload)})
+      .then(function(r){ if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); })
       .then(function(d){
         var t=(d.choices&&d.choices[0]&&d.choices[0].message&&d.choices[0].message.content||"").trim();
         if(!t) throw new Error("empty");
@@ -366,9 +381,10 @@
     var inp=document.getElementById('askInput'); var q=inp.value.trim(); if(!q) return false;
     bubble('stream','user',q.replace(/</g,'&lt;'));
     inp.value='';
-    if(LLM&&LLM.key){
+    var cfg=activeLLM();
+    if(cfg){
       typingOn();
-      askLLM(q).then(function(html){ typingOff(); bubble('stream','guide',html); })
+      askLLM(q,cfg).then(function(html){ typingOff(); bubble('stream','guide',html); })
         .catch(function(){ typingOff();
           bubble('stream','guide', answer(q)+" <span style='color:var(--muted)'>(answered from the grounded guide — the model was unreachable)</span>"); });
     } else {

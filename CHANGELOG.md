@@ -5,6 +5,18 @@ All notable changes to FDE-os are recorded here. Format follows
 
 ## [Unreleased]
 
+### Added
+- **`proxy/delta-guide/` — a deployed shared-key LLM proxy so *every* visitor gets the model (no key
+  of their own).** Option B to Power mode's BYO-key (Option A). A single Vercel serverless function
+  (`api/guide.js`) holds the free key(s) **server-side** and runs a fallback chain (NVIDIA NIM → Groq →
+  Gemini), with abuse guards: an `ALLOW_ORIGIN` allow-list + hard caps (`max_tokens ≤ 400`, prompt
+  ≤ 8000 chars). **Deployed live to Vercel** at `https://delta-guide-eosin.vercel.app/api/guide`
+  (Gemini key + origin allow-list set as encrypted env vars; verified end-to-end — `provider: gemini`,
+  CORS allows the Pages origin). `contribute.html`'s `GUIDE_PROXY` now points at it, so the live guide
+  answers with a real grounded model by default (badge `hosted · live`), still degrading to the offline
+  guide if the proxy is unreachable. Grounding is unchanged — the page still does the RAG; the proxy
+  only forwards. _Why: close the gap where only key-holders got the LLM; now the whole community does._
+
 ### Changed
 - **`contribute.html` Delta guide gains an optional, RAG-grounded real LLM ("⚡ Power mode").** The
   zero-key grounded guide stays the default; a visitor can flip on Power mode and paste their **own

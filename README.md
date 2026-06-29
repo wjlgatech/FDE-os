@@ -92,7 +92,8 @@ Because each article ships a Field Kit, **writing the series builds the toolkit*
 | [`Delta-viral-playbook.md`](Delta-viral-playbook.md) | Hook templates, post skeleton, stat bank, do/don't |
 | [`Delta-community-strategy.md`](Delta-community-strategy.md) | Hub-and-spoke community topology + participation ladder |
 | [`index.html`](index.html) | The community door (landing page) |
-| [`contribute.html`](contribute.html) | The **agentic contributor page** — a no-login, no-code page where non-technical visitors chat with a knowledge-grounded "Delta guide" (refuses rather than bluffs) and turn a war-story into a structured field note posted as a one-click GitHub issue. Static (GitHub Pages), Anthropic-styled. Optional **⚡ Power mode**: bring your own free LLM key (Gemini/Groq/…) for RAG-grounded conversational answers — key stays in your browser, never committed. |
+| [`contribute.html`](contribute.html) | The **agentic contributor page** — a no-login, no-code page where non-technical visitors chat with a knowledge-grounded "Delta guide" (refuses rather than bluffs) and turn a war-story into a structured field note posted as a one-click GitHub issue. Static (GitHub Pages), Anthropic-styled. The guide now answers via a **deployed shared-key proxy** ([`proxy/delta-guide/`](proxy/delta-guide/), live on Vercel) so every visitor gets a real grounded model — or bring your own free key via **⚡ Power mode** (stays in your browser). |
+| [`proxy/delta-guide/`](proxy/delta-guide/) | Deployable Vercel function backing the guide with a shared free LLM + fallback chain (NIM→Groq→Gemini), origin allow-list, and token caps. Holds the key server-side so the static page never does. |
 
 ## References
 
