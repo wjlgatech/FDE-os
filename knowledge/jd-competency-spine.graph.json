@@ -1,0 +1,341 @@
+{
+  "counts": {
+    "concepts": 29,
+    "edges": 25,
+    "evidence": 0
+  },
+  "edges": [
+    {
+      "source": "cross-company-synthesis-md-competency-demand-frequency",
+      "target": "cross-company-synthesis-md-fde-competency-demand-cross-company-synthesis",
+      "type": "part_of"
+    },
+    {
+      "source": "cross-company-synthesis-md-most-demanded-tools-and-frameworks",
+      "target": "cross-company-synthesis-md-fde-competency-demand-cross-company-synthesis",
+      "type": "part_of"
+    },
+    {
+      "source": "cross-company-synthesis-md-universal-competencies",
+      "target": "cross-company-synthesis-md-fde-competency-demand-cross-company-synthesis",
+      "type": "part_of"
+    },
+    {
+      "source": "cvs-agentic-ai-engineer-md-agentic-system-design",
+      "target": "cvs-agentic-ai-engineer-md-cvs-agentic-ai-engineer-fde-competency-profile",
+      "type": "part_of"
+    },
+    {
+      "source": "cvs-agentic-ai-engineer-md-enterprise-hybrid-deployment",
+      "target": "cvs-agentic-ai-engineer-md-cvs-agentic-ai-engineer-fde-competency-profile",
+      "type": "part_of"
+    },
+    {
+      "source": "cvs-agentic-ai-engineer-md-modern-ai-stack",
+      "target": "cvs-agentic-ai-engineer-md-cvs-agentic-ai-engineer-fde-competency-profile",
+      "type": "part_of"
+    },
+    {
+      "source": "cvs-agentic-ai-engineer-md-named-tools-and-frameworks",
+      "target": "cvs-agentic-ai-engineer-md-cvs-agentic-ai-engineer-fde-competency-profile",
+      "type": "part_of"
+    },
+    {
+      "source": "cvs-agentic-ai-engineer-md-production-swe",
+      "target": "cvs-agentic-ai-engineer-md-cvs-agentic-ai-engineer-fde-competency-profile",
+      "type": "part_of"
+    },
+    {
+      "source": "cvs-agentic-ai-engineer-md-technical-leadership-playbooks",
+      "target": "cvs-agentic-ai-engineer-md-cvs-agentic-ai-engineer-fde-competency-profile",
+      "type": "part_of"
+    },
+    {
+      "source": "cvs-agentic-ai-engineer-md-the-fde-craft",
+      "target": "cvs-agentic-ai-engineer-md-cvs-agentic-ai-engineer-fde-competency-profile",
+      "type": "part_of"
+    },
+    {
+      "source": "google-cloud-fde-md-agentic-system-design",
+      "target": "google-cloud-fde-md-google-cloud-fde-fde-competency-profile",
+      "type": "part_of"
+    },
+    {
+      "source": "google-cloud-fde-md-enterprise-hybrid-deployment",
+      "target": "google-cloud-fde-md-google-cloud-fde-fde-competency-profile",
+      "type": "part_of"
+    },
+    {
+      "source": "google-cloud-fde-md-modern-ai-stack",
+      "target": "google-cloud-fde-md-google-cloud-fde-fde-competency-profile",
+      "type": "part_of"
+    },
+    {
+      "source": "google-cloud-fde-md-named-tools-and-frameworks",
+      "target": "google-cloud-fde-md-google-cloud-fde-fde-competency-profile",
+      "type": "part_of"
+    },
+    {
+      "source": "google-cloud-fde-md-production-swe",
+      "target": "google-cloud-fde-md-google-cloud-fde-fde-competency-profile",
+      "type": "part_of"
+    },
+    {
+      "source": "google-cloud-fde-md-technical-leadership-playbooks",
+      "target": "google-cloud-fde-md-google-cloud-fde-fde-competency-profile",
+      "type": "part_of"
+    },
+    {
+      "source": "google-cloud-fde-md-the-fde-craft",
+      "target": "google-cloud-fde-md-google-cloud-fde-fde-competency-profile",
+      "type": "part_of"
+    },
+    {
+      "source": "reflection-ai-fde-md-agentic-system-design",
+      "target": "reflection-ai-fde-md-reflection-ai-fde-fde-competency-profile",
+      "type": "part_of"
+    },
+    {
+      "source": "reflection-ai-fde-md-enterprise-hybrid-deployment",
+      "target": "reflection-ai-fde-md-reflection-ai-fde-fde-competency-profile",
+      "type": "part_of"
+    },
+    {
+      "source": "reflection-ai-fde-md-modern-ai-stack",
+      "target": "reflection-ai-fde-md-reflection-ai-fde-fde-competency-profile",
+      "type": "part_of"
+    },
+    {
+      "source": "reflection-ai-fde-md-named-tools-and-frameworks",
+      "target": "reflection-ai-fde-md-reflection-ai-fde-fde-competency-profile",
+      "type": "part_of"
+    },
+    {
+      "source": "reflection-ai-fde-md-post-training-stretch",
+      "target": "reflection-ai-fde-md-reflection-ai-fde-fde-competency-profile",
+      "type": "part_of"
+    },
+    {
+      "source": "reflection-ai-fde-md-production-swe",
+      "target": "reflection-ai-fde-md-reflection-ai-fde-fde-competency-profile",
+      "type": "part_of"
+    },
+    {
+      "source": "reflection-ai-fde-md-technical-leadership-playbooks",
+      "target": "reflection-ai-fde-md-reflection-ai-fde-fde-competency-profile",
+      "type": "part_of"
+    },
+    {
+      "source": "reflection-ai-fde-md-the-fde-craft",
+      "target": "reflection-ai-fde-md-reflection-ai-fde-fde-competency-profile",
+      "type": "part_of"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "cross-company-synthesis-md-competency-demand-frequency",
+      "label": "Competency demand frequency",
+      "level": 2,
+      "source_file": "_cross-company-synthesis.md",
+      "type": "concept"
+    },
+    {
+      "id": "cross-company-synthesis-md-fde-competency-demand-cross-company-synthesis",
+      "label": "FDE competency demand — cross-company synthesis",
+      "level": 1,
+      "source_file": "_cross-company-synthesis.md",
+      "type": "concept"
+    },
+    {
+      "id": "cross-company-synthesis-md-most-demanded-tools-and-frameworks",
+      "label": "Most-demanded tools and frameworks",
+      "level": 2,
+      "source_file": "_cross-company-synthesis.md",
+      "type": "concept"
+    },
+    {
+      "id": "cross-company-synthesis-md-universal-competencies",
+      "label": "Universal competencies",
+      "level": 2,
+      "source_file": "_cross-company-synthesis.md",
+      "type": "concept"
+    },
+    {
+      "id": "cvs-agentic-ai-engineer-md-agentic-system-design",
+      "label": "Agentic system design",
+      "level": 2,
+      "source_file": "cvs-agentic-ai-engineer.md",
+      "type": "concept"
+    },
+    {
+      "id": "cvs-agentic-ai-engineer-md-cvs-agentic-ai-engineer-fde-competency-profile",
+      "label": "cvs-agentic-ai-engineer — FDE competency profile",
+      "level": 1,
+      "source_file": "cvs-agentic-ai-engineer.md",
+      "type": "concept"
+    },
+    {
+      "id": "cvs-agentic-ai-engineer-md-enterprise-hybrid-deployment",
+      "label": "Enterprise / hybrid deployment",
+      "level": 2,
+      "source_file": "cvs-agentic-ai-engineer.md",
+      "type": "concept"
+    },
+    {
+      "id": "cvs-agentic-ai-engineer-md-modern-ai-stack",
+      "label": "Modern AI stack",
+      "level": 2,
+      "source_file": "cvs-agentic-ai-engineer.md",
+      "type": "concept"
+    },
+    {
+      "id": "cvs-agentic-ai-engineer-md-named-tools-and-frameworks",
+      "label": "Named tools and frameworks",
+      "level": 2,
+      "source_file": "cvs-agentic-ai-engineer.md",
+      "type": "concept"
+    },
+    {
+      "id": "cvs-agentic-ai-engineer-md-production-swe",
+      "label": "Production SWE",
+      "level": 2,
+      "source_file": "cvs-agentic-ai-engineer.md",
+      "type": "concept"
+    },
+    {
+      "id": "cvs-agentic-ai-engineer-md-technical-leadership-playbooks",
+      "label": "Technical leadership & playbooks",
+      "level": 2,
+      "source_file": "cvs-agentic-ai-engineer.md",
+      "type": "concept"
+    },
+    {
+      "id": "cvs-agentic-ai-engineer-md-the-fde-craft",
+      "label": "The FDE craft",
+      "level": 2,
+      "source_file": "cvs-agentic-ai-engineer.md",
+      "type": "concept"
+    },
+    {
+      "id": "google-cloud-fde-md-agentic-system-design",
+      "label": "Agentic system design",
+      "level": 2,
+      "source_file": "google-cloud-fde.md",
+      "type": "concept"
+    },
+    {
+      "id": "google-cloud-fde-md-enterprise-hybrid-deployment",
+      "label": "Enterprise / hybrid deployment",
+      "level": 2,
+      "source_file": "google-cloud-fde.md",
+      "type": "concept"
+    },
+    {
+      "id": "google-cloud-fde-md-google-cloud-fde-fde-competency-profile",
+      "label": "google-cloud-fde — FDE competency profile",
+      "level": 1,
+      "source_file": "google-cloud-fde.md",
+      "type": "concept"
+    },
+    {
+      "id": "google-cloud-fde-md-modern-ai-stack",
+      "label": "Modern AI stack",
+      "level": 2,
+      "source_file": "google-cloud-fde.md",
+      "type": "concept"
+    },
+    {
+      "id": "google-cloud-fde-md-named-tools-and-frameworks",
+      "label": "Named tools and frameworks",
+      "level": 2,
+      "source_file": "google-cloud-fde.md",
+      "type": "concept"
+    },
+    {
+      "id": "google-cloud-fde-md-production-swe",
+      "label": "Production SWE",
+      "level": 2,
+      "source_file": "google-cloud-fde.md",
+      "type": "concept"
+    },
+    {
+      "id": "google-cloud-fde-md-technical-leadership-playbooks",
+      "label": "Technical leadership & playbooks",
+      "level": 2,
+      "source_file": "google-cloud-fde.md",
+      "type": "concept"
+    },
+    {
+      "id": "google-cloud-fde-md-the-fde-craft",
+      "label": "The FDE craft",
+      "level": 2,
+      "source_file": "google-cloud-fde.md",
+      "type": "concept"
+    },
+    {
+      "id": "reflection-ai-fde-md-agentic-system-design",
+      "label": "Agentic system design",
+      "level": 2,
+      "source_file": "reflection-ai-fde.md",
+      "type": "concept"
+    },
+    {
+      "id": "reflection-ai-fde-md-enterprise-hybrid-deployment",
+      "label": "Enterprise / hybrid deployment",
+      "level": 2,
+      "source_file": "reflection-ai-fde.md",
+      "type": "concept"
+    },
+    {
+      "id": "reflection-ai-fde-md-modern-ai-stack",
+      "label": "Modern AI stack",
+      "level": 2,
+      "source_file": "reflection-ai-fde.md",
+      "type": "concept"
+    },
+    {
+      "id": "reflection-ai-fde-md-named-tools-and-frameworks",
+      "label": "Named tools and frameworks",
+      "level": 2,
+      "source_file": "reflection-ai-fde.md",
+      "type": "concept"
+    },
+    {
+      "id": "reflection-ai-fde-md-post-training-stretch",
+      "label": "Post-training (stretch)",
+      "level": 2,
+      "source_file": "reflection-ai-fde.md",
+      "type": "concept"
+    },
+    {
+      "id": "reflection-ai-fde-md-production-swe",
+      "label": "Production SWE",
+      "level": 2,
+      "source_file": "reflection-ai-fde.md",
+      "type": "concept"
+    },
+    {
+      "id": "reflection-ai-fde-md-reflection-ai-fde-fde-competency-profile",
+      "label": "reflection-ai-fde — FDE competency profile",
+      "level": 1,
+      "source_file": "reflection-ai-fde.md",
+      "type": "concept"
+    },
+    {
+      "id": "reflection-ai-fde-md-technical-leadership-playbooks",
+      "label": "Technical leadership & playbooks",
+      "level": 2,
+      "source_file": "reflection-ai-fde.md",
+      "type": "concept"
+    },
+    {
+      "id": "reflection-ai-fde-md-the-fde-craft",
+      "label": "The FDE craft",
+      "level": 2,
+      "source_file": "reflection-ai-fde.md",
+      "type": "concept"
+    }
+  ],
+  "schema": "knowledgefy/1",
+  "source": "jd-competencies"
+}

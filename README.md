@@ -54,6 +54,10 @@ What's live now:
   signals (before the client can articulate it): adoption-readiness score + inferred archetype + its
   adoption traps + the oblique probes to ask next, gated. Deepens the `delta-discovery-protocol` kit —
   because the biggest deployment failures are workflow failures, not model failures.
+- **`skills/jd-compiler`** — *a JD is the input.* Compile real job descriptions (Google · Reflection ·
+  CVS) into structured FDE competency knowledge + a cross-company demand matrix, then grow the
+  knowledge base with it: `knowledge/jd-competency-spine.*` (built via `knowledgefy` from the compiled
+  `knowledge/vault/jd-competencies/`) — the demand signal, unlocked from prose.
 - **`knowledge/fde-spine.*`** — the canonical FDE knowledge spine built from the research vault
   (12 concepts across all 7 research threads, 39 evidence nodes, 51 edges).
 - **CI** — `tests.yml` runs every skill's test suite + the Field Kit convention lint on each
