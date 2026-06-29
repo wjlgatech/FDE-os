@@ -1,0 +1,7 @@
+{
+  "name": "delta-guide-proxy",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Shared-key, fallback-chain LLM proxy for the Delta guide (contribute.html)."
+}
