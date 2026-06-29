@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Toolkit — Delta, the open stack a Delta deploys</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F0EDE4; --paper-2:#F7F4EC; --paper-3:#FBF9F3;
+    --ink:#1A1915; --ink-soft:#46423A; --muted:#7A7466;
+    --clay:#CC785C; --clay-deep:#B05B3C; --line:#E0D9C9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink-soft);
+    font-family:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  .wrap{max-width:880px;margin:0 auto;padding:0 28px}
+  .serif{font-family:"Newsreader",Georgia,serif}
+  a{color:var(--clay-deep)}
+
+  nav{display:flex;align-items:center;justify-content:space-between;padding:30px 0}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:600;font-size:18px;color:var(--ink);text-decoration:none}
+  .delta-mark{width:30px;height:30px;display:grid;place-items:center;border-radius:8px;
+    background:var(--clay);color:var(--paper);font-weight:600;font-size:17px;line-height:1}
+  .nav-cta{font-size:15px;color:var(--ink);text-decoration:none;padding:9px 16px;border-radius:999px;
+    border:1px solid var(--line);transition:.2s}
+  .nav-cta:hover{border-color:var(--clay);background:var(--paper-3)}
+
+  header.hero{padding:54px 0 26px;max-width:700px}
+  .eyebrow{display:inline-block;font-size:13px;letter-spacing:.16em;text-transform:uppercase;
+    font-weight:600;color:var(--clay);margin-bottom:22px}
+  h1{font-family:"Newsreader",Georgia,serif;font-size:clamp(38px,6.4vw,62px);line-height:1.04;
+    letter-spacing:-.018em;color:var(--ink);font-weight:500}
+  h1 em{font-style:italic;color:var(--clay)}
+  .sub{max-width:620px;margin:24px 0 0;font-size:clamp(17px,2.2vw,20px);color:var(--ink-soft)}
+
+  section.block{margin:52px 0}
+  .label{font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--clay);margin-bottom:10px}
+  .block h2{font-family:"Newsreader",Georgia,serif;font-size:clamp(24px,3.6vw,32px);color:var(--ink);
+    font-weight:500;letter-spacing:-.012em;margin-bottom:8px}
+  .block .lede{color:var(--ink-soft);font-size:17px;max-width:640px;margin-bottom:24px}
+
+  .list{display:grid;gap:12px}
+  a.item{display:block;border:1px solid var(--line);border-radius:13px;padding:18px 20px;background:var(--paper-3);
+    text-decoration:none;transition:transform .18s,border-color .18s,box-shadow .18s}
+  a.item:hover{transform:translateY(-2px);border-color:var(--clay);box-shadow:0 12px 26px -18px rgba(26,25,21,.3)}
+  a.item .top{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:5px}
+  a.item h3{font-family:"Newsreader",serif;font-size:19px;color:var(--ink);font-weight:500}
+  a.item code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;color:var(--clay-deep);
+    background:var(--paper-2);border:1px solid var(--line);padding:2px 7px;border-radius:6px}
+  a.item .arr{margin-left:auto;color:var(--clay);font-weight:600}
+  a.item p{font-size:14.5px;color:var(--ink-soft);line-height:1.55}
+
+  .note{border-left:3px solid var(--clay);background:var(--paper-2);border-radius:0 12px 12px 0;
+    padding:18px 22px;font-size:15.5px;color:var(--ink)}
+  .note code{font-family:ui-monospace,monospace;font-size:13.5px;background:var(--paper-3);
+    border:1px solid var(--line);padding:1px 6px;border-radius:5px}
+
+  footer{border-top:1px solid var(--line);margin-top:44px;padding:32px 0 56px;text-align:center;
+    color:var(--muted);font-size:14px;line-height:1.7}
+  footer a{color:var(--clay-deep);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <a class="brand" href="index.html"><span class="delta-mark">Δ</span> Delta</a>
+    <a class="nav-cta" href="index.html">← Back to the field</a>
+  </nav>
+
+  <header class="hero">
+    <span class="eyebrow">Door 02 · Build</span>
+    <h1>The open stack a Delta <em>actually</em> deploys.</h1>
+    <p class="sub">Offline, dependency-free, CI-gated agent skills you can fork. The “paved superhighway”
+    half of the model — so you’re not rebuilding evals, discovery, and scoring on every engagement.
+    Every one ships a <code style="font-family:ui-monospace,monospace;font-size:14px">SKILL.md</code> and, where it runs, a tested <code style="font-family:ui-monospace,monospace;font-size:14px">scripts/</code> core.</p>
+  </header>
+
+  <section class="block">
+    <div class="label">The evaluation spine</div>
+    <h2 class="serif">Know it works — to the operator, at 5pm.</h2>
+    <p class="lede">Evaluation is the load-bearing skill of FDE work. These turn “does it work?” into a
+    deterministic pass/fail with evidence — the gate that makes everything else trustworthy.</p>
+    <div class="list">
+      <a class="item" href="https://github.com/wjlgatech/FDE-os/tree/main/skills/rag-eval-harness" target="_blank" rel="noopener">
+        <div class="top"><h3>rag-eval-harness</h3><code>17 tests · offline</code><span class="arr">fork →</span></div>
+        <p>Score a RAG/agent eval set: precision@k, recall@k, MRR, hit-rate + a grounding/hallucination proxy + citation coverage, with an optional gate.</p>
+      </a>
+      <a class="item" href="https://github.com/wjlgatech/FDE-os/tree/main/skills/true-scorer" target="_blank" rel="noopener">
+        <div class="top"><h3>true-scorer</h3><code>TRUE rubric</code><span class="arr">fork →</span></div>
+        <p>Score a draft against the TRUE rubric (Transferable, Reusable, Understandable, Evaluated — 0–3 each) and apply the ship gate.</p>
+      </a>
+      <a class="item" href="https://github.com/wjlgatech/FDE-os/tree/main/skills/criteria-scorer" target="_blank" rel="noopener">
+        <div class="top"><h3>criteria-scorer</h3><code>11 tests</code><span class="arr">fork →</span></div>
+        <p>Score any artifact against a list of binary, mechanically-checkable pass/fail criteria → a 0–1 score + a gate.</p>
+      </a>
+      <a class="item" href="https://github.com/wjlgatech/FDE-os/tree/main/skills/eval-loop" target="_blank" rel="noopener">
+        <div class="top"><h3>eval-loop</h3><code>self-improving</code><span class="arr">fork →</span></div>
+        <p>Turn a sequence of scored versions into a kept winner + a run-log (Round / Change / Score / Verdict) — the self-fixing artifact loop.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="label">Discovery → architecture → integration</div>
+    <h2 class="serif">From a messy room to a shipped agent.</h2>
+    <p class="lede">The FDE-craft half: walk into ambiguity, find the real problem and the real data,
+    propose the smallest architecture that wins — and expose it as callable tools.</p>
+    <div class="list">
+      <a class="item" href="https://github.com/wjlgatech/FDE-os/tree/main/field-kits/delta-discovery-protocol" target="_blank" rel="noopener">
+        <div class="top"><h3>Delta Discovery Protocol</h3><code>field kit</code><span class="arr">fork →</span></div>
+        <p>Run FDE-style discovery on any messy problem → a structured Site Survey (the political terrain, the data reality, the smallest end-to-end win).</p>
+      </a>
+      <a class="item" href="https://github.com/wjlgatech/FDE-os/blob/main/course/prep/tools/agentic-solution-architect/SKILL.md" target="_blank" rel="noopener">
+        <div class="top"><h3>agentic-solution-architect</h3><code>flagship</code><span class="arr">fork →</span></div>
+        <p>Turn a Site Survey into a proposed agent architecture — the bridge from discovery to “architect agentic solutions.”</p>
+      </a>
+      <a class="item" href="https://github.com/wjlgatech/FDE-os/tree/main/skills/fde-mcp-server" target="_blank" rel="noopener">
+        <div class="top"><h3>fde-mcp-server</h3><code>MCP · runnable</code><span class="arr">fork →</span></div>
+        <p>A minimal, dependency-free MCP server (stdio, JSON-RPC 2.0) that exposes these skills as callable tools to any MCP host (Claude Desktop, Claude Code).</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="label">Author your own</div>
+    <h2 class="serif">Knowledge in, field kits out.</h2>
+    <p class="lede">The meta-tools — compile a research vault into a navigable spine, and mint
+    convention-correct Field Kits so your hard-won knowledge becomes a forkable asset.</p>
+    <div class="list">
+      <a class="item" href="https://github.com/wjlgatech/FDE-os/tree/main/skills/knowledgefy" target="_blank" rel="noopener">
+        <div class="top"><h3>knowledgefy</h3><code>offline</code><span class="arr">fork →</span></div>
+        <p>Turn a local, heterogeneous prose research vault (Markdown notes, synthesis docs) into a navigable knowledge spine — deterministic, no network.</p>
+      </a>
+      <a class="item" href="https://github.com/wjlgatech/FDE-os/tree/main/skills/field-kit-generator" target="_blank" rel="noopener">
+        <div class="top"><h3>field-kit-generator</h3><code>scaffold + lint</code><span class="arr">fork →</span></div>
+        <p>Scaffold and lint a Delta Field Kit to convention (Checklist / SOP / MCP-spec / …) so a Field Manual becomes a reusable agent skill.</p>
+      </a>
+    </div>
+    <div class="note">All seven run <b>offline and CI-gated</b> — they work inside a customer perimeter
+    with no network. Clone the repo and run the suite: <code>for d in skills/*/tests; do python3 -m unittest discover -s "$d"; done</code>.</div>
+  </section>
+
+  <footer>
+    Δ Delta — <a href="index.html">the last mile is the whole race</a><br>
+    All tools live in <a href="https://github.com/wjlgatech/FDE-os/tree/main/skills" target="_blank" rel="noopener">the open repo</a>.
+    Learn the craft → <a href="course.html">the Course</a> · share the field → <a href="contribute.html">the Community</a>.
+  </footer>
+
+</div>
+</body>
+</html>

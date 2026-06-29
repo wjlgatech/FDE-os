@@ -83,8 +83,10 @@
     font-size:clamp(30px,4.4vw,42px);color:var(--ink);font-weight:500;margin-bottom:42px;letter-spacing:-.012em}
   .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
   .card{border:1px solid var(--line);border-radius:16px;padding:28px;background:var(--paper-3);
-    position:relative;transition:transform .2s,border-color .2s,box-shadow .2s}
+    position:relative;transition:transform .2s,border-color .2s,box-shadow .2s;
+    text-decoration:none;color:inherit;display:flex;flex-direction:column}
   .card:hover{transform:translateY(-3px);border-color:var(--clay);box-shadow:0 14px 30px -18px rgba(26,25,21,.28)}
+  .card-go{margin-top:auto;padding-top:16px;color:var(--clay-deep);font-weight:600;font-size:14px}
   .card .ico{font-family:"Newsreader",Georgia,serif;font-size:26px;font-weight:500;
     color:var(--clay);margin-bottom:16px;letter-spacing:.01em;line-height:1}
   .card h3{font-family:"Newsreader",Georgia,serif;color:var(--ink);font-size:22px;margin-bottom:10px;font-weight:500}
@@ -158,25 +160,27 @@
   <div class="section-label">What you're joining</div>
   <h2 class="section-title serif">One field. Three doors.</h2>
   <div class="pillars">
-    <div class="card">
+    <a class="card" href="course.html">
       <div class="tag">Learn</div>
       <div class="ico">01</div>
       <h3>The Course</h3>
       <p>The FDE craft, made learnable. Read the room, build the thing that works by Friday, feed it back into product. The instincts Palantir trained with a plane ticket — turned into something you can study.</p>
-    </div>
-    <div class="card">
+      <div class="card-go">Enter the Course →</div>
+    </a>
+    <a class="card" href="toolkit.html">
       <div class="tag">Build</div>
       <div class="ico">02</div>
       <h3>The Toolkit</h3>
       <p>The open-source stack a Delta actually deploys: MCP servers, agent skills, eval harnesses, deployment scaffolding. The “paved superhighway” half of the model — in code you can fork.</p>
-    </div>
-    <div class="card here">
+      <div class="card-go">Open the Toolkit →</div>
+    </a>
+    <a class="card here" href="contribute.html">
       <div class="tag">You are here</div>
       <div class="ico">03</div>
       <h3>The Community</h3>
       <p>Where forward deployed engineers trade the real stuff: the 2 a.m. production fires, the political knife-fights, the wins nobody outside the building will ever hear about. The wisdom that only exists in the field.</p>
-      <p style="margin-top:14px"><a href="contribute.html" style="color:var(--clay-deep);text-decoration:none;border-bottom:1.5px solid var(--clay);padding-bottom:1px;font-size:14px">Ask the guide · add a field note →</a></p>
-    </div>
+      <div class="card-go">Ask the guide · add a field note →</div>
+    </a>
   </div>
 
   <div class="gap">
