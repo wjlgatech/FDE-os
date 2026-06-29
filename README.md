@@ -58,6 +58,11 @@ What's live now:
   CVS) into structured FDE competency knowledge + a cross-company demand matrix, then grow the
   knowledge base with it: `knowledge/jd-competency-spine.*` (built via `knowledgefy` from the compiled
   `knowledge/vault/jd-competencies/`) — the demand signal, unlocked from prose.
+- **`skills/fde-mcp-server`** — a dependency-free MCP server exposing **6** of the skills (true_score,
+  rag_eval, criteria_score, eval_loop, invisible_workflow_map, jd_compile) as callable tools to any MCP host.
+- **`workflows/engagement-readiness`** — the first **composition** workflow: chains
+  `invisible-workflow-mapper` (adopted?) AND `rag-eval-harness` (works?) into one **GO / NO-GO** gate.
+  Skills are blocks; workflows chain them.
 - **`knowledge/fde-spine.*`** — the canonical FDE knowledge spine built from the research vault
   (12 concepts across all 7 research threads, 39 evidence nodes, 51 edges).
 - **CI** — `tests.yml` runs every skill's test suite + the Field Kit convention lint on each

@@ -1,0 +1,29 @@
+{
+  "workflow": {
+    "context": {"org": "Mid-market logistics SaaS", "industry": "supply chain", "tools": ["Snowflake", "Slack"]},
+    "signals": [
+      {"dimension": "decider", "observation": "The VP of Operations owns the buy and decides fast.", "confidence": 0.85, "source": "kickoff"},
+      {"dimension": "approval_chain", "observation": "Security review is a rubber-stamp once the VP is in; no hidden vetoes surfaced.", "confidence": 0.7, "source": "kickoff"},
+      {"dimension": "evidence_ritual", "observation": "Decisions are made in the Monday ops review off a single Snowflake dashboard.", "confidence": 0.8, "source": "kickoff"},
+      {"dimension": "adoption_owner", "observation": "The three dispatchers must change their daily flow; they are rewarded on on-time delivery.", "confidence": 0.75, "source": "shadowing"},
+      {"dimension": "trigger", "observation": "Triage fires when a shipment exception lands in Slack.", "confidence": 0.6, "source": "kickoff"}
+    ]
+  },
+  "eval": {
+    "k": 3,
+    "thresholds": {"recall@k": 0.5, "precision@k": 0.3},
+    "eval_set": [
+      {
+        "query": "Why is shipment 8842 late?",
+        "retrieved": [
+          {"id": "c1", "text": "Shipment 8842 delayed at the Memphis hub due to a customs hold.", "relevant": true},
+          {"id": "c2", "text": "Carrier capacity in the southeast was constrained this week.", "relevant": true},
+          {"id": "c3", "text": "Unrelated note about packaging standards.", "relevant": false}
+        ],
+        "answer": "Shipment 8842 is late because of a customs hold at the Memphis hub.",
+        "gold_context_ids": ["c1", "c2"],
+        "citations": ["c1"]
+      }
+    ]
+  }
+}

@@ -34,13 +34,30 @@ class TestProtocol(unittest.TestCase):
         resp = srv.handle_request(_req("initialize", {}))
         self.assertEqual(resp["result"]["protocolVersion"], srv.PROTOCOL_VERSION)
 
-    def test_tools_list_has_both_tools_with_schema(self):
+    def test_tools_list_exposes_all_skills_with_schema(self):
         resp = srv.handle_request(_req("tools/list"))
         names = {t["name"] for t in resp["result"]["tools"]}
-        self.assertEqual(names, {"true_score", "rag_eval"})
+        self.assertEqual(names, {"true_score", "rag_eval", "criteria_score",
+                                 "eval_loop", "invisible_workflow_map", "jd_compile"})
         for t in resp["result"]["tools"]:
             self.assertEqual(t["inputSchema"]["type"], "object")
             self.assertTrue(t["description"])
+
+    def test_new_tools_callable(self):
+        # criteria_score returns a verdict
+        r = srv.handle_request(_req("tools/call", {
+            "name": "criteria_score",
+            "arguments": {"text": "We cut latency 40%.", "criteria": [{"type": "must_contain_number", "question": "n"}]},
+        }))
+        self.assertFalse(r["result"].get("isError"))
+        self.assertIn("VERDICT", r["result"]["content"][0]["text"])
+        # invisible_workflow_map returns a map
+        r2 = srv.handle_request(_req("tools/call", {
+            "name": "invisible_workflow_map",
+            "arguments": {"signals": [{"dimension": "decider", "observation": "VP decides", "confidence": 0.8}]},
+        }))
+        self.assertFalse(r2["result"].get("isError"))
+        self.assertIn("Invisible Workflow Map", r2["result"]["content"][0]["text"])
 
     def test_notification_returns_none(self):
         # notifications/initialized is a notification (no id) -> no response
