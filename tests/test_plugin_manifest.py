@@ -54,5 +54,28 @@ class TestPluginManifest(unittest.TestCase):
                         f"marketplace source {src!r} must resolve to the plugin root")
 
 
+class TestCodexManifest(unittest.TestCase):
+    """The Codex runtime variant must agree with the Claude one — author once, run on both."""
+
+    def setUp(self):
+        self.claude = _load(".claude-plugin/plugin.json")
+        self.codex = _load(".codex-plugin/plugin.json")
+
+    def test_codex_points_at_the_same_skills_dir(self):
+        # the whole portability claim: one skills/ tree, two manifests
+        self.assertEqual(self.codex.get("skills"), "./skills/")
+        self.assertTrue(os.path.isdir(os.path.join(ROOT, "skills")))
+
+    def test_codex_identity_matches_claude(self):
+        # name + version stay in lockstep so the two runtimes ship the same thing
+        self.assertEqual(self.codex["name"], self.claude["name"])
+        self.assertEqual(self.codex["version"], self.claude["version"])
+
+    def test_codex_has_interface_block(self):
+        iface = self.codex.get("interface", {})
+        for key in ("displayName", "shortDescription", "longDescription"):
+            self.assertTrue(iface.get(key), f"codex interface needs {key}")
+
+
 if __name__ == "__main__":
     unittest.main()
