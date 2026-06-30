@@ -145,6 +145,7 @@ Because each article ships a Field Kit, **writing the series builds the toolkit*
 | `skills/` | FDE-os-native agent skills — built only where existing skills leave a gap (`knowledgefy`, `true-scorer`; `field-kit-generator` lands in Stage 2) |
 | `knowledge/` | Generated knowledge spine (`fde-spine.graph.json` + `.html`) |
 | `flywheel/` | Objective-3 infra + content-production runbook/metrics (mostly Stage 1–3) |
+| `docs/field-notes/` | The flywheel's journal — real engagements distilled into transferable lessons (separating deep structure from domain surface) that feed Objectives 1 & 2 |
 | `course/` | Objective-1 JD-validated course. `target-jds/` = JD validation targets; `prep/` = worked dual-tier prep curricula (human knowledge + agent tools). The full Stage-4 course engine is still gated. |
 | `scripts/` | Repo tooling (`check_freshness.py`) |
 | `docs/plans/`, `docs/ideation/` | The roadmap plan and the originating ideation doc |
