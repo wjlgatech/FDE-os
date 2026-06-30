@@ -6,6 +6,18 @@ All notable changes to FDE-os are recorded here. Format follows
 ## [Unreleased]
 
 ### Added
+- **`docs/field-notes/` — the flywheel's journal (Objective 3), seeded with a real regulated FDE
+  engagement.** Captured the analysis of a real multi-pod, FDA-regulated agentic engagement (CRA/ICF/
+  CLS/BioA/SDTM) as a durable field note that separates **transferable deep structure** from
+  **domain-specific surface** and maps each lesson to the three pillars. The engagement *independently
+  validated* FDE-os's core bets — validation-as-infrastructure (the eval suite), workflow-fragmentation
+  as root problem (`invisible-workflow-mapper`), structure>models (`knowledgefy`/`jd-compiler`) — and
+  named one tooling gap FDE-os has nothing for: **document parsing** ("the real technical moat").
+  Dogfood proof: fed the engagement's signals, `invisible-workflow-mapper` classified it **regulated-
+  signoff** and surfaced exactly the engagement's own #6 lesson ("provenance mandatory; design for the
+  reviewer"). New `docs/field-notes/README.md` index — the synthesized counterpart to the live
+  war-stories at `contribute.html`. _Why: a real engagement is the highest-grade field signal; turning
+  it into a reusable artifact that improves the course + toolkit is the flywheel's whole purpose._
 - **Cross-runtime portability — the same skills now run on Claude Code, Codex, and Hermes (3 of 4
   runtimes), the core of Objective 2.** Added `.codex-plugin/plugin.json` (`"skills": "./skills/"` +
   an `interface` block) so Codex installs the **same** `skills/` tree natively — no skill rewritten.
