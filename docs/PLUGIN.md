@@ -53,6 +53,7 @@ From a clone, point the marketplace at the local path instead:
 
 ## Cross-runtime note
 
-This is the **Claude Code** package. The same skills are plain Markdown + Python, so the next step is
-authoring `.codex-plugin/` / agent-guide variants for Codex, Hermes, and OpenClaw (Objective 2's
-"author once, run on four runtimes"). Tracked as the remaining tool-base gap.
+This is the **Claude Code** package. The same `skills/` tree also ships a **Codex** manifest
+(`.codex-plugin/plugin.json`) and is a **drop-in for Hermes** (identical `SKILL.md` format) — see
+[`RUNTIMES.md`](RUNTIMES.md) for all four runtimes. OpenClaw needs a TypeScript adapter and is the
+remaining gap.

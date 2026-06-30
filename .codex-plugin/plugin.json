@@ -1,0 +1,44 @@
+{
+  "name": "fde-os",
+  "version": "0.1.0",
+  "description": "The Forward Deployed Engineer toolkit: offline, CI-gated agent skills for discovery, evaluation, and decision-workflow mapping — plus an MCP server that exposes them as callable tools.",
+  "author": {
+    "name": "Paul Wu",
+    "url": "https://github.com/wjlgatech"
+  },
+  "homepage": "https://wjlgatech.github.io/FDE-os/",
+  "repository": "https://github.com/wjlgatech/FDE-os",
+  "license": "MIT",
+  "keywords": [
+    "forward-deployed-engineer",
+    "fde",
+    "agent-skills",
+    "evaluation",
+    "rag-eval",
+    "discovery",
+    "workflow-mapping",
+    "mcp",
+    "offline",
+    "deterministic"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "FDE-os",
+    "shortDescription": "The Forward Deployed Engineer toolkit — discovery, evaluation, and decision-workflow mapping skills.",
+    "longDescription": "FDE-os is the open toolkit a Forward Deployed Engineer actually deploys: offline, deterministic, CI-gated agent skills for the field. Run FDE-style discovery (delta-discovery-protocol, invisible-workflow-mapper), gate quality with evaluation (true-scorer, criteria-scorer, rag-eval-harness, eval-loop), and turn job descriptions and research into navigable knowledge (jd-compiler, knowledgefy). All skills are plain Markdown + dependency-free Python, so they install natively via Codex; the bundled fde-mcp-server exposes six of them as callable MCP tools.",
+    "developerName": "Paul Wu",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://wjlgatech.github.io/FDE-os/",
+    "defaultPrompt": [
+      "Run the delta-discovery-protocol on this customer problem",
+      "Use invisible-workflow-mapper to reconstruct how this org makes decisions",
+      "Gate this RAG system with rag-eval-harness"
+    ],
+    "screenshots": []
+  }
+}

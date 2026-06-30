@@ -18,6 +18,8 @@ customer's environment*, not just in demos.
 > ```
 > The nine skills + the `engagement-readiness` workflow + the `fde-os` MCP server (six callable tools),
 > in one command. Details: [`docs/PLUGIN.md`](docs/PLUGIN.md).
+> Same skills also run on **Codex** and **Hermes** (one `skills/` tree, thin per-runtime manifests) —
+> [`docs/RUNTIMES.md`](docs/RUNTIMES.md).
 
 FDE-os has **three objectives**:
 

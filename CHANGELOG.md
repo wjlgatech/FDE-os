@@ -6,6 +6,17 @@ All notable changes to FDE-os are recorded here. Format follows
 ## [Unreleased]
 
 ### Added
+- **Cross-runtime portability — the same skills now run on Claude Code, Codex, and Hermes (3 of 4
+  runtimes), the core of Objective 2.** Added `.codex-plugin/plugin.json` (`"skills": "./skills/"` +
+  an `interface` block) so Codex installs the **same** `skills/` tree natively — no skill rewritten.
+  Verified Hermes uses the **identical** `SKILL.md` frontmatter FDE-os already ships, so Hermes is a
+  drop-in (symlink the skill dirs into its skills folder). New `docs/RUNTIMES.md` maps the one
+  skill-set onto all four runtimes and honestly scopes **OpenClaw as deferred** — its TypeScript
+  plugin SDK needs a real adapter, not a static manifest (not faked). The Claude + Codex manifests are
+  kept in lockstep by CI (`tests/test_plugin_manifest.py` now also asserts same name/version + same
+  `./skills/` target, 7 tests). _Why: "author once, run on four runtimes" is Objective 2's headline
+  promise; because the portable unit is plain Markdown + stdlib Python, three runtimes need only a
+  manifest — and naming OpenClaw's adapter cost honestly is the difference between a claim and a demo._
 - **FDE-os is now an installable Claude Code plugin.** Added `.claude-plugin/plugin.json` (the repo
   root *is* the plugin) + `.claude-plugin/marketplace.json`, so the whole toolkit installs with
   `/plugin marketplace add wjlgatech/FDE-os` → `/plugin install fde-os@fde-os` — no clone, no pip.
