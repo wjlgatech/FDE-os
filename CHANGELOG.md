@@ -6,6 +6,36 @@ All notable changes to FDE-os are recorded here. Format follows
 ## [Unreleased]
 
 ### Added
+- **`skills/doc-understanding` — the 10th skill, closing the moat gap the regulated-engagement field
+  note named the same week.** Messy enterprise docs → one canonical structured representation + a
+  **parse-quality gate**: DOCX (headings, paragraphs, tables with `gridSpan`/`vMerge` merges resolved,
+  `w:ins`/`w:del` track-changes counted and deleted text excluded), XLSX (sharedStrings incl. rich-text
+  runs, inline strings, sparse refs → dense grids, merged ranges), plus md/csv for a uniform interface.
+  The gate scores the *parse itself* (coverage · structure · fidelity; overall = 0.4/0.3/0.3 weighted)
+  and is honest by construction: **no evidence ⇒ NO-GO** — empty parses and docs with unresolved
+  track-changes never pass (pending revisions mean the text is not authoritative). PDFs/.doc/.xls are
+  *refused*, not guessed at. Pure stdlib (zipfile + ElementTree), 10 tests whose fixtures are real
+  OOXML zips. Also exposed as the MCP server's 7th tool, **`doc_gate`** (repo-relative `path` +
+  `threshold`). _Why: a real engagement called document parsing "the real technical moat" and Output
+  Quality ≤ Input Representation Quality — gate the corpus before agents reason over it._
+- **Root `Makefile` with a `check` target — one discoverable finish line.** `make check` runs the same
+  test globs as CI (`skills/*/tests workflows/*/tests tests`); `make freshness` wraps the networked
+  link probe with CI's exact file args. _Why: `anyagent goal` correctly flagged that the repo had 100+
+  tests but no discoverable check command — humans, CI, and agent harnesses now key off one command
+  instead of three private conventions._
+
+### Changed
+- **Code-quality pass driven by `anyagent analyze`: 69 → 80/100** (documentation 50%→100%, typing
+  95%→100%, function_size 99%→100%, nesting 100%). Added meaningful docstrings to all 29 undocumented
+  functions, typed the untyped `main()` entry points, extracted `_PAGE_CSS` from knowledgefy's
+  `render_html` (the one god-function), and evicted the rejected `webapp/` scaffold (untracked
+  leftover from PR #20's build experiments) from the working tree. The MCP server docstring/test now
+  assert all **seven** tools.
+
+### Investigated / Rejected
+- **`structure 0%` (the classes dimension) left unchased, again.** Same call as PR #20: the skills are
+  deliberately procedural stdlib CLIs; wrapping them in classes would inflate the score while making
+  them worse. The remaining 20-point ceiling is a measurement artifact, not debt.
 - **`docs/field-notes/` — the flywheel's journal (Objective 3), seeded with a real regulated FDE
   engagement.** Captured the analysis of a real multi-pod, FDA-regulated agentic engagement (CRA/ICF/
   CLS/BioA/SDTM) as a durable field note that separates **transferable deep structure** from

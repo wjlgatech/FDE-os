@@ -16,7 +16,7 @@ customer's environment*, not just in demos.
 > /plugin marketplace add wjlgatech/FDE-os
 > /plugin install fde-os@fde-os
 > ```
-> The nine skills + the `engagement-readiness` workflow + the `fde-os` MCP server (six callable tools),
+> The ten skills + the `engagement-readiness` workflow + the `fde-os` MCP server (seven callable tools),
 > in one command. Details: [`docs/PLUGIN.md`](docs/PLUGIN.md).
 > Same skills also run on **Codex** and **Hermes** (one `skills/` tree, thin per-runtime manifests) —
 > [`docs/RUNTIMES.md`](docs/RUNTIMES.md).
@@ -68,8 +68,12 @@ What's live now:
   CVS) into structured FDE competency knowledge + a cross-company demand matrix, then grow the
   knowledge base with it: `knowledge/jd-competency-spine.*` (built via `knowledgefy` from the compiled
   `knowledge/vault/jd-competencies/`) — the demand signal, unlocked from prose.
-- **`skills/fde-mcp-server`** — a dependency-free MCP server exposing **6** of the skills (true_score,
-  rag_eval, criteria_score, eval_loop, invisible_workflow_map, jd_compile) as callable tools to any MCP host.
+- **`skills/fde-mcp-server`** — a dependency-free MCP server exposing **7** of the skills (true_score,
+  rag_eval, criteria_score, eval_loop, invisible_workflow_map, jd_compile, doc_gate) as callable tools to any MCP host.
+- **`skills/doc-understanding`** — *the moat a real engagement named*: messy enterprise docs (DOCX with
+  merged tables + track-changes, XLSX with shared strings + merged ranges) → one canonical structured
+  representation + a **parse-quality gate** (coverage · structure · fidelity; NO-GO on empty parses or
+  unresolved revisions) — because *Output Quality ≤ Input Representation Quality*. Pure stdlib, offline.
 - **`workflows/engagement-readiness`** — the first **composition** workflow: chains
   `invisible-workflow-mapper` (adopted?) AND `rag-eval-harness` (works?) into one **GO / NO-GO** gate.
   Skills are blocks; workflows chain them.

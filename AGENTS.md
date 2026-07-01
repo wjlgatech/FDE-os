@@ -50,10 +50,15 @@ prompt (seeds Objective 3). Content production *is* product production.
 - **`rag-eval-harness`** — offline/deterministic RAG eval: retrieval metrics + grounding/hallucination
   proxy + citation coverage + a pass/fail gate (the true-scorer pattern). Run: `… rag_eval.py score <eval_set.json> --k 5 --thresholds "recall@k=0.7,grounding=0.8"`. Deterministic core, no network; LLM-judge is an opt-in layer.
 - **`fde-mcp-server`** — a stdlib MCP server (stdio JSON-RPC) exposing FDE-os skills as MCP tools
-  (`true_score`, `rag_eval`). `handle_request` is pure (testable); add a tool via the `TOOLS` registry.
+  (7: `true_score`, `rag_eval`, `criteria_score`, `eval_loop`, `invisible_workflow_map`, `jd_compile`,
+  `doc_gate`). `handle_request` is pure (testable); add a tool via the `TOOLS` registry.
   A runnable "1+ Claude MCP integrations" reference. Spawned by an MCP host; see SKILL.md for config.
 - **`criteria-scorer`** — binary pass/fail criteria scorer (typed predicates: word count, regex,
   buzzword list, has-number, has-citation) → 0–1 + `gate()`. Pure `score_artifact`/`gate` for reuse.
+- **`doc-understanding`** — messy enterprise docs → canonical structured rep + parse-quality gate.
+  DOCX (gridSpan/vMerge merges, w:ins/w:del track-changes), XLSX (sharedStrings, dense grids), md/csv.
+  Gate: NO-GO on zero blocks, overall < threshold, or unresolved revisions. Pure stdlib.
+  Run: `python3 skills/doc-understanding/scripts/doc_understand.py parse <f> [--json]` / `gate <f> [--threshold 0.7]`.
 - **`eval-loop`** — keep/revert loop + run-log (Round │ Change │ Score │ Verdict). Tested core is
   `decide(rounds)`/`render_run_log`; scoring is pluggable (`score-each` wires any scorer via `{file}`).
   Assisted, not autonomous — humans own taste, gates own the floor.

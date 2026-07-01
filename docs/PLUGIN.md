@@ -1,7 +1,7 @@
 # FDE-os as a Claude Code plugin
 
-The whole toolkit installs as one Claude Code plugin: the nine skills, the
-`engagement-readiness` workflow, and the `fde-mcp-server` (wired so its six tools are callable the
+The whole toolkit installs as one Claude Code plugin: the ten skills, the
+`engagement-readiness` workflow, and the `fde-mcp-server` (wired so its seven tools are callable the
 moment you install). The repo root **is** the plugin — `.claude-plugin/plugin.json` declares it and
 `.claude-plugin/marketplace.json` makes it installable straight from GitHub.
 
@@ -20,7 +20,7 @@ prompts. That's it — no clone, no pip.
 - **Skills** (auto-discovered from `skills/`): `true-scorer`, `criteria-scorer`, `rag-eval-harness`,
   `eval-loop`, `knowledgefy`, `jd-compiler`, `invisible-workflow-mapper`, `field-kit-generator`,
   `fde-mcp-server`.
-- **MCP server** (`fde-os`, auto-started): six callable tools — `true_score`, `rag_eval`,
+- **MCP server** (`fde-os`, auto-started): seven callable tools — `true_score`, `rag_eval`,
   `criteria_score`, `eval_loop`, `invisible_workflow_map`, `jd_compile`. Needs **Python 3.11+** on
   your PATH (the server is dependency-free stdlib).
 - **Workflow**: `workflows/engagement-readiness` — composes adoption-fit + eval into one GO/NO-GO.

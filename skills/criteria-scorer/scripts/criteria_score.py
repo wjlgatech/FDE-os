@@ -40,6 +40,7 @@ class CriterionError(ValueError):
 
 
 def _words(text: str) -> int:
+    """Word count used by the length criteria."""
     return len(WORD_RE.findall(text))
 
 
@@ -93,6 +94,7 @@ def gate(score: float, threshold: float, results: list[dict] | None = None) -> t
 
 
 def main() -> int:
+    """CLI entry point: score an artifact against a criteria file."""
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
     s = sub.add_parser("score")

@@ -36,6 +36,7 @@ CODE_FENCE_RE = re.compile(r"^```")
 
 
 def slug(text: str, used: set[str]) -> str:
+    """Filesystem/URL-safe slug for a label."""
     base = re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-") or "node"
     cand, n = base, 2
     while cand in used:
@@ -93,6 +94,7 @@ def parse_file(path: str, rel: str, used_ids: set[str], nodes: list, edges: list
 
 def _add_evidence(url: str, label: str, concept_id: str, rel: str, used_ids: set,
                   nodes: list, edges: list, seen_evidence: dict) -> None:
+    """Add an evidence node + cites edge for one source link."""
     if url in seen_evidence:
         eid = seen_evidence[url]
     else:
@@ -108,6 +110,7 @@ def _add_evidence(url: str, label: str, concept_id: str, rel: str, used_ids: set
 
 
 def build_graph(target: str) -> dict:
+    """Markdown notes -> deterministic concept/evidence graph."""
     files: list[tuple[str, str]] = []  # (abspath, relname)
     if os.path.isdir(target):
         for p in sorted(glob.glob(os.path.join(target, "**", "*.md"), recursive=True)):
@@ -136,6 +139,22 @@ def build_graph(target: str) -> dict:
     }
 
 
+_PAGE_CSS = """<style>
+  body { margin:0; background:#0d1117; color:#e6edf3; font:14px/1.5 system-ui,sans-serif; }
+  header { padding:12px 16px; border-bottom:1px solid #30363d; }
+  header b { color:#58a6ff; }
+  #wrap { display:flex; height:calc(100vh - 50px); }
+  #list { width:340px; overflow:auto; border-right:1px solid #30363d; padding:8px; }
+  .c { padding:2px 0; } .c a { color:#e6edf3; text-decoration:none; cursor:pointer; }
+  .c.l1 { font-weight:700; color:#58a6ff; margin-top:8px; }
+  .c.l2 { margin-left:14px; } .c.l3 { margin-left:28px; color:#9da7b3; }
+  #detail { flex:1; overflow:auto; padding:16px; }
+  .ev { display:block; color:#7ee787; text-decoration:none; font-size:13px; margin:2px 0; }
+  .pill { display:inline-block; font-size:11px; color:#9da7b3; border:1px solid #30363d;
+           border-radius:10px; padding:0 6px; margin-left:6px; }
+</style>"""
+
+
 def render_html(graph: dict) -> str:
     """Self-contained, no external scripts. Deterministic layered layout (x by level, y by order)."""
     data = html.escape(json.dumps(graph), quote=True)
@@ -143,20 +162,7 @@ def render_html(graph: dict) -> str:
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FDE knowledge spine</title>
-<style>
-  body {{ margin:0; background:#0d1117; color:#e6edf3; font:14px/1.5 system-ui,sans-serif; }}
-  header {{ padding:12px 16px; border-bottom:1px solid #30363d; }}
-  header b {{ color:#58a6ff; }}
-  #wrap {{ display:flex; height:calc(100vh - 50px); }}
-  #list {{ width:340px; overflow:auto; border-right:1px solid #30363d; padding:8px; }}
-  .c {{ padding:2px 0; }} .c a {{ color:#e6edf3; text-decoration:none; cursor:pointer; }}
-  .c.l1 {{ font-weight:700; color:#58a6ff; margin-top:8px; }}
-  .c.l2 {{ margin-left:14px; }} .c.l3 {{ margin-left:28px; color:#9da7b3; }}
-  #detail {{ flex:1; overflow:auto; padding:16px; }}
-  .ev {{ display:block; color:#7ee787; text-decoration:none; font-size:13px; margin:2px 0; }}
-  .pill {{ display:inline-block; font-size:11px; color:#9da7b3; border:1px solid #30363d;
-           border-radius:10px; padding:0 6px; margin-left:6px; }}
-</style></head>
+{_PAGE_CSS}</head>
 <body>
 <header><b>FDE knowledge spine</b> &middot; <span id="meta"></span></header>
 <div id="wrap"><div id="list"></div><div id="detail">Select a concept.</div></div>
@@ -197,6 +203,7 @@ function show(id) {{
 
 
 def main() -> int:
+    """CLI entry point: build the spine graph and optional HTML view."""
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
     b = sub.add_parser("build")

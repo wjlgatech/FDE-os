@@ -62,10 +62,12 @@ _LEVELS = re.compile(r"\b(staff|principal|senior|lead|junior|level\s*[ivx]+|fde-
 
 
 def _norm(text: str) -> str:
+    """Lowercase and collapse whitespace for matching."""
     return re.sub(r"\s+", " ", text.lower())
 
 
 def _found(blob: str, terms: list) -> list:
+    """Which of the given terms appear in the normalized text."""
     return sorted({t.strip() for t in terms if t in blob})
 
 
@@ -160,15 +162,18 @@ def cross_note(cross: dict) -> str:
 
 
 def _read(path: str) -> str:
+    """Read a JD file as UTF-8 text."""
     with open(path, encoding="utf-8") as fh:
         return fh.read()
 
 
 def _name_from_path(path: str) -> str:
+    """Role label derived from a JD filename."""
     return os.path.splitext(os.path.basename(path))[0]
 
 
-def main(argv=None) -> int:
+def main(argv: list[str] | None = None) -> int:
+    """CLI entry point: compile | matrix."""
     ap = argparse.ArgumentParser(description="Compile FDE job descriptions into competency knowledge.")
     sub = ap.add_subparsers(dest="cmd", required=True)
     c = sub.add_parser("compile", help="compile one JD → competency profile")

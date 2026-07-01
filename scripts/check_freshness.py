@@ -59,6 +59,7 @@ def probe(url: str) -> tuple[str, str]:
     bot_walled = any(domain == d or domain.endswith("." + d) for d in BOT_WALLED)
 
     def _request(method: str):
+        """HEAD-then-GET probe of one URL; returns (status, note)."""
         req = urllib.request.Request(url, method=method, headers={"User-Agent": "Mozilla/5.0 (FDE-os freshness)"})
         return urllib.request.urlopen(req, timeout=15)
 
@@ -88,6 +89,7 @@ def probe(url: str) -> tuple[str, str]:
 
 
 def main() -> int:
+    """CLI entry point: probe every external link and report dead ones."""
     ap = argparse.ArgumentParser()
     ap.add_argument("files", nargs="+", help="Markdown files to scan for URLs")
     ap.add_argument("--report", default=None, help="Write a markdown report to this path")

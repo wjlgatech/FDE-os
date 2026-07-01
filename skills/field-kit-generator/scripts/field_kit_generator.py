@@ -131,6 +131,7 @@ def lint_index(field_kits_dir: str) -> list[str]:
 # ---------------------------------------------------------------- cli
 
 def main() -> int:
+    """CLI entry point: generate a field kit from a manifest."""
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
 
