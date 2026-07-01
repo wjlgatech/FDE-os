@@ -36,7 +36,7 @@ the signal: it's the **architecture of regulated knowledge work**, not a pharma 
 | 4 | **Structure > Models** (data quality dominates outcomes; canonical representation first) | ✅ **Deep structure** | The canonical-data-layer idea. Partial in **`knowledgefy`** (prose → spine) and **`jd-compiler`** (JD → canonical competency model). |
 | 5 | **Retrieval-constrained generation** (text-to-SQL needs schema+examples+validation) | ✅ **Mostly transferable** | The grounding discipline behind **`rag-eval-harness`**. The *text-to-SQL* instance is narrower but the pattern (constrain + ground + validate) is universal. |
 | 6 | **Cost + routing is first-class** (model evaluation + routing strategy) | ✅ **Transferable** | The `/free-llm` fallback-chain discipline (NIM → Groq → Gemini → …), ordered for correctness then cost. |
-| 7 | **Document parsing is the real moat** (tables, OOXML, track-changes, regulatory templates; OCR ≠ enough) | ✅ **Transferable problem** — ❌ **no FDE-os tool yet** | **The gap.** `knowledgefy` ingests *prose/markdown*, not messy enterprise docs. This is the highest-leverage tooling gap the engagement reveals. |
+| 7 | **Document parsing is the real moat** (tables, OOXML, track-changes, regulatory templates; OCR ≠ enough) | ✅ **Transferable problem** — ✅ **now [`doc-understanding`](../../skills/doc-understanding/)** | Was the gap (`knowledgefy` ingests prose, not messy enterprise docs); closed the same week this note landed — OOXML → canonical rep + parse-quality gate. |
 | — | USDM, SDTM, ICF, CRA, BioA, CLS; FDA submission rules; Snowflake migration; country templates | ❌ **Domain-specific** | Clinical-trial canonical models, roles, and regulatory specifics. *Do not* generalize these — they're the surface, not the structure. The FDE skill is knowing which is which. |
 
 ## Impact on the three pillars
@@ -52,9 +52,10 @@ engagement spends its hardest effort exactly there.
 - **Validated:** the entire eval suite + `invisible-workflow-mapper` + the grounding focus map 1:1 to
   what the engagement calls "core infrastructure." We didn't guess the bottlenecks — a real engagement
   hit the same ones.
-- **Gap exposed:** **document parsing** ("the real technical moat") — FDE-os has nothing here. Runner-up
-  gaps: a *canonical-representation-first* discipline tool, and a runtime *generate→validate→retry* loop
-  template (distinct from `eval-loop`, which scores artifact *versions*).
+- **Gap exposed → closed:** **document parsing** ("the real technical moat") — FDE-os had nothing here
+  when this note was written; [`skills/doc-understanding`](../../skills/doc-understanding/) now covers it.
+  Remaining runner-up gap: a runtime *generate→validate→retry* loop template (distinct from `eval-loop`,
+  which scores artifact *versions*).
 
 **🌱 Community (Objective 3 — flywheel).** This *is* the flywheel turning: a real engagement became a
 durable, reusable artifact (this note) that improves the course and the toolkit. It's exactly the
@@ -68,4 +69,5 @@ across five pods.
 Build a **document-understanding skill** (the named moat): messy enterprise docs (PDF/DOCX/XLSX, merged
 tables, track-changes) → a **canonical structured representation** + a parse-quality **eval gate**
 (because *Output Quality ≤ Input Representation Quality*). It closes the biggest tooling gap *and*
-instantiates lessons #4, #5, and #7 at once. Scoped, not yet built — flagged for a decision.
+instantiates lessons #4, #5, and #7 at once. **Built the same week:
+[`skills/doc-understanding`](../../skills/doc-understanding/)** — the flywheel closed its loop.

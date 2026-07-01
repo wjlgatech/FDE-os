@@ -14,7 +14,7 @@ serves every runtime, with a thin per-runtime manifest on top. No skill is rewri
 ## Why one skills/ tree works for three of four
 
 Claude Code, Codex, and Hermes all consume the **same atomic unit**: a directory with a `SKILL.md`
-whose frontmatter is `name` + `description` (+ optional `allowed-tools`). FDE-os's nine skills already
+whose frontmatter is `name` + `description` (+ optional `allowed-tools`). FDE-os's ten skills already
 use exactly that shape (verified against an installed Hermes skill). So:
 
 - **Claude** reads `.claude-plugin/plugin.json` → `skills/`

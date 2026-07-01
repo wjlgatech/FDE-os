@@ -32,6 +32,7 @@ _ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 
 
 def _load(rel_script: str, mod_name: str) -> ModuleType:
+    """Lazy-import a skill script by repo-relative path."""
     path = os.path.join(_ROOT, rel_script)
     spec = importlib.util.spec_from_file_location(mod_name, path)
     mod = importlib.util.module_from_spec(spec)
@@ -90,6 +91,7 @@ def run_engagement(bundle: dict, wf_threshold: float = 0.6) -> dict:
 
 
 def render_md(report: dict) -> str:
+    """Human-readable markdown view of the composed go/no-go report."""
     L = ["# Engagement Readiness", "",
          f"## Verdict: {'✅ GO' if report['go'] else '⛔ NO-GO'}", ""]
     if report["reasons"]:
@@ -119,7 +121,8 @@ def render_md(report: dict) -> str:
     return "\n".join(L).rstrip() + "\n"
 
 
-def main(argv=None) -> int:
+def main(argv: list[str] | None = None) -> int:
+    """CLI entry point: run the composed engagement gate on a bundle."""
     ap = argparse.ArgumentParser(description="Compose adoption-fit + eval into one engagement go/no-go.")
     ap.add_argument("bundle", help="path to an engagement bundle JSON ({workflow:{...}, eval:{...}})")
     ap.add_argument("--wf-threshold", type=float, default=0.6, help="adoption-readiness gate threshold")

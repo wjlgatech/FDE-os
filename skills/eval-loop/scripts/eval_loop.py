@@ -96,6 +96,7 @@ def _score_file(scorer_cmd: str, path: str) -> float:
 
 
 def main() -> int:
+    """CLI entry point: decide the winning round from a rounds file."""
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
 

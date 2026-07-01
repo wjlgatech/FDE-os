@@ -81,6 +81,7 @@ def heuristic_scores(text: str) -> tuple[dict[str, int], dict[str, str]]:
 
 
 def parse_scores(arg: str) -> dict[str, int]:
+    """Parse 'T=2,R=3,...' manual score overrides."""
     out: dict[str, int] = {}
     for part in arg.split(","):
         k, _, v = part.partition("=")
@@ -89,6 +90,7 @@ def parse_scores(arg: str) -> dict[str, int]:
 
 
 def main() -> int:
+    """CLI entry point: score a draft and apply the ship gate."""
     ap = argparse.ArgumentParser()
     ap.add_argument("draft", nargs="?", help="path to a draft Field Manual (.md)")
     ap.add_argument("--scores", help="explicit per-letter scores, e.g. T=3,R=3,U=2,E=2")

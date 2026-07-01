@@ -116,6 +116,7 @@ def _text_of(data: dict) -> str:
 
 
 def _status(conf: float) -> str:
+    """Confidence bucket for one dimension: mapped / tentative / unknown."""
     if conf >= 0.66:
         return "known"
     if conf >= 0.33:
@@ -186,6 +187,7 @@ def gate(cov: dict, readiness: float, threshold: float) -> tuple:
 
 
 def build_map(data: dict, threshold: float = 0.6) -> dict:
+    """Signals -> per-dimension map + archetype match + coverage + gate verdict."""
     cov = coverage(data)
     readiness = adoption_readiness(cov)
     archetypes = match_archetypes(data)
@@ -201,6 +203,7 @@ def build_map(data: dict, threshold: float = 0.6) -> dict:
 
 
 def render_md(report: dict, context: dict | None = None) -> str:
+    """Human-readable markdown view of a workflow map report."""
     cov = report["coverage"]
     L = ["# Invisible Workflow Map", ""]
     if context:
@@ -248,7 +251,8 @@ def render_md(report: dict, context: dict | None = None) -> str:
     return "\n".join(L).rstrip() + "\n"
 
 
-def main(argv=None) -> int:
+def main(argv: list[str] | None = None) -> int:
+    """CLI entry point: map | probes | gate."""
     ap = argparse.ArgumentParser(description="Reconstruct an org's decision workflow from signals.")
     sub = ap.add_subparsers(dest="cmd", required=True)
     m = sub.add_parser("map", help="build the Invisible Workflow Map from a signals JSON")

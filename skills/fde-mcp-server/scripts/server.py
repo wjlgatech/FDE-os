@@ -2,8 +2,8 @@
 """fde-mcp-server — a minimal, dependency-free Model Context Protocol (MCP) server over stdio.
 
 It exposes FDE-os's own skills as MCP tools, so an MCP client (Claude Desktop, Claude Code, any
-MCP host) can call them. The six request→result skills are exposed: `true_score`, `rag_eval`,
-`criteria_score`, `eval_loop`, `invisible_workflow_map`, `jd_compile`. (The two artifact-builders
+MCP host) can call them. The seven request→result skills are exposed: `true_score`, `rag_eval`,
+`criteria_score`, `eval_loop`, `invisible_workflow_map`, `jd_compile`, `doc_gate`. (The two artifact-builders
 that mutate the filesystem — `knowledgefy` and `field-kit-generator` — stay CLI by design; a stdio
 tool should return a result, not write files into the host's tree.) This both (a) satisfies the
 common JD requirement "1+ Claude MCP integrations" with a real, runnable example, and (b) dogfoods
@@ -49,6 +49,7 @@ def _load(rel_script: str, mod_name: str) -> ModuleType:
 # ----------------------------------------------------------------- tool implementations
 
 def _tool_true_score(args: dict) -> str:
+    """Score text against the TRUE rubric and apply the ship gate."""
     sc = _load("skills/true-scorer/scripts/score.py", "score")
     text = args.get("text")
     if text is None and args.get("draft_path"):
@@ -64,6 +65,7 @@ def _tool_true_score(args: dict) -> str:
 
 
 def _tool_rag_eval(args: dict) -> str:
+    """Run the RAG retrieval eval and optionally gate on thresholds."""
     rev = _load("skills/rag-eval-harness/scripts/rag_eval.py", "rag_eval")
     eval_set = args.get("eval_set")
     if eval_set is None and args.get("eval_set_path"):
@@ -84,6 +86,7 @@ def _tool_rag_eval(args: dict) -> str:
 
 
 def _tool_criteria_score(args: dict) -> str:
+    """Score text against explicit criteria and gate on a threshold."""
     cs = _load("skills/criteria-scorer/scripts/criteria_score.py", "criteria_score")
     text = args.get("text")
     criteria = args.get("criteria")
@@ -100,6 +103,7 @@ def _tool_criteria_score(args: dict) -> str:
 
 
 def _tool_eval_loop(args: dict) -> str:
+    """Pick the winning round (and best single gain) from scored iterations."""
     el = _load("skills/eval-loop/scripts/eval_loop.py", "eval_loop")
     rounds = args.get("rounds")
     if not isinstance(rounds, list) or not rounds:
@@ -112,6 +116,7 @@ def _tool_eval_loop(args: dict) -> str:
 
 
 def _tool_invisible_workflow_map(args: dict) -> str:
+    """Reconstruct the org's decision workflow from observed signals."""
     wm = _load("skills/invisible-workflow-mapper/scripts/workflow_map.py", "workflow_map")
     data = args.get("data") or {"context": args.get("context", {}), "signals": args.get("signals", [])}
     if not data.get("signals"):
@@ -122,6 +127,7 @@ def _tool_invisible_workflow_map(args: dict) -> str:
 
 
 def _tool_jd_compile(args: dict) -> str:
+    """Compile a job description into a structured competency profile."""
     jc = _load("skills/jd-compiler/scripts/jd_compile.py", "jd_compile")
     text = args.get("text")
     if text is None and args.get("jd_path"):
@@ -131,6 +137,20 @@ def _tool_jd_compile(args: dict) -> str:
         raise ValueError("provide 'text' or 'jd_path'")
     jd = jc.compile_jd(text, args.get("name", "jd"))
     return jc.to_note(jd, source=args.get("name", ""))
+
+
+def _tool_doc_gate(args: dict) -> str:
+    """Parse an enterprise doc (docx/xlsx/md/csv) and run the parse-quality gate."""
+    du = _load("skills/doc-understanding/scripts/doc_understand.py", "doc_understand")
+    path = args.get("path")
+    if not path:
+        raise ValueError("provide 'path' (repo-relative path to a .docx/.xlsx/.md/.csv)")
+    rep = du.parse(os.path.join(_ROOT, path))
+    ok, reasons = du.gate(rep, float(args.get("threshold", 0.7)))
+    q = rep["quality"]
+    head = (f"parse-quality: overall {q['overall']} (coverage {q['coverage']}, "
+            f"structure {q['structure']}, fidelity {q['fidelity']})")
+    return head + "\nVERDICT: " + ("GO" if ok else "NO-GO — " + "; ".join(reasons))
 
 
 TOOLS = {
@@ -211,16 +231,32 @@ TOOLS = {
         },
         "handler": _tool_jd_compile,
     },
+    "doc_gate": {
+        "description": "Parse a messy enterprise document (docx/xlsx/md/csv) into a canonical structured "
+                       "representation and run the parse-quality gate (coverage/structure/fidelity) — "
+                       "NO-GO on empty parses or unresolved track-changes.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "path": {"type": "string", "description": "repo-relative path to the document"},
+                "threshold": {"type": "number", "description": "gate threshold on overall quality (default 0.7)"},
+            },
+            "required": ["path"],
+        },
+        "handler": _tool_doc_gate,
+    },
 }
 
 
 # ----------------------------------------------------------------- JSON-RPC dispatch
 
 def _result(req_id: object, result: object) -> dict:
+    """Wrap a payload as a JSON-RPC success response."""
     return {"jsonrpc": "2.0", "id": req_id, "result": result}
 
 
 def _error(req_id: object, code: int, message: str) -> dict:
+    """Wrap a code+message as a JSON-RPC error response."""
     return {"jsonrpc": "2.0", "id": req_id, "error": {"code": code, "message": message}}
 
 
@@ -269,6 +305,7 @@ def handle_request(req: dict) -> Optional[dict]:
 
 
 def run(stdin: Optional[TextIO] = None, stdout: Optional[TextIO] = None) -> None:  # pragma: no cover - thin stdio loop
+    """Blocking stdio loop: one JSON-RPC message per line."""
     stdin = stdin or sys.stdin
     stdout = stdout or sys.stdout
     for line in stdin:

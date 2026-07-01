@@ -43,16 +43,19 @@ SENT_SPLIT_RE = re.compile(r"(?<=[.!?])\s+")
 
 
 def _content_tokens(text: str) -> set[str]:
+    """Meaningful tokens of a doc id/text for relevance matching."""
     return {w for w in WORD_RE.findall((text or "").lower()) if w not in STOPWORDS and len(w) > 1}
 
 
 def _is_relevant(chunk: dict, gold: set[str]) -> bool:
+    """Is a retrieved doc one of the expected relevant docs?"""
     return bool(chunk.get("relevant")) or (chunk.get("id") in gold)
 
 
 # ----------------------------------------------------------------- retrieval metrics
 
 def precision_at_k(item: dict, k: int) -> float:
+    """Fraction of the top-k retrieved docs that are relevant."""
     gold = set(item.get("gold_context_ids", []))
     topk = item.get("retrieved", [])[:k]
     if not topk:
@@ -62,6 +65,7 @@ def precision_at_k(item: dict, k: int) -> float:
 
 
 def recall_at_k(item: dict, k: int) -> float | None:
+    """Fraction of the relevant docs found in the top-k."""
     gold = set(item.get("gold_context_ids", []))
     if not gold:
         return None  # recall undefined without the full relevant set
@@ -70,6 +74,7 @@ def recall_at_k(item: dict, k: int) -> float | None:
 
 
 def mrr(item: dict) -> float:
+    """Mean reciprocal rank of the first relevant doc."""
     gold = set(item.get("gold_context_ids", []))
     for rank, c in enumerate(item.get("retrieved", []), start=1):
         if _is_relevant(c, gold):
@@ -78,6 +83,7 @@ def mrr(item: dict) -> float:
 
 
 def hit_rate_at_k(item: dict, k: int) -> float:
+    """Fraction of queries with >=1 relevant doc in the top-k."""
     gold = set(item.get("gold_context_ids", []))
     return 1.0 if any(_is_relevant(c, gold) for c in item.get("retrieved", [])[:k]) else 0.0
 
@@ -118,6 +124,7 @@ def citation_coverage(item: dict) -> float | None:
 # ----------------------------------------------------------------- aggregate + gate
 
 def evaluate(eval_set: list[dict], k: int = 5) -> dict:
+    """Run all retrieval metrics over an eval set at cutoff k."""
     n = len(eval_set)
     if n == 0:
         return {"n": 0, "metrics": {}}
@@ -159,6 +166,7 @@ def gate(metrics: dict, thresholds: dict) -> tuple[bool, list[str]]:
 
 
 def parse_thresholds(arg: str) -> dict:
+    """Parse 'metric=value' CLI pairs into a thresholds dict."""
     out = {}
     for part in arg.split(","):
         if not part.strip():
@@ -169,6 +177,7 @@ def parse_thresholds(arg: str) -> dict:
 
 
 def main() -> int:
+    """CLI entry point: evaluate an eval set and optionally gate."""
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
     s = sub.add_parser("score")

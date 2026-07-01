@@ -38,7 +38,7 @@ class TestProtocol(unittest.TestCase):
         resp = srv.handle_request(_req("tools/list"))
         names = {t["name"] for t in resp["result"]["tools"]}
         self.assertEqual(names, {"true_score", "rag_eval", "criteria_score",
-                                 "eval_loop", "invisible_workflow_map", "jd_compile"})
+                                 "eval_loop", "invisible_workflow_map", "jd_compile", "doc_gate"})
         for t in resp["result"]["tools"]:
             self.assertEqual(t["inputSchema"]["type"], "object")
             self.assertTrue(t["description"])
@@ -58,6 +58,12 @@ class TestProtocol(unittest.TestCase):
         }))
         self.assertFalse(r2["result"].get("isError"))
         self.assertIn("Invisible Workflow Map", r2["result"]["content"][0]["text"])
+        # doc_gate parses a repo doc and returns a verdict
+        r3 = srv.handle_request(_req("tools/call", {
+            "name": "doc_gate", "arguments": {"path": "README.md"},
+        }))
+        self.assertFalse(r3["result"].get("isError"))
+        self.assertIn("VERDICT", r3["result"]["content"][0]["text"])
 
     def test_notification_returns_none(self):
         # notifications/initialized is a notification (no id) -> no response
