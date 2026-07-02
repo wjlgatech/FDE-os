@@ -1,0 +1,2 @@
+Candidate id,Which unfamiliar tool?,Did the artifact actually run?,Could a non-engineer repeat the core steps?,How did they get unstuck?,What they shipped
+anon-0042,A low-code agent builder,Yes,Yes,Self-directed (docs/AI then solved),A working intake-triage flow

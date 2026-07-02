@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Staffing Confidence — vet on evidence, not resumes</title>
+<meta name="description" content="Vet a candidate on the three criteria that actually predict on-the-job performance — reliability, technical competence, resourcefulness — and get a defensible GO / NO-GO. Runs in the browser, ~$0.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F0EDE4; --paper-2:#F7F4EC; --paper-3:#FBF9F3;
+    --ink:#1A1915; --ink-soft:#46423A; --muted:#7A7466;
+    --clay:#CC785C; --clay-deep:#B05B3C;
+    --line:#E0D9C9; --line-soft:#E9E3D6;
+    --go:#4B7B58; --go-bg:#E9F0EA; --no:#B0472F; --no-bg:#F6E7E1;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink-soft);
+    font-family:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .serif{font-family:"Newsreader",Georgia,serif}
+  a{color:var(--ink)}
+
+  nav{display:flex;align-items:center;justify-content:space-between;padding:24px 0}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:600;letter-spacing:-.01em;font-size:18px;color:var(--ink);text-decoration:none}
+  .delta-mark{width:30px;height:30px;display:grid;place-items:center;border-radius:8px;background:var(--clay);color:var(--paper);font-weight:600;font-size:17px}
+  .nav-cta{font-size:14px;color:var(--ink);text-decoration:none;padding:8px 15px;border-radius:999px;border:1px solid var(--line);transition:.2s}
+  .nav-cta:hover{border-color:var(--clay);background:var(--paper-3)}
+
+  header.hero{padding:34px 0 8px;max-width:820px}
+  .eyebrow{display:inline-block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--clay);margin-bottom:16px}
+  h1{font-family:"Newsreader",Georgia,serif;font-size:clamp(34px,5.4vw,56px);line-height:1.04;letter-spacing:-.018em;color:var(--ink);font-weight:500}
+  h1 em{font-style:italic;color:var(--clay)}
+  .sub{max-width:680px;margin:18px 0 0;font-size:clamp(16px,2vw,19px);color:var(--ink-soft)}
+  .sci{margin:16px 0 0;font-size:14px;color:var(--muted)}
+
+  .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:26px;align-items:start;margin:30px 0 60px}
+  @media(max-width:900px){.grid{grid-template-columns:1fr}}
+
+  .panel{border:1px solid var(--line);border-radius:16px;background:var(--paper-3);padding:22px 22px 24px}
+  .panel h2{font-family:"Newsreader",Georgia,serif;font-size:22px;color:var(--ink);font-weight:500;margin-bottom:4px}
+  .panel .hint{font-size:13.5px;color:var(--muted);margin-bottom:16px}
+
+  .axis{border:1px solid var(--line-soft);border-radius:12px;padding:16px 16px 18px;margin-bottom:16px;background:var(--paper-2)}
+  .axis > .head{display:flex;align-items:center;gap:9px;margin-bottom:12px}
+  .axis .num{width:22px;height:22px;border-radius:6px;background:var(--clay);color:#fff;display:grid;place-items:center;font-size:12px;font-weight:700}
+  .axis .title{font-weight:600;color:var(--ink);font-size:15px}
+  .axis .why{font-size:12.5px;color:var(--muted);margin-left:auto;text-align:right;max-width:52%}
+
+  label{display:block;font-size:13px;color:var(--ink-soft);margin:10px 0 5px;font-weight:500}
+  .row{display:flex;gap:10px;flex-wrap:wrap}
+  select,input[type=text],input[type=number]{background:var(--paper-3);border:1px solid var(--line);color:var(--ink);
+    padding:9px 11px;border-radius:9px;font-size:14px;font-family:inherit;outline:none;transition:.2s;width:100%}
+  select:focus,input:focus{border-color:var(--clay);box-shadow:0 0 0 3px rgba(204,120,92,.14)}
+  .checks{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  .chk{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--ink-soft);
+    border:1px solid var(--line);background:var(--paper-3);border-radius:8px;padding:7px 10px;cursor:pointer;user-select:none}
+  .chk input{accent-color:var(--clay);width:15px;height:15px}
+  .chk.warn{border-color:#e2b7a8}
+
+  .ref{border:1px dashed var(--line);border-radius:10px;padding:12px;margin-bottom:10px;position:relative;background:var(--paper-3)}
+  .ref .rm{position:absolute;top:8px;right:10px;border:0;background:none;color:var(--muted);cursor:pointer;font-size:16px;line-height:1}
+  .ref .rm:hover{color:var(--no)}
+  .addref{border:1px solid var(--line);background:var(--paper-3);color:var(--ink);border-radius:9px;padding:8px 13px;font-size:13px;cursor:pointer;font-family:inherit;transition:.2s}
+  .addref:hover{border-color:var(--clay)}
+  .mini{font-size:12px;color:var(--muted);margin-top:6px}
+
+  .wsrow{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;margin-top:8px}
+  .wsrow select{width:132px}
+  .wsscore{font-size:13px;color:var(--muted);margin-top:8px}
+
+  /* verdict card (sticky) */
+  .verdict{position:sticky;top:18px}
+  .vbadge{display:inline-flex;align-items:center;gap:9px;font-family:"Newsreader",serif;font-size:26px;font-weight:500;padding:12px 18px;border-radius:12px;letter-spacing:-.01em}
+  .vbadge.go{background:var(--go-bg);color:var(--go)}
+  .vbadge.no{background:var(--no-bg);color:var(--no)}
+  .vsummary{margin:14px 0 4px;font-size:14px;color:var(--ink-soft)}
+  .axisres{display:flex;gap:10px;padding:11px 0;border-top:1px solid var(--line-soft)}
+  .axisres .mark{font-size:16px;line-height:1.4}
+  .axisres .txt{font-size:13.5px}
+  .axisres .an{font-weight:600;color:var(--ink);text-transform:capitalize}
+  .axisres .ad{color:var(--muted);font-size:12.5px}
+  .axisres.info{opacity:.72}
+  .pat{display:inline-block;font-size:11px;color:var(--go);border:1px solid #c3d8c8;border-radius:999px;padding:1px 8px;margin-left:7px;vertical-align:middle}
+
+  .actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
+  .btn{background:var(--ink);color:var(--paper);font-weight:600;font-family:inherit;border:0;padding:11px 16px;border-radius:10px;font-size:13.5px;cursor:pointer;transition:.2s}
+  .btn:hover{background:var(--clay-deep);transform:translateY(-1px)}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .btn.ghost:hover{border-color:var(--clay);background:var(--paper-3);transform:none}
+  .btn.ai{background:var(--clay)}
+  .btn.ai:hover{background:var(--clay-deep)}
+
+  .note{margin-top:16px;border:1px solid var(--line);border-radius:12px;background:var(--paper-2);padding:15px;font-size:14px;white-space:pre-wrap;color:var(--ink-soft);display:none}
+  .note.show{display:block}
+  .note .tag{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--clay);font-weight:600;display:block;margin-bottom:8px}
+
+  details.how{margin:0 0 30px;border:1px solid var(--line);border-radius:12px;background:var(--paper-2);padding:0 18px}
+  details.how summary{cursor:pointer;padding:16px 0;font-weight:600;color:var(--ink);font-size:15px;list-style:none}
+  details.how summary::-webkit-details-marker{display:none}
+  details.how[open] summary{border-bottom:1px solid var(--line-soft)}
+  details.how .body{padding:14px 0 18px;font-size:14px;color:var(--ink-soft)}
+  details.how table{width:100%;border-collapse:collapse;margin:8px 0}
+  details.how td,details.how th{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line-soft);font-size:13.5px;vertical-align:top}
+  details.how th{color:var(--muted);font-weight:600}
+
+  footer{border-top:1px solid var(--line);margin-top:36px;padding:26px 0 60px;text-align:center;color:var(--muted);font-size:13px;line-height:1.7}
+  footer .iso{color:var(--clay)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="brand" href="index.html"><span class="delta-mark serif">Δ</span> Delta · FDE-os</a>
+    <a class="nav-cta" href="toolkit.html">The Toolkit →</a>
+  </nav>
+
+  <header class="hero">
+    <span class="eyebrow">Staffing Confidence</span>
+    <h1>Recommend people on <em>evidence</em>,<br>not resumes.</h1>
+    <p class="sub">One recommendation that looks great on paper and then no-shows or can't deliver burns your whole team's credibility. This scores a candidate on the three things that actually predict it — <b>reliable</b>, <b>technically competent</b>, <b>resourceful</b> — and gives you a defensible <b>GO / NO-GO</b>.</p>
+    <p class="sci">Grounded in 85 years of selection research: work samples &amp; <i>structured</i> references are the top predictors; unstructured reference checks are near-noise. Runs entirely in your browser — no data leaves the page.</p>
+  </header>
+
+  <details class="how">
+    <summary>How the gate works ▾</summary>
+    <div class="body">
+      <table>
+        <tr><th>Criterion</th><th>Instrument</th><th>Hard rule</th></tr>
+        <tr><td><b>Reliable</b></td><td>Structured reference from someone who <i>worked with</i> them</td><td>a single “went dark / no-show” ⇒ <b>automatic NO-GO</b></td></tr>
+        <tr><td><b>Technical</b></td><td>90-min <i>observed</i> work sample, one shared rubric</td><td>must clear the role bar; gates technical roles only</td></tr>
+        <tr><td><b>Resourceful</b></td><td>learn an unfamiliar tool in a day + <i>teach it back</i></td><td>must ship something that runs <i>and</i> teach it</td></tr>
+      </table>
+      <p><b>GO</b> only if every <i>required</i> axis clears on real evidence. A strong axis never rescues a weak one. This tool advises — the recommender still signs.</p>
+    </div>
+  </details>
+
+  <div class="grid">
+    <!-- LEFT: inputs -->
+    <div class="panel">
+      <h2>The candidate</h2>
+      <p class="hint">Use an anonymized id. Fill from the three instruments (reference form, work-sample score, teach-back score).</p>
+
+      <div class="row" style="margin-bottom:6px">
+        <div style="flex:1"><label>Candidate id</label><input type="text" id="cid" value="anon-0001"></div>
+        <div style="width:190px"><label>Role type</label>
+          <select id="role"><option value="technical">Technical</option><option value="non_technical">Non-technical</option></select>
+        </div>
+      </div>
+
+      <!-- Reliability -->
+      <div class="axis">
+        <div class="head"><span class="num">1</span><span class="title">Reliability</span>
+          <span class="why">references from people who worked with them</span></div>
+        <div id="refs"></div>
+        <button class="addref" id="addref">+ Add reference</button>
+        <p class="mini">A vouch from a <b>client team</b> or your <b>own team</b> both count. One “went dark / no-show” is disqualifying.</p>
+      </div>
+
+      <!-- Technical -->
+      <div class="axis">
+        <div class="head"><span class="num">2</span><span class="title">Technical competence</span>
+          <span class="why">observed 90-min work sample</span></div>
+        <label class="chk" style="display:inline-flex"><input type="checkbox" id="observed" checked> Observed them build it fresh</label>
+        <div id="ws"></div>
+        <div class="wsscore" id="wsscore"></div>
+        <div class="row" style="margin-top:8px"><div style="width:170px"><label>Pass bar (0–1)</label>
+          <input type="number" id="threshold" value="0.70" min="0" max="1" step="0.05"></div></div>
+      </div>
+
+      <!-- Resourcefulness -->
+      <div class="axis">
+        <div class="head"><span class="num">3</span><span class="title">Resourcefulness</span>
+          <span class="why">learn a tool in a day &amp; teach it back</span></div>
+        <div class="checks">
+          <label class="chk"><input type="checkbox" id="tb_worked" checked> Artifact actually runs</label>
+          <label class="chk"><input type="checkbox" id="tb_clear" checked> A non-engineer could repeat it</label>
+          <label class="chk"><input type="checkbox" id="tb_unstuck" checked> Got unstuck self-directed <span style="color:var(--muted)">(a plus)</span></label>
+        </div>
+        <p class="mini">Outcome over method — using AI / asking for help is fine; the bar is <i>it works</i> and <i>they can teach it</i>.</p>
+      </div>
+    </div>
+
+    <!-- RIGHT: verdict -->
+    <div class="verdict">
+      <div class="panel">
+        <h2>Staffing confidence</h2>
+        <p class="hint" id="roleline">role: technical</p>
+        <div id="badge"></div>
+        <div id="axes"></div>
+        <div class="actions">
+          <button class="btn ai" id="draftBtn">✨ Draft the note</button>
+          <button class="btn ghost" id="jsonBtn">Download candidate.json</button>
+        </div>
+        <div class="note" id="note"></div>
+        <p class="mini" id="modeline" style="margin-top:12px"></p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span class="iso">Δ</span> Runs client-side · scoring is deterministic and matches the <code>staffing-confidence-scorecard</code> CLI · no candidate data leaves this page.<br>
+    Anonymized ids only — real names live in your HR system. This advises a human decision.
+  </footer>
+</div>
+
+<script>
+/* ============================================================
+   GATE — a faithful port of scorecard.py. Deterministic; the
+   demo never depends on the network. (LLM only drafts the note.)
+   ============================================================ */
+function scoreReliability(refs){
+  var workedWith = refs.filter(function(r){return r.worked_with;});
+  var dark = refs.filter(function(r){return r.went_dark_or_noshow;});
+  var again = workedWith.filter(function(r){return r.would_staff_again;});
+  if(dark.length) return {name:"reliability",passed:false,required:true,pattern:false,
+    detail:"a reference reported a no-show / went-dark event — automatic NO-GO"};
+  if(!workedWith.length) return {name:"reliability",passed:false,required:true,pattern:false,
+    detail:"no reference from anyone who actually worked with them — the exact gap that burns a recommendation"};
+  if(!again.length) return {name:"reliability",passed:false,required:true,pattern:false,
+    detail:"someone worked with them but none would staff them on a client-facing role again"};
+  return {name:"reliability",passed:true,required:true,pattern:again.length>=2,
+    detail:again.length+" would-staff-again vouch(es) from people who worked with them, zero dark flags"};
+}
+function scoreTechnical(ws, roleType){
+  var required = roleType==="technical";
+  if(!ws) return {name:"technical_competence",passed:false,required:required,pattern:false,
+    detail:"no work sample on record — a resume/claim is not evidence of build ability"};
+  if(!ws.observed) return {name:"technical_competence",passed:false,required:required,pattern:false,
+    detail:"work sample was not observed fresh — cannot attribute the work to the candidate"};
+  var ok = ws.score >= ws.threshold;
+  return {name:"technical_competence",passed:ok,required:required,pattern:false,
+    detail:"observed work sample scored "+ws.score.toFixed(2)+" (bar "+ws.threshold.toFixed(2)+") → "+(ok?"clears":"below")+" the bar"};
+}
+function scoreResourcefulness(tb){
+  if(!tb) return {name:"resourcefulness",passed:false,required:true,pattern:false,
+    detail:"no learn-and-teach-back on record — learning agility unproven"};
+  var ok = tb.artifact_worked && tb.teachback_clear;
+  var unstuck = tb.got_unstuck ? " (self-directed unblocking observed)" : "";
+  var detail;
+  if(!tb.artifact_worked) detail="built nothing that runs from the unfamiliar tool — outcome bar not met";
+  else if(!tb.teachback_clear) detail="made it work but could not teach it back clearly — half the job";
+  else detail="learned an unfamiliar tool in the window, shipped a working artifact, taught it back clearly"+unstuck;
+  return {name:"resourcefulness",passed:ok,required:true,pattern:false,detail:detail};
+}
+function evaluate(c){
+  var role = c.role_type || "technical";
+  var axes = [
+    scoreReliability((c.reliability&&c.reliability.references)||[]),
+    scoreTechnical((c.technical_competence&&c.technical_competence.work_sample)||null, role),
+    scoreResourcefulness((c.resourcefulness&&c.resourcefulness.teach_back)||null)
+  ];
+  var blockers = axes.filter(function(a){return a.required && !a.passed;});
+  return {role_type:role, axes:axes, blockers:blockers, go:blockers.length===0};
+}
+
+/* ============================================================
+   FORM STATE
+   ============================================================ */
+var WS_ITEMS = [
+  "Agent runs & calls its tool (incl. error path)",
+  "Retrieval is grounded — cites, refuses when unsupported",
+  "The eval gate is real — fails on an ungrounded answer",
+  "Code is legible under time pressure",
+  "Talks trade-offs unprompted (cost / latency / failure)"
+];
+var refState = [
+  {source:"client_team", worked_with:true, would_staff_again:true, went_dark_or_noshow:false},
+  {source:"internal_team", worked_with:true, would_staff_again:true, went_dark_or_noshow:false}
+];
+
+function renderRefs(){
+  var host = document.getElementById('refs'); host.innerHTML='';
+  refState.forEach(function(r,i){
+    var d=document.createElement('div'); d.className='ref';
+    d.innerHTML =
+      (refState.length>1?'<button class="rm" data-i="'+i+'" title="remove">×</button>':'')+
+      '<label>Reference '+(i+1)+' — worked with candidate on</label>'+
+      '<select data-i="'+i+'" data-k="source">'+
+        '<option value="client_team"'+(r.source==="client_team"?" selected":"")+'>Client team</option>'+
+        '<option value="internal_team"'+(r.source==="internal_team"?" selected":"")+'>Own / internal team</option>'+
+      '</select>'+
+      '<div class="checks">'+
+        '<label class="chk"><input type="checkbox" data-i="'+i+'" data-k="worked_with"'+(r.worked_with?" checked":"")+'> Actually worked with them</label>'+
+        '<label class="chk"><input type="checkbox" data-i="'+i+'" data-k="would_staff_again"'+(r.would_staff_again?" checked":"")+'> Would staff again (client-facing)</label>'+
+        '<label class="chk warn"><input type="checkbox" data-i="'+i+'" data-k="went_dark_or_noshow"'+(r.went_dark_or_noshow?" checked":"")+'> Ever no-showed / went dark</label>'+
+      '</div>';
+    host.appendChild(d);
+  });
+  host.querySelectorAll('select[data-k],input[type=checkbox][data-k]').forEach(function(el){
+    el.addEventListener('change',function(){
+      var i=+el.getAttribute('data-i'), k=el.getAttribute('data-k');
+      refState[i][k] = (el.type==='checkbox')? el.checked : el.value;
+      recompute();
+    });
+  });
+  host.querySelectorAll('.rm').forEach(function(b){
+    b.addEventListener('click',function(){ refState.splice(+b.getAttribute('data-i'),1); renderRefs(); recompute(); });
+  });
+}
+var WS_DEFAULTS=[3,3,2,3,2]; // a realistic strong candidate → 13/15 = 0.87 (GO)
+function renderWS(){
+  var host=document.getElementById('ws'); host.innerHTML='';
+  WS_ITEMS.forEach(function(t,i){
+    var row=document.createElement('div'); row.className='wsrow';
+    var dv=WS_DEFAULTS[i]; var opts=[0,1,2,3].map(function(v){return '<option value="'+v+'"'+(v===dv?" selected":"")+'>'+v+'</option>';}).join('');
+    row.innerHTML='<label style="margin:0">'+t+'</label><select data-ws="'+i+'">'+opts+'</select>';
+    host.appendChild(row);
+  });
+  host.querySelectorAll('select[data-ws]').forEach(function(el){ el.addEventListener('change',recompute); });
+}
+
+function readCandidate(){
+  var wsSel = Array.prototype.map.call(document.querySelectorAll('select[data-ws]'),function(s){return +s.value;});
+  var sum = wsSel.reduce(function(a,b){return a+b;},0);
+  var score = Math.round((sum/ (WS_ITEMS.length*3))*100)/100;
+  document.getElementById('wsscore').textContent = "work-sample score: "+sum+"/"+(WS_ITEMS.length*3)+" = "+score.toFixed(2);
+  return {
+    candidate: document.getElementById('cid').value.trim()||"anon",
+    role_type: document.getElementById('role').value,
+    reliability: { references: refState.map(function(r){return {
+      source:r.source, worked_with:r.worked_with, would_staff_again:r.would_staff_again, went_dark_or_noshow:r.went_dark_or_noshow };}) },
+    technical_competence: { work_sample: {
+      observed: document.getElementById('observed').checked,
+      score: score,
+      threshold: parseFloat(document.getElementById('threshold').value)||0.7 } },
+    resourcefulness: { teach_back: {
+      artifact_worked: document.getElementById('tb_worked').checked,
+      teachback_clear: document.getElementById('tb_clear').checked,
+      got_unstuck: document.getElementById('tb_unstuck').checked } }
+  };
+}
+
+var lastReport=null, lastCand=null;
+function recompute(){
+  var c=readCandidate(); var r=evaluate(c); lastReport=r; lastCand=c;
+  document.getElementById('roleline').textContent="role: "+r.role_type;
+  var badge=document.getElementById('badge');
+  badge.innerHTML = r.go
+    ? '<span class="vbadge go">✅ GO</span>'
+    : '<span class="vbadge no">⛔ NO-GO</span>';
+  var host=document.getElementById('axes'); host.innerHTML='';
+  r.axes.forEach(function(a){
+    var mark = a.passed ? "✅" : (a.required ? "⛔" : "◽");
+    var cls = a.required ? "" : " info";
+    var pat = a.pattern ? '<span class="pat">⟳ pattern</span>' : '';
+    var req = a.required ? '' : ' <span class="ad">(informational for this role)</span>';
+    var d=document.createElement('div'); d.className='axisres'+cls;
+    d.innerHTML='<div class="mark">'+mark+'</div><div class="txt"><span class="an">'+a.name.replace(/_/g,' ')+'</span>'+pat+req+'<div class="ad">'+a.detail+'</div></div>';
+    host.appendChild(d);
+  });
+  // hide any stale note when inputs change
+  document.getElementById('note').classList.remove('show');
+}
+
+/* ============================================================
+   DETERMINISTIC recommendation note (always available)
+   ============================================================ */
+function templateNote(c,r){
+  var L=[];
+  if(r.go){
+    L.push("Recommendation: GO — safe to staff "+c.candidate+" ("+r.role_type+" role).");
+    L.push("");
+    L.push("The evidence clears every required axis:");
+  } else {
+    L.push("Recommendation: NOT YET — do not stake a recommendation on "+c.candidate+" until the gaps below close.");
+    L.push("");
+    L.push("Where the evidence stands:");
+  }
+  r.axes.forEach(function(a){
+    if(!a.required && a.passed) return;
+    L.push(" • "+a.name.replace(/_/g,' ')+": "+(a.passed?"✓ ":"✗ ")+a.detail);
+  });
+  if(!r.go){
+    L.push("");
+    L.push("Close these first, then re-run:");
+    r.blockers.forEach(function(b){
+      var fix = b.name==="reliability" ? "get a structured reference from someone who ran a project with them"
+        : b.name==="technical_competence" ? "run the 90-minute observed work sample and clear the role bar"
+        : "give them an unfamiliar tool for a day; require a working artifact + a teach-back";
+      L.push(" • "+b.name.replace(/_/g,' ')+" → "+fix);
+    });
+  }
+  return L.join("\n");
+}
+
+/* ============================================================
+   AGENTIC layer — draft the note via the hosted proxy, grounded
+   ONLY in the computed scorecard. Falls back to the template.
+   ============================================================ */
+var GUIDE_PROXY = "https://delta-guide-eosin.vercel.app/api/guide";
+function draftNote(){
+  var c=lastCand, r=lastReport;
+  var tmpl=templateNote(c,r);
+  var note=document.getElementById('note');
+  var mode=document.getElementById('modeline');
+  note.classList.add('show');
+  note.innerHTML='<span class="tag">drafting…</span>'+esc(tmpl);
+  var facts = "SCORECARD (the only facts you may use):\n"+
+    "candidate="+c.candidate+", role="+r.role_type+", verdict="+(r.go?"GO":"NO-GO")+"\n"+
+    r.axes.map(function(a){return "- "+a.name+": "+(a.passed?"PASS":(a.required?"FAIL":"n/a"))+" — "+a.detail;}).join("\n");
+  var sys="You are a staffing-decision assistant for an AI delivery org. Using ONLY the scorecard facts, "+
+    "write a concise, professional recommendation note (max 130 words) the lead can paste into a staffing thread. "+
+    "If GO, affirm and name the evidence. If NO-GO, be constructive: name each gap and the single instrument that closes it. "+
+    "Never invent evidence, names, or outcomes beyond the scorecard. Plain text, no markdown headers.";
+  var payload={messages:[{role:"system",content:sys},{role:"user",content:facts}],temperature:0.3,max_tokens:260};
+  var done=false;
+  var timer=setTimeout(function(){ if(!done){ done=true; showTemplate(tmpl,"hosted assist timed out"); } },9000);
+  fetch(GUIDE_PROXY,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)})
+    .then(function(x){ if(!x.ok) throw new Error("HTTP "+x.status); return x.json(); })
+    .then(function(d){
+      if(done) return; done=true; clearTimeout(timer);
+      var t=(d.choices&&d.choices[0]&&d.choices[0].message&&d.choices[0].message.content||"").trim();
+      if(!t) throw new Error("empty");
+      note.innerHTML='<span class="tag">✨ drafted note'+(d.provider?" · "+d.provider:"")+'</span>'+esc(t);
+      mode.textContent="Agentic draft grounded in the scorecard. Edit before sending.";
+    })
+    .catch(function(e){ if(done) return; done=true; clearTimeout(timer); showTemplate(tmpl,String(e.message||e)); });
+}
+function showTemplate(tmpl,reason){
+  var note=document.getElementById('note'), mode=document.getElementById('modeline');
+  note.innerHTML='<span class="tag">recommendation note</span>'+esc(tmpl);
+  mode.textContent="Offline draft (hosted assist unavailable: "+reason+"). Deterministic template — fully usable.";
+}
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+
+function downloadJSON(){
+  var blob=new Blob([JSON.stringify(lastCand,null,2)],{type:"application/json"});
+  var u=URL.createObjectURL(blob); var a=document.createElement('a');
+  a.href=u; a.download=(lastCand.candidate||"candidate")+".json"; a.click(); URL.revokeObjectURL(u);
+}
+
+/* ---- wire up ---- */
+document.getElementById('addref').addEventListener('click',function(){
+  refState.push({source:"client_team",worked_with:true,would_staff_again:true,went_dark_or_noshow:false}); renderRefs(); recompute();
+});
+['role','cid','observed','threshold','tb_worked','tb_clear','tb_unstuck'].forEach(function(id){
+  document.getElementById(id).addEventListener('change',recompute);
+});
+document.getElementById('draftBtn').addEventListener('click',draftNote);
+document.getElementById('jsonBtn').addEventListener('click',downloadJSON);
+renderRefs(); renderWS(); recompute();
+
+/* expose the gate for headless testing (node/jsdom) */
+if(typeof module!=="undefined"&&module.exports){ module.exports={evaluate:evaluate}; }
+</script>
+</body>
+</html>

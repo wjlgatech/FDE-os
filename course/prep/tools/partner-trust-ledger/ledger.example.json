@@ -1,0 +1,19 @@
+{
+  "candidate": "self",
+  "dimensions": {
+    "technical_competence": [
+      {"claim": "Shipped a multi-skill agentic toolkit (skills + workflow + MCP server), authored once and run across three agent runtimes", "evidence": "artifact", "ref": "public repo + live webapp"},
+      {"claim": "Built a runnable MCP server exposing 7 callable tools to any MCP host", "evidence": "artifact", "ref": "repo path"}
+    ],
+    "reliability": [
+      {"claim": "Committed to a demo date and delivered a working, tested build on it", "evidence": "artifact", "ref": "commit history + dated deliverable"},
+      {"claim": "Every engagement milestone hit on the date I named", "evidence": "claimed"}
+    ],
+    "learning_agility": [
+      {"claim": "Learned an unfamiliar low-code agent tool over a weekend and produced a working demo + a teach-back explaining it to a non-engineer", "evidence": "artifact", "ref": "demo recording + one-pager"}
+    ],
+    "validated_reputation": [
+      {"claim": "A client lead I worked with will attest directly; their team's phrasing was 'without this we're not running'", "evidence": "vouch", "ref": "named contact, reachable"}
+    ]
+  }
+}

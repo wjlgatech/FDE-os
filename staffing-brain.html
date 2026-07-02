@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Staffing Brain — demand ↔ supply, matched and planned</title>
+<meta name="description" content="An agentic cockpit: collect supply + demand, eval-gate the match, and recommend the next best step for every person and every team to hit their milestone. Runs in the browser.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F0EDE4;--paper-2:#F7F4EC;--paper-3:#FBF9F3;
+    --ink:#1A1915;--ink-soft:#46423A;--muted:#7A7466;
+    --clay:#CC785C;--clay-deep:#B05B3C;--line:#E0D9C9;--line-soft:#E9E3D6;
+    --go:#4B7B58;--go-bg:#E9F0EA;--no:#B0472F;--no-bg:#F6E7E1;--warn:#B5852A;--warn-bg:#F3ECD8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink-soft);font-family:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+  .serif{font-family:"Newsreader",Georgia,serif}
+  a{color:var(--ink)}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:24px 0}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:600;font-size:18px;color:var(--ink);text-decoration:none}
+  .delta-mark{width:30px;height:30px;display:grid;place-items:center;border-radius:8px;background:var(--clay);color:var(--paper);font-weight:600;font-size:17px}
+  .nav-cta{font-size:14px;color:var(--ink);text-decoration:none;padding:8px 15px;border-radius:999px;border:1px solid var(--line)}
+  header.hero{padding:30px 0 6px;max-width:820px}
+  .eyebrow{display:inline-block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--clay);margin-bottom:14px}
+  h1{font-family:"Newsreader",Georgia,serif;font-size:clamp(32px,5vw,52px);line-height:1.04;letter-spacing:-.018em;color:var(--ink);font-weight:500}
+  h1 em{font-style:italic;color:var(--clay)}
+  .sub{max-width:720px;margin:16px 0 0;font-size:clamp(15px,1.9vw,18px);color:var(--ink-soft)}
+  .flow{margin:14px 0 0;font-size:13px;color:var(--muted)}
+  .flow b{color:var(--clay-deep)}
+
+  .cols{display:grid;grid-template-columns:300px 1fr;gap:24px;align-items:start;margin:26px 0 60px}
+  @media(max-width:900px){.cols{grid-template-columns:1fr}}
+  .panel{border:1px solid var(--line);border-radius:16px;background:var(--paper-3);padding:18px 18px 20px}
+  .panel h2{font-family:"Newsreader",Georgia,serif;font-size:20px;color:var(--ink);font-weight:500;margin-bottom:3px}
+  .panel .hint{font-size:12.5px;color:var(--muted);margin-bottom:14px}
+
+  .person{border:1px solid var(--line-soft);border-radius:11px;padding:11px 12px;margin-bottom:10px;background:var(--paper-2)}
+  .person .top{display:flex;align-items:center;gap:8px;justify-content:space-between}
+  .person .pid{font-weight:600;color:var(--ink);font-size:14px}
+  .person .sk{font-size:11.5px;color:var(--muted);margin-top:2px}
+  .person .lev{display:flex;align-items:center;gap:8px;margin-top:9px;font-size:12px;color:var(--ink-soft);flex-wrap:wrap}
+  .person .lev label{display:flex;align-items:center;gap:5px}
+  .person input[type=range]{accent-color:var(--clay);width:96px}
+  .person input[type=checkbox]{accent-color:var(--clay);width:14px;height:14px}
+  .pill{font-size:10.5px;font-weight:700;letter-spacing:.03em;padding:2px 8px;border-radius:999px;text-transform:uppercase}
+  .pill.ASSIGN{background:var(--go-bg);color:var(--go)}
+  .pill.BACKUP{background:var(--paper);color:var(--muted);border:1px solid var(--line)}
+  .pill.CONDITIONAL{background:var(--warn-bg);color:var(--warn)}
+  .pill.UNMATCHED,.pill.UNAVAILABLE{background:var(--no-bg);color:var(--no)}
+
+  .role{border:1px solid var(--line-soft);border-radius:12px;padding:14px 15px;margin-bottom:12px;background:var(--paper-2)}
+  .role .rt{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .role .rname{font-weight:600;color:var(--ink);font-size:15px}
+  .role .team{font-size:12.5px;color:var(--muted)}
+  .cov{font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px}
+  .cov.ok{background:var(--go-bg);color:var(--go)} .cov.short{background:var(--no-bg);color:var(--no)}
+  .cand{display:flex;gap:8px;font-size:13px;padding:5px 0;border-top:1px dashed var(--line);margin-top:8px}
+  .cand:first-of-type{border-top:0;margin-top:6px}
+  .cand .m{width:66px;font-weight:600;font-size:11px}
+  .cand .m.a{color:var(--go)} .cand .m.b{color:var(--muted)} .cand .m.c{color:var(--warn)}
+
+  .team{border-left:3px solid var(--line);padding:10px 0 10px 14px;margin-bottom:12px}
+  .team.risk{border-left-color:var(--no)} .team.ok{border-left-color:var(--go)}
+  .team .tn{font-weight:600;color:var(--ink);font-size:15px}
+  .team .ms{font-size:12.5px;color:var(--muted)}
+  .team .flag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-left:8px}
+  .team.risk .flag{color:var(--no)} .team.ok .flag{color:var(--go)}
+  .team .step{font-size:13.5px;color:var(--ink-soft);margin-top:6px}
+
+  h3.sec{font-family:"Newsreader",serif;font-weight:500;color:var(--ink);font-size:22px;margin:4px 0 12px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  @media(max-width:760px){.grid2{grid-template-columns:1fr}}
+
+  .actions{display:flex;gap:9px;flex-wrap:wrap;margin:6px 0 14px}
+  .btn{background:var(--ink);color:var(--paper);font-weight:600;border:0;padding:10px 15px;border-radius:10px;font-size:13.5px;cursor:pointer}
+  .btn.ai{background:var(--clay)} .btn:hover{background:var(--clay-deep)}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .note{border:1px solid var(--line);border-radius:12px;background:var(--paper-2);padding:15px;font-size:14px;white-space:pre-wrap;color:var(--ink-soft);display:none;margin-top:4px}
+  .note.show{display:block}
+  .note .tag{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--clay);font-weight:600;display:block;margin-bottom:8px}
+  .modeline{font-size:12px;color:var(--muted);margin-top:8px}
+  footer{border-top:1px solid var(--line);margin-top:30px;padding:24px 0 60px;text-align:center;color:var(--muted);font-size:13px;line-height:1.7}
+  footer .iso{color:var(--clay)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="brand" href="index.html"><span class="delta-mark serif">Δ</span> Delta · FDE-os</a>
+    <a class="nav-cta" href="scorecard.html">Single-candidate vetting →</a>
+  </nav>
+  <header class="hero">
+    <span class="eyebrow">Staffing Brain</span>
+    <h1>Match <em>demand</em> to <em>supply</em>,<br>and tell everyone their next best step.</h1>
+    <p class="sub">The vetting scorecard is the eval-gate inside a bigger loop. This connects open roles to available people, gates every match on the same evidence bar, then recommends the next best step for <b>each person</b> and <b>each team</b> to hit its milestone.</p>
+    <p class="flow"><b>COLLECT</b> supply + demand → <b>MATCH</b> (eval-gate + assignment) → <b>RECOMMEND</b> next best steps → <b>human confirms</b>. Move a lever below and the whole plan re-computes.</p>
+  </header>
+
+  <div class="cols">
+    <!-- SUPPLY -->
+    <div class="panel">
+      <h2>Supply</h2>
+      <p class="hint">People in the pool. Toggle availability or nudge a work-sample score — the plan reacts live.</p>
+      <div id="supply"></div>
+    </div>
+
+    <!-- PLAN -->
+    <div>
+      <div class="actions">
+        <button class="btn ai" id="draftBtn">✨ Draft the staffing update</button>
+        <button class="btn ghost" id="jsonBtn">Download plan.json</button>
+      </div>
+      <div class="note" id="note"></div>
+      <p class="modeline" id="modeline"></p>
+
+      <h3 class="sec">Open roles → matched</h3>
+      <div id="roles"></div>
+
+      <div class="grid2" style="margin-top:8px">
+        <div>
+          <h3 class="sec">Each team → next step</h3>
+          <div id="teams"></div>
+        </div>
+        <div>
+          <h3 class="sec">Each person → next step</h3>
+          <div id="people"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span class="iso">Δ</span> Deterministic match + recommend (matches the <code>match_engine.py</code> CLI); the eval-gate is the <code>staffing-confidence-scorecard</code>. Nothing auto-staffs — it advises, a human confirms. Anonymized ids only.
+  </footer>
+</div>
+
+<script>
+/* ============================================================
+   BAKED-IN DEMO DATA (the "collect" stage — human-in-the-loop
+   for now; autonomous connectors are v2). Edit via the levers.
+   ============================================================ */
+var SUPPLY = {people:[
+  {id:"anon-0042",skills:["python","rag","agents"],available:true,
+   reliability:{references:[{source:"client_team",worked_with:true,would_staff_again:true,went_dark_or_noshow:false},{source:"internal_team",worked_with:true,would_staff_again:true,went_dark_or_noshow:false}]},
+   technical_competence:{work_sample:{observed:true,score:0.87,threshold:0.70}},
+   resourcefulness:{teach_back:{artifact_worked:true,teachback_clear:true,got_unstuck:true}}},
+  {id:"anon-0043",skills:["python","agents"],available:true,
+   reliability:{references:[{source:"internal_team",worked_with:true,would_staff_again:true,went_dark_or_noshow:false}]},
+   technical_competence:{work_sample:{observed:true,score:0.55,threshold:0.70}},
+   resourcefulness:{teach_back:{artifact_worked:true,teachback_clear:true,got_unstuck:true}}},
+  {id:"anon-0044",skills:["stakeholder","delivery","discovery"],available:true,
+   reliability:{references:[{source:"client_team",worked_with:true,would_staff_again:true,went_dark_or_noshow:false}]},
+   technical_competence:{work_sample:{observed:false,score:0.0,threshold:0.70}},
+   resourcefulness:{teach_back:{artifact_worked:true,teachback_clear:true,got_unstuck:true}}},
+  {id:"anon-0045",skills:["python","rag"],available:false,
+   reliability:{references:[{source:"client_team",worked_with:true,would_staff_again:true,went_dark_or_noshow:false}]},
+   technical_competence:{work_sample:{observed:true,score:0.90,threshold:0.70}},
+   resourcefulness:{teach_back:{artifact_worked:true,teachback_clear:true,got_unstuck:true}}}
+]};
+var DEMAND = {teams:[
+  {team:"Client-A RAG platform",milestone:"grounded agent live by Aug 15",open_roles:[
+    {id:"FDE-lead",role_type:"technical",skills:["python","rag","agents"],count:1},
+    {id:"FDE-2",role_type:"technical",skills:["python","agents"],count:1}]},
+  {team:"Client-B discovery",milestone:"workflow map signed off by Jul 30",open_roles:[
+    {id:"delivery-lead",role_type:"non_technical",skills:["stakeholder","discovery"],count:1}]}
+]};
+
+/* ============================================================ */
+/* ENGINE-START — faithful port of scorecard.py + match_engine.py.
+   Deterministic. Parity is checked against the Python in tests.  */
+function scoreReliability(refs){
+  var w=refs.filter(r=>r.worked_with),d=refs.filter(r=>r.went_dark_or_noshow),a=w.filter(r=>r.would_staff_again);
+  if(d.length) return {name:"reliability",passed:false,required:true,pattern:false};
+  if(!w.length) return {name:"reliability",passed:false,required:true,pattern:false};
+  if(!a.length) return {name:"reliability",passed:false,required:true,pattern:false};
+  return {name:"reliability",passed:true,required:true,pattern:a.length>=2};
+}
+function scoreTechnical(ws,role){
+  var req=role==="technical";
+  if(!ws) return {name:"technical_competence",passed:false,required:req,tier:"none"};
+  if(!ws.observed) return {name:"technical_competence",passed:false,required:req,tier:"claimed"};
+  return {name:"technical_competence",passed:ws.score>=ws.threshold,required:req,tier:"observed"};
+}
+function scoreResourcefulness(tb){
+  if(!tb) return {name:"resourcefulness",passed:false,required:true};
+  return {name:"resourcefulness",passed:!!(tb.artifact_worked&&tb.teachback_clear),required:true};
+}
+function evaluate(c){
+  var role=c.role_type||"technical";
+  var axes=[scoreReliability((c.reliability&&c.reliability.references)||[]),
+            scoreTechnical((c.technical_competence&&c.technical_competence.work_sample)||null,role),
+            scoreResourcefulness((c.resourcefulness&&c.resourcefulness.teach_back)||null)];
+  var blockers=axes.filter(a=>a.required&&!a.passed);
+  return {role_type:role,axes:axes,blockers:blockers,go:blockers.length===0};
+}
+function _sk(x){return new Set((x||[]).map(s=>String(s).trim().toLowerCase()).filter(Boolean));}
+function _ov(a,b){var A=_sk(a),B=_sk(b),n=0;A.forEach(s=>{if(B.has(s))n++;});return n;}
+function _cand(p,rt){return {candidate:p.id,role_type:rt,reliability:p.reliability||{},technical_competence:p.technical_competence||{},resourcefulness:p.resourcefulness||{}};}
+function matchBoard(supply,demand){
+  var people=supply.people||[],board=[];
+  (demand.teams||[]).forEach(function(t){(t.open_roles||[]).forEach(function(r){
+    var rt=r.role_type||"technical",elig=[],cond=[];
+    people.forEach(function(p){
+      if(p.available===false) return;
+      var ov=_ov(p.skills,r.skills); if(!ov) return;
+      var rep=evaluate(_cand(p,rt));
+      var e={id:p.id,overlap:ov,go:rep.go,pattern:rep.axes[0].pattern};
+      if(rep.go) elig.push(e); else {e.blockers=rep.blockers.map(b=>b.name); cond.push(e);}
+    });
+    elig.sort((x,y)=> y.overlap-x.overlap || (y.pattern?1:0)-(x.pattern?1:0));
+    board.push({team:t.team,milestone:t.milestone,role_id:r.id,role_type:rt,count:r.count||1,skills:r.skills||[],eligible:elig,conditional:cond,assigned:[]});
+  });});
+  // greedy global assignment: one person → one role, best-fit (overlap) first
+  var pairs=[];
+  board.forEach((b,bi)=>b.eligible.forEach(e=>pairs.push([e.overlap,bi,e.id])));
+  pairs.sort((a,b)=>b[0]-a[0]);
+  var taken=new Set();
+  pairs.forEach(function(pr){var b=board[pr[1]];if(taken.has(pr[2])||b.assigned.length>=b.count)return;b.assigned.push(pr[2]);taken.add(pr[2]);});
+  return board;
+}
+function personSteps(supply,demand,board){
+  return (supply.people||[]).map(function(p){
+    var pid=p.id;
+    var assignedTo=board.find(b=>b.assigned.indexOf(pid)>=0);
+    var elig=board.filter(b=>b.eligible.some(e=>e.id===pid));
+    var cond=board.filter(b=>b.conditional.some(c=>c.id===pid));
+    var status,step;
+    if(p.available===false){status="UNAVAILABLE";step="On another engagement — free them up or plan around it before this milestone needs them.";}
+    else if(assignedTo){status="ASSIGN";step="Confirm staffing to “"+assignedTo.role_id+"” on "+assignedTo.team+" — clears the gate and fits the milestone.";}
+    else if(elig.length){status="BACKUP";step="Backup-eligible for "+elig.map(b=>"“"+b.role_id+"”").join(", ")+" (a stronger fit was assigned). Hold as cover, or take the next incoming demand.";}
+    else if(cond.length){
+      var gaps={};cond.forEach(b=>b.conditional.filter(c=>c.id===pid)[0].blockers.forEach(g=>gaps[g]=1));
+      status="CONDITIONAL";step="One step from staffable for "+cond.length+" matched role(s): "+Object.keys(gaps).map(g=>"close "+g.replace(/_/g," ")).join("; ")+".";
+    } else {
+      var needed={};(demand.teams||[]).forEach(t=>t.open_roles.forEach(r=>(r.skills||[]).forEach(s=>needed[s.toLowerCase()]=1)));
+      var have=_sk(p.skills),miss=Object.keys(needed).filter(s=>!have.has(s)).slice(0,3);
+      status="UNMATCHED";step=miss.length?("No open role matches your skills yet. Nearest demand wants: "+miss.join(", ")+"."):"No open demand matches right now.";
+    }
+    return {id:pid,status:status,next_best_step:step};
+  });
+}
+function teamSteps(board){
+  var teams={};
+  board.forEach(function(b){(teams[b.team]=teams[b.team]||{milestone:b.milestone,roles:[]}).roles.push(b);});
+  return Object.keys(teams).map(function(tn){
+    var info=teams[tn],lines=[],risk=false;
+    info.roles.forEach(function(b){
+      if(b.assigned.length>=b.count){lines.push("“"+b.role_id+"”: staff "+b.assigned.join(", ")+" → covered ("+b.assigned.length+"/"+b.count+").");}
+      else{risk=true;var gap=b.count-b.assigned.length,have=b.assigned.join(", ")||"nobody yet";
+        if(b.conditional.length){var cond=b.conditional.slice(0,3).map(c=>c.id+" (if they "+c.blockers.map(x=>"fix "+x.replace(/_/g," ")).join(" & ")+")").join("; ");
+          lines.push("“"+b.role_id+"”: short "+gap+" (have "+have+"). Fastest close: "+cond+".");}
+        else lines.push("“"+b.role_id+"”: short "+gap+" (have "+have+"). No one in the pool matches — source externally or rescope the milestone.");}
+    });
+    return {team:tn,milestone:info.milestone,milestone_at_risk:risk,next_best_step:lines.join(" ")};
+  });
+}
+function planFor(supply,demand){var board=matchBoard(supply,demand);return {board:board,person_next_steps:personSteps(supply,demand,board),team_next_steps:teamSteps(board)};}
+/* ENGINE-END */
+
+/* ============================================================
+   UI
+   ============================================================ */
+var lastPlan=null;
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+
+function renderSupply(){
+  var host=document.getElementById('supply');host.innerHTML='';
+  SUPPLY.people.forEach(function(p,i){
+    var ws=p.technical_competence.work_sample;
+    var d=document.createElement('div');d.className='person';
+    d.innerHTML=
+      '<div class="top"><div><div class="pid">'+p.id+'</div><div class="sk">'+p.skills.join(" · ")+'</div></div></div>'+
+      '<div class="lev">'+
+        '<label><input type="checkbox" data-i="'+i+'" data-k="avail"'+(p.available!==false?' checked':'')+'> available</label>'+
+        '<label>work-sample <input type="range" min="0" max="1" step="0.01" value="'+ws.score+'" data-i="'+i+'" data-k="score"> <span id="sv'+i+'">'+ws.score.toFixed(2)+'</span></label>'+
+      '</div>';
+    host.appendChild(d);
+  });
+  host.querySelectorAll('input').forEach(function(el){
+    el.addEventListener('input',function(){
+      var i=+el.getAttribute('data-i'),k=el.getAttribute('data-k'),p=SUPPLY.people[i];
+      if(k==='avail') p.available=el.checked;
+      else {p.technical_competence.work_sample.score=parseFloat(el.value);document.getElementById('sv'+i).textContent=parseFloat(el.value).toFixed(2);}
+      recompute();
+    });
+  });
+}
+function recompute(){
+  var plan=planFor(SUPPLY,DEMAND);lastPlan=plan;
+  // roles
+  var rh=document.getElementById('roles');rh.innerHTML='';
+  plan.board.forEach(function(b){
+    var ok=b.assigned.length>=b.count;
+    var cands='';
+    b.eligible.forEach(function(e){var a=b.assigned.indexOf(e.id)>=0;cands+='<div class="cand"><span class="m '+(a?'a':'b')+'">'+(a?'▶ assign':'· backup')+'</span><span>'+e.id+' — skill overlap '+e.overlap+(e.pattern?' · ⟳ pattern':'')+'</span></div>';});
+    b.conditional.forEach(function(c){cands+='<div class="cand"><span class="m c">~ blocked</span><span>'+c.id+' — fix '+c.blockers.map(x=>x.replace(/_/g," ")).join(", ")+'</span></div>';});
+    var d=document.createElement('div');d.className='role';
+    d.innerHTML='<div class="rt"><div><div class="rname">'+b.role_id+' <span class="team">· '+esc(b.team)+'</span></div><div class="team">'+b.role_type+' · needs '+b.count+' · '+b.skills.join(", ")+'</div></div>'+
+      '<span class="cov '+(ok?'ok':'short')+'">'+b.assigned.length+'/'+b.count+'</span></div>'+cands;
+    rh.appendChild(d);
+  });
+  // teams
+  var th=document.getElementById('teams');th.innerHTML='';
+  plan.team_next_steps.forEach(function(t){
+    var d=document.createElement('div');d.className='team '+(t.milestone_at_risk?'risk':'ok');
+    d.innerHTML='<div class="tn">'+esc(t.team)+'<span class="flag">'+(t.milestone_at_risk?'⚠ at risk':'on track')+'</span></div><div class="ms">'+esc(t.milestone)+'</div><div class="step">'+esc(t.next_best_step)+'</div>';
+    th.appendChild(d);
+  });
+  // people
+  var ph=document.getElementById('people');ph.innerHTML='';
+  plan.person_next_steps.forEach(function(s){
+    var d=document.createElement('div');d.className='person';
+    d.innerHTML='<div class="top"><span class="pid">'+s.id+'</span><span class="pill '+s.status+'">'+s.status+'</span></div><div class="step" style="font-size:13px;margin-top:6px">'+esc(s.next_best_step)+'</div>';
+    ph.appendChild(d);
+  });
+  document.getElementById('note').classList.remove('show');
+}
+
+/* deterministic staffing update (always available) */
+function templateUpdate(plan){
+  var L=["Staffing update — "+plan.board.length+" open roles across "+plan.team_next_steps.length+" teams.",""];
+  plan.team_next_steps.forEach(function(t){
+    L.push((t.milestone_at_risk?"⚠ AT RISK":"✓ on track")+" — "+t.team+" ("+t.milestone+")");
+    L.push("   "+t.next_best_step);
+  });
+  var moves=plan.person_next_steps.filter(s=>s.status==="ASSIGN"||s.status==="CONDITIONAL");
+  if(moves.length){L.push("","Moves:");moves.forEach(s=>L.push("  • "+s.id+": "+s.next_best_step));}
+  return L.join("\n");
+}
+var GUIDE_PROXY="https://delta-guide-eosin.vercel.app/api/guide";
+function draft(){
+  var plan=lastPlan,tmpl=templateUpdate(plan),note=document.getElementById('note'),mode=document.getElementById('modeline');
+  note.classList.add('show');note.innerHTML='<span class="tag">drafting…</span>'+esc(tmpl);
+  var facts="STAFFING PLAN (the only facts you may use):\n"+
+    plan.team_next_steps.map(t=>"- "+t.team+" ["+(t.milestone_at_risk?"AT RISK":"on track")+"] "+t.milestone+": "+t.next_best_step).join("\n")+
+    "\nPEOPLE:\n"+plan.person_next_steps.map(s=>"- "+s.id+" ["+s.status+"]: "+s.next_best_step).join("\n");
+  var sys="You are a delivery staffing lead. Using ONLY the plan facts, write a crisp weekly staffing update (max 140 words) for leadership: which milestones are at risk and the single most important move to de-risk each. Name people by their id. Never invent people, roles, or outcomes beyond the facts. Plain text.";
+  var done=false,timer=setTimeout(function(){if(!done){done=true;fallback(tmpl,"timed out");}},9000);
+  fetch(GUIDE_PROXY,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({messages:[{role:"system",content:sys},{role:"user",content:facts}],temperature:0.3,max_tokens:320})})
+    .then(x=>{if(!x.ok)throw new Error("HTTP "+x.status);return x.json();})
+    .then(function(d){if(done)return;done=true;clearTimeout(timer);
+      var t=(d.choices&&d.choices[0]&&d.choices[0].message&&d.choices[0].message.content||"").trim();if(!t)throw new Error("empty");
+      note.innerHTML='<span class="tag">✨ staffing update'+(d.provider?" · "+d.provider:"")+'</span>'+esc(t);
+      mode.textContent="Agentic draft grounded in the plan. Edit before sending.";})
+    .catch(function(e){if(done)return;done=true;clearTimeout(timer);fallback(tmpl,String(e.message||e));});
+}
+function fallback(tmpl,why){var note=document.getElementById('note'),mode=document.getElementById('modeline');
+  note.innerHTML='<span class="tag">staffing update</span>'+esc(tmpl);
+  mode.textContent="Offline draft (hosted assist unavailable: "+why+"). Deterministic — fully usable.";}
+function downloadPlan(){var blob=new Blob([JSON.stringify(lastPlan,null,2)],{type:"application/json"});var u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download="staffing-plan.json";a.click();URL.revokeObjectURL(u);}
+
+document.getElementById('draftBtn').addEventListener('click',draft);
+document.getElementById('jsonBtn').addEventListener('click',downloadPlan);
+renderSupply();recompute();
+if(typeof module!=="undefined"&&module.exports){module.exports={planFor:planFor};}
+</script>
+</body>
+</html>

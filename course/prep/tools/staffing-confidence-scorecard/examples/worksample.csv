@@ -1,0 +1,2 @@
+Candidate id,Role type,Did you observe them build it fresh?,Agent runs & calls its tool incl the error path,Retrieval is grounded cites the corpus refuses when unsupported,The eval gate is real it fails on an ungrounded answer,Code is legible under time pressure,Talks trade-offs while building,Pass bar
+anon-0042,Technical,Yes,3,3,2,3,2,0.70

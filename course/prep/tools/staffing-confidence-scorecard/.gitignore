@@ -1,0 +1,5 @@
+# Candidate records / Forms exports may contain PII — never commit real ones.
+*.json
+!candidate.example.json
+*.csv
+!examples/*.csv
