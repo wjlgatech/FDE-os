@@ -1,5 +1,7 @@
 # Candidate records / Forms exports may contain PII — never commit real ones.
+# The examples/ tree is anonymized demo data and IS committed.
 *.json
 !candidate.example.json
+!examples/candidates/*.json
 *.csv
 !examples/*.csv

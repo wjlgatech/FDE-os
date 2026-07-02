@@ -1,0 +1,27 @@
+{
+  "candidate": "anon-0043",
+  "reliability": {
+    "references": [
+      {
+        "source": "internal_team",
+        "worked_with": true,
+        "would_staff_again": true,
+        "went_dark_or_noshow": false
+      }
+    ]
+  },
+  "technical_competence": {
+    "work_sample": {
+      "observed": true,
+      "score": 0.55,
+      "threshold": 0.7
+    }
+  },
+  "resourcefulness": {
+    "teach_back": {
+      "artifact_worked": true,
+      "teachback_clear": true,
+      "got_unstuck": true
+    }
+  }
+}
