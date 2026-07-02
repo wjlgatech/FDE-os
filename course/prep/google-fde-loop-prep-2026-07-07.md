@@ -19,7 +19,7 @@ in the doc below:
 | Sensitive data / PII / isolation | The born-clean security convention (AGENTS.md), the regulated-signoff archetype, field-note lesson #3 (HITL mandatory) — §6(c)'s one-liner is the pharma field note's thesis | ✅ covered (pattern level; GCP service names — DLP, VPC-SC, CMEK — live only in this doc) |
 | "Structure > models" talking point | [`doc-understanding`](../../skills/doc-understanding/) — parse-quality gate; *Output Quality ≤ Input Representation Quality* | ✅ covered |
 | JD-grounded prioritization | [`jd-compiler`](../../skills/jd-compiler/) + the knowledge spine (41 concepts) | ✅ covered |
-| **Hand-coding under zero assist (the #1 named risk)** | **Nothing.** `grep -ril "leetcode\|sliding window\|topological\|LRU\|BFS\|union-find\|rate limiter"` across the repo → **0 hits** before this file | ❌ **gap** — the doc below fills it by hand |
+| **Hand-coding under zero assist (the #1 named risk)** | **Nothing.** `grep -ril "leetcode\|sliding window\|topological\|LRU\|BFS\|union-find\|rate limiter"` across the repo → **0 hits** before this file | ⚠️ **harness shipped, muscle is yours** — [`coding-drill-kit`](tools/coding-drill-kit/) gates blank-page template recall (6/6 twice = ready); the daily reps are still human work |
 | GCP reference-architecture fluency (Vertex, Cloud Run, Pub/Sub…) | Thin — the toolkit is deliberately provider-agnostic | ⚠️ partial |
 
 **The honest verdict:** FDE-os is **sufficient for the system-design hour** (its eval/discovery/PII
@@ -337,7 +337,7 @@ Sketch the happy path end to end, then layer in scale → security → monitorin
 > Front-loaded on hand-coding (your #1 risk). Each day: warm-up coding by hand, then a focused block. Track every problem in your tracker (build it Day 1).
 
 **Day 1 — Mon 6/29 · Setup + hand-coding baseline**
-- Build your **no-AI mock harness**: a bare editor setup (autocomplete OFF) + a `problems.md` tracker (problem, bucket, time, what broke). This is your build-while-prep artifact.
+- Build your **no-AI mock harness**: a bare editor setup (autocomplete OFF) + a `problems.md` tracker (problem, bucket, time, what broke). This is your build-while-prep artifact. *(Shipped as [`tools/coding-drill-kit/`](tools/coding-drill-kit/) — `drill.py start` → write from memory → `drill.py check`.)*
 - Hand-write all 5 templates in §4 from memory, twice. Note what you fumbled.
 - 2 LeetCode **medium graphs** (e.g., Number of Islands, Course Schedule) — by hand, narrate aloud, dry-run before running.
 - **Send the recruiter email (§5).**

@@ -6,6 +6,19 @@ All notable changes to FDE-os are recorded here. Format follows
 ## [Unreleased]
 
 ### Added
+- **`course/prep/tools/coding-drill-kit` — eval-as-gate pointed at a human (the case study's Day-1
+  artifact, shipped).** `drill.py start` creates a blank-page attempt listing only the six template
+  signatures (BFS, topo-sort, sliding window, union-find, LRU, token-bucket rate limiter — the
+  recruiter's four buckets); you hand-write them from memory in a bare editor; `drill.py check` runs
+  real unit cases, names exactly what broke (incl. a partial-order-cycle case that catches the lazy
+  `return order` topo bug), and appends every round to a gitignored `problems.md` run-log. Gate: 6/6
+  from a blank page, twice, on different days. Plus `design-self-score.json` — 12 `criteria-scorer`
+  criteria matching the recruiter's graded design-round behaviors (discovery-first, PII + tenant
+  isolation, prompt/RAG/fine-tune, cache/stateless scale, groundedness + golden set, HITL, cost, GCP
+  naming). Verified live: a correct attempt scores 6/6 GO; two planted bugs (off-by-one window,
+  missing cycle guard) are caught with the failing case named. _Why: the coding room is production
+  from memory under zero assist — the toolkit can't grow the muscle, but it can own the gate and the
+  tracker, which is exactly the eval-loop discipline applied to a person._
 - **`course/prep/google-fde-loop-prep-2026-07-07.md` — a real Google Cloud FDE interview loop as a
   case study, with the honest FDE-os coverage audit.** Preserves the actual prep instruction for a
   real onsite (coding + system design) and audits it against the toolkit: the system-design hour maps

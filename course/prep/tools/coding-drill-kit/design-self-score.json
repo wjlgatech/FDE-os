@@ -1,0 +1,14 @@
+[
+  {"type": "must_match", "value": "who|user|stakeholder", "question": "Discovery: named the users / stakeholders before designing"},
+  {"type": "must_match", "value": "PII|sensitive|DLP|redact", "question": "Security: PII detection/redaction stated explicitly"},
+  {"type": "must_match", "value": "tenant|isolation|VPC|namespace", "question": "Security: per-tenant data isolation (the #1 RAG leak) covered"},
+  {"type": "must_match", "value": "RAG|retriev|fine.?tun|prompt", "question": "AI approach: prompt vs RAG vs fine-tune decision stated"},
+  {"type": "must_match", "value": "cache|caching", "question": "Scale: caching named (the LLM cost/latency lever)"},
+  {"type": "must_match", "value": "stateless|autoscal|shard", "question": "Scale: horizontal-scale mechanics named"},
+  {"type": "must_match", "value": "groundedness|halluc|citation", "question": "Monitoring: hallucination/groundedness check named"},
+  {"type": "must_match", "value": "eval|golden", "question": "Monitoring: offline eval harness / golden set named"},
+  {"type": "must_match", "value": "human.in.the.loop|human review|HITL|handoff", "question": "Governance: human-in-the-loop named before irreversible actions"},
+  {"type": "must_match", "value": "cost|token", "question": "Ops: cost-per-request / token economics addressed"},
+  {"type": "must_match", "value": "Vertex|Cloud Run|GKE|Pub/Sub|BigQuery", "question": "GCP fluency: real service names used (no Azure-isms)"},
+  {"type": "must_contain_number", "question": "Concreteness: at least one real number (latency budget, QPS, %)"}
+]
