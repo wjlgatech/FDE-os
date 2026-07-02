@@ -77,6 +77,10 @@ What's live now:
 - **`workflows/engagement-readiness`** — the first **composition** workflow: chains
   `invisible-workflow-mapper` (adopted?) AND `rag-eval-harness` (works?) into one **GO / NO-GO** gate.
   Skills are blocks; workflows chain them.
+- **`course/prep/tools/coding-drill-kit`** — eval-as-gate pointed at a *human*: write the six
+  interview templates from memory (no AI, bare editor), `drill.py check` scores them against real
+  unit cases and logs every round; plus a 12-criterion design-round self-score for `criteria-scorer`.
+  Built for the [Google FDE loop case study](course/prep/google-fde-loop-prep-2026-07-07.md).
 - **`knowledge/fde-spine.*`** — the canonical FDE knowledge spine built from the research vault
   (12 concepts across all 7 research threads, 39 evidence nodes, 51 edges).
 - **CI** — `tests.yml` runs every skill's test suite + the Field Kit convention lint on each

@@ -63,6 +63,10 @@ prompt (seeds Objective 3). Content production *is* product production.
   `decide(rounds)`/`render_run_log`; scoring is pluggable (`score-each` wires any scorer via `{file}`).
   Assisted, not autonomous — humans own taste, gates own the floor.
 
+- **`course/prep/tools/coding-drill-kit`** — not a skill: an eval-as-gate drill harness for the
+  Google-FDE-loop case study (blank-page template recall, scored + tracked). `attempts/` and
+  `problems.md` are personal artifacts, gitignored — never commit them.
+
 **Reuse vs design:** existing skills (`living-knowledge`, `skillfy`, `dreammaketrue`,
 `knowledge-graph`, `living-repo`) are the production engine and are NOT vendored. Design a native
 skill only when a spike shows the existing ones genuinely fall short (see KTD3 in the plan).
