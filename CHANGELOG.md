@@ -6,6 +6,25 @@ All notable changes to FDE-os are recorded here. Format follows
 ## [Unreleased]
 
 ### Added
+- **Production-stack taxonomy adopted from a reverse-engineered competitor (Maven FDE bootcamp).**
+  Reverse-engineered the Maven "Forward Deployed Engineering Bootcamp" (Hamza Farooq, $700, 4 weeks —
+  headline: *"FDE is the new moat in AI"*, direct market validation of Objective 1) via page capture +
+  `anyagent reverse`; intel preserved in `course/market/2026-07-02-maven-fde-bootcamp.md` with
+  explicit adopt/reject calls. Adopted their open-source stack into `jd-compiler`'s TOOLS library as
+  five new categories — `web_stack` (React/Node/Next/FastAPI), `memory` (Mem0, semantic caching,
+  Letta), `inference` (vLLM, RunPod, Ollama, SGLang, TGI), `guardrails` (Llama Guard, NeMo),
+  `graph_dbs` (Neo4j, GraphRAG) — plus Arize/Phoenix/Langfuse/LangSmith (eval_obs), OpenRouter
+  (providers), and A2A promoted into protocols. **Before → after on their own launch post: 3/12
+  named tools detected → 12/12.** Zero new dependencies — tools enter the *taxonomy*, not the stack.
+  `course/README.md` updated (was a stale "not yet built" stub; the directory now holds target-jds,
+  prep, and market intel).
+
+### Fixed
+- **`jd-compiler` false positives: term matching is now word-boundary anchored.** `rust` no longer
+  fires inside "t**rust**", `scala` inside "**scala**ble", `java` inside "javascript"; the `"java "`
+  trailing-space hack is gone and stems (`fine-tun`, `orchestrat`) still match. Found while compiling
+  the Maven cohort page (it detected Rust and Scala in a course that uses neither). Tests 8 → 11
+  (cohort-stack detection, FP kill, stem regression).
 - **`course/prep/tools/coding-drill-kit` — eval-as-gate pointed at a human (the case study's Day-1
   artifact, shipped).** `drill.py start` creates a blank-page attempt listing only the six template
   signatures (BFS, topo-sort, sliding window, union-find, LRU, token-bucket rate limiter — the

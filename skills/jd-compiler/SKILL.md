@@ -20,9 +20,13 @@ core) versus **what's stack-specific** (e.g. GCP's Vertex/ADK shows up only in G
 
 Six clusters + a post-training stretch — the same spine the [course prep](../../course/prep/) uses:
 `production_swe` · `enterprise_deploy` · `modern_ai_stack` · `agentic_design` · `fde_craft` ·
-`leadership` · `post_training`. Plus a named-tool library (languages, agent frameworks, protocols
-like **MCP**, vector DBs, LLM providers, deploy stack, eval/observability, ML, agent patterns) and
-the role's years/level.
+`leadership` · `post_training`. Plus a named-tool library — languages, agent frameworks, protocols
+(**MCP**, **A2A**), web stack (React/Node), vector **and graph** DBs (Neo4j/GraphRAG), agent memory
+(Mem0, semantic caching), LLM providers, self-hosted inference (**vLLM**/RunPod/Ollama), guardrails
+(**Llama Guard**), deploy stack, eval/observability (Arize/Langfuse), ML, agent patterns — and the
+role's years/level. Terms match at **word boundaries** (no `rust`-in-"trust" false positives). The
+production-stack categories were adopted from a real market signal: the
+[Maven FDE bootcamp intel](../../course/market/2026-07-02-maven-fde-bootcamp.md).
 
 ## Run it
 

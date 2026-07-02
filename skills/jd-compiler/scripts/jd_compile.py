@@ -45,16 +45,23 @@ CLUSTERS = {
 }
 
 # Specific named tools/frameworks worth extracting — the concrete vocabulary the market demands.
+# Word-boundary matched (see _found) — a term matches as a whole word/phrase, so "rust"
+# no longer fires inside "trust" nor "scala" inside "scalable". Trailing-space hacks gone.
 TOOLS = {
-    "languages":       ["python", "typescript", "golang", "java ", "rust", "scala"],
-    "agent_frameworks":["langgraph", "langchain", "crewai", "autogen", "llamaindex", "openai agents", "claude agent sdk", "google adk", " adk", "a2a"],
-    "protocols":       ["model context protocol", "mcp"],
+    "languages":       ["python", "typescript", "golang", "java", "rust", "scala"],
+    "agent_frameworks":["langgraph", "langchain", "crewai", "autogen", "llamaindex", "openai agents", "claude agent sdk", "google adk", "adk"],
+    "protocols":       ["model context protocol", "mcp", "a2a", "agent2agent"],
+    "web_stack":       ["react", "node.js", "next.js", "fastapi", "streamlit"],
     "vector_dbs":      ["pinecone", "weaviate", "faiss", "chromadb", "milvus", "pgvector"],
-    "llm_providers":   ["openai", "anthropic", "claude", "gemini", "vertex", "bedrock", "azure openai"],
+    "graph_dbs":       ["neo4j", "graphrag", "knowledge graph", "neptune"],
+    "memory":          ["mem0", "semantic cache", "semantic caching", "letta", "memgpt"],
+    "llm_providers":   ["openai", "anthropic", "claude", "gemini", "vertex", "bedrock", "azure openai", "openrouter"],
+    "inference":       ["vllm", "runpod", "ollama", "self-host", "sglang", "tgi"],
+    "guardrails":      ["llama guard", "nemo guardrails", "guardrails ai"],
     "deploy":          ["docker", "kubernetes", "k8s", "terraform", "gke", "helm", "ci/cd", "vpc", "on-prem", "air-gap"],
-    "eval_obs":        ["evaluation", "observability", "ragas", "llm-as-judge", "tracing", "eval pipeline"],
+    "eval_obs":        ["evaluation", "observability", "ragas", "llm-as-judge", "tracing", "eval pipeline", "arize", "phoenix", "langfuse", "langsmith"],
     "ml":              ["rag", "fine-tun", "rlhf", "reward model", "embedding"],
-    "patterns":        ["react", "self-reflection", "hierarchical delegation", "multi-agent", "tool-use", "guardrail", "orchestrat"],
+    "patterns":        ["self-reflection", "hierarchical delegation", "multi-agent", "tool-use", "guardrail", "orchestrat"],
 }
 
 _YEARS = re.compile(r"(\d+)\+?\s*years?")
@@ -67,8 +74,19 @@ def _norm(text: str) -> str:
 
 
 def _found(blob: str, terms: list) -> list:
-    """Which of the given terms appear in the normalized text."""
-    return sorted({t.strip() for t in terms if t in blob})
+    """Which terms appear in the normalized text, matched at word boundaries.
+
+    Plain substring matching produced false positives ("rust" in "trust", "scala" in
+    "scalable") and needed trailing-space hacks ("java "). A term matches only when not
+    embedded inside a longer alphanumeric word; "fine-tun" style stems keep a free tail.
+    """
+    hits = set()
+    for t in terms:
+        term = t.strip()
+        tail = "" if term.endswith("-tun") or term.endswith("orchestrat") else r"(?![a-z0-9])"
+        if re.search(r"(?<![a-z0-9])" + re.escape(term) + tail, blob):
+            hits.add(term)
+    return sorted(hits)
 
 
 def compile_jd(text: str, name: str = "") -> dict:
