@@ -77,5 +77,38 @@ class TestNotes(unittest.TestCase):
         self.assertIn("required by 2/2", note.replace("**", ""))
 
 
+COHORT_POST = ("We'll work with open-source tools like Google ADK, A2A, MCP, Mem0, Arize AI, "
+               "vLLM, Llama Guard, React, and Node.js, Neo4j — semantic caching keeps it fast.")
+
+
+class TestProductionStackTaxonomy(unittest.TestCase):
+    """The categories adopted from the Maven FDE-bootcamp stack (2026-07-02)."""
+
+    def test_cohort_stack_fully_detected(self):
+        tools = jc.compile_jd(COHORT_POST, "cohort")["tools"]
+        self.assertIn("mem0", tools["memory"])
+        self.assertIn("semantic caching", tools["memory"])
+        self.assertIn("vllm", tools["inference"])
+        self.assertIn("llama guard", tools["guardrails"])
+        self.assertIn("neo4j", tools["graph_dbs"])
+        self.assertIn("arize", tools["eval_obs"])
+        self.assertEqual(sorted(tools["web_stack"]), ["node.js", "react"])
+        self.assertIn("a2a", tools["protocols"])
+
+    def test_word_boundaries_kill_false_positives(self):
+        tools = jc.compile_jd("We build trust at scalable speed using javascript.", "fp")["tools"]
+        flat = {h for hits in tools.values() for h in hits}
+        self.assertNotIn("rust", flat)     # was matching inside "trust"
+        self.assertNotIn("scala", flat)    # was matching inside "scalable"
+        self.assertNotIn("java", flat)     # "javascript" is not java
+
+    def test_stems_still_match(self):
+        tools = jc.compile_jd("We fine-tune models and orchestrate agents in java.", "stem")["tools"]
+        flat = {h for hits in tools.values() for h in hits}
+        self.assertIn("fine-tun", flat)
+        self.assertIn("orchestrat", flat)
+        self.assertIn("java", flat)
+
+
 if __name__ == "__main__":
     unittest.main()
