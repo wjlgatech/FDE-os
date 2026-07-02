@@ -6,6 +6,16 @@ All notable changes to FDE-os are recorded here. Format follows
 ## [Unreleased]
 
 ### Added
+- **`course/prep/google-fde-loop-prep-2026-07-07.md` — a real Google Cloud FDE interview loop as a
+  case study, with the honest FDE-os coverage audit.** Preserves the actual prep instruction for a
+  real onsite (coding + system design) and audits it against the toolkit: the system-design hour maps
+  1:1 onto FDE-os artifacts (discovery → `invisible-workflow-mapper`; hallucination monitoring →
+  `rag-eval-harness`; PII → born-clean + regulated-signoff; structure>models → `doc-understanding`),
+  while the coding hour exposed a real non-goal: FDE-os has zero hand-coding drill content (grep
+  evidence) — that muscle is trained by the doc, not the toolkit. Comp figures redacted (public repo,
+  born-clean rule). Dogfooded: `criteria_score` 8/8 PASS on the recruiter's graded areas; `doc_gate`
+  parse-quality 1.0 GO. _Why: Objective 1 is validated by exactly this question — "given a JD, does
+  the system prepare the person?" — and an honest audit (including the gap) is the answer._
 - **`skills/doc-understanding` — the 10th skill, closing the moat gap the regulated-engagement field
   note named the same week.** Messy enterprise docs → one canonical structured representation + a
   **parse-quality gate**: DOCX (headings, paragraphs, tables with `gridSpan`/`vMerge` merges resolved,

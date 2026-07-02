@@ -6,6 +6,10 @@ enterprise role). It places the FDE nearest the **sales/go-to-market** end of th
 
 **Source:** captured from FDE-os research (`FDE-research-synthesis.md` + the ideation doc, which
 fetched the live posting). Original posting: [Google Careers](https://www.google.com/about/careers/applications/jobs/results/81652014060053190-forward-deployed-engineer,-applied-ai,-google-cloud)
+
+**Live case study:** a real technical loop for this role (coding + system design, 2026-07-07) is
+documented — with the honest FDE-os coverage audit — in
+[`../prep/google-fde-loop-prep-2026-07-07.md`](../prep/google-fde-loop-prep-2026-07-07.md).
 (Milan posting fetched 2026-06). _Re-verify against the live posting before relying on specifics._
 **Org placement:** **Cloud Go-To-Market** — branded internally the "Agent Engineer." **Leveled:**
 I / III / IV / Advanced. **Comp (Milan posting):** €116K–119K + 20% bonus + equity.
