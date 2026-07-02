@@ -1,0 +1,4 @@
+team,milestone,role_id,role_type,skills,count
+Client-A RAG platform,grounded agent live by Aug 15,FDE-lead,technical,python;rag;agents,1
+Client-A RAG platform,grounded agent live by Aug 15,FDE-2,technical,python;agents,1
+Client-B discovery,workflow map signed off by Jul 30,delivery-lead,non_technical,stakeholder;discovery,1
