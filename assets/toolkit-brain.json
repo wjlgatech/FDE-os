@@ -1,0 +1,426 @@
+{
+  "jd": {
+    "clusters": {
+      "agentic_design": {
+        "label": "Agentic system design",
+        "tells": [
+          "agent",
+          "agentic",
+          "llm workflow",
+          "orchestrat",
+          "mcp",
+          "model context protocol",
+          "tool-use",
+          "tool use",
+          "multi-agent",
+          "guardrail"
+        ]
+      },
+      "enterprise_deploy": {
+        "label": "Enterprise / hybrid deployment",
+        "tells": [
+          "docker",
+          "kubernetes",
+          "k8s",
+          "terraform",
+          "devops",
+          "cloud",
+          "vpc",
+          "on-prem",
+          "on premises",
+          "hybrid",
+          "gke",
+          "deploy"
+        ]
+      },
+      "fde_craft": {
+        "label": "The FDE craft",
+        "tells": [
+          "customer-facing",
+          "customer facing",
+          "stakeholder",
+          "discovery",
+          "pre-sales",
+          "presales",
+          "high agency",
+          "ambiguity",
+          "embed"
+        ]
+      },
+      "leadership": {
+        "label": "Technical leadership & playbooks",
+        "tells": [
+          "lead",
+          "mentor",
+          "playbook",
+          "best practices",
+          "technical strategy",
+          "scale the",
+          "standards",
+          "team"
+        ]
+      },
+      "modern_ai_stack": {
+        "label": "Modern AI stack",
+        "tells": [
+          "rag",
+          "vector database",
+          "vector db",
+          "embedding",
+          "fine-tun",
+          "evaluation",
+          "eval pipeline",
+          "retrieval"
+        ]
+      },
+      "post_training": {
+        "label": "Post-training (stretch)",
+        "tells": [
+          "post-training",
+          "rlhf",
+          "reward model",
+          "preference optimization",
+          "rl environment",
+          "distributed training",
+          "verifier"
+        ]
+      },
+      "production_swe": {
+        "label": "Production SWE",
+        "tells": [
+          "software engineering",
+          "production",
+          "python",
+          "typescript",
+          "ship",
+          "code review",
+          "ci/cd",
+          "testing"
+        ]
+      }
+    },
+    "tools": {
+      "agent_frameworks": [
+        "langgraph",
+        "langchain",
+        "crewai",
+        "autogen",
+        "llamaindex",
+        "openai agents",
+        "claude agent sdk",
+        "google adk",
+        "adk"
+      ],
+      "deploy": [
+        "docker",
+        "kubernetes",
+        "k8s",
+        "terraform",
+        "gke",
+        "helm",
+        "ci/cd",
+        "vpc",
+        "on-prem",
+        "air-gap"
+      ],
+      "eval_obs": [
+        "evaluation",
+        "observability",
+        "ragas",
+        "llm-as-judge",
+        "tracing",
+        "eval pipeline",
+        "arize",
+        "phoenix",
+        "langfuse",
+        "langsmith"
+      ],
+      "graph_dbs": [
+        "neo4j",
+        "graphrag",
+        "knowledge graph",
+        "neptune"
+      ],
+      "guardrails": [
+        "llama guard",
+        "nemo guardrails",
+        "guardrails ai"
+      ],
+      "inference": [
+        "vllm",
+        "runpod",
+        "ollama",
+        "self-host",
+        "sglang",
+        "tgi"
+      ],
+      "languages": [
+        "python",
+        "typescript",
+        "golang",
+        "java",
+        "rust",
+        "scala"
+      ],
+      "llm_providers": [
+        "openai",
+        "anthropic",
+        "claude",
+        "gemini",
+        "vertex",
+        "bedrock",
+        "azure openai",
+        "openrouter"
+      ],
+      "memory": [
+        "mem0",
+        "semantic cache",
+        "semantic caching",
+        "letta",
+        "memgpt"
+      ],
+      "ml": [
+        "rag",
+        "fine-tun",
+        "rlhf",
+        "reward model",
+        "embedding"
+      ],
+      "patterns": [
+        "self-reflection",
+        "hierarchical delegation",
+        "multi-agent",
+        "tool-use",
+        "guardrail",
+        "orchestrat"
+      ],
+      "protocols": [
+        "model context protocol",
+        "mcp",
+        "a2a",
+        "agent2agent"
+      ],
+      "vector_dbs": [
+        "pinecone",
+        "weaviate",
+        "faiss",
+        "chromadb",
+        "milvus",
+        "pgvector"
+      ],
+      "web_stack": [
+        "react",
+        "node.js",
+        "next.js",
+        "fastapi",
+        "streamlit"
+      ]
+    }
+  },
+  "mapper": {
+    "archetypes": [
+      {
+        "name": "single-strong-owner",
+        "tells": [
+          "founder",
+          "ceo",
+          "vp",
+          "owner",
+          "her call",
+          "his call",
+          "just decides",
+          "gut",
+          "boss"
+        ],
+        "traps": [
+          "Bus-factor: win the owner or nothing ships — a perfect answer they didn't ask for stalls.",
+          "The AI must make the OWNER faster, not bypass or second-guess them."
+        ]
+      },
+      {
+        "name": "consensus-committee",
+        "tells": [
+          "committee",
+          "steering",
+          "stakeholders",
+          "alignment",
+          "consensus",
+          "working group",
+          "we discuss",
+          "buy-in"
+        ],
+        "traps": [
+          "Death by meeting: one quiet veto kills it; map every seat, not just the loudest.",
+          "Output must arrive pre-digested into the committee's format, or it won't be read in the room."
+        ]
+      },
+      {
+        "name": "regulated-signoff",
+        "tells": [
+          "compliance",
+          "audit",
+          "legal",
+          "regulated",
+          "soc2",
+          "hipaa",
+          "validation",
+          "risk",
+          "governance",
+          "policy"
+        ],
+        "traps": [
+          "Provenance is mandatory: no citations / audit trail = dead on arrival, however good the answer.",
+          "Speed is irrelevant if it can't be signed off; design for the reviewer, not the operator."
+        ]
+      },
+      {
+        "name": "shadow-bottom-up",
+        "tells": [
+          "spreadsheet",
+          "workaround",
+          "we just text",
+          "shadow",
+          "unofficial",
+          "side channel",
+          "excel",
+          "manual"
+        ],
+        "traps": [
+          "The official rollout threatens whoever owns the workaround — co-opt them, don't replace them.",
+          "Adoption comes from making the shadow process official, not from a top-down mandate."
+        ]
+      },
+      {
+        "name": "procurement-gated",
+        "tells": [
+          "procurement",
+          "purchase order",
+          "po ",
+          "budget",
+          "vendor",
+          "security review",
+          "questionnaire",
+          "legal review",
+          "msa"
+        ],
+        "traps": [
+          "The technical win is necessary but not sufficient — the real gate is procurement + security review timing.",
+          "Start the security questionnaire / data-handling doc on day one; it is the long pole."
+        ]
+      },
+      {
+        "name": "metrics-ritual",
+        "tells": [
+          "weekly review",
+          "qbr",
+          "dashboard",
+          "kpi",
+          "the number",
+          "scorecard",
+          "standup",
+          "report out",
+          "metrics"
+        ],
+        "traps": [
+          "The AI must feed THE existing ritual/number/format at the right cadence; outside it, it's invisible.",
+          "Don't introduce a new dashboard — land inside the one they already stare at."
+        ]
+      }
+    ],
+    "dimensions": {
+      "adoption_owner": {
+        "label": "Adoption owner",
+        "load_bearing": true,
+        "weight": 2,
+        "why": "whose daily behavior must change for the AI to actually get used"
+      },
+      "approval_chain": {
+        "label": "Approval chain",
+        "load_bearing": true,
+        "weight": 2,
+        "why": "the real sign-off path and the quiet vetoes that can kill it"
+      },
+      "cadence": {
+        "label": "Cadence",
+        "load_bearing": false,
+        "weight": 1,
+        "why": "the rhythm decisions happen on (standing review vs ad-hoc fire)"
+      },
+      "decider": {
+        "label": "Decider",
+        "load_bearing": true,
+        "weight": 2,
+        "why": "who actually says yes (not who is in the room)"
+      },
+      "evidence_ritual": {
+        "label": "Evidence ritual",
+        "load_bearing": true,
+        "weight": 2,
+        "why": "the artifact / format / forum a decision is actually made on"
+      },
+      "incumbent": {
+        "label": "Incumbent process",
+        "load_bearing": false,
+        "weight": 1,
+        "why": "how it is done today — what the AI must augment or replace"
+      },
+      "kill_points": {
+        "label": "Kill points",
+        "load_bearing": false,
+        "weight": 1,
+        "why": "where a good answer dies — compliance, trust, format, politics"
+      },
+      "trigger": {
+        "label": "Trigger",
+        "load_bearing": false,
+        "weight": 1,
+        "why": "the event that starts the decision — the moment the AI output must arrive in"
+      }
+    },
+    "probes": {
+      "adoption_owner": [
+        "Whose day has to change for this to get used? What are they rewarded for today?",
+        "Who loses something — status, headcount, control — if this works?"
+      ],
+      "approval_chain": [
+        "Who else has to nod before it's real — even informally?",
+        "Who has quietly killed a project like this before?"
+      ],
+      "cadence": [
+        "When does this normally come up — a standing meeting, or only on a fire?",
+        "What's the slowest step between 'we should' and 'it's done'?"
+      ],
+      "decider": [
+        "If this stalled, whose single email would unstick it?",
+        "Who signed off on the last three things like this?"
+      ],
+      "evidence_ritual": [
+        "Can you show me the actual artifact the last decision was made on?",
+        "Where does this get decided — a meeting, a doc, a dashboard, a Slack thread?"
+      ],
+      "incumbent": [
+        "Walk me through how this gets done today, including the annoying manual parts.",
+        "What do people do outside the official system — the spreadsheet, the 'we just text Maria'?"
+      ],
+      "kill_points": [
+        "What's the most likely reason a genuinely good solution here never gets used?",
+        "What would legal / security / compliance need before they'd let this touch real data?"
+      ],
+      "trigger": [
+        "Walk me through the last time this decision actually got made — what kicked it off?",
+        "Is this a scheduled thing, or does it only come up when something breaks?"
+      ]
+    }
+  },
+  "schema": "toolkit-brain/1",
+  "true": {
+    "letters": [
+      "T",
+      "R",
+      "U",
+      "E"
+    ],
+    "ship_min_letter": 2,
+    "ship_total": 10
+  }
+}

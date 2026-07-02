@@ -6,7 +6,9 @@ customer's environment*, not just in demos.
 
 > ### ▶ Try the live agentic webapp → **[wjlgatech.github.io/FDE-os](https://wjlgatech.github.io/FDE-os/)**
 > No login, no code. Walk through **three doors** — the **[Course](https://wjlgatech.github.io/FDE-os/course.html)**,
-> the **[Toolkit](https://wjlgatech.github.io/FDE-os/toolkit.html)**, and the **[Community](https://wjlgatech.github.io/FDE-os/contribute.html)**,
+> the **[Toolkit](https://wjlgatech.github.io/FDE-os/toolkit.html)** (now with a
+> **[Playground](https://wjlgatech.github.io/FDE-os/playground.html)** running three skills client-side,
+> drift-gated against the Python sources), and the **[Community](https://wjlgatech.github.io/FDE-os/contribute.html)**,
 > where an in-page **Delta guide** (a real LLM, grounded so it never bluffs) answers your questions and
 > turns a deployment war-story into a one-click field note. Static frontend on GitHub Pages, backed by a
 > free shared-key model proxy on Vercel — runs at ~$0.
@@ -132,6 +134,7 @@ Because each article ships a Field Kit, **writing the series builds the toolkit*
 | [`index.html`](index.html) | The landing page — "one field, three doors." All three cards link out: Course → `course.html`, Toolkit → `toolkit.html`, Community → `contribute.html`. |
 | [`course.html`](course.html) | **Door 01 · Learn** — the FDE curriculum hub: the six-cluster competency map, the JD-validated prep curricula, the readiness scorecard, the RAG-eval lesson, the `agentic-solution-architect` tool (each links to source). |
 | [`toolkit.html`](toolkit.html) | **Door 02 · Build** — the open-stack hub: the seven offline CI-gated skills + the Delta Discovery Protocol field kit + the MCP server, each with a "fork →" link. |
+| [`playground.html`](playground.html) | **The toolkit, runnable in the browser** — three skills client-side (jd-compiler, true-scorer, workflow-mapper quick-read), no login, nothing leaves the page. Their rules load from [`assets/toolkit-brain.json`](assets/toolkit-brain.json), *generated* from the Python sources by [`scripts/export_brain.py`](scripts/export_brain.py) and drift-gated in CI (`tests/test_brain_export.py`) — the web version cannot silently diverge from the tested CLIs. |
 | [`contribute.html`](contribute.html) | **Door 03 · Community** — the **agentic contributor page** — a no-login, no-code page where non-technical visitors chat with a knowledge-grounded "Delta guide" (refuses rather than bluffs) and turn a war-story into a structured field note posted as a one-click GitHub issue. Static (GitHub Pages), Anthropic-styled. The guide now answers via a **deployed shared-key proxy** ([`proxy/delta-guide/`](proxy/delta-guide/), live on Vercel) so every visitor gets a real grounded model — or bring your own free key via **⚡ Power mode** (stays in your browser). |
 | [`proxy/delta-guide/`](proxy/delta-guide/) | Deployable Vercel function backing the guide with a shared free LLM + fallback chain (NIM→Groq→Gemini), origin allow-list, and token caps. Holds the key server-side so the static page never does. |
 
