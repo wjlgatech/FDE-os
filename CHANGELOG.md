@@ -6,6 +6,18 @@ All notable changes to FDE-os are recorded here. Format follows
 ## [Unreleased]
 
 ### Added
+- **`playground.html` — the toolkit as an agentic webapp: three skills running client-side in the
+  browser.** Paste a JD → `jd-compiler` clusters + named-tool extraction; paste a draft →
+  `true-scorer` heuristic bars + the ship gate; paste meeting notes → `invisible-workflow-mapper`
+  archetype quick-read with adoption traps + the four load-bearing probes (honest refusal when no
+  tell matches). No login, no backend, nothing leaves the page. **Anti-drift by construction:** the
+  rules load from `assets/toolkit-brain.json`, *generated* from the Python skill sources by
+  `scripts/export_brain.py` and gated by `tests/test_brain_export.py` (stale JSON fails CI) — the
+  web version is a window onto the tested cores, not a fork of them. Verified: headless smoke test
+  (node, DOM-stubbed) passes all three tools + the refusal path, and **browser↔CLI parity** on
+  identical inputs (5/7 clusters, TRUE 12/12 PASS both sides). Linked from the index nav, the
+  toolkit hero, and the README. _Why: the toolkit was forkable but not experience-able — the TRUE
+  rubric's own E — and a visitor should feel a skill work before cloning anything._
 - **Production-stack taxonomy adopted from a reverse-engineered competitor (Maven FDE bootcamp).**
   Reverse-engineered the Maven "Forward Deployed Engineering Bootcamp" (Hamza Farooq, $700, 4 weeks —
   headline: *"FDE is the new moat in AI"*, direct market validation of Objective 1) via page capture +

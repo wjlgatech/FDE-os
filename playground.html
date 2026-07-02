@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Playground — run the Delta toolkit in your browser</title>
+<meta name="description" content="Three FDE-os skills running live, client-side: compile a job description into competencies, TRUE-score a draft, and read an org's decision-workflow archetype. Same logic as the tested CLIs — exported, not copied.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F0EDE4; --paper-2:#F7F4EC; --paper-3:#FBF9F3;
+    --ink:#1A1915; --ink-soft:#46423A; --muted:#7A7466;
+    --clay:#CC785C; --clay-deep:#B05B3C; --line:#E0D9C9;
+    --go:#4B7B58; --go-bg:#E9F0EA; --no:#B0472F; --no-bg:#F6E7E1;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink-soft);
+    font-family:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:880px;margin:0 auto;padding:0 28px}
+  .serif{font-family:"Newsreader",Georgia,serif}
+  a{color:var(--clay-deep)}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:30px 0}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:600;font-size:18px;color:var(--ink);text-decoration:none}
+  .delta-mark{width:30px;height:30px;display:grid;place-items:center;border-radius:8px;
+    background:var(--clay);color:var(--paper);font-weight:600;font-size:17px}
+  .nav-cta{font-size:15px;color:var(--ink);text-decoration:none;padding:9px 16px;border-radius:999px;
+    border:1px solid var(--line)}
+  .nav-cta:hover{border-color:var(--clay);background:var(--paper-3)}
+  header.hero{padding:44px 0 10px;max-width:720px}
+  .eyebrow{display:inline-block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    font-weight:600;color:var(--clay);margin-bottom:16px}
+  h1{font-family:"Newsreader",Georgia,serif;font-size:clamp(34px,5.5vw,54px);line-height:1.05;
+    letter-spacing:-.018em;color:var(--ink);font-weight:500}
+  h1 em{font-style:italic;color:var(--clay)}
+  .lede{font-size:18px;max-width:620px;margin-top:18px;color:var(--ink-soft)}
+  section.tool{padding:36px 0;border-top:1px solid var(--line);margin-top:36px}
+  .label{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--clay);margin-bottom:10px}
+  h2{font-family:"Newsreader",Georgia,serif;font-size:clamp(24px,3.4vw,32px);color:var(--ink);font-weight:500;margin-bottom:8px}
+  .sub{color:var(--muted);font-size:15px;margin-bottom:16px;max-width:640px}
+  textarea{width:100%;min-height:150px;padding:14px;border:1px solid var(--line);border-radius:10px;
+    background:var(--paper-3);color:var(--ink);font:14px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace;resize:vertical}
+  textarea:focus{outline:2px solid var(--clay);outline-offset:1px}
+  .row{display:flex;gap:10px;align-items:center;margin-top:12px;flex-wrap:wrap}
+  button.run{background:var(--clay);color:var(--paper);border:0;border-radius:999px;padding:11px 22px;
+    font:600 15px "Hanken Grotesk",sans-serif;cursor:pointer}
+  button.run:hover{background:var(--clay-deep)}
+  button.sample{background:none;border:1px solid var(--line);border-radius:999px;padding:10px 16px;
+    font:500 14px "Hanken Grotesk",sans-serif;color:var(--ink-soft);cursor:pointer}
+  .out{margin-top:18px;display:none}
+  .out.show{display:block}
+  .verdict{display:inline-block;font-weight:700;font-size:14px;border-radius:8px;padding:4px 12px;margin-bottom:12px}
+  .verdict.go{background:var(--go-bg);color:var(--go)}
+  .verdict.no{background:var(--no-bg);color:var(--no)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+  .chip{font-size:13px;border:1px solid var(--line);border-radius:999px;padding:3px 12px;background:var(--paper-2)}
+  .chip b{color:var(--clay-deep)}
+  .bars{display:grid;gap:8px;max-width:460px;margin:10px 0}
+  .bar{display:grid;grid-template-columns:22px 1fr 34px;gap:10px;align-items:center;font-size:14px}
+  .bar .track{height:10px;border-radius:999px;background:var(--paper-2);border:1px solid var(--line);overflow:hidden}
+  .bar .fill{height:100%;background:var(--clay);border-radius:999px}
+  .note{font-size:13px;color:var(--muted)}
+  .traps{margin:10px 0 0 0;padding-left:20px;font-size:15px}
+  .traps li{margin-bottom:6px}
+  .cli{margin-top:14px;font:12.5px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--muted);
+    background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:9px 12px;overflow-x:auto;white-space:nowrap}
+  h3.mini{font-size:15px;color:var(--ink);margin:14px 0 4px;font-weight:600}
+  footer{border-top:1px solid var(--line);margin-top:56px;padding:30px 0 44px;font-size:14px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="brand" href="index.html"><span class="delta-mark">Δ</span> Delta</a>
+    <div style="display:flex;gap:10px">
+      <a class="nav-cta" href="toolkit.html">The toolkit</a>
+      <a class="nav-cta" href="contribute.html">Ask &amp; contribute</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <span class="eyebrow">The playground</span>
+    <h1>The toolkit, running <em>in your browser</em>.</h1>
+    <p class="lede">Three FDE-os skills, live and client-side — nothing leaves this page. The rules
+    they run on are <strong>exported from the same Python sources the test suite gates</strong>
+    (<a href="https://github.com/wjlgatech/FDE-os/blob/main/assets/toolkit-brain.json">toolkit-brain.json</a>),
+    so what you try here is what the CLI does.</p>
+  </header>
+
+  <section class="tool" id="jd">
+    <div class="label">01 · jd-compiler</div>
+    <h2 class="serif">Paste a job description. See what it actually demands.</h2>
+    <p class="sub">Which of the seven FDE competency clusters the role requires, and every named tool
+    in the production stack — word-boundary matched, so “scalable” never counts as Scala.</p>
+    <textarea id="jd-in" placeholder="Paste any AI/FDE job description or even a course announcement…"></textarea>
+    <div class="row">
+      <button class="run" onclick="runJD()">Compile it</button>
+      <button class="sample" onclick="sampleJD()">Load a sample</button>
+    </div>
+    <div class="out" id="jd-out"></div>
+    <div class="cli">$ python3 skills/jd-compiler/scripts/jd_compile.py compile your-jd.md</div>
+  </section>
+
+  <section class="tool" id="true">
+    <div class="label">02 · true-scorer</div>
+    <h2 class="serif">Would your draft survive the ship gate?</h2>
+    <p class="sub">TRUE = Transferable · Reusable · Understandable · Experience-able, 0–3 each.
+    Gate: <strong>total ≥ 10 and no letter below 2</strong>. This is the heuristic baseline the
+    CLI computes — structure, not vibes.</p>
+    <textarea id="true-in" placeholder="Paste a post, field note, or README section…"></textarea>
+    <div class="row">
+      <button class="run" onclick="runTRUE()">Score it</button>
+      <button class="sample" onclick="sampleTRUE()">Load a sample</button>
+    </div>
+    <div class="out" id="true-out"></div>
+    <div class="cli">$ python3 skills/true-scorer/scripts/score.py your-draft.md</div>
+  </section>
+
+  <section class="tool" id="map">
+    <div class="label">03 · invisible-workflow-mapper</div>
+    <h2 class="serif">Read the room before the room explains itself.</h2>
+    <p class="sub">Paste raw meeting notes about how a client decides things. Get the likely
+    <em>decision-workflow archetype</em>, its adoption traps, and the oblique probes to ask next.
+    (A quick-read of the full mapper, which scores eight dimensions with confidences.)</p>
+    <textarea id="map-in" placeholder="e.g. 'Legal has to review everything before the pilot. The VP said compliance killed the last vendor. They track it all in a spreadsheet Maria owns…'"></textarea>
+    <div class="row">
+      <button class="run" onclick="runMap()">Read the workflow</button>
+      <button class="sample" onclick="sampleMap()">Load a sample</button>
+    </div>
+    <div class="out" id="map-out"></div>
+    <div class="cli">$ python3 skills/invisible-workflow-mapper/scripts/workflow_map.py map signals.json</div>
+  </section>
+
+  <footer>
+    Everything here is a thin window onto the real, tested tools —
+    <a href="https://github.com/wjlgatech/FDE-os">fork the repo</a> ·
+    <a href="toolkit.html">browse the toolkit</a> ·
+    <a href="contribute.html">ask the Delta guide</a>.
+  </footer>
+</div>
+
+<script>
+let BRAIN = null;
+fetch("assets/toolkit-brain.json").then(r => r.json()).then(b => { BRAIN = b; })
+  .catch(() => { document.querySelectorAll("button.run").forEach(x => x.disabled = true); });
+
+const esc = t => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const norm = t => t.toLowerCase().replace(/\s+/g, " ");
+
+// mirrors jd_compile._found — word-boundary matching, stem tails kept free
+function found(blob, terms) {
+  const hits = new Set();
+  for (const t of terms) {
+    const term = t.trim();
+    const tail = (term.endsWith("-tun") || term.endsWith("orchestrat")) ? "" : "(?![a-z0-9])";
+    if (new RegExp("(?<![a-z0-9])" + esc(term) + tail).test(blob)) hits.add(term);
+  }
+  return [...hits].sort();
+}
+
+function show(id, html) {
+  const el = document.getElementById(id);
+  el.innerHTML = html;
+  el.classList.add("show");
+}
+
+/* ---------------- 01 jd-compiler ---------------- */
+function runJD() {
+  if (!BRAIN) return;
+  const blob = norm(document.getElementById("jd-in").value);
+  if (!blob.trim()) return;
+  let html = "";
+  const clusters = Object.entries(BRAIN.jd.clusters)
+    .map(([id, c]) => ({ label: c.label, hits: c.tells.filter(t => blob.includes(t)) }))
+    .filter(c => c.hits.length);
+  html += `<h3 class="mini">Clusters demanded — ${clusters.length} of ${Object.keys(BRAIN.jd.clusters).length}</h3><div class="chips">` +
+    clusters.map(c => `<span class="chip"><b>${c.label}</b> · ${c.hits.length} signal${c.hits.length > 1 ? "s" : ""}</span>`).join("") + "</div>";
+  const toolRows = Object.entries(BRAIN.jd.tools)
+    .map(([cat, terms]) => ({ cat, hits: found(blob, terms) }))
+    .filter(r => r.hits.length);
+  if (toolRows.length) {
+    html += `<h3 class="mini">Named tools</h3><div class="chips">` +
+      toolRows.map(r => `<span class="chip"><b>${r.cat.replace(/_/g, " ")}</b> · ${r.hits.join(", ")}</span>`).join("") + "</div>";
+  }
+  const yrs = blob.match(/(\d+)\+?\s*years?/), lvl = blob.match(/\b(staff|principal|senior|lead|junior)\b/);
+  html += `<p class="note">${lvl ? "Level: " + lvl[1] : "Level: unspecified"} · ${yrs ? yrs[1] + "+ years" : "experience: unspecified"}</p>`;
+  show("jd-out", html);
+}
+function sampleJD() {
+  document.getElementById("jd-in").value =
+    "Senior Forward Deployed Engineer. Ship production Python and TypeScript; customer-facing discovery with stakeholders under ambiguity. Build agentic RAG with LangGraph and MCP; retrieval over pgvector and Neo4j knowledge graphs; memory via Mem0 and semantic caching. Self-host inference with vLLM, guardrails via Llama Guard, evaluation and observability with Arize. Deploy on Docker + GKE. 7+ years.";
+  runJD();
+}
+
+/* ---------------- 02 true-scorer (heuristic baseline, ported 1:1) ---------------- */
+function runTRUE() {
+  if (!BRAIN) return;
+  const text = document.getElementById("true-in").value;
+  if (!text.trim()) return;
+  const low = text.toLowerCase();
+  const hasKit = /field[\s-]?kit|skill\.md|field-kits\/|\/skill|forkable|mega-prompt/.test(low);
+  const hasRun = /how to run|run it|fork (it|and)|download/.test(low);
+  const R = hasKit && hasRun ? 3 : hasKit ? 2 : low.includes("you could build") ? 1 : 0;
+  const hasTry = /try it|try this|the \d+-?min|10-minute|do the exercise|run the experiment|count (how many|the)/.test(low);
+  const E = hasTry && /that number|you just felt|conviction|felt result/.test(low) ? 3 : hasTry ? 2 : /imagine|story/.test(low) ? 1 : 0;
+  const named = /\bloop\b|\bmodel\b|call it the|the \w+ \w+:|framework/.test(low);
+  const diagram = text.includes(">") && /→|->|deploy.*learn.*build|one .* many/.test(low);
+  const T = named && diagram ? 3 : named ? 2 : 1;
+  const jargon = (low.match(/\b(leverage|paradigm|synerg|orchestrat|substrate|isomorph|epistemic)\w*/g) || []).length;
+  const density = jargon / Math.max(low.split(/\s+/).length, 1);
+  const concreteOpen = /imagine|picture|story|a (great|bad)|you can('?t| not)/.test(low.slice(0, 600));
+  const U = density < 0.003 && concreteOpen ? 3 : density < 0.006 ? 2 : 1;
+
+  const scores = { T, R, U, E };
+  const total = T + R + U + E;
+  const below = BRAIN.true.letters.filter(l => scores[l] < BRAIN.true.ship_min_letter);
+  const pass = total >= BRAIN.true.ship_total && below.length === 0;
+  const reasons = [];
+  if (total < BRAIN.true.ship_total) reasons.push(`total ${total} < ${BRAIN.true.ship_total}`);
+  below.forEach(l => reasons.push(`${l}=${scores[l]} < ${BRAIN.true.ship_min_letter}`));
+  const names = { T: "Transferable", R: "Reusable", U: "Understandable", E: "Experience-able" };
+  show("true-out",
+    `<span class="verdict ${pass ? "go" : "no"}">${pass ? "PASS — ship it" : "BLOCK — " + reasons.join("; ")}</span>` +
+    `<div class="bars">` + BRAIN.true.letters.map(l =>
+      `<div class="bar"><span><b>${l}</b></span><span class="track"><span class="fill" style="width:${scores[l] / 3 * 100}%"></span></span><span>${scores[l]}/3</span></div>`).join("") + `</div>` +
+    `<p class="note">${BRAIN.true.letters.map(l => names[l]).join(" · ")} — heuristic baseline; the CLI pairs it with your judgment, never the other way round.</p>`);
+}
+function sampleTRUE() {
+  document.getElementById("true-in").value =
+    "Imagine a great deploy that dies in review. Call it the Evidence Loop: build -> deploy -> learn. " +
+    "> one artifact, many engagements. Fork it and run it — the Field Kit (field-kits/delta-discovery-protocol) has how to run steps. " +
+    "Try this: count how many approvals your last AI pilot needed. That number is your real architecture. You just felt the workflow.";
+  runTRUE();
+}
+
+/* ---------------- 03 workflow-mapper quick-read ---------------- */
+function runMap() {
+  if (!BRAIN) return;
+  const blob = norm(document.getElementById("map-in").value);
+  if (!blob.trim()) return;
+  const ranked = BRAIN.mapper.archetypes
+    .map(a => ({ ...a, hits: a.tells.filter(t => blob.includes(t)) }))
+    .filter(a => a.hits.length)
+    .sort((x, y) => y.hits.length - x.hits.length);
+  let html = "";
+  if (!ranked.length) {
+    html = `<span class="verdict no">No archetype signal yet</span>
+      <p class="note">Honest refusal — nothing in the notes matches a known decision-workflow tell. Gather more: </p>`;
+  } else {
+    const top = ranked[0];
+    html = `<span class="verdict go">Likely archetype: ${top.name}</span>
+      <p class="note">matched tells: ${top.hits.join(", ")}${ranked[1] ? ` · runner-up: ${ranked[1].name} (${ranked[1].hits.length})` : ""}</p>
+      <h3 class="mini">Its adoption traps</h3><ul class="traps">${top.traps.map(t => `<li>${t}</li>`).join("")}</ul>`;
+  }
+  const lb = Object.entries(BRAIN.mapper.dimensions).filter(([, d]) => d.load_bearing);
+  html += `<h3 class="mini">Ask these next (the four load-bearing dimensions)</h3><ul class="traps">` +
+    lb.map(([id, d]) => `<li><b>${d.label}:</b> ${BRAIN.mapper.probes[id][0]}</li>`).join("") + "</ul>";
+  show("map-out", html);
+}
+function sampleMap() {
+  document.getElementById("map-in").value =
+    "Legal and compliance have to review everything before the pilot touches real data. The last vendor died in security review. " +
+    "There's an audit trail requirement from the risk team, and the validation policy means every output needs sign-off.";
+  runMap();
+}
+</script>
+</body>
+</html>

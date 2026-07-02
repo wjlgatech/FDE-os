@@ -66,6 +66,11 @@ prompt (seeds Objective 3). Content production *is* product production.
 - **`course/prep/tools/coding-drill-kit`** — not a skill: an eval-as-gate drill harness for the
   Google-FDE-loop case study (blank-page template recall, scored + tracked). `attempts/` and
   `problems.md` are personal artifacts, gitignored — never commit them.
+- **`playground.html` + `assets/toolkit-brain.json`** — the browser playground runs three skill
+  cores client-side. The brain JSON is **generated, never hand-edited**: after changing `CLUSTERS`/
+  `TOOLS` (jd-compiler), `DIMENSIONS`/`PROBES`/`ARCHETYPES` (workflow-mapper), or the TRUE gate
+  constants, run `python3 scripts/export_brain.py` — `tests/test_brain_export.py` fails the build
+  if the committed JSON is stale.
 
 **Reuse vs design:** existing skills (`living-knowledge`, `skillfy`, `dreammaketrue`,
 `knowledge-graph`, `living-repo`) are the production engine and are NOT vendored. Design a native
