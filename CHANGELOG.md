@@ -32,6 +32,12 @@ All notable changes to FDE-os are recorded here. Format follows
   prep, and market intel).
 
 ### Fixed
+- **Docs clarity pass (two-reader rule): corrected stale skill/tool counts across the doc set.**
+  README's Architecture blurb said "Seven ... skills" and the repo-structure table still marked
+  `field-kit-generator` as a Stage-2 pending item — both stale now that ten skills have landed;
+  `ARCHITECTURE.md`'s repo map said "7 native skills"; `docs/PLUGIN.md` claimed "ten skills" but
+  enumerated nine (missing `doc-understanding`) and "seven callable tools" but listed six (missing
+  `doc_gate`). All aligned to the current ten skills / seven MCP tools. No behavior change.
 - **`jd-compiler` false positives: term matching is now word-boundary anchored.** `rust` no longer
   fires inside "t**rust**", `scala` inside "**scala**ble", `java` inside "javascript"; the `"java "`
   trailing-space hack is gone and stems (`fine-tun`, `orchestrat`) still match. Found while compiling

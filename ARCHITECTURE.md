@@ -70,7 +70,7 @@ production.
 
 | Path | Role |
 |---|---|
-| `skills/` | The 7 native skills (each: `SKILL.md` + `scripts/` + `tests/`). |
+| `skills/` | The 10 native skills (each: `SKILL.md` + `scripts/` + `tests/`). |
 | `knowledge/` | Generated spine (regenerate with `knowledgefy`; don't hand-edit). |
 | `field-kits/` | Forkable Field Kits, one per post. |
 | `course/` | Objective-1 course: `target-jds/` (validation targets) + `prep/` (dual-tier curricula + lessons + tools). |
