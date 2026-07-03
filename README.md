@@ -103,7 +103,7 @@ directions across 6 axes) — is at
 
 ## Architecture
 
-Seven offline, tested skills over a CI + git foundation — knowledge → eval gates → packaging, each
+Ten offline, tested skills over a CI + git foundation — knowledge → eval gates → packaging, each
 layer feeding the next. Full system design: **[ARCHITECTURE.md](ARCHITECTURE.md)**.
 
 ![FDE-os system architecture](docs/assets/architecture.svg)
@@ -153,7 +153,7 @@ Because each article ships a Field Kit, **writing the series builds the toolkit*
 |---|---|
 | `Delta-*.md`, `FDE-research-synthesis.md` | Content artifacts + the cited research vault (the spine's input) |
 | `field-kits/` | Forkable Field Kits — one per Delta post (the "R" in TRUE) |
-| `skills/` | FDE-os-native agent skills — built only where existing skills leave a gap (`knowledgefy`, `true-scorer`; `field-kit-generator` lands in Stage 2) |
+| `skills/` | The ten FDE-os-native agent skills (`SKILL.md` + `scripts/` + `tests/` each) — built only where existing skills leave a gap |
 | `knowledge/` | Generated knowledge spine (`fde-spine.graph.json` + `.html`) |
 | `flywheel/` | Objective-3 infra + content-production runbook/metrics (mostly Stage 1–3) |
 | `docs/field-notes/` | The flywheel's journal — real engagements distilled into transferable lessons (separating deep structure from domain surface) that feed Objectives 1 & 2 |

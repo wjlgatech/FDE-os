@@ -18,10 +18,10 @@ prompts. That's it — no clone, no pip.
 ## What you get
 
 - **Skills** (auto-discovered from `skills/`): `true-scorer`, `criteria-scorer`, `rag-eval-harness`,
-  `eval-loop`, `knowledgefy`, `jd-compiler`, `invisible-workflow-mapper`, `field-kit-generator`,
-  `fde-mcp-server`.
+  `eval-loop`, `knowledgefy`, `jd-compiler`, `invisible-workflow-mapper`, `doc-understanding`,
+  `field-kit-generator`, `fde-mcp-server`.
 - **MCP server** (`fde-os`, auto-started): seven callable tools — `true_score`, `rag_eval`,
-  `criteria_score`, `eval_loop`, `invisible_workflow_map`, `jd_compile`. Needs **Python 3.11+** on
+  `criteria_score`, `eval_loop`, `invisible_workflow_map`, `jd_compile`, `doc_gate`. Needs **Python 3.11+** on
   your PATH (the server is dependency-free stdlib).
 - **Workflow**: `workflows/engagement-readiness` — composes adoption-fit + eval into one GO/NO-GO.
 
