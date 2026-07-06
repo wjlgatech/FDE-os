@@ -68,18 +68,31 @@
 
   <!-- CHECK -->
   <div class="panel on" id="p-check">
-    <label>Portfolio agent-card URL (or paste the card JSON below)</label>
-    <input id="cardUrl" placeholder="https://their-portfolio.vercel.app/.well-known/agent-card.json">
-    <label>…or paste agent-card JSON</label>
-    <textarea id="cardJson" placeholder='{"name":"…","evidence":{"projects":[…],"attestations":["…"]}}'></textarea>
-    <div class="row"><button class="btn" id="check">Read evidence → GO / NO-GO</button>
-      <button class="btn ghost" id="loadEx" style="margin-top:12px">Load example card</button></div>
+    <label style="font-size:15px;color:var(--ink);font-weight:600">Paste a portfolio link</label>
+    <input id="portfolio" placeholder="e.g. yourname.vercel.app  —  or a GitHub Pages / personal site">
+    <p style="font-size:13px;color:var(--muted);margin-top:6px">We read the public evidence your portfolio already publishes — the projects you built (and whether they’re verified to run) and any vouches from people who worked with you. No login, nothing stored.</p>
+    <div class="row"><button class="btn" id="check">See what it proves →</button>
+      <button class="btn ghost" id="loadEx" style="margin-top:12px">Try the example</button></div>
     <div class="err" id="checkErr"></div>
     <div class="out" id="checkOut">
+      <div id="verdictHead" style="font-family:'Newsreader',serif;font-size:18px;color:var(--ink);margin-bottom:8px"></div>
       <div id="badge"></div>
       <div id="axes"></div>
       <div class="kv" id="summary"></div>
     </div>
+
+    <details style="margin-top:18px">
+      <summary style="cursor:pointer;font-size:13px;color:var(--clay-deep);font-weight:600">Advanced — paste raw agent-card JSON</summary>
+      <textarea id="cardJson" style="margin-top:10px" placeholder='{"name":"…","evidence":{"projects":[…],"attestations":["…"]}}'></textarea>
+    </details>
+    <details style="margin-top:10px">
+      <summary style="cursor:pointer;font-size:13px;color:var(--clay-deep);font-weight:600">For AI agents (A2A) — the machine contract</summary>
+      <div style="font-size:13px;color:var(--ink-soft);margin-top:8px">
+        <p>Agents skip the form and POST directly:</p>
+        <div class="token">curl -X POST https://portfolio-trust.vercel.app/api/ingest \<br>&nbsp;&nbsp;-H "Content-Type: application/json" \<br>&nbsp;&nbsp;-d '{"card_url":"https://portfolio.example/.well-known/agent-card.json"}'</div>
+        <p style="margin-top:8px">Returns a scored <code>candidate</code> + <code>gate</code> (GO/NO-GO). The portfolio publishes evidence at <code>/.well-known/agent-card.json</code> — <a href="/agent-card.example.json" style="color:var(--clay-deep)">see the schema</a>.</p>
+      </div>
+    </details>
   </div>
 
   <!-- VOUCH -->
@@ -119,36 +132,52 @@ document.querySelectorAll('.tab').forEach(function(t){ t.addEventListener('click
 });});
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
 
-document.getElementById('loadEx').addEventListener('click',function(){
-  document.getElementById('cardUrl').value = location.origin + "/agent-card.example.json";
-  document.getElementById('cardJson').value = "";
-});
-document.getElementById('check').addEventListener('click',async function(){
+async function runIngest(body){
   var err=document.getElementById('checkErr'), out=document.getElementById('checkOut'); err.textContent=''; out.classList.remove('show');
-  var body={}; var js=document.getElementById('cardJson').value.trim(); var url=document.getElementById('cardUrl').value.trim();
-  if(js){ try{ body.card=JSON.parse(js); }catch(e){ err.textContent="That JSON didn't parse."; return; } }
-  else if(url){ body.card_url=url; } else { err.textContent="Paste a card URL or JSON."; return; }
   try{
     var r=await fetch(API_INGEST,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
     var d=await r.json(); if(!r.ok) throw new Error(d.error||("HTTP "+r.status));
     render(d);
-  }catch(e){ err.textContent="Ingest failed: "+e.message; }
+  }catch(e){ err.textContent=e.message; }
+}
+document.getElementById('loadEx').addEventListener('click',function(){
+  runIngest({card_url: location.origin + "/agent-card.example.json"});
 });
+document.getElementById('check').addEventListener('click',function(){
+  var js=document.getElementById('cardJson').value.trim();
+  if(js){ try{ runIngest({card: JSON.parse(js)}); }catch(e){ document.getElementById('checkErr').textContent="That JSON didn't parse."; } return; }
+  var p=document.getElementById('portfolio').value.trim();
+  if(!p){ document.getElementById('checkErr').textContent="Paste your portfolio link first."; return; }
+  runIngest({portfolio: p});
+});
+// plain-language names — what each criterion MEANS to a human, not the axis label
+var HUMAN={
+  reliability:["A person who worked with you vouches","No one who worked with you has vouched yet"],
+  technical:["Your work is verified to actually run (CI-checked)","No project is verified to run — a linked repo isn’t proof"],
+  resourceful:["You own real, shipped projects","No project shows real, owned commit history"]
+};
 function render(d){
-  var g=d.gate;
+  var g=d.gate, s=d.summary;
+  document.getElementById('verdictHead').textContent = g.go
+    ? "Yes — someone could stake their reputation on this."
+    : "Not yet — a portfolio can’t prove all of it. Here’s the gap:";
   document.getElementById('badge').innerHTML = g.go ? '<span class="vbadge go">✅ GO</span>' : '<span class="vbadge no">⛔ NO-GO</span>';
   var ax=document.getElementById('axes'); ax.innerHTML='';
   [['reliability',g.reliability],['technical',g.technical],['resourceful',g.resourceful]].forEach(function(p){
+    var line=HUMAN[p[0]][p[1]?0:1];
     var d2=document.createElement('div'); d2.className='ax';
-    d2.innerHTML='<span class="m">'+(p[1]?'✅':'⛔')+'</span><span><b style="text-transform:capitalize">'+p[0]+'</b></span>'; ax.appendChild(d2);
+    d2.innerHTML='<span class="m">'+(p[1]?'✅':'⛔')+'</span><span>'+esc(line)+'</span>'; ax.appendChild(d2);
   });
-  if(g.blockers && g.blockers.length){ var b=document.createElement('div'); b.innerHTML=g.blockers.map(x=>'<div class="blk">• '+esc(x)+'</div>').join(''); ax.appendChild(b); }
-  var s=d.summary;
+  var extra='';
+  if(!g.go && !g.reliability && s.dark_flags===0) extra="The fix is the one thing a portfolio can’t self-issue: a vouch from someone you worked with. Ask them on the ‘Vouch for someone’ tab.";
+  if(s.dark_flags>0) extra="A reference reported a no-show / went-dark — that’s an automatic stop.";
   document.getElementById('summary').innerHTML =
-    'valid vouches: <b>'+s.valid_vouches+'</b> · would-staff-again: <b>'+s.would_staff_again+'</b> · dark flags: <b>'+s.dark_flags+'</b> · '+
-    'CI-verified projects: <b>'+s.ci_verified_projects+'</b> · owned projects: <b>'+s.owned_projects+'</b>'+
-    (s.rejected_attestations.length? '<br>rejected attestations: '+s.rejected_attestations.map(x=>x.reason).join(', '):'')+
-    (s.dev_secret? '<br><span style="color:var(--no)">⚠ dev signing secret — set VOUCH_SECRET for production trust</span>':'');
+    (extra? '<div style="margin:8px 0 12px;color:var(--ink-soft);font-size:14px">'+esc(extra)+'</div>':'')+
+    'Evidence read: <b>'+s.ci_verified_projects+'</b> verified project(s) · <b>'+s.owned_projects+'</b> owned · '+
+    '<b>'+s.valid_vouches+'</b> valid vouch(es)'+(s.dark_flags?(' · <b>'+s.dark_flags+'</b> dark flag(s)'):'')+
+    (s.rejected_attestations && s.rejected_attestations.length? ' · rejected: '+s.rejected_attestations.map(x=>x.reason).join(', '):'')+
+    (s.resolved_from? '<br><span style="color:var(--muted)">read from '+esc(s.resolved_from)+'</span>':'')+
+    (s.dev_secret? '<br><span style="color:var(--no)">⚠ demo signing secret</span>':'');
   document.getElementById('checkOut').classList.add('show');
 }
 

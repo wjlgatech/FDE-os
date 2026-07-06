@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1200" height="780" fill="#F0EDE4"/>
+  <text x="64" y="84" font-family="Georgia, serif" font-size="46" font-weight="500" fill="#1A1915">The evidence ladder</text>
+  <text x="64" y="122" font-size="22" fill="#46423A">Every hire checks three questions. A portfolio only climbs two of them.</text>
+
+  <!-- three tier columns as a legend -->
+  <g font-size="20">
+    <rect x="64" y="160" width="360" height="60" rx="10" fill="#EFE9DC" stroke="#E0D9C9"/>
+    <text x="84" y="190" font-weight="700" fill="#7A7466">CLAIMED</text>
+    <text x="84" y="212" font-size="16" fill="#7A7466">you said it</text>
+    <rect x="440" y="160" width="360" height="60" rx="10" fill="#F7F4EC" stroke="#E0D9C9"/>
+    <text x="460" y="190" font-weight="700" fill="#1A1915">OBSERVED</text>
+    <text x="460" y="212" font-size="16" fill="#46423A">something outside you can see it</text>
+    <rect x="816" y="160" width="320" height="60" rx="10" fill="#CC785C"/>
+    <text x="836" y="190" font-weight="700" fill="#FBF9F3">ATTESTED</text>
+    <text x="836" y="212" font-size="16" fill="#FBF9F3">someone stakes their name on it</text>
+  </g>
+
+  <!-- three questions, each a row with a marker at the tier it reaches -->
+  <g font-size="22">
+    <!-- row 1 -->
+    <text x="64" y="312" font-family="Georgia, serif" font-size="26" fill="#1A1915">Can they build?</text>
+    <line x1="64" y1="330" x2="1136" y2="330" stroke="#E9E3D6"/>
+    <circle cx="620" cy="286" r="15" fill="#4B7B58"/>
+    <text x="646" y="293" font-size="18" fill="#4B7B58">portfolio reaches OBSERVED (a real repo, a running demo)</text>
+    <!-- row 2 -->
+    <text x="64" y="404" font-family="Georgia, serif" font-size="26" fill="#1A1915">Can they learn fast?</text>
+    <line x1="64" y1="422" x2="1136" y2="422" stroke="#E9E3D6"/>
+    <circle cx="620" cy="378" r="15" fill="#4B7B58"/>
+    <text x="646" y="385" font-size="18" fill="#4B7B58">portfolio reaches OBSERVED (a stream of shipped work)</text>
+    <!-- row 3 -->
+    <text x="64" y="496" font-family="Georgia, serif" font-size="26" fill="#1A1915">Will they deliver?</text>
+    <line x1="64" y1="514" x2="1136" y2="514" stroke="#E9E3D6"/>
+    <circle cx="244" cy="470" r="15" fill="#B0472F"/>
+    <text x="270" y="477" font-size="18" fill="#B0472F">stuck at CLAIMED — you can’t vouch for yourself</text>
+  </g>
+
+  <rect x="64" y="576" width="1072" height="150" rx="14" fill="#F6E7E1"/>
+  <text x="90" y="626" font-family="Georgia, serif" font-size="30" font-weight="500" fill="#B0472F">The missing link is reliability.</text>
+  <text x="90" y="668" font-size="21" fill="#46423A">Two half-credits and a zero on the question that matters most —</text>
+  <text x="90" y="700" font-size="21" fill="#46423A">because a page you wrote about yourself is not a third party.</text>
+  <text x="1136" y="760" text-anchor="end" font-family="Georgia, serif" font-size="18" fill="#CC785C">Δ FDE-os · Schmidt &amp; Hunter (1998)</text>
+</svg>

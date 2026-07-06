@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1200" height="780" fill="#F0EDE4"/>
+  <text x="64" y="84" font-family="Georgia, serif" font-size="46" font-weight="500" fill="#1A1915">A portfolio can’t vouch for itself</text>
+  <text x="64" y="122" font-size="22" fill="#46423A">What the artifact proves — and the one rung only another person can supply.</text>
+
+  <!-- LEFT: portfolio proves -->
+  <rect x="64" y="160" width="512" height="404" rx="16" fill="#FBF9F3" stroke="#E0D9C9"/>
+  <text x="92" y="204" font-family="Georgia, serif" font-size="26" fill="#1A1915">The portfolio proves</text>
+  <g font-size="21" fill="#46423A">
+    <text x="92" y="256"><tspan fill="#4B7B58" font-weight="700">✓</tspan>  <tspan fill="#1A1915" font-weight="700">Can build</tspan> — a CI-verified project</text>
+    <text x="92" y="300" font-size="16" fill="#7A7466">a passing eval, not just a linked repo</text>
+    <text x="92" y="352"><tspan fill="#4B7B58" font-weight="700">✓</tspan>  <tspan fill="#1A1915" font-weight="700">Can learn</tspan> — owned, real commit history</text>
+    <text x="92" y="396" font-size="16" fill="#7A7466">provenance: how much was actually you</text>
+    <text x="92" y="452"><tspan fill="#B0472F" font-weight="700">✗</tspan>  <tspan fill="#B0472F" font-weight="700">Will deliver</tspan> — unprovable by you</text>
+    <text x="92" y="496" font-size="16" fill="#7A7466">you cannot self-issue a reference</text>
+  </g>
+
+  <!-- RIGHT: the vouch -->
+  <rect x="624" y="160" width="512" height="404" rx="16" fill="#F7F4EC" stroke="#CC785C"/>
+  <text x="652" y="204" font-family="Georgia, serif" font-size="26" fill="#B05B3C">Only a signed vouch proves</text>
+  <g font-size="20" fill="#46423A">
+    <text x="652" y="252"><tspan font-weight="700" fill="#1A1915">Reliability.</tspan> Someone who worked with you</text>
+    <text x="652" y="282">signs a structured reference:</text>
+    <text x="672" y="322" fill="#4B7B58">• worked together</text>
+    <text x="672" y="354" fill="#4B7B58">• would staff again</text>
+    <text x="672" y="386" fill="#4B7B58">• never went dark</text>
+    <text x="652" y="436" font-size="17" fill="#7A7466">Cryptographically bound to the voucher.</text>
+    <text x="652" y="462" font-size="17" fill="#7A7466">Tamper-evident. Non-self-issuable.</text>
+    <text x="652" y="516" font-size="15" fill="#B0472F">(prototype signs + seals; production binds to a real identity)</text>
+  </g>
+
+  <!-- gate outcome -->
+  <rect x="64" y="596" width="512" height="120" rx="14" fill="#F6E7E1"/>
+  <text x="90" y="648" font-family="Georgia, serif" font-size="30" fill="#B0472F">Portfolio alone  →  NO-GO</text>
+  <text x="90" y="688" font-size="18" fill="#46423A">great code, green builds — still not staffable</text>
+
+  <rect x="624" y="596" width="512" height="120" rx="14" fill="#E9F0EA"/>
+  <text x="650" y="648" font-family="Georgia, serif" font-size="30" fill="#4B7B58">+ one real vouch  →  GO</text>
+  <text x="650" y="688" font-size="18" fill="#46423A">a green build couldn’t do it; one honest human could</text>
+
+  <text x="1136" y="760" text-anchor="end" font-family="Georgia, serif" font-size="18" fill="#CC785C">Δ FDE-os</text>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="627" viewBox="0 0 1200 627" font-family="Georgia, 'Times New Roman', serif">
+  <rect width="1200" height="627" fill="#F0EDE4"/>
+  <rect x="0" y="0" width="12" height="627" fill="#CC785C"/>
+  <text x="72" y="96" font-family="Helvetica, Arial, sans-serif" font-size="20" letter-spacing="4" font-weight="700" fill="#CC785C">THE ATTESTATION GAP</text>
+  <text x="70" y="196" font-size="82" font-weight="500" fill="#1A1915">You can’t self-issue</text>
+  <text x="70" y="288" font-size="82" font-weight="500" fill="#B05B3C" font-style="italic">reputation.</text>
+  <text x="72" y="356" font-family="Helvetica, Arial, sans-serif" font-size="26" fill="#46423A">A 60-second AI portfolio proves what you built.</text>
+  <text x="72" y="392" font-family="Helvetica, Arial, sans-serif" font-size="26" fill="#46423A">It can’t prove the one thing that decides the hire.</text>
+
+  <!-- evidence ladder, ascending -->
+  <g font-family="Helvetica, Arial, sans-serif">
+    <rect x="72"  y="520" width="300" height="52" rx="9" fill="#EFE9DC" stroke="#E0D9C9"/>
+    <text x="92" y="553" font-size="22" fill="#7A7466">Claimed</text>
+    <rect x="392" y="486" width="300" height="52" rx="9" fill="#F7F4EC" stroke="#E0D9C9"/>
+    <text x="412" y="519" font-size="22" fill="#1A1915">Observed</text>
+    <rect x="712" y="452" width="416" height="52" rx="9" fill="#CC785C"/>
+    <text x="732" y="485" font-size="22" font-weight="700" fill="#FBF9F3">Attested — a vouch you can’t fake</text>
+    <path d="M372 546 L392 512 M692 512 L712 478" stroke="#B05B3C" stroke-width="3" fill="none"/>
+  </g>
+  <text x="1128" y="596" text-anchor="end" font-family="Georgia, serif" font-size="20" fill="#CC785C">Δ FDE-os</text>
+</svg>

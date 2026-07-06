@@ -1,0 +1,23 @@
+{
+  "name": "example-builder",
+  "slug": "example-builder",
+  "description": "Example agentic-portfolio agent-card with the evidence extension.",
+  "evidence": {
+    "projects": [
+      {
+        "name": "grounded-rag-agent",
+        "repo": "https://github.com/example/grounded-rag-agent",
+        "provenance": { "contribution_pct": 92, "commits": 148, "first_commit": "2026-01-04", "last_commit": "2026-06-28" },
+        "verified": true
+      },
+      {
+        "name": "eval-harness",
+        "repo": "https://github.com/example/eval-harness",
+        "provenance": { "contribution_pct": 100, "commits": 63, "first_commit": "2026-03-11", "last_commit": "2026-06-30" },
+        "verified": true
+      }
+    ],
+    "attestations": []
+  },
+  "_note": "Two CI-verified, self-authored projects → technical + resourcefulness pass. attestations[] is EMPTY, so reliability is NO-GO. Mint a vouch on the site (someone who worked with you) and add its token here to flip it to GO — a portfolio cannot vouch for its own reliability."
+}

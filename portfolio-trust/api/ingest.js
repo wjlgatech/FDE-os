@@ -38,14 +38,47 @@ export default async function handler(req, res) {
 
   const b = req.body || {};
   let card = b.card;
+  let resolved_from = null;
+
+  // Human path: they paste ANY portfolio link; we find the machine-readable agent-card for them.
+  // Agent path: pass {card_url} (exact) or {card} (inline) directly.
+  async function tryFetch(u) {
+    try {
+      const r = await fetch(u, { headers: { Accept: "application/json" } });
+      if (!r.ok) return null;
+      const j = await r.json();
+      return j && typeof j === "object" ? j : null;
+    } catch (_) { return null; }
+  }
+  function candidates(input) {
+    let s = String(input).trim().replace(/\/+$/, "");
+    if (/agent-card\.json$/i.test(s)) return [s];
+    const out = [];
+    try {
+      const u = new URL(s.includes("://") ? s : "https://" + s);
+      out.push(u.origin + "/.well-known/agent-card.json");
+      out.push(s + "/.well-known/agent-card.json");
+    } catch (_) { /* not a URL */ }
+    out.push(s + "/agent-card.json");
+    return [...new Set(out)];
+  }
+
   try {
-    if (!card && b.card_url) {
-      const r = await fetch(String(b.card_url), { headers: { Accept: "application/json" } });
-      if (!r.ok) return res.status(400).json({ error: "could not fetch card: HTTP " + r.status });
-      card = await r.json();
+    if (!card && (b.card_url || b.portfolio)) {
+      const raw = String(b.card_url || b.portfolio);
+      // a bare GitHub *profile* is not a portfolio — say so in plain language
+      if (/^(https?:\/\/)?(www\.)?github\.com\/[^/]+\/?$/i.test(raw.trim())) {
+        return res.status(400).json({ error: "That's a GitHub profile, not a live portfolio. Point me at your portfolio site (e.g. yourname.vercel.app). No portfolio yet? Build a free one, then paste its link." });
+      }
+      const urls = b.card_url ? [String(b.card_url)] : candidates(raw);
+      for (const u of urls) {
+        const got = await tryFetch(u);
+        if (got) { card = got; resolved_from = u; break; }
+      }
+      if (!card) return res.status(400).json({ error: "Couldn't find a published agent-card at that link. Make sure your portfolio is live and publishes /.well-known/agent-card.json." });
     }
   } catch (e) { return res.status(400).json({ error: "fetch failed: " + String(e.message || e) }); }
-  if (!card || typeof card !== "object") return res.status(400).json({ error: "send {card_url} or {card}" });
+  if (!card || typeof card !== "object") return res.status(400).json({ error: "Paste a portfolio link, or send {card_url}/{card}." });
 
   const ev = card.evidence || {};
   const projects = Array.isArray(ev.projects) ? ev.projects : [];
@@ -87,6 +120,7 @@ export default async function handler(req, res) {
       owned_projects: owned.length,
       total_projects: projects.length,
       dev_secret: usingDevSecret,
+      resolved_from,
     },
   });
 }

@@ -8,7 +8,11 @@ and not allergic to a joke** — and each was scored by the project's own gates 
 | File | What | Gate score |
 |---|---|---|
 | [`fde-os-longform-article.md`](fde-os-longform-article.md) | Long-form (~7 min) LinkedIn-style article about the project | **11/12** via `true-scorer` (PASS) |
+| [`agentic-portfolio-missing-link.md`](agentic-portfolio-missing-link.md) | Long-form (~7 min): why a 60-second AI portfolio won't get you hired — the **attestation gap** (claimed → observed → attested) | **11/12** via `true-scorer` (agent-refined, PASS) |
+| [`agentic-native-delivery-org.md`](agentic-native-delivery-org.md) | Long-form (~8 min), **for delivery leadership**: the evidence (MIT 95% / Gartner) that AI failure is *organizational, not model* → an empowering, agentic-native, tech-enforced operating model. No firm named. | **10/12** via `true-scorer` (agent-refined, PASS) |
+| [`missing-link-short-post.md`](missing-link-short-post.md) | ~230-word feed post pairing the attestation-gap long-form | **4/4** via `criteria-scorer` (PASS) |
 | [`short-posts.md`](short-posts.md) | Two ~185-word feed posts (Post 1: "the robot caught the human"; Post 2: "the loop is the skill") | **4/4 each** via `criteria-scorer` (PASS) |
+| [`assets/ml-*.svg` / `.png`](assets/) | Thumbnail + 2 infographics for the attestation-gap piece (brand SVG → PNG via `rsvg-convert`) | — |
 | [`viral-post-criteria.json`](viral-post-criteria.json) | The criteria the short posts are gated on (number, closing question, ≤230 words, no 2026-suppressed engagement-bait) | — |
 
 ## Reproduce the scores
