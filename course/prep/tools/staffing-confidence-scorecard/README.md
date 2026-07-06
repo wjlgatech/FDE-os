@@ -79,6 +79,28 @@ and a one-page [`rollout/leave-behind.md`](rollout/leave-behind.md).
 agent-tool enablement — vet the *enablers* before they teach citizen developers across many
 companies, with the exact `resourcefulness` instrument the tool rollout already requires.
 
+## Validate the gate against outcomes (don't just trust it)
+
+A GO is a *prediction*. The discipline that makes it trustworthy is the same one behind
+evidence-based trait inference: **infer from evidence, then validate the inference against a
+ground-truth criterion.** Here the ground truth is what actually happened after you staffed
+someone. [`calibration.py`](calibration.py) closes that loop:
+
+```bash
+python3 calibration.py decisions.json    # decisions = {id, predicted_go, outcome: delivered|went_dark|underperformed|rolled_off|pending}
+```
+
+It reports **GO precision**, the **false-GO rate** (went-dark / underperformed — the exact
+reputation-damaging error), and **coverage** (pending outcomes are excluded, never counted as a
+pass). The gate is "validated" only if the false-GO rate stays under the bar *and* there are
+enough known outcomes to measure it — **unmeasured ⇒ not validated**. It exits non-zero when the
+rubric has drifted, so a monitor catches a gate that has stopped predicting and needs its bar
+raised. This is how the three criteria stay honest over time, not just on day one.
+
+_Matching engine note: assignment uses **optimal (max-cardinality) bipartite matching**, not
+greedy-by-fit — so it never falsely flags a milestone at risk when a different valid assignment
+would cover it (one person still fills at most one role)._
+
 ## Fair, defensible, compliant by construction
 
 - **Behavior + evidence only** — no protected attributes, no personal questions; identical questions for every candidate. Structure is what makes it *both* higher-validity *and* less biased.
@@ -92,7 +114,15 @@ companies, with the exact `resourcefulness` instrument the tool rollout already 
 python3 -m unittest discover -s tests -p 'test_*.py'
 ```
 
-14 tests: full-evidence GO; a single dark-flag is automatic NO-GO; no-reference / would-not-staff-again block; internal vs client vouch both count; unobserved or below-bar work sample blocks a technical role but is informational for a non-technical one (her "reliable-but-no-tech is useless *for these roles*"); made-it-work-but-can't-teach blocks; the pattern flag needs two vouches; bad role_type is a hard error.
+39 tests across the kit: the gate (full-evidence GO; a single dark-flag is automatic NO-GO;
+no-reference / would-not-staff-again block; internal vs client vouch both count; unobserved or
+below-bar work sample blocks a technical role but is informational for a non-technical one;
+can't-teach blocks; the pattern flag needs two vouches; bad role_type errors); the Forms
+converter (keyword column-matching, dark-flag detection, fail-loud on a missing column); the
+match engine (optimal assignment never strands a role, no double-booking, milestone-at-risk,
+gate reuse); the collectors (CSV → SUPPLY/DEMAND, empty evidence when un-vetted, enterprise
+stubs raise); and calibration (precision/false-GO math, pending excluded, rolled-off neutral,
+insufficient-outcomes ⇒ not validated).
 
 _Sources for the validity claims: Schmidt & Hunter (1998), "The Validity and Utility
 of Selection Methods in Personnel Psychology," Psychological Bulletin 124(2)._

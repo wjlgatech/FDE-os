@@ -27,15 +27,15 @@ import scorecard as sc
 
 # ---------- helpers ----------
 
-def _skills(x):
+def _skills(x) -> set:
     return {s.strip().lower() for s in (x or []) if str(s).strip()}
 
 
-def _overlap(a, b):
+def _overlap(a, b) -> int:
     return len(_skills(a) & _skills(b))
 
 
-def _person_as_candidate(person, role_type):
+def _person_as_candidate(person: dict, role_type: str) -> dict:
     """A person carries evidence blocks but no fixed role — the demand's role_type drives the gate."""
     return {
         "candidate": person.get("id", "anon"),
@@ -46,7 +46,7 @@ def _person_as_candidate(person, role_type):
     }
 
 
-def _rank_key(m):
+def _rank_key(m: dict):
     # best fit first: more shared skills, then a passed pattern (repeat vouches), then tech headroom
     tech = next((a for a in m["_axes"] if a.name == "technical_competence"), None)
     rel = next((a for a in m["_axes"] if a.name == "reliability"), None)
@@ -88,23 +88,49 @@ def match(supply, demand):
     return board
 
 
-def assign(board):
-    """Greedy global assignment: each person fills at most ONE role, each role up to its
-    count, best-fit first. Prevents double-booking one person across roles (which would
-    make coverage look better than it is). Returns the set of assigned person ids."""
-    pairs = []  # (overlap, board_index, person_id) — higher overlap wins
+def assign(board: list[dict]) -> set:
+    """Optimal global assignment: each person fills at most ONE role, each role up to its
+    `count`, maximizing the number of roles filled (so we never falsely flag a milestone
+    at risk when a different assignment would cover it). Kuhn's augmenting-path bipartite
+    matching over role *slots*; people and slots are visited in fit order so, among the
+    maximum-coverage assignments, higher-overlap fits win. Returns the set of assigned ids.
+
+    Greedy-by-fit (the previous approach) could strand a role: give its only candidate to a
+    role that had other options. Max-cardinality matching cannot."""
+    for b in board:
+        b["assigned"] = []
+    slot_board: list[int] = []          # slot index -> board index (one slot per open seat)
+    for bi, b in enumerate(board):
+        slot_board += [bi] * b["count"]
+
+    elig: dict[str, dict[int, int]] = {}   # person -> {board_index: overlap}
     for bi, b in enumerate(board):
         for e in b["eligible"]:
-            pairs.append((e["overlap"], bi, e["id"]))
-    pairs.sort(key=lambda x: -x[0])
-    taken = set()
-    for _ov, bi, pid in pairs:
-        b = board[bi]
-        if pid in taken or len(b["assigned"]) >= b["count"]:
-            continue
-        b["assigned"].append(pid)
-        taken.add(pid)
-    return taken
+            elig.setdefault(e["id"], {})[bi] = e["overlap"]
+
+    def slots_for(pid: str) -> list[int]:
+        boards = sorted(elig[pid], key=lambda bi: -elig[pid][bi])   # best fit first
+        return [s for bi in boards for s, sb in enumerate(slot_board) if sb == bi]
+
+    owner: list = [None] * len(slot_board)
+
+    def augment(pid: str, seen: set) -> bool:
+        for s in slots_for(pid):
+            if s in seen:
+                continue
+            seen.add(s)
+            if owner[s] is None or augment(owner[s], seen):
+                owner[s] = pid
+                return True
+        return False
+
+    for pid in sorted(elig, key=lambda p: -max(elig[p].values())):   # strongest fits attempt first
+        augment(pid, set())
+
+    for s, pid in enumerate(owner):
+        if pid is not None:
+            board[slot_board[s]]["assigned"].append(pid)
+    return {p for p in owner if p is not None}
 
 
 def person_next_steps(supply, demand, board):

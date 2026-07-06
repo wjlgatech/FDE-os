@@ -214,12 +214,24 @@ function matchBoard(supply,demand){
     elig.sort((x,y)=> y.overlap-x.overlap || (y.pattern?1:0)-(x.pattern?1:0));
     board.push({team:t.team,milestone:t.milestone,role_id:r.id,role_type:rt,count:r.count||1,skills:r.skills||[],eligible:elig,conditional:cond,assigned:[]});
   });});
-  // greedy global assignment: one person → one role, best-fit (overlap) first
-  var pairs=[];
-  board.forEach((b,bi)=>b.eligible.forEach(e=>pairs.push([e.overlap,bi,e.id])));
-  pairs.sort((a,b)=>b[0]-a[0]);
-  var taken=new Set();
-  pairs.forEach(function(pr){var b=board[pr[1]];if(taken.has(pr[2])||b.assigned.length>=b.count)return;b.assigned.push(pr[2]);taken.add(pr[2]);});
+  // optimal global assignment (Kuhn max-cardinality over role slots) — one person → one
+  // role, each role up to count, maximizing roles filled so we never falsely flag at-risk.
+  board.forEach(b=>{b.assigned=[];});
+  var slotBoard=[]; board.forEach((b,bi)=>{for(var k=0;k<b.count;k++)slotBoard.push(bi);});
+  var elig={}; board.forEach((b,bi)=>b.eligible.forEach(e=>{(elig[e.id]=elig[e.id]||{})[bi]=e.overlap;}));
+  function slotsFor(pid){
+    var bis=Object.keys(elig[pid]).map(Number).sort((x,y)=>elig[pid][y]-elig[pid][x]);
+    var out=[]; bis.forEach(bi=>slotBoard.forEach((sb,s)=>{if(sb===bi)out.push(s);})); return out;
+  }
+  var owner=new Array(slotBoard.length).fill(null);
+  function augment(pid,seen){
+    var ss=slotsFor(pid);
+    for(var i=0;i<ss.length;i++){var s=ss[i]; if(seen.has(s))continue; seen.add(s);
+      if(owner[s]===null||augment(owner[s],seen)){owner[s]=pid;return true;}}
+    return false;
+  }
+  Object.keys(elig).sort((a,b)=>Math.max.apply(null,Object.values(elig[b]))-Math.max.apply(null,Object.values(elig[a]))).forEach(pid=>augment(pid,new Set()));
+  owner.forEach((pid,s)=>{if(pid!==null)board[slotBoard[s]].assigned.push(pid);});
   return board;
 }
 function personSteps(supply,demand,board){

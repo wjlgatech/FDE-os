@@ -59,6 +59,24 @@ class TestMatchEngine(unittest.TestCase):
         self.assertEqual(st["anon-0043"], "CONDITIONAL")
         self.assertEqual(st["anon-0044"], "ASSIGN")
 
+    def test_optimal_assignment_does_not_strand_a_role(self):
+        # P1 is the only fit for RoleX but the best fit for RoleY; optimal matching must
+        # fill BOTH (P1→RoleX, P2→RoleY), not strand RoleX like greedy-by-fit would.
+        def person(pid, skills):
+            return {"id": pid, "skills": skills, "available": True,
+                    "reliability": {"references": [{"source": "client_team", "worked_with": True, "would_staff_again": True, "went_dark_or_noshow": False}]},
+                    "technical_competence": {"work_sample": {"observed": True, "score": 0.9, "threshold": 0.7}},
+                    "resourcefulness": {"teach_back": {"artifact_worked": True, "teachback_clear": True, "got_unstuck": True}}}
+        supply = {"people": [person("P1", ["a", "b"]), person("P2", ["a"])]}
+        demand = {"teams": [{"team": "T", "milestone": "m", "open_roles": [
+            {"id": "RoleX", "role_type": "technical", "skills": ["b"], "count": 1},
+            {"id": "RoleY", "role_type": "technical", "skills": ["a", "b"], "count": 1}]}]}
+        plan = me.plan(supply, demand)
+        assigned = {b["role_id"]: b["assigned"] for b in plan["board"]}
+        self.assertEqual(assigned["RoleX"], ["P1"])
+        self.assertEqual(assigned["RoleY"], ["P2"])
+        self.assertFalse(plan["team_next_steps"][0]["milestone_at_risk"])
+
     def test_gate_reused_not_reimplemented(self):
         # a person blocked by the scorecard must not be eligible anywhere
         for b in self.plan["board"]:

@@ -42,7 +42,7 @@ class Collector:
 
 class CsvDemandCollector(Collector):
     """DEMAND from a CSV: columns team, milestone, role_id, role_type, skills, count."""
-    def __init__(self, path: str):
+    def __init__(self, path: str) -> None:
         self.path = path
 
     def collect(self) -> dict:
@@ -64,7 +64,7 @@ class CsvSupplyCollector(Collector):
     records (candidates_dir/<id>.json — the scorecard evidence from scorecard.py /
     forms_to_candidate.py). A person with no vetting record collects empty evidence, so
     the gate honestly marks them un-vetted rather than silently passing them."""
-    def __init__(self, roster_csv: str, candidates_dir: str | None = None):
+    def __init__(self, roster_csv: str, candidates_dir: str | None = None) -> None:
         self.roster_csv = roster_csv
         self.candidates_dir = candidates_dir
 
@@ -117,7 +117,7 @@ class WorkdayCollector(Collector):
 
 # ---------------- CLI ----------------
 
-def main(argv=None) -> int:
+def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description="Collect SUPPLY / DEMAND for the staffing brain.")
     sub = ap.add_subparsers(dest="cmd", required=True)
     d = sub.add_parser("demand", help="build demand.json from a CSV")
