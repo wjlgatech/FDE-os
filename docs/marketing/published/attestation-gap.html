@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A 60-second AI portfolio proves what you built. It can't prove the one thing that decides the hire — reliability — because you can't self-issue reputation. The attestation gap, and how to close it.">
+<meta property="og:title" content="You Can't Self-Issue Reputation">
+<meta property="og:type" content="article">
+<meta property="og:description" content="Why a 60-second AI portfolio won't get you hired — the attestation gap (claimed → observed → attested), and the one rung only another person can supply.">
+<meta property="og:url" content="https://agentic-portfolio-lovat.vercel.app/articles/attestation-gap.html">
+<meta property="og:image" content="https://raw.githubusercontent.com/wjlgatech/FDE-os/main/docs/marketing/assets/ml-thumbnail.png">
+<meta property="og:site_name" content="Paul Jialiang Wu">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="You Can't Self-Issue Reputation">
+<meta name="twitter:description" content="A 60-second AI portfolio proves what you built. It can't prove that you'll deliver. The attestation gap.">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/wjlgatech/FDE-os/main/docs/marketing/assets/ml-thumbnail.png">
+<link rel="canonical" href="https://agentic-portfolio-lovat.vercel.app/articles/attestation-gap.html">
+<title>You Can't Self-Issue Reputation</title>
+<style>
+:root{
+  --bg:#fbf8f2; --fg:#191919; --muted:#6b6657; --faint:#8a8574;
+  --card:#f5efe4; --line:#e4ded1; --accent:#b8532a; --accent-2:#e0764a;
+  --code-bg:#20180f; --code-fg:#f2e7d8;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#17130e; --fg:#ece5d9; --muted:#a89c86; --faint:#877c68;
+  --card:#211a12; --line:#312819; --accent:#e0764a; --accent-2:#f0a06a;
+  --code-bg:#0d0a06; --code-fg:#ece0cf;
+}}
+:root[data-theme="light"]{--bg:#fbf8f2;--fg:#191919;--muted:#6b6657;--faint:#8a8574;--card:#f5efe4;--line:#e4ded1;--accent:#b8532a;--accent-2:#e0764a;--code-bg:#20180f;--code-fg:#f2e7d8;}
+:root[data-theme="dark"]{--bg:#17130e;--fg:#ece5d9;--muted:#a89c86;--faint:#877c68;--card:#211a12;--line:#312819;--accent:#e0764a;--accent-2:#f0a06a;--code-bg:#0d0a06;--code-fg:#ece0cf;}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);
+  font-size:18px;line-height:1.68;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.wrap{max-width:41rem;margin:0 auto;padding:34px 20px 72px}
+.topbar{height:6px;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+h1{font-family:var(--serif);font-weight:600;font-size:2.15rem;line-height:1.12;letter-spacing:-.01em;
+  text-wrap:balance;margin:.2em 0 .1em}
+h2{font-family:var(--serif);font-weight:600;font-size:1.5rem;line-height:1.2;text-wrap:balance;
+  margin:2.1rem 0 .6rem;padding-top:.4rem}
+h3{font-family:var(--sans);font-weight:800;font-size:1.06rem;margin:1.5rem 0 .4rem;color:var(--fg)}
+p{margin:.85rem 0;color:var(--fg)}
+/* the italic subtitle right under the title */
+.wrap > p:first-of-type em{color:var(--muted);font-size:1.06rem}
+a{color:var(--accent);text-underline-offset:2px;text-decoration-thickness:1px}
+strong{font-weight:700}
+em{font-style:italic}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.86em;
+  background:var(--card);border:1px solid var(--line);border-radius:5px;padding:1px 5px}
+pre{background:var(--code-bg);color:var(--code-fg);border-radius:12px;padding:16px 18px;overflow-x:auto;
+  border:1px solid var(--line);margin:1.2rem 0}
+pre code{background:none;border:0;padding:0;color:inherit;font-size:.82rem;line-height:1.55}
+blockquote{margin:1.3rem 0;padding:.7rem 1.1rem;border-left:4px solid var(--accent);
+  background:var(--card);border-radius:0 10px 10px 0;color:var(--muted);font-size:1.02rem}
+blockquote strong{color:var(--fg)}
+hr{border:0;border-top:1px solid var(--line);margin:2.2rem 0}
+figure{margin:1.6rem 0}
+figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:12px;
+  box-shadow:0 18px 44px -28px rgba(40,24,10,.5)}
+figcaption{margin-top:.5rem;color:var(--faint);font-size:.82rem;line-height:1.4;font-style:italic;text-align:center}
+.tw{overflow-x:auto;margin:1.3rem 0;border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:.9rem;min-width:min(560px,100%)}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{background:var(--card);font-family:var(--sans);font-weight:700;font-size:.76rem;
+  text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td code,th code{font-size:.8em}
+ul{margin:.85rem 0;padding-left:1.2rem}
+li{margin:.3rem 0}
+::selection{background:var(--accent-2);color:#fff}
+.foot{margin-top:2.4rem;padding-top:1.2rem;border-top:1px solid var(--line);color:var(--faint);font-size:.85rem}
+</style>
+</head>
+<body>
+<div class="topbar"></div>
+<article class="wrap">
+<h1>You Can't Self-Issue Reputation</h1>
+<p><em>Why a 60-second AI portfolio won't get you hired — and the one rung only another person can supply. ~7 min.</em></p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/wjlgatech/FDE-os/main/docs/marketing/assets/ml-thumbnail.png" alt="Claimed → Observed → Attested: the ladder a portfolio can only half-climb">
+  <figcaption>The attestation gap — a portfolio climbs two rungs and stalls on the third.</figcaption>
+</figure>
+
+<h2>Start with the thing everyone's cheering for</h2>
+<p>Résumés are dying. Good riddance. The new advice is everywhere: <em>don't tell them, show them</em> — ship an AI-agent portfolio that answers questions about your work 24/7, grounded in your real repos. You can stand one up in about <strong>60 seconds</strong>.</p>
+<p>I think that shift is right. Bottom-up — <em>prove it by building</em> — beats top-down — <em>trust my credentials</em> — every time.</p>
+<p>And I think the 60-second portfolio, as most people will use it, still won't get them hired. Not because it's fake. Because of <strong>what a self-made artifact can and cannot prove</strong> — and the one thing it structurally can't is the one thing that decides the hire.</p>
+
+<h2>The three questions behind every hire</h2>
+<p>Strip away the theater and a hiring lead is checking exactly three things:</p>
+<ul>
+  <li><strong>Can they build?</strong> (technical competence)</li>
+  <li><strong>Can they learn fast?</strong> (resourcefulness)</li>
+  <li><strong>Will they show up and deliver?</strong> (reliability)</li>
+</ul>
+<p>This isn't opinion. Eighty-five years of selection research (Schmidt &amp; Hunter, 1998) says the top predictors of on-the-job performance are <strong>work samples</strong> and <strong>structured references</strong> — evidence, not claims. A portfolio is a bet on that truth.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/wjlgatech/FDE-os/main/docs/marketing/assets/ml-evidence-tiers.png" alt="The evidence ladder and where a portfolio lands on each of the three questions">
+  <figcaption>Claimed → Observed → Attested. A portfolio lifts "can build" and "can learn" to observed; reliability stays stuck at claimed.</figcaption>
+</figure>
+
+<p>Put each question on a ladder of evidence:</p>
+<ul>
+  <li><strong>Claimed</strong> — you said it. (A résumé bullet.)</li>
+  <li><strong>Observed</strong> — something outside you can see it. (A repo, a running demo.)</li>
+  <li><strong>Attested</strong> — someone who has no incentive to lie stakes <em>their</em> name on it.</li>
+</ul>
+<p>A portfolio moves <strong>"can they build"</strong> and <strong>"can they learn"</strong> from <em>claimed</em> up to <em>observed</em>. Real progress. But it leaves <strong>"will they deliver"</strong> stuck at <em>claimed</em> — because <strong>you cannot self-issue reputation.</strong> A page you wrote about yourself is, by definition, not a third party.</p>
+
+<h2>When everyone has one, the portfolio stops being a signal</h2>
+<p>A signal only works if not everyone can send it. The moment a polished, AI-narrated portfolio takes 60 seconds, <em>everyone</em> has one — and an eloquent agent describing your projects becomes background noise. Bottom-up only beats top-down when the action is <strong>costly, attributable, and verifiable.</strong> A cheap, self-authored narration is none of those. It quietly slides back into a prettier résumé — top-down in bottom-up clothing.</p>
+<p>Even the "observed" tier leaks:</p>
+<ul>
+  <li><strong>A linked repo isn't proof you wrote it.</strong> <em>How much of this was actually you?</em> A logo wall of repos doesn't answer it.</li>
+  <li><strong>A repo existing isn't proof it works.</strong> "I built an agent" and "here is an agent that passes its own evals on every commit" are different universes.</li>
+</ul>
+
+<h2>The part nobody's building — and it's enforceable</h2>
+<p>Every gap above closes with technology, and none of it requires trusting anyone's word.</p>
+<p><strong>Provenance.</strong> Don't link a repo — bind it. Verified commit authorship, contribution percentage, a build-in-public timeline. <em>Observed</em> becomes <em>attributable.</em></p>
+<p><strong>A verified badge.</strong> A project counts as "works" only when a reproducible eval actually passes in CI — a green light earned by a run, not a checkbox someone ticked.</p>
+<p><strong>A vouch you can't fake.</strong> This is the one that closes reliability. A person who worked with you signs a structured reference — bound to <em>their</em> identity, cryptographically sealed so no field can be edited, and <strong>impossible to issue for yourself.</strong> Reliability lives only at the <em>attested</em> tier, and this is how you reach it.</p>
+<p>I coined a name for the whole failure mode while building this: <strong>the attestation gap</strong> — the space between what you can say about yourself and what someone else will stake their name on. Portfolios are racing to fill the "observed" tier. The gap is one rung higher.</p>
+
+<h2>The moment it clicked</h2>
+<p>I wired this into a working gate and fed it a strong portfolio: two projects, clean code, <strong>green builds on every commit.</strong> Technically excellent.</p>
+<p>The gate said <strong>NO-GO.</strong></p>
+<p>It wasn't missing code. It was missing a <em>person.</em> Zero vouches — nobody who'd worked with this person had put their name down. So on reliability, the most decision-relevant axis, the evidence was still just… a claim.</p>
+<p>Then one former teammate signed a thirty-second structured vouch — <em>worked together, would staff again, never went dark</em> — and the same portfolio flipped to <strong>GO.</strong></p>
+<p>A green build couldn't do it. One honest human could. That's the whole thesis in one screen.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/wjlgatech/FDE-os/main/docs/marketing/assets/ml-missing-link.png" alt="A portfolio proves what you built; only a signed third-party vouch proves you're reliable">
+  <figcaption>Portfolio alone → NO-GO. Add one non-self-issuable vouch → GO.</figcaption>
+</figure>
+
+<h2>If you're building your portfolio</h2>
+<ul>
+  <li><strong>Keep shipping.</strong> The "observed" tier is real and most people don't even have that. Do it.</li>
+  <li><strong>Make your work attributable and verified</strong>, not just linked — provenance and a passing eval beat a logo wall.</li>
+  <li><strong>Go collect the rung you can't self-issue:</strong> ask two people who've worked with you for a structured vouch. That single artifact outweighs the rest of the page, because it's the only part you couldn't have written yourself.</li>
+</ul>
+
+<h2>Try it in 60 seconds (it's all open)</h2>
+<p>Don't take my word for it — run the exercise:</p>
+<ol>
+  <li><strong>See which rung you're missing.</strong> Paste your portfolio link into the open checker → it reads your public evidence and tells you plainly what's proven and what isn't: <a href="https://portfolio-trust.vercel.app">portfolio-trust.vercel.app</a></li>
+  <li><strong>Close the gap.</strong> Ask one person who worked with you to sign a 30-second structured vouch on the same site. Watch a NO-GO flip to GO.</li>
+  <li><strong>Fork it.</strong> The whole trust layer — signed non-self-issuable vouches, provenance, and the eval-gate — is open source:</li>
+</ol>
+<pre><code>git clone https://github.com/wjlgatech/FDE-os
+# → portfolio-trust/  (vouch + verify + ingest, deployed on Vercel)</code></pre>
+
+<blockquote>The honest caveat, because honesty is the point: a signature proves <strong>server-issued, tamper-evident, and not-self-issued.</strong> It does <em>not</em> yet prove the voucher is a distinct real human — that needs identity binding (sign in with GitHub before you can vouch). That's the next rung, and I'm building it in the open.</blockquote>
+
+<h2>The one line to remember</h2>
+<p>The résumé died because anyone could write anything. If we replace it with a portfolio anyone can generate in 60 seconds, we've just rebuilt the résumé with better fonts.</p>
+<p>The fix isn't more self-presentation. It's the one piece of evidence you were never able to issue yourself.</p>
+
+<p class="foot">Long-form, shared to read on mobile. The apps and the trust layer are open at github.com/wjlgatech/FDE-os — you own the Publish button.</p>
+</article>
+</body>
+</html>
