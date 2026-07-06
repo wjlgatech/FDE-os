@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intake Interview — infer from evidence, then verify</title>
+<meta name="description" content="A conversational intake agent: it probes your past behavior, infers reliability / resourcefulness / technical signals from what you actually say, and names exactly what to verify next. It never decides — it prepares the evidence.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#F0EDE4;--paper-2:#F7F4EC;--paper-3:#FBF9F3;--ink:#1A1915;--ink-soft:#46423A;--muted:#7A7466;
+    --clay:#CC785C;--clay-deep:#B05B3C;--line:#E0D9C9;--line-soft:#E9E3D6;--go:#4B7B58;--go-bg:#E9F0EA;--warn:#B5852A;--warn-bg:#F3ECD8;--no:#B0472F;--no-bg:#F6E7E1;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink-soft);font-family:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px}
+  .serif{font-family:"Newsreader",Georgia,serif}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:17px;color:var(--ink);text-decoration:none}
+  .delta-mark{width:28px;height:28px;display:grid;place-items:center;border-radius:8px;background:var(--clay);color:var(--paper);font-weight:600;font-size:16px}
+  header.hero{padding:26px 0 12px}
+  .eyebrow{display:inline-block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--clay);margin-bottom:12px}
+  h1{font-family:"Newsreader",Georgia,serif;font-size:clamp(30px,5vw,46px);line-height:1.05;letter-spacing:-.018em;color:var(--ink);font-weight:500}
+  h1 em{font-style:italic;color:var(--clay)}
+  .sub{max-width:600px;margin:14px 0 0;font-size:16px;color:var(--ink-soft)}
+  .banner{margin:16px 0 0;font-size:13px;color:var(--muted);border-left:3px solid var(--clay);padding:8px 14px;background:var(--paper-2);border-radius:0 10px 10px 0}
+
+  .chat{border:1px solid var(--line);border-radius:16px;background:var(--paper-3);margin:22px 0;overflow:hidden}
+  .stream{padding:18px;min-height:280px;max-height:52vh;overflow-y:auto}
+  .msg{display:flex;gap:10px;margin-bottom:14px}
+  .msg .av{width:26px;height:26px;border-radius:7px;display:grid;place-items:center;font-size:13px;font-weight:600;flex:none}
+  .msg.ai .av{background:var(--clay);color:#fff} .msg.me .av{background:var(--paper);border:1px solid var(--line);color:var(--muted)}
+  .msg .body{font-size:15px;padding-top:2px}
+  .msg.me{flex-direction:row-reverse} .msg.me .body{text-align:right;color:var(--ink)}
+  .typing .body{color:var(--muted);font-style:italic}
+  .inputbar{display:flex;gap:8px;border-top:1px solid var(--line);padding:12px}
+  .inputbar textarea{flex:1;resize:none;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-family:inherit;font-size:15px;background:var(--paper-3);outline:none;min-height:44px}
+  .inputbar textarea:focus{border-color:var(--clay);box-shadow:0 0 0 3px rgba(204,120,92,.14)}
+  .btn{background:var(--ink);color:var(--paper);font-weight:600;border:0;padding:0 18px;border-radius:10px;font-size:14px;cursor:pointer;font-family:inherit}
+  .btn:hover{background:var(--clay-deep)} .btn:disabled{opacity:.5;cursor:default}
+
+  .dossier{border:1px solid var(--line);border-radius:16px;background:var(--paper-3);padding:20px;margin:22px 0;display:none}
+  .dossier.show{display:block}
+  .dossier h2{font-family:"Newsreader",serif;font-weight:500;color:var(--ink);font-size:22px;margin-bottom:4px}
+  .dossier .hint{font-size:13px;color:var(--muted);margin-bottom:14px}
+  .crit{border-top:1px solid var(--line-soft);padding:12px 0}
+  .crit:first-of-type{border-top:0}
+  .crit .h{display:flex;align-items:center;gap:8px}
+  .crit .name{font-weight:600;color:var(--ink);text-transform:capitalize;font-size:15px}
+  .tier{font-size:10.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;padding:2px 8px;border-radius:999px}
+  .tier.observed_story{background:var(--go-bg);color:var(--go)} .tier.claimed{background:var(--warn-bg);color:var(--warn)} .tier.not_evidenced{background:var(--no-bg);color:var(--no)}
+  .crit .q{font-size:13.5px;color:var(--ink-soft);font-style:italic;margin-top:6px;border-left:2px solid var(--line);padding-left:10px}
+  .next{margin-top:16px;background:var(--warn-bg);border-radius:12px;padding:14px}
+  .next b{color:var(--ink)} .next ul{margin:8px 0 0 18px;font-size:14px}
+  .acts{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)} .btn.ghost:hover{background:var(--paper-2);border-color:var(--clay)}
+  .btn.ghost{padding:10px 15px}
+  footer{border-top:1px solid var(--line);margin-top:28px;padding:22px 0 50px;text-align:center;color:var(--muted);font-size:13px}
+  .err{color:var(--no);font-size:13px;padding:8px 18px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><a class="brand" href="https://wjlgatech.github.io/FDE-os/"><span class="delta-mark serif">Δ</span> Delta · FDE-os</a>
+    <a class="brand" style="font-size:14px;color:var(--clay-deep)" href="https://wjlgatech.github.io/FDE-os/scorecard.html">The scorecard →</a></nav>
+  <header class="hero">
+    <span class="eyebrow">Conversational intake</span>
+    <h1>Infer from <em>evidence</em>,<br>then verify.</h1>
+    <p class="sub">A short interview that asks about your <b>past behavior</b> — not self-ratings — and infers signals for reliability, resourcefulness, and technical depth from what you actually say.</p>
+    <p class="banner">This is <b>intake</b>, not a decision. It infers signals and names exactly what to verify next — a real reference and an observed work sample still gate any recommendation. Nothing here is fabricated: unsupported answers are marked <i>not evidenced</i>.</p>
+  </header>
+
+  <div class="chat">
+    <div class="stream" id="stream"></div>
+    <div class="err" id="err" style="display:none"></div>
+    <div class="inputbar">
+      <textarea id="input" placeholder="Answer in a sentence or two…" rows="1"></textarea>
+      <button class="btn" id="send">Send</button>
+    </div>
+  </div>
+
+  <div class="dossier" id="dossier">
+    <h2>Intake dossier</h2>
+    <p class="hint">Signals inferred from the conversation. Tiers: <b>observed story</b> (specific past result) · <b>claimed</b> (generic) · <b>not evidenced</b>.</p>
+    <div id="crits"></div>
+    <div class="next" id="next"></div>
+    <div class="acts">
+      <button class="btn ghost" id="dl">Download candidate.json</button>
+      <a class="btn ghost" href="https://wjlgatech.github.io/FDE-os/scorecard.html" target="_blank" rel="noopener">Continue to the scorecard →</a>
+    </div>
+  </div>
+
+  <footer><span style="color:var(--clay)">Δ</span> Evidence-based intake · the agent infers, the work sample &amp; reference validate · runs on Vercel.</footer>
+</div>
+
+<script>
+var API="/api/interview";
+var messages=[], lastCandidate=null, busy=false;
+
+function bubble(who, text){
+  var s=document.getElementById('stream');
+  var m=document.createElement('div'); m.className='msg '+(who==='ai'?'ai':'me');
+  m.innerHTML='<div class="av">'+(who==='ai'?'Δ':'You')+'</div><div class="body">'+esc(text)+'</div>';
+  s.appendChild(m); s.scrollTop=s.scrollHeight; return m;
+}
+function esc(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/\n/g,'<br>');}
+function typing(on){
+  var s=document.getElementById('stream'), ex=document.getElementById('typing');
+  if(on){ if(ex)return; var m=document.createElement('div'); m.className='msg ai typing'; m.id='typing';
+    m.innerHTML='<div class="av">Δ</div><div class="body">thinking…</div>'; s.appendChild(m); s.scrollTop=s.scrollHeight; }
+  else if(ex){ ex.remove(); }
+}
+function showErr(t){ var e=document.getElementById('err'); e.style.display='block'; e.textContent=t; }
+
+async function api(action){
+  var r=await fetch(API,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({action:action,messages:messages})});
+  var d=await r.json(); if(!r.ok) throw new Error(d.error||("HTTP "+r.status)); return d;
+}
+
+async function turn(){
+  busy=true; setSend(false); typing(true);
+  try{
+    var d=await api("turn"); typing(false);
+    bubble('ai', d.content); messages.push({role:"assistant",content:d.content});
+    if(d.done){ setSend(false); await extract(); }
+    else { busy=false; setSend(true); document.getElementById('input').focus(); }
+  }catch(e){ typing(false); showErr("The interviewer is temporarily unavailable ("+e.message+"). Try again in a moment."); busy=false; setSend(true); }
+}
+async function extract(){
+  typing(true);
+  try{
+    var d=await api("extract"); typing(false); lastCandidate=d.candidate; renderDossier(d);
+  }catch(e){ typing(false); showErr("Could not analyze the interview ("+e.message+")."); }
+}
+function renderDossier(d){
+  var c=document.getElementById('crits'); c.innerHTML='';
+  ["reliability","resourcefulness","technical"].forEach(function(k){
+    var x=d.dossier[k];
+    var el=document.createElement('div'); el.className='crit';
+    el.innerHTML='<div class="h"><span class="name">'+k+'</span><span class="tier '+x.tier+'">'+x.tier.replace(/_/g,' ')+'</span></div>'+
+      (x.quote?'<div class="q">“'+esc(x.quote)+'”</div>':'')+(x.note?'<div class="hint" style="margin-top:6px">'+esc(x.note)+'</div>':'');
+    c.appendChild(el);
+  });
+  var n=document.getElementById('next');
+  n.innerHTML='<b>Verify next (the agent infers; these validate):</b><ul>'+d.next_evidence.map(function(s){return '<li>'+esc(s)+'</li>';}).join('')+'</ul>';
+  document.getElementById('dossier').classList.add('show');
+  document.getElementById('dossier').scrollIntoView({behavior:'smooth'});
+}
+function setSend(on){ document.getElementById('send').disabled=!on; }
+function send(){
+  if(busy) return; var i=document.getElementById('input'); var v=i.value.trim(); if(!v) return;
+  bubble('me', v); messages.push({role:"user",content:v}); i.value=''; turn();
+}
+document.getElementById('send').addEventListener('click',send);
+document.getElementById('input').addEventListener('keydown',function(e){ if(e.key==='Enter'&&!e.shiftKey){ e.preventDefault(); send(); }});
+document.getElementById('dl').addEventListener('click',function(){
+  if(!lastCandidate)return; var b=new Blob([JSON.stringify(lastCandidate,null,2)],{type:"application/json"});
+  var u=URL.createObjectURL(b),a=document.createElement('a'); a.href=u; a.download="intake-candidate.json"; a.click(); URL.revokeObjectURL(u);
+});
+// kick off the interview
+turn();
+</script>
+</body>
+</html>

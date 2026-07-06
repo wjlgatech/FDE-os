@@ -1,0 +1,7 @@
+{
+  "name": "fde-interview-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Conversational evidence-collector: an intake interviewer agent that infers reliability/resourcefulness/technical signals from past behavior, then names what to verify. Serverless on Vercel."
+}
