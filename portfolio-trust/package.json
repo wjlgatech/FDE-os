@@ -1,0 +1,7 @@
+{
+  "name": "portfolio-trust",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Trust layer for agentic portfolios: signed non-self-issuable vouches + provenance + CI-verified projects, read into a GO/NO-GO. Serverless on Vercel, no LLM."
+}

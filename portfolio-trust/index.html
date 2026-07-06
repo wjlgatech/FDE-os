@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Trust — turn a portfolio into verified evidence</title>
+<meta name="description" content="The missing link for agentic portfolios: verifiable provenance, a passing-eval badge, and non-self-issuable third-party vouches — read into a GO / NO-GO. A portfolio can't attest its own reliability; this enforces the evidence.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#F0EDE4;--paper-2:#F7F4EC;--paper-3:#FBF9F3;--ink:#1A1915;--ink-soft:#46423A;--muted:#7A7466;
+    --clay:#CC785C;--clay-deep:#B05B3C;--line:#E0D9C9;--line-soft:#E9E3D6;--go:#4B7B58;--go-bg:#E9F0EA;--no:#B0472F;--no-bg:#F6E7E1;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink-soft);font-family:"Hanken Grotesk",-apple-system,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:860px;margin:0 auto;padding:0 22px}
+  .serif{font-family:"Newsreader",Georgia,serif}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:17px;color:var(--ink);text-decoration:none}
+  .delta-mark{width:28px;height:28px;display:grid;place-items:center;border-radius:8px;background:var(--clay);color:var(--paper);font-weight:600}
+  header.hero{padding:24px 0 8px}
+  .eyebrow{display:inline-block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--clay);margin-bottom:12px}
+  h1{font-family:"Newsreader",serif;font-size:clamp(28px,4.6vw,44px);line-height:1.05;letter-spacing:-.018em;color:var(--ink);font-weight:500}
+  h1 em{font-style:italic;color:var(--clay)}
+  .sub{max-width:640px;margin:14px 0 0;font-size:16px}
+  .banner{margin:14px 0 0;font-size:13px;color:var(--muted);border-left:3px solid var(--clay);padding:8px 14px;background:var(--paper-2);border-radius:0 10px 10px 0}
+  .tabs{display:flex;gap:8px;margin:24px 0 0}
+  .tab{border:1px solid var(--line);background:var(--paper-3);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;color:var(--ink);cursor:pointer}
+  .tab.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .panel{border:1px solid var(--line);border-radius:16px;background:var(--paper-3);padding:20px;margin:14px 0 40px;display:none}
+  .panel.on{display:block}
+  label{display:block;font-size:13px;color:var(--ink-soft);margin:10px 0 5px;font-weight:500}
+  input,select,textarea{width:100%;background:var(--paper-3);border:1px solid var(--line);color:var(--ink);padding:9px 11px;border-radius:9px;font-size:14px;font-family:inherit;outline:none}
+  textarea{font-family:ui-monospace,monospace;font-size:12.5px;min-height:120px}
+  input:focus,select:focus,textarea:focus{border-color:var(--clay);box-shadow:0 0 0 3px rgba(204,120,92,.14)}
+  .row{display:flex;gap:10px;flex-wrap:wrap} .row>div{flex:1;min-width:180px}
+  .checks{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  .chk{display:flex;align-items:center;gap:7px;font-size:13px;border:1px solid var(--line);background:var(--paper-3);border-radius:8px;padding:7px 10px;cursor:pointer}
+  .chk input{width:15px;height:15px;accent-color:var(--clay)}
+  .btn{background:var(--ink);color:var(--paper);font-weight:600;border:0;padding:10px 16px;border-radius:10px;font-size:14px;cursor:pointer;font-family:inherit;margin-top:12px}
+  .btn:hover{background:var(--clay-deep)} .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .out{margin-top:16px;display:none} .out.show{display:block}
+  .vbadge{display:inline-flex;align-items:center;gap:8px;font-family:"Newsreader",serif;font-size:22px;padding:8px 16px;border-radius:11px}
+  .vbadge.go{background:var(--go-bg);color:var(--go)} .vbadge.no{background:var(--no-bg);color:var(--no)}
+  .ax{display:flex;gap:9px;padding:9px 0;border-top:1px solid var(--line-soft);font-size:14px}
+  .ax .m{font-size:15px}
+  .kv{font-size:13px;color:var(--muted);margin-top:10px}
+  .token{font-family:ui-monospace,monospace;font-size:11.5px;word-break:break-all;background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:10px;margin-top:8px}
+  .blk{font-size:13.5px;color:var(--no);margin-top:4px}
+  .err{color:var(--no);font-size:13px;margin-top:8px}
+  footer{border-top:1px solid var(--line);margin-top:28px;padding:22px 0 50px;text-align:center;color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><a class="brand" href="https://wjlgatech.github.io/FDE-os/"><span class="delta-mark serif">Δ</span> Delta · FDE-os</a>
+    <a class="brand" style="font-size:14px;color:var(--clay-deep)" href="https://wjlgatech.github.io/FDE-os/scorecard.html">The scorecard →</a></nav>
+  <header class="hero">
+    <span class="eyebrow">Portfolio trust layer</span>
+    <h1>A portfolio can't vouch for <em>itself</em>.</h1>
+    <p class="sub">An agentic portfolio proves you <i>built</i> things (bottom-up). It can't prove you're <b>reliable</b> — that's relational and third-party. This enforces the missing evidence: verifiable provenance, a passing-eval badge, and <b>non-self-issuable vouches</b> → a defensible GO / NO-GO.</p>
+    <p class="banner">Vouches are server-signed and tamper-evident: you cannot forge one or issue one for yourself. A portfolio with great projects but no real vouch stays <b>NO-GO on reliability</b> — by design.</p>
+  </header>
+
+  <div class="tabs">
+    <button class="tab on" data-t="check">Check a portfolio</button>
+    <button class="tab" data-t="vouch">Vouch for someone</button>
+  </div>
+
+  <!-- CHECK -->
+  <div class="panel on" id="p-check">
+    <label>Portfolio agent-card URL (or paste the card JSON below)</label>
+    <input id="cardUrl" placeholder="https://their-portfolio.vercel.app/.well-known/agent-card.json">
+    <label>…or paste agent-card JSON</label>
+    <textarea id="cardJson" placeholder='{"name":"…","evidence":{"projects":[…],"attestations":["…"]}}'></textarea>
+    <div class="row"><button class="btn" id="check">Read evidence → GO / NO-GO</button>
+      <button class="btn ghost" id="loadEx" style="margin-top:12px">Load example card</button></div>
+    <div class="err" id="checkErr"></div>
+    <div class="out" id="checkOut">
+      <div id="badge"></div>
+      <div id="axes"></div>
+      <div class="kv" id="summary"></div>
+    </div>
+  </div>
+
+  <!-- VOUCH -->
+  <div class="panel" id="p-vouch">
+    <p style="font-size:14px;color:var(--muted);margin-bottom:6px">You attest to someone you worked with. It's signed to you and cannot be self-issued. Give the token to them to embed in their agent-card.</p>
+    <div class="row">
+      <div><label>Subject (who you're vouching for)</label><input id="subject" placeholder="their handle / name"></div>
+      <div><label>You (the voucher)</label><input id="voucher" placeholder="your handle / name"></div>
+    </div>
+    <div class="row">
+      <div><label>Relationship</label><select id="rel"><option value="client_team">Client team</option><option value="internal_team">Internal team</option></select></div>
+      <div><label>Engagement (one line)</label><input id="engagement" placeholder="what you worked on together"></div>
+    </div>
+    <div class="checks">
+      <label class="chk"><input type="checkbox" id="worked" checked> Actually worked together</label>
+      <label class="chk"><input type="checkbox" id="again" checked> Would staff again</label>
+      <label class="chk"><input type="checkbox" id="dark"> They no-showed / went dark</label>
+    </div>
+    <button class="btn" id="mint">Sign the vouch</button>
+    <div class="err" id="vouchErr"></div>
+    <div class="out" id="vouchOut">
+      <p style="font-size:13px;color:var(--go);font-weight:600">Signed ✓ — give this token to the subject to add to <code>evidence.attestations[]</code>:</p>
+      <div class="token" id="token"></div>
+      <button class="btn ghost" id="copyTok">Copy token</button>
+    </div>
+  </div>
+
+  <footer><span style="color:var(--clay)">Δ</span> Signed vouches · provenance + CI-verified projects → the same gate as the scorecard · runs on Vercel · no LLM.</footer>
+</div>
+
+<script>
+var API_INGEST="/api/ingest", API_VOUCH="/api/vouch";
+document.querySelectorAll('.tab').forEach(function(t){ t.addEventListener('click',function(){
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on')); t.classList.add('on');
+  document.getElementById('p-check').classList.toggle('on', t.dataset.t==='check');
+  document.getElementById('p-vouch').classList.toggle('on', t.dataset.t==='vouch');
+});});
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+
+document.getElementById('loadEx').addEventListener('click',function(){
+  document.getElementById('cardUrl').value = location.origin + "/agent-card.example.json";
+  document.getElementById('cardJson').value = "";
+});
+document.getElementById('check').addEventListener('click',async function(){
+  var err=document.getElementById('checkErr'), out=document.getElementById('checkOut'); err.textContent=''; out.classList.remove('show');
+  var body={}; var js=document.getElementById('cardJson').value.trim(); var url=document.getElementById('cardUrl').value.trim();
+  if(js){ try{ body.card=JSON.parse(js); }catch(e){ err.textContent="That JSON didn't parse."; return; } }
+  else if(url){ body.card_url=url; } else { err.textContent="Paste a card URL or JSON."; return; }
+  try{
+    var r=await fetch(API_INGEST,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+    var d=await r.json(); if(!r.ok) throw new Error(d.error||("HTTP "+r.status));
+    render(d);
+  }catch(e){ err.textContent="Ingest failed: "+e.message; }
+});
+function render(d){
+  var g=d.gate;
+  document.getElementById('badge').innerHTML = g.go ? '<span class="vbadge go">✅ GO</span>' : '<span class="vbadge no">⛔ NO-GO</span>';
+  var ax=document.getElementById('axes'); ax.innerHTML='';
+  [['reliability',g.reliability],['technical',g.technical],['resourceful',g.resourceful]].forEach(function(p){
+    var d2=document.createElement('div'); d2.className='ax';
+    d2.innerHTML='<span class="m">'+(p[1]?'✅':'⛔')+'</span><span><b style="text-transform:capitalize">'+p[0]+'</b></span>'; ax.appendChild(d2);
+  });
+  if(g.blockers && g.blockers.length){ var b=document.createElement('div'); b.innerHTML=g.blockers.map(x=>'<div class="blk">• '+esc(x)+'</div>').join(''); ax.appendChild(b); }
+  var s=d.summary;
+  document.getElementById('summary').innerHTML =
+    'valid vouches: <b>'+s.valid_vouches+'</b> · would-staff-again: <b>'+s.would_staff_again+'</b> · dark flags: <b>'+s.dark_flags+'</b> · '+
+    'CI-verified projects: <b>'+s.ci_verified_projects+'</b> · owned projects: <b>'+s.owned_projects+'</b>'+
+    (s.rejected_attestations.length? '<br>rejected attestations: '+s.rejected_attestations.map(x=>x.reason).join(', '):'')+
+    (s.dev_secret? '<br><span style="color:var(--no)">⚠ dev signing secret — set VOUCH_SECRET for production trust</span>':'');
+  document.getElementById('checkOut').classList.add('show');
+}
+
+document.getElementById('mint').addEventListener('click',async function(){
+  var err=document.getElementById('vouchErr'), out=document.getElementById('vouchOut'); err.textContent=''; out.classList.remove('show');
+  var body={ subject:document.getElementById('subject').value, voucher:document.getElementById('voucher').value,
+    relationship:document.getElementById('rel').value, engagement:document.getElementById('engagement').value,
+    worked_with:document.getElementById('worked').checked, would_staff_again:document.getElementById('again').checked,
+    went_dark_or_noshow:document.getElementById('dark').checked };
+  try{
+    var r=await fetch(API_VOUCH,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+    var d=await r.json(); if(!r.ok) throw new Error(d.error||("HTTP "+r.status));
+    document.getElementById('token').textContent=d.token; out.classList.add('show');
+  }catch(e){ err.textContent=e.message; }
+});
+document.getElementById('copyTok').addEventListener('click',function(){ navigator.clipboard.writeText(document.getElementById('token').textContent); });
+</script>
+</body>
+</html>
