@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FDE Readiness — are you ready to apply to Anthropic / OpenAI?</title>
+<meta name="description" content="Score your readiness for a Forward Deployed Engineer role at Anthropic or OpenAI across knowledge, skills, mindset, habits, and portfolio proof — and get the exact gaps to close. Same rubric an MCP server exposes to agents.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#F0EDE4;--paper-2:#F7F4EC;--paper-3:#FBF9F3;--ink:#1A1915;--ink-soft:#46423A;--muted:#7A7466;
+    --clay:#CC785C;--clay-deep:#B05B3C;--line:#E0D9C9;--line-soft:#E9E3D6;--go:#4B7B58;--go-bg:#E9F0EA;--no:#B0472F;--no-bg:#F6E7E1;--warn:#B5852A;--warn-bg:#F3ECD8;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink-soft);font-family:"Hanken Grotesk",-apple-system,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 22px}
+  .serif{font-family:"Newsreader",Georgia,serif}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:17px;color:var(--ink);text-decoration:none}
+  .delta-mark{width:28px;height:28px;display:grid;place-items:center;border-radius:8px;background:var(--clay);color:var(--paper);font-weight:600}
+  .nav-cta{font-size:14px;color:var(--ink);text-decoration:none;padding:8px 15px;border-radius:999px;border:1px solid var(--line)}
+  header.hero{padding:26px 0 8px;max-width:760px}
+  .eyebrow{display:inline-block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--clay);margin-bottom:12px}
+  h1{font-family:"Newsreader",serif;font-size:clamp(30px,5vw,48px);line-height:1.05;letter-spacing:-.018em;color:var(--ink);font-weight:500}
+  h1 em{font-style:italic;color:var(--clay)}
+  .sub{max-width:640px;margin:14px 0 0;font-size:16px}
+  .cols{display:grid;grid-template-columns:1.25fr .75fr;gap:24px;align-items:start;margin:26px 0 60px}
+  @media(max-width:900px){.cols{grid-template-columns:1fr}}
+  .panel{border:1px solid var(--line);border-radius:16px;background:var(--paper-3);padding:18px 20px 22px}
+  .dim{border-top:1px solid var(--line-soft);padding:14px 0 6px}
+  .dim:first-of-type{border-top:0}
+  .dim h3{font-family:"Newsreader",serif;font-weight:500;font-size:18px;color:var(--ink);margin-bottom:8px;display:flex;justify-content:space-between;align-items:baseline}
+  .dim h3 .pct{font-family:"Hanken Grotesk",sans-serif;font-size:13px;font-weight:700;color:var(--muted)}
+  .item{display:flex;gap:9px;align-items:flex-start;font-size:14.5px;padding:6px 0;cursor:pointer}
+  .item input{margin-top:3px;width:16px;height:16px;accent-color:var(--clay);flex:none}
+  .item .flag{font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--clay-deep);border:1px solid var(--line);border-radius:999px;padding:1px 6px;margin-left:4px;vertical-align:middle}
+  .gap{font-size:13px;color:var(--warn);margin:4px 0 2px 25px;display:none} .gap.show{display:block}
+
+  .verdict{position:sticky;top:18px}
+  .vbadge{display:inline-flex;align-items:center;gap:8px;font-family:"Newsreader",serif;font-size:24px;padding:10px 18px;border-radius:12px}
+  .vbadge.go{background:var(--go-bg);color:var(--go)} .vbadge.no{background:var(--no-bg);color:var(--no)}
+  .meter{height:12px;border-radius:999px;background:var(--paper);border:1px solid var(--line);overflow:hidden;margin:14px 0 6px}
+  .meter > div{height:100%;background:linear-gradient(90deg,var(--clay),var(--clay-deep));width:0;transition:width .3s}
+  .vmsg{font-size:14px;color:var(--ink-soft);margin-top:10px}
+  .dimrow{display:flex;justify-content:space-between;font-size:13px;padding:5px 0;border-top:1px solid var(--line-soft);color:var(--ink-soft)}
+  .dimrow .m{color:var(--muted)}
+  .acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .btn{background:var(--ink);color:var(--paper);font-weight:600;border:0;padding:9px 14px;border-radius:9px;font-size:13px;cursor:pointer;text-decoration:none;font-family:inherit}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .agentbox{margin-top:14px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line-soft);padding-top:12px}
+  .agentbox code{font-family:ui-monospace,monospace;font-size:11.5px;background:var(--paper-2);border:1px solid var(--line);border-radius:5px;padding:1px 5px}
+  footer{border-top:1px solid var(--line);margin-top:30px;padding:24px 0 56px;text-align:center;color:var(--muted);font-size:13px}
+  .err{color:var(--no);padding:16px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><a class="brand" href="index.html"><span class="delta-mark serif">Δ</span> Delta · FDE-os</a>
+    <a class="nav-cta" href="course.html">The Course →</a></nav>
+  <header class="hero">
+    <span class="eyebrow">FDE Readiness</span>
+    <h1>Are you ready to apply — <em>on evidence</em>?</h1>
+    <p class="sub">Score yourself against the real Anthropic &amp; OpenAI FDE bar across five dimensions. The same rubric an <a href="https://github.com/wjlgatech/FDE-os/tree/main/mcp-fde-readiness" style="color:var(--clay-deep)">MCP server</a> exposes to agents — one source of truth, two surfaces. Nothing is stored.</p>
+  </header>
+
+  <div class="cols">
+    <div class="panel" id="form"><div class="err" id="err" style="display:none"></div></div>
+
+    <div class="verdict">
+      <div class="panel">
+        <div id="badge"></div>
+        <div class="meter"><div id="bar"></div></div>
+        <div class="vmsg" id="vmsg"></div>
+        <div id="dims"></div>
+        <div class="acts">
+          <a class="btn" href="course/prep/anthropic-openai-fde-readiness.md">The full readiness program →</a>
+          <a class="btn ghost" href="https://portfolio-trust.vercel.app" target="_blank" rel="noopener">Get a vouch →</a>
+        </div>
+        <div class="agentbox">Agents: call the same logic over MCP — <code>readiness_score(answers)</code> from <code>mcp-fde-readiness</code>.</div>
+      </div>
+    </div>
+  </div>
+  <footer><span style="color:var(--clay)">Δ</span> Rubric-as-data · scored client-side · matches the <code>mcp-fde-readiness</code> MCP server. No data leaves this page.</footer>
+</div>
+
+<script>
+var RUBRIC=null, answers={};
+fetch("readiness-rubric.json").then(r=>{if(!r.ok)throw new Error("HTTP "+r.status);return r.json();})
+  .then(function(rub){ RUBRIC=rub; renderForm(); recompute(); })
+  .catch(function(e){ document.getElementById('err').style.display='block';
+    document.getElementById('err').textContent="Couldn't load the rubric ("+e.message+"). Serve over http (GitHub Pages), not file://."; });
+
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+function renderForm(){
+  var host=document.getElementById('form'); host.innerHTML='';
+  RUBRIC.dimensions.forEach(function(d){
+    var el=document.createElement('div'); el.className='dim';
+    var items=d.items.map(function(it){
+      var flag=it.flag?'<span class="flag">'+it.flag+'</span>':'';
+      return '<label class="item"><input type="checkbox" data-id="'+it.id+'"> <span>'+esc(it.q)+flag+'</span></label>';
+    }).join('');
+    el.innerHTML='<h3>'+esc(d.label)+' <span class="pct" id="pct-'+d.key+'"></span></h3>'+items+'<div class="gap" id="gap-'+d.key+'">'+esc(d.gap)+'</div>';
+    host.appendChild(el);
+  });
+  host.querySelectorAll('input[data-id]').forEach(function(cb){
+    cb.addEventListener('change',function(){ answers[cb.getAttribute('data-id')]=cb.checked; recompute(); });
+  });
+}
+function score(){
+  var flags=new Set(), fracSum=0, dims=[];
+  RUBRIC.dimensions.forEach(function(d){
+    var got=0,tot=0;
+    d.items.forEach(function(it){ tot+=it.w; if(answers[it.id]){ got+=it.w; if(it.flag) flags.add(it.flag); } });
+    var frac=tot?got/tot:0; fracSum+=frac;
+    dims.push({key:d.key,label:d.label,frac:frac,gap:frac>=0.67?null:d.gap});
+  });
+  var overall=RUBRIC.dimensions.length?fracSum/RUBRIC.dimensions.length:0;
+  var need=(RUBRIC.gate.must_flags||[]), missing=need.filter(function(f){return !flags.has(f);});
+  var go = overall>=(RUBRIC.gate.min_overall||0.7) && missing.length===0;
+  return {overall:overall,go:go,dims:dims,missing:missing};
+}
+function recompute(){
+  var r=score();
+  document.getElementById('badge').innerHTML = r.go?'<span class="vbadge go">✅ Ready to apply</span>':'<span class="vbadge no">⛔ Not yet</span>';
+  document.getElementById('bar').style.width=Math.round(r.overall*100)+'%';
+  var msg;
+  if(r.go){ msg="Overall "+Math.round(r.overall*100)+"% — and the two rungs you can't self-issue (a shipped system, a vouch) are covered."; }
+  else {
+    var bits=[];
+    if(r.overall<(RUBRIC.gate.min_overall||0.7)) bits.push("overall "+Math.round(r.overall*100)+"% is below "+Math.round((RUBRIC.gate.min_overall||0.7)*100)+"%");
+    if(r.missing.indexOf('ship')>=0) bits.push("no shipped-to-production system");
+    if(r.missing.indexOf('vouch')>=0) bits.push("no third-party vouch — the one rung you can't self-issue");
+    msg=bits.join("; ")+".";
+  }
+  document.getElementById('vmsg').textContent=msg;
+  var dh=document.getElementById('dims'); dh.innerHTML='';
+  r.dims.forEach(function(d){
+    document.getElementById('pct-'+d.key).textContent=Math.round(d.frac*100)+'%';
+    var g=document.getElementById('gap-'+d.key); if(g) g.classList.toggle('show', !!d.gap);
+    var row=document.createElement('div'); row.className='dimrow';
+    row.innerHTML='<span>'+(d.frac>=0.67?'✓':'•')+' '+esc(d.label)+'</span><span class="m">'+Math.round(d.frac*100)+'%</span>';
+    dh.appendChild(row);
+  });
+}
+</script>
+</body>
+</html>

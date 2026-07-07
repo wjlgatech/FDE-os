@@ -1,0 +1,53 @@
+{
+  "title": "FDE readiness — Anthropic / OpenAI",
+  "note": "Single source of truth. Consumed by both the MCP server (agents) and readiness.html (humans).",
+  "gate": { "min_overall": 0.7, "must_flags": ["ship", "vouch"] },
+  "dimensions": [
+    {
+      "key": "knowledge", "label": "Knowledge",
+      "gap": "Study the MCP spec + evals + enterprise deploy constraints — see course/prep/anthropic-openai-fde-readiness.md §1.",
+      "items": [
+        {"id": "k_mcp", "q": "I can explain MCP and A2A, and when to use each", "w": 1},
+        {"id": "k_eval", "q": "I can design an eval set + a groundedness / hallucination check", "w": 1},
+        {"id": "k_deploy", "q": "I know enterprise constraints: PII, tenant isolation, VPC / self-hosted inference", "w": 1}
+      ]
+    },
+    {
+      "key": "skills", "label": "Skills",
+      "gap": "Drill it: coding-drill-kit (prod Python from memory) + agentic-solution-architect (agent in 90 min).",
+      "items": [
+        {"id": "s_py", "q": "I can write production Python from a blank page, no autocomplete", "w": 1},
+        {"id": "s_agent", "q": "I can build a tool-using agent + grounded RAG + an eval gate in ~90 min", "w": 1},
+        {"id": "s_fullstack", "q": "I can ship frontend + backend to production (Python / JS)", "w": 1}
+      ]
+    },
+    {
+      "key": "mindset", "label": "Mindset",
+      "gap": "Rewire toward adoption-over-output and evidence-over-claims — readiness §3.",
+      "items": [
+        {"id": "m_adoption", "q": "I optimize for production adoption, not a demo that worked once", "w": 1},
+        {"id": "m_evidence", "q": "I write the eval before the feature (evidence over claims)", "w": 1},
+        {"id": "m_ambiguity", "q": "Under ambiguity I find the smallest end-to-end win and move", "w": 1}
+      ]
+    },
+    {
+      "key": "behavior", "label": "Behavior & habits",
+      "gap": "Adopt the routines in readiness §4: daily drill, weekly ship-to-prod + field note, close-the-loop.",
+      "items": [
+        {"id": "b_drill", "q": "I run a daily coding drill and ship something to prod weekly", "w": 1},
+        {"id": "b_loops", "q": "I close the loops I open — no abandoned repos", "w": 1},
+        {"id": "b_teach", "q": "I can teach a new tool back to a non-engineer in one page", "w": 1}
+      ]
+    },
+    {
+      "key": "portfolio", "label": "Portfolio proof",
+      "gap": "Ship one flagship agentic system to production, add an MCP server, and collect a vouch.",
+      "items": [
+        {"id": "p_ship", "q": "I have SHIPPED an LLM / agent system to production (a live URL)", "w": 2, "flag": "ship"},
+        {"id": "p_ci", "q": "A project passes its own eval in CI (a green earned by a run)", "w": 1},
+        {"id": "p_mcp", "q": "I have built / deployed an MCP server (Anthropic's exact deliverable)", "w": 1},
+        {"id": "p_vouch", "q": "I have a third-party VOUCH from someone who worked with me", "w": 2, "flag": "vouch"}
+      ]
+    }
+  ]
+}
