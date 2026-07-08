@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="627" viewBox="0 0 1200 627" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1200" height="627" fill="#F0EEE6"/>
+  <defs>
+    <radialGradient id="g1" cx="80%" cy="-10%" r="65%"><stop offset="0%" stop-color="#CC785C" stop-opacity="0.22"/><stop offset="100%" stop-color="#CC785C" stop-opacity="0"/></radialGradient>
+    <radialGradient id="g2" cx="-8%" cy="18%" r="60%"><stop offset="0%" stop-color="#BF916E" stop-opacity="0.18"/><stop offset="100%" stop-color="#BF916E" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1200" height="627" fill="url(#g1)"/><rect width="1200" height="627" fill="url(#g2)"/>
+  <rect x="0" y="0" width="12" height="627" fill="#CC785C"/>
+  <text x="70" y="98" font-size="20" letter-spacing="4" font-weight="700" fill="#B0563A">LEARN ANY FIELD 10× WITH AI</text>
+  <text x="68" y="212" font-family="'Iowan Old Style', Palatino, Georgia, serif" font-size="92" font-weight="500" fill="#191919">Wide <tspan font-style="italic" fill="#B0563A">and</tspan> deep.</text>
+  <text x="68" y="300" font-family="'Iowan Old Style', Palatino, Georgia, serif" font-size="92" font-weight="500" font-style="italic" fill="#CC785C">In a weekend.</text>
+  <text x="72" y="366" font-size="25" fill="#46423A">Draw the map. Drop a ladder. Pass the gate — let proof, not a feeling, say you know it.</text>
+
+  <!-- Map → Ladder → Gate chips -->
+  <g font-size="22" font-weight="700">
+    <rect x="72"  y="470" width="220" height="72" rx="12" fill="#FAF9F5" stroke="#E2DED3"/>
+    <text x="98" y="505" fill="#191919">Map</text><text x="98" y="530" font-size="14" font-weight="400" fill="#6B6657">width · the graph</text>
+    <text x="312" y="516" font-size="28" fill="#B0563A">→</text>
+    <rect x="352" y="470" width="220" height="72" rx="12" fill="#FAF9F5" stroke="#E2DED3"/>
+    <text x="378" y="505" fill="#191919">Ladder</text><text x="378" y="530" font-size="14" font-weight="400" fill="#6B6657">depth · the drill</text>
+    <text x="592" y="516" font-size="28" fill="#B0563A">→</text>
+    <rect x="632" y="470" width="248" height="72" rx="12" fill="#CC785C"/>
+    <text x="658" y="505" fill="#FBF9F3">Gate</text><text x="658" y="530" font-size="14" font-weight="400" fill="#FBF9F3">proof · it works</text>
+  </g>
+  <text x="1128" y="596" text-anchor="end" font-family="'Iowan Old Style', Palatino, Georgia, serif" font-size="20" fill="#CC785C">Δ FDE-os</text>
+</svg>

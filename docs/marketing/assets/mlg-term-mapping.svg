@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1200" height="720" fill="#F0EEE6"/>
+  <defs>
+    <radialGradient id="g1" cx="85%" cy="-8%" r="55%"><stop offset="0%" stop-color="#CC785C" stop-opacity="0.14"/><stop offset="100%" stop-color="#CC785C" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#g1)"/>
+  <text x="64" y="80" font-family="'Iowan Old Style', Palatino, Georgia, serif" font-size="42" font-weight="500" fill="#191919">Kid-word → real thing → why it works</text>
+  <text x="64" y="116" font-size="20" fill="#46423A">A mental model that survives contact with the vocabulary is no longer a bedtime story.</text>
+
+  <!-- header row -->
+  <g font-size="15" font-weight="700" fill="#6B6657" letter-spacing="0.5">
+    <text x="76" y="168">THE KID WORD</text><text x="420" y="168">WHAT IT ACTUALLY IS</text><text x="800" y="168">WHY IT WORKS</text>
+  </g>
+  <line x1="64" y1="182" x2="1136" y2="182" stroke="#E2DED3"/>
+
+  <g font-size="18">
+    <!-- rows -->
+    <g fill="#191919">
+      <text x="76" y="232" font-weight="700">The map</text>
+      <text x="76" y="322" font-weight="700">A ladder</text>
+      <text x="76" y="412" font-weight="700">Climb = do,</text><text x="76" y="336"/>
+      <text x="76" y="436" font-weight="700">not read</text>
+      <text x="76" y="522" font-weight="700">The gate</text>
+      <text x="76" y="612" font-weight="700">Teach it back</text>
+    </g>
+    <g fill="#B0563A" font-weight="700">
+      <text x="420" y="232">knowledge graph</text>
+      <text x="420" y="322">a drilled skill</text>
+      <text x="420" y="424">retrieval / deliberate practice</text>
+      <text x="420" y="522">an eval — does it pass?</text>
+      <text x="420" y="612">Feynman technique</text>
+    </g>
+    <g fill="#46423A" font-size="16">
+      <text x="800" y="232">width → transfer &amp; analogy</text>
+      <text x="800" y="322">depth → expert “chunks”</text>
+      <text x="800" y="424">recall beats reread, w/ feedback</text>
+      <text x="800" y="522">kills the illusion of competence</text>
+      <text x="800" y="612">you remember what you generate</text>
+    </g>
+    <g fill="#6B6657" font-size="13">
+      <text x="800" y="254">Gick &amp; Holyoak ’83</text>
+      <text x="800" y="344">Chase &amp; Simon ’73</text>
+      <text x="800" y="446">Roediger &amp; Karpicke ’06 · Ericsson</text>
+      <text x="800" y="544">Bjork — desirable difficulties</text>
+      <text x="800" y="634">Slamecka &amp; Graf ’78</text>
+    </g>
+  </g>
+  <line x1="64" y1="266" x2="1136" y2="266" stroke="#E9E3D6"/>
+  <line x1="64" y1="356" x2="1136" y2="356" stroke="#E9E3D6"/>
+  <line x1="64" y1="470" x2="1136" y2="470" stroke="#E9E3D6"/>
+  <line x1="64" y1="560" x2="1136" y2="560" stroke="#E9E3D6"/>
+
+  <rect x="64" y="648" width="1072" height="48" rx="10" fill="#CC785C"/>
+  <text x="600" y="678" text-anchor="middle" font-size="17" font-weight="700" fill="#FBF9F3">“Better” = you can deliver a verified result — a receipt, not a warm feeling.</text>
+  <text x="1136" y="60" text-anchor="end" font-family="'Iowan Old Style', Palatino, serif" font-size="18" fill="#CC785C">Δ FDE-os</text>
+</svg>

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="740" viewBox="0 0 1200 740" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1200" height="740" fill="#F0EEE6"/>
+  <defs>
+    <radialGradient id="g1" cx="82%" cy="-8%" r="60%"><stop offset="0%" stop-color="#CC785C" stop-opacity="0.16"/><stop offset="100%" stop-color="#CC785C" stop-opacity="0"/></radialGradient>
+    <radialGradient id="g2" cx="-8%" cy="14%" r="55%"><stop offset="0%" stop-color="#BF916E" stop-opacity="0.14"/><stop offset="100%" stop-color="#BF916E" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1200" height="740" fill="url(#g1)"/><rect width="1200" height="740" fill="url(#g2)"/>
+  <text x="64" y="82" font-family="'Iowan Old Style', Palatino, Georgia, serif" font-size="44" font-weight="500" fill="#191919">Map → Ladder → Gate → Teach</text>
+  <text x="64" y="120" font-size="21" fill="#46423A">Width, depth, proof, retention — one loop, repeated per domain.</text>
+
+  <!-- four cards -->
+  <g>
+    <!-- MAP -->
+    <rect x="64" y="160" width="256" height="380" rx="16" fill="#FAF9F5" stroke="#E2DED3"/>
+    <text x="88" y="212" font-family="'Iowan Old Style', Palatino, serif" font-size="26" fill="#191919">1 · Map</text>
+    <text x="88" y="244" font-size="15" font-weight="700" fill="#B0563A">WIDTH</text>
+    <!-- mini graph glyph -->
+    <g stroke="#CC785C" stroke-width="2" fill="#CC785C">
+      <line x1="120" y1="300" x2="190" y2="278"/><line x1="120" y1="300" x2="176" y2="356"/><line x1="190" y1="278" x2="252" y2="320"/><line x1="176" y1="356" x2="252" y2="320"/>
+      <circle cx="120" cy="300" r="7"/><circle cx="190" cy="278" r="7"/><circle cx="176" cy="356" r="7"/><circle cx="252" cy="320" r="7"/>
+    </g>
+    <text x="88" y="420" font-size="15" fill="#46423A">a knowledge graph:</text>
+    <text x="88" y="444" font-size="15" fill="#46423A">concepts + how they</text>
+    <text x="88" y="468" font-size="15" fill="#46423A">connect → transfer</text>
+    <text x="88" y="512" font-size="13" fill="#6B6657">Gick &amp; Holyoak ’83</text>
+
+    <!-- LADDER -->
+    <rect x="352" y="160" width="256" height="380" rx="16" fill="#FAF9F5" stroke="#E2DED3"/>
+    <text x="376" y="212" font-family="'Iowan Old Style', Palatino, serif" font-size="26" fill="#191919">2 · Ladder</text>
+    <text x="376" y="244" font-size="15" font-weight="700" fill="#B0563A">DEPTH</text>
+    <g stroke="#CC785C" stroke-width="3"><line x1="430" y1="278" x2="430" y2="374"/><line x1="470" y1="278" x2="470" y2="374"/>
+      <line x1="430" y1="298" x2="470" y2="298"/><line x1="430" y1="326" x2="470" y2="326"/><line x1="430" y1="354" x2="470" y2="354"/></g>
+    <text x="88" y="0"/>
+    <text x="376" y="420" font-size="15" fill="#46423A">a skill drilled by</text>
+    <text x="376" y="444" font-size="15" fill="#46423A">doing → expert</text>
+    <text x="376" y="468" font-size="15" fill="#46423A">chunks (not reading)</text>
+    <text x="376" y="512" font-size="13" fill="#6B6657">Chase &amp; Simon ’73 · Ericsson</text>
+
+    <!-- GATE -->
+    <rect x="640" y="160" width="256" height="380" rx="16" fill="#CC785C"/>
+    <text x="664" y="212" font-family="'Iowan Old Style', Palatino, serif" font-size="26" fill="#FBF9F3">3 · Gate</text>
+    <text x="664" y="244" font-size="15" font-weight="700" fill="#F3E7DF">PROOF = “BETTER”</text>
+    <circle cx="712" cy="322" r="30" fill="none" stroke="#FBF9F3" stroke-width="4"/>
+    <path d="M698 322 l10 11 l20 -24" fill="none" stroke="#FBF9F3" stroke-width="5"/>
+    <text x="664" y="420" font-size="15" fill="#FBF9F3">an eval / does-it-pass</text>
+    <text x="664" y="444" font-size="15" fill="#FBF9F3">check. Kills the</text>
+    <text x="664" y="468" font-size="15" fill="#FBF9F3">illusion of competence.</text>
+    <text x="664" y="512" font-size="13" fill="#F3E7DF">Bjork · “it works,” not “I feel it”</text>
+
+    <!-- TEACH -->
+    <rect x="928" y="160" width="208" height="380" rx="16" fill="#FAF9F5" stroke="#E2DED3"/>
+    <text x="952" y="212" font-family="'Iowan Old Style', Palatino, serif" font-size="26" fill="#191919">4 · Teach</text>
+    <text x="952" y="244" font-size="15" font-weight="700" fill="#B0563A">RETENTION</text>
+    <rect x="952" y="284" width="150" height="66" rx="12" fill="#F0EEE6" stroke="#E2DED3"/>
+    <path d="M968 350 l0 20 l22 -20" fill="#F0EEE6" stroke="#E2DED3"/>
+    <text x="963" y="322" font-size="26" fill="#CC785C">“…so it’s like…”</text>
+    <text x="952" y="420" font-size="15" fill="#46423A">explain it to a 12-yo</text>
+    <text x="952" y="444" font-size="15" fill="#46423A">→ every hole lights up</text>
+    <text x="952" y="512" font-size="13" fill="#6B6657">Feynman · generation effect</text>
+  </g>
+
+  <!-- arrows -->
+  <g font-size="30" fill="#B0563A" text-anchor="middle">
+    <text x="336" y="356">→</text><text x="624" y="356">→</text><text x="912" y="356">→</text>
+  </g>
+  <path d="M600 596 C 600 640, 400 640, 400 600" fill="none" stroke="#BF916E" stroke-width="2" stroke-dasharray="5 5"/>
+  <text x="500" y="662" text-anchor="middle" font-size="14" font-style="italic" fill="#6B6657">repeat per domain — you become comb-shaped: one wide bar, many ladders on demand</text>
+  <text x="1136" y="716" text-anchor="end" font-family="'Iowan Old Style', Palatino, serif" font-size="18" fill="#CC785C">Δ FDE-os</text>
+</svg>
