@@ -140,17 +140,19 @@ def build_graph(target: str) -> dict:
 
 
 _PAGE_CSS = """<style>
-  body { margin:0; background:#0d1117; color:#e6edf3; font:14px/1.5 system-ui,sans-serif; }
-  header { padding:12px 16px; border-bottom:1px solid #30363d; }
-  header b { color:#58a6ff; }
+  /* light by default — never a dark/black background */
+  :root { color-scheme: light; }
+  body { margin:0; background:#ffffff; color:#1a1a1a; font:14px/1.5 system-ui,sans-serif; }
+  header { padding:12px 16px; border-bottom:1px solid #e6e6e6; }
+  header b { color:#1a1a1a; }
   #wrap { display:flex; height:calc(100vh - 50px); }
-  #list { width:340px; overflow:auto; border-right:1px solid #30363d; padding:8px; }
-  .c { padding:2px 0; } .c a { color:#e6edf3; text-decoration:none; cursor:pointer; }
-  .c.l1 { font-weight:700; color:#58a6ff; margin-top:8px; }
-  .c.l2 { margin-left:14px; } .c.l3 { margin-left:28px; color:#9da7b3; }
+  #list { width:340px; overflow:auto; border-right:1px solid #e6e6e6; padding:8px; }
+  .c { padding:2px 0; } .c a { color:#1a1a1a; text-decoration:none; cursor:pointer; }
+  .c.l1 { font-weight:700; color:#111111; margin-top:8px; }
+  .c.l2 { margin-left:14px; } .c.l3 { margin-left:28px; color:#6b6b6b; }
   #detail { flex:1; overflow:auto; padding:16px; }
-  .ev { display:block; color:#7ee787; text-decoration:none; font-size:13px; margin:2px 0; }
-  .pill { display:inline-block; font-size:11px; color:#9da7b3; border:1px solid #30363d;
+  .ev { display:block; color:#1a7f37; text-decoration:none; font-size:13px; margin:2px 0; }
+  .pill { display:inline-block; font-size:11px; color:#57606a; border:1px solid #d0d7de;
            border-radius:10px; padding:0 6px; margin-left:6px; }
 </style>"""
 
