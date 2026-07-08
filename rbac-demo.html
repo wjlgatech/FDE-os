@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RBAC on MLRun/Nuclio — try the authorization gate</title>
+<meta name="description" content="Interactive: give a subject a role on a project, request an action on a resource, and watch the Policy Decision Point allow or deny — deny-by-default, project-scoped. The same policy.json + logic as the tested rbac-mlrun-demo.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#F0EDE4;--paper-2:#F7F4EC;--paper-3:#FBF9F3;--ink:#1A1915;--ink-soft:#46423A;--muted:#7A7466;
+    --clay:#CC785C;--clay-deep:#B05B3C;--line:#E0D9C9;--line-soft:#E9E3D6;--go:#4B7B58;--go-bg:#E9F0EA;--no:#B0472F;--no-bg:#F6E7E1;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink-soft);font-family:"Hanken Grotesk",-apple-system,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 22px}
+  .serif{font-family:"Newsreader",Georgia,serif}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:17px;color:var(--ink);text-decoration:none}
+  .delta-mark{width:28px;height:28px;display:grid;place-items:center;border-radius:8px;background:var(--clay);color:var(--paper);font-weight:600}
+  .nav-cta{font-size:14px;color:var(--ink);text-decoration:none;padding:8px 15px;border-radius:999px;border:1px solid var(--line)}
+  header.hero{padding:26px 0 8px;max-width:780px}
+  .eyebrow{display:inline-block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--clay);margin-bottom:12px}
+  h1{font-family:"Newsreader",serif;font-size:clamp(28px,4.6vw,42px);line-height:1.06;letter-spacing:-.018em;color:var(--ink);font-weight:500}
+  h1 em{font-style:italic;color:var(--clay)}
+  .sub{max-width:660px;margin:14px 0 0;font-size:15.5px}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;margin:26px 0 40px}
+  @media(max-width:860px){.cols{grid-template-columns:1fr}}
+  .panel{border:1px solid var(--line);border-radius:16px;background:var(--paper-3);padding:20px}
+  .panel h2{font-family:"Newsreader",serif;font-size:20px;color:var(--ink);font-weight:500;margin-bottom:3px}
+  .panel .hint{font-size:12.5px;color:var(--muted);margin-bottom:14px}
+  label{display:block;font-size:12.5px;color:var(--ink-soft);margin:10px 0 4px;font-weight:600}
+  select,input[type=text]{width:100%;background:var(--paper-3);border:1px solid var(--line);color:var(--ink);padding:9px 11px;border-radius:9px;font-size:14px;font-family:inherit;outline:none}
+  select:focus,input:focus{border-color:var(--clay);box-shadow:0 0 0 3px rgba(204,120,92,.14)}
+  .row{display:flex;gap:10px} .row>div{flex:1}
+  .grant{border:1px dashed var(--line);border-radius:10px;padding:12px;margin-bottom:10px;position:relative;background:var(--paper-3)}
+  .grant .rm{position:absolute;top:8px;right:10px;border:0;background:none;color:var(--muted);cursor:pointer;font-size:16px}
+  .grant .rm:hover{color:var(--no)}
+  .addg{border:1px solid var(--line);background:var(--paper-3);color:var(--ink);border-radius:9px;padding:8px 13px;font-size:13px;cursor:pointer;font-family:inherit}
+  .addg:hover{border-color:var(--clay)}
+  .vbadge{display:inline-flex;align-items:center;gap:8px;font-family:"Newsreader",serif;font-size:30px;padding:12px 22px;border-radius:12px}
+  .vbadge.go{background:var(--go-bg);color:var(--go)} .vbadge.no{background:var(--no-bg);color:var(--no)}
+  .reason{font-size:15px;color:var(--ink-soft);margin:14px 0 6px}
+  .matched{font-size:13px;color:var(--muted)}
+  .audit{margin-top:14px;font-family:ui-monospace,monospace;font-size:11.5px;background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:10px;white-space:pre-wrap;color:var(--ink-soft)}
+  .presets{display:flex;flex-wrap:wrap;gap:7px;margin-top:6px}
+  .preset{font-size:12px;border:1px solid var(--line);background:var(--paper-3);border-radius:999px;padding:5px 11px;cursor:pointer}
+  .preset:hover{border-color:var(--clay)}
+  .agentbox{margin-top:14px;font-size:12px;color:var(--muted);border-top:1px solid var(--line-soft);padding-top:12px}
+  .agentbox code{font-family:ui-monospace,monospace;font-size:11.5px;background:var(--paper-2);border:1px solid var(--line);border-radius:5px;padding:1px 5px}
+  footer{border-top:1px solid var(--line);margin-top:28px;padding:24px 0 56px;text-align:center;color:var(--muted);font-size:13px}
+  .err{color:var(--no);padding:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><a class="brand" href="index.html"><span class="delta-mark serif">Δ</span> Delta · FDE-os</a>
+    <a class="nav-cta" href="toolkit.html">The Toolkit →</a></nav>
+  <header class="hero">
+    <span class="eyebrow">RBAC on MLRun / Nuclio · live</span>
+    <h1>Who's allowed to do <em>what</em>, where?</h1>
+    <p class="sub">Migrating off a commercial MLOps platform means rebuilding its access control. This is that layer, live: give a <b>subject</b> a role on a project, request an <b>action</b> on a <b>resource</b>, and the <b>Policy Decision Point</b> allows or denies — <b>deny-by-default</b>, project-scoped. Same <code>policy.json</code> + logic as the tested <code>rbac-mlrun-demo</code>.</p>
+  </header>
+
+  <div id="app" class="cols" style="display:none">
+    <!-- subject + request -->
+    <div class="panel">
+      <h2>The request</h2>
+      <p class="hint">Who is asking (their role/project grants), and what they're trying to do.</p>
+      <label>Subject's grants (role on a project — “*” = cluster-wide)</label>
+      <div id="grants"></div>
+      <button class="addg" id="addg">+ add a grant</button>
+
+      <div class="row" style="margin-top:14px">
+        <div><label>Action</label><select id="action"></select></div>
+        <div><label>Resource</label><select id="resource"></select></div>
+      </div>
+      <label>Target project</label><input type="text" id="project" value="demo">
+
+      <div class="presets">
+        <span style="font-size:12px;color:var(--muted);align-self:center">try:</span>
+        <button class="preset" data-p="dev-run">developer runs a function</button>
+        <button class="preset" data-p="viewer-run">viewer tries to run</button>
+        <button class="preset" data-p="cross">developer, wrong project</button>
+        <button class="preset" data-p="admin">platform-admin deletes anywhere</button>
+      </div>
+    </div>
+
+    <!-- verdict -->
+    <div class="panel">
+      <h2>The decision</h2>
+      <p class="hint">The PDP answers: may this subject take this action on this resource in this project?</p>
+      <div id="badge"></div>
+      <div class="reason" id="reason"></div>
+      <div class="matched" id="matched"></div>
+      <div class="audit" id="audit"></div>
+      <div class="agentbox">Same call an agent makes server-side: the enforcement middleware validates a JWT, then asks this PDP. Policy version <code id="pv"></code>.</div>
+    </div>
+  </div>
+  <div class="err" id="err" style="display:none"></div>
+
+  <footer><span style="color:var(--clay)">Δ</span> Client-side · reads the same <code>course/prep/tools/rbac-mlrun-demo/policy.json</code> · logic parity-checked against the Python PDP. Deny-by-default.</footer>
+</div>
+
+<script>
+var POLICY=null, grants=[{role:"developer",project:"demo"}];
+fetch("course/prep/tools/rbac-mlrun-demo/policy.json").then(r=>{if(!r.ok)throw new Error("HTTP "+r.status);return r.json();})
+  .then(function(p){ POLICY=p; init(); })
+  .catch(function(e){ document.getElementById('err').style.display='block'; document.getElementById('err').textContent="Couldn't load policy.json ("+e.message+"). Serve over http (GitHub Pages)."; });
+
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+function matches(pat,val){return pat==="*"||pat===val;}
+function decide(policy,subject,action,resource,project){
+  var roles=policy.roles||{};
+  for(var i=0;i<subject.grants.length;i++){
+    var g=subject.grants[i], perms=roles[g.role]; if(perms===undefined) continue;
+    for(var j=0;j<perms.length;j++){ var p=perms[j];
+      if(!(matches(p.action,action)&&matches(p.resource,resource))) continue;
+      if(p.scope==="*"||g.project==="*"||g.project===project)
+        return {allow:true,reason:"granted",matched:g.role+"@"+g.project+" via "+p.action+":"+p.resource,policy_version:policy.policy_version};
+    }
+  }
+  return {allow:false,reason:"deny-by-default: no grant permits this",matched:null,policy_version:policy.policy_version};
+}
+function init(){
+  document.getElementById('app').style.display='';
+  var roleOpts=Object.keys(POLICY.roles).map(r=>'<option>'+r+'</option>').join('');
+  window._roleOpts=roleOpts;
+  document.getElementById('action').innerHTML=POLICY.actions.map(a=>'<option>'+a+'</option>').join('');
+  document.getElementById('resource').innerHTML=POLICY.resources.map(r=>'<option>'+r+'</option>').join('');
+  document.getElementById('action').value="run"; document.getElementById('resource').value="function";
+  document.getElementById('pv').textContent=POLICY.policy_version;
+  renderGrants();
+  ['action','resource','project'].forEach(id=>document.getElementById(id).addEventListener('input',recompute));
+  document.getElementById('addg').addEventListener('click',function(){grants.push({role:"viewer",project:"demo"});renderGrants();recompute();});
+  document.querySelectorAll('.preset').forEach(b=>b.addEventListener('click',()=>preset(b.getAttribute('data-p'))));
+  recompute();
+}
+function renderGrants(){
+  var host=document.getElementById('grants'); host.innerHTML='';
+  grants.forEach(function(g,i){
+    var d=document.createElement('div'); d.className='grant';
+    d.innerHTML=(grants.length>1?'<button class="rm" data-i="'+i+'">×</button>':'')+
+      '<div class="row"><div><label>role</label><select data-i="'+i+'" data-k="role">'+window._roleOpts+'</select></div>'+
+      '<div><label>project (“*” = all)</label><input type="text" data-i="'+i+'" data-k="project" value="'+esc(g.project)+'"></div></div>';
+    host.appendChild(d);
+    d.querySelector('select[data-k=role]').value=g.role;
+  });
+  host.querySelectorAll('[data-k]').forEach(function(el){
+    el.addEventListener('input',function(){ grants[+el.getAttribute('data-i')][el.getAttribute('data-k')]=el.value; recompute(); });
+  });
+  host.querySelectorAll('.rm').forEach(b=>b.addEventListener('click',()=>{grants.splice(+b.getAttribute('data-i'),1);renderGrants();recompute();}));
+}
+function preset(p){
+  if(p==="dev-run"){grants=[{role:"developer",project:"demo"}];set("run","function","demo");}
+  if(p==="viewer-run"){grants=[{role:"viewer",project:"demo"}];set("run","function","demo");}
+  if(p==="cross"){grants=[{role:"developer",project:"demo"}];set("run","function","other");}
+  if(p==="admin"){grants=[{role:"platform-admin",project:"*"}];set("delete","artifact","anyproject");}
+  renderGrants(); recompute();
+}
+function set(a,r,proj){document.getElementById('action').value=a;document.getElementById('resource').value=r;document.getElementById('project').value=proj;}
+function recompute(){
+  var action=document.getElementById('action').value, resource=document.getElementById('resource').value, project=document.getElementById('project').value.trim()||"demo";
+  var d=decide(POLICY,{sub:"you",grants:grants},action,resource,project);
+  document.getElementById('badge').innerHTML=d.allow?'<span class="vbadge go">✅ ALLOW</span>':'<span class="vbadge no">⛔ DENY</span>';
+  document.getElementById('reason').textContent=d.reason;
+  document.getElementById('matched').textContent=d.matched?("matched: "+d.matched):"no matching grant";
+  document.getElementById('audit').textContent=JSON.stringify({sub:"you",action:action,resource:resource,project:project,decision:d.allow?"allow":"deny",policy_version:d.policy_version},null,2);
+}
+if(typeof module!=="undefined"&&module.exports){module.exports={decide:decide};}
+</script>
+</body>
+</html>

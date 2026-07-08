@@ -5,6 +5,8 @@ the deliverable (replace a commercial platform's lost access control with a cust
 open-source stack) built as the smallest real, tested slice. Policy-as-data, deny-by-default,
 project-scoped — and it **passes its own eval-gate**.
 
+**▶ Try it live (no clone):** [`wjlgatech.github.io/FDE-os/rbac-demo.html`](https://wjlgatech.github.io/FDE-os/rbac-demo.html) — same policy.json, client-side.
+
 ## The pieces (the architecture, runnable)
 - **`policy.json`** — policy as **data**: the four seed roles (`viewer`, `developer`,
   `project-admin`, `platform-admin`) → permissions (`action × resource × scope`). Single source of

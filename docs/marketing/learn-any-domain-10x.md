@@ -135,7 +135,7 @@ three; now there are zero).
 
 Both are open, so you can check the receipt instead of trusting the story:
 - **the map** — the 32-concept graph → [`wjlgatech.github.io/FDE-os/knowledge/mlops-rbac-migration-spine.html`](https://wjlgatech.github.io/FDE-os/knowledge/mlops-rbac-migration-spine.html)
-- **the proof** — a custom RBAC authorization layer (a Policy Decision Point + an enforcement middleware) with a **(subject, action, resource) → allow/deny test table that passes** → [`github.com/wjlgatech/FDE-os/tree/main/course/prep/tools/rbac-mlrun-demo`](https://github.com/wjlgatech/FDE-os/tree/main/course/prep/tools/rbac-mlrun-demo)
+- **the proof** — a custom RBAC authorization layer (a Policy Decision Point + an enforcement middleware) with a **(subject, action, resource) → allow/deny test table that passes** → [`github.com/wjlgatech/FDE-os/tree/main/course/prep/tools/rbac-mlrun-demo`](https://github.com/wjlgatech/FDE-os/tree/main/course/prep/tools/rbac-mlrun-demo) · [try it live](https://wjlgatech.github.io/FDE-os/rbac-demo.html)
 
 Wide, deep, and *proven* — in the time it used to take to feel vaguely prepared and be secretly
 terrified.
