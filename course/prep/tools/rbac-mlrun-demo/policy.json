@@ -1,0 +1,24 @@
+{
+  "policy_version": "2026-07-08.1",
+  "note": "Policy as DATA — single source of truth. Roles map to permissions (action x resource x scope). Deny-by-default: anything not granted here is denied. Replicates the four Iguazio-style roles; extend by editing this file, not the code.",
+  "actions": ["read", "run", "deploy", "delete", "admin"],
+  "resources": ["project", "function", "nuclio_function", "model", "artifact", "feature_set"],
+  "roles": {
+    "viewer": [
+      {"action": "read", "resource": "*", "scope": "project"}
+    ],
+    "developer": [
+      {"action": "read", "resource": "*", "scope": "project"},
+      {"action": "run", "resource": "function", "scope": "project"},
+      {"action": "run", "resource": "nuclio_function", "scope": "project"},
+      {"action": "deploy", "resource": "function", "scope": "project"},
+      {"action": "deploy", "resource": "nuclio_function", "scope": "project"}
+    ],
+    "project-admin": [
+      {"action": "*", "resource": "*", "scope": "project"}
+    ],
+    "platform-admin": [
+      {"action": "*", "resource": "*", "scope": "*"}
+    ]
+  }
+}
