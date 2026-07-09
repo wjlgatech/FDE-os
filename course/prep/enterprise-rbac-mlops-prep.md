@@ -4,7 +4,7 @@
 + a portfolio build + interview prep. Grounded in the research vault
 ([`../../knowledge/vault/mlops-rbac-migration/`](../../knowledge/vault/mlops-rbac-migration/)) → knowledge graph
 ([`../../knowledge/mlops-rbac-migration-spine.html`](../../knowledge/mlops-rbac-migration-spine.html), 32 concepts /
-35 edges via `knowledgefy`). JD: [`../target-jds/enterprise-rbac-mlops.md`](../target-jds/enterprise-rbac-mlops.md).*
+35 edges via `knowledgefy`). **Multi-source, source-tagged interactive view:** [`knowledge/rbac-multisource.html`](../../knowledge/rbac-multisource.html) (5 notes + retrieved Wikipedia/GitHub, colored by source). JD: [`../target-jds/enterprise-rbac-mlops.md`](../target-jds/enterprise-rbac-mlops.md).*
 
 ## The role in one line
 Replace a **sunset commercial vendor (Iguazio)** with its **open-source guts (MLRun + Nuclio)** and

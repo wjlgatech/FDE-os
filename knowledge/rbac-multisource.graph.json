@@ -1,0 +1,601 @@
+{
+  "nodes": [
+    {
+      "id": "00-domain-map-md-related",
+      "name": "Related",
+      "type": "concept",
+      "source": "Domain map",
+      "sourceUrl": "",
+      "summary": ""
+    },
+    {
+      "id": "00-domain-map-md-the-core-problem-the-lost-access-control-layer",
+      "name": "The core problem \u2014 the lost access-control layer",
+      "type": "concept",
+      "source": "Domain map",
+      "sourceUrl": "",
+      "summary": ""
+    },
+    {
+      "id": "00-domain-map-md-the-engagement-migrate-off-iguazio-rebuild-rbac-on-oss",
+      "name": "The engagement \u2014 migrate off Iguazio, rebuild RBAC on OSS",
+      "type": "concept",
+      "source": "Domain map",
+      "sourceUrl": "",
+      "summary": ""
+    },
+    {
+      "id": "00-domain-map-md-the-migration",
+      "name": "The migration",
+      "type": "concept",
+      "source": "Domain map",
+      "sourceUrl": "",
+      "summary": ""
+    },
+    {
+      "id": "00-domain-map-md-what-done-means",
+      "name": "What \"done\" means",
+      "type": "concept",
+      "source": "Domain map",
+      "sourceUrl": "",
+      "summary": ""
+    },
+    {
+      "id": "00-domain-map-md-why-it-s-ambiguous-and-why-they-want-an-owner",
+      "name": "Why it's ambiguous (and why they want an owner)",
+      "type": "concept",
+      "source": "Domain map",
+      "sourceUrl": "",
+      "summary": ""
+    },
+    {
+      "id": "10-mlrun-nuclio-stack-md-deployment-reality",
+      "name": "Deployment reality",
+      "type": "concept",
+      "source": "MLRun / Nuclio",
+      "sourceUrl": "",
+      "summary": ""
+    },
+    {
+      "id": "10-mlrun-nuclio-stack-md-mlrun-the-mlops-orchestration-framework",
+      "name": "MLRun \u2014 the MLOps orchestration framework",
+      "type": "concept",
+      "source": "MLRun / Nuclio",
+      "sourceUrl": "",
+      "summary": ""
+    },
+    {
+      "id": "10-mlrun-nuclio-stack-md-nuclio-the-serverless-function-engine",
+      "name": "Nuclio \u2014 the serverless function engine",
+      "type": "concept",
+      "source": "MLRun / Nuclio",
+      "sourceUrl": "",
+      "summary": ""
+    },
+    {
+      "id": "10-mlrun-nuclio-stack-md-the-access-control-gap-in-the-oss-stack",
+      "name": "The access-control gap in the OSS stack",
+      "type": "concept",
+      "source": "MLRun / Nuclio",
+      "sourceUrl": "",
+      "summary": ""
+    },
+    {
+      "id": "10-mlrun-nuclio-stack-md-the-mlrun-nuclio-stack-the-substrate-you-re-securing",
+      "name": "The MLRun + Nuclio stack (the substrate you're securing)",
+      "type": "concept",
+      "source": "MLRun / Nuclio",
+      "sourceUrl": "",
+      "summary": ""
+    },
+    {
+      "id": "20-rbac-iam-foundations-md-authentication-vs-authorization",
+      "name": "Authentication vs authorization",
+      "type": "concept",
+      "source": "RBAC / IAM",
+      "sourceUrl": "",
+      "summary": ""
+    },
+    {
+      "id": "20-rbac-iam-foundations-md-enforcement-patterns-where-the-check-happens",
+      "name": "Enforcement patterns (where the check happens)",
+      "type": "concept",
+      "source": "RBAC / IAM",
+      "sourceUrl": "",
+      "summary": ""
+    },
+    {
+      "id": "20-rbac-iam-foundations-md-identity-oidc-oauth2-sso",
+      "name": "Identity: OIDC / OAuth2 / SSO",
+      "type": "concept",
+      "source": "RBAC / IAM",
+      "sourceUrl": "",
+      "summary": ""
+    },
+    {
+      "id": "20-rbac-iam-foundations-md-kubernetes-rbac-the-primitive-under-nuclio-mlrun",
+      "name": "Kubernetes RBAC (the primitive under Nuclio/MLRun)",
+      "type": "concept",
+      "source": "RBAC / IAM",
+      "sourceUrl": "",
+      "summary": ""
+    },
+    {
+      "id": "20-rbac-iam-foundations-md-rbac-core-model",
+      "name": "RBAC core model",
+      "type": "concept",
+      "source": "RBAC / IAM",
+      "sourceUrl": "",
+      "summary": ""
+    },
+    {
+      "id": "20-rbac-iam-foundations-md-rbac-iam-foundations-the-vocabulary-you-must-own",
+      "name": "RBAC & IAM foundations (the vocabulary you must own)",
+      "type": "concept",
+      "source": "RBAC / IAM",
+      "sourceUrl": "",
+      "summary": ""
+    },
+    {
+      "id": "20-rbac-iam-foundations-md-related",
+      "name": "Related",
+      "type": "concept",
+      "source": "RBAC / IAM",
+      "sourceUrl": "",
+      "summary": ""
+    },
+    {
+      "id": "30-custom-rbac-design-md-auditability-the-extend-half",
+      "name": "Auditability (the \"extend\" half)",
+      "type": "concept",
+      "source": "Custom-RBAC design",
+      "sourceUrl": "",
+      "summary": ""
+    },
+    {
+      "id": "30-custom-rbac-design-md-designing-the-custom-rbac-layer-the-deliverable",
+      "name": "Designing the custom RBAC layer (the deliverable)",
+      "type": "concept",
+      "source": "Custom-RBAC design",
+      "sourceUrl": "",
+      "summary": ""
+    },
+    {
+      "id": "30-custom-rbac-design-md-multi-tenancy-project-scoping",
+      "name": "Multi-tenancy / project scoping",
+      "type": "concept",
+      "source": "Custom-RBAC design",
+      "sourceUrl": "",
+      "summary": ""
+    },
+    {
+      "id": "30-custom-rbac-design-md-related",
+      "name": "Related",
+      "type": "concept",
+      "source": "Custom-RBAC design",
+      "sourceUrl": "",
+      "summary": ""
+    },
+    {
+      "id": "30-custom-rbac-design-md-the-decision-engine",
+      "name": "The decision engine",
+      "type": "concept",
+      "source": "Custom-RBAC design",
+      "sourceUrl": "",
+      "summary": ""
+    },
+    {
+      "id": "30-custom-rbac-design-md-the-enforcement-points-peps",
+      "name": "The enforcement points (PEPs)",
+      "type": "concept",
+      "source": "Custom-RBAC design",
+      "sourceUrl": "",
+      "summary": ""
+    },
+    {
+      "id": "30-custom-rbac-design-md-the-one-sentence-architecture",
+      "name": "The one-sentence architecture",
+      "type": "concept",
+      "source": "Custom-RBAC design",
+      "sourceUrl": "",
+      "summary": ""
+    },
+    {
+      "id": "30-custom-rbac-design-md-the-policy-model-data-single-source-of-truth",
+      "name": "The policy model (data, single source of truth)",
+      "type": "concept",
+      "source": "Custom-RBAC design",
+      "sourceUrl": "",
+      "summary": ""
+    },
+    {
+      "id": "40-scoping-and-portfolio-proof-md-owning-the-ambiguity-scoping-portfolio-proof",
+      "name": "Owning the ambiguity \u2014 scoping + portfolio proof",
+      "type": "concept",
+      "source": "Scoping + proof",
+      "sourceUrl": "",
+      "summary": ""
+    },
+    {
+      "id": "40-scoping-and-portfolio-proof-md-portfolio-proof-make-the-capability-observed-not-claimed",
+      "name": "Portfolio proof (make the capability observed, not claimed)",
+      "type": "concept",
+      "source": "Scoping + proof",
+      "sourceUrl": "",
+      "summary": ""
+    },
+    {
+      "id": "40-scoping-and-portfolio-proof-md-related",
+      "name": "Related",
+      "type": "concept",
+      "source": "Scoping + proof",
+      "sourceUrl": "",
+      "summary": ""
+    },
+    {
+      "id": "40-scoping-and-portfolio-proof-md-risks-to-name-early-senior-signal",
+      "name": "Risks to name early (senior signal)",
+      "type": "concept",
+      "source": "Scoping + proof",
+      "sourceUrl": "",
+      "summary": ""
+    },
+    {
+      "id": "40-scoping-and-portfolio-proof-md-scope-it-yourself-what-the-jd-is-really-testing",
+      "name": "Scope it yourself (what the JD is really testing)",
+      "type": "concept",
+      "source": "Scoping + proof",
+      "sourceUrl": "",
+      "summary": ""
+    },
+    {
+      "id": "40-scoping-and-portfolio-proof-md-the-smallest-end-to-end-win-ship-this-first",
+      "name": "The smallest end-to-end win (ship this first)",
+      "type": "concept",
+      "source": "Scoping + proof",
+      "sourceUrl": "",
+      "summary": ""
+    },
+    {
+      "id": "ev-docs-mlrun-org-nctions-html",
+      "name": "docs.mlrun.org",
+      "type": "evidence",
+      "source": "MLRun / Nuclio",
+      "sourceUrl": "https://docs.mlrun.org/en/v1.10.0/concepts/nuclio-real-time-functions.html",
+      "summary": ""
+    },
+    {
+      "id": "ev-github-com-mlrun-mlrun",
+      "name": "github.com",
+      "type": "evidence",
+      "source": "MLRun / Nuclio",
+      "sourceUrl": "https://github.com/mlrun/mlrun",
+      "summary": ""
+    },
+    {
+      "id": "ev-iguazio-com-difference",
+      "name": "iguazio.com",
+      "type": "evidence",
+      "source": "Domain map",
+      "sourceUrl": "https://www.iguazio.com/questions/iguazio-vs-mlrun-vs-nuclio-whats-the-difference/",
+      "summary": ""
+    },
+    {
+      "id": "ev-kubernetes-io-authz-rbac",
+      "name": "kubernetes.io",
+      "type": "evidence",
+      "source": "RBAC / IAM",
+      "sourceUrl": "https://kubernetes.io/docs/reference/access-authn-authz/rbac/",
+      "summary": ""
+    },
+    {
+      "id": "ev-kubernetes-io-authz-rbac-2",
+      "name": "kubernetes.io",
+      "type": "evidence",
+      "source": "Custom-RBAC design",
+      "sourceUrl": "https://kubernetes.io/docs/reference/access-authn-authz/rbac/",
+      "summary": ""
+    },
+    {
+      "id": "ev-kubernetes-io-d-practices",
+      "name": "kubernetes.io",
+      "type": "evidence",
+      "source": "RBAC / IAM",
+      "sourceUrl": "https://kubernetes.io/docs/concepts/security/rbac-good-practices/",
+      "summary": ""
+    },
+    {
+      "id": "ev-kubernetes-io-thorization",
+      "name": "kubernetes.io",
+      "type": "evidence",
+      "source": "RBAC / IAM",
+      "sourceUrl": "https://kubernetes.io/docs/reference/access-authn-authz/authorization/",
+      "summary": ""
+    },
+    {
+      "id": "ev-nuclio-io-ed-minikube",
+      "name": "nuclio.io",
+      "type": "evidence",
+      "source": "MLRun / Nuclio",
+      "sourceUrl": "https://nuclio.io/docs/latest/setup/minikube/getting-started-minikube/",
+      "summary": ""
+    },
+    {
+      "id": "web-mlrun",
+      "name": "mlrun",
+      "type": "retrieved",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/mlrun/mlrun",
+      "summary": "MLRun is an open source MLOps platform for quickly building and managing continuous ML applications across their lifecycle. MLRun integrates into your development and CI/CD environment and automates the delivery of produ"
+    },
+    {
+      "id": "web-nuclio",
+      "name": "nuclio",
+      "type": "retrieved",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/nuclio/nuclio",
+      "summary": "High-Performance Serverless event and data processing platform"
+    },
+    {
+      "id": "web-role-based-access-control",
+      "name": "Role-based access control",
+      "type": "retrieved",
+      "source": "Wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Role-based_access_control",
+      "summary": "In information security, role-based access control (RBAC) or role-based security is an approach to restricting system access to authorized users"
+    },
+    {
+      "id": "web-kubernetes",
+      "name": "Kubernetes",
+      "type": "retrieved",
+      "source": "Wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kubernetes",
+      "summary": "Kubernetes, also known as K8s, is an open-source container orchestration system for automating software deployment, scaling, and management"
+    },
+    {
+      "id": "web-openid-connect",
+      "name": "OpenID",
+      "type": "retrieved",
+      "source": "Wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/OpenID",
+      "summary": "OpenID is an open standard and decentralized authentication protocol promoted by the non-profit OpenID Foundation"
+    },
+    {
+      "id": "web-identity-management",
+      "name": "Identity and access management",
+      "type": "retrieved",
+      "source": "Wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Identity_and_access_management",
+      "summary": "Identity and access management or Identity management (IdM) is a framework of policies and technologies to ensure that the right users have the appropriate access to technology resources"
+    },
+    {
+      "id": "web-open-policy-agent",
+      "name": "opa",
+      "type": "retrieved",
+      "source": "GitHub",
+      "sourceUrl": "https://github.com/open-policy-agent/opa",
+      "summary": "Open Policy Agent (OPA) is an open source, general-purpose policy engine."
+    }
+  ],
+  "edges": [
+    {
+      "source": "00-domain-map-md-the-migration",
+      "target": "ev-iguazio-com-difference",
+      "type": "cites"
+    },
+    {
+      "source": "10-mlrun-nuclio-stack-md-mlrun-the-mlops-orchestration-framework",
+      "target": "ev-github-com-mlrun-mlrun",
+      "type": "cites"
+    },
+    {
+      "source": "10-mlrun-nuclio-stack-md-nuclio-the-serverless-function-engine",
+      "target": "ev-docs-mlrun-org-nctions-html",
+      "type": "cites"
+    },
+    {
+      "source": "10-mlrun-nuclio-stack-md-nuclio-the-serverless-function-engine",
+      "target": "ev-nuclio-io-ed-minikube",
+      "type": "cites"
+    },
+    {
+      "source": "20-rbac-iam-foundations-md-authentication-vs-authorization",
+      "target": "ev-kubernetes-io-thorization",
+      "type": "cites"
+    },
+    {
+      "source": "20-rbac-iam-foundations-md-kubernetes-rbac-the-primitive-under-nuclio-mlrun",
+      "target": "ev-kubernetes-io-authz-rbac",
+      "type": "cites"
+    },
+    {
+      "source": "20-rbac-iam-foundations-md-rbac-core-model",
+      "target": "ev-kubernetes-io-d-practices",
+      "type": "cites"
+    },
+    {
+      "source": "30-custom-rbac-design-md-the-enforcement-points-peps",
+      "target": "ev-kubernetes-io-authz-rbac-2",
+      "type": "cites"
+    },
+    {
+      "source": "00-domain-map-md-related",
+      "target": "00-domain-map-md-the-engagement-migrate-off-iguazio-rebuild-rbac-on-oss",
+      "type": "part_of"
+    },
+    {
+      "source": "00-domain-map-md-the-core-problem-the-lost-access-control-layer",
+      "target": "00-domain-map-md-the-engagement-migrate-off-iguazio-rebuild-rbac-on-oss",
+      "type": "part_of"
+    },
+    {
+      "source": "00-domain-map-md-the-migration",
+      "target": "00-domain-map-md-the-engagement-migrate-off-iguazio-rebuild-rbac-on-oss",
+      "type": "part_of"
+    },
+    {
+      "source": "00-domain-map-md-what-done-means",
+      "target": "00-domain-map-md-the-engagement-migrate-off-iguazio-rebuild-rbac-on-oss",
+      "type": "part_of"
+    },
+    {
+      "source": "00-domain-map-md-why-it-s-ambiguous-and-why-they-want-an-owner",
+      "target": "00-domain-map-md-the-engagement-migrate-off-iguazio-rebuild-rbac-on-oss",
+      "type": "part_of"
+    },
+    {
+      "source": "10-mlrun-nuclio-stack-md-deployment-reality",
+      "target": "10-mlrun-nuclio-stack-md-the-mlrun-nuclio-stack-the-substrate-you-re-securing",
+      "type": "part_of"
+    },
+    {
+      "source": "10-mlrun-nuclio-stack-md-mlrun-the-mlops-orchestration-framework",
+      "target": "10-mlrun-nuclio-stack-md-the-mlrun-nuclio-stack-the-substrate-you-re-securing",
+      "type": "part_of"
+    },
+    {
+      "source": "10-mlrun-nuclio-stack-md-nuclio-the-serverless-function-engine",
+      "target": "10-mlrun-nuclio-stack-md-the-mlrun-nuclio-stack-the-substrate-you-re-securing",
+      "type": "part_of"
+    },
+    {
+      "source": "10-mlrun-nuclio-stack-md-the-access-control-gap-in-the-oss-stack",
+      "target": "10-mlrun-nuclio-stack-md-the-mlrun-nuclio-stack-the-substrate-you-re-securing",
+      "type": "part_of"
+    },
+    {
+      "source": "20-rbac-iam-foundations-md-authentication-vs-authorization",
+      "target": "20-rbac-iam-foundations-md-rbac-iam-foundations-the-vocabulary-you-must-own",
+      "type": "part_of"
+    },
+    {
+      "source": "20-rbac-iam-foundations-md-enforcement-patterns-where-the-check-happens",
+      "target": "20-rbac-iam-foundations-md-rbac-iam-foundations-the-vocabulary-you-must-own",
+      "type": "part_of"
+    },
+    {
+      "source": "20-rbac-iam-foundations-md-identity-oidc-oauth2-sso",
+      "target": "20-rbac-iam-foundations-md-rbac-iam-foundations-the-vocabulary-you-must-own",
+      "type": "part_of"
+    },
+    {
+      "source": "20-rbac-iam-foundations-md-kubernetes-rbac-the-primitive-under-nuclio-mlrun",
+      "target": "20-rbac-iam-foundations-md-rbac-iam-foundations-the-vocabulary-you-must-own",
+      "type": "part_of"
+    },
+    {
+      "source": "20-rbac-iam-foundations-md-rbac-core-model",
+      "target": "20-rbac-iam-foundations-md-rbac-iam-foundations-the-vocabulary-you-must-own",
+      "type": "part_of"
+    },
+    {
+      "source": "20-rbac-iam-foundations-md-related",
+      "target": "20-rbac-iam-foundations-md-rbac-iam-foundations-the-vocabulary-you-must-own",
+      "type": "part_of"
+    },
+    {
+      "source": "30-custom-rbac-design-md-auditability-the-extend-half",
+      "target": "30-custom-rbac-design-md-designing-the-custom-rbac-layer-the-deliverable",
+      "type": "part_of"
+    },
+    {
+      "source": "30-custom-rbac-design-md-multi-tenancy-project-scoping",
+      "target": "30-custom-rbac-design-md-designing-the-custom-rbac-layer-the-deliverable",
+      "type": "part_of"
+    },
+    {
+      "source": "30-custom-rbac-design-md-related",
+      "target": "30-custom-rbac-design-md-designing-the-custom-rbac-layer-the-deliverable",
+      "type": "part_of"
+    },
+    {
+      "source": "30-custom-rbac-design-md-the-decision-engine",
+      "target": "30-custom-rbac-design-md-designing-the-custom-rbac-layer-the-deliverable",
+      "type": "part_of"
+    },
+    {
+      "source": "30-custom-rbac-design-md-the-enforcement-points-peps",
+      "target": "30-custom-rbac-design-md-designing-the-custom-rbac-layer-the-deliverable",
+      "type": "part_of"
+    },
+    {
+      "source": "30-custom-rbac-design-md-the-one-sentence-architecture",
+      "target": "30-custom-rbac-design-md-designing-the-custom-rbac-layer-the-deliverable",
+      "type": "part_of"
+    },
+    {
+      "source": "30-custom-rbac-design-md-the-policy-model-data-single-source-of-truth",
+      "target": "30-custom-rbac-design-md-designing-the-custom-rbac-layer-the-deliverable",
+      "type": "part_of"
+    },
+    {
+      "source": "40-scoping-and-portfolio-proof-md-portfolio-proof-make-the-capability-observed-not-claimed",
+      "target": "40-scoping-and-portfolio-proof-md-owning-the-ambiguity-scoping-portfolio-proof",
+      "type": "part_of"
+    },
+    {
+      "source": "40-scoping-and-portfolio-proof-md-related",
+      "target": "40-scoping-and-portfolio-proof-md-owning-the-ambiguity-scoping-portfolio-proof",
+      "type": "part_of"
+    },
+    {
+      "source": "40-scoping-and-portfolio-proof-md-risks-to-name-early-senior-signal",
+      "target": "40-scoping-and-portfolio-proof-md-owning-the-ambiguity-scoping-portfolio-proof",
+      "type": "part_of"
+    },
+    {
+      "source": "40-scoping-and-portfolio-proof-md-scope-it-yourself-what-the-jd-is-really-testing",
+      "target": "40-scoping-and-portfolio-proof-md-owning-the-ambiguity-scoping-portfolio-proof",
+      "type": "part_of"
+    },
+    {
+      "source": "40-scoping-and-portfolio-proof-md-the-smallest-end-to-end-win-ship-this-first",
+      "target": "40-scoping-and-portfolio-proof-md-owning-the-ambiguity-scoping-portfolio-proof",
+      "type": "part_of"
+    },
+    {
+      "source": "web-mlrun",
+      "target": "10-mlrun-nuclio-stack-md-mlrun-the-mlops-orchestration-framework",
+      "type": "defines"
+    },
+    {
+      "source": "web-nuclio",
+      "target": "10-mlrun-nuclio-stack-md-nuclio-the-serverless-function-engine",
+      "type": "defines"
+    },
+    {
+      "source": "web-role-based-access-control",
+      "target": "web-role-based-access-control",
+      "type": "defines"
+    },
+    {
+      "source": "web-kubernetes",
+      "target": "20-rbac-iam-foundations-md-kubernetes-rbac-the-primitive-under-nuclio-mlrun",
+      "type": "defines"
+    },
+    {
+      "source": "web-openid-connect",
+      "target": "20-rbac-iam-foundations-md-identity-oidc-oauth2-sso",
+      "type": "defines"
+    },
+    {
+      "source": "web-identity-management",
+      "target": "20-rbac-iam-foundations-md-identity-oidc-oauth2-sso",
+      "type": "defines"
+    },
+    {
+      "source": "web-open-policy-agent",
+      "target": "30-custom-rbac-design-md-the-policy-model-data-single-source-of-truth",
+      "type": "defines"
+    }
+  ],
+  "sources": {
+    "Domain map": 7,
+    "MLRun / Nuclio": 8,
+    "RBAC / IAM": 10,
+    "Custom-RBAC design": 9,
+    "Scoping + proof": 6,
+    "GitHub": 3,
+    "Wikipedia": 4
+  }
+}
