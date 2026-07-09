@@ -6,7 +6,7 @@ JD=os.path.abspath(os.path.join(_H,"..","..","..","course","target-jds","anthrop
 
 class T(unittest.TestCase):
     def setUp(self):
-        self.a=m.build_artifact(m.compile_jd(JD),"Anthropic — FDE","https://job-boards.greenhouse.io/anthropic/jobs/4985877008","job-description","anthropic-fde")
+        self.a=m.build_artifact(m.compile_jd(JD),"Anthropic — FDE","https://job-boards.greenhouse.io/anthropic/jobs/4985877008","job-description","anthropic-fde",True)
     def test_grounded_source(self):
         self.assertTrue(re.match(r"^https?://",self.a["source"]["url"])); self.assertTrue(self.a["source"]["title"])
     def test_graph_nonempty_and_no_dangling_edges(self):
