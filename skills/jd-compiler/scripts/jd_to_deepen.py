@@ -72,14 +72,14 @@ def build_artifact(comp: dict, title: str, url: str, kind: str, aid: str | None,
     present = [(k, v) for k, v in comp.get("clusters", {}).items() if v.get("present")]
     tools = list(comp.get("tools", {}).keys()) if isinstance(comp.get("tools"), dict) else list(comp.get("tools") or [])
 
-    nodes = [{"id": "role", "type": "role", "name": title, "summary": "The role, distilled from its posting."}]
+    nodes = [{"id": "role", "type": "role", "name": title, "summary": "The role, distilled from its posting.", "source": "Job description"}]
     edges = []
     seen = {"role"}
     sources: list[str] = []
 
-    def add_node(nid, ntype, name, summary):
+    def add_node(nid, ntype, name, summary, source="Job description"):
         if nid not in seen:
-            nodes.append({"id": nid, "type": ntype, "name": name, "summary": summary}); seen.add(nid)
+            nodes.append({"id": nid, "type": ntype, "name": name, "summary": summary, "source": source}); seen.add(nid)
         return nid
 
     def resolve(name, wtitle, is_tool):
@@ -90,18 +90,18 @@ def build_artifact(comp: dict, title: str, url: str, kind: str, aid: str | None,
         nid = ("t-" if is_tool else "c-") + slug(name)
         if info:
             src = info.get("url", "")
-            tag = " (Wikipedia)" if "wikipedia" in src else (" (GitHub)" if "github" in src else "")
-            add_node(nid, info.get("kind", "tool" if is_tool else "concept"), info["name"], (info.get("summary") or "").strip() + tag)
+            label = "Wikipedia" if "wikipedia" in src else ("GitHub" if "github" in src else "Web")
+            add_node(nid, info.get("kind", "tool" if is_tool else "concept"), info["name"], (info.get("summary") or "").strip() + f" ({label})", label)
             if src: sources.append(src)
             if not offline:  # real relationships → real neighbor nodes
                 ent = research.wikidata_entity(name)
                 if ent:
                     for rel, tgt in research.wikidata_relations(ent["id"], max_rel=1):
                         if research.domain_ok(tgt) or research.domain_ok(rel):
-                            tnid = add_node("n-" + slug(tgt), "concept", tgt, f"{tgt} — {rel} of {info['name']}.")
+                            tnid = add_node("n-" + slug(tgt), "concept", tgt, f"{tgt} — {rel} of {info['name']}.", "Wikidata")
                             edges.append({"source": nid, "target": tnid, "type": rel})
             return nid, True
-        add_node(nid, "tool" if is_tool else "concept", name, "Named in the JD (no open definition retrieved).")
+        add_node(nid, "tool" if is_tool else "concept", name, "Named in the JD (no open definition retrieved).", "Job description")
         return nid, False
 
     anchor_present = [k for k, _ in present]
