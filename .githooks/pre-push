@@ -1,0 +1,26 @@
+#!/bin/sh
+# pre-push — refuse DIRECT pushes to main. main is PR-only (see CONTRIBUTING.md).
+#
+# Why a hook and not GitHub branch protection: this is a user-owned PRIVATE repo on the free plan,
+# where GitHub allows neither branch protection nor rulesets (they need Pro or a public repo). This
+# hook is the local substitute — it blocks the push before it leaves any checkout that has run
+# `git config core.hooksPath .githooks` (see scripts/setup-hooks.sh).
+#
+# Genuine emergency override:  ALLOW_MAIN_PUSH=1 git push
+protected="refs/heads/main"
+while read -r local_ref local_sha remote_ref remote_sha; do
+  if [ "$remote_ref" = "$protected" ]; then
+    if [ "$ALLOW_MAIN_PUSH" = "1" ]; then
+      echo "pre-push: ALLOW_MAIN_PUSH=1 — permitting a direct push to main." >&2
+    else
+      echo "" >&2
+      echo "  ✋ Direct push to main is blocked — main is PR-only." >&2
+      echo "     git switch -c feat/your-change && git push -u origin HEAD && gh pr create --fill" >&2
+      echo "     Then: gh pr merge --squash   (after the tests check is green)" >&2
+      echo "     See CONTRIBUTING.md. Emergency override: ALLOW_MAIN_PUSH=1 git push" >&2
+      echo "" >&2
+      exit 1
+    fi
+  fi
+done
+exit 0
