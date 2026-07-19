@@ -38,7 +38,8 @@ class TestProtocol(unittest.TestCase):
         resp = srv.handle_request(_req("tools/list"))
         names = {t["name"] for t in resp["result"]["tools"]}
         self.assertEqual(names, {"true_score", "rag_eval", "criteria_score",
-                                 "eval_loop", "invisible_workflow_map", "jd_compile", "doc_gate"})
+                                 "eval_loop", "invisible_workflow_map", "jd_compile", "doc_gate",
+                                 "hub_find"})
         for t in resp["result"]["tools"]:
             self.assertEqual(t["inputSchema"]["type"], "object")
             self.assertTrue(t["description"])
@@ -64,6 +65,14 @@ class TestProtocol(unittest.TestCase):
         }))
         self.assertFalse(r3["result"].get("isError"))
         self.assertIn("VERDICT", r3["result"]["content"][0]["text"])
+        # hub_find retrieves a compiled external toolset with its honest edge
+        r4 = srv.handle_request(_req("tools/call", {
+            "name": "hub_find", "arguments": {"need": "LLM observability evals"},
+        }))
+        self.assertFalse(r4["result"].get("isError"))
+        text = r4["result"]["content"][0]["text"]
+        self.assertIn("langfuse", text)
+        self.assertIn("not good at", text)
 
     def test_notification_returns_none(self):
         # notifications/initialized is a notification (no id) -> no response
