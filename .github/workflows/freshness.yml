@@ -33,3 +33,49 @@ jobs:
         with:
           name: freshness-report
           path: freshness-report.md
+
+  # Hub drift: the compiled cited-repo knowledge (knowledge/hub/) tracks upstream HEADs.
+  # Active upstreams drift weekly by nature, so drift is NOT a failure — it triggers a
+  # rebuild and a bot PR (main stays PR-only; a human merges). Known limitation: PRs
+  # created with GITHUB_TOKEN don't auto-trigger CI — re-run checks from the PR page.
+  hub-drift:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install deps
+        run: pip install pyyaml
+      - name: Check hub freshness
+        id: drift
+        run: |
+          set +e
+          python3 skills/repo-compiler/scripts/repo_compile.py refresh
+          code=$?
+          set -e
+          if [ "$code" = "3" ]; then echo "drift=true" >> "$GITHUB_OUTPUT";
+          elif [ "$code" = "0" ]; then echo "drift=false" >> "$GITHUB_OUTPUT";
+          else exit "$code"; fi
+      - name: Rebuild hub + open bot PR
+        if: steps.drift.outputs.drift == 'true'
+        run: |
+          python3 skills/repo-compiler/scripts/repo_compile.py all --render-html
+          git config user.name "hub-refresh-bot"
+          git config user.email "actions@github.com"
+          git checkout -B bot/hub-refresh
+          git add knowledge/hub/
+          git diff --cached --quiet && { echo "no content change despite SHA drift"; exit 0; }
+          git commit -m "chore(hub): weekly refresh — recompile drifted cited repos"
+          git push -f origin bot/hub-refresh
+          gh pr list --head bot/hub-refresh --state open --json number --jq length | grep -q '^0$' \
+            && gh pr create --base main --head bot/hub-refresh \
+                 --title "chore(hub): weekly refresh of compiled cited-repo knowledge" \
+                 --body "Automated weekly rebuild: upstream HEADs drifted. Diff = new upstream content only; review and merge." \
+            || echo "bot PR already open — branch updated"

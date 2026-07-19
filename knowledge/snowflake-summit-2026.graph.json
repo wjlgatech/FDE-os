@@ -1,0 +1,404 @@
+{
+  "counts": {
+    "concepts": 16,
+    "edges": 32,
+    "evidence": 17
+  },
+  "edges": [
+    {
+      "source": "ds-essential-features-md-data-governance-and-security",
+      "target": "ev-docs-snowflake-com-ide-security",
+      "type": "cites"
+    },
+    {
+      "source": "ds-essential-features-md-data-sharing-and-the-marketplace",
+      "target": "ev-docs-snowflake-com-haring-intro",
+      "type": "cites"
+    },
+    {
+      "source": "ds-essential-features-md-data-sharing-and-the-marketplace",
+      "target": "ev-snowflake-com-marketplace",
+      "type": "cites"
+    },
+    {
+      "source": "ds-essential-features-md-snowflake-cortex-ai",
+      "target": "ev-docs-snowflake-com-tex-overview",
+      "type": "cites"
+    },
+    {
+      "source": "ds-essential-features-md-snowflake-feature-store",
+      "target": "ev-docs-snowflake-com-ore-overview",
+      "type": "cites"
+    },
+    {
+      "source": "ds-essential-features-md-snowflake-notebooks",
+      "target": "ev-docs-snowflake-com-ht-notebooks",
+      "type": "cites"
+    },
+    {
+      "source": "ds-essential-features-md-snowpark-for-python",
+      "target": "ev-docs-snowflake-com-python-index",
+      "type": "cites"
+    },
+    {
+      "source": "ds-essential-features-md-zero-copy-cloning",
+      "target": "ev-docs-snowflake-com-object-clone",
+      "type": "cites"
+    },
+    {
+      "source": "summit-announcements-md-adaptive-compute-workload-aware-engine",
+      "target": "ev-select-dev-cement-recap",
+      "type": "cites"
+    },
+    {
+      "source": "summit-announcements-md-ai-agent-identity-ga-the-security-baseline",
+      "target": "ev-futurumgroup-com-se-delivers",
+      "type": "cites"
+    },
+    {
+      "source": "summit-announcements-md-cortex-sense-enterprise-memory",
+      "target": "ev-atlan-com-nouncements",
+      "type": "cites"
+    },
+    {
+      "source": "summit-announcements-md-cowork-the-personal-work-agent",
+      "target": "ev-medium-com-09f3d5ffeefe",
+      "type": "cites"
+    },
+    {
+      "source": "summit-announcements-md-horizon-context-governed-metadata-beyond-snowflake",
+      "target": "ev-constellationr-com-g-iceberg-v3",
+      "type": "cites"
+    },
+    {
+      "source": "summit-announcements-md-openai-models-in-cortex",
+      "target": "ev-openai-com-partnership",
+      "type": "cites"
+    },
+    {
+      "source": "summit-announcements-md-openai-models-in-cortex",
+      "target": "ev-snowflake-com-product-ai",
+      "type": "cites"
+    },
+    {
+      "source": "summit-announcements-md-openflow-datastream-iceberg-v3-the-substrate",
+      "target": "ev-blogs-perficient-com-summit-2026",
+      "type": "cites"
+    },
+    {
+      "source": "summit-announcements-md-snowflake-summit-2026-the-agentic-enterprise-announcements",
+      "target": "ev-atlan-com-nouncements",
+      "type": "cites"
+    },
+    {
+      "source": "summit-announcements-md-snowflake-summit-2026-the-agentic-enterprise-announcements",
+      "target": "ev-flexera-com-summit-2026",
+      "type": "cites"
+    },
+    {
+      "source": "ds-essential-features-md-data-governance-and-security",
+      "target": "ds-essential-features-md-snowflake-for-data-scientists-the-seven-essential-features",
+      "type": "part_of"
+    },
+    {
+      "source": "ds-essential-features-md-data-sharing-and-the-marketplace",
+      "target": "ds-essential-features-md-snowflake-for-data-scientists-the-seven-essential-features",
+      "type": "part_of"
+    },
+    {
+      "source": "ds-essential-features-md-snowflake-cortex-ai",
+      "target": "ds-essential-features-md-snowflake-for-data-scientists-the-seven-essential-features",
+      "type": "part_of"
+    },
+    {
+      "source": "ds-essential-features-md-snowflake-feature-store",
+      "target": "ds-essential-features-md-snowflake-for-data-scientists-the-seven-essential-features",
+      "type": "part_of"
+    },
+    {
+      "source": "ds-essential-features-md-snowflake-notebooks",
+      "target": "ds-essential-features-md-snowflake-for-data-scientists-the-seven-essential-features",
+      "type": "part_of"
+    },
+    {
+      "source": "ds-essential-features-md-snowpark-for-python",
+      "target": "ds-essential-features-md-snowflake-for-data-scientists-the-seven-essential-features",
+      "type": "part_of"
+    },
+    {
+      "source": "ds-essential-features-md-zero-copy-cloning",
+      "target": "ds-essential-features-md-snowflake-for-data-scientists-the-seven-essential-features",
+      "type": "part_of"
+    },
+    {
+      "source": "summit-announcements-md-adaptive-compute-workload-aware-engine",
+      "target": "summit-announcements-md-snowflake-summit-2026-the-agentic-enterprise-announcements",
+      "type": "part_of"
+    },
+    {
+      "source": "summit-announcements-md-ai-agent-identity-ga-the-security-baseline",
+      "target": "summit-announcements-md-snowflake-summit-2026-the-agentic-enterprise-announcements",
+      "type": "part_of"
+    },
+    {
+      "source": "summit-announcements-md-cortex-sense-enterprise-memory",
+      "target": "summit-announcements-md-snowflake-summit-2026-the-agentic-enterprise-announcements",
+      "type": "part_of"
+    },
+    {
+      "source": "summit-announcements-md-cowork-the-personal-work-agent",
+      "target": "summit-announcements-md-snowflake-summit-2026-the-agentic-enterprise-announcements",
+      "type": "part_of"
+    },
+    {
+      "source": "summit-announcements-md-horizon-context-governed-metadata-beyond-snowflake",
+      "target": "summit-announcements-md-snowflake-summit-2026-the-agentic-enterprise-announcements",
+      "type": "part_of"
+    },
+    {
+      "source": "summit-announcements-md-openai-models-in-cortex",
+      "target": "summit-announcements-md-snowflake-summit-2026-the-agentic-enterprise-announcements",
+      "type": "part_of"
+    },
+    {
+      "source": "summit-announcements-md-openflow-datastream-iceberg-v3-the-substrate",
+      "target": "summit-announcements-md-snowflake-summit-2026-the-agentic-enterprise-announcements",
+      "type": "part_of"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "ds-essential-features-md-data-governance-and-security",
+      "label": "Data Governance and Security",
+      "level": 2,
+      "source_file": "ds-essential-features.md",
+      "type": "concept"
+    },
+    {
+      "id": "ds-essential-features-md-data-sharing-and-the-marketplace",
+      "label": "Data Sharing and the Marketplace",
+      "level": 2,
+      "source_file": "ds-essential-features.md",
+      "type": "concept"
+    },
+    {
+      "id": "ds-essential-features-md-snowflake-cortex-ai",
+      "label": "Snowflake Cortex AI",
+      "level": 2,
+      "source_file": "ds-essential-features.md",
+      "type": "concept"
+    },
+    {
+      "id": "ds-essential-features-md-snowflake-feature-store",
+      "label": "Snowflake Feature Store",
+      "level": 2,
+      "source_file": "ds-essential-features.md",
+      "type": "concept"
+    },
+    {
+      "id": "ds-essential-features-md-snowflake-for-data-scientists-the-seven-essential-features",
+      "label": "Snowflake for data scientists — the seven essential features",
+      "level": 1,
+      "source_file": "ds-essential-features.md",
+      "type": "concept"
+    },
+    {
+      "id": "ds-essential-features-md-snowflake-notebooks",
+      "label": "Snowflake Notebooks",
+      "level": 2,
+      "source_file": "ds-essential-features.md",
+      "type": "concept"
+    },
+    {
+      "id": "ds-essential-features-md-snowpark-for-python",
+      "label": "Snowpark for Python",
+      "level": 2,
+      "source_file": "ds-essential-features.md",
+      "type": "concept"
+    },
+    {
+      "id": "ds-essential-features-md-zero-copy-cloning",
+      "label": "Zero-Copy Cloning",
+      "level": 2,
+      "source_file": "ds-essential-features.md",
+      "type": "concept"
+    },
+    {
+      "id": "summit-announcements-md-adaptive-compute-workload-aware-engine",
+      "label": "Adaptive Compute — workload-aware engine",
+      "level": 2,
+      "source_file": "summit-announcements.md",
+      "type": "concept"
+    },
+    {
+      "id": "summit-announcements-md-ai-agent-identity-ga-the-security-baseline",
+      "label": "AI Agent Identity (GA) — the security baseline",
+      "level": 2,
+      "source_file": "summit-announcements.md",
+      "type": "concept"
+    },
+    {
+      "id": "summit-announcements-md-cortex-sense-enterprise-memory",
+      "label": "Cortex Sense — enterprise memory",
+      "level": 2,
+      "source_file": "summit-announcements.md",
+      "type": "concept"
+    },
+    {
+      "id": "summit-announcements-md-cowork-the-personal-work-agent",
+      "label": "CoWork — the personal work agent",
+      "level": 2,
+      "source_file": "summit-announcements.md",
+      "type": "concept"
+    },
+    {
+      "id": "summit-announcements-md-horizon-context-governed-metadata-beyond-snowflake",
+      "label": "Horizon Context — governed metadata beyond Snowflake",
+      "level": 2,
+      "source_file": "summit-announcements.md",
+      "type": "concept"
+    },
+    {
+      "id": "summit-announcements-md-openai-models-in-cortex",
+      "label": "OpenAI models in Cortex",
+      "level": 2,
+      "source_file": "summit-announcements.md",
+      "type": "concept"
+    },
+    {
+      "id": "summit-announcements-md-openflow-datastream-iceberg-v3-the-substrate",
+      "label": "Openflow, Datastream, Iceberg v3 — the substrate",
+      "level": 2,
+      "source_file": "summit-announcements.md",
+      "type": "concept"
+    },
+    {
+      "id": "summit-announcements-md-snowflake-summit-2026-the-agentic-enterprise-announcements",
+      "label": "Snowflake Summit 2026 — the agentic enterprise announcements",
+      "level": 1,
+      "source_file": "summit-announcements.md",
+      "type": "concept"
+    },
+    {
+      "id": "ev-atlan-com-nouncements",
+      "label": "Atlan summit recap",
+      "source_file": "summit-announcements.md",
+      "type": "evidence",
+      "url": "https://atlan.com/know/snowflake/summit-2026-announcements/"
+    },
+    {
+      "id": "ev-blogs-perficient-com-summit-2026",
+      "label": "Perficient takeaways",
+      "source_file": "summit-announcements.md",
+      "type": "evidence",
+      "url": "https://blogs.perficient.com/six-takeaways-from-snowflake-summit-2026/"
+    },
+    {
+      "id": "ev-constellationr-com-g-iceberg-v3",
+      "label": "Constellation Research",
+      "source_file": "summit-announcements.md",
+      "type": "evidence",
+      "url": "https://www.constellationr.com/insights/news/snowflake-summit-2026-context-custom-model-training-iceberg-v3"
+    },
+    {
+      "id": "ev-docs-snowflake-com-haring-intro",
+      "label": "sharing docs",
+      "source_file": "ds-essential-features.md",
+      "type": "evidence",
+      "url": "https://docs.snowflake.com/en/user-guide/data-sharing-intro"
+    },
+    {
+      "id": "ev-docs-snowflake-com-ht-notebooks",
+      "label": "Notebooks docs",
+      "source_file": "ds-essential-features.md",
+      "type": "evidence",
+      "url": "https://docs.snowflake.com/en/user-guide/ui-snowsight/notebooks"
+    },
+    {
+      "id": "ev-docs-snowflake-com-ide-security",
+      "label": "Horizon docs",
+      "source_file": "ds-essential-features.md",
+      "type": "evidence",
+      "url": "https://docs.snowflake.com/en/user-guide/security"
+    },
+    {
+      "id": "ev-docs-snowflake-com-object-clone",
+      "label": "cloning docs",
+      "source_file": "ds-essential-features.md",
+      "type": "evidence",
+      "url": "https://docs.snowflake.com/en/user-guide/object-clone"
+    },
+    {
+      "id": "ev-docs-snowflake-com-ore-overview",
+      "label": "Feature Store docs",
+      "source_file": "ds-essential-features.md",
+      "type": "evidence",
+      "url": "https://docs.snowflake.com/en/developer-guide/snowflake-ml/feature-store/overview"
+    },
+    {
+      "id": "ev-docs-snowflake-com-python-index",
+      "label": "Snowpark docs",
+      "source_file": "ds-essential-features.md",
+      "type": "evidence",
+      "url": "https://docs.snowflake.com/en/developer-guide/snowpark/python/index"
+    },
+    {
+      "id": "ev-docs-snowflake-com-tex-overview",
+      "label": "Cortex docs",
+      "source_file": "ds-essential-features.md",
+      "type": "evidence",
+      "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/overview"
+    },
+    {
+      "id": "ev-flexera-com-summit-2026",
+      "label": "Flexera recap",
+      "source_file": "summit-announcements.md",
+      "type": "evidence",
+      "url": "https://www.flexera.com/blog/perspectives/snowflake-summit-2026/"
+    },
+    {
+      "id": "ev-futurumgroup-com-se-delivers",
+      "label": "Futurum analysis",
+      "source_file": "summit-announcements.md",
+      "type": "evidence",
+      "url": "https://futurumgroup.com/insights/snowflake-summit-2026-four-infrastructure-bets-that-determine-whether-the-agentic-enterprise-delivers/"
+    },
+    {
+      "id": "ev-medium-com-09f3d5ffeefe",
+      "label": "Snowflake builders blog",
+      "source_file": "summit-announcements.md",
+      "type": "evidence",
+      "url": "https://medium.com/snowflake/snowflake-summit-2026-summary-of-new-features-09f3d5ffeefe"
+    },
+    {
+      "id": "ev-openai-com-partnership",
+      "label": "OpenAI announcement",
+      "source_file": "summit-announcements.md",
+      "type": "evidence",
+      "url": "https://openai.com/index/snowflake-partnership/"
+    },
+    {
+      "id": "ev-select-dev-cement-recap",
+      "label": "select.dev recap",
+      "source_file": "summit-announcements.md",
+      "type": "evidence",
+      "url": "https://select.dev/posts/snowflake-summit-2026-product-announcement-recap"
+    },
+    {
+      "id": "ev-snowflake-com-marketplace",
+      "label": "Marketplace",
+      "source_file": "ds-essential-features.md",
+      "type": "evidence",
+      "url": "https://www.snowflake.com/en/data-cloud/marketplace/"
+    },
+    {
+      "id": "ev-snowflake-com-product-ai",
+      "label": "Snowflake AI",
+      "source_file": "summit-announcements.md",
+      "type": "evidence",
+      "url": "https://www.snowflake.com/en/product/ai/"
+    }
+  ],
+  "schema": "knowledgefy/1",
+  "source": "snowflake-summit-2026"
+}

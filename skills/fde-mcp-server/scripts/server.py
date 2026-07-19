@@ -153,7 +153,35 @@ def _tool_doc_gate(args: dict) -> str:
     return head + "\nVERDICT: " + ("GO" if ok else "NO-GO — " + "; ".join(reasons))
 
 
+def _tool_hub_find(args: dict) -> str:
+    """Query the hub's compiled external toolsets (top-rated cited repos) for a capability."""
+    hq = _load("skills/repo-compiler/scripts/hub_query.py", "hub_query")
+    need = args.get("need")
+    if not need:
+        raise ValueError("provide 'need' (what capability you're looking for)")
+    skills = hq.load_registry()
+    results = hq.find(need, skills, top=int(args.get("top", 3)))
+    if not results:
+        return hq.diagnose(skills)
+    return "\n\n".join(hq.render_skill(s, score) for score, s in results)
+
+
 TOOLS = {
+    "hub_find": {
+        "description": "Find which external toolset (compiled from the hub's top-rated cited repos) "
+                       "covers a capability — returns the integration recipe (skill/plugin/workflow), "
+                       "the honest notGoodAt edges, and the SHA-pinned source. Query this BEFORE "
+                       "adopting any external tool.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "need": {"type": "string", "description": "the capability you need, e.g. 'LLM observability evals'"},
+                "top": {"type": "integer", "description": "max results (default 3)"},
+            },
+            "required": ["need"],
+        },
+        "handler": _tool_hub_find,
+    },
     "true_score": {
         "description": "Score a Delta Field Manual draft against the TRUE rubric (T/R/U/E, 0-3 each) "
                        "and apply the ship gate (total >= 10 AND every letter >= 2).",

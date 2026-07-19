@@ -16,7 +16,7 @@ prompt (seeds Objective 3). Content production *is* product production.
 
 | Path | Role |
 |---|---|
-| `skills/` | FDE-os-native skills (9: `knowledgefy`, `true-scorer`, `criteria-scorer`, `rag-eval-harness`, `eval-loop`, `field-kit-generator`, `invisible-workflow-mapper`, `jd-compiler`, `fde-mcp-server`). `jd-compiler` compiles JDs (`course/target-jds/`) → competency knowledge + a cross-company matrix; `matrix --note` writes `knowledge/vault/jd-competencies/`, then `knowledgefy` builds `knowledge/jd-competency-spine.*` (extend its `CLUSTERS`/`TOOLS` tables as vocabulary grows). Built only where existing skills leave a verified gap. Each has `SKILL.md` + (where runnable) `scripts/` + `tests/`. `invisible-workflow-mapper` reconstructs an org's decision workflow from signals (adoption-readiness + archetype + probes, deterministic + gated) — deepens the `delta-discovery-protocol` field kit. To extend it, edit the `ARCHETYPES`/`PROBES`/`DIMENSIONS` tables in `scripts/workflow_map.py`. |
+| `skills/` | FDE-os-native skills (12: `knowledgefy`, `true-scorer`, `criteria-scorer`, `rag-eval-harness`, `eval-loop`, `field-kit-generator`, `invisible-workflow-mapper`, `jd-compiler`, `fde-mcp-server`, `doc-understanding`, `outcome-contract`, `repo-compiler`). `outcome-contract` gates an engagement on measured outcomes (GO/NO-GO; claimed ≠ measured). `repo-compiler` compiles every top-rated cited repo into a knowledge graph + tooling entry (see "External toolsets" below). `jd-compiler` compiles JDs (`course/target-jds/`) → competency knowledge + a cross-company matrix; `matrix --note` writes `knowledge/vault/jd-competencies/`, then `knowledgefy` builds `knowledge/jd-competency-spine.*` (extend its `CLUSTERS`/`TOOLS` tables as vocabulary grows). Built only where existing skills leave a verified gap. Each has `SKILL.md` + (where runnable) `scripts/` + `tests/`. `invisible-workflow-mapper` reconstructs an org's decision workflow from signals (adoption-readiness + archetype + probes, deterministic + gated) — deepens the `delta-discovery-protocol` field kit. To extend it, edit the `ARCHETYPES`/`PROBES`/`DIMENSIONS` tables in `scripts/workflow_map.py`. |
 | `knowledge/` | Generated spine (`fde-spine.*`). Regenerate with `knowledgefy`; don't hand-edit. |
 | `flywheel/` | Objective-3 infra + production runbook/metrics. `metrics.md` is the per-post funnel + the Gate A/B thresholds (the only owned metric is email conversions). Security-sensitive (Stage 3 handles real customer data, born-clean redaction). |
 | `docs/field-notes/` | The flywheel's journal — real FDE engagements distilled into **transferable vs domain-specific** lessons + 3-pillar impact + tooling gaps. The synthesized counterpart to live war-stories in `contribute.html`. When a pattern recurs across notes, it's a candidate for a new skill/course module. Add a note as `docs/field-notes/<date>-<slug>.md` and index it in that dir's README. Redact client specifics (Objective-3 privacy rule). |
@@ -34,6 +34,23 @@ prompt (seeds Objective 3). Content production *is* product production.
 | `docs/research/` | External sources (`sources/`) + critical evals. Honesty rule: a repost is not independent corroboration — note it (same R4 discipline as the vault). |
 | `ARCHITECTURE.md`, `docs/assets/` | System-design doc + the README infographics (hand-authored SVG, cream/ink/rust Anthropic-style; self-contained backgrounds so they render in GitHub light AND dark mode; no `<script>`/external refs so the GitHub sanitizer keeps them). |
 | `docs/marketing/` | Copy *about the project* (long-form article + short posts). House rule: 15-yo-legible, director-deep, funny — and gate each piece with `true-scorer`/`criteria-scorer` before shipping (we dogfood our own marketing). |
+
+## External toolsets (the hub) — query on trigger, don't carry in context
+
+Every top-rated repo FDE-os cites is compiled into a knowledge graph + a tooling entry under
+`knowledge/hub/` (registry: `repos.yml` · factory: `skills/repo-compiler` · viewers: `<slug>.html`).
+When you need an external capability (observability, MCP framework, tool discovery, MLOps, …),
+**query the hub first** instead of reaching for memory or the web:
+
+```bash
+python3 skills/repo-compiler/scripts/hub_query.py find <capability words>   # or MCP tool `hub_find`
+python3 skills/repo-compiler/scripts/hub_query.py recipe <repo>             # full entry
+```
+
+Each hit returns the **integration recipe** (discovery-source / plugin-dependency / workflow-organ /
+distribution-surface / course-citation), the honest **`notGoodAt`** edges, and a SHA-pinned source.
+Rules: adopt only via the recipe; read before you run (popularity ≠ safety); staleness is checked by
+`repo_compile.py refresh` (exit 3 = drift → re-run `all`). New citation → one entry in `repos.yml`.
 
 ## Native skills (current)
 

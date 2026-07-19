@@ -1,0 +1,319 @@
+{
+ "contractVersion": "1.0",
+ "source": {
+  "repo": "modelcontextprotocol/registry",
+  "sha": "29e32c39dcb5e0e2b43974089d959fcc4794eb6d",
+  "url": "https://github.com/modelcontextprotocol/registry",
+  "pushed_at": "2026-07-15T23:33:53Z"
+ },
+ "nodes": [
+  {
+   "id": "repo-modelcontextprotocol-registry",
+   "type": "repo",
+   "label": "modelcontextprotocol/registry",
+   "stars": 7048,
+   "description": "A community driven registry service for Model Context Protocol (MCP) servers.",
+   "license": "NOASSERTION",
+   "kind": "registry",
+   "why_cited": "the community MCP registry service \u2014 distribution surface for hub tooling",
+   "source_url": "https://github.com/modelcontextprotocol/registry/tree/29e32c39dcb5e0e2b43974089d959fcc4794eb6d"
+  },
+  {
+   "id": "topic-mcp",
+   "type": "topic",
+   "label": "mcp",
+   "source_url": "https://github.com/topics/mcp"
+  },
+  {
+   "id": "topic-mcp-servers",
+   "type": "topic",
+   "label": "mcp-servers",
+   "source_url": "https://github.com/topics/mcp-servers"
+  },
+  {
+   "id": "c-mcp-registry",
+   "type": "concept",
+   "label": "MCP Registry",
+   "level": 1,
+   "source_url": "https://github.com/modelcontextprotocol/registry/blob/29e32c39dcb5e0e2b43974089d959fcc4794eb6d/README.md"
+  },
+  {
+   "id": "c-development-status",
+   "type": "concept",
+   "label": "Development Status",
+   "level": 2,
+   "source_url": "https://github.com/modelcontextprotocol/registry/blob/29e32c39dcb5e0e2b43974089d959fcc4794eb6d/README.md"
+  },
+  {
+   "id": "c-contributing",
+   "type": "concept",
+   "label": "Contributing",
+   "level": 2,
+   "source_url": "https://github.com/modelcontextprotocol/registry/blob/29e32c39dcb5e0e2b43974089d959fcc4794eb6d/README.md"
+  },
+  {
+   "id": "c-quick-start",
+   "type": "concept",
+   "label": "Quick start:",
+   "level": 3,
+   "source_url": "https://github.com/modelcontextprotocol/registry/blob/29e32c39dcb5e0e2b43974089d959fcc4794eb6d/README.md"
+  },
+  {
+   "id": "c-architecture",
+   "type": "concept",
+   "label": "Architecture",
+   "level": 2,
+   "source_url": "https://github.com/modelcontextprotocol/registry/blob/29e32c39dcb5e0e2b43974089d959fcc4794eb6d/README.md"
+  },
+  {
+   "id": "c-project-structure",
+   "type": "concept",
+   "label": "Project Structure",
+   "level": 3,
+   "source_url": "https://github.com/modelcontextprotocol/registry/blob/29e32c39dcb5e0e2b43974089d959fcc4794eb6d/README.md"
+  },
+  {
+   "id": "c-authentication",
+   "type": "concept",
+   "label": "Authentication",
+   "level": 3,
+   "source_url": "https://github.com/modelcontextprotocol/registry/blob/29e32c39dcb5e0e2b43974089d959fcc4794eb6d/README.md"
+  },
+  {
+   "id": "c-community-projects",
+   "type": "concept",
+   "label": "Community Projects",
+   "level": 2,
+   "source_url": "https://github.com/modelcontextprotocol/registry/blob/29e32c39dcb5e0e2b43974089d959fcc4794eb6d/README.md"
+  },
+  {
+   "id": "c-more-documentation",
+   "type": "concept",
+   "label": "More documentation",
+   "level": 2,
+   "source_url": "https://github.com/modelcontextprotocol/registry/blob/29e32c39dcb5e0e2b43974089d959fcc4794eb6d/README.md"
+  },
+  {
+   "id": "e-https-registry-modelcontextprotocol-io-docs",
+   "type": "evidence",
+   "label": "**\u26a1\ufe0f Live API docs**",
+   "source_url": "https://registry.modelcontextprotocol.io/docs"
+  },
+  {
+   "id": "e-https-blog-modelcontextprotocol-io-posts-2025-09-08-mcp-registry-preview",
+   "type": "evidence",
+   "label": "announcement blog post",
+   "source_url": "https://blog.modelcontextprotocol.io/posts/2025-09-08-mcp-registry-preview/"
+  },
+  {
+   "id": "e-https-github-com-modelcontextprotocol-registry-discussions-new-category-ideas",
+   "type": "evidence",
+   "label": "GitHub discussions",
+   "source_url": "https://github.com/modelcontextprotocol/registry/discussions/new?category=ideas"
+  },
+  {
+   "id": "e-https-discord-com-channels-1358869848138059966-1369487942862504016",
+   "type": "evidence",
+   "label": "#registry-dev Discord",
+   "source_url": "https://discord.com/channels/1358869848138059966/1369487942862504016"
+  },
+  {
+   "id": "e-https-modelcontextprotocol-io-community-communication",
+   "type": "evidence",
+   "label": "joining details here",
+   "source_url": "https://modelcontextprotocol.io/community/communication"
+  },
+  {
+   "id": "e-https-github-com-tadasant",
+   "type": "evidence",
+   "label": "@tadasant",
+   "source_url": "https://github.com/tadasant"
+  },
+  {
+   "id": "e-https-github-com-rdimitrov",
+   "type": "evidence",
+   "label": "@rdimitrov",
+   "source_url": "https://github.com/rdimitrov"
+  },
+  {
+   "id": "e-https-github-com-bobdickinson",
+   "type": "evidence",
+   "label": "@BobDickinson",
+   "source_url": "https://github.com/BobDickinson"
+  },
+  {
+   "id": "e-https-github-com-pree-dew",
+   "type": "evidence",
+   "label": "@pree-dew",
+   "source_url": "https://github.com/pree-dew"
+  },
+  {
+   "id": "e-https-github-com-modelcontextprotocol-registry-discussions",
+   "type": "evidence",
+   "label": "Discussions",
+   "source_url": "https://github.com/modelcontextprotocol/registry/discussions"
+  },
+  {
+   "id": "e-https-github-com-modelcontextprotocol-registry-issues",
+   "type": "evidence",
+   "label": "Issues",
+   "source_url": "https://github.com/modelcontextprotocol/registry/issues"
+  },
+  {
+   "id": "e-https-github-com-modelcontextprotocol-registry-pulls",
+   "type": "evidence",
+   "label": "Pull Requests",
+   "source_url": "https://github.com/modelcontextprotocol/registry/pulls"
+  },
+  {
+   "id": "e-https-ko-build-install",
+   "type": "evidence",
+   "label": "installation instructions",
+   "source_url": "https://ko.build/install/"
+  },
+  {
+   "id": "e-http-localhost-8080",
+   "type": "evidence",
+   "label": "`localhost:8080`",
+   "source_url": "http://localhost:8080"
+  },
+  {
+   "id": "e-https-ko-build",
+   "type": "evidence",
+   "label": "ko",
+   "source_url": "https://ko.build"
+  }
+ ],
+ "edges": [
+  {
+   "from": "repo-modelcontextprotocol-registry",
+   "to": "topic-mcp",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-modelcontextprotocol-registry",
+   "to": "topic-mcp-servers",
+   "rel": "tagged"
+  },
+  {
+   "from": "c-mcp-registry",
+   "to": "repo-modelcontextprotocol-registry",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-development-status",
+   "to": "c-mcp-registry",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-contributing",
+   "to": "c-mcp-registry",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-quick-start",
+   "to": "c-contributing",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-architecture",
+   "to": "c-mcp-registry",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-project-structure",
+   "to": "c-architecture",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-authentication",
+   "to": "c-architecture",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-community-projects",
+   "to": "c-mcp-registry",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-more-documentation",
+   "to": "c-mcp-registry",
+   "rel": "part_of"
+  },
+  {
+   "from": "repo-modelcontextprotocol-registry",
+   "to": "e-https-registry-modelcontextprotocol-io-docs",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-registry",
+   "to": "e-https-blog-modelcontextprotocol-io-posts-2025-09-08-mcp-registry-preview",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-registry",
+   "to": "e-https-github-com-modelcontextprotocol-registry-discussions-new-category-ideas",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-registry",
+   "to": "e-https-discord-com-channels-1358869848138059966-1369487942862504016",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-registry",
+   "to": "e-https-modelcontextprotocol-io-community-communication",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-registry",
+   "to": "e-https-github-com-tadasant",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-registry",
+   "to": "e-https-github-com-rdimitrov",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-registry",
+   "to": "e-https-github-com-bobdickinson",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-registry",
+   "to": "e-https-github-com-pree-dew",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-registry",
+   "to": "e-https-github-com-modelcontextprotocol-registry-discussions",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-registry",
+   "to": "e-https-github-com-modelcontextprotocol-registry-issues",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-registry",
+   "to": "e-https-github-com-modelcontextprotocol-registry-pulls",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-registry",
+   "to": "e-https-ko-build-install",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-registry",
+   "to": "e-http-localhost-8080",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-registry",
+   "to": "e-https-ko-build",
+   "rel": "cites"
+  }
+ ]
+}

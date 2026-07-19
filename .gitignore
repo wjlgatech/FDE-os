@@ -12,3 +12,6 @@ __pycache__/
 .env
 .env.local
 .gstack/
+
+# Private strategy / meeting notes — NEVER commit to this public repo
+private/

@@ -1,0 +1,596 @@
+{
+ "contractVersion": "1.0",
+ "source": {
+  "repo": "rohitg00/ai-engineering-from-scratch",
+  "sha": "c8b9b9244f3210b840776675175662dacf208264",
+  "url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+  "pushed_at": "2026-06-25T19:43:11Z"
+ },
+ "nodes": [
+  {
+   "id": "repo-rohitg00-ai-engineering-from-scratch",
+   "type": "repo",
+   "label": "rohitg00/ai-engineering-from-scratch",
+   "stars": 39592,
+   "description": "Learn it. Build it. Ship it for others.",
+   "license": "MIT",
+   "kind": "learning-resource",
+   "why_cited": "learn-build-ship curriculum \u2014 course-design comparable for Objective 1",
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/c8b9b9244f3210b840776675175662dacf208264"
+  },
+  {
+   "id": "topic-agents",
+   "type": "topic",
+   "label": "agents",
+   "source_url": "https://github.com/topics/agents"
+  },
+  {
+   "id": "topic-ai",
+   "type": "topic",
+   "label": "ai",
+   "source_url": "https://github.com/topics/ai"
+  },
+  {
+   "id": "topic-ai-agents",
+   "type": "topic",
+   "label": "ai-agents",
+   "source_url": "https://github.com/topics/ai-agents"
+  },
+  {
+   "id": "topic-ai-engineering",
+   "type": "topic",
+   "label": "ai-engineering",
+   "source_url": "https://github.com/topics/ai-engineering"
+  },
+  {
+   "id": "topic-computer-vision",
+   "type": "topic",
+   "label": "computer-vision",
+   "source_url": "https://github.com/topics/computer-vision"
+  },
+  {
+   "id": "topic-course",
+   "type": "topic",
+   "label": "course",
+   "source_url": "https://github.com/topics/course"
+  },
+  {
+   "id": "topic-deep-learning",
+   "type": "topic",
+   "label": "deep-learning",
+   "source_url": "https://github.com/topics/deep-learning"
+  },
+  {
+   "id": "topic-from-scratch",
+   "type": "topic",
+   "label": "from-scratch",
+   "source_url": "https://github.com/topics/from-scratch"
+  },
+  {
+   "id": "topic-generative-ai",
+   "type": "topic",
+   "label": "generative-ai",
+   "source_url": "https://github.com/topics/generative-ai"
+  },
+  {
+   "id": "topic-llm",
+   "type": "topic",
+   "label": "llm",
+   "source_url": "https://github.com/topics/llm"
+  },
+  {
+   "id": "topic-machine-learning",
+   "type": "topic",
+   "label": "machine-learning",
+   "source_url": "https://github.com/topics/machine-learning"
+  },
+  {
+   "id": "topic-mcp",
+   "type": "topic",
+   "label": "mcp",
+   "source_url": "https://github.com/topics/mcp"
+  },
+  {
+   "id": "topic-nlp",
+   "type": "topic",
+   "label": "nlp",
+   "source_url": "https://github.com/topics/nlp"
+  },
+  {
+   "id": "topic-python",
+   "type": "topic",
+   "label": "python",
+   "source_url": "https://github.com/topics/python"
+  },
+  {
+   "id": "topic-reinforcement-learning",
+   "type": "topic",
+   "label": "reinforcement-learning",
+   "source_url": "https://github.com/topics/reinforcement-learning"
+  },
+  {
+   "id": "topic-rust",
+   "type": "topic",
+   "label": "rust",
+   "source_url": "https://github.com/topics/rust"
+  },
+  {
+   "id": "topic-swarm-intelligence",
+   "type": "topic",
+   "label": "swarm-intelligence",
+   "source_url": "https://github.com/topics/swarm-intelligence"
+  },
+  {
+   "id": "topic-transformers",
+   "type": "topic",
+   "label": "transformers",
+   "source_url": "https://github.com/topics/transformers"
+  },
+  {
+   "id": "topic-tutorial",
+   "type": "topic",
+   "label": "tutorial",
+   "source_url": "https://github.com/topics/tutorial"
+  },
+  {
+   "id": "topic-typescript",
+   "type": "topic",
+   "label": "typescript",
+   "source_url": "https://github.com/topics/typescript"
+  },
+  {
+   "id": "c-from-the-creator-of-agent-memory-1-persistent-memory-https-github-com-rohitg00-a",
+   "type": "concept",
+   "label": "From the creator of [Agent Memory - #1 Persistent memory \u2b50](https://github.com/rohitg00/agentmemory) <a href=\"https://github.com/rohitg00/agentmemory/stargazers\"><img src=\"https://img.shields.io/github/stars/rohitg00/agentmemory?style=flat-square&labelColor=fafaf5&color=3553ff\" alt=\"GitHub stars\"></a> which naturally works with any agents or chat assistants.",
+   "level": 2,
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+  },
+  {
+   "id": "c-how-this-works",
+   "type": "concept",
+   "label": "How this works",
+   "level": 2,
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+  },
+  {
+   "id": "c-the-shape-of-the-curriculum",
+   "type": "concept",
+   "label": "The shape of the curriculum",
+   "level": 2,
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+  },
+  {
+   "id": "c-the-shape-of-a-lesson",
+   "type": "concept",
+   "label": "The shape of a lesson",
+   "level": 2,
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+  },
+  {
+   "id": "c-getting-started",
+   "type": "concept",
+   "label": "Getting started",
+   "level": 2,
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+  },
+  {
+   "id": "c-prerequisites",
+   "type": "concept",
+   "label": "Prerequisites",
+   "level": 3,
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+  },
+  {
+   "id": "c-built-in-agent-skills-claude-cursor-codex-openclaw-hermes",
+   "type": "concept",
+   "label": "Built-in agent skills (Claude, Cursor, Codex, OpenClaw, Hermes)",
+   "level": 3,
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+  },
+  {
+   "id": "c-every-lesson-ships-something",
+   "type": "concept",
+   "label": "Every lesson ships something",
+   "level": 2,
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+  },
+  {
+   "id": "c-fig-002-a-worked-sample",
+   "type": "concept",
+   "label": "FIG_002 \u00b7 A worked sample",
+   "level": 3,
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+  },
+  {
+   "id": "c-contents",
+   "type": "concept",
+   "label": "Contents",
+   "level": 2,
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+  },
+  {
+   "id": "c-phase-0-setup-tooling-12-lessons",
+   "type": "concept",
+   "label": "Phase 0: Setup & Tooling `12 lessons`",
+   "level": 3,
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+  },
+  {
+   "id": "c-the-toolkit",
+   "type": "concept",
+   "label": "The toolkit",
+   "level": 2,
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+  },
+  {
+   "id": "c-install-every-course-skill-into-your-agent",
+   "type": "concept",
+   "label": "Install every course skill into your agent",
+   "level": 3,
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+  },
+  {
+   "id": "c-drop-the-agent-workbench-into-your-own-repo",
+   "type": "concept",
+   "label": "Drop the agent workbench into your own repo",
+   "level": 3,
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+  },
+  {
+   "id": "c-browse-the-entire-course-as-json",
+   "type": "concept",
+   "label": "Browse the entire course as JSON",
+   "level": 3,
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+  },
+  {
+   "id": "c-smoke-check-every-lesson-s-python-code",
+   "type": "concept",
+   "label": "Smoke-check every lesson's Python code",
+   "level": 3,
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+  },
+  {
+   "id": "c-where-to-start",
+   "type": "concept",
+   "label": "Where to start",
+   "level": 2,
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+  },
+  {
+   "id": "c-why-this-matters-now",
+   "type": "concept",
+   "label": "Why this matters now",
+   "level": 2,
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+  },
+  {
+   "id": "c-contributing",
+   "type": "concept",
+   "label": "Contributing",
+   "level": 2,
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+  },
+  {
+   "id": "c-sponsor-the-work",
+   "type": "concept",
+   "label": "Sponsor the work",
+   "level": 2,
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+  },
+  {
+   "id": "c-star-history",
+   "type": "concept",
+   "label": "Star history",
+   "level": 2,
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+  },
+  {
+   "id": "c-license",
+   "type": "concept",
+   "label": "License",
+   "level": 2,
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+  },
+  {
+   "id": "e-https-github-com-rohitg00-agentmemory",
+   "type": "evidence",
+   "label": "Agent Memory - #1 Persistent memory \u2b50",
+   "source_url": "https://github.com/rohitg00/agentmemory"
+  },
+  {
+   "id": "e-https-aiengineeringfromscratch-com",
+   "type": "evidence",
+   "label": "aiengineeringfromscratch.com",
+   "source_url": "https://aiengineeringfromscratch.com"
+  },
+  {
+   "id": "e-https-skills-sh",
+   "type": "evidence",
+   "label": "skills.sh",
+   "source_url": "https://skills.sh"
+  },
+  {
+   "id": "e-https-x-com-karpathy-status-1617979122625712128",
+   "type": "evidence",
+   "label": "tweet",
+   "source_url": "https://x.com/karpathy/status/1617979122625712128"
+  },
+  {
+   "id": "e-https-coderabbit-link-rohit-ghumare",
+   "type": "evidence",
+   "label": "CodeRabbit",
+   "source_url": "https://coderabbit.link/rohit-ghumare"
+  },
+  {
+   "id": "e-https-iii-dev-utm-source-ai-engineering-from-scratch-utm-medium-readme-utm-campa",
+   "type": "evidence",
+   "label": "iii",
+   "source_url": "https://iii.dev?utm_source=ai-engineering-from-scratch&utm_medium=readme&utm_campaign=sponsor"
+  },
+  {
+   "id": "e-https-github-com-sponsors-rohitg00",
+   "type": "evidence",
+   "label": "GitHub Sponsors",
+   "source_url": "https://github.com/sponsors/rohitg00"
+  },
+  {
+   "id": "e-https-github-com-rohitg00",
+   "type": "evidence",
+   "label": "Rohit Ghumare",
+   "source_url": "https://github.com/rohitg00"
+  }
+ ],
+ "edges": [
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "topic-agents",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "topic-ai",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "topic-ai-agents",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "topic-ai-engineering",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "topic-computer-vision",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "topic-course",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "topic-deep-learning",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "topic-from-scratch",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "topic-generative-ai",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "topic-llm",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "topic-machine-learning",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "topic-mcp",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "topic-nlp",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "topic-python",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "topic-reinforcement-learning",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "topic-rust",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "topic-swarm-intelligence",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "topic-transformers",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "topic-tutorial",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "topic-typescript",
+   "rel": "tagged"
+  },
+  {
+   "from": "c-from-the-creator-of-agent-memory-1-persistent-memory-https-github-com-rohitg00-a",
+   "to": "repo-rohitg00-ai-engineering-from-scratch",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-how-this-works",
+   "to": "repo-rohitg00-ai-engineering-from-scratch",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-the-shape-of-the-curriculum",
+   "to": "repo-rohitg00-ai-engineering-from-scratch",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-the-shape-of-a-lesson",
+   "to": "repo-rohitg00-ai-engineering-from-scratch",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-getting-started",
+   "to": "repo-rohitg00-ai-engineering-from-scratch",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-prerequisites",
+   "to": "c-getting-started",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-built-in-agent-skills-claude-cursor-codex-openclaw-hermes",
+   "to": "c-getting-started",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-every-lesson-ships-something",
+   "to": "repo-rohitg00-ai-engineering-from-scratch",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-fig-002-a-worked-sample",
+   "to": "c-every-lesson-ships-something",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-contents",
+   "to": "repo-rohitg00-ai-engineering-from-scratch",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-phase-0-setup-tooling-12-lessons",
+   "to": "c-contents",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-the-toolkit",
+   "to": "repo-rohitg00-ai-engineering-from-scratch",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-install-every-course-skill-into-your-agent",
+   "to": "c-the-toolkit",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-drop-the-agent-workbench-into-your-own-repo",
+   "to": "c-the-toolkit",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-browse-the-entire-course-as-json",
+   "to": "c-the-toolkit",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-smoke-check-every-lesson-s-python-code",
+   "to": "c-the-toolkit",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-where-to-start",
+   "to": "repo-rohitg00-ai-engineering-from-scratch",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-why-this-matters-now",
+   "to": "repo-rohitg00-ai-engineering-from-scratch",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-contributing",
+   "to": "repo-rohitg00-ai-engineering-from-scratch",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-sponsor-the-work",
+   "to": "repo-rohitg00-ai-engineering-from-scratch",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-star-history",
+   "to": "repo-rohitg00-ai-engineering-from-scratch",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-license",
+   "to": "repo-rohitg00-ai-engineering-from-scratch",
+   "rel": "part_of"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "e-https-github-com-rohitg00-agentmemory",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "e-https-aiengineeringfromscratch-com",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "e-https-skills-sh",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "e-https-x-com-karpathy-status-1617979122625712128",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "e-https-coderabbit-link-rohit-ghumare",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "e-https-iii-dev-utm-source-ai-engineering-from-scratch-utm-medium-readme-utm-campa",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "e-https-github-com-sponsors-rohitg00",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "e-https-github-com-rohitg00",
+   "rel": "cites"
+  }
+ ]
+}

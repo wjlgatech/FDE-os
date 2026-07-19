@@ -1,0 +1,35 @@
+# The hub's cited-repo registry — SINGLE SOURCE OF TRUTH for the repo-compiler.
+# Every repo FDE-os cites lives here; `top_rated_min_stars` decides which get compiled
+# into knowledge graphs + tooling entries by default. Edit this file, never the outputs.
+top_rated_min_stars: 1000
+repos:
+  - slug: awesome-mcp-servers
+    repo: punkpeye/awesome-mcp-servers
+    why_cited: the community index of MCP servers — tool-discovery surface for agent builds
+  - slug: mcp-servers
+    repo: modelcontextprotocol/servers
+    why_cited: the reference MCP server implementations — canonical patterns for fde-mcp-server
+  - slug: ai-engineering-from-scratch
+    repo: rohitg00/ai-engineering-from-scratch
+    why_cited: learn-build-ship curriculum — course-design comparable for Objective 1
+  - slug: langfuse
+    repo: langfuse/langfuse
+    why_cited: open-source LLM observability/evals platform — the eval-obs organ candidate
+  - slug: fastmcp
+    repo: PrefectHQ/fastmcp
+    why_cited: the fast Pythonic MCP framework — build-time dependency candidate for MCP tooling
+  - slug: mcp-registry
+    repo: modelcontextprotocol/registry
+    why_cited: the community MCP registry service — distribution surface for hub tooling
+  - slug: mlrun
+    repo: mlrun/mlrun
+    why_cited: open MLOps platform — enterprise-deploy cluster reference
+  - slug: awesome-fde-roadmap
+    repo: pierpaolo28/Awesome-FDE-Roadmap
+    why_cited: the FDE career roadmap — course cross-reference
+  - slug: google-fde-interview-guide
+    repo: YagyanshB/google-fde-interview-guide
+    why_cited: FDE interview prep guide — course cross-reference
+  - slug: pm-github-workflow-repo
+    repo: aakashg/pm-github-workflow-repo
+    why_cited: git-for-PMs practice repo — community/teaching reference

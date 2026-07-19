@@ -1,0 +1,579 @@
+{
+  "id": "agentic-ai-engineer-senior-consultant",
+  "producedBy": "jd-to-deepen (retrieval)",
+  "generatedAt": "",
+  "source": {
+    "title": "Agentic AI Engineer \u2014 Senior Consultant / Consultant",
+    "kind": "job-description",
+    "url": "https://github.com/wjlgatech/FDE-os/blob/main/course/target-jds/agentic-ai-engineer-senior-consultant.md",
+    "discoveredVia": ""
+  },
+  "digest": "Retrieved, not guessed: 6 competency clusters, 26 concept/tool nodes grounded in real sources (24 Wikipedia/GitHub definitions), and 8 skills from the ESCO taxonomy \u2014 off-domain hits filtered out. Every node carries a real definition; edges are real relationships where an open KG had them.",
+  "graph": {
+    "title": "Agentic AI Engineer \u2014 Senior Consultant / Consultant",
+    "graphUrl": "",
+    "nodes": [
+      {
+        "id": "role",
+        "type": "role",
+        "name": "Agentic AI Engineer \u2014 Senior Consultant / Consultant",
+        "summary": "The role, distilled from its posting.",
+        "source": "Job description"
+      },
+      {
+        "id": "production_swe",
+        "type": "competency",
+        "name": "Production SWE",
+        "summary": "Ship production backend/services in Python (and a second language).",
+        "source": "Job description"
+      },
+      {
+        "id": "c-software-engineering",
+        "type": "concept",
+        "name": "Software engineering",
+        "summary": "Software engineering is a branch of both computer science and engineering focused on designing, developing, testing, and maintaining software applications (Wikipedia)",
+        "source": "Wikipedia"
+      },
+      {
+        "id": "c-api",
+        "type": "concept",
+        "name": "API",
+        "summary": "An application programming interface (API) is a connection between computers or between computer programs (Wikipedia)",
+        "source": "Wikipedia"
+      },
+      {
+        "id": "c-distributed-computing",
+        "type": "concept",
+        "name": "Distributed computing",
+        "summary": "Distributed computing is a field of computer science that studies distributed systems, defined as computer systems whose inter-communicating components are located on different networked computers. (Wikipedia)",
+        "source": "Wikipedia"
+      },
+      {
+        "id": "enterprise_deploy",
+        "type": "competency",
+        "name": "Enterprise / hybrid deployment",
+        "summary": "Deploy inside the customer's environment under real access/security constraints.",
+        "source": "Job description"
+      },
+      {
+        "id": "c-kubernetes",
+        "type": "concept",
+        "name": "Kubernetes",
+        "summary": "Kubernetes, also known as K8s, is an open-source container orchestration system for automating software deployment, scaling, and management (Wikipedia)",
+        "source": "Wikipedia"
+      },
+      {
+        "id": "c-role-based-access-control",
+        "type": "concept",
+        "name": "Role-based access control",
+        "summary": "In information security, role-based access control (RBAC) or role-based security is an approach to restricting system access to authorized users (Wikipedia)",
+        "source": "Wikipedia"
+      },
+      {
+        "id": "n-access-control",
+        "type": "concept",
+        "name": "access control",
+        "summary": "access control \u2014 subclass of of Role-based access control.",
+        "source": "Wikidata"
+      },
+      {
+        "id": "c-identity-management",
+        "type": "concept",
+        "name": "Identity and access management",
+        "summary": "Identity and access management or Identity management (IdM) is a framework of policies and technologies to ensure that the right users have the appropriate access to technology resources (Wikipedia)",
+        "source": "Wikipedia"
+      },
+      {
+        "id": "c-devops",
+        "type": "concept",
+        "name": "DevOps",
+        "summary": "DevOps is the integration and automation of software development and information technology operations (Wikipedia)",
+        "source": "Wikipedia"
+      },
+      {
+        "id": "n-software-development-methodology",
+        "type": "concept",
+        "name": "software development methodology",
+        "summary": "software development methodology \u2014 subclass of of DevOps.",
+        "source": "Wikidata"
+      },
+      {
+        "id": "modern_ai_stack",
+        "type": "competency",
+        "name": "Modern AI stack",
+        "summary": "Prompt, evaluate, and deploy LLMs at scale.",
+        "source": "Job description"
+      },
+      {
+        "id": "c-large-language-model",
+        "type": "concept",
+        "name": "Large language model",
+        "summary": "A large language model (LLM) is an AI Model trained on a vast amount of text for natural language processing tasks, especially language generation (Wikipedia)",
+        "source": "Wikipedia"
+      },
+      {
+        "id": "c-retrieval-augmented-generation",
+        "type": "concept",
+        "name": "Retrieval-augmented generation",
+        "summary": "Retrieval-augmented generation (RAG) is a technique that enables large language models (LLMs) to retrieve and incorporate new information from external data sources (Wikipedia)",
+        "source": "Wikipedia"
+      },
+      {
+        "id": "c-machine-learning",
+        "type": "concept",
+        "name": "Machine learning",
+        "summary": "Machine learning (ML) is a field of study in artificial intelligence concerned with the development and study of statistical algorithms that can learn from data and generalize to unseen data, and thus perform tasks witho (Wikipedia)",
+        "source": "Wikipedia"
+      },
+      {
+        "id": "c-prompt-engineering",
+        "type": "concept",
+        "name": "Prompt engineering",
+        "summary": "Prompt engineering is the process of structuring natural language inputs to produce specified outputs from a generative artificial intelligence (GenAI) model (Wikipedia)",
+        "source": "Wikipedia"
+      },
+      {
+        "id": "agentic_design",
+        "type": "competency",
+        "name": "Agentic system design",
+        "summary": "Build tool-using agents, sub-agents, MCP servers, and agent skills.",
+        "source": "Job description"
+      },
+      {
+        "id": "c-intelligent-agent",
+        "type": "concept",
+        "name": "Intelligent agent",
+        "summary": "In artificial intelligence, an intelligent agent is an entity that perceives its environment, takes actions autonomously to achieve goals, and may improve its performance through machine learning or by acquiring knowledg (Wikipedia)",
+        "source": "Wikipedia"
+      },
+      {
+        "id": "c-software-agent",
+        "type": "concept",
+        "name": "Software agent",
+        "summary": "In computer science, a software agent is a computer program that acts for a user or another program in a relationship of agency. (Wikipedia)",
+        "source": "Wikipedia"
+      },
+      {
+        "id": "c-model-context-protocol",
+        "type": "concept",
+        "name": "Model Context Protocol",
+        "summary": "The Model Context Protocol (MCP) is an open standard and open-source framework introduced by Anthropic in November 2024 to standardize the way artificial intelligence (AI) systems like large language models (LLMs) integr (Wikipedia)",
+        "source": "Wikipedia"
+      },
+      {
+        "id": "fde_craft",
+        "type": "competency",
+        "name": "The FDE craft",
+        "summary": "Own ambiguity: embed with the customer, scope the smallest win, codify patterns.",
+        "source": "Job description"
+      },
+      {
+        "id": "c-solution-architecture",
+        "type": "concept",
+        "name": "Solution architecture",
+        "summary": "Solution architecture is a term used in information technology with various definitions, such as \"a description of a discrete and focused business operation or activity and how IS/IT supports that operation\". (Wikipedia)",
+        "source": "Wikipedia"
+      },
+      {
+        "id": "c-requirements-analysis",
+        "type": "concept",
+        "name": "Requirements analysis",
+        "summary": "In systems engineering and software engineering, requirements analysis focuses on the tasks that determine the needs or conditions to meet the new or altered product or project, taking account of the possibly conflicting (Wikipedia)",
+        "source": "Wikipedia"
+      },
+      {
+        "id": "leadership",
+        "type": "competency",
+        "name": "Technical leadership & playbooks",
+        "summary": "Represent at the highest level; sequence delivery; codify playbooks.",
+        "source": "Job description"
+      },
+      {
+        "id": "c-engineering-management",
+        "type": "concept",
+        "name": "Engineering management",
+        "summary": "Engineering management is the application of engineering methods, tools, and techniques to business management systems (Wikipedia)",
+        "source": "Wikipedia"
+      },
+      {
+        "id": "t-languages",
+        "type": "concept",
+        "name": "Language",
+        "summary": "Language is a structured system of communication that consists of grammar and vocabulary (Wikipedia)",
+        "source": "Wikipedia"
+      },
+      {
+        "id": "t-agent-frameworks",
+        "type": "tool",
+        "name": "python-ai-agent-frameworks-demos",
+        "summary": "A repository of examples using Python AI Agent frameworks that work with GitHub Models and Azure OpenAI. (GitHub)",
+        "source": "GitHub"
+      },
+      {
+        "id": "t-vector-dbs",
+        "type": "tool",
+        "name": "vector-graph-db",
+        "summary": "Examples of Vector  DBs (GitHub)",
+        "source": "GitHub"
+      },
+      {
+        "id": "t-deploy",
+        "type": "concept",
+        "name": "emergency operations",
+        "summary": "task-oriented activity of task forces (Web)",
+        "source": "Web"
+      },
+      {
+        "id": "t-eval-obs",
+        "type": "tool",
+        "name": "fintech-agent-observability-evaluation",
+        "summary": " (GitHub)",
+        "source": "GitHub"
+      },
+      {
+        "id": "t-ml",
+        "type": "concept",
+        "name": "Mali",
+        "summary": "country in West Africa (Web)",
+        "source": "Web"
+      },
+      {
+        "id": "t-patterns",
+        "type": "concept",
+        "name": "Pattern",
+        "summary": "A pattern is a regularity in the world, in human-made design, or in abstract ideas (Wikipedia)",
+        "source": "Wikipedia"
+      }
+    ],
+    "edges": [
+      {
+        "source": "role",
+        "target": "production_swe",
+        "type": "requires"
+      },
+      {
+        "source": "production_swe",
+        "target": "c-software-engineering",
+        "type": "covers"
+      },
+      {
+        "source": "production_swe",
+        "target": "c-api",
+        "type": "covers"
+      },
+      {
+        "source": "production_swe",
+        "target": "c-distributed-computing",
+        "type": "covers"
+      },
+      {
+        "source": "role",
+        "target": "enterprise_deploy",
+        "type": "requires"
+      },
+      {
+        "source": "enterprise_deploy",
+        "target": "c-kubernetes",
+        "type": "covers"
+      },
+      {
+        "source": "c-role-based-access-control",
+        "target": "n-access-control",
+        "type": "subclass of"
+      },
+      {
+        "source": "enterprise_deploy",
+        "target": "c-role-based-access-control",
+        "type": "covers"
+      },
+      {
+        "source": "enterprise_deploy",
+        "target": "c-identity-management",
+        "type": "covers"
+      },
+      {
+        "source": "c-devops",
+        "target": "n-software-development-methodology",
+        "type": "subclass of"
+      },
+      {
+        "source": "enterprise_deploy",
+        "target": "c-devops",
+        "type": "covers"
+      },
+      {
+        "source": "role",
+        "target": "modern_ai_stack",
+        "type": "requires"
+      },
+      {
+        "source": "modern_ai_stack",
+        "target": "c-large-language-model",
+        "type": "covers"
+      },
+      {
+        "source": "modern_ai_stack",
+        "target": "c-retrieval-augmented-generation",
+        "type": "covers"
+      },
+      {
+        "source": "modern_ai_stack",
+        "target": "c-machine-learning",
+        "type": "covers"
+      },
+      {
+        "source": "modern_ai_stack",
+        "target": "c-prompt-engineering",
+        "type": "covers"
+      },
+      {
+        "source": "role",
+        "target": "agentic_design",
+        "type": "requires"
+      },
+      {
+        "source": "agentic_design",
+        "target": "c-intelligent-agent",
+        "type": "covers"
+      },
+      {
+        "source": "agentic_design",
+        "target": "c-software-agent",
+        "type": "covers"
+      },
+      {
+        "source": "agentic_design",
+        "target": "c-model-context-protocol",
+        "type": "covers"
+      },
+      {
+        "source": "role",
+        "target": "fde_craft",
+        "type": "requires"
+      },
+      {
+        "source": "fde_craft",
+        "target": "c-solution-architecture",
+        "type": "covers"
+      },
+      {
+        "source": "fde_craft",
+        "target": "c-requirements-analysis",
+        "type": "covers"
+      },
+      {
+        "source": "role",
+        "target": "leadership",
+        "type": "requires"
+      },
+      {
+        "source": "leadership",
+        "target": "c-engineering-management",
+        "type": "covers"
+      },
+      {
+        "source": "agentic_design",
+        "target": "t-languages",
+        "type": "uses"
+      },
+      {
+        "source": "agentic_design",
+        "target": "t-agent-frameworks",
+        "type": "uses"
+      },
+      {
+        "source": "agentic_design",
+        "target": "t-vector-dbs",
+        "type": "uses"
+      },
+      {
+        "source": "agentic_design",
+        "target": "t-deploy",
+        "type": "uses"
+      },
+      {
+        "source": "agentic_design",
+        "target": "t-eval-obs",
+        "type": "uses"
+      },
+      {
+        "source": "agentic_design",
+        "target": "t-ml",
+        "type": "uses"
+      },
+      {
+        "source": "agentic_design",
+        "target": "t-patterns",
+        "type": "uses"
+      }
+    ]
+  },
+  "skills": [
+    {
+      "id": "skill-production_swe",
+      "name": "Production SWE",
+      "kind": "competency",
+      "oneLine": "Ship production backend/services in Python (and a second language).",
+      "notGoodAt": [
+        "greenfield research with no delivery pressure"
+      ],
+      "verified": true,
+      "useWhen": [
+        "required by this JD"
+      ]
+    },
+    {
+      "id": "skill-enterprise_deploy",
+      "name": "Enterprise / hybrid deployment",
+      "kind": "competency",
+      "oneLine": "Deploy inside the customer's environment under real access/security constraints.",
+      "notGoodAt": [
+        "pure SaaS with no on-prem / VPC reality"
+      ],
+      "verified": false,
+      "useWhen": [
+        "required by this JD"
+      ]
+    },
+    {
+      "id": "skill-modern_ai_stack",
+      "name": "Modern AI stack",
+      "kind": "competency",
+      "oneLine": "Prompt, evaluate, and deploy LLMs at scale.",
+      "notGoodAt": [
+        "classical ML / heavy feature engineering"
+      ],
+      "verified": true,
+      "useWhen": [
+        "required by this JD"
+      ]
+    },
+    {
+      "id": "skill-agentic_design",
+      "name": "Agentic system design",
+      "kind": "competency",
+      "oneLine": "Build tool-using agents, sub-agents, MCP servers, and agent skills.",
+      "notGoodAt": [
+        "low-latency non-agentic services"
+      ],
+      "verified": true,
+      "useWhen": [
+        "required by this JD"
+      ]
+    },
+    {
+      "id": "skill-fde_craft",
+      "name": "The FDE craft",
+      "kind": "competency",
+      "oneLine": "Own ambiguity: embed with the customer, scope the smallest win, codify patterns.",
+      "notGoodAt": [
+        "fully-specced ticket work handed to you in pieces"
+      ],
+      "verified": true,
+      "useWhen": [
+        "required by this JD"
+      ]
+    },
+    {
+      "id": "skill-leadership",
+      "name": "Technical leadership & playbooks",
+      "kind": "competency",
+      "oneLine": "Represent at the highest level; sequence delivery; codify playbooks.",
+      "notGoodAt": [
+        "deep IC-only crunch with no stakeholder surface"
+      ],
+      "verified": false,
+      "useWhen": [
+        "required by this JD"
+      ]
+    },
+    {
+      "id": "esco-utilise-computer-aided-software-engineering-tools",
+      "name": "utilise computer-aided software engineering tools",
+      "kind": "skill",
+      "oneLine": "A defined competence in the ESCO taxonomy.",
+      "mechanism": "Retrieved from ESCO \u2014 http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51.",
+      "notGoodAt": [
+        "a taxonomy label until proven by a work sample"
+      ],
+      "verified": false
+    },
+    {
+      "id": "esco-precision-engineering",
+      "name": "precision engineering",
+      "kind": "skill",
+      "oneLine": "A defined competence in the ESCO taxonomy.",
+      "mechanism": "Retrieved from ESCO \u2014 http://data.europa.eu/esco/skill/25c4cb91-d64b-48d1-a350-3527334a360d.",
+      "notGoodAt": [
+        "a taxonomy label until proven by a work sample"
+      ],
+      "verified": false
+    },
+    {
+      "id": "esco-cae-software",
+      "name": "CAE software",
+      "kind": "skill",
+      "oneLine": "A defined competence in the ESCO taxonomy.",
+      "mechanism": "Retrieved from ESCO \u2014 http://data.europa.eu/esco/skill/82313e12-9d39-47d1-b7c9-78bbd6bb50e2.",
+      "notGoodAt": [
+        "a taxonomy label until proven by a work sample"
+      ],
+      "verified": false
+    },
+    {
+      "id": "esco-ensure-information-security",
+      "name": "ensure information security",
+      "kind": "skill",
+      "oneLine": "A defined competence in the ESCO taxonomy.",
+      "mechanism": "Retrieved from ESCO \u2014 http://data.europa.eu/esco/skill/6833e58b-eceb-4599-9375-1b7e6ec64087.",
+      "notGoodAt": [
+        "a taxonomy label until proven by a work sample"
+      ],
+      "verified": false
+    },
+    {
+      "id": "esco-information-security-strategy",
+      "name": "information security strategy",
+      "kind": "skill",
+      "oneLine": "A defined competence in the ESCO taxonomy.",
+      "mechanism": "Retrieved from ESCO \u2014 http://data.europa.eu/esco/skill/11eebd42-44ab-401d-8a2c-bdb9fc9beb50.",
+      "notGoodAt": [
+        "a taxonomy label until proven by a work sample"
+      ],
+      "verified": false
+    },
+    {
+      "id": "esco-maintain-database-security",
+      "name": "maintain database security",
+      "kind": "skill",
+      "oneLine": "A defined competence in the ESCO taxonomy.",
+      "mechanism": "Retrieved from ESCO \u2014 http://data.europa.eu/esco/skill/ec85cc63-4e24-4631-bf92-8789db2605c0.",
+      "notGoodAt": [
+        "a taxonomy label until proven by a work sample"
+      ],
+      "verified": false
+    },
+    {
+      "id": "esco-use-access-control-software",
+      "name": "use access control software",
+      "kind": "skill",
+      "oneLine": "A defined competence in the ESCO taxonomy.",
+      "mechanism": "Retrieved from ESCO \u2014 http://data.europa.eu/esco/skill/5da73370-f6b9-417d-a94c-09bf01f84aa2.",
+      "notGoodAt": [
+        "a taxonomy label until proven by a work sample"
+      ],
+      "verified": false
+    },
+    {
+      "id": "esco-data-mining",
+      "name": "data mining",
+      "kind": "skill",
+      "oneLine": "A defined competence in the ESCO taxonomy.",
+      "mechanism": "Retrieved from ESCO \u2014 http://data.europa.eu/esco/skill/25f0ea33-b4a2-4f31-b7b4-7d20e827b180.",
+      "notGoodAt": [
+        "a taxonomy label until proven by a work sample"
+      ],
+      "verified": false
+    }
+  ]
+}

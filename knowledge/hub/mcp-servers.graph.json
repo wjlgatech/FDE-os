@@ -1,0 +1,566 @@
+{
+ "contractVersion": "1.0",
+ "source": {
+  "repo": "modelcontextprotocol/servers",
+  "sha": "d31124c982401739917fd817c2a59db344529c16",
+  "url": "https://github.com/modelcontextprotocol/servers",
+  "pushed_at": "2026-07-10T03:30:19Z"
+ },
+ "nodes": [
+  {
+   "id": "repo-modelcontextprotocol-servers",
+   "type": "repo",
+   "label": "modelcontextprotocol/servers",
+   "stars": 88636,
+   "description": "Model Context Protocol Servers",
+   "license": "NOASSERTION",
+   "kind": "tool",
+   "why_cited": "the reference MCP server implementations \u2014 canonical patterns for fde-mcp-server",
+   "source_url": "https://github.com/modelcontextprotocol/servers/tree/d31124c982401739917fd817c2a59db344529c16"
+  },
+  {
+   "id": "c-model-context-protocol-servers",
+   "type": "concept",
+   "label": "Model Context Protocol servers",
+   "level": 1,
+   "source_url": "https://github.com/modelcontextprotocol/servers/blob/d31124c982401739917fd817c2a59db344529c16/README.md"
+  },
+  {
+   "id": "c-reference-servers",
+   "type": "concept",
+   "label": "\ud83c\udf1f Reference Servers",
+   "level": 2,
+   "source_url": "https://github.com/modelcontextprotocol/servers/blob/d31124c982401739917fd817c2a59db344529c16/README.md"
+  },
+  {
+   "id": "c-archived",
+   "type": "concept",
+   "label": "Archived",
+   "level": 3,
+   "source_url": "https://github.com/modelcontextprotocol/servers/blob/d31124c982401739917fd817c2a59db344529c16/README.md"
+  },
+  {
+   "id": "c-getting-started",
+   "type": "concept",
+   "label": "\ud83d\ude80 Getting Started",
+   "level": 2,
+   "source_url": "https://github.com/modelcontextprotocol/servers/blob/d31124c982401739917fd817c2a59db344529c16/README.md"
+  },
+  {
+   "id": "c-using-mcp-servers-in-this-repository",
+   "type": "concept",
+   "label": "Using MCP Servers in this Repository",
+   "level": 3,
+   "source_url": "https://github.com/modelcontextprotocol/servers/blob/d31124c982401739917fd817c2a59db344529c16/README.md"
+  },
+  {
+   "id": "c-using-an-mcp-client",
+   "type": "concept",
+   "label": "Using an MCP Client",
+   "level": 3,
+   "source_url": "https://github.com/modelcontextprotocol/servers/blob/d31124c982401739917fd817c2a59db344529c16/README.md"
+  },
+  {
+   "id": "c-creating-your-own-server",
+   "type": "concept",
+   "label": "\ud83d\udee0\ufe0f Creating Your Own Server",
+   "level": 2,
+   "source_url": "https://github.com/modelcontextprotocol/servers/blob/d31124c982401739917fd817c2a59db344529c16/README.md"
+  },
+  {
+   "id": "c-learn-more",
+   "type": "concept",
+   "label": "\ud83d\udcda Learn More",
+   "level": 2,
+   "source_url": "https://github.com/modelcontextprotocol/servers/blob/d31124c982401739917fd817c2a59db344529c16/README.md"
+  },
+  {
+   "id": "c-contributing",
+   "type": "concept",
+   "label": "\ud83e\udd1d Contributing",
+   "level": 2,
+   "source_url": "https://github.com/modelcontextprotocol/servers/blob/d31124c982401739917fd817c2a59db344529c16/README.md"
+  },
+  {
+   "id": "c-releasing",
+   "type": "concept",
+   "label": "\ud83d\udce6 Releasing",
+   "level": 2,
+   "source_url": "https://github.com/modelcontextprotocol/servers/blob/d31124c982401739917fd817c2a59db344529c16/README.md"
+  },
+  {
+   "id": "c-security",
+   "type": "concept",
+   "label": "\ud83d\udd12 Security",
+   "level": 2,
+   "source_url": "https://github.com/modelcontextprotocol/servers/blob/d31124c982401739917fd817c2a59db344529c16/README.md"
+  },
+  {
+   "id": "c-license",
+   "type": "concept",
+   "label": "\ud83d\udcdc License",
+   "level": 2,
+   "source_url": "https://github.com/modelcontextprotocol/servers/blob/d31124c982401739917fd817c2a59db344529c16/README.md"
+  },
+  {
+   "id": "c-community",
+   "type": "concept",
+   "label": "\ud83d\udcac Community",
+   "level": 2,
+   "source_url": "https://github.com/modelcontextprotocol/servers/blob/d31124c982401739917fd817c2a59db344529c16/README.md"
+  },
+  {
+   "id": "c-support",
+   "type": "concept",
+   "label": "\u2b50 Support",
+   "level": 2,
+   "source_url": "https://github.com/modelcontextprotocol/servers/blob/d31124c982401739917fd817c2a59db344529c16/README.md"
+  },
+  {
+   "id": "e-https-modelcontextprotocol-io",
+   "type": "evidence",
+   "label": "Model Context Protocol",
+   "source_url": "https://modelcontextprotocol.io/"
+  },
+  {
+   "id": "e-https-registry-modelcontextprotocol-io",
+   "type": "evidence",
+   "label": "the MCP Registry",
+   "source_url": "https://registry.modelcontextprotocol.io/"
+  },
+  {
+   "id": "e-https-github-com-modelcontextprotocol-csharp-sdk",
+   "type": "evidence",
+   "label": "C# MCP SDK",
+   "source_url": "https://github.com/modelcontextprotocol/csharp-sdk"
+  },
+  {
+   "id": "e-https-github-com-modelcontextprotocol-go-sdk",
+   "type": "evidence",
+   "label": "Go MCP SDK",
+   "source_url": "https://github.com/modelcontextprotocol/go-sdk"
+  },
+  {
+   "id": "e-https-github-com-modelcontextprotocol-java-sdk",
+   "type": "evidence",
+   "label": "Java MCP SDK",
+   "source_url": "https://github.com/modelcontextprotocol/java-sdk"
+  },
+  {
+   "id": "e-https-github-com-modelcontextprotocol-kotlin-sdk",
+   "type": "evidence",
+   "label": "Kotlin MCP SDK",
+   "source_url": "https://github.com/modelcontextprotocol/kotlin-sdk"
+  },
+  {
+   "id": "e-https-github-com-modelcontextprotocol-php-sdk",
+   "type": "evidence",
+   "label": "PHP MCP SDK",
+   "source_url": "https://github.com/modelcontextprotocol/php-sdk"
+  },
+  {
+   "id": "e-https-github-com-modelcontextprotocol-python-sdk",
+   "type": "evidence",
+   "label": "Python MCP SDK",
+   "source_url": "https://github.com/modelcontextprotocol/python-sdk"
+  },
+  {
+   "id": "e-https-github-com-modelcontextprotocol-ruby-sdk",
+   "type": "evidence",
+   "label": "Ruby MCP SDK",
+   "source_url": "https://github.com/modelcontextprotocol/ruby-sdk"
+  },
+  {
+   "id": "e-https-github-com-modelcontextprotocol-rust-sdk",
+   "type": "evidence",
+   "label": "Rust MCP SDK",
+   "source_url": "https://github.com/modelcontextprotocol/rust-sdk"
+  },
+  {
+   "id": "e-https-github-com-modelcontextprotocol-swift-sdk",
+   "type": "evidence",
+   "label": "Swift MCP SDK",
+   "source_url": "https://github.com/modelcontextprotocol/swift-sdk"
+  },
+  {
+   "id": "e-https-github-com-modelcontextprotocol-typescript-sdk",
+   "type": "evidence",
+   "label": "TypeScript MCP SDK",
+   "source_url": "https://github.com/modelcontextprotocol/typescript-sdk"
+  },
+  {
+   "id": "e-https-github-com-modelcontextprotocol-servers-archived",
+   "type": "evidence",
+   "label": "servers-archived",
+   "source_url": "https://github.com/modelcontextprotocol/servers-archived"
+  },
+  {
+   "id": "e-https-github-com-modelcontextprotocol-servers-archived-tree-main-src-aws-kb-retr",
+   "type": "evidence",
+   "label": "AWS KB Retrieval",
+   "source_url": "https://github.com/modelcontextprotocol/servers-archived/tree/main/src/aws-kb-retrieval-server"
+  },
+  {
+   "id": "e-https-github-com-modelcontextprotocol-servers-archived-tree-main-src-brave-searc",
+   "type": "evidence",
+   "label": "Brave Search",
+   "source_url": "https://github.com/modelcontextprotocol/servers-archived/tree/main/src/brave-search"
+  },
+  {
+   "id": "e-https-github-com-brave-brave-search-mcp-server",
+   "type": "evidence",
+   "label": "official server",
+   "source_url": "https://github.com/brave/brave-search-mcp-server"
+  },
+  {
+   "id": "e-https-github-com-modelcontextprotocol-servers-archived-tree-main-src-everart",
+   "type": "evidence",
+   "label": "EverArt",
+   "source_url": "https://github.com/modelcontextprotocol/servers-archived/tree/main/src/everart"
+  },
+  {
+   "id": "e-https-github-com-modelcontextprotocol-servers-archived-tree-main-src-github",
+   "type": "evidence",
+   "label": "GitHub",
+   "source_url": "https://github.com/modelcontextprotocol/servers-archived/tree/main/src/github"
+  },
+  {
+   "id": "e-https-github-com-modelcontextprotocol-servers-archived-tree-main-src-gitlab",
+   "type": "evidence",
+   "label": "GitLab",
+   "source_url": "https://github.com/modelcontextprotocol/servers-archived/tree/main/src/gitlab"
+  },
+  {
+   "id": "e-https-github-com-modelcontextprotocol-servers-archived-tree-main-src-gdrive",
+   "type": "evidence",
+   "label": "Google Drive",
+   "source_url": "https://github.com/modelcontextprotocol/servers-archived/tree/main/src/gdrive"
+  },
+  {
+   "id": "e-https-github-com-modelcontextprotocol-servers-archived-tree-main-src-google-maps",
+   "type": "evidence",
+   "label": "Google Maps",
+   "source_url": "https://github.com/modelcontextprotocol/servers-archived/tree/main/src/google-maps"
+  },
+  {
+   "id": "e-https-github-com-modelcontextprotocol-servers-archived-tree-main-src-postgres",
+   "type": "evidence",
+   "label": "PostgreSQL",
+   "source_url": "https://github.com/modelcontextprotocol/servers-archived/tree/main/src/postgres"
+  },
+  {
+   "id": "e-https-github-com-modelcontextprotocol-servers-archived-tree-main-src-puppeteer",
+   "type": "evidence",
+   "label": "Puppeteer",
+   "source_url": "https://github.com/modelcontextprotocol/servers-archived/tree/main/src/puppeteer"
+  },
+  {
+   "id": "e-https-github-com-modelcontextprotocol-servers-archived-tree-main-src-redis",
+   "type": "evidence",
+   "label": "Redis",
+   "source_url": "https://github.com/modelcontextprotocol/servers-archived/tree/main/src/redis"
+  },
+  {
+   "id": "e-https-github-com-modelcontextprotocol-servers-archived-tree-main-src-sentry",
+   "type": "evidence",
+   "label": "Sentry",
+   "source_url": "https://github.com/modelcontextprotocol/servers-archived/tree/main/src/sentry"
+  },
+  {
+   "id": "e-https-github-com-modelcontextprotocol-servers-archived-tree-main-src-slack",
+   "type": "evidence",
+   "label": "Slack",
+   "source_url": "https://github.com/modelcontextprotocol/servers-archived/tree/main/src/slack"
+  },
+  {
+   "id": "e-https-github-com-zencoderai-slack-mcp-server",
+   "type": "evidence",
+   "label": "Zencoder",
+   "source_url": "https://github.com/zencoderai/slack-mcp-server"
+  },
+  {
+   "id": "e-https-github-com-modelcontextprotocol-servers-archived-tree-main-src-sqlite",
+   "type": "evidence",
+   "label": "SQLite",
+   "source_url": "https://github.com/modelcontextprotocol/servers-archived/tree/main/src/sqlite"
+  },
+  {
+   "id": "e-https-docs-astral-sh-uv-concepts-tools",
+   "type": "evidence",
+   "label": "`uvx`",
+   "source_url": "https://docs.astral.sh/uv/concepts/tools/"
+  },
+  {
+   "id": "e-https-pypi-org-project-pip",
+   "type": "evidence",
+   "label": "`pip`",
+   "source_url": "https://pypi.org/project/pip/"
+  },
+  {
+   "id": "e-https-docs-astral-sh-uv-getting-started-installation",
+   "type": "evidence",
+   "label": "these",
+   "source_url": "https://docs.astral.sh/uv/getting-started/installation/"
+  },
+  {
+   "id": "e-https-pip-pypa-io-en-stable-installation",
+   "type": "evidence",
+   "label": "these",
+   "source_url": "https://pip.pypa.io/en/stable/installation/"
+  },
+  {
+   "id": "e-https-modelcontextprotocol-io-introduction",
+   "type": "evidence",
+   "label": "modelcontextprotocol.io",
+   "source_url": "https://modelcontextprotocol.io/introduction"
+  },
+  {
+   "id": "e-https-github-com-orgs-modelcontextprotocol-discussions",
+   "type": "evidence",
+   "label": "GitHub Discussions",
+   "source_url": "https://github.com/orgs/modelcontextprotocol/discussions"
+  }
+ ],
+ "edges": [
+  {
+   "from": "c-model-context-protocol-servers",
+   "to": "repo-modelcontextprotocol-servers",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-reference-servers",
+   "to": "c-model-context-protocol-servers",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-archived",
+   "to": "c-reference-servers",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-getting-started",
+   "to": "c-model-context-protocol-servers",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-using-mcp-servers-in-this-repository",
+   "to": "c-getting-started",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-using-an-mcp-client",
+   "to": "c-getting-started",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-creating-your-own-server",
+   "to": "c-model-context-protocol-servers",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-learn-more",
+   "to": "c-model-context-protocol-servers",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-contributing",
+   "to": "c-model-context-protocol-servers",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-releasing",
+   "to": "c-model-context-protocol-servers",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-security",
+   "to": "c-model-context-protocol-servers",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-license",
+   "to": "c-model-context-protocol-servers",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-community",
+   "to": "c-model-context-protocol-servers",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-support",
+   "to": "c-model-context-protocol-servers",
+   "rel": "part_of"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-modelcontextprotocol-io",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-registry-modelcontextprotocol-io",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-github-com-modelcontextprotocol-csharp-sdk",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-github-com-modelcontextprotocol-go-sdk",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-github-com-modelcontextprotocol-java-sdk",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-github-com-modelcontextprotocol-kotlin-sdk",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-github-com-modelcontextprotocol-php-sdk",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-github-com-modelcontextprotocol-python-sdk",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-github-com-modelcontextprotocol-ruby-sdk",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-github-com-modelcontextprotocol-rust-sdk",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-github-com-modelcontextprotocol-swift-sdk",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-github-com-modelcontextprotocol-typescript-sdk",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-github-com-modelcontextprotocol-servers-archived",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-github-com-modelcontextprotocol-servers-archived-tree-main-src-aws-kb-retr",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-github-com-modelcontextprotocol-servers-archived-tree-main-src-brave-searc",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-github-com-brave-brave-search-mcp-server",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-github-com-modelcontextprotocol-servers-archived-tree-main-src-everart",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-github-com-modelcontextprotocol-servers-archived-tree-main-src-github",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-github-com-modelcontextprotocol-servers-archived-tree-main-src-gitlab",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-github-com-modelcontextprotocol-servers-archived-tree-main-src-gdrive",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-github-com-modelcontextprotocol-servers-archived-tree-main-src-google-maps",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-github-com-modelcontextprotocol-servers-archived-tree-main-src-postgres",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-github-com-modelcontextprotocol-servers-archived-tree-main-src-puppeteer",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-github-com-modelcontextprotocol-servers-archived-tree-main-src-redis",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-github-com-modelcontextprotocol-servers-archived-tree-main-src-sentry",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-github-com-modelcontextprotocol-servers-archived-tree-main-src-slack",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-github-com-zencoderai-slack-mcp-server",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-github-com-modelcontextprotocol-servers-archived-tree-main-src-sqlite",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-docs-astral-sh-uv-concepts-tools",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-pypi-org-project-pip",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-docs-astral-sh-uv-getting-started-installation",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-pip-pypa-io-en-stable-installation",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-modelcontextprotocol-io-introduction",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-github-com-orgs-modelcontextprotocol-discussions",
+   "rel": "cites"
+  }
+ ]
+}

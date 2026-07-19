@@ -1,0 +1,895 @@
+{
+ "contractVersion": "1.0",
+ "source": {
+  "repo": "mlrun/mlrun",
+  "sha": "7581637d5636b129fd45d89dd00dd017dfdede87",
+  "url": "https://github.com/mlrun/mlrun",
+  "pushed_at": "2026-07-19T17:59:54Z"
+ },
+ "nodes": [
+  {
+   "id": "repo-mlrun-mlrun",
+   "type": "repo",
+   "label": "mlrun/mlrun",
+   "stars": 1686,
+   "description": "MLRun is an open source MLOps platform for quickly building and managing continuous ML applications across their lifecycle. MLRun integrates into your development and CI/CD environment and automates the delivery of production data, ML pipelines, and online applications.",
+   "license": "Apache-2.0",
+   "kind": "platform",
+   "why_cited": "open MLOps platform \u2014 enterprise-deploy cluster reference",
+   "source_url": "https://github.com/mlrun/mlrun/tree/7581637d5636b129fd45d89dd00dd017dfdede87"
+  },
+  {
+   "id": "topic-data-engineering",
+   "type": "topic",
+   "label": "data-engineering",
+   "source_url": "https://github.com/topics/data-engineering"
+  },
+  {
+   "id": "topic-data-science",
+   "type": "topic",
+   "label": "data-science",
+   "source_url": "https://github.com/topics/data-science"
+  },
+  {
+   "id": "topic-experiment-tracking",
+   "type": "topic",
+   "label": "experiment-tracking",
+   "source_url": "https://github.com/topics/experiment-tracking"
+  },
+  {
+   "id": "topic-kubernetes",
+   "type": "topic",
+   "label": "kubernetes",
+   "source_url": "https://github.com/topics/kubernetes"
+  },
+  {
+   "id": "topic-machine-learning",
+   "type": "topic",
+   "label": "machine-learning",
+   "source_url": "https://github.com/topics/machine-learning"
+  },
+  {
+   "id": "topic-mlops",
+   "type": "topic",
+   "label": "mlops",
+   "source_url": "https://github.com/topics/mlops"
+  },
+  {
+   "id": "topic-mlops-workflow",
+   "type": "topic",
+   "label": "mlops-workflow",
+   "source_url": "https://github.com/topics/mlops-workflow"
+  },
+  {
+   "id": "topic-model-serving",
+   "type": "topic",
+   "label": "model-serving",
+   "source_url": "https://github.com/topics/model-serving"
+  },
+  {
+   "id": "topic-python",
+   "type": "topic",
+   "label": "python",
+   "source_url": "https://github.com/topics/python"
+  },
+  {
+   "id": "topic-workflow",
+   "type": "topic",
+   "label": "workflow",
+   "source_url": "https://github.com/topics/workflow"
+  },
+  {
+   "id": "c-using-mlrun",
+   "type": "concept",
+   "label": "Using MLRun",
+   "level": 1,
+   "source_url": "https://github.com/mlrun/mlrun/blob/7581637d5636b129fd45d89dd00dd017dfdede87/README.md"
+  },
+  {
+   "id": "c-gen-ai-tasks",
+   "type": "concept",
+   "label": "Gen AI tasks",
+   "level": 2,
+   "source_url": "https://github.com/mlrun/mlrun/blob/7581637d5636b129fd45d89dd00dd017dfdede87/README.md"
+  },
+  {
+   "id": "c-data-management",
+   "type": "concept",
+   "label": "Data management",
+   "level": 3,
+   "source_url": "https://github.com/mlrun/mlrun/blob/7581637d5636b129fd45d89dd00dd017dfdede87/README.md"
+  },
+  {
+   "id": "c-development",
+   "type": "concept",
+   "label": "Development",
+   "level": 3,
+   "source_url": "https://github.com/mlrun/mlrun/blob/7581637d5636b129fd45d89dd00dd017dfdede87/README.md"
+  },
+  {
+   "id": "c-deployment",
+   "type": "concept",
+   "label": "Deployment",
+   "level": 3,
+   "source_url": "https://github.com/mlrun/mlrun/blob/7581637d5636b129fd45d89dd00dd017dfdede87/README.md"
+  },
+  {
+   "id": "c-live-ops",
+   "type": "concept",
+   "label": "Live Ops",
+   "level": 3,
+   "source_url": "https://github.com/mlrun/mlrun/blob/7581637d5636b129fd45d89dd00dd017dfdede87/README.md"
+  },
+  {
+   "id": "c-mlops-tasks",
+   "type": "concept",
+   "label": "MLOps tasks",
+   "level": 2,
+   "source_url": "https://github.com/mlrun/mlrun/blob/7581637d5636b129fd45d89dd00dd017dfdede87/README.md"
+  },
+  {
+   "id": "c-project-management-and-ci-cd-automation",
+   "type": "concept",
+   "label": "Project management and CI/CD automation",
+   "level": 3,
+   "source_url": "https://github.com/mlrun/mlrun/blob/7581637d5636b129fd45d89dd00dd017dfdede87/README.md"
+  },
+  {
+   "id": "c-ingest-and-process-data",
+   "type": "concept",
+   "label": "Ingest and process data",
+   "level": 3,
+   "source_url": "https://github.com/mlrun/mlrun/blob/7581637d5636b129fd45d89dd00dd017dfdede87/README.md"
+  },
+  {
+   "id": "c-develop-and-train-models",
+   "type": "concept",
+   "label": "Develop and train models",
+   "level": 3,
+   "source_url": "https://github.com/mlrun/mlrun/blob/7581637d5636b129fd45d89dd00dd017dfdede87/README.md"
+  },
+  {
+   "id": "c-deploy-models-and-applications",
+   "type": "concept",
+   "label": "Deploy models and applications",
+   "level": 3,
+   "source_url": "https://github.com/mlrun/mlrun/blob/7581637d5636b129fd45d89dd00dd017dfdede87/README.md"
+  },
+  {
+   "id": "c-model-monitoring",
+   "type": "concept",
+   "label": "Model Monitoring",
+   "level": 3,
+   "source_url": "https://github.com/mlrun/mlrun/blob/7581637d5636b129fd45d89dd00dd017dfdede87/README.md"
+  },
+  {
+   "id": "c-mlrun-core-components",
+   "type": "concept",
+   "label": "MLRun core components",
+   "level": 2,
+   "source_url": "https://github.com/mlrun/mlrun/blob/7581637d5636b129fd45d89dd00dd017dfdede87/README.md"
+  },
+  {
+   "id": "e-https-github-com-mlrun-mlrun-actions-workflows-build-yaml-badge-svg-branch-devel",
+   "type": "evidence",
+   "label": "![Build Status",
+   "source_url": "https://github.com/mlrun/mlrun/actions/workflows/build.yaml/badge.svg?branch=development"
+  },
+  {
+   "id": "e-https-img-shields-io-badge-license-apache-202-0-blue-svg",
+   "type": "evidence",
+   "label": "![License",
+   "source_url": "https://img.shields.io/badge/License-Apache%202.0-blue.svg"
+  },
+  {
+   "id": "e-https-badge-fury-io-py-mlrun-svg",
+   "type": "evidence",
+   "label": "![PyPI version fury.io",
+   "source_url": "https://badge.fury.io/py/mlrun.svg"
+  },
+  {
+   "id": "e-https-readthedocs-org-projects-mlrun-badge-version-latest",
+   "type": "evidence",
+   "label": "![Documentation",
+   "source_url": "https://readthedocs.org/projects/mlrun/badge/?version=latest"
+  },
+  {
+   "id": "e-https-img-shields-io-endpoint-url-https-raw-githubusercontent-com-astral-sh-ruff",
+   "type": "evidence",
+   "label": "![Ruff",
+   "source_url": "https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json"
+  },
+  {
+   "id": "e-https-img-shields-io-github-commit-activity-w-mlrun-mlrun",
+   "type": "evidence",
+   "label": "![GitHub commit activity",
+   "source_url": "https://img.shields.io/github/commit-activity/w/mlrun/mlrun"
+  },
+  {
+   "id": "e-https-img-shields-io-github-v-release-mlrun-mlrun-sort-semver",
+   "type": "evidence",
+   "label": "![GitHub release (latest SemVer)",
+   "source_url": "https://img.shields.io/github/v/release/mlrun/mlrun?sort=semver"
+  },
+  {
+   "id": "e-https-img-shields-io-badge-slack-join-chat-white-svg-logo-slack-style-social",
+   "type": "evidence",
+   "label": "![Join MLOps Live",
+   "source_url": "https://img.shields.io/badge/slack-join_chat-white.svg?logo=slack&style=social"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-tutorials-index-html",
+   "type": "evidence",
+   "label": "**Tutorials and Examples**",
+   "source_url": "https://docs.mlrun.org/en/stable/tutorials/index.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-setup-guide-md",
+   "type": "evidence",
+   "label": "**Set up your client environment**",
+   "source_url": "https://docs.mlrun.org/en/stable/setup-guide.md"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-architecture-html",
+   "type": "evidence",
+   "label": "**MLRun Architecture**",
+   "source_url": "https://docs.mlrun.org/en/stable/architecture.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-genai-genai-flow-html",
+   "type": "evidence",
+   "label": "**gen AI development workflow**",
+   "source_url": "https://docs.mlrun.org/en/stable/genai/genai-flow.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-genai-data-mgmt-unstructured-data-html",
+   "type": "evidence",
+   "label": "Using LLMs to process unstructured data",
+   "source_url": "https://docs.mlrun.org/en/stable/genai/data-mgmt/unstructured-data.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-genai-data-mgmt-vector-databases-html",
+   "type": "evidence",
+   "label": "Vector databases",
+   "source_url": "https://docs.mlrun.org/en/stable/genai/data-mgmt/vector-databases.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-genai-data-mgmt-guardrails-data-html",
+   "type": "evidence",
+   "label": "Guardrails for data management",
+   "source_url": "https://docs.mlrun.org/en/stable/genai/data-mgmt/guardrails-data.html"
+  },
+  {
+   "id": "e-https-github-com-mlrun-demo-call-center",
+   "type": "evidence",
+   "label": "Call center demo",
+   "source_url": "https://github.com/mlrun/demo-call-center"
+  },
+  {
+   "id": "e-https-youtu-be-yycmbxrglba",
+   "type": "evidence",
+   "label": "Call center",
+   "source_url": "https://youtu.be/YycMbxRgLBA"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-genai-development-working-with-rag-html",
+   "type": "evidence",
+   "label": "Working with RAG",
+   "source_url": "https://docs.mlrun.org/en/stable/genai/development/working-with-rag.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-genai-development-evaluating-llms-html",
+   "type": "evidence",
+   "label": "Evalating LLMs",
+   "source_url": "https://docs.mlrun.org/en/stable/genai/development/evaluating-llms.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-genai-development-fine-tuning-llms-html",
+   "type": "evidence",
+   "label": "Fine tuning LLMS",
+   "source_url": "https://docs.mlrun.org/en/stable/genai/development/fine-tuning-llms.html"
+  },
+  {
+   "id": "e-https-github-com-mlrun-demo-banking-agent",
+   "type": "evidence",
+   "label": "Banking agent demo",
+   "source_url": "https://github.com/mlrun/demo-banking-agent"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-genai-deployment-genai-serving-html",
+   "type": "evidence",
+   "label": "Serving gen AI models",
+   "source_url": "https://docs.mlrun.org/en/stable/genai/deployment/genai_serving.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-genai-deployment-gpu-utilization-html",
+   "type": "evidence",
+   "label": "GPU utilization",
+   "source_url": "https://docs.mlrun.org/en/stable/genai/deployment/gpu_utilization.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-genai-deployment-genai-serving-graph-html",
+   "type": "evidence",
+   "label": "Gen AI realtime serving graph",
+   "source_url": "https://docs.mlrun.org/en/stable/genai/deployment/genai_serving_graph.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-tutorials-genai-01-basic-tutorial-html",
+   "type": "evidence",
+   "label": "Deploy LLM using MLRun",
+   "source_url": "https://docs.mlrun.org/en/stable/tutorials/genai-01-basic-tutorial.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-concepts-monitoring-html",
+   "type": "evidence",
+   "label": "Model monitoring <monitoring",
+   "source_url": "https://docs.mlrun.org/en/stable/concepts/monitoring.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-concepts-alerts-notifications-html",
+   "type": "evidence",
+   "label": "Alerts and notifications",
+   "source_url": "https://docs.mlrun.org/en/stable/concepts/alerts-notifications.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-tutorials-genai-02-monitoring-llm-html",
+   "type": "evidence",
+   "label": "Model monitoring using LLM",
+   "source_url": "https://docs.mlrun.org/en/stable/tutorials/genai-02-monitoring-llm.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-mlops-dev-flow-html",
+   "type": "evidence",
+   "label": "**MLOps development workflow**",
+   "source_url": "https://docs.mlrun.org/en/stable/mlops-dev-flow.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-projects-project-html",
+   "type": "evidence",
+   "label": "Projects and Automation",
+   "source_url": "https://docs.mlrun.org/en/stable/projects/project.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-projects-ci-integration-html",
+   "type": "evidence",
+   "label": "CI/CD Integration",
+   "source_url": "https://docs.mlrun.org/en/stable/projects/ci-integration.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-tutorials-01-mlrun-basics-html",
+   "type": "evidence",
+   "label": "Quick start",
+   "source_url": "https://docs.mlrun.org/en/stable/tutorials/01-mlrun-basics.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-tutorials-04-pipeline-html",
+   "type": "evidence",
+   "label": "Automated ML Pipeline",
+   "source_url": "https://docs.mlrun.org/en/stable/tutorials/04-pipeline.html"
+  },
+  {
+   "id": "e-https-youtu-be-xi8kvgllj7q",
+   "type": "evidence",
+   "label": "Quick start",
+   "source_url": "https://youtu.be/xI8KVGLlj7Q"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-store-datastore-html",
+   "type": "evidence",
+   "label": "**data sources**",
+   "source_url": "https://docs.mlrun.org/en/stable/store/datastore.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-feature-store-feature-store-html",
+   "type": "evidence",
+   "label": "**Feature Store**",
+   "source_url": "https://docs.mlrun.org/en/stable/feature-store/feature-store.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-data-prep-index-html",
+   "type": "evidence",
+   "label": "Ingest and process data",
+   "source_url": "https://docs.mlrun.org/en/stable/data-prep/index.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-concepts-data-html",
+   "type": "evidence",
+   "label": "Data & Artifacts",
+   "source_url": "https://docs.mlrun.org/en/stable/concepts/data.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-feature-store-basic-demo-html",
+   "type": "evidence",
+   "label": "Feature Store",
+   "source_url": "https://docs.mlrun.org/en/stable/feature-store/basic-demo.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-development-index-html",
+   "type": "evidence",
+   "label": "Develop and train models",
+   "source_url": "https://docs.mlrun.org/en/stable/development/index.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-development-model-training-tracking-html",
+   "type": "evidence",
+   "label": "Model Training and Tracking",
+   "source_url": "https://docs.mlrun.org/en/stable/development/model-training-tracking.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-concepts-runs-workflows-html",
+   "type": "evidence",
+   "label": "Batch Runs and Workflows",
+   "source_url": "https://docs.mlrun.org/en/stable/concepts/runs-workflows.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-tutorials-02-model-training-html",
+   "type": "evidence",
+   "label": "Train, compare, and register models",
+   "source_url": "https://docs.mlrun.org/en/stable/tutorials/02-model-training.html"
+  },
+  {
+   "id": "e-https-youtu-be-bzgbsmlmdqo",
+   "type": "evidence",
+   "label": "Train and compare models",
+   "source_url": "https://youtu.be/bZgBsmLMdQo"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-deployment-index-html",
+   "type": "evidence",
+   "label": "Deploy models and applications",
+   "source_url": "https://docs.mlrun.org/en/stable/deployment/index.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-serving-serving-graph-html",
+   "type": "evidence",
+   "label": "Realtime Pipelines",
+   "source_url": "https://docs.mlrun.org/en/stable/serving/serving-graph.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-deployment-batch-inference-html",
+   "type": "evidence",
+   "label": "Batch Inference",
+   "source_url": "https://docs.mlrun.org/en/stable/deployment/batch_inference.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-tutorials-03-model-serving-html",
+   "type": "evidence",
+   "label": "Realtime Serving",
+   "source_url": "https://docs.mlrun.org/en/stable/tutorials/03-model-serving.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-tutorials-07-batch-infer-html",
+   "type": "evidence",
+   "label": "Batch Inference",
+   "source_url": "https://docs.mlrun.org/en/stable/tutorials/07-batch-infer.html"
+  },
+  {
+   "id": "e-https-youtu-be-oujous4dzfw",
+   "type": "evidence",
+   "label": "Serving pre-trained models",
+   "source_url": "https://youtu.be/OUjOus4dZfw"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-concepts-model-monitoring-html",
+   "type": "evidence",
+   "label": "Model monitoring",
+   "source_url": "https://docs.mlrun.org/en/stable/concepts/model-monitoring.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-monitoring-model-monitoring-deployment-html",
+   "type": "evidence",
+   "label": "Model Monitoring Overview",
+   "source_url": "https://docs.mlrun.org/en/stable/monitoring/model-monitoring-deployment.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-tutorials-05-model-monitoring-html",
+   "type": "evidence",
+   "label": "Model Monitoring & Drift Detection",
+   "source_url": "https://docs.mlrun.org/en/stable/tutorials/05-model-monitoring.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-runtimes-functions-html",
+   "type": "evidence",
+   "label": "**Functions:**",
+   "source_url": "https://docs.mlrun.org/en/stable/runtimes/functions.html"
+  },
+  {
+   "id": "e-https-docs-mlrun-org-en-stable-monitoring-index-html",
+   "type": "evidence",
+   "label": "**Model monitoring:**",
+   "source_url": "https://docs.mlrun.org/en/stable/monitoring/index.html"
+  }
+ ],
+ "edges": [
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "topic-data-engineering",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "topic-data-science",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "topic-experiment-tracking",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "topic-kubernetes",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "topic-machine-learning",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "topic-mlops",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "topic-mlops-workflow",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "topic-model-serving",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "topic-python",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "topic-workflow",
+   "rel": "tagged"
+  },
+  {
+   "from": "c-using-mlrun",
+   "to": "repo-mlrun-mlrun",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-gen-ai-tasks",
+   "to": "c-using-mlrun",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-data-management",
+   "to": "c-gen-ai-tasks",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-development",
+   "to": "c-gen-ai-tasks",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-deployment",
+   "to": "c-gen-ai-tasks",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-live-ops",
+   "to": "c-gen-ai-tasks",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-mlops-tasks",
+   "to": "c-using-mlrun",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-project-management-and-ci-cd-automation",
+   "to": "c-mlops-tasks",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-ingest-and-process-data",
+   "to": "c-mlops-tasks",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-develop-and-train-models",
+   "to": "c-mlops-tasks",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-deploy-models-and-applications",
+   "to": "c-mlops-tasks",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-model-monitoring",
+   "to": "c-mlops-tasks",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-mlrun-core-components",
+   "to": "c-using-mlrun",
+   "rel": "part_of"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-github-com-mlrun-mlrun-actions-workflows-build-yaml-badge-svg-branch-devel",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-img-shields-io-badge-license-apache-202-0-blue-svg",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-badge-fury-io-py-mlrun-svg",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-readthedocs-org-projects-mlrun-badge-version-latest",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-img-shields-io-endpoint-url-https-raw-githubusercontent-com-astral-sh-ruff",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-img-shields-io-github-commit-activity-w-mlrun-mlrun",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-img-shields-io-github-v-release-mlrun-mlrun-sort-semver",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-img-shields-io-badge-slack-join-chat-white-svg-logo-slack-style-social",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-tutorials-index-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-setup-guide-md",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-architecture-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-genai-genai-flow-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-genai-data-mgmt-unstructured-data-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-genai-data-mgmt-vector-databases-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-genai-data-mgmt-guardrails-data-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-github-com-mlrun-demo-call-center",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-youtu-be-yycmbxrglba",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-genai-development-working-with-rag-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-genai-development-evaluating-llms-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-genai-development-fine-tuning-llms-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-github-com-mlrun-demo-banking-agent",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-genai-deployment-genai-serving-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-genai-deployment-gpu-utilization-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-genai-deployment-genai-serving-graph-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-tutorials-genai-01-basic-tutorial-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-concepts-monitoring-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-concepts-alerts-notifications-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-tutorials-genai-02-monitoring-llm-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-mlops-dev-flow-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-projects-project-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-projects-ci-integration-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-tutorials-01-mlrun-basics-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-tutorials-04-pipeline-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-youtu-be-xi8kvgllj7q",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-store-datastore-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-feature-store-feature-store-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-data-prep-index-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-concepts-data-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-feature-store-basic-demo-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-development-index-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-development-model-training-tracking-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-concepts-runs-workflows-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-tutorials-02-model-training-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-youtu-be-bzgbsmlmdqo",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-deployment-index-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-serving-serving-graph-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-deployment-batch-inference-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-tutorials-03-model-serving-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-tutorials-07-batch-infer-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-youtu-be-oujous4dzfw",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-concepts-model-monitoring-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-monitoring-model-monitoring-deployment-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-tutorials-05-model-monitoring-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-runtimes-functions-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-mlrun-mlrun",
+   "to": "e-https-docs-mlrun-org-en-stable-monitoring-index-html",
+   "rel": "cites"
+  }
+ ]
+}
