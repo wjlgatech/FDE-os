@@ -1,0 +1,35 @@
+{
+  "engagement": "acme-hotel-ai-receptionist",
+  "outcomes": [
+    {
+      "id": "call-answer-rate",
+      "statement": "AI receptionist answers calls without human handoff",
+      "metric": "answered_without_handoff_pct",
+      "baseline": 0,
+      "target": 60,
+      "direction": ">=",
+      "blocking": true,
+      "evidence": {"kind": "measured", "value": 72.5, "source": "https://example.com/dashboard-export.csv"}
+    },
+    {
+      "id": "median-wait-seconds",
+      "statement": "Median caller wait time",
+      "metric": "median_wait_s",
+      "baseline": 210,
+      "target": 30,
+      "direction": "<=",
+      "blocking": true,
+      "evidence": {"kind": "measured", "value": 12, "source": "https://example.com/call-metrics.json"}
+    },
+    {
+      "id": "guest-satisfaction",
+      "statement": "Guest satisfaction does not regress (counter-metric)",
+      "metric": "csat_pct",
+      "baseline": 88,
+      "target": 88,
+      "direction": ">=",
+      "blocking": false,
+      "evidence": {"kind": "claimed", "value": 90}
+    }
+  ]
+}
