@@ -1,0 +1,3156 @@
+{
+ "contractVersion": "1.0",
+ "source": {
+  "repo": "langfuse/langfuse",
+  "sha": "1cb1bbcf6b269fd887a6667796f1a15417cca336",
+  "url": "https://github.com/langfuse/langfuse",
+  "pushed_at": "2026-07-19T20:02:04Z"
+ },
+ "nodes": [
+  {
+   "id": "repo-langfuse-langfuse",
+   "type": "repo",
+   "label": "langfuse/langfuse",
+   "stars": 31426,
+   "description": "\ud83e\udea2 Open source AI engineering platform: LLM evals, observability, metrics, prompt management, playground, datasets. Integrates with OpenTelemetry, LangChain, OpenAI SDK, LiteLLM, and more. \ud83c\udf4aYC W23 ",
+   "license": "NOASSERTION",
+   "kind": "platform",
+   "why_cited": "open-source LLM observability/evals platform \u2014 the eval-obs organ candidate",
+   "source_url": "https://github.com/langfuse/langfuse/tree/1cb1bbcf6b269fd887a6667796f1a15417cca336"
+  },
+  {
+   "id": "topic-analytics",
+   "type": "topic",
+   "label": "analytics",
+   "source_url": "https://github.com/topics/analytics"
+  },
+  {
+   "id": "topic-autogen",
+   "type": "topic",
+   "label": "autogen",
+   "source_url": "https://github.com/topics/autogen"
+  },
+  {
+   "id": "topic-evaluation",
+   "type": "topic",
+   "label": "evaluation",
+   "source_url": "https://github.com/topics/evaluation"
+  },
+  {
+   "id": "topic-langchain",
+   "type": "topic",
+   "label": "langchain",
+   "source_url": "https://github.com/topics/langchain"
+  },
+  {
+   "id": "topic-large-language-models",
+   "type": "topic",
+   "label": "large-language-models",
+   "source_url": "https://github.com/topics/large-language-models"
+  },
+  {
+   "id": "topic-llama-index",
+   "type": "topic",
+   "label": "llama-index",
+   "source_url": "https://github.com/topics/llama-index"
+  },
+  {
+   "id": "topic-llm",
+   "type": "topic",
+   "label": "llm",
+   "source_url": "https://github.com/topics/llm"
+  },
+  {
+   "id": "topic-llm-evaluation",
+   "type": "topic",
+   "label": "llm-evaluation",
+   "source_url": "https://github.com/topics/llm-evaluation"
+  },
+  {
+   "id": "topic-llm-observability",
+   "type": "topic",
+   "label": "llm-observability",
+   "source_url": "https://github.com/topics/llm-observability"
+  },
+  {
+   "id": "topic-llmops",
+   "type": "topic",
+   "label": "llmops",
+   "source_url": "https://github.com/topics/llmops"
+  },
+  {
+   "id": "topic-monitoring",
+   "type": "topic",
+   "label": "monitoring",
+   "source_url": "https://github.com/topics/monitoring"
+  },
+  {
+   "id": "topic-observability",
+   "type": "topic",
+   "label": "observability",
+   "source_url": "https://github.com/topics/observability"
+  },
+  {
+   "id": "topic-open-source",
+   "type": "topic",
+   "label": "open-source",
+   "source_url": "https://github.com/topics/open-source"
+  },
+  {
+   "id": "topic-openai",
+   "type": "topic",
+   "label": "openai",
+   "source_url": "https://github.com/topics/openai"
+  },
+  {
+   "id": "topic-playground",
+   "type": "topic",
+   "label": "playground",
+   "source_url": "https://github.com/topics/playground"
+  },
+  {
+   "id": "topic-prompt-engineering",
+   "type": "topic",
+   "label": "prompt-engineering",
+   "source_url": "https://github.com/topics/prompt-engineering"
+  },
+  {
+   "id": "topic-prompt-management",
+   "type": "topic",
+   "label": "prompt-management",
+   "source_url": "https://github.com/topics/prompt-management"
+  },
+  {
+   "id": "topic-self-hosted",
+   "type": "topic",
+   "label": "self-hosted",
+   "source_url": "https://github.com/topics/self-hosted"
+  },
+  {
+   "id": "topic-ycombinator",
+   "type": "topic",
+   "label": "ycombinator",
+   "source_url": "https://github.com/topics/ycombinator"
+  },
+  {
+   "id": "c-core-features",
+   "type": "concept",
+   "label": "\u2728 Core Features",
+   "level": 2,
+   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+  },
+  {
+   "id": "c-deploy-langfuse",
+   "type": "concept",
+   "label": "\ud83d\udce6 Deploy Langfuse",
+   "level": 2,
+   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+  },
+  {
+   "id": "c-langfuse-cloud",
+   "type": "concept",
+   "label": "Langfuse Cloud",
+   "level": 3,
+   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+  },
+  {
+   "id": "c-self-host-langfuse",
+   "type": "concept",
+   "label": "Self-Host Langfuse",
+   "level": 3,
+   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+  },
+  {
+   "id": "c-integrations",
+   "type": "concept",
+   "label": "\ud83d\udd0c Integrations",
+   "level": 2,
+   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+  },
+  {
+   "id": "c-main-integrations",
+   "type": "concept",
+   "label": "Main Integrations:",
+   "level": 3,
+   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+  },
+  {
+   "id": "c-packages-integrated-with-langfuse",
+   "type": "concept",
+   "label": "Packages integrated with Langfuse:",
+   "level": 3,
+   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+  },
+  {
+   "id": "c-quickstart",
+   "type": "concept",
+   "label": "\ud83d\ude80 Quickstart",
+   "level": 2,
+   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+  },
+  {
+   "id": "c-1-create-new-project",
+   "type": "concept",
+   "label": "1\ufe0f\u20e3 Create new project",
+   "level": 3,
+   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+  },
+  {
+   "id": "c-2-log-your-first-llm-call",
+   "type": "concept",
+   "label": "2\ufe0f\u20e3 Log your first LLM call",
+   "level": 3,
+   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+  },
+  {
+   "id": "c-3-see-traces-in-langfuse",
+   "type": "concept",
+   "label": "3\ufe0f\u20e3 See traces in Langfuse",
+   "level": 3,
+   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+  },
+  {
+   "id": "c-support",
+   "type": "concept",
+   "label": "\ud83d\udcad Support",
+   "level": 2,
+   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+  },
+  {
+   "id": "c-contributing",
+   "type": "concept",
+   "label": "\ud83e\udd1d Contributing",
+   "level": 2,
+   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+  },
+  {
+   "id": "c-license",
+   "type": "concept",
+   "label": "\ud83e\udd47 License",
+   "level": 2,
+   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+  },
+  {
+   "id": "c-dependencies",
+   "type": "concept",
+   "label": "Dependencies",
+   "level": 2,
+   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+  },
+  {
+   "id": "c-star-history",
+   "type": "concept",
+   "label": "\u2b50\ufe0f Star History",
+   "level": 2,
+   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+  },
+  {
+   "id": "c-open-source-projects-using-langfuse",
+   "type": "concept",
+   "label": "\u2764\ufe0f Open Source Projects Using Langfuse",
+   "level": 2,
+   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+  },
+  {
+   "id": "c-security-privacy",
+   "type": "concept",
+   "label": "\ud83d\udd12 Security & Privacy",
+   "level": 2,
+   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+  },
+  {
+   "id": "c-telemetry",
+   "type": "concept",
+   "label": "Telemetry",
+   "level": 3,
+   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+  },
+  {
+   "id": "e-https-github-com-clickhouse-clickhouse",
+   "type": "evidence",
+   "label": "ClickHouse open source database",
+   "source_url": "https://github.com/ClickHouse/ClickHouse"
+  },
+  {
+   "id": "e-https-langfuse-com-careers-utm-source-github-utm-medium-readme-utm-campaign-hiri",
+   "type": "evidence",
+   "label": "See open roles \u2192",
+   "source_url": "https://langfuse.com/careers?utm_source=github&utm_medium=readme&utm_campaign=hiring&utm_content=langfuse"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-tracing",
+   "type": "evidence",
+   "label": "LLM Application Observability",
+   "source_url": "https://langfuse.com/docs/tracing"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-demo",
+   "type": "evidence",
+   "label": "demo",
+   "source_url": "https://langfuse.com/docs/demo"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-prompt-management-get-started",
+   "type": "evidence",
+   "label": "Prompt Management",
+   "source_url": "https://langfuse.com/docs/prompt-management/get-started"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-evaluation-overview",
+   "type": "evidence",
+   "label": "Evaluations",
+   "source_url": "https://langfuse.com/docs/evaluation/overview"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-evaluation-dataset-runs-datasets",
+   "type": "evidence",
+   "label": "Datasets",
+   "source_url": "https://langfuse.com/docs/evaluation/dataset-runs/datasets"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-playground",
+   "type": "evidence",
+   "label": "LLM Playground",
+   "source_url": "https://langfuse.com/docs/playground"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-api",
+   "type": "evidence",
+   "label": "Comprehensive API",
+   "source_url": "https://langfuse.com/docs/api"
+  },
+  {
+   "id": "e-https-langfuse-com-self-hosting-local",
+   "type": "evidence",
+   "label": "Local (docker compose)",
+   "source_url": "https://langfuse.com/self-hosting/local"
+  },
+  {
+   "id": "e-https-langfuse-com-self-hosting-docker-compose",
+   "type": "evidence",
+   "label": "VM",
+   "source_url": "https://langfuse.com/self-hosting/docker-compose"
+  },
+  {
+   "id": "e-https-langfuse-com-self-hosting-kubernetes-helm",
+   "type": "evidence",
+   "label": "Kubernetes (Helm)",
+   "source_url": "https://langfuse.com/self-hosting/kubernetes-helm"
+  },
+  {
+   "id": "e-https-langfuse-com-self-hosting-aws",
+   "type": "evidence",
+   "label": "AWS",
+   "source_url": "https://langfuse.com/self-hosting/aws"
+  },
+  {
+   "id": "e-https-langfuse-com-self-hosting-azure",
+   "type": "evidence",
+   "label": "Azure",
+   "source_url": "https://langfuse.com/self-hosting/azure"
+  },
+  {
+   "id": "e-https-langfuse-com-self-hosting-gcp",
+   "type": "evidence",
+   "label": "GCP",
+   "source_url": "https://langfuse.com/self-hosting/gcp"
+  },
+  {
+   "id": "e-https-langfuse-com-self-hosting",
+   "type": "evidence",
+   "label": "self-hosting documentation",
+   "source_url": "https://langfuse.com/self-hosting"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-sdk",
+   "type": "evidence",
+   "label": "SDK",
+   "source_url": "https://langfuse.com/docs/sdk"
+  },
+  {
+   "id": "e-https-langfuse-com-integrations-model-providers-openai-py",
+   "type": "evidence",
+   "label": "OpenAI",
+   "source_url": "https://langfuse.com/integrations/model-providers/openai-py"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-integrations-langchain",
+   "type": "evidence",
+   "label": "Langchain",
+   "source_url": "https://langfuse.com/docs/integrations/langchain"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-integrations-llama-index-get-started",
+   "type": "evidence",
+   "label": "LlamaIndex",
+   "source_url": "https://langfuse.com/docs/integrations/llama-index/get-started"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-integrations-haystack",
+   "type": "evidence",
+   "label": "Haystack",
+   "source_url": "https://langfuse.com/docs/integrations/haystack"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-integrations-litellm",
+   "type": "evidence",
+   "label": "LiteLLM",
+   "source_url": "https://langfuse.com/docs/integrations/litellm"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-integrations-vercel-ai-sdk",
+   "type": "evidence",
+   "label": "Vercel AI SDK",
+   "source_url": "https://langfuse.com/docs/integrations/vercel-ai-sdk"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-integrations-mastra",
+   "type": "evidence",
+   "label": "Mastra",
+   "source_url": "https://langfuse.com/docs/integrations/mastra"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-integrations-instructor",
+   "type": "evidence",
+   "label": "Instructor",
+   "source_url": "https://langfuse.com/docs/integrations/instructor"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-integrations-dspy",
+   "type": "evidence",
+   "label": "DSPy",
+   "source_url": "https://langfuse.com/docs/integrations/dspy"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-integrations-mirascope",
+   "type": "evidence",
+   "label": "Mirascope",
+   "source_url": "https://langfuse.com/docs/integrations/mirascope"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-integrations-ollama",
+   "type": "evidence",
+   "label": "Ollama",
+   "source_url": "https://langfuse.com/docs/integrations/ollama"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-integrations-amazon-bedrock",
+   "type": "evidence",
+   "label": "Amazon Bedrock",
+   "source_url": "https://langfuse.com/docs/integrations/amazon-bedrock"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-integrations-autogen",
+   "type": "evidence",
+   "label": "AutoGen",
+   "source_url": "https://langfuse.com/docs/integrations/autogen"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-integrations-flowise",
+   "type": "evidence",
+   "label": "Flowise",
+   "source_url": "https://langfuse.com/docs/integrations/flowise"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-integrations-langflow",
+   "type": "evidence",
+   "label": "Langflow",
+   "source_url": "https://langfuse.com/docs/integrations/langflow"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-integrations-dify",
+   "type": "evidence",
+   "label": "Dify",
+   "source_url": "https://langfuse.com/docs/integrations/dify"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-integrations-openwebui",
+   "type": "evidence",
+   "label": "OpenWebUI",
+   "source_url": "https://langfuse.com/docs/integrations/openwebui"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-integrations-promptfoo",
+   "type": "evidence",
+   "label": "Promptfoo",
+   "source_url": "https://langfuse.com/docs/integrations/promptfoo"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-integrations-lobechat",
+   "type": "evidence",
+   "label": "LobeChat",
+   "source_url": "https://langfuse.com/docs/integrations/lobechat"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-integrations-vapi",
+   "type": "evidence",
+   "label": "Vapi",
+   "source_url": "https://langfuse.com/docs/integrations/vapi"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-integrations-other-inferable",
+   "type": "evidence",
+   "label": "Inferable",
+   "source_url": "https://langfuse.com/docs/integrations/other/inferable"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-integrations-other-gradio",
+   "type": "evidence",
+   "label": "Gradio",
+   "source_url": "https://langfuse.com/docs/integrations/other/gradio"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-integrations-goose",
+   "type": "evidence",
+   "label": "Goose",
+   "source_url": "https://langfuse.com/docs/integrations/goose"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-integrations-smolagents",
+   "type": "evidence",
+   "label": "smolagents",
+   "source_url": "https://langfuse.com/docs/integrations/smolagents"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-integrations-crewai",
+   "type": "evidence",
+   "label": "CrewAI",
+   "source_url": "https://langfuse.com/docs/integrations/crewai"
+  },
+  {
+   "id": "e-https-cloud-langfuse-com-auth-sign-up",
+   "type": "evidence",
+   "label": "Create Langfuse account",
+   "source_url": "https://cloud.langfuse.com/auth/sign-up"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-sdk-python-decorators",
+   "type": "evidence",
+   "label": "`@observe()` decorator",
+   "source_url": "https://langfuse.com/docs/sdk/python/decorators"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-get-started-log-your-first-llm-call-to-langfuse",
+   "type": "evidence",
+   "label": "our documentation",
+   "source_url": "https://langfuse.com/docs/get-started#log-your-first-llm-call-to-langfuse"
+  },
+  {
+   "id": "e-https-cloud-langfuse-com-project-cloramnkj0002jz088vzn1ja4-traces-db22d0a442216b",
+   "type": "evidence",
+   "label": "Public example trace in Langfuse",
+   "source_url": "https://cloud.langfuse.com/project/cloramnkj0002jz088vzn1ja4/traces/db22d0a442216b485abd83cc9df6d9ee"
+  },
+  {
+   "id": "e-https-langfuse-com-docs",
+   "type": "evidence",
+   "label": "documentation",
+   "source_url": "https://langfuse.com/docs"
+  },
+  {
+   "id": "e-https-langfuse-com-faq",
+   "type": "evidence",
+   "label": "Langfuse FAQs",
+   "source_url": "https://langfuse.com/faq"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-ask-ai",
+   "type": "evidence",
+   "label": "Ask AI",
+   "source_url": "https://langfuse.com/docs/ask-ai"
+  },
+  {
+   "id": "e-https-github-com-orgs-langfuse-discussions-categories-support",
+   "type": "evidence",
+   "label": "public Q&A",
+   "source_url": "https://github.com/orgs/langfuse/discussions/categories/support"
+  },
+  {
+   "id": "e-https-github-com-orgs-langfuse-discussions-categories-ideas",
+   "type": "evidence",
+   "label": "Request a feature",
+   "source_url": "https://github.com/orgs/langfuse/discussions/categories/ideas"
+  },
+  {
+   "id": "e-https-github-com-langfuse-langfuse-issues",
+   "type": "evidence",
+   "label": "Report a Bug",
+   "source_url": "https://github.com/langfuse/langfuse/issues"
+  },
+  {
+   "id": "e-https-langfuse-com-docs-open-source",
+   "type": "evidence",
+   "label": "docs",
+   "source_url": "https://langfuse.com/docs/open-source"
+  },
+  {
+   "id": "e-https-github-com-nodejs-docker-node",
+   "type": "evidence",
+   "label": "source",
+   "source_url": "https://github.com/nodejs/docker-node"
+  },
+  {
+   "id": "e-https-github-com-langfuse-langfuse-docs-blob-main-components-mdx-dependents",
+   "type": "evidence",
+   "label": "Source",
+   "source_url": "https://github.com/langfuse/langfuse-docs/blob/main/components-mdx/dependents"
+  },
+  {
+   "id": "e-https-github-com-langflow-ai",
+   "type": "evidence",
+   "label": "langflow-ai",
+   "source_url": "https://github.com/langflow-ai"
+  },
+  {
+   "id": "e-https-github-com-langflow-ai-langflow",
+   "type": "evidence",
+   "label": "langflow",
+   "source_url": "https://github.com/langflow-ai/langflow"
+  },
+  {
+   "id": "e-https-github-com-open-webui",
+   "type": "evidence",
+   "label": "open-webui",
+   "source_url": "https://github.com/open-webui"
+  },
+  {
+   "id": "e-https-github-com-open-webui-open-webui",
+   "type": "evidence",
+   "label": "open-webui",
+   "source_url": "https://github.com/open-webui/open-webui"
+  },
+  {
+   "id": "e-https-github-com-abi",
+   "type": "evidence",
+   "label": "abi",
+   "source_url": "https://github.com/abi"
+  },
+  {
+   "id": "e-https-github-com-abi-screenshot-to-code",
+   "type": "evidence",
+   "label": "screenshot-to-code",
+   "source_url": "https://github.com/abi/screenshot-to-code"
+  },
+  {
+   "id": "e-https-github-com-lobehub",
+   "type": "evidence",
+   "label": "lobehub",
+   "source_url": "https://github.com/lobehub"
+  },
+  {
+   "id": "e-https-github-com-lobehub-lobe-chat",
+   "type": "evidence",
+   "label": "lobe-chat",
+   "source_url": "https://github.com/lobehub/lobe-chat"
+  },
+  {
+   "id": "e-https-github-com-infiniflow",
+   "type": "evidence",
+   "label": "infiniflow",
+   "source_url": "https://github.com/infiniflow"
+  },
+  {
+   "id": "e-https-github-com-infiniflow-ragflow",
+   "type": "evidence",
+   "label": "ragflow",
+   "source_url": "https://github.com/infiniflow/ragflow"
+  },
+  {
+   "id": "e-https-github-com-firecrawl",
+   "type": "evidence",
+   "label": "firecrawl",
+   "source_url": "https://github.com/firecrawl"
+  },
+  {
+   "id": "e-https-github-com-firecrawl-firecrawl",
+   "type": "evidence",
+   "label": "firecrawl",
+   "source_url": "https://github.com/firecrawl/firecrawl"
+  },
+  {
+   "id": "e-https-github-com-run-llama",
+   "type": "evidence",
+   "label": "run-llama",
+   "source_url": "https://github.com/run-llama"
+  },
+  {
+   "id": "e-https-github-com-run-llama-llama-index",
+   "type": "evidence",
+   "label": "llama_index",
+   "source_url": "https://github.com/run-llama/llama_index"
+  },
+  {
+   "id": "e-https-github-com-flowiseai",
+   "type": "evidence",
+   "label": "FlowiseAI",
+   "source_url": "https://github.com/FlowiseAI"
+  },
+  {
+   "id": "e-https-github-com-flowiseai-flowise",
+   "type": "evidence",
+   "label": "Flowise",
+   "source_url": "https://github.com/FlowiseAI/Flowise"
+  },
+  {
+   "id": "e-https-github-com-quivrhq",
+   "type": "evidence",
+   "label": "QuivrHQ",
+   "source_url": "https://github.com/QuivrHQ"
+  },
+  {
+   "id": "e-https-github-com-quivrhq-quivr",
+   "type": "evidence",
+   "label": "quivr",
+   "source_url": "https://github.com/QuivrHQ/quivr"
+  },
+  {
+   "id": "e-https-github-com-microsoft",
+   "type": "evidence",
+   "label": "microsoft",
+   "source_url": "https://github.com/microsoft"
+  },
+  {
+   "id": "e-https-github-com-microsoft-ai-agents-for-beginners",
+   "type": "evidence",
+   "label": "ai-agents-for-beginners",
+   "source_url": "https://github.com/microsoft/ai-agents-for-beginners"
+  },
+  {
+   "id": "e-https-github-com-chatchat-space",
+   "type": "evidence",
+   "label": "chatchat-space",
+   "source_url": "https://github.com/chatchat-space"
+  },
+  {
+   "id": "e-https-github-com-chatchat-space-langchain-chatchat",
+   "type": "evidence",
+   "label": "Langchain-Chatchat",
+   "source_url": "https://github.com/chatchat-space/Langchain-Chatchat"
+  },
+  {
+   "id": "e-https-github-com-mindsdb",
+   "type": "evidence",
+   "label": "mindsdb",
+   "source_url": "https://github.com/mindsdb"
+  },
+  {
+   "id": "e-https-github-com-mindsdb-mindsdb",
+   "type": "evidence",
+   "label": "mindsdb",
+   "source_url": "https://github.com/mindsdb/mindsdb"
+  },
+  {
+   "id": "e-https-github-com-danny-avila",
+   "type": "evidence",
+   "label": "danny-avila",
+   "source_url": "https://github.com/danny-avila"
+  },
+  {
+   "id": "e-https-github-com-danny-avila-librechat",
+   "type": "evidence",
+   "label": "LibreChat",
+   "source_url": "https://github.com/danny-avila/LibreChat"
+  },
+  {
+   "id": "e-https-github-com-berriai",
+   "type": "evidence",
+   "label": "BerriAI",
+   "source_url": "https://github.com/BerriAI"
+  },
+  {
+   "id": "e-https-github-com-berriai-litellm",
+   "type": "evidence",
+   "label": "litellm",
+   "source_url": "https://github.com/BerriAI/litellm"
+  },
+  {
+   "id": "e-https-github-com-onlook-dev",
+   "type": "evidence",
+   "label": "onlook-dev",
+   "source_url": "https://github.com/onlook-dev"
+  },
+  {
+   "id": "e-https-github-com-onlook-dev-onlook",
+   "type": "evidence",
+   "label": "onlook",
+   "source_url": "https://github.com/onlook-dev/onlook"
+  },
+  {
+   "id": "e-https-github-com-nixos",
+   "type": "evidence",
+   "label": "NixOS",
+   "source_url": "https://github.com/NixOS"
+  },
+  {
+   "id": "e-https-github-com-nixos-nixpkgs",
+   "type": "evidence",
+   "label": "nixpkgs",
+   "source_url": "https://github.com/NixOS/nixpkgs"
+  },
+  {
+   "id": "e-https-github-com-kortix-ai",
+   "type": "evidence",
+   "label": "kortix-ai",
+   "source_url": "https://github.com/kortix-ai"
+  },
+  {
+   "id": "e-https-github-com-kortix-ai-suna",
+   "type": "evidence",
+   "label": "suna",
+   "source_url": "https://github.com/kortix-ai/suna"
+  },
+  {
+   "id": "e-https-github-com-anthropics",
+   "type": "evidence",
+   "label": "anthropics",
+   "source_url": "https://github.com/anthropics"
+  },
+  {
+   "id": "e-https-github-com-anthropics-courses",
+   "type": "evidence",
+   "label": "courses",
+   "source_url": "https://github.com/anthropics/courses"
+  },
+  {
+   "id": "e-https-github-com-mastra-ai",
+   "type": "evidence",
+   "label": "mastra-ai",
+   "source_url": "https://github.com/mastra-ai"
+  },
+  {
+   "id": "e-https-github-com-mastra-ai-mastra",
+   "type": "evidence",
+   "label": "mastra",
+   "source_url": "https://github.com/mastra-ai/mastra"
+  },
+  {
+   "id": "e-https-github-com-langfuse",
+   "type": "evidence",
+   "label": "langfuse",
+   "source_url": "https://github.com/langfuse"
+  },
+  {
+   "id": "e-https-github-com-langfuse-langfuse",
+   "type": "evidence",
+   "label": "langfuse",
+   "source_url": "https://github.com/langfuse/langfuse"
+  },
+  {
+   "id": "e-https-github-com-canner",
+   "type": "evidence",
+   "label": "Canner",
+   "source_url": "https://github.com/Canner"
+  },
+  {
+   "id": "e-https-github-com-canner-wrenai",
+   "type": "evidence",
+   "label": "WrenAI",
+   "source_url": "https://github.com/Canner/WrenAI"
+  },
+  {
+   "id": "e-https-github-com-promptfoo",
+   "type": "evidence",
+   "label": "promptfoo",
+   "source_url": "https://github.com/promptfoo"
+  },
+  {
+   "id": "e-https-github-com-promptfoo-promptfoo",
+   "type": "evidence",
+   "label": "promptfoo",
+   "source_url": "https://github.com/promptfoo/promptfoo"
+  },
+  {
+   "id": "e-https-github-com-the-pocket",
+   "type": "evidence",
+   "label": "The-Pocket",
+   "source_url": "https://github.com/The-Pocket"
+  },
+  {
+   "id": "e-https-github-com-the-pocket-pocketflow",
+   "type": "evidence",
+   "label": "PocketFlow",
+   "source_url": "https://github.com/The-Pocket/PocketFlow"
+  },
+  {
+   "id": "e-https-github-com-openpipe",
+   "type": "evidence",
+   "label": "OpenPipe",
+   "source_url": "https://github.com/OpenPipe"
+  },
+  {
+   "id": "e-https-github-com-openpipe-art",
+   "type": "evidence",
+   "label": "ART",
+   "source_url": "https://github.com/OpenPipe/ART"
+  },
+  {
+   "id": "e-https-github-com-topoteretes",
+   "type": "evidence",
+   "label": "topoteretes",
+   "source_url": "https://github.com/topoteretes"
+  },
+  {
+   "id": "e-https-github-com-topoteretes-cognee",
+   "type": "evidence",
+   "label": "cognee",
+   "source_url": "https://github.com/topoteretes/cognee"
+  },
+  {
+   "id": "e-https-github-com-awslabs",
+   "type": "evidence",
+   "label": "awslabs",
+   "source_url": "https://github.com/awslabs"
+  },
+  {
+   "id": "e-https-github-com-awslabs-agent-squad",
+   "type": "evidence",
+   "label": "agent-squad",
+   "source_url": "https://github.com/awslabs/agent-squad"
+  },
+  {
+   "id": "e-https-github-com-basedhardware",
+   "type": "evidence",
+   "label": "BasedHardware",
+   "source_url": "https://github.com/BasedHardware"
+  },
+  {
+   "id": "e-https-github-com-basedhardware-omi",
+   "type": "evidence",
+   "label": "omi",
+   "source_url": "https://github.com/BasedHardware/omi"
+  },
+  {
+   "id": "e-https-github-com-hatchet-dev",
+   "type": "evidence",
+   "label": "hatchet-dev",
+   "source_url": "https://github.com/hatchet-dev"
+  },
+  {
+   "id": "e-https-github-com-hatchet-dev-hatchet",
+   "type": "evidence",
+   "label": "hatchet",
+   "source_url": "https://github.com/hatchet-dev/hatchet"
+  },
+  {
+   "id": "e-https-github-com-zenml-io",
+   "type": "evidence",
+   "label": "zenml-io",
+   "source_url": "https://github.com/zenml-io"
+  },
+  {
+   "id": "e-https-github-com-zenml-io-zenml",
+   "type": "evidence",
+   "label": "zenml",
+   "source_url": "https://github.com/zenml-io/zenml"
+  },
+  {
+   "id": "e-https-github-com-refly-ai",
+   "type": "evidence",
+   "label": "refly-ai",
+   "source_url": "https://github.com/refly-ai"
+  },
+  {
+   "id": "e-https-github-com-refly-ai-refly",
+   "type": "evidence",
+   "label": "refly",
+   "source_url": "https://github.com/refly-ai/refly"
+  },
+  {
+   "id": "e-https-github-com-coleam00",
+   "type": "evidence",
+   "label": "coleam00",
+   "source_url": "https://github.com/coleam00"
+  },
+  {
+   "id": "e-https-github-com-coleam00-ottomator-agents",
+   "type": "evidence",
+   "label": "ottomator-agents",
+   "source_url": "https://github.com/coleam00/ottomator-agents"
+  },
+  {
+   "id": "e-https-github-com-joshuac215",
+   "type": "evidence",
+   "label": "JoshuaC215",
+   "source_url": "https://github.com/JoshuaC215"
+  },
+  {
+   "id": "e-https-github-com-joshuac215-agent-service-toolkit",
+   "type": "evidence",
+   "label": "agent-service-toolkit",
+   "source_url": "https://github.com/JoshuaC215/agent-service-toolkit"
+  },
+  {
+   "id": "e-https-github-com-colanode",
+   "type": "evidence",
+   "label": "colanode",
+   "source_url": "https://github.com/colanode"
+  },
+  {
+   "id": "e-https-github-com-colanode-colanode",
+   "type": "evidence",
+   "label": "colanode",
+   "source_url": "https://github.com/colanode/colanode"
+  },
+  {
+   "id": "e-https-github-com-voltagent",
+   "type": "evidence",
+   "label": "VoltAgent",
+   "source_url": "https://github.com/VoltAgent"
+  },
+  {
+   "id": "e-https-github-com-voltagent-voltagent",
+   "type": "evidence",
+   "label": "voltagent",
+   "source_url": "https://github.com/VoltAgent/voltagent"
+  },
+  {
+   "id": "e-https-github-com-bragai",
+   "type": "evidence",
+   "label": "bragai",
+   "source_url": "https://github.com/bragai"
+  },
+  {
+   "id": "e-https-github-com-bragai-brag-langchain",
+   "type": "evidence",
+   "label": "bRAG-langchain",
+   "source_url": "https://github.com/bragai/bRAG-langchain"
+  },
+  {
+   "id": "e-https-github-com-pingcap",
+   "type": "evidence",
+   "label": "pingcap",
+   "source_url": "https://github.com/pingcap"
+  },
+  {
+   "id": "e-https-github-com-pingcap-autoflow",
+   "type": "evidence",
+   "label": "autoflow",
+   "source_url": "https://github.com/pingcap/autoflow"
+  },
+  {
+   "id": "e-https-github-com-sourcebot-dev",
+   "type": "evidence",
+   "label": "sourcebot-dev",
+   "source_url": "https://github.com/sourcebot-dev"
+  },
+  {
+   "id": "e-https-github-com-sourcebot-dev-sourcebot",
+   "type": "evidence",
+   "label": "sourcebot",
+   "source_url": "https://github.com/sourcebot-dev/sourcebot"
+  },
+  {
+   "id": "e-https-github-com-open-webui-pipelines",
+   "type": "evidence",
+   "label": "pipelines",
+   "source_url": "https://github.com/open-webui/pipelines"
+  },
+  {
+   "id": "e-https-github-com-yfgaia",
+   "type": "evidence",
+   "label": "YFGaia",
+   "source_url": "https://github.com/YFGaia"
+  },
+  {
+   "id": "e-https-github-com-yfgaia-dify-plus",
+   "type": "evidence",
+   "label": "dify-plus",
+   "source_url": "https://github.com/YFGaia/dify-plus"
+  },
+  {
+   "id": "e-https-github-com-thespaghettidetective",
+   "type": "evidence",
+   "label": "TheSpaghettiDetective",
+   "source_url": "https://github.com/TheSpaghettiDetective"
+  },
+  {
+   "id": "e-https-github-com-thespaghettidetective-obico-server",
+   "type": "evidence",
+   "label": "obico-server",
+   "source_url": "https://github.com/TheSpaghettiDetective/obico-server"
+  },
+  {
+   "id": "e-https-github-com-mlsysops",
+   "type": "evidence",
+   "label": "MLSysOps",
+   "source_url": "https://github.com/MLSysOps"
+  },
+  {
+   "id": "e-https-github-com-mlsysops-mle-agent",
+   "type": "evidence",
+   "label": "MLE-agent",
+   "source_url": "https://github.com/MLSysOps/MLE-agent"
+  },
+  {
+   "id": "e-https-github-com-tiger-ai-lab",
+   "type": "evidence",
+   "label": "TIGER-AI-Lab",
+   "source_url": "https://github.com/TIGER-AI-Lab"
+  },
+  {
+   "id": "e-https-github-com-tiger-ai-lab-theoremexplainagent",
+   "type": "evidence",
+   "label": "TheoremExplainAgent",
+   "source_url": "https://github.com/TIGER-AI-Lab/TheoremExplainAgent"
+  },
+  {
+   "id": "e-https-github-com-trailofbits",
+   "type": "evidence",
+   "label": "trailofbits",
+   "source_url": "https://github.com/trailofbits"
+  },
+  {
+   "id": "e-https-github-com-trailofbits-buttercup",
+   "type": "evidence",
+   "label": "buttercup",
+   "source_url": "https://github.com/trailofbits/buttercup"
+  },
+  {
+   "id": "e-https-github-com-wassim249",
+   "type": "evidence",
+   "label": "wassim249",
+   "source_url": "https://github.com/wassim249"
+  },
+  {
+   "id": "e-https-github-com-wassim249-fastapi-langgraph-agent-production-ready-template",
+   "type": "evidence",
+   "label": "fastapi-langgraph-agent-production-ready-template",
+   "source_url": "https://github.com/wassim249/fastapi-langgraph-agent-production-ready-template"
+  },
+  {
+   "id": "e-https-github-com-alishobeiri",
+   "type": "evidence",
+   "label": "alishobeiri",
+   "source_url": "https://github.com/alishobeiri"
+  },
+  {
+   "id": "e-https-github-com-alishobeiri-thread",
+   "type": "evidence",
+   "label": "thread",
+   "source_url": "https://github.com/alishobeiri/thread"
+  },
+  {
+   "id": "e-https-github-com-dmayboroda",
+   "type": "evidence",
+   "label": "dmayboroda",
+   "source_url": "https://github.com/dmayboroda"
+  },
+  {
+   "id": "e-https-github-com-dmayboroda-minima",
+   "type": "evidence",
+   "label": "minima",
+   "source_url": "https://github.com/dmayboroda/minima"
+  },
+  {
+   "id": "e-https-github-com-zstar1003",
+   "type": "evidence",
+   "label": "zstar1003",
+   "source_url": "https://github.com/zstar1003"
+  },
+  {
+   "id": "e-https-github-com-zstar1003-ragflow-plus",
+   "type": "evidence",
+   "label": "ragflow-plus",
+   "source_url": "https://github.com/zstar1003/ragflow-plus"
+  },
+  {
+   "id": "e-https-github-com-openops-cloud",
+   "type": "evidence",
+   "label": "openops-cloud",
+   "source_url": "https://github.com/openops-cloud"
+  },
+  {
+   "id": "e-https-github-com-openops-cloud-openops",
+   "type": "evidence",
+   "label": "openops",
+   "source_url": "https://github.com/openops-cloud/openops"
+  },
+  {
+   "id": "e-https-github-com-dynamiq-ai",
+   "type": "evidence",
+   "label": "dynamiq-ai",
+   "source_url": "https://github.com/dynamiq-ai"
+  },
+  {
+   "id": "e-https-github-com-dynamiq-ai-dynamiq",
+   "type": "evidence",
+   "label": "dynamiq",
+   "source_url": "https://github.com/dynamiq-ai/dynamiq"
+  },
+  {
+   "id": "e-https-github-com-xataio",
+   "type": "evidence",
+   "label": "xataio",
+   "source_url": "https://github.com/xataio"
+  },
+  {
+   "id": "e-https-github-com-xataio-agent",
+   "type": "evidence",
+   "label": "agent",
+   "source_url": "https://github.com/xataio/agent"
+  },
+  {
+   "id": "e-https-github-com-plastic-labs",
+   "type": "evidence",
+   "label": "plastic-labs",
+   "source_url": "https://github.com/plastic-labs"
+  },
+  {
+   "id": "e-https-github-com-plastic-labs-tutor-gpt",
+   "type": "evidence",
+   "label": "tutor-gpt",
+   "source_url": "https://github.com/plastic-labs/tutor-gpt"
+  },
+  {
+   "id": "e-https-github-com-trendy-design",
+   "type": "evidence",
+   "label": "trendy-design",
+   "source_url": "https://github.com/trendy-design"
+  },
+  {
+   "id": "e-https-github-com-trendy-design-llmchat",
+   "type": "evidence",
+   "label": "llmchat",
+   "source_url": "https://github.com/trendy-design/llmchat"
+  },
+  {
+   "id": "e-https-github-com-hotovo",
+   "type": "evidence",
+   "label": "hotovo",
+   "source_url": "https://github.com/hotovo"
+  },
+  {
+   "id": "e-https-github-com-hotovo-aider-desk",
+   "type": "evidence",
+   "label": "aider-desk",
+   "source_url": "https://github.com/hotovo/aider-desk"
+  },
+  {
+   "id": "e-https-github-com-opslane",
+   "type": "evidence",
+   "label": "opslane",
+   "source_url": "https://github.com/opslane"
+  },
+  {
+   "id": "e-https-github-com-opslane-opslane",
+   "type": "evidence",
+   "label": "opslane",
+   "source_url": "https://github.com/opslane/opslane"
+  },
+  {
+   "id": "e-https-github-com-wrtnlabs",
+   "type": "evidence",
+   "label": "wrtnlabs",
+   "source_url": "https://github.com/wrtnlabs"
+  },
+  {
+   "id": "e-https-github-com-wrtnlabs-autoview",
+   "type": "evidence",
+   "label": "autoview",
+   "source_url": "https://github.com/wrtnlabs/autoview"
+  },
+  {
+   "id": "e-https-github-com-andysingal",
+   "type": "evidence",
+   "label": "andysingal",
+   "source_url": "https://github.com/andysingal"
+  },
+  {
+   "id": "e-https-github-com-andysingal-llm-course",
+   "type": "evidence",
+   "label": "llm-course",
+   "source_url": "https://github.com/andysingal/llm-course"
+  },
+  {
+   "id": "e-https-github-com-theopenconversationkit",
+   "type": "evidence",
+   "label": "theopenconversationkit",
+   "source_url": "https://github.com/theopenconversationkit"
+  },
+  {
+   "id": "e-https-github-com-theopenconversationkit-tock",
+   "type": "evidence",
+   "label": "tock",
+   "source_url": "https://github.com/theopenconversationkit/tock"
+  },
+  {
+   "id": "e-https-github-com-sentient-engineering",
+   "type": "evidence",
+   "label": "sentient-engineering",
+   "source_url": "https://github.com/sentient-engineering"
+  },
+  {
+   "id": "e-https-github-com-sentient-engineering-agent-q",
+   "type": "evidence",
+   "label": "agent-q",
+   "source_url": "https://github.com/sentient-engineering/agent-q"
+  },
+  {
+   "id": "e-https-github-com-nicholasgoh",
+   "type": "evidence",
+   "label": "NicholasGoh",
+   "source_url": "https://github.com/NicholasGoh"
+  },
+  {
+   "id": "e-https-github-com-nicholasgoh-fastapi-mcp-langgraph-template",
+   "type": "evidence",
+   "label": "fastapi-mcp-langgraph-template",
+   "source_url": "https://github.com/NicholasGoh/fastapi-mcp-langgraph-template"
+  },
+  {
+   "id": "e-https-github-com-i-am-alice",
+   "type": "evidence",
+   "label": "i-am-alice",
+   "source_url": "https://github.com/i-am-alice"
+  },
+  {
+   "id": "e-https-github-com-i-am-alice-3rd-devs",
+   "type": "evidence",
+   "label": "3rd-devs",
+   "source_url": "https://github.com/i-am-alice/3rd-devs"
+  },
+  {
+   "id": "e-https-github-com-aidotnet",
+   "type": "evidence",
+   "label": "AIDotNet",
+   "source_url": "https://github.com/AIDotNet"
+  },
+  {
+   "id": "e-https-github-com-aidotnet-koala-ai",
+   "type": "evidence",
+   "label": "koala-ai",
+   "source_url": "https://github.com/AIDotNet/koala-ai"
+  },
+  {
+   "id": "e-https-github-com-phospho-app",
+   "type": "evidence",
+   "label": "phospho-app",
+   "source_url": "https://github.com/phospho-app"
+  },
+  {
+   "id": "e-https-github-com-phospho-app-text-analytics-legacy",
+   "type": "evidence",
+   "label": "text-analytics-legacy",
+   "source_url": "https://github.com/phospho-app/text-analytics-legacy"
+  },
+  {
+   "id": "e-https-github-com-inferablehq",
+   "type": "evidence",
+   "label": "inferablehq",
+   "source_url": "https://github.com/inferablehq"
+  },
+  {
+   "id": "e-https-github-com-inferablehq-inferable",
+   "type": "evidence",
+   "label": "inferable",
+   "source_url": "https://github.com/inferablehq/inferable"
+  },
+  {
+   "id": "e-https-github-com-duoyang666",
+   "type": "evidence",
+   "label": "duoyang666",
+   "source_url": "https://github.com/duoyang666"
+  },
+  {
+   "id": "e-https-github-com-duoyang666-ai-novel",
+   "type": "evidence",
+   "label": "ai_novel",
+   "source_url": "https://github.com/duoyang666/ai_novel"
+  },
+  {
+   "id": "e-https-github-com-strands-agents",
+   "type": "evidence",
+   "label": "strands-agents",
+   "source_url": "https://github.com/strands-agents"
+  },
+  {
+   "id": "e-https-github-com-strands-agents-samples",
+   "type": "evidence",
+   "label": "samples",
+   "source_url": "https://github.com/strands-agents/samples"
+  },
+  {
+   "id": "e-https-github-com-franciscomoretti",
+   "type": "evidence",
+   "label": "FranciscoMoretti",
+   "source_url": "https://github.com/FranciscoMoretti"
+  },
+  {
+   "id": "e-https-github-com-franciscomoretti-sparka",
+   "type": "evidence",
+   "label": "sparka",
+   "source_url": "https://github.com/FranciscoMoretti/sparka"
+  },
+  {
+   "id": "e-https-github-com-robotecai",
+   "type": "evidence",
+   "label": "RobotecAI",
+   "source_url": "https://github.com/RobotecAI"
+  },
+  {
+   "id": "e-https-github-com-robotecai-rai",
+   "type": "evidence",
+   "label": "rai",
+   "source_url": "https://github.com/RobotecAI/rai"
+  },
+  {
+   "id": "e-https-github-com-electriccodeguy",
+   "type": "evidence",
+   "label": "ElectricCodeGuy",
+   "source_url": "https://github.com/ElectricCodeGuy"
+  },
+  {
+   "id": "e-https-github-com-electriccodeguy-supabaseauthwithssr",
+   "type": "evidence",
+   "label": "SupabaseAuthWithSSR",
+   "source_url": "https://github.com/ElectricCodeGuy/SupabaseAuthWithSSR"
+  },
+  {
+   "id": "e-https-github-com-souzatharsis",
+   "type": "evidence",
+   "label": "souzatharsis",
+   "source_url": "https://github.com/souzatharsis"
+  },
+  {
+   "id": "e-https-github-com-souzatharsis-tamingllms",
+   "type": "evidence",
+   "label": "tamingLLMs",
+   "source_url": "https://github.com/souzatharsis/tamingLLMs"
+  },
+  {
+   "id": "e-https-github-com-aws-samples",
+   "type": "evidence",
+   "label": "aws-samples",
+   "source_url": "https://github.com/aws-samples"
+  },
+  {
+   "id": "e-https-github-com-aws-samples-aws-ai-ml-workshop-kr",
+   "type": "evidence",
+   "label": "aws-ai-ml-workshop-kr",
+   "source_url": "https://github.com/aws-samples/aws-ai-ml-workshop-kr"
+  },
+  {
+   "id": "e-https-github-com-weizxfree",
+   "type": "evidence",
+   "label": "weizxfree",
+   "source_url": "https://github.com/weizxfree"
+  },
+  {
+   "id": "e-https-github-com-weizxfree-knowflow",
+   "type": "evidence",
+   "label": "KnowFlow",
+   "source_url": "https://github.com/weizxfree/KnowFlow"
+  },
+  {
+   "id": "e-https-github-com-zenml-io-zenml-projects",
+   "type": "evidence",
+   "label": "zenml-projects",
+   "source_url": "https://github.com/zenml-io/zenml-projects"
+  },
+  {
+   "id": "e-https-github-com-wxai-space",
+   "type": "evidence",
+   "label": "wxai-space",
+   "source_url": "https://github.com/wxai-space"
+  },
+  {
+   "id": "e-https-github-com-wxai-space-lightagent",
+   "type": "evidence",
+   "label": "LightAgent",
+   "source_url": "https://github.com/wxai-space/LightAgent"
+  },
+  {
+   "id": "e-https-github-com-ozamatash",
+   "type": "evidence",
+   "label": "Ozamatash",
+   "source_url": "https://github.com/Ozamatash"
+  },
+  {
+   "id": "e-https-github-com-ozamatash-deep-research-mcp",
+   "type": "evidence",
+   "label": "deep-research-mcp",
+   "source_url": "https://github.com/Ozamatash/deep-research-mcp"
+  },
+  {
+   "id": "e-https-github-com-sql-agi",
+   "type": "evidence",
+   "label": "sql-agi",
+   "source_url": "https://github.com/sql-agi"
+  },
+  {
+   "id": "e-https-github-com-sql-agi-db-gpt",
+   "type": "evidence",
+   "label": "DB-GPT",
+   "source_url": "https://github.com/sql-agi/DB-GPT"
+  },
+  {
+   "id": "e-https-github-com-guyernest",
+   "type": "evidence",
+   "label": "guyernest",
+   "source_url": "https://github.com/guyernest"
+  },
+  {
+   "id": "e-https-github-com-guyernest-advanced-rag",
+   "type": "evidence",
+   "label": "advanced-rag",
+   "source_url": "https://github.com/guyernest/advanced-rag"
+  },
+  {
+   "id": "e-https-github-com-bklieger-groq",
+   "type": "evidence",
+   "label": "bklieger-groq",
+   "source_url": "https://github.com/bklieger-groq"
+  },
+  {
+   "id": "e-https-github-com-bklieger-groq-mathtutor-on-groq",
+   "type": "evidence",
+   "label": "mathtutor-on-groq",
+   "source_url": "https://github.com/bklieger-groq/mathtutor-on-groq"
+  },
+  {
+   "id": "e-https-github-com-plastic-labs-honcho",
+   "type": "evidence",
+   "label": "honcho",
+   "source_url": "https://github.com/plastic-labs/honcho"
+  },
+  {
+   "id": "e-https-github-com-ovinc-cn",
+   "type": "evidence",
+   "label": "OVINC-CN",
+   "source_url": "https://github.com/OVINC-CN"
+  },
+  {
+   "id": "e-https-github-com-ovinc-cn-openwebui",
+   "type": "evidence",
+   "label": "OpenWebUI",
+   "source_url": "https://github.com/OVINC-CN/OpenWebUI"
+  },
+  {
+   "id": "e-https-github-com-zhutoutoutousan",
+   "type": "evidence",
+   "label": "zhutoutoutousan",
+   "source_url": "https://github.com/zhutoutoutousan"
+  },
+  {
+   "id": "e-https-github-com-zhutoutoutousan-worldquant-miner",
+   "type": "evidence",
+   "label": "worldquant-miner",
+   "source_url": "https://github.com/zhutoutoutousan/worldquant-miner"
+  },
+  {
+   "id": "e-https-github-com-iceener",
+   "type": "evidence",
+   "label": "iceener",
+   "source_url": "https://github.com/iceener"
+  },
+  {
+   "id": "e-https-github-com-iceener-ai",
+   "type": "evidence",
+   "label": "ai",
+   "source_url": "https://github.com/iceener/ai"
+  },
+  {
+   "id": "e-https-github-com-giselles-ai",
+   "type": "evidence",
+   "label": "giselles-ai",
+   "source_url": "https://github.com/giselles-ai"
+  },
+  {
+   "id": "e-https-github-com-giselles-ai-giselle",
+   "type": "evidence",
+   "label": "giselle",
+   "source_url": "https://github.com/giselles-ai/giselle"
+  },
+  {
+   "id": "e-https-github-com-ai-shifu",
+   "type": "evidence",
+   "label": "ai-shifu",
+   "source_url": "https://github.com/ai-shifu"
+  },
+  {
+   "id": "e-https-github-com-ai-shifu-ai-shifu",
+   "type": "evidence",
+   "label": "ai-shifu",
+   "source_url": "https://github.com/ai-shifu/ai-shifu"
+  },
+  {
+   "id": "e-https-github-com-aws-samples-sample-serverless-mcp-servers",
+   "type": "evidence",
+   "label": "sample-serverless-mcp-servers",
+   "source_url": "https://github.com/aws-samples/sample-serverless-mcp-servers"
+  },
+  {
+   "id": "e-https-github-com-celerforge",
+   "type": "evidence",
+   "label": "celerforge",
+   "source_url": "https://github.com/celerforge"
+  },
+  {
+   "id": "e-https-github-com-celerforge-freenote",
+   "type": "evidence",
+   "label": "freenote",
+   "source_url": "https://github.com/celerforge/freenote"
+  },
+  {
+   "id": "e-https-github-com-babelcloud",
+   "type": "evidence",
+   "label": "babelcloud",
+   "source_url": "https://github.com/babelcloud"
+  },
+  {
+   "id": "e-https-github-com-babelcloud-llm-rgb",
+   "type": "evidence",
+   "label": "LLM-RGB",
+   "source_url": "https://github.com/babelcloud/LLM-RGB"
+  },
+  {
+   "id": "e-https-github-com-8090-inc",
+   "type": "evidence",
+   "label": "8090-inc",
+   "source_url": "https://github.com/8090-inc"
+  },
+  {
+   "id": "e-https-github-com-8090-inc-xrx-sample-apps",
+   "type": "evidence",
+   "label": "xrx-sample-apps",
+   "source_url": "https://github.com/8090-inc/xrx-sample-apps"
+  },
+  {
+   "id": "e-https-github-com-deepset-ai",
+   "type": "evidence",
+   "label": "deepset-ai",
+   "source_url": "https://github.com/deepset-ai"
+  },
+  {
+   "id": "e-https-github-com-deepset-ai-haystack-core-integrations",
+   "type": "evidence",
+   "label": "haystack-core-integrations",
+   "source_url": "https://github.com/deepset-ai/haystack-core-integrations"
+  },
+  {
+   "id": "e-https-github-com-codecentric",
+   "type": "evidence",
+   "label": "codecentric",
+   "source_url": "https://github.com/codecentric"
+  },
+  {
+   "id": "e-https-github-com-codecentric-c4-genai-suite",
+   "type": "evidence",
+   "label": "c4-genai-suite",
+   "source_url": "https://github.com/codecentric/c4-genai-suite"
+  },
+  {
+   "id": "e-https-github-com-xspoonai",
+   "type": "evidence",
+   "label": "XSpoonAi",
+   "source_url": "https://github.com/XSpoonAi"
+  },
+  {
+   "id": "e-https-github-com-xspoonai-spoon-core",
+   "type": "evidence",
+   "label": "spoon-core",
+   "source_url": "https://github.com/XSpoonAi/spoon-core"
+  },
+  {
+   "id": "e-https-github-com-chatchat-space-langgraph-chatchat",
+   "type": "evidence",
+   "label": "LangGraph-Chatchat",
+   "source_url": "https://github.com/chatchat-space/LangGraph-Chatchat"
+  },
+  {
+   "id": "e-https-github-com-langfuse-langfuse-docs",
+   "type": "evidence",
+   "label": "langfuse-docs",
+   "source_url": "https://github.com/langfuse/langfuse-docs"
+  },
+  {
+   "id": "e-https-github-com-piyushgarg-dev",
+   "type": "evidence",
+   "label": "piyushgarg-dev",
+   "source_url": "https://github.com/piyushgarg-dev"
+  },
+  {
+   "id": "e-https-github-com-piyushgarg-dev-genai-cohort",
+   "type": "evidence",
+   "label": "genai-cohort",
+   "source_url": "https://github.com/piyushgarg-dev/genai-cohort"
+  },
+  {
+   "id": "e-https-github-com-i-dot-ai",
+   "type": "evidence",
+   "label": "i-dot-ai",
+   "source_url": "https://github.com/i-dot-ai"
+  },
+  {
+   "id": "e-https-github-com-i-dot-ai-redbox",
+   "type": "evidence",
+   "label": "redbox",
+   "source_url": "https://github.com/i-dot-ai/redbox"
+  },
+  {
+   "id": "e-https-github-com-bmd1905",
+   "type": "evidence",
+   "label": "bmd1905",
+   "source_url": "https://github.com/bmd1905"
+  },
+  {
+   "id": "e-https-github-com-bmd1905-chatopsllm",
+   "type": "evidence",
+   "label": "ChatOpsLLM",
+   "source_url": "https://github.com/bmd1905/ChatOpsLLM"
+  },
+  {
+   "id": "e-https-github-com-fintech-dreamer",
+   "type": "evidence",
+   "label": "Fintech-Dreamer",
+   "source_url": "https://github.com/Fintech-Dreamer"
+  },
+  {
+   "id": "e-https-github-com-fintech-dreamer-finsynth",
+   "type": "evidence",
+   "label": "FinSynth",
+   "source_url": "https://github.com/Fintech-Dreamer/FinSynth"
+  },
+  {
+   "id": "e-https-github-com-kenshiro-o",
+   "type": "evidence",
+   "label": "kenshiro-o",
+   "source_url": "https://github.com/kenshiro-o"
+  },
+  {
+   "id": "e-https-github-com-kenshiro-o-nagato-ai",
+   "type": "evidence",
+   "label": "nagato-ai",
+   "source_url": "https://github.com/kenshiro-o/nagato-ai"
+  },
+  {
+   "id": "e-https-langfuse-com-security",
+   "type": "evidence",
+   "label": "Security and Privacy",
+   "source_url": "https://langfuse.com/security"
+  },
+  {
+   "id": "e-https-langfuse-com-self-hosting-security-telemetry",
+   "type": "evidence",
+   "label": "telemetry docs",
+   "source_url": "https://langfuse.com/self-hosting/security/telemetry"
+  }
+ ],
+ "edges": [
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "topic-analytics",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "topic-autogen",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "topic-evaluation",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "topic-langchain",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "topic-large-language-models",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "topic-llama-index",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "topic-llm",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "topic-llm-evaluation",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "topic-llm-observability",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "topic-llmops",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "topic-monitoring",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "topic-observability",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "topic-open-source",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "topic-openai",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "topic-playground",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "topic-prompt-engineering",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "topic-prompt-management",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "topic-self-hosted",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "topic-ycombinator",
+   "rel": "tagged"
+  },
+  {
+   "from": "c-core-features",
+   "to": "repo-langfuse-langfuse",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-deploy-langfuse",
+   "to": "repo-langfuse-langfuse",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-langfuse-cloud",
+   "to": "c-deploy-langfuse",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-self-host-langfuse",
+   "to": "c-deploy-langfuse",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-integrations",
+   "to": "repo-langfuse-langfuse",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-main-integrations",
+   "to": "c-integrations",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-packages-integrated-with-langfuse",
+   "to": "c-integrations",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-quickstart",
+   "to": "repo-langfuse-langfuse",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-1-create-new-project",
+   "to": "c-quickstart",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-2-log-your-first-llm-call",
+   "to": "c-quickstart",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-3-see-traces-in-langfuse",
+   "to": "c-quickstart",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-support",
+   "to": "repo-langfuse-langfuse",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-contributing",
+   "to": "repo-langfuse-langfuse",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-license",
+   "to": "repo-langfuse-langfuse",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-dependencies",
+   "to": "repo-langfuse-langfuse",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-star-history",
+   "to": "repo-langfuse-langfuse",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-open-source-projects-using-langfuse",
+   "to": "repo-langfuse-langfuse",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-security-privacy",
+   "to": "repo-langfuse-langfuse",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-telemetry",
+   "to": "c-security-privacy",
+   "rel": "part_of"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-clickhouse-clickhouse",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-careers-utm-source-github-utm-medium-readme-utm-campaign-hiri",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-tracing",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-demo",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-prompt-management-get-started",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-evaluation-overview",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-evaluation-dataset-runs-datasets",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-playground",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-api",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-self-hosting-local",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-self-hosting-docker-compose",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-self-hosting-kubernetes-helm",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-self-hosting-aws",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-self-hosting-azure",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-self-hosting-gcp",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-self-hosting",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-sdk",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-integrations-model-providers-openai-py",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-integrations-langchain",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-integrations-llama-index-get-started",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-integrations-haystack",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-integrations-litellm",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-integrations-vercel-ai-sdk",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-integrations-mastra",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-integrations-instructor",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-integrations-dspy",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-integrations-mirascope",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-integrations-ollama",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-integrations-amazon-bedrock",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-integrations-autogen",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-integrations-flowise",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-integrations-langflow",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-integrations-dify",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-integrations-openwebui",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-integrations-promptfoo",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-integrations-lobechat",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-integrations-vapi",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-integrations-other-inferable",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-integrations-other-gradio",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-integrations-goose",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-integrations-smolagents",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-integrations-crewai",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-cloud-langfuse-com-auth-sign-up",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-sdk-python-decorators",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-get-started-log-your-first-llm-call-to-langfuse",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-cloud-langfuse-com-project-cloramnkj0002jz088vzn1ja4-traces-db22d0a442216b",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-faq",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-ask-ai",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-orgs-langfuse-discussions-categories-support",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-orgs-langfuse-discussions-categories-ideas",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-langfuse-langfuse-issues",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-docs-open-source",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-nodejs-docker-node",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-langfuse-langfuse-docs-blob-main-components-mdx-dependents",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-langflow-ai",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-langflow-ai-langflow",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-open-webui",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-open-webui-open-webui",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-abi",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-abi-screenshot-to-code",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-lobehub",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-lobehub-lobe-chat",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-infiniflow",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-infiniflow-ragflow",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-firecrawl",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-firecrawl-firecrawl",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-run-llama",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-run-llama-llama-index",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-flowiseai",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-flowiseai-flowise",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-quivrhq",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-quivrhq-quivr",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-microsoft",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-microsoft-ai-agents-for-beginners",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-chatchat-space",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-chatchat-space-langchain-chatchat",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-mindsdb",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-mindsdb-mindsdb",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-danny-avila",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-danny-avila-librechat",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-berriai",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-berriai-litellm",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-onlook-dev",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-onlook-dev-onlook",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-nixos",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-nixos-nixpkgs",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-kortix-ai",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-kortix-ai-suna",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-anthropics",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-anthropics-courses",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-mastra-ai",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-mastra-ai-mastra",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-langfuse",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-langfuse-langfuse",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-canner",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-canner-wrenai",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-promptfoo",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-promptfoo-promptfoo",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-the-pocket",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-the-pocket-pocketflow",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-openpipe",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-openpipe-art",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-topoteretes",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-topoteretes-cognee",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-awslabs",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-awslabs-agent-squad",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-basedhardware",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-basedhardware-omi",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-hatchet-dev",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-hatchet-dev-hatchet",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-zenml-io",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-zenml-io-zenml",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-refly-ai",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-refly-ai-refly",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-coleam00",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-coleam00-ottomator-agents",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-joshuac215",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-joshuac215-agent-service-toolkit",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-colanode",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-colanode-colanode",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-voltagent",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-voltagent-voltagent",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-bragai",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-bragai-brag-langchain",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-pingcap",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-pingcap-autoflow",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-sourcebot-dev",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-sourcebot-dev-sourcebot",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-open-webui-pipelines",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-yfgaia",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-yfgaia-dify-plus",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-thespaghettidetective",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-thespaghettidetective-obico-server",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-mlsysops",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-mlsysops-mle-agent",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-tiger-ai-lab",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-tiger-ai-lab-theoremexplainagent",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-trailofbits",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-trailofbits-buttercup",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-wassim249",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-wassim249-fastapi-langgraph-agent-production-ready-template",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-alishobeiri",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-alishobeiri-thread",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-dmayboroda",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-dmayboroda-minima",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-zstar1003",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-zstar1003-ragflow-plus",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-openops-cloud",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-openops-cloud-openops",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-dynamiq-ai",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-dynamiq-ai-dynamiq",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-xataio",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-xataio-agent",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-plastic-labs",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-plastic-labs-tutor-gpt",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-trendy-design",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-trendy-design-llmchat",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-hotovo",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-hotovo-aider-desk",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-opslane",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-opslane-opslane",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-wrtnlabs",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-wrtnlabs-autoview",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-andysingal",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-andysingal-llm-course",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-theopenconversationkit",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-theopenconversationkit-tock",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-sentient-engineering",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-sentient-engineering-agent-q",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-nicholasgoh",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-nicholasgoh-fastapi-mcp-langgraph-template",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-i-am-alice",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-i-am-alice-3rd-devs",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-aidotnet",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-aidotnet-koala-ai",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-phospho-app",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-phospho-app-text-analytics-legacy",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-inferablehq",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-inferablehq-inferable",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-duoyang666",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-duoyang666-ai-novel",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-strands-agents",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-strands-agents-samples",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-franciscomoretti",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-franciscomoretti-sparka",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-robotecai",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-robotecai-rai",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-electriccodeguy",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-electriccodeguy-supabaseauthwithssr",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-souzatharsis",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-souzatharsis-tamingllms",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-aws-samples",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-aws-samples-aws-ai-ml-workshop-kr",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-weizxfree",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-weizxfree-knowflow",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-zenml-io-zenml-projects",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-wxai-space",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-wxai-space-lightagent",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-ozamatash",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-ozamatash-deep-research-mcp",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-sql-agi",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-sql-agi-db-gpt",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-guyernest",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-guyernest-advanced-rag",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-bklieger-groq",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-bklieger-groq-mathtutor-on-groq",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-plastic-labs-honcho",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-ovinc-cn",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-ovinc-cn-openwebui",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-zhutoutoutousan",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-zhutoutoutousan-worldquant-miner",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-iceener",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-iceener-ai",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-giselles-ai",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-giselles-ai-giselle",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-ai-shifu",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-ai-shifu-ai-shifu",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-aws-samples-sample-serverless-mcp-servers",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-celerforge",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-celerforge-freenote",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-babelcloud",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-babelcloud-llm-rgb",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-8090-inc",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-8090-inc-xrx-sample-apps",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-deepset-ai",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-deepset-ai-haystack-core-integrations",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-codecentric",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-codecentric-c4-genai-suite",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-xspoonai",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-xspoonai-spoon-core",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-chatchat-space-langgraph-chatchat",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-langfuse-langfuse-docs",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-piyushgarg-dev",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-piyushgarg-dev-genai-cohort",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-i-dot-ai",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-i-dot-ai-redbox",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-bmd1905",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-bmd1905-chatopsllm",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-fintech-dreamer",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-fintech-dreamer-finsynth",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-kenshiro-o",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-github-com-kenshiro-o-nagato-ai",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-security",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-langfuse-langfuse",
+   "to": "e-https-langfuse-com-self-hosting-security-telemetry",
+   "rel": "cites"
+  }
+ ]
+}

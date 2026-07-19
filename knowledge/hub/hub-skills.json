@@ -1,0 +1,197 @@
+{
+ "contractVersion": "1.0",
+ "skills": [
+  {
+   "id": "skill-punkpeye-awesome-mcp-servers",
+   "name": "punkpeye/awesome-mcp-servers",
+   "kind": "curated-index",
+   "oneLine": "A collection of MCP servers.",
+   "stars": 90967,
+   "license": "MIT",
+   "notGoodAt": [
+    "running anything itself \u2014 an index of unvetted third-party code (popularity \u2260 safety; read before you install)"
+   ],
+   "useWhen": [
+    "the community index of MCP servers \u2014 tool-discovery surface for agent builds",
+    "topic: ai",
+    "topic: mcp"
+   ],
+   "integration": {
+    "as": "discovery-source",
+    "how": "search it for candidate tools; read each SKILL/server before use; prefer ephemeral use over persistent install"
+   },
+   "source": {
+    "repo": "punkpeye/awesome-mcp-servers",
+    "sha": "79cca3e78c9f501fdb4925b907c04c0c4f68735d",
+    "url": "https://github.com/punkpeye/awesome-mcp-servers"
+   },
+   "verified": true
+  },
+  {
+   "id": "skill-modelcontextprotocol-servers",
+   "name": "modelcontextprotocol/servers",
+   "kind": "tool",
+   "oneLine": "Model Context Protocol Servers",
+   "stars": 88636,
+   "license": "NOASSERTION",
+   "notGoodAt": [
+    "guarantees beyond its own README \u2014 verify against your workload before trusting"
+   ],
+   "useWhen": [
+    "the reference MCP server implementations \u2014 canonical patterns for fde-mcp-server"
+   ],
+   "integration": {
+    "as": "skill-candidate",
+    "how": "wrap behind a thin SKILL.md with an honest notGoodAt; gate with an eval before recommending"
+   },
+   "source": {
+    "repo": "modelcontextprotocol/servers",
+    "sha": "d31124c982401739917fd817c2a59db344529c16",
+    "url": "https://github.com/modelcontextprotocol/servers"
+   },
+   "verified": true
+  },
+  {
+   "id": "skill-rohitg00-ai-engineering-from-scratch",
+   "name": "rohitg00/ai-engineering-from-scratch",
+   "kind": "learning-resource",
+   "oneLine": "Learn it. Build it. Ship it for others.",
+   "stars": 39592,
+   "license": "MIT",
+   "notGoodAt": [
+    "being load-bearing infrastructure \u2014 it teaches, it doesn't run"
+   ],
+   "useWhen": [
+    "learn-build-ship curriculum \u2014 course-design comparable for Objective 1",
+    "topic: agents",
+    "topic: ai",
+    "topic: ai-agents",
+    "topic: ai-engineering",
+    "topic: computer-vision"
+   ],
+   "integration": {
+    "as": "course-citation",
+    "how": "cross-reference from course modules; compile its structure into the competency spine via knowledgefy"
+   },
+   "source": {
+    "repo": "rohitg00/ai-engineering-from-scratch",
+    "sha": "c8b9b9244f3210b840776675175662dacf208264",
+    "url": "https://github.com/rohitg00/ai-engineering-from-scratch"
+   },
+   "verified": true
+  },
+  {
+   "id": "skill-langfuse-langfuse",
+   "name": "langfuse/langfuse",
+   "kind": "platform",
+   "oneLine": "\ud83e\udea2 Open source AI engineering platform: LLM evals, observability, metrics, prompt management, playground, datasets. Integrates with OpenTelemetry, LangChain, OpenAI SDK, LiteLLM, and more. \ud83c\udf4aYC W23 ",
+   "stars": 31426,
+   "license": "NOASSERTION",
+   "notGoodAt": [
+    "zero-ops adoption \u2014 a deployable platform carries real operational cost"
+   ],
+   "useWhen": [
+    "open-source LLM observability/evals platform \u2014 the eval-obs organ candidate",
+    "topic: analytics",
+    "topic: autogen",
+    "topic: evaluation",
+    "topic: langchain",
+    "topic: large-language-models"
+   ],
+   "integration": {
+    "as": "workflow-organ",
+    "how": "wire as a swappable organ (eval-obs / MLOps seam) behind an interface \u2014 never hard-couple the hub to one vendor"
+   },
+   "source": {
+    "repo": "langfuse/langfuse",
+    "sha": "1cb1bbcf6b269fd887a6667796f1a15417cca336",
+    "url": "https://github.com/langfuse/langfuse"
+   },
+   "verified": true
+  },
+  {
+   "id": "skill-prefecthq-fastmcp",
+   "name": "PrefectHQ/fastmcp",
+   "kind": "framework",
+   "oneLine": "\ud83d\ude80 The fast, Pythonic way to build MCP servers and clients.",
+   "stars": 26292,
+   "license": "Apache-2.0",
+   "notGoodAt": [
+    "being a finished app \u2014 you still own design, evals, and deployment"
+   ],
+   "useWhen": [
+    "the fast Pythonic MCP framework \u2014 build-time dependency candidate for MCP tooling",
+    "topic: agents",
+    "topic: fastmcp",
+    "topic: llms",
+    "topic: mcp",
+    "topic: mcp-clients"
+   ],
+   "integration": {
+    "as": "plugin-dependency",
+    "how": "build-time dependency for hub skills (pin the version; probe actual behavior with one small build before adopting)"
+   },
+   "source": {
+    "repo": "PrefectHQ/fastmcp",
+    "sha": "717f3535f65d3937e5422895ed4a333d895369aa",
+    "url": "https://github.com/PrefectHQ/fastmcp"
+   },
+   "verified": true
+  },
+  {
+   "id": "skill-modelcontextprotocol-registry",
+   "name": "modelcontextprotocol/registry",
+   "kind": "registry",
+   "oneLine": "A community driven registry service for Model Context Protocol (MCP) servers.",
+   "stars": 7048,
+   "license": "NOASSERTION",
+   "notGoodAt": [
+    "vouching for what it lists \u2014 distribution surface, not a review board"
+   ],
+   "useWhen": [
+    "the community MCP registry service \u2014 distribution surface for hub tooling",
+    "topic: mcp",
+    "topic: mcp-servers"
+   ],
+   "integration": {
+    "as": "distribution-surface",
+    "how": "publish hub MCP tooling to it; consume entries with the same read-before-run discipline"
+   },
+   "source": {
+    "repo": "modelcontextprotocol/registry",
+    "sha": "29e32c39dcb5e0e2b43974089d959fcc4794eb6d",
+    "url": "https://github.com/modelcontextprotocol/registry"
+   },
+   "verified": true
+  },
+  {
+   "id": "skill-mlrun-mlrun",
+   "name": "mlrun/mlrun",
+   "kind": "platform",
+   "oneLine": "MLRun is an open source MLOps platform for quickly building and managing continuous ML applications across their lifecycle. MLRun integrates into your development and CI/CD environment and automates t",
+   "stars": 1686,
+   "license": "Apache-2.0",
+   "notGoodAt": [
+    "zero-ops adoption \u2014 a deployable platform carries real operational cost"
+   ],
+   "useWhen": [
+    "open MLOps platform \u2014 enterprise-deploy cluster reference",
+    "topic: data-engineering",
+    "topic: data-science",
+    "topic: experiment-tracking",
+    "topic: kubernetes",
+    "topic: machine-learning"
+   ],
+   "integration": {
+    "as": "workflow-organ",
+    "how": "wire as a swappable organ (eval-obs / MLOps seam) behind an interface \u2014 never hard-couple the hub to one vendor"
+   },
+   "source": {
+    "repo": "mlrun/mlrun",
+    "sha": "7581637d5636b129fd45d89dd00dd017dfdede87",
+    "url": "https://github.com/mlrun/mlrun"
+   },
+   "verified": true
+  }
+ ]
+}

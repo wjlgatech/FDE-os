@@ -1,0 +1,459 @@
+{
+ "contractVersion": "1.0",
+ "source": {
+  "repo": "PrefectHQ/fastmcp",
+  "sha": "717f3535f65d3937e5422895ed4a333d895369aa",
+  "url": "https://github.com/PrefectHQ/fastmcp",
+  "pushed_at": "2026-07-19T20:42:08Z"
+ },
+ "nodes": [
+  {
+   "id": "repo-prefecthq-fastmcp",
+   "type": "repo",
+   "label": "PrefectHQ/fastmcp",
+   "stars": 26292,
+   "description": "\ud83d\ude80 The fast, Pythonic way to build MCP servers and clients.",
+   "license": "Apache-2.0",
+   "kind": "framework",
+   "why_cited": "the fast Pythonic MCP framework \u2014 build-time dependency candidate for MCP tooling",
+   "source_url": "https://github.com/PrefectHQ/fastmcp/tree/717f3535f65d3937e5422895ed4a333d895369aa"
+  },
+  {
+   "id": "topic-agents",
+   "type": "topic",
+   "label": "agents",
+   "source_url": "https://github.com/topics/agents"
+  },
+  {
+   "id": "topic-fastmcp",
+   "type": "topic",
+   "label": "fastmcp",
+   "source_url": "https://github.com/topics/fastmcp"
+  },
+  {
+   "id": "topic-llms",
+   "type": "topic",
+   "label": "llms",
+   "source_url": "https://github.com/topics/llms"
+  },
+  {
+   "id": "topic-mcp",
+   "type": "topic",
+   "label": "mcp",
+   "source_url": "https://github.com/topics/mcp"
+  },
+  {
+   "id": "topic-mcp-clients",
+   "type": "topic",
+   "label": "mcp-clients",
+   "source_url": "https://github.com/topics/mcp-clients"
+  },
+  {
+   "id": "topic-mcp-servers",
+   "type": "topic",
+   "label": "mcp-servers",
+   "source_url": "https://github.com/topics/mcp-servers"
+  },
+  {
+   "id": "topic-mcp-tools",
+   "type": "topic",
+   "label": "mcp-tools",
+   "source_url": "https://github.com/topics/mcp-tools"
+  },
+  {
+   "id": "topic-model-context-protocol",
+   "type": "topic",
+   "label": "model-context-protocol",
+   "source_url": "https://github.com/topics/model-context-protocol"
+  },
+  {
+   "id": "topic-python",
+   "type": "topic",
+   "label": "python",
+   "source_url": "https://github.com/topics/python"
+  },
+  {
+   "id": "c-fastmcp",
+   "type": "concept",
+   "label": "FastMCP \ud83d\ude80",
+   "level": 1,
+   "source_url": "https://github.com/PrefectHQ/fastmcp/blob/717f3535f65d3937e5422895ed4a333d895369aa/README.md"
+  },
+  {
+   "id": "c-why-fastmcp",
+   "type": "concept",
+   "label": "Why FastMCP",
+   "level": 2,
+   "source_url": "https://github.com/PrefectHQ/fastmcp/blob/717f3535f65d3937e5422895ed4a333d895369aa/README.md"
+  },
+  {
+   "id": "c-run-fastmcp-in-production-with-horizon",
+   "type": "concept",
+   "label": "Run FastMCP in production with Horizon",
+   "level": 2,
+   "source_url": "https://github.com/PrefectHQ/fastmcp/blob/717f3535f65d3937e5422895ed4a333d895369aa/README.md"
+  },
+  {
+   "id": "c-installation",
+   "type": "concept",
+   "label": "Installation",
+   "level": 2,
+   "source_url": "https://github.com/PrefectHQ/fastmcp/blob/717f3535f65d3937e5422895ed4a333d895369aa/README.md"
+  },
+  {
+   "id": "c-documentation",
+   "type": "concept",
+   "label": "\ud83d\udcda Documentation",
+   "level": 2,
+   "source_url": "https://github.com/PrefectHQ/fastmcp/blob/717f3535f65d3937e5422895ed4a333d895369aa/README.md"
+  },
+  {
+   "id": "c-contributing",
+   "type": "concept",
+   "label": "Contributing",
+   "level": 2,
+   "source_url": "https://github.com/PrefectHQ/fastmcp/blob/717f3535f65d3937e5422895ed4a333d895369aa/README.md"
+  },
+  {
+   "id": "e-https-www-prefect-io",
+   "type": "evidence",
+   "label": "Prefect",
+   "source_url": "https://www.prefect.io/"
+  },
+  {
+   "id": "e-https-img-shields-io-badge-docs-gofastmcp-com-blue",
+   "type": "evidence",
+   "label": "![Docs",
+   "source_url": "https://img.shields.io/badge/docs-gofastmcp.com-blue"
+  },
+  {
+   "id": "e-https-img-shields-io-badge-community-discord-5865f2-logo-discord-logocolor-white",
+   "type": "evidence",
+   "label": "![Discord",
+   "source_url": "https://img.shields.io/badge/community-discord-5865F2?logo=discord&logoColor=white"
+  },
+  {
+   "id": "e-https-img-shields-io-pypi-v-fastmcp-svg",
+   "type": "evidence",
+   "label": "![PyPI - Version",
+   "source_url": "https://img.shields.io/pypi/v/fastmcp.svg"
+  },
+  {
+   "id": "e-https-github-com-prefecthq-fastmcp-actions-workflows-run-tests-yml-badge-svg",
+   "type": "evidence",
+   "label": "![Tests",
+   "source_url": "https://github.com/PrefectHQ/fastmcp/actions/workflows/run-tests.yml/badge.svg"
+  },
+  {
+   "id": "e-https-img-shields-io-github-license-prefecthq-fastmcp-svg",
+   "type": "evidence",
+   "label": "![License",
+   "source_url": "https://img.shields.io/github/license/PrefectHQ/fastmcp.svg"
+  },
+  {
+   "id": "e-https-modelcontextprotocol-io",
+   "type": "evidence",
+   "label": "Model Context Protocol",
+   "source_url": "https://modelcontextprotocol.io/"
+  },
+  {
+   "id": "e-https-gofastmcp-com-servers-server",
+   "type": "evidence",
+   "label": "Servers",
+   "source_url": "https://gofastmcp.com/servers/server"
+  },
+  {
+   "id": "e-https-gofastmcp-com-clients-client",
+   "type": "evidence",
+   "label": "Clients",
+   "source_url": "https://gofastmcp.com/clients/client"
+  },
+  {
+   "id": "e-https-gofastmcp-com-apps-overview",
+   "type": "evidence",
+   "label": "Apps",
+   "source_url": "https://gofastmcp.com/apps/overview"
+  },
+  {
+   "id": "e-https-gofastmcp-com-getting-started-installation",
+   "type": "evidence",
+   "label": "installation guide",
+   "source_url": "https://gofastmcp.com/getting-started/installation"
+  },
+  {
+   "id": "e-https-gofastmcp-com-getting-started-quickstart",
+   "type": "evidence",
+   "label": "quickstart",
+   "source_url": "https://gofastmcp.com/getting-started/quickstart"
+  },
+  {
+   "id": "e-https-www-prefect-io-horizon-utm-source-github-utm-medium-readme-utm-campaign-re",
+   "type": "evidence",
+   "label": "Prefect Horizon",
+   "source_url": "https://www.prefect.io/horizon?utm_source=github&utm_medium=readme&utm_campaign=readme_horizon&utm_content=readme_body"
+  },
+  {
+   "id": "e-https-docs-astral-sh-uv",
+   "type": "evidence",
+   "label": "uv",
+   "source_url": "https://docs.astral.sh/uv/"
+  },
+  {
+   "id": "e-https-gofastmcp-com-getting-started-upgrading-from-fastmcp-2",
+   "type": "evidence",
+   "label": "Upgrading from FastMCP v2",
+   "source_url": "https://gofastmcp.com/getting-started/upgrading/from-fastmcp-2"
+  },
+  {
+   "id": "e-https-gofastmcp-com-getting-started-upgrading-from-mcp-sdk",
+   "type": "evidence",
+   "label": "Upgrading from the MCP Python SDK",
+   "source_url": "https://gofastmcp.com/getting-started/upgrading/from-mcp-sdk"
+  },
+  {
+   "id": "e-https-gofastmcp-com-getting-started-upgrading-from-low-level-sdk",
+   "type": "evidence",
+   "label": "Upgrading from the low-level SDK",
+   "source_url": "https://gofastmcp.com/getting-started/upgrading/from-low-level-sdk"
+  },
+  {
+   "id": "e-https-gofastmcp-com-getting-started-installation-troubleshooting",
+   "type": "evidence",
+   "label": "Troubleshooting",
+   "source_url": "https://gofastmcp.com/getting-started/installation#troubleshooting"
+  },
+  {
+   "id": "e-https-gofastmcp-com",
+   "type": "evidence",
+   "label": "gofastmcp.com",
+   "source_url": "https://gofastmcp.com"
+  },
+  {
+   "id": "e-https-llmstxt-org",
+   "type": "evidence",
+   "label": "llms.txt format",
+   "source_url": "https://llmstxt.org/"
+  },
+  {
+   "id": "e-https-gofastmcp-com-llms-txt",
+   "type": "evidence",
+   "label": "`llms.txt`",
+   "source_url": "https://gofastmcp.com/llms.txt"
+  },
+  {
+   "id": "e-https-gofastmcp-com-llms-full-txt",
+   "type": "evidence",
+   "label": "`llms-full.txt`",
+   "source_url": "https://gofastmcp.com/llms-full.txt"
+  },
+  {
+   "id": "e-https-discord-gg-uu8djcgttd",
+   "type": "evidence",
+   "label": "Discord server",
+   "source_url": "https://discord.gg/uu8dJCgttd"
+  },
+  {
+   "id": "e-https-gofastmcp-com-development-contributing",
+   "type": "evidence",
+   "label": "Contributing Guide",
+   "source_url": "https://gofastmcp.com/development/contributing"
+  }
+ ],
+ "edges": [
+  {
+   "from": "repo-prefecthq-fastmcp",
+   "to": "topic-agents",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-prefecthq-fastmcp",
+   "to": "topic-fastmcp",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-prefecthq-fastmcp",
+   "to": "topic-llms",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-prefecthq-fastmcp",
+   "to": "topic-mcp",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-prefecthq-fastmcp",
+   "to": "topic-mcp-clients",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-prefecthq-fastmcp",
+   "to": "topic-mcp-servers",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-prefecthq-fastmcp",
+   "to": "topic-mcp-tools",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-prefecthq-fastmcp",
+   "to": "topic-model-context-protocol",
+   "rel": "tagged"
+  },
+  {
+   "from": "repo-prefecthq-fastmcp",
+   "to": "topic-python",
+   "rel": "tagged"
+  },
+  {
+   "from": "c-fastmcp",
+   "to": "repo-prefecthq-fastmcp",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-why-fastmcp",
+   "to": "c-fastmcp",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-run-fastmcp-in-production-with-horizon",
+   "to": "c-fastmcp",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-installation",
+   "to": "c-fastmcp",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-documentation",
+   "to": "c-fastmcp",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-contributing",
+   "to": "c-fastmcp",
+   "rel": "part_of"
+  },
+  {
+   "from": "repo-prefecthq-fastmcp",
+   "to": "e-https-www-prefect-io",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-prefecthq-fastmcp",
+   "to": "e-https-img-shields-io-badge-docs-gofastmcp-com-blue",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-prefecthq-fastmcp",
+   "to": "e-https-img-shields-io-badge-community-discord-5865f2-logo-discord-logocolor-white",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-prefecthq-fastmcp",
+   "to": "e-https-img-shields-io-pypi-v-fastmcp-svg",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-prefecthq-fastmcp",
+   "to": "e-https-github-com-prefecthq-fastmcp-actions-workflows-run-tests-yml-badge-svg",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-prefecthq-fastmcp",
+   "to": "e-https-img-shields-io-github-license-prefecthq-fastmcp-svg",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-prefecthq-fastmcp",
+   "to": "e-https-modelcontextprotocol-io",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-prefecthq-fastmcp",
+   "to": "e-https-gofastmcp-com-servers-server",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-prefecthq-fastmcp",
+   "to": "e-https-gofastmcp-com-clients-client",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-prefecthq-fastmcp",
+   "to": "e-https-gofastmcp-com-apps-overview",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-prefecthq-fastmcp",
+   "to": "e-https-gofastmcp-com-getting-started-installation",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-prefecthq-fastmcp",
+   "to": "e-https-gofastmcp-com-getting-started-quickstart",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-prefecthq-fastmcp",
+   "to": "e-https-www-prefect-io-horizon-utm-source-github-utm-medium-readme-utm-campaign-re",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-prefecthq-fastmcp",
+   "to": "e-https-docs-astral-sh-uv",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-prefecthq-fastmcp",
+   "to": "e-https-gofastmcp-com-getting-started-upgrading-from-fastmcp-2",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-prefecthq-fastmcp",
+   "to": "e-https-gofastmcp-com-getting-started-upgrading-from-mcp-sdk",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-prefecthq-fastmcp",
+   "to": "e-https-gofastmcp-com-getting-started-upgrading-from-low-level-sdk",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-prefecthq-fastmcp",
+   "to": "e-https-gofastmcp-com-getting-started-installation-troubleshooting",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-prefecthq-fastmcp",
+   "to": "e-https-gofastmcp-com",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-prefecthq-fastmcp",
+   "to": "e-https-llmstxt-org",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-prefecthq-fastmcp",
+   "to": "e-https-gofastmcp-com-llms-txt",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-prefecthq-fastmcp",
+   "to": "e-https-gofastmcp-com-llms-full-txt",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-prefecthq-fastmcp",
+   "to": "e-https-discord-gg-uu8djcgttd",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-prefecthq-fastmcp",
+   "to": "e-https-gofastmcp-com-development-contributing",
+   "rel": "cites"
+  }
+ ]
+}
