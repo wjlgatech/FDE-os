@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A job description is source code. Parse it, ground it, link it against what you've actually built — and let the linker errors write your prep plan. The compile-the-interview method, term by term.">
+<meta property="og:title" content="Stop Studying for Interviews — Compile Them">
+<meta property="og:type" content="article">
+<meta property="og:description" content="A JD is source code: parse → ground → link → gap report. Agentic-AI postings grew 280% in a year; the way to prep hasn't changed since 1482. Here's the compiler, open source, term by term.">
+<meta property="og:url" content="https://agentic-portfolio-lovat.vercel.app/articles/compile-the-interview.html">
+<meta property="og:image" content="https://agentic-portfolio-lovat.vercel.app/articles/assets/jdc-thumbnail.png">
+<meta property="og:site_name" content="Paul Jialiang Wu">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stop Studying for Interviews — Compile Them">
+<meta name="twitter:description" content="A job description is source code. Compile it, link it against your repos, and let the linker errors write your prep plan.">
+<meta name="twitter:image" content="https://agentic-portfolio-lovat.vercel.app/articles/assets/jdc-thumbnail.png">
+<link rel="canonical" href="https://agentic-portfolio-lovat.vercel.app/articles/compile-the-interview.html">
+<title>Stop Studying for Interviews — Compile Them</title>
+<style>
+:root{
+  /* plain neutral — white background, no clay tint, no glow */
+  --canvas:#FFFFFF; --fg:#1A1A1A; --muted:#5F5F5F; --faint:#8A8A8A;
+  --card:#F6F6F6; --line:#E6E6E6; --accent:#1A1A1A; --accent-2:#8A8A8A;
+  --code-bg:#1A1A1A; --code-fg:#F2F2F2;
+  --hero:#FFFFFF;
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+/* always light — never a dark/black background, regardless of OS dark mode */
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;color-scheme:light}
+body{margin:0;background:var(--hero);background-attachment:fixed;color:var(--fg);font-family:var(--sans);
+  font-size:18px;line-height:1.68;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.wrap{max-width:41rem;margin:0 auto;padding:34px 20px 72px}
+.topbar{height:6px;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+.eyebrow{font-family:var(--sans);font-size:.72rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--accent);margin:.2rem 0 .1rem}
+h1{font-family:var(--serif);font-weight:600;font-size:2.15rem;line-height:1.12;letter-spacing:-.01em;
+  text-wrap:balance;margin:.1em 0 .1em}
+h2{font-family:var(--serif);font-weight:600;font-size:1.5rem;line-height:1.2;text-wrap:balance;margin:2.1rem 0 .6rem;padding-top:.4rem}
+h3{font-family:var(--sans);font-weight:800;font-size:1.06rem;margin:1.5rem 0 .4rem}
+p{margin:.85rem 0}
+.wrap > p.sub em{color:var(--muted);font-size:1.06rem}
+a{color:var(--accent);text-underline-offset:2px;text-decoration-thickness:1px}
+strong{font-weight:700} em{font-style:italic}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.86em;background:var(--card);border:1px solid var(--line);border-radius:5px;padding:1px 5px}
+pre{background:var(--code-bg);color:var(--code-fg);border-radius:12px;padding:16px 18px;overflow-x:auto;border:1px solid var(--line);margin:1.2rem 0}
+pre code{background:none;border:0;padding:0;color:inherit;font-size:.82rem;line-height:1.55}
+blockquote{margin:1.3rem 0;padding:.7rem 1.1rem;border-left:4px solid var(--accent);background:var(--card);border-radius:0 10px 10px 0;color:var(--muted);font-size:1.02rem}
+blockquote strong{color:var(--fg)}
+hr{border:0;border-top:1px solid var(--line);margin:2.2rem 0}
+figure{margin:1.6rem 0}
+figure img,figure object{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:12px;box-shadow:0 18px 44px -28px rgba(40,24,10,.5)}
+figure object{pointer-events:none}
+figcaption{margin-top:.5rem;color:var(--faint);font-size:.82rem;line-height:1.4;font-style:italic;text-align:center}
+ul,ol{margin:.85rem 0;padding-left:1.2rem} li{margin:.3rem 0}
+.related{list-style:none;padding-left:0} .related li{margin:.6rem 0}
+.related a{font-weight:700}
+::selection{background:var(--accent-2);color:#fff}
+.foot{margin-top:2.4rem;padding-top:1.2rem;border-top:1px solid var(--line);color:var(--faint);font-size:.85rem}
+</style>
+</head>
+<body>
+<div class="topbar"></div>
+<article class="wrap">
+<a href="/#writing" data-backlink style="display:inline-flex;align-items:center;gap:.4rem;margin-bottom:1.2rem;font:700 .78rem/1 ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:#8A8A8A;text-decoration:none">← Back to portfolio</a>
+<p class="eyebrow">AI-Native Series · 07</p>
+<h1>Stop Studying for Interviews — Compile Them</h1>
+<p class="sub"><em>A job description is source code. Parse it, ground it, link it against what you've actually built — and let the linker errors write your prep plan. ~8 min.</em></p>
+
+<figure>
+  <object data="/articles/assets/jdc-thumbnail.svg" type="image/svg+xml" aria-label="The pipeline: job post → compile into a grounded graph → link against your repos → gap report: undefined symbol langgraph → build it in half a day" style="aspect-ratio:1200/630"><img src="/articles/assets/jdc-thumbnail.svg" alt="The pipeline: job post → compile into a grounded graph → link against your repos → gap report: undefined symbol langgraph → build it in half a day"></object>
+  <figcaption>The whole method in one loop: parse → ground → link → let the errors write the plan. (It's animated — give it a second.)</figcaption>
+</figure>
+
+<h2>The first résumé was a beautiful pile of unverified claims</h2>
+<p>In 1482, a thirty-year-old job seeker wrote to the Duke of Milan. His letter — the earliest known CV — was ten numbered claims: <em>I can dry up the water of the moats. I can build unbreakable bridges. I can make cannon.</em> Painting, the thing he's now rather known for, was item ten.</p>
+<p>Number of moats Leonardo da Vinci had actually dried at the time of writing: approximately zero. The first résumé in history was already doing the thing résumés do — projecting capability without evidence. What eventually made his name wasn't the letter. It was the notebooks: seven thousand pages of drawings, measurements, and tests. The letter claimed; the notebooks <strong>showed</strong>.</p>
+
+<figure>
+  <object data="/articles/assets/jdc-davinci.svg" type="image/svg+xml" aria-label="Leonardo's 1482 letter (claims, stamped CLAIMED) versus his notebooks (receipts, stamped OBSERVED)" style="aspect-ratio:1200/640"><img src="/articles/assets/jdc-davinci.svg" alt="Leonardo's 1482 letter (claims, stamped CLAIMED) versus his notebooks (receipts, stamped OBSERVED)"></object>
+  <figcaption>1482: the letter says "I can dry up the moats." The notebooks are why we believed him — five centuries later.</figcaption>
+</figure>
+
+<p>Five hundred and forty-four years later, most interview prep is still letter-writing: cram the framework docs, memorize the glossary, rehearse adjectives about yourself. I'd like to propose the notebook approach, updated for 2026 — and it starts by treating the job description itself as something you <em>run</em>.</p>
+
+<h2>The mental model: a job description is source code</h2>
+<p>Here's the whole method, simple enough for a 12-year-old:</p>
+<blockquote><strong>A JD is a recipe. Don't memorize the cookbook — read the recipe, check your pantry, and go shopping only for what's missing.</strong></blockquote>
+<p>And here's the same method with its engineering hat on, which is the version I actually run (it's the animation at the top of this page):</p>
+<ul>
+  <li><strong>Parse.</strong> A job description is prose, but it encodes a spec. Extract what the role actually demands — the competency clusters, the named tools, the seniority.</li>
+  <li><strong>Ground.</strong> Make sure every extracted concept is a real thing with a real definition — not a keyword vibe.</li>
+  <li><strong>Link.</strong> Resolve each requirement against what you've <em>actually built</em> — public repos, running demos, things with commit histories.</li>
+  <li><strong>Read the errors.</strong> Whatever fails to link is your prep plan. Not "study everything" — build precisely the missing pieces.</li>
+</ul>
+<p>Four verbs. The magic is that every one of them is executable — this isn't a metaphor wearing a hard hat. Which brings us to the part where I show my work.</p>
+
+<h2>Term by term: the kitchen maps to real machinery</h2>
+<p>A mental model you can't map to running code is decoration. So here's the mapping, term by term — every row is implemented in an open-source pipeline you can clone and run today:</p>
+
+<figure>
+  <object data="/articles/assets/jdc-term-map.svg" type="image/svg+xml" aria-label="Term-by-term mapping: read the recipe → deterministic parse; check ingredients are real → retrieval grounding with provenance URLs; check the pantry → link against public repos; write the shopping list → gap report and SMART artifact" style="aspect-ratio:1200/720"><img src="/articles/assets/jdc-term-map.svg" alt="Term-by-term mapping: read the recipe → deterministic parse; check ingredients are real → retrieval grounding with provenance URLs; check the pantry → link against public repos; write the shopping list → gap report and SMART artifact"></object>
+  <figcaption>Left column for the 12-year-old. Right column for the code review. Same idea, zero hand-waving.</figcaption>
+</figure>
+
+<p><strong>"Read the recipe" = deterministic parsing.</strong> The compiler scores the JD against a curated competency taxonomy — six clusters like <em>agentic system design</em> and <em>modern AI stack</em>, plus a named-tool library. Matching happens at word boundaries, so "rust" never fires inside "trust." Deterministic and offline: same JD in, same profile out, no LLM mood involved.</p>
+<p><strong>"Check the ingredients are real" = retrieval grounding.</strong> Each extracted concept is then grounded against open sources — Wikipedia and Wikidata for definitions and relationships, <a href="https://esco.ec.europa.eu/en">ESCO</a> (the EU's open skills taxonomy) for skills. Every node in the resulting knowledge graph carries a real definition and a provenance URL, enforced by contract: no http(s) source, no full node. If retrieval can't resolve a term, the node ships <em>thin and flagged</em> — never faked. A knowledge graph where you can't trace a node to a source is just confident clip-art.</p>
+<p><strong>"Check the pantry" = linking against receipts.</strong> Now resolve each demanded competency against your public work, like a linker resolving symbols against a library. Evaluation harnesses? Resolves to a repo that scores retrieval with precision@k and gates CI on it. Guardrails? Resolves to a security framework with sign-off checklists. Tool integration? Resolves to a shelf of MCP servers. Each resolution is a clickable receipt, not an adjective.</p>
+<p><strong>"Write the shopping list" = the gap report.</strong> Whatever's left unresolved is — precisely, provably — what to prepare. Not a syllabus. A shopping list.</p>
+
+<h2>Three telescopes: 30 days, 30 years, 300 years</h2>
+<p>"Sharp" means checking the claim at three zoom levels before betting your prep time on it. So I pointed three telescopes at this method — is it hot, did it survive, is it ancient?</p>
+
+<figure>
+  <object data="/articles/assets/jdc-telescopes.svg" type="image/svg+xml" aria-label="Three panels: last 30 days (280% posting growth, 34.3% name LangChain, 57.3% agents in production), last 30 years (work samples beat credentials, ATS parsers, knowledge graphs), last 300 years (the guild masterpiece vs the résumé)" style="aspect-ratio:1200/660"><img src="/articles/assets/jdc-telescopes.svg" alt="Three panels: last 30 days (280% posting growth, 34.3% name LangChain, 57.3% agents in production), last 30 years (work samples beat credentials, ATS parsers, knowledge graphs), last 300 years (the guild masterpiece vs the résumé)"></object>
+  <figcaption>Fresh signal, survival signal, civilizational signal — all three point the same direction.</figcaption>
+</figure>
+
+<p><strong>The 30-day telescope (is it hot?).</strong> Agentic-AI job postings grew <strong>280% year over year</strong> — roughly 90,000 US listings — while traditional entry-level tech hiring shrank. About <strong>34.3% of those postings name LangChain</strong>; it's a baseline expectation now, and <strong>57.3% of surveyed teams already run agents in production</strong>. Translation: the JDs are converging on a describable, parseable spec. Good news for a compiler.</p>
+<p><strong>The 30-year telescope (did it survive?).</strong> The 1998 selection meta-analysis found work samples among the strongest predictors of job performance — it has survived every replication war since. Applicant-tracking systems have parsed résumés into keywords since the 1990s; for thirty years, robots have been compiling <em>you</em> and rejecting the binary. (Rude.) This method just runs the compiler in the other direction — you compile <em>them</em>. And knowledge graphs — "things, not strings," 2012 — outlived their hype cycle to become boring infrastructure, which is the highest compliment machinery can earn.</p>
+<p><strong>The 300-year telescope (is it ancient law?).</strong> For centuries before the résumé, the guilds ran hiring on one rule: to become a master, a journeyman produced a <em>masterpiece</em> — one artifact, judged by people who could not be fooled. The résumé (1482, see above) is the newer and worse invention: claims without a judge. The pattern that survives every century, in every trade, is the same: <strong>the artifact outlives the letter.</strong></p>
+<p>Three telescopes, one conclusion: bring the artifact, not the adjectives.</p>
+
+<h2>The best prep output is an error message</h2>
+<p>Here's what happened when I ran this on a real posting — a senior "agentic AI engineer" role, the kind the 30-day telescope says is multiplying. The compile pass was flattering: six of seven competency clusters demanded, and most symbols resolved cleanly against public repos — orchestration loops, eval harnesses, an agent-security framework, a shelf of MCP tools.</p>
+<p>Then the linker spoke:</p>
+
+<figure>
+  <object data="/articles/assets/jdc-linker.svg" type="image/svg+xml" aria-label="A light terminal: jd-compile resolves most symbols against public repos, then reports undefined symbol: langgraph — the fix is one small shippable artifact, exit 0" style="aspect-ratio:1200/620"><img src="/articles/assets/jdc-linker.svg" alt="A light terminal: jd-compile resolves most symbols against public repos, then reports undefined symbol: langgraph — the fix is one small shippable artifact, exit 0"></object>
+  <figcaption>Six clusters resolved, one undefined symbol. That single line is worth more than a week of unfocused studying.</figcaption>
+</figure>
+
+<pre><code>$ jd-compile agentic-ai-engineer.md --link ~/repos
+resolved: orchestration ✓  evals ✓  guardrails ✓  mcp-tools ✓
+ld: undefined symbol — langgraph</code></pre>
+<p>The JD said "especially LangGraph." Twice. And my portfolio had zero LangGraph code — because every orchestration receipt I own is a custom-built engine. I had built the machinery the framework abstracts, which sounds impressive right up until you realize it's like showing up to a driving test with a car you built yourself and no license. Genuinely educational! Still no license.</p>
+<p>This is the moment cramming would have wasted a week on. The gap report instead prescribed two moves:</p>
+<ul>
+  <li><strong>Translate, don't bluff.</strong> Every framework primitive maps onto something I'd already built the hard way — the state graph onto a score-carrying loop, the checkpointer onto banked, resumable memory, the human-in-the-loop interrupt onto a hard-stop approval gate. Knowing <em>why</em> each primitive exists is the senior conversation: the checkpointer is there because resumability dies the moment you let wall-clock time leak into a node. I learned that one the hard way, so I get to say it in the interview.</li>
+  <li><strong>Build the missing object file.</strong> One small artifact in the actual framework — four nodes, a checkpointer, one retry edge, one human gate — shipped public in half a day. The answer to "have you used it?" becomes "yes, here's the repo, and here's what my own engine does that it doesn't."</li>
+</ul>
+<p>One error message. One afternoon. <code>exit 0</code>.</p>
+
+<h2>Make it SMART, then let it compound</h2>
+<p>The loop earns its acronym without stretching:</p>
+
+<figure>
+  <object data="/articles/assets/jdc-smart-loop.svg" type="image/svg+xml" aria-label="A rotating loop of five nodes — Specific, Measurable, Achievable, Relevant, Time-boxed — around the cycle compile → gap → artifact → recompile; side note: cramming resets, compiling accrues" style="aspect-ratio:1200/640"><img src="/articles/assets/jdc-smart-loop.svg" alt="A rotating loop of five nodes — Specific, Measurable, Achievable, Relevant, Time-boxed — around the cycle compile → gap → artifact → recompile; side note: cramming resets, compiling accrues"></object>
+  <figcaption>Specific · Measurable · Achievable · Relevant · Time-boxed — and the flywheel: your gap report gets shorter every run.</figcaption>
+</figure>
+
+<ul>
+  <li><strong>Specific</strong> — one artifact per gap, named in advance ("a four-node stateful workflow with a checkpointer"), never "get better at agents."</li>
+  <li><strong>Measurable</strong> — re-run the compile; the symbol either resolves or it doesn't. No warm feelings admitted as evidence.</li>
+  <li><strong>Achievable</strong> — half-day scope. If the gap needs a month, that's not interview prep, that's a career decision; the report just made it visible early. Also useful.</li>
+  <li><strong>Relevant</strong> — every artifact anchors to a JD line you can quote back verbatim in the room.</li>
+  <li><strong>Time-boxed</strong> — done before the interview, because the interview is the deadline the compiler can't move.</li>
+</ul>
+<p>And here's the part that beats cramming forever: <strong>the loop compounds.</strong> Every artifact you ship for JD #1 is already sitting in the library when JD #2 compiles. Your gap report gets shorter with every posting you run. Cramming resets to zero after each interview; compiling accrues. That's not a study technique — that's an asset building itself.</p>
+
+<h2>Run it yourself (it's all open)</h2>
+<p>The whole pipeline is open source — deterministic core, no API keys, no LLM required for the compile step:</p>
+<pre><code>git clone https://github.com/wjlgatech/FDE-os
+cd FDE-os
+# 1. drop any job posting into course/target-jds/ as markdown
+# 2. compile it → competency profile
+python3 skills/jd-compiler/scripts/jd_compile.py compile course/target-jds/your-jd.md
+# 3. deepen it → grounded knowledge graph + skills (Wikipedia/Wikidata/ESCO)
+python3 skills/jd-compiler/scripts/jd_to_deepen.py course/target-jds/your-jd.md \
+  --title "The Role" --url "https://the-posting-url"</code></pre>
+<p>Then do the one step no script can do for you: hold each demanded competency up against your own public work and ask, honestly, <em>does this resolve to a receipt — or to an adjective?</em> Write down every adjective. That list, time-boxed and built, is the best interview prep you will ever do.</p>
+
+<h2>The one line to remember</h2>
+<p>Leonardo needed seven thousand notebook pages to back up ten claims. You need a lot less — because now the notebook checks itself against the job.</p>
+<p><strong>Don't study the whole cookbook. Compile the recipe, link your pantry, and go build exactly what's missing.</strong></p>
+
+<hr>
+<h2>More in the AI-Native series</h2>
+<ul class="related">
+  <li><a href="/articles/learn-any-field-10x.html">Learn Any Field 10× With AI — Wide and Deep, Without Fooling Yourself</a> — Map · Ladder · Gate, mapped term-by-term to the cognitive science.</li>
+  <li><a href="/articles/attestation-gap.html">You Can't Self-Issue Reputation</a> — why a 60-second AI portfolio won't get you hired; the rung only another person can supply.</li>
+  <li><a href="/articles/disclose-dont-memorize.html">Disclose, Don't Memorize</a> — let AI progressively disclose a new field onto the backbone you already own.</li>
+</ul>
+<p>All of it lives in the <a href="/">Writing</a> section on the home page.</p>
+
+<p class="foot">Part of the AI-Native series. The jd-compiler and everything around it is open at github.com/wjlgatech/FDE-os — you own the Publish button. Sources: <a href="https://en.wikipedia.org/wiki/Letter_from_Leonardo_da_Vinci_to_Ludovico_Sforza">Leonardo's letter (Wikipedia)</a> · Stanford 2026 AI Index posting data via <a href="https://jobsbyculture.com/blog/agentic-ai-hiring-boom-2026">JobsByCulture</a> · <a href="https://www.langchain.com/state-of-agent-engineering">LangChain State of Agent Engineering</a> · Schmidt &amp; Hunter (1998).</p>
+</article>
+<script src="/articles/assets/engage.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Snowflake Summit 2026's headline number: the same model scored 24% alone and 83% with governed context. Your AI agent isn't dumb — it's context-starved. The onboarding mental model, term by term.">
+<meta property="og:title" content="The 83% Agent and the 24% Agent Are the Same Model">
+<meta property="og:type" content="article">
+<meta property="og:description" content="A frontier model joining your company is the smartest hire in history, on day one, with no badge, no handbook, no supervisor. Onboard it: identity, context, evals. Term-by-term, with the receipts.">
+<meta property="og:url" content="https://agentic-portfolio-lovat.vercel.app/articles/context-starved.html">
+<meta property="og:image" content="https://agentic-portfolio-lovat.vercel.app/articles/assets/ctx-thumbnail.png">
+<meta property="og:site_name" content="Paul Jialiang Wu">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The 83% Agent and the 24% Agent Are the Same Model">
+<meta name="twitter:description" content="Your AI agent isn't dumb — it's context-starved. Identity, memory, governance: the onboarding mental model, term by term.">
+<meta name="twitter:image" content="https://agentic-portfolio-lovat.vercel.app/articles/assets/ctx-thumbnail.png">
+<link rel="canonical" href="https://agentic-portfolio-lovat.vercel.app/articles/context-starved.html">
+<title>The 83% Agent and the 24% Agent Are the Same Model</title>
+<style>
+:root{
+  /* plain neutral — white background, no clay tint, no glow */
+  --canvas:#FFFFFF; --fg:#1A1A1A; --muted:#5F5F5F; --faint:#8A8A8A;
+  --card:#F6F6F6; --line:#E6E6E6; --accent:#1A1A1A; --accent-2:#8A8A8A;
+  --code-bg:#1A1A1A; --code-fg:#F2F2F2;
+  --hero:#FFFFFF;
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+/* always light — never a dark/black background, regardless of OS dark mode */
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;color-scheme:light}
+body{margin:0;background:var(--hero);background-attachment:fixed;color:var(--fg);font-family:var(--sans);
+  font-size:18px;line-height:1.68;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.wrap{max-width:41rem;margin:0 auto;padding:34px 20px 72px}
+.topbar{height:6px;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+.eyebrow{font-family:var(--sans);font-size:.72rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--accent);margin:.2rem 0 .1rem}
+h1{font-family:var(--serif);font-weight:600;font-size:2.15rem;line-height:1.12;letter-spacing:-.01em;
+  text-wrap:balance;margin:.1em 0 .1em}
+h2{font-family:var(--serif);font-weight:600;font-size:1.5rem;line-height:1.2;text-wrap:balance;margin:2.1rem 0 .6rem;padding-top:.4rem}
+h3{font-family:var(--sans);font-weight:800;font-size:1.06rem;margin:1.5rem 0 .4rem}
+p{margin:.85rem 0}
+.wrap > p.sub em{color:var(--muted);font-size:1.06rem}
+a{color:var(--accent);text-underline-offset:2px;text-decoration-thickness:1px}
+strong{font-weight:700} em{font-style:italic}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.86em;background:var(--card);border:1px solid var(--line);border-radius:5px;padding:1px 5px}
+pre{background:var(--code-bg);color:var(--code-fg);border-radius:12px;padding:16px 18px;overflow-x:auto;border:1px solid var(--line);margin:1.2rem 0}
+pre code{background:none;border:0;padding:0;color:inherit;font-size:.82rem;line-height:1.55}
+blockquote{margin:1.3rem 0;padding:.7rem 1.1rem;border-left:4px solid var(--accent);background:var(--card);border-radius:0 10px 10px 0;color:var(--muted);font-size:1.02rem}
+blockquote strong{color:var(--fg)}
+hr{border:0;border-top:1px solid var(--line);margin:2.2rem 0}
+figure{margin:1.6rem 0}
+figure img,figure object{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:12px;box-shadow:0 18px 44px -28px rgba(40,24,10,.5)}
+figure object{pointer-events:none}
+figcaption{margin-top:.5rem;color:var(--faint);font-size:.82rem;line-height:1.4;font-style:italic;text-align:center}
+ul,ol{margin:.85rem 0;padding-left:1.2rem} li{margin:.3rem 0}
+.related{list-style:none;padding-left:0} .related li{margin:.6rem 0}
+.related a{font-weight:700}
+::selection{background:var(--accent-2);color:#fff}
+.foot{margin-top:2.4rem;padding-top:1.2rem;border-top:1px solid var(--line);color:var(--faint);font-size:.85rem}
+</style>
+</head>
+<body>
+<div class="topbar"></div>
+<article class="wrap">
+<a href="/#writing" data-backlink style="display:inline-flex;align-items:center;gap:.4rem;margin-bottom:1.2rem;font:700 .78rem/1 ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:#8A8A8A;text-decoration:none">← Back to portfolio</a>
+<p class="eyebrow">AI-Native Series · 08</p>
+<h1>The 83% Agent and the 24% Agent Are the Same Model</h1>
+<p class="sub"><em>Your AI agent isn't dumb — it's context-starved. The onboarding mental model for the agentic enterprise, mapped term by term to what actually shipped. ~8 min.</em></p>
+
+<figure>
+  <object data="/articles/assets/ctx-thumbnail.svg" type="image/svg+xml" aria-label="The same model at 24% alone and at 83% wrapped in identity, memory, and audit rings" style="aspect-ratio:1200/630"><img src="/articles/assets/ctx-thumbnail.svg" alt="The same model at 24% alone and at 83% wrapped in identity, memory, and audit rings"></object>
+  <figcaption>Same brain, two numbers. The difference is everything wrapped around it. (Animated — give it a second.)</figcaption>
+</figure>
+
+<h2>One number walked out of a 20,000-person conference</h2>
+<p>Snowflake's Summit this June shipped <strong>26+ new capabilities</strong> under a single thesis: the agentic enterprise runs on <em>governed context</em>, not just compute. Most of the announcements will blur together the way conference announcements do. One number shouldn't.</p>
+<p>With an enterprise memory layer — built automatically from query history, metadata, and dashboards — agents answered business questions at a reported <strong>83% accuracy. Without it: 24%.</strong> Same models. Same data warehouse. The only variable was whether the agent had been told how <em>this particular company</em> defines its world.</p>
+<p>Let that reorder your priorities for a second. The industry's default reflex when an agent disappoints is to swap the model — wait for the next release, pay for the bigger tier. This number says the reflex is backwards: <strong>the model was never the bottleneck. The onboarding was.</strong></p>
+
+<h2>The mental model: the smartest hire in history, on day one</h2>
+<p>Here's the whole idea, simple enough to run without a single acronym:</p>
+<blockquote><strong>A frontier model joining your company is the smartest new hire in history — showing up on day one to a company that gave them no badge, no handbook, and no supervisor.</strong></blockquote>
+<p>Ask that hire for Q3 revenue and they'll return four confident numbers. All real. All different. Not because they're stupid — because "revenue" means four different things across your systems and nobody told them which one is <em>the</em> one. They can't badge into the rooms where the good data lives, so they improvise from what's lying around. And since no one reviews their work, you find out about the improvisation in production.</p>
+
+<figure>
+  <object data="/articles/assets/ctx-newhire.svg" type="image/svg+xml" aria-label="Left: the genius hire on day one surrounded by question marks, 24% useful. Right: the same hire with a badge, handbook, ownership map and review — 83% useful" style="aspect-ratio:1200/640"><img src="/articles/assets/ctx-newhire.svg" alt="Day-one genius versus the same hire onboarded"></object>
+  <figcaption>Nobody concludes the day-one genius is dumb. They conclude the onboarding hasn't happened yet.</figcaption>
+</figure>
+
+<p>When a human genius underperforms in week one, no manager says "we need a smarter genius." They say: get them a badge, hand them the handbook, show them who owns what, and review their work until trust is earned. That — exactly that, nothing more mystical — is what the agentic-enterprise stack turns out to be.</p>
+
+<h2>Term by term: the onboarding kit is real product now</h2>
+<p>A mental model that can't survive contact with the actual product sheet is decoration. So here's the mapping — every row on the right shipped as a platform primitive this year:</p>
+
+<figure>
+  <object data="/articles/assets/ctx-term-map.svg" type="image/svg+xml" aria-label="Term-by-term mapping: badge to agent identity and per-agent RBAC; handbook to the enterprise context layer; org chart to lineage and governed catalog; probation to evals, audit trails and human gates" style="aspect-ratio:1200/720"><img src="/articles/assets/ctx-term-map.svg" alt="Onboarding terms mapped to platform primitives"></object>
+  <figcaption>Left column for the intuition. Right column for the architecture review.</figcaption>
+</figure>
+
+<p><strong>The badge = agent identity.</strong> The single most consequential announcement wasn't a model: <em>AI Agent Identity</em> went GA — every agent gets a cryptographic identity, per-agent RBAC, and a complete audit trail. An agent is a <em>principal</em> now, not a script running under some team's borrowed service account (the security equivalent of lending the intern your master key and your good name).</p>
+<p><strong>The handbook = the context layer.</strong> Enterprise memory (Cortex Sense) learns how the org defines its business from what the org actually does — its queries, its dashboards, its metadata. This is the 24→83 lever. Semantic models do the same job for text-to-SQL: the accuracy problem was never "can the model write SQL," it was "does the model know which of your four revenues is real."</p>
+<p><strong>The org chart = lineage.</strong> Governed catalogs now pull metadata from outside the warehouse too — Postgres, Tableau, dbt — with column-level lineage. The rule this enforces is one every data scientist already believes: <strong>an answer without lineage is a rumor.</strong></p>
+<p><strong>Probation = evals plus audit plus human gates.</strong> Every action logged, quality measured against a bar, autonomy expanded only when the evidence supports it. Trust is earned by reviewed work — for people, and now, structurally, for agents.</p>
+
+<h2>Three telescopes, because one hot number isn't an architecture</h2>
+<p>Before betting a roadmap on "context is the lever," check it at three zoom levels.</p>
+
+<figure>
+  <object data="/articles/assets/ctx-telescopes.svg" type="image/svg+xml" aria-label="Three panels: last 30 days (24 to 83 percent, 26+ capabilities, ~$200M partnership), last 30 years (warehouse moved compute to data, knowledge graphs, feature stores), last 500 years (double-entry bookkeeping, banks running clerks under ledgers)" style="aspect-ratio:1200/660"><img src="/articles/assets/ctx-telescopes.svg" alt="Three telescopes: 30 days, 30 years, 500 years"></object>
+  <figcaption>Fresh signal, survival signal, ancient law — all pointing the same way.</figcaption>
+</figure>
+
+<p><strong>30 days (is it hot?).</strong> One summit, 26+ capabilities, one thesis; a ~$200M partnership to run frontier models <em>inside</em> the data boundary rather than shipping the data out to them. And the 83-vs-24 headline. Honesty tax, because honesty is the brand here: that number is <strong>vendor-reported at a vendor conference</strong> — evidence tier: <em>claimed</em>, not independently reproduced. I'm treating it as a direction, not a constant. The direction is still striking.</p>
+<p><strong>30 years (did it survive?).</strong> Every durable winner in data has made the same move: bring the work closer to the governed data. The warehouse moved compute to the data. Knowledge graphs ("things, not strings," 2012) moved <em>meaning</em> closer and outlived their hype cycle. Feature stores moved ML's definitions closer — one definition, two consumers, and train/serve skew died by contract instead of by heroics. Models churned every year of that history; the structure around them compounded.</p>
+<p><strong>500 years (is it ancient law?).</strong> In 1494, Luca Pacioli codified double-entry bookkeeping. It didn't make Venetian merchants smarter; it gave every transaction a second witness. On that substrate, banks then ran centuries of what we'd now call agents — clerks with signing limits, ledgers, and auditors. Autonomous labor under governed context is not a 2026 invention. <strong>Trust was never a property of the person. It was a property of the ledger.</strong></p>
+
+<h2>I ran the thesis on its own announcement</h2>
+<p>Dogfood check: while writing this, I compiled the summit material itself through my open-source pipeline — prose notes in, deterministic knowledge spine out. Sixteen concepts, seventeen cited sources, every concept traceable to a heading and every source to a real URL; plus eight extracted "skills," each shipped with an honest <code>notGoodAt</code> edge (zero-copy clones don't isolate compute contention; a feature store can't fix a team with no reuse discipline). No retrieval, no node — the same no-rumors rule the catalogs enforce.</p>
+
+<figure>
+  <object data="/articles/assets/ctx-diy.svg" type="image/svg+xml" aria-label="A light terminal running knowledgefy on the summit vault producing 16 concepts and 17 sources, above a three-piece kit: identity and attestation, a context spine, an eval gate that can say no" style="aspect-ratio:1200/620"><img src="/articles/assets/ctx-diy.svg" alt="The portable three-piece onboarding kit"></object>
+  <figcaption>The onboarding kit is portable: identity &amp; attestation · a context spine with provenance · an eval gate that can say no.</figcaption>
+</figure>
+
+<p>That's the part worth stealing: the pattern doesn't need any particular vendor. Three pieces, buildable anywhere, all open in my repos — an <strong>identity/attestation layer</strong> so an agent is a scoped, auditable principal (<a href="https://github.com/wjlgatech/brace">brace</a>); a <strong>context spine</strong> with provenance-required nodes (<a href="https://github.com/wjlgatech/FDE-os">FDE-os</a>: knowledgefy + the jd-compiler pipeline); and an <strong>eval gate that can say no</strong> in CI (<a href="https://github.com/wjlgatech/cli-judge">cli-judge</a>, rag-eval-harness). Platforms are now shipping the same three pieces as managed products, which I take as convergent evidence rather than coincidence.</p>
+
+<h2>Onboarding is a loop — and the loop is the moat</h2>
+
+<figure>
+  <object data="/articles/assets/ctx-onboard-loop.svg" type="image/svg+xml" aria-label="A rotating loop: identity, context, evals and audit, autonomy expands on evidence, every reviewed task enriches memory — with the note: a model upgrade helps every company equally; a context layer helps only yours" style="aspect-ratio:1200/640"><img src="/articles/assets/ctx-onboard-loop.svg" alt="The onboarding loop"></object>
+  <figcaption>Badge → handbook → probation → trust → repeat. Every reviewed task enriches the memory the next agent inherits.</figcaption>
+</figure>
+
+<p>Run the loop in this order — it's the same order you'd onboard a person, and the order matters:</p>
+<ul>
+  <li><strong>Identity before the first query.</strong> If the agent isn't a principal, every later control is theater.</li>
+  <li><strong>Context before capability.</strong> Wire the semantic layer and lineage before adding tools — a well-armed agent with no handbook just makes confident mistakes faster.</li>
+  <li><strong>Evals before autonomy.</strong> The gate has to be able to say no, and it has to block. A gate that can't fail a release is a vibe.</li>
+  <li><strong>Autonomy on evidence only.</strong> Expand scopes when the audit trail earns it — the way a signing limit grows.</li>
+</ul>
+<p>And here's why this beats model-chasing as a strategy: <strong>a model upgrade helps every company equally. A context layer helps only yours.</strong> The next frontier release lifts your competitors the same day it lifts you; the memory of ten thousand reviewed, audited, lineage-tracked tasks lifts you alone. Onboard once, and every future agent — whichever lab it comes from — starts at 83 instead of 24.</p>
+
+<h2>The one line to remember</h2>
+<p>The smartest hire in history is standing in your lobby. The lobby is the problem.</p>
+<p><strong>Stop upgrading the model. Start onboarding it: a badge, a handbook, a probation — identity, context, evals.</strong></p>
+
+<hr>
+<h2>More in the AI-Native series</h2>
+<ul class="related">
+  <li><a href="/articles/compile-the-interview.html">Stop Studying for Interviews — Compile Them</a> — a JD is source code; link it against your repos and let the errors write the plan.</li>
+  <li><a href="/articles/designing-autonomy.html">The Architecture of Autonomy</a> — autonomy is a system architecture, not a model feature.</li>
+  <li><a href="/articles/attestation-gap.html">You Can't Self-Issue Reputation</a> — the trust rung only another person can supply.</li>
+</ul>
+<p>All of it lives in the <a href="/">Writing</a> section on the home page.</p>
+
+<p class="foot">Part of the AI-Native series. The knowledge graph, skills, and pipeline behind this article are open at github.com/wjlgatech/FDE-os. Sources: <a href="https://atlan.com/know/snowflake/summit-2026-announcements/">Atlan's Summit 2026 recap</a> · <a href="https://futurumgroup.com/insights/snowflake-summit-2026-four-infrastructure-bets-that-determine-whether-the-agentic-enterprise-delivers/">Futurum</a> · <a href="https://www.constellationr.com/insights/news/snowflake-summit-2026-context-custom-model-training-iceberg-v3">Constellation Research</a> · <a href="https://openai.com/index/snowflake-partnership/">OpenAI × Snowflake</a>.</p>
+</article>
+<script src="/articles/assets/engage.js" defer></script>
+</body>
+</html>
