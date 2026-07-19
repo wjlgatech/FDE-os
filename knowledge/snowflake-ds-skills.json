@@ -1,0 +1,82 @@
+{
+  "id": "snowflake-ds-skills",
+  "producedBy": "skillfy (manual synthesis over knowledge/vault/snowflake-summit-2026/, deepen-skill contract)",
+  "source": {
+    "kind": "research-vault",
+    "url": "https://github.com/wjlgatech/FDE-os/tree/main/knowledge/vault/snowflake-summit-2026"
+  },
+  "skills": [
+    {
+      "id": "skill-snowpark-python",
+      "name": "Snowpark for Python",
+      "kind": "tool",
+      "oneLine": "Push Python compute to the data: lazy DataFrames that compile to SQL, UDFs/UDTFs, stored procedures.",
+      "notGoodAt": ["low-latency OLTP serving", "GPU-heavy deep-learning training loops (use external compute + Feature Store handoff)"],
+      "verified": true,
+      "useWhen": ["feature pipelines over warehouse-scale data", "replacing pandas-on-laptop extracts that leak governance"]
+    },
+    {
+      "id": "skill-snowflake-notebooks",
+      "name": "Snowflake Notebooks",
+      "kind": "tool",
+      "oneLine": "Governed SQL+Python notebooks on live data — Git-backed, schedulable, no local extract.",
+      "notGoodAt": ["offline/air-gapped exploration", "heavy custom-kernel workflows (specialized local envs)"],
+      "verified": true,
+      "useWhen": ["EDA-to-production in one surface", "handing analysis to engineering without a rewrite"]
+    },
+    {
+      "id": "skill-cortex-ai",
+      "name": "Snowflake Cortex AI",
+      "kind": "tool",
+      "oneLine": "LLM functions, Cortex Search (hybrid retrieval), Cortex Analyst (text-to-SQL) inside the governance boundary.",
+      "notGoodAt": ["bleeding-edge model access on day one", "fine-grained inference cost control vs self-hosted vLLM"],
+      "verified": true,
+      "useWhen": ["RAG over governed enterprise data", "text-to-SQL for business users with a semantic model"]
+    },
+    {
+      "id": "skill-zero-copy-cloning",
+      "name": "Zero-Copy Cloning",
+      "kind": "technique",
+      "oneLine": "Instant metadata-only clones — full-scale experiment sandboxes with no storage copy.",
+      "notGoodAt": ["isolating compute contention (clones share nothing but still cost compute to query)", "cross-account duplication (that's sharing/replication)"],
+      "verified": true,
+      "useWhen": ["testing a feature pipeline against prod-scale data safely", "A/B-ing schema changes"]
+    },
+    {
+      "id": "skill-feature-store",
+      "name": "Snowflake Feature Store",
+      "kind": "tool",
+      "oneLine": "Define features once, backfill, serve consistently to training and inference — kills train/serve skew.",
+      "notGoodAt": ["sub-10ms online feature serving at the edge", "teams with no feature-reuse discipline (it's a contract, not magic)"],
+      "verified": true,
+      "useWhen": ["multiple models share engineered features", "lineage from raw table to model input must be auditable"]
+    },
+    {
+      "id": "skill-governance-security",
+      "name": "Data Governance & Security (Horizon)",
+      "kind": "competency",
+      "oneLine": "RBAC, dynamic masking, row-access policies, lineage, audit — governance as a platform property.",
+      "notGoodAt": ["substituting for a firm's own data-classification policy (it enforces one, doesn't write it)"],
+      "verified": true,
+      "useWhen": ["regulated-industry ML (finance/health)", "per-agent least-privilege design with AI Agent Identity"]
+    },
+    {
+      "id": "skill-sharing-marketplace",
+      "name": "Data Sharing & Marketplace",
+      "kind": "tool",
+      "oneLine": "Live governed sharing without copies; third-party data (market, alternative) as native tables.",
+      "notGoodAt": ["sharing with counterparties outside Snowflake without reader accounts", "replacing contractual data-use governance"],
+      "verified": true,
+      "useWhen": ["enriching models with vendor data without ETL", "cross-entity collaboration under audit"]
+    },
+    {
+      "id": "skill-agentic-context-layer",
+      "name": "The 2026 agentic layer (CoWork, Cortex Sense, Agent Identity)",
+      "kind": "competency",
+      "oneLine": "Agents with cryptographic identity + per-agent RBAC + audit, grounded by an enterprise-memory context layer (83% vs 24% accuracy).",
+      "notGoodAt": ["anything ungoverned — the whole point is that agent quality is a context+governance property, not a model property", "GA-maturity assumptions (Horizon Context and parts of the stack are still preview)"],
+      "verified": true,
+      "useWhen": ["designing enterprise agents that must pass a security review", "explaining why context engineering beats model swapping"]
+    }
+  ]
+}
