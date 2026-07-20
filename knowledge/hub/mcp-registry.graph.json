@@ -11,7 +11,7 @@
    "id": "repo-modelcontextprotocol-registry",
    "type": "repo",
    "label": "modelcontextprotocol/registry",
-   "stars": 7048,
+   "stars": 7050,
    "description": "A community driven registry service for Model Context Protocol (MCP) servers.",
    "license": "NOASSERTION",
    "kind": "registry",

@@ -2,21 +2,21 @@
  "contractVersion": "1.0",
  "source": {
   "repo": "langfuse/langfuse",
-  "sha": "1cb1bbcf6b269fd887a6667796f1a15417cca336",
+  "sha": "d70f258e8230b20c548bb74a3b272c1f30cc097f",
   "url": "https://github.com/langfuse/langfuse",
-  "pushed_at": "2026-07-19T20:02:04Z"
+  "pushed_at": "2026-07-20T14:59:46Z"
  },
  "nodes": [
   {
    "id": "repo-langfuse-langfuse",
    "type": "repo",
    "label": "langfuse/langfuse",
-   "stars": 31426,
+   "stars": 31491,
    "description": "\ud83e\udea2 Open source AI engineering platform: LLM evals, observability, metrics, prompt management, playground, datasets. Integrates with OpenTelemetry, LangChain, OpenAI SDK, LiteLLM, and more. \ud83c\udf4aYC W23 ",
    "license": "NOASSERTION",
    "kind": "platform",
    "why_cited": "open-source LLM observability/evals platform \u2014 the eval-obs organ candidate",
-   "source_url": "https://github.com/langfuse/langfuse/tree/1cb1bbcf6b269fd887a6667796f1a15417cca336"
+   "source_url": "https://github.com/langfuse/langfuse/tree/d70f258e8230b20c548bb74a3b272c1f30cc097f"
   },
   {
    "id": "topic-analytics",
@@ -137,133 +137,133 @@
    "type": "concept",
    "label": "\u2728 Core Features",
    "level": 2,
-   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+   "source_url": "https://github.com/langfuse/langfuse/blob/d70f258e8230b20c548bb74a3b272c1f30cc097f/README.md"
   },
   {
    "id": "c-deploy-langfuse",
    "type": "concept",
    "label": "\ud83d\udce6 Deploy Langfuse",
    "level": 2,
-   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+   "source_url": "https://github.com/langfuse/langfuse/blob/d70f258e8230b20c548bb74a3b272c1f30cc097f/README.md"
   },
   {
    "id": "c-langfuse-cloud",
    "type": "concept",
    "label": "Langfuse Cloud",
    "level": 3,
-   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+   "source_url": "https://github.com/langfuse/langfuse/blob/d70f258e8230b20c548bb74a3b272c1f30cc097f/README.md"
   },
   {
    "id": "c-self-host-langfuse",
    "type": "concept",
    "label": "Self-Host Langfuse",
    "level": 3,
-   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+   "source_url": "https://github.com/langfuse/langfuse/blob/d70f258e8230b20c548bb74a3b272c1f30cc097f/README.md"
   },
   {
    "id": "c-integrations",
    "type": "concept",
    "label": "\ud83d\udd0c Integrations",
    "level": 2,
-   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+   "source_url": "https://github.com/langfuse/langfuse/blob/d70f258e8230b20c548bb74a3b272c1f30cc097f/README.md"
   },
   {
    "id": "c-main-integrations",
    "type": "concept",
    "label": "Main Integrations:",
    "level": 3,
-   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+   "source_url": "https://github.com/langfuse/langfuse/blob/d70f258e8230b20c548bb74a3b272c1f30cc097f/README.md"
   },
   {
    "id": "c-packages-integrated-with-langfuse",
    "type": "concept",
    "label": "Packages integrated with Langfuse:",
    "level": 3,
-   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+   "source_url": "https://github.com/langfuse/langfuse/blob/d70f258e8230b20c548bb74a3b272c1f30cc097f/README.md"
   },
   {
    "id": "c-quickstart",
    "type": "concept",
    "label": "\ud83d\ude80 Quickstart",
    "level": 2,
-   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+   "source_url": "https://github.com/langfuse/langfuse/blob/d70f258e8230b20c548bb74a3b272c1f30cc097f/README.md"
   },
   {
    "id": "c-1-create-new-project",
    "type": "concept",
    "label": "1\ufe0f\u20e3 Create new project",
    "level": 3,
-   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+   "source_url": "https://github.com/langfuse/langfuse/blob/d70f258e8230b20c548bb74a3b272c1f30cc097f/README.md"
   },
   {
    "id": "c-2-log-your-first-llm-call",
    "type": "concept",
    "label": "2\ufe0f\u20e3 Log your first LLM call",
    "level": 3,
-   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+   "source_url": "https://github.com/langfuse/langfuse/blob/d70f258e8230b20c548bb74a3b272c1f30cc097f/README.md"
   },
   {
    "id": "c-3-see-traces-in-langfuse",
    "type": "concept",
    "label": "3\ufe0f\u20e3 See traces in Langfuse",
    "level": 3,
-   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+   "source_url": "https://github.com/langfuse/langfuse/blob/d70f258e8230b20c548bb74a3b272c1f30cc097f/README.md"
   },
   {
    "id": "c-support",
    "type": "concept",
    "label": "\ud83d\udcad Support",
    "level": 2,
-   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+   "source_url": "https://github.com/langfuse/langfuse/blob/d70f258e8230b20c548bb74a3b272c1f30cc097f/README.md"
   },
   {
    "id": "c-contributing",
    "type": "concept",
    "label": "\ud83e\udd1d Contributing",
    "level": 2,
-   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+   "source_url": "https://github.com/langfuse/langfuse/blob/d70f258e8230b20c548bb74a3b272c1f30cc097f/README.md"
   },
   {
    "id": "c-license",
    "type": "concept",
    "label": "\ud83e\udd47 License",
    "level": 2,
-   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+   "source_url": "https://github.com/langfuse/langfuse/blob/d70f258e8230b20c548bb74a3b272c1f30cc097f/README.md"
   },
   {
    "id": "c-dependencies",
    "type": "concept",
    "label": "Dependencies",
    "level": 2,
-   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+   "source_url": "https://github.com/langfuse/langfuse/blob/d70f258e8230b20c548bb74a3b272c1f30cc097f/README.md"
   },
   {
    "id": "c-star-history",
    "type": "concept",
    "label": "\u2b50\ufe0f Star History",
    "level": 2,
-   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+   "source_url": "https://github.com/langfuse/langfuse/blob/d70f258e8230b20c548bb74a3b272c1f30cc097f/README.md"
   },
   {
    "id": "c-open-source-projects-using-langfuse",
    "type": "concept",
    "label": "\u2764\ufe0f Open Source Projects Using Langfuse",
    "level": 2,
-   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+   "source_url": "https://github.com/langfuse/langfuse/blob/d70f258e8230b20c548bb74a3b272c1f30cc097f/README.md"
   },
   {
    "id": "c-security-privacy",
    "type": "concept",
    "label": "\ud83d\udd12 Security & Privacy",
    "level": 2,
-   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+   "source_url": "https://github.com/langfuse/langfuse/blob/d70f258e8230b20c548bb74a3b272c1f30cc097f/README.md"
   },
   {
    "id": "c-telemetry",
    "type": "concept",
    "label": "Telemetry",
    "level": 3,
-   "source_url": "https://github.com/langfuse/langfuse/blob/1cb1bbcf6b269fd887a6667796f1a15417cca336/README.md"
+   "source_url": "https://github.com/langfuse/langfuse/blob/d70f258e8230b20c548bb74a3b272c1f30cc097f/README.md"
   },
   {
    "id": "e-https-github-com-clickhouse-clickhouse",

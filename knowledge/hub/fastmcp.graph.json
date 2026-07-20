@@ -2,21 +2,21 @@
  "contractVersion": "1.0",
  "source": {
   "repo": "PrefectHQ/fastmcp",
-  "sha": "717f3535f65d3937e5422895ed4a333d895369aa",
+  "sha": "c8b8911226b5f9063364ccc1d668cc1dc25987d7",
   "url": "https://github.com/PrefectHQ/fastmcp",
-  "pushed_at": "2026-07-19T20:42:08Z"
+  "pushed_at": "2026-07-20T15:01:54Z"
  },
  "nodes": [
   {
    "id": "repo-prefecthq-fastmcp",
    "type": "repo",
    "label": "PrefectHQ/fastmcp",
-   "stars": 26292,
+   "stars": 26420,
    "description": "\ud83d\ude80 The fast, Pythonic way to build MCP servers and clients.",
    "license": "Apache-2.0",
    "kind": "framework",
    "why_cited": "the fast Pythonic MCP framework \u2014 build-time dependency candidate for MCP tooling",
-   "source_url": "https://github.com/PrefectHQ/fastmcp/tree/717f3535f65d3937e5422895ed4a333d895369aa"
+   "source_url": "https://github.com/PrefectHQ/fastmcp/tree/c8b8911226b5f9063364ccc1d668cc1dc25987d7"
   },
   {
    "id": "topic-agents",
@@ -77,42 +77,42 @@
    "type": "concept",
    "label": "FastMCP \ud83d\ude80",
    "level": 1,
-   "source_url": "https://github.com/PrefectHQ/fastmcp/blob/717f3535f65d3937e5422895ed4a333d895369aa/README.md"
+   "source_url": "https://github.com/PrefectHQ/fastmcp/blob/c8b8911226b5f9063364ccc1d668cc1dc25987d7/README.md"
   },
   {
    "id": "c-why-fastmcp",
    "type": "concept",
    "label": "Why FastMCP",
    "level": 2,
-   "source_url": "https://github.com/PrefectHQ/fastmcp/blob/717f3535f65d3937e5422895ed4a333d895369aa/README.md"
+   "source_url": "https://github.com/PrefectHQ/fastmcp/blob/c8b8911226b5f9063364ccc1d668cc1dc25987d7/README.md"
   },
   {
    "id": "c-run-fastmcp-in-production-with-horizon",
    "type": "concept",
    "label": "Run FastMCP in production with Horizon",
    "level": 2,
-   "source_url": "https://github.com/PrefectHQ/fastmcp/blob/717f3535f65d3937e5422895ed4a333d895369aa/README.md"
+   "source_url": "https://github.com/PrefectHQ/fastmcp/blob/c8b8911226b5f9063364ccc1d668cc1dc25987d7/README.md"
   },
   {
    "id": "c-installation",
    "type": "concept",
    "label": "Installation",
    "level": 2,
-   "source_url": "https://github.com/PrefectHQ/fastmcp/blob/717f3535f65d3937e5422895ed4a333d895369aa/README.md"
+   "source_url": "https://github.com/PrefectHQ/fastmcp/blob/c8b8911226b5f9063364ccc1d668cc1dc25987d7/README.md"
   },
   {
    "id": "c-documentation",
    "type": "concept",
    "label": "\ud83d\udcda Documentation",
    "level": 2,
-   "source_url": "https://github.com/PrefectHQ/fastmcp/blob/717f3535f65d3937e5422895ed4a333d895369aa/README.md"
+   "source_url": "https://github.com/PrefectHQ/fastmcp/blob/c8b8911226b5f9063364ccc1d668cc1dc25987d7/README.md"
   },
   {
    "id": "c-contributing",
    "type": "concept",
    "label": "Contributing",
    "level": 2,
-   "source_url": "https://github.com/PrefectHQ/fastmcp/blob/717f3535f65d3937e5422895ed4a333d895369aa/README.md"
+   "source_url": "https://github.com/PrefectHQ/fastmcp/blob/c8b8911226b5f9063364ccc1d668cc1dc25987d7/README.md"
   },
   {
    "id": "e-https-www-prefect-io",

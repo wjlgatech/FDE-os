@@ -6,7 +6,7 @@
    "name": "punkpeye/awesome-mcp-servers",
    "kind": "curated-index",
    "oneLine": "A collection of MCP servers.",
-   "stars": 90967,
+   "stars": 90998,
    "license": "MIT",
    "notGoodAt": [
     "running anything itself \u2014 an index of unvetted third-party code (popularity \u2260 safety; read before you install)"
@@ -32,7 +32,7 @@
    "name": "modelcontextprotocol/servers",
    "kind": "tool",
    "oneLine": "Model Context Protocol Servers",
-   "stars": 88636,
+   "stars": 88673,
    "license": "NOASSERTION",
    "notGoodAt": [
     "guarantees beyond its own README \u2014 verify against your workload before trusting"
@@ -56,7 +56,7 @@
    "name": "rohitg00/ai-engineering-from-scratch",
    "kind": "learning-resource",
    "oneLine": "Learn it. Build it. Ship it for others.",
-   "stars": 39592,
+   "stars": 40287,
    "license": "MIT",
    "notGoodAt": [
     "being load-bearing infrastructure \u2014 it teaches, it doesn't run"
@@ -85,7 +85,7 @@
    "name": "langfuse/langfuse",
    "kind": "platform",
    "oneLine": "\ud83e\udea2 Open source AI engineering platform: LLM evals, observability, metrics, prompt management, playground, datasets. Integrates with OpenTelemetry, LangChain, OpenAI SDK, LiteLLM, and more. \ud83c\udf4aYC W23 ",
-   "stars": 31426,
+   "stars": 31491,
    "license": "NOASSERTION",
    "notGoodAt": [
     "zero-ops adoption \u2014 a deployable platform carries real operational cost"
@@ -104,7 +104,7 @@
    },
    "source": {
     "repo": "langfuse/langfuse",
-    "sha": "1cb1bbcf6b269fd887a6667796f1a15417cca336",
+    "sha": "d70f258e8230b20c548bb74a3b272c1f30cc097f",
     "url": "https://github.com/langfuse/langfuse"
    },
    "verified": true
@@ -114,7 +114,7 @@
    "name": "PrefectHQ/fastmcp",
    "kind": "framework",
    "oneLine": "\ud83d\ude80 The fast, Pythonic way to build MCP servers and clients.",
-   "stars": 26292,
+   "stars": 26420,
    "license": "Apache-2.0",
    "notGoodAt": [
     "being a finished app \u2014 you still own design, evals, and deployment"
@@ -133,7 +133,7 @@
    },
    "source": {
     "repo": "PrefectHQ/fastmcp",
-    "sha": "717f3535f65d3937e5422895ed4a333d895369aa",
+    "sha": "c8b8911226b5f9063364ccc1d668cc1dc25987d7",
     "url": "https://github.com/PrefectHQ/fastmcp"
    },
    "verified": true
@@ -143,7 +143,7 @@
    "name": "modelcontextprotocol/registry",
    "kind": "registry",
    "oneLine": "A community driven registry service for Model Context Protocol (MCP) servers.",
-   "stars": 7048,
+   "stars": 7050,
    "license": "NOASSERTION",
    "notGoodAt": [
     "vouching for what it lists \u2014 distribution surface, not a review board"
