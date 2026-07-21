@@ -1,0 +1,23 @@
+{
+  "name": "anyagent-journey",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Per-repo Journey webapp — renders AnyAgent report cards from the collection.json data contract.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "sync": "cp ../docs/reportcards/collection.json ./data/collection.json && echo synced"
+  },
+  "dependencies": {
+    "next": "15.5.20",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.7",
+    "@types/react": "19.0.7",
+    "typescript": "5.7.3"
+  }
+}
