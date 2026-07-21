@@ -98,5 +98,25 @@
         "evidence": "curl 200 + content check: Deloitte/OpenSpace/hub-drift/Accountability all FOUND"
       }
     ]
+  },
+  {
+    "id": "rc0006",
+    "delivery": "Vercel git integration wired: fde-os-journey auto-deploys from main (repo FDE-os, rootDirectory=web)",
+    "objective": "The Journey ledger updates itself \u2014 no manual CLI push per turn",
+    "created_at": "2026-07-21T13:10:41Z",
+    "key_results": [
+      {
+        "text": "project connected to GitHub + rootDirectory set",
+        "target": "link live",
+        "score": 1.0,
+        "evidence": "vercel git connect: Connected; API PATCH confirmed rootDirectory=web, branch main"
+      },
+      {
+        "text": "merge to main triggers an automatic production deploy",
+        "target": "this very PR",
+        "score": 0.5,
+        "evidence": "pending \u2014 graded 0.5 until the deployment for this merge appears (evidence lands next card)"
+      }
+    ]
   }
 ]
