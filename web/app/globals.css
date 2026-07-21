@@ -1,0 +1,72 @@
+/* Anthropic brand-as-code palette + the delightful animations shared with the Python renderer:
+   staggered fade-up, bars that fill, a trend line that draws itself. Honors reduced-motion. */
+:root {
+  --paper: #faf9f5; --ink: #141413; --clay: #d97757; --sky: #6a9bcc;
+  --moss: #788c5d; --line: #e6e2d8; --muted: #6b675e; --risk: #c0392b;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: var(--paper); color: var(--ink); margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 960px; margin: 0 auto; padding: 40px 20px 80px; }
+.kicker { color: var(--clay); font-weight: 700; letter-spacing: 3px; font-size: 12px; margin: 0; }
+h1 { font-family: Georgia, serif; font-size: 40px; margin: .15em 0 .3em; }
+h2 { font-family: Georgia, serif; font-size: 22px; margin: 40px 0 12px; }
+.muted { color: var(--muted); font-size: 13px; }
+
+/* hero roadmap card */
+.hero { display: grid; gap: 12px; margin: 20px 0 8px; }
+.cell { background: #fff; border: 1px solid var(--line); border-left: 5px solid var(--clay);
+  border-radius: 12px; padding: 16px 18px; }
+.cell .lbl { color: var(--muted); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
+.cell .txt { font-size: 16px; margin-top: 6px; line-height: 1.5; }
+.cell.pos { border-left-color: var(--sky); } .cell.win { border-left-color: var(--moss); }
+.cell.next { border-left-color: var(--clay); } .cell.why { border-left-color: var(--muted); }
+
+/* momentum tiles */
+.tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 12px 0; }
+.tile { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+.tile .p { color: var(--muted); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
+.tile .v { font-size: 30px; font-weight: 700; margin: 4px 0; }
+.tile .d { font-size: 13px; font-weight: 600; }
+.tile .k { color: var(--muted); font-size: 12px; }
+
+/* trend */
+.panel { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 8px; }
+.trend polyline { stroke-dasharray: 3000; stroke-dashoffset: 3000; animation: draw 1.8s ease-out .3s forwards; }
+
+/* delivery feed */
+.feed { display: grid; gap: 10px; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+.chip { border: 1px solid var(--line); background: #fff; color: var(--ink); border-radius: 20px;
+  padding: 5px 12px; font-size: 12px; cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.card { background: #fff; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.card summary { list-style: none; cursor: pointer; padding: 14px 16px; display: flex; gap: 12px;
+  align-items: center; }
+.card summary::-webkit-details-marker { display: none; }
+.card .date { color: var(--muted); font-size: 12px; min-width: 82px; }
+.card .del { font-weight: 600; flex: 1; }
+.card .grade { font-weight: 700; }
+.card .krs { padding: 0 16px 14px; }
+.krrow { display: grid; grid-template-columns: 1fr auto; gap: 6px 12px; padding: 8px 0;
+  border-top: 1px solid var(--line); font-size: 14px; }
+.krrow .ev { color: var(--muted); font-size: 12px; grid-column: 1 / -1; }
+.bar { display: inline-block; width: 120px; height: 8px; background: var(--line); border-radius: 4px;
+  overflow: hidden; vertical-align: middle; margin-right: 8px; }
+.bar span { display: block; height: 8px; border-radius: 4px; width: var(--w); animation: barFill 1.1s cubic-bezier(.2,.8,.2,1) both; }
+
+/* staggered reveal */
+.reveal { animation: fadeUp .6s ease-out both; }
+.reveal.d1 { animation-delay: .06s; } .reveal.d2 { animation-delay: .14s; }
+.reveal.d3 { animation-delay: .22s; } .reveal.d4 { animation-delay: .3s; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes barFill { from { width: 0; } to { width: var(--w); } }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; }
+  .bar span { width: var(--w); } .trend polyline { stroke-dashoffset: 0; }
+}
+@media (max-width: 640px) { .tiles { grid-template-columns: repeat(2, 1fr); } h1 { font-size: 30px; } }

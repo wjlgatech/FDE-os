@@ -1,0 +1,88 @@
+[
+  {
+    "id": "rc0001",
+    "delivery": "OpenSpace v2.0.0 trial: source-install (py3.12 venv), all 12 FDE-os skills registered, 3 tasks run with quality records (backfilled)",
+    "objective": "Prove FDE-os skills run + self-report quality under an external agent runtime",
+    "created_at": "2026-07-21T03:30:00Z",
+    "key_results": [
+      {
+        "text": "task answers vs direct-run ground truth",
+        "target": "3/3 exact",
+        "score": 1.0,
+        "evidence": "true-scorer 6/12 BLOCK, criteria-scorer 4/4, outcome-contract GO \u2014 logs/recordings/task_*/"
+      },
+      {
+        "text": "evolution engine gated before touching repo files",
+        "target": "0 mutations",
+        "score": 1.0,
+        "evidence": "git status skills/ clean; admission rejects in .openspace/evidence.db"
+      },
+      {
+        "text": "headless permission model mastered",
+        "target": "scoped allow rules",
+        "score": 0.6,
+        "evidence": "allow-rule grammar never matched; passing runs used workspace-local bypassPermissions"
+      }
+    ]
+  },
+  {
+    "id": "rc0002",
+    "delivery": "Deloitte take-home built head-to-head: take-home/deloitte-agentic-triage (durable graph, gated tools, hybrid RAG w/ verifiable citations, session memory, eval gate) \u2014 merged PR #40",
+    "objective": "Turn the Deloitte JD into interview-grade artifacts + a gap audit; convert weaknesses into the audit-native 10X thesis",
+    "created_at": "2026-07-21T05:30:00Z",
+    "key_results": [
+      {
+        "text": "decisions vs labeled ground truth",
+        "target": "12/12",
+        "score": 1.0,
+        "evidence": "scripts/eval.py exit 0: all five metrics 1.0"
+      },
+      {
+        "text": "repo suite grows and stays green both harness modes",
+        "target": "158\u2192206",
+        "score": 1.0,
+        "evidence": "make check 206 passed; CI green on PR #40"
+      },
+      {
+        "text": "gap audit + 10X thesis shipped",
+        "target": "field note",
+        "score": 1.0,
+        "evidence": "docs/field-notes/2026-07-21-deloitte-take-home-gap-audit.md"
+      }
+    ]
+  },
+  {
+    "id": "rc0003",
+    "delivery": "hub-drift cron first real firing: drift detected, graphs rebuilt, bot/hub-refresh pushed; PR #41 opened manually",
+    "objective": "Keep the hub's compiled knowledge SHA-pinned fresh without red builds",
+    "created_at": "2026-07-21T05:40:00Z",
+    "key_results": [
+      {
+        "text": "cron detects drift \u2192 rebuild \u2192 PR",
+        "target": "fully automatic",
+        "score": 0.7,
+        "evidence": "branch + rebuild automatic; gh pr create step failed (GITHUB_TOKEN limitation) \u2014 PR #41 opened by hand"
+      }
+    ]
+  },
+  {
+    "id": "rc0004",
+    "delivery": "Accountability loop bootstrapped in FDE-os: anyagent updated (doctor-verified), Journey webapp scaffolded (web/), 4 cards recorded + synced",
+    "objective": "Every /anyagent turn leaves a reviewable, minable report card in this repo's Journey webapp",
+    "created_at": "2026-07-21T12:55:34Z",
+    "key_results": [
+      {
+        "text": "CLI current with source",
+        "target": "fingerprints match",
+        "score": 1.0,
+        "evidence": "anyagent doctor: 66da38551674 both sides"
+      },
+      {
+        "text": "Journey webapp exists for FDE-os",
+        "target": "scaffolded + data synced",
+        "score": 0.9,
+        "evidence": "web/ (18 files) + web/data/collection.json; not yet deployed to Vercel (human gate)"
+      }
+    ]
+  }
+]
