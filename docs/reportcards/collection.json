@@ -184,5 +184,19 @@
         "evidence": "rebuilt on fresh branch from main; 9 stale untracked files removed only after byte-identical diff vs main; 2 differing files backed up to /tmp/portfolio-stale-backup"
       }
     ]
+  },
+  {
+    "id": "rc0010",
+    "delivery": "Portfolio deploy verified live: the brief entry serves on agentic-portfolio-lovat.vercel.app (settles rc0009's pending KR)",
+    "objective": "Make the take-home presentation discoverable from Paul's public portfolio surface",
+    "created_at": "2026-07-21T18:41:05Z",
+    "key_results": [
+      {
+        "text": "brief link live on the deployed portfolio",
+        "target": "observed",
+        "score": 1.0,
+        "evidence": "curl of agentic-portfolio-lovat.vercel.app contains deloitte-triage-brief link after PR #110 auto-deploy"
+      }
+    ]
   }
 ]
