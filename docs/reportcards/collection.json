@@ -84,5 +84,19 @@
         "evidence": "web/ (18 files) + web/data/collection.json; not yet deployed to Vercel (human gate)"
       }
     ]
+  },
+  {
+    "id": "rc0005",
+    "delivery": "FDE-os Journey deployed to production: https://fde-os-journey.vercel.app (project fde-os-journey, scope wjlgatechs-projects)",
+    "objective": "Every /anyagent turn leaves a reviewable, minable report card at a URL",
+    "created_at": "2026-07-21T13:02:40Z",
+    "key_results": [
+      {
+        "text": "live prod URL serves all recorded cards to an anonymous visitor",
+        "target": "4/4 cards",
+        "score": 1.0,
+        "evidence": "curl 200 + content check: Deloitte/OpenSpace/hub-drift/Accountability all FOUND"
+      }
+    ]
   }
 ]
