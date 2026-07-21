@@ -158,5 +158,31 @@
         "evidence": "6 domains + 9/9 responsibilities + 8 technical qualifications tabled with honest statuses; degree/tenure rows excluded as r\u00e9sum\u00e9 matter"
       }
     ]
+  },
+  {
+    "id": "rc0009",
+    "delivery": "Take-home brief linked on the agentic portfolio (Writing section, top entry, with live-captured cover) \u2014 portfolio PR #110 merged",
+    "objective": "Make the take-home presentation discoverable from Paul's public portfolio surface",
+    "created_at": "2026-07-21T18:38:16Z",
+    "key_results": [
+      {
+        "text": "portfolio entry merged + YAML valid",
+        "target": "top of Writing",
+        "score": 1.0,
+        "evidence": "agentic-portfolio PR #110 squash-merged; yaml.safe_load OK, 20 articles"
+      },
+      {
+        "text": "live verification on the deployed portfolio",
+        "target": "link present",
+        "score": 0.5,
+        "evidence": "pending at card time \u2014 verifier running; settles next card if needed"
+      },
+      {
+        "text": "conflict + stale-checkout hygiene",
+        "target": "resolved safely",
+        "score": 1.0,
+        "evidence": "rebuilt on fresh branch from main; 9 stale untracked files removed only after byte-identical diff vs main; 2 differing files backed up to /tmp/portfolio-stale-backup"
+      }
+    ]
   }
 ]
