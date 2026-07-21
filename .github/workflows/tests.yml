@@ -10,6 +10,7 @@ on:
     paths:
       - "skills/**"
       - "field-kits/**"
+      - "take-home/**"
       - ".github/workflows/tests.yml"
   workflow_dispatch: {}
 
@@ -27,7 +28,7 @@ jobs:
           # Fail the job if any suite fails; report which.
           set -e
           found=0
-          for tdir in skills/*/tests workflows/*/tests tests; do
+          for tdir in skills/*/tests workflows/*/tests take-home/*/tests tests; do
             [ -d "$tdir" ] || continue
             found=1
             echo "::group::$tdir"

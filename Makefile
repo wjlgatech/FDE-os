@@ -3,7 +3,7 @@
 # and CI all key off the same command — no drift between what each of them runs).
 
 PY ?= python3
-TEST_DIRS = skills/*/tests workflows/*/tests tests
+TEST_DIRS = skills/*/tests workflows/*/tests take-home/*/tests tests
 
 .PHONY: check test freshness
 
