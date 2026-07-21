@@ -5,42 +5,42 @@
   {
    "slug": "awesome-mcp-servers",
    "repo": "punkpeye/awesome-mcp-servers",
-   "stars": 90967,
+   "stars": 90998,
    "sha": "79cca3e78c9f501fdb4925b907c04c0c4f68735d",
    "compiled": true
   },
   {
    "slug": "mcp-servers",
    "repo": "modelcontextprotocol/servers",
-   "stars": 88636,
+   "stars": 88673,
    "sha": "d31124c982401739917fd817c2a59db344529c16",
    "compiled": true
   },
   {
    "slug": "ai-engineering-from-scratch",
    "repo": "rohitg00/ai-engineering-from-scratch",
-   "stars": 39592,
+   "stars": 40287,
    "sha": "c8b9b9244f3210b840776675175662dacf208264",
    "compiled": true
   },
   {
    "slug": "langfuse",
    "repo": "langfuse/langfuse",
-   "stars": 31426,
-   "sha": "1cb1bbcf6b269fd887a6667796f1a15417cca336",
+   "stars": 31491,
+   "sha": "d70f258e8230b20c548bb74a3b272c1f30cc097f",
    "compiled": true
   },
   {
    "slug": "fastmcp",
    "repo": "PrefectHQ/fastmcp",
-   "stars": 26292,
-   "sha": "717f3535f65d3937e5422895ed4a333d895369aa",
+   "stars": 26420,
+   "sha": "c8b8911226b5f9063364ccc1d668cc1dc25987d7",
    "compiled": true
   },
   {
    "slug": "mcp-registry",
    "repo": "modelcontextprotocol/registry",
-   "stars": 7048,
+   "stars": 7050,
    "sha": "29e32c39dcb5e0e2b43974089d959fcc4794eb6d",
    "compiled": true
   },
@@ -54,13 +54,13 @@
   {
    "slug": "awesome-fde-roadmap",
    "repo": "pierpaolo28/Awesome-FDE-Roadmap",
-   "stars": 620,
+   "stars": 623,
    "compiled": false
   },
   {
    "slug": "google-fde-interview-guide",
    "repo": "YagyanshB/google-fde-interview-guide",
-   "stars": 313,
+   "stars": 314,
    "compiled": false
   },
   {
