@@ -118,5 +118,19 @@
         "evidence": "pending \u2014 graded 0.5 until the deployment for this merge appears (evidence lands next card)"
       }
     ]
+  },
+  {
+    "id": "rc0007",
+    "delivery": "Auto-deploy proven end to end: merge 3b857bf \u2192 git-sourced Vercel production deploy \u2192 rc0006 served live with no manual step (settles rc0006's pending KR)",
+    "objective": "The Journey ledger updates itself \u2014 no manual CLI push per turn",
+    "created_at": "2026-07-21T13:15:24Z",
+    "key_results": [
+      {
+        "text": "merge to main triggers automatic production deploy",
+        "target": "observed",
+        "score": 1.0,
+        "evidence": "Vercel API: deployment source=git sha=3b857bf READY; live curl: rc0006 FOUND"
+      }
+    ]
   }
 ]
