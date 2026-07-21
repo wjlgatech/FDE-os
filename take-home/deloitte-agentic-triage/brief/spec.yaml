@@ -1,0 +1,29 @@
+# Instance spec for this brief (template: anyagent docs/templates/agentic-brief.spec.yaml)
+meta:
+  name: deloitte-triage-brief
+  title: Agentic Triage — a take-home answered term by term
+  brand: { chip: AT, label: Agentic Triage, descriptor: "· a take-home answered term by term · with receipts" }
+  audience: interviewers + technical reviewers of the Deloitte Agentic AI Engineer take-home
+  confidentiality: "Personal interview-preparation artifact by Paul Wu — not affiliated with or endorsed by Deloitte."
+  data_date: 2026-07-21
+theme: { preset: anthropic-paper }
+stack: static
+tabs:
+  - { id: assignment, label: The Assignment }   # metrics + six-domains table + stance
+  - { id: terms, label: Term by Term }          # 9 responsibilities + 8 qualifications, honest statuses
+  - { id: machinery, label: The Machinery }     # 8-node flow + 4 design-decision lenses + churn aha
+  - { id: receipts, label: The Receipts }       # eval gate + 12 decisions + tiered evidence + references
+  - { id: tenx, label: 10X Proposal }           # PROPOSAL-only: 6 pillars w/ acceptance gates + coverage toggle + today-vs-10X
+  - { id: lab, label: Ask the Brief }           # copilot lab
+copilot:
+  name: take-home copilot
+  grounding: BRIEF_DATA.corpus in data.js — single source for UI and copilot
+  honesty: [corpus-restricted, labeled offline fallback, tiers + SHIPPED/SEAM/PROPOSAL vocabulary preserved]
+  backend: { primary: { provider: anthropic, model: claude-sonnet-5, env: ANTHROPIC_API_KEY }, fallback: labeled offline retrieval }
+quality_gates_passed_2026_07_21:
+  - node parses data.js; api/_corpus.js === BRIEF_DATA.corpus (same object)
+  - headless browser: 6/6 tabs render (1.6k–14.5k chars), zero console errors
+  - coverage toggle switches state (85% → 100%)
+  - offline fallback labeled "[offline retrieval — no LLM behind this answer]"
+  - all 8 external citation URLs fetched 200 before publication
+deploy: { host: vercel, scope: wjlgatechs-projects, project: deloitte-triage-brief, alias: deloitte-triage-brief.vercel.app, env: [ANTHROPIC_API_KEY] }

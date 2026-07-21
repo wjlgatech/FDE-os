@@ -132,5 +132,31 @@
         "evidence": "Vercel API: deployment source=git sha=3b857bf READY; live curl: rc0006 FOUND"
       }
     ]
+  },
+  {
+    "id": "rc0008",
+    "delivery": "Agentic brief webapp for the Deloitte take-home LIVE at https://deloitte-triage-brief.vercel.app \u2014 6 tabs, term-by-term requirement check (6 domains + 9 responsibilities + 8 qualifications), corpus-grounded copilot, 10X proposal clearly PROPOSAL-only",
+    "objective": "Present the take-home solution as a shareable, interrogable artifact per the agentic-brief playbook",
+    "created_at": "2026-07-21T17:01:42Z",
+    "key_results": [
+      {
+        "text": "playbook quality gates",
+        "target": "all",
+        "score": 1.0,
+        "evidence": "data.js parses + single corpus source; 6/6 tabs render, zero console errors; toggle switches; offline fallback labeled; 8/8 citation URLs fetched 200"
+      },
+      {
+        "text": "live surface verified",
+        "target": "page + API",
+        "score": 1.0,
+        "evidence": "index 200, data.js 200, POST /api/chat returns corpus-grounded answer; honesty probe: copilot refuses to call the 10X implemented"
+      },
+      {
+        "text": "term-by-term completeness",
+        "target": "every technical JD row",
+        "score": 0.9,
+        "evidence": "6 domains + 9/9 responsibilities + 8 technical qualifications tabled with honest statuses; degree/tenure rows excluded as r\u00e9sum\u00e9 matter"
+      }
+    ]
   }
 ]
