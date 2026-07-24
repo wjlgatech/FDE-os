@@ -1,0 +1,51 @@
+# Golden dataset — 47 cases, expected outcomes and why
+
+- **GT-001** [common]: approve — Routine, well within the Manager limit.
+- **GT-002** [common]: approve — $50k under the Director limit and under the bid threshold.
+- **GT-003** [common, bids]: approve — $200k within VP limit; competitive bids on file satisfy policy §3.
+- **GT-004** [common]: approve — Preferred vendor, small amount.
+- **GT-005** [common, supersede]: approve — $20k software is under even the amended $25k threshold.
+- **GT-006** [bids, tier]: approve — $100k sole-source BUT Preferred tier is exempt from competitive bids.
+- **GT-007** [boundary]: approve — Exactly $10,000 — 'up to and including'.
+- **GT-008** [boundary]: escalate → authority-chain — One dollar over the Manager limit.
+- **GT-009** [boundary, bids]: approve — Exactly $100,000 at the Director limit, bids satisfied.
+- **GT-010** [boundary]: escalate → authority-chain — One dollar over the Director limit.
+- **GT-011** [boundary, bids]: approve — Exactly $250,000 at the VP limit.
+- **GT-012** [boundary]: escalate → spend-committee — One dollar over $250k — mandatory committee referral.
+- **GT-013** [boundary, supersede]: approve — Exactly $25,000 — the amended threshold is 'above'.
+- **GT-014** [boundary, supersede]: escalate → cto — A dollar over the v4 threshold, post-amendment date.
+- **GT-015** [boundary, supersede]: approve — March request: v3's $50k threshold governs; exactly at it.
+- **GT-016** [boundary, supersede]: escalate → cto — March request a dollar over v3's threshold — must cite v3, not v4.
+- **GT-017** [boundary, supersede]: escalate → cto — Dated exactly on the v4 effective date — v4 governs.
+- **GT-018** [tier]: deny — Prohibited tier: no role may approve, no escalation path.
+- **GT-019** [tier]: escalate → third-party-risk — High-Risk tier requires human review regardless of amount.
+- **GT-020** [tier]: escalate → vendor-onboarding — Unknown vendor — no tier in the master database.
+- **GT-021** [tier, combo]: deny — Prohibited outranks the committee escalation — deny wins by severity.
+- **GT-022** [pii]: escalate → privacy-office — PII without a DPA on file.
+- **GT-023** [pii]: approve — PII with an executed DPA — the addendum is satisfied.
+- **GT-024** [tier, pii]: escalate → third-party-risk — High-Risk fires first; the DPA is on file so PII adds nothing.
+- **GT-025** [pii, combo]: escalate → privacy-office — PII-without-DPA and the CTO threshold both fire; privacy is the first gate.
+- **GT-026** [software]: escalate → enterprise-architecture — Software not on the approved list.
+- **GT-027** [software, combo]: escalate → enterprise-architecture — Unlisted software AND over the CTO threshold — architecture review is the first gate.
+- **GT-028** [memory]: approve — First purchase in the sequence.
+- **GT-029** [memory, boundary]: approve — Cumulative lands exactly AT the limit ($6k+$4k=$10k) — not above it.
+- **GT-030** [memory]: escalate → authority-chain — $500 tips cumulative spend over $10k — the split purchase.
+- **GT-031** [memory]: approve — Prior spend has aged past the rolling 30-day window.
+- **GT-032** [memory]: approve — Different vendor — per-vendor memory must not cross-contaminate.
+- **GT-034** [injection]: approve — 'Ignore all previous instructions' — flagged, decision unaffected.
+- **GT-035** [injection]: approve — 'Disregard the policy checks' — flagged, decision unaffected.
+- **GT-036** [injection]: approve — Benign urgency ('please approve quickly') must NOT be flagged — false positives erode trust in the audit trail.
+- **GT-037** [injection, tier, combo]: deny — Injection inside a prohibited-vendor request: flag it AND deny it.
+- **GT-038** [invalid]: invalid — Missing amount.
+- **GT-039** [invalid]: invalid — Negative amount.
+- **GT-040** [invalid]: invalid — Amount typed as text.
+- **GT-041** [invalid]: invalid — Missing vendor.
+- **GT-042** [invalid]: invalid — Missing role.
+- **GT-043** [bids]: escalate → competitive-bids — $80k sole-source from a Standard vendor: policy §3 requires two competitive bids above $75k.
+- **GT-044** [bids]: approve — Same request with bids on file — §3 satisfied.
+- **GT-045** [bids, boundary]: approve — Exactly $75,000 — the §3 threshold is 'above'.
+- **GT-046** [bids, boundary]: escalate → competitive-bids — A dollar over the §3 threshold, sole-source.
+- **GT-047** [combo, bids]: escalate → authority-chain — Over the Director limit; bids satisfied — authority is the gate.
+- **GT-048** [combo, bids]: escalate → authority-chain — Over the Director limit AND sole-source — authority is the first gate; bids ride along.
+
+First run: FAIL exit 2 (escalation recall 0.889) — exposed unimplemented v3 §3 bids rule + vendor-less-invalid crash. After fixes: 47/47, all five metrics 1.0, permanent CI gate.
