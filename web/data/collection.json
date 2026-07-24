@@ -270,5 +270,25 @@
         "evidence": "POST /api/triage 80k sole-source \u2192 escalate competitive-bids, cites procurement-policy-v3.md"
       }
     ]
+  },
+  {
+    "id": "rc0014",
+    "delivery": "Docs refreshed for the golden dataset (PR #56): take-home README (59 cases, honest two-phase history, playground link), both brief corpora (216 tests, golden paragraphs), AGENTS.md; both briefs redeployed",
+    "objective": "Docs and live surfaces never lag the code",
+    "created_at": "2026-07-24T13:27:56Z",
+    "key_results": [
+      {
+        "text": "docs merged with CI green",
+        "target": "PR #56",
+        "score": 1.0,
+        "evidence": "7dd058c on main; 216 passed"
+      },
+      {
+        "text": "live copilots answer golden-eval questions",
+        "target": "verified",
+        "score": 1.0,
+        "evidence": "prod probe: copilot explains the exit-2 first run and both defects from the corpus"
+      }
+    ]
   }
 ]
