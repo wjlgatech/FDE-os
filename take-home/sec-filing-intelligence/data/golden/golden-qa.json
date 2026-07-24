@@ -1,0 +1,35 @@
+{
+  "_meta": {
+    "hand_verified": "every expected value checked against the extracted filing text (and spot-checked against the rendered PDFs) on 2026-07-24",
+    "correctness_definition": "exact string match on deterministic pipeline output: exact value + unit + period (no tolerance band — extraction is deterministic, so any drift is a bug); refusals must fire on every must-refuse case (recall gated at 1.0) and must NOT fire on answerable cases",
+    "tags": ["value", "growth", "margin", "quarter", "refusal", "ambiguity", "prose", "balance"]
+  },
+  "cases": [
+    {"id": "S-01", "q": "What was Apple's total revenue in 2025?", "type": "numeric", "must": ["FY2025: $416,161M"], "tags": ["value"]},
+    {"id": "S-02", "q": "What was Tesla's total revenue in 2025?", "type": "numeric", "must": ["FY2025: $94,827M"], "tags": ["value"]},
+    {"id": "S-03", "q": "What was Tesla's revenue in 2023?", "type": "numeric", "must": ["FY2023: $96,773M"], "tags": ["value"]},
+    {"id": "S-04", "q": "What is Tesla's profit growth from 2024 to 2025?", "type": "numeric", "must": ["$7,153M → $3,855M", "-46.11%"], "tags": ["growth", "ambiguity"], "must_reason": ["Net income attributable to common stockholders"]},
+    {"id": "S-05", "q": "What is Tesla's net income growth between 2025 and 2026?", "type": "refusal", "must_reason": ["FY2026", "does not exist"], "tags": ["refusal"]},
+    {"id": "S-06", "q": "What is Apple's net income growth between 2024 and 2025?", "type": "numeric", "must": ["$93,736M → $112,010M", "+19.50%"], "tags": ["growth"]},
+    {"id": "S-07", "q": "What was Tesla's Q2 revenue change year-over-year?", "type": "numeric", "must": ["Q2-2025 → Q2-2026", "$22,496M → $28,236M", "+25.52%"], "tags": ["quarter", "growth"]},
+    {"id": "S-08", "q": "What was Tesla's Q1 2026 revenue?", "type": "numeric", "must": ["Q1-2026: $22,387M"], "tags": ["quarter", "value"]},
+    {"id": "S-09", "q": "Calculate Tesla's gross margin for 2025", "type": "numeric", "must": ["FY2025: 18.03%"], "tags": ["margin"]},
+    {"id": "S-10", "q": "What was Tesla's operating margin in 2025?", "type": "numeric", "must": ["FY2025: 4.59%"], "tags": ["margin"]},
+    {"id": "S-11", "q": "What was Tesla's diluted EPS in 2025?", "type": "numeric", "must": ["FY2025: $1.08"], "tags": ["value"]},
+    {"id": "S-12", "q": "What was Meta's diluted EPS in the latest filing?", "type": "refusal", "must_reason": ["Meta is not in the corpus", "Tesla", "Apple"], "tags": ["refusal"]},
+    {"id": "S-13", "q": "What was Microsoft's net income in the latest annual filing?", "type": "refusal", "must_reason": ["Microsoft is not in the corpus"], "tags": ["refusal"]},
+    {"id": "S-14", "q": "What was Amazon's AWS revenue last quarter?", "type": "refusal", "must_reason": ["Amazon is not in the corpus"], "tags": ["refusal"]},
+    {"id": "S-15", "q": "How much cash and cash equivalents did Apple report?", "type": "numeric", "must": ["$35,934M"], "tags": ["balance", "value"]},
+    {"id": "S-16", "q": "How much cash and cash equivalents did Tesla report in 2025?", "type": "numeric", "must": ["$16,513M"], "tags": ["balance", "value"]},
+    {"id": "S-17", "q": "What were Tesla's total assets in 2025?", "type": "numeric", "must": ["$137,806M"], "tags": ["balance", "value"]},
+    {"id": "S-18", "q": "What was Apple's operating income in 2025?", "type": "numeric", "must": ["FY2025: $133,050M"], "tags": ["value"]},
+    {"id": "S-19", "q": "How did Tesla's operating cash flow change from 2024 to 2025?", "type": "numeric", "must": ["$14,923M → $14,747M", "-1.18%"], "tags": ["growth"]},
+    {"id": "S-20", "q": "What was Tesla's SG&A in 2025?", "type": "numeric", "must": ["FY2025: $5,834M"], "tags": ["value"]},
+    {"id": "S-21", "q": "What was Tesla's research and development expense in 2025?", "type": "numeric", "must": ["FY2025: $6,411M"], "tags": ["value"]},
+    {"id": "S-22", "q": "What was Tesla's net income in 2025?", "type": "numeric", "must": ["FY2025: $3,855M"], "tags": ["value", "ambiguity"], "must_reason": ["Net income attributable to common stockholders", "3,794"]},
+    {"id": "S-23", "q": "What was Tesla's net income attributable to common stockholders in 2025?", "type": "numeric", "must": ["FY2025: $3,794M"], "tags": ["value", "ambiguity"]},
+    {"id": "S-24", "q": "What did Tesla management cite as risks?", "type": "prose", "must": ["Extractive passages", "tesla-10k-fy2025"], "tags": ["prose"]},
+    {"id": "S-25", "q": "What was NVIDIA's operating income for Q1 2026?", "type": "refusal", "must_reason": ["NVIDIA is not in the corpus"], "tags": ["refusal"]},
+    {"id": "S-26", "q": "What was Tesla's free cash flow in 2025?", "type": "refusal", "must_reason": ["No supported metric"], "tags": ["refusal"]}
+  ]
+}
