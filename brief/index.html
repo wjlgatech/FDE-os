@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>/FDE-os — the master tool, demoed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f0ede4; --paper2: #f7f5ee; --card: #faf8f2;
+    --ink: #46423a; --ink-dim: #7d776b; --ink-faint: #a39c8e;
+    --accent: #cc785c; --accent-deep: #b5654a; --accent-soft: #f3e2da;
+    --dark: #46423a; --ok: #4a7c59; --warn: #b08430; --kill: #b0452f;
+    --serif: "Newsreader", Georgia, serif;
+    --sans: "Hanken Grotesk", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--paper); color: var(--ink); font-family: var(--sans); line-height: 1.65; font-size: 15.5px; }
+  a { color: var(--accent-deep); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  header { position: sticky; top: 0; z-index: 60; background: rgba(240,237,228,.94); backdrop-filter: blur(8px); border-bottom: 1px solid #e2ddd0; }
+  .head-inner { max-width: 1020px; margin: 0 auto; padding: 10px 24px 12px; }
+  .brand { display: flex; align-items: center; gap: 9px; font-size: 13px; color: var(--ink-dim); flex-wrap: wrap; }
+  .brand .chip { width: 24px; height: 24px; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 700; font-size: 12px; display: flex; align-items: center; justify-content: center; }
+  .brand b { color: var(--ink); font-size: 14.5px; }
+  nav { display: flex; gap: 8px; margin-top: 10px; overflow-x: auto; padding-bottom: 2px; }
+  nav button { display: flex; align-items: center; gap: 7px; background: var(--card); border: 1px solid #e2ddd0; color: var(--ink); font-family: var(--sans); font-size: 13px; font-weight: 600; padding: 7px 15px 7px 8px; cursor: pointer; border-radius: 999px; white-space: nowrap; transition: all .15s; }
+  nav button .n { width: 19px; height: 19px; border-radius: 50%; background: var(--paper); border: 1px solid #ddd7c8; font-size: 11px; display: flex; align-items: center; justify-content: center; color: var(--ink-dim); }
+  nav button:hover { border-color: var(--accent); }
+  nav button.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+  nav button.active .n { background: rgba(255,255,255,.25); border-color: transparent; color: #fff; }
+
+  main { max-width: 1020px; margin: 0 auto; padding: 46px 24px 90px; }
+  section.tab { display: none; }
+  section.tab.active { display: block; animation: fade .3s ease; }
+  @keyframes fade { from { opacity: 0; transform: translateY(8px);} to { opacity: 1; transform: none;} }
+
+  .kicker { font-size: 11.5px; font-weight: 700; letter-spacing: 2.2px; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+  h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(34px, 5vw, 52px); line-height: 1.12; letter-spacing: -.5px; margin-bottom: 18px; max-width: 820px; }
+  h1 em { font-style: italic; color: var(--accent); }
+  .lede { color: var(--ink-dim); font-size: 16.5px; max-width: 700px; margin-bottom: 34px; }
+  h2.sec { font-family: var(--serif); font-weight: 500; font-size: 27px; margin: 46px 0 6px; letter-spacing: -.3px; }
+  .sec-sub { color: var(--ink-dim); font-size: 14px; margin-bottom: 16px; }
+
+  .card { background: var(--card); border: 1px solid #e6e1d3; border-radius: 14px; padding: 20px 24px; margin-bottom: 16px; }
+  .grid3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+  .grid2 { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
+  @media (max-width: 800px){ .grid3, .grid2 { grid-template-columns: 1fr; } }
+  .metric { text-align: center; padding: 20px 10px; }
+  .metric .num { font-family: var(--serif); font-size: 40px; color: var(--accent); line-height: 1; }
+  .metric .lbl { font-size: 12.5px; color: var(--ink-dim); margin-top: 8px; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; background: var(--paper2); border-radius: 12px; overflow: hidden; }
+  .tablewrap { border-radius: 12px; overflow: hidden; border: 1px solid #e2ddd0; margin-bottom: 16px; }
+  th { text-align: left; background: var(--dark); color: #f0ede4; font-weight: 600; padding: 12px 14px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+  td { padding: 12px 14px; border-bottom: 1px solid #e6e1d3; vertical-align: top; background: var(--paper2); }
+  tr:last-child td { border-bottom: none; }
+  code { font-family: var(--mono); font-size: 12.5px; background: var(--accent-soft); border-radius: 5px; padding: 1px 6px; color: var(--accent-deep); }
+
+  .term { background: var(--dark); border-radius: 12px; padding: 14px 18px; margin: 10px 0 6px; font-family: var(--mono); font-size: 12.5px; line-height: 1.55; overflow-x: auto; }
+  .term .cmd { color: #f0ede4; white-space: pre-wrap; word-break: break-all; }
+  .term .cmd::before { content: "$ "; color: var(--accent); font-weight: 700; }
+  .term .out { color: #cfc9bb; white-space: pre-wrap; margin-top: 8px; border-top: 1px dashed #5d584e; padding-top: 8px; }
+  .demo-note { font-size: 12.5px; color: var(--ink-dim); margin: 4px 0 18px; }
+  .demo-note::before { content: "▣ "; color: var(--accent); }
+
+  .aha { background: linear-gradient(135deg, #f7f2e7, #f5e7dd); border: 1px solid #ecdcc9; border-radius: 16px; padding: 26px 30px; margin: 30px 0; }
+  .aha .k { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  .aha p { font-family: var(--serif); font-size: 20px; line-height: 1.5; }
+  .aha p em { font-style: italic; color: var(--accent-deep); }
+
+  .toggle { display: inline-flex; background: var(--card); border: 1px solid #e2ddd0; border-radius: 999px; padding: 4px; margin: 14px 0; }
+  .toggle button { border: none; background: none; font-family: var(--sans); font-weight: 600; font-size: 13px; color: var(--ink-dim); padding: 8px 18px; border-radius: 999px; cursor: pointer; }
+  .toggle button.on { background: var(--accent); color: #fff; }
+  body.cmds-only .term .out { display: none; }
+
+  .cta { display: inline-block; margin-top: 30px; background: var(--accent); color: #fff !important; font-weight: 600; font-size: 14.5px; padding: 11px 22px; border-radius: 999px; }
+  .cta:hover { background: var(--accent-deep); text-decoration: none; }
+  .smallprint { color: var(--ink-faint); font-size: 12px; }
+
+  #copilot-pill { position: fixed; right: 22px; bottom: 22px; z-index: 90; background: var(--accent); color: #fff; border: none; font-family: var(--sans); font-weight: 700; font-size: 14px; padding: 13px 20px; border-radius: 999px; cursor: pointer; box-shadow: 0 6px 24px rgba(70,66,58,.25); }
+  #copilot-pill:hover { background: var(--accent-deep); }
+  #copilot-panel { position: fixed; right: 22px; bottom: 84px; z-index: 95; width: min(430px, calc(100vw - 44px)); max-height: min(600px, calc(100vh - 120px)); background: var(--card); border: 1px solid #ddd7c8; border-radius: 18px; box-shadow: 0 18px 60px rgba(70,66,58,.3); display: none; flex-direction: column; overflow: hidden; }
+  #copilot-panel.open { display: flex; }
+  .cp-head { padding: 14px 18px 12px; background: var(--dark); color: #f0ede4; }
+  .cp-head b { font-size: 15px; }
+  .cp-head .tag { display: block; font-size: 11.5px; color: #cfc9bb; margin-top: 2px; }
+  .cp-close { position: absolute; right: 14px; top: 12px; background: none; border: none; color: #cfc9bb; font-size: 16px; cursor: pointer; }
+  .chat-log { flex: 1; overflow-y: auto; padding: 16px 18px; min-height: 180px; }
+  .msg { margin-bottom: 14px; font-size: 13.5px; }
+  .msg .who { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--ink-faint); margin-bottom: 3px; }
+  .msg.user .who { color: var(--accent-deep); }
+  .msg .body { white-space: pre-wrap; }
+  .msg .fb { margin-top: 5px; }
+  .msg .fb button { background: none; border: 1px solid #e2ddd0; border-radius: 999px; font-size: 11px; padding: 2px 9px; cursor: pointer; color: var(--ink-dim); margin-right: 5px; }
+  .msg .fb button.picked { background: var(--accent-soft); border-color: var(--accent); color: var(--accent-deep); }
+  .chips { padding: 0 18px 8px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .chips button { background: var(--paper2); border: 1px solid #e2ddd0; border-radius: 999px; font-size: 12px; padding: 5px 12px; cursor: pointer; color: var(--ink); font-family: var(--sans); }
+  .chips button:hover { border-color: var(--accent); }
+  .chat-input { display: flex; gap: 8px; padding: 12px 14px; border-top: 1px solid #e6e1d3; background: var(--paper2); }
+  .chat-input input { flex: 1; background: #fff; border: 1px solid #ddd7c8; border-radius: 999px; color: var(--ink); padding: 10px 16px; font-size: 13.5px; font-family: var(--sans); }
+  .chat-input button { background: var(--accent); color: #fff; border: none; border-radius: 999px; padding: 10px 18px; font-weight: 700; cursor: pointer; font-size: 13.5px; }
+  .chat-input button:disabled { opacity: .5; cursor: wait; }
+  .cp-note { padding: 7px 18px 10px; font-size: 11px; color: var(--ink-faint); }
+
+  footer { border-top: 1px solid #e2ddd0; color: var(--ink-faint); font-size: 12px; padding: 24px; text-align: center; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="head-inner">
+    <div class="brand"><span class="chip">OS</span> <b>/FDE-os</b> · the master tool · every demo below is real and CI-verified</div>
+    <nav id="nav"></nav>
+  </div>
+</header>
+
+<main id="main"></main>
+
+<button id="copilot-pill" onclick="togglePanel()">💬 Ask /FDE-os</button>
+<div id="copilot-panel">
+  <div class="cp-head" style="position:relative">
+    <b>/FDE-os copilot</b>
+    <span class="tag">grounded in the toolkit, its real demo outputs + honest boundaries · it won't bluff</span>
+    <button class="cp-close" onclick="togglePanel()">✕</button>
+  </div>
+  <div class="chat-log" id="chatlog">
+    <div class="msg bot"><div class="who">Copilot</div><div class="body">Ask me which engine answers your ask, how to install, what any demo output means, or what the toolkit is honestly not good at. If the corpus doesn't cover it, I'll say so.</div></div>
+  </div>
+  <div class="chips" id="chips"></div>
+  <div class="chat-input">
+    <input id="chatq" placeholder="e.g. Which engine grades RAG retrieval?" onkeydown="if(event.key==='Enter')ask()">
+    <button id="chatbtn" onclick="ask()">Ask</button>
+  </div>
+  <div class="cp-note">Claude-backed when deployed · falls back to labeled offline retrieval — never a faked answer.</div>
+</div>
+
+<footer>
+  /FDE-os by Paul Wu · MIT · open at <a href="https://github.com/wjlgatech/FDE-os">github.com/wjlgatech/FDE-os</a><br>
+  Outputs captured 2026-07-21 from real runs at the repo root; the same commands are re-executed by CI on every push (a rotten demo turns the build red). Related: <a href="https://fde-os-journey.vercel.app">the graded delivery history</a> · <a href="https://deloitte-triage-brief.vercel.app">the reference runtime, presented</a>.
+</footer>
+
+<script src="data.js"></script>
+<script>
+const TABS = [
+  { id: "tool",     label: "The Tool" },
+  { id: "demos",    label: "Demos" },
+  { id: "contract", label: "The Contract" },
+  { id: "lab",      label: "Ask /FDE-os" },
+];
+const D = window.BRIEF_DATA;
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;" }[c]));
+const hero = (kicker, h1, lede) => `<div class="kicker">${kicker}</div><h1>${h1}</h1><p class="lede">${lede}</p>`;
+
+function renderTool() {
+  return `
+    ${hero("the master tool · one front door, thirteen engines",
+      `Is there a master /FDE-os? <em>There is now.</em>`,
+      `Until 2026-07-21 the honest answer was no: the plugin exposed twelve skills individually, with no single entry point. The master skill is the thin router over them — all logic stays in the tested engines; the router maps your ask to the right one. And because routing docs rot, every example it carries is re-executed by CI with its documented exit code asserted.`)}
+    <div class="grid3">
+      <div class="card metric"><div class="num">${D.stats.skills}</div><div class="lbl">skills — 12 engines + the master router</div></div>
+      <div class="card metric"><div class="num">${D.stats.tests}</div><div class="lbl">offline stdlib tests behind one finish line (make check)</div></div>
+      <div class="card metric"><div class="num">${D.stats.demos}</div><div class="lbl">demos on this page — each re-run by CI on every push</div></div>
+    </div>
+    <h2 class="sec">Get it — four doors, one tree</h2>
+    <div class="grid2">
+      ${D.install.map(i => `<div class="card"><b style="color:var(--accent-deep)">${esc(i.title)}</b><div style="font-size:13.5px;color:var(--ink-dim);margin-top:4px">${esc(i.text)}</div></div>`).join("")}
+    </div>
+    <h2 class="sec">The thirteen engines</h2>
+    <p class="sec-sub">Deterministic, offline, stdlib-only — every verdict is an exit code. <a href="${esc(D.repo)}" target="_blank" rel="noopener">Read the source ↗</a></p>
+    <div class="tablewrap"><table>
+      <tr><th style="width:26%">Engine</th><th>What it gates</th></tr>
+      ${D.engines.map(e => `<tr><td><code>${esc(e[0])}</code></td><td>${esc(e[1])}</td></tr>`).join("")}
+    </table></div>
+    <a class="cta" href="#" onclick="go('demos');return false;">See the demos →</a>`;
+}
+
+function renderDemos() {
+  return `
+    ${hero("demos · real commands, real outputs, re-run by CI",
+      `Nothing here is a mockup. <em>Copy, paste, run.</em>`,
+      `Every terminal block below was captured from an actual run at the repo root — including the BLOCKs, because a gate that never blocks is decoration. The same commands live in the master skill and are re-executed by CI with their documented exit codes asserted.`)}
+    <div class="toggle" id="viewToggle">
+      <button class="on" onclick="setView(0)">Commands + outputs</button>
+      <button onclick="setView(1)">Commands only (copy-paste)</button>
+    </div>
+    ${D.features.map(f => `
+      <h2 class="sec">${esc(f.title)}</h2>
+      <p class="sec-sub">${esc(f.intro)}</p>
+      ${f.examples.map(x => `
+        <div class="term"><div class="cmd">${esc(x.cmd)}</div><div class="out">${esc(x.out)}</div></div>
+        <div class="demo-note">${esc(x.note)}</div>`).join("")}
+    `).join("")}
+    <a class="cta" href="#" onclick="go('contract');return false;">Why you can trust it →</a>`;
+}
+
+function renderContract() {
+  return `
+    ${hero("the contract · honesty as machinery, not policy",
+      `Numbers that <em>survive the room</em>.`,
+      `The toolkit's rules are enforced by code paths, not by promises — the same command a human runs is the command CI enforces.`)}
+    ${D.contract.map(c => `<div class="card"><b style="color:var(--accent-deep)">${esc(c.k)}</b><div style="font-size:14px;color:var(--ink-dim);margin-top:4px">${esc(c.v)}</div></div>`).join("")}
+    <div class="aha"><div class="k">The proof it works</div>
+      <p>The ship-gate demo on this very page shows the toolkit <em>blocking its own author's marketing</em> (6/12, exit 1). A gate you can't fail is a rubber stamp — ours fails us first.</p></div>
+    <a class="cta" href="#" onclick="go('lab');return false;">Interrogate it yourself →</a>`;
+}
+
+function renderLab() {
+  return `
+    ${hero("ask /FDE-os · the toolkit answers back",
+      `Interrogate it <em>yourself</em>.`,
+      `The copilot (floating button, bottom right — or a chip below) is grounded in this page's corpus: the engines, the real demo outputs, install paths, and the honest boundaries. If the corpus doesn't cover your question, it says so instead of bluffing.`)}
+    <div class="card">
+      <b>Try these:</b>
+      <div class="chips" style="padding:12px 0 0">
+        ${SUGGESTIONS.map(q => `<button onclick="openAndAsk('${esc(q).replace(/'/g,"\\'")}')">${esc(q)}</button>`).join("")}
+      </div>
+    </div>
+    <div class="card" style="font-size:13.5px;color:var(--ink-dim)">
+      <b style="color:var(--ink)">How it stays honest.</b> Deployed, answers come from Claude with a system prompt restricted to the corpus — it refuses to invent numbers, files, or sources. Without a backend it falls back to labeled offline retrieval ("no LLM behind this answer"). Every answer has 👍/👎 — feedback is stored locally and folded into the next revision.</div>`;
+}
+
+const SUGGESTIONS = [
+  "Which engine grades RAG retrieval?",
+  "How do I install /FDE-os in Claude Code?",
+  "Why did the ship gate BLOCK the repo's own post?",
+  "What does exit 2 from the hub mean?",
+  "What is the toolkit honestly not good at?",
+];
+
+const RENDER = { tool: renderTool, demos: renderDemos, contract: renderContract, lab: renderLab };
+
+function go(id) {
+  document.querySelectorAll("nav button").forEach(b => b.classList.toggle("active", b.dataset.id === id));
+  document.querySelectorAll("section.tab").forEach(s => s.classList.toggle("active", s.id === "tab-" + id));
+  history.replaceState(null, "", "#" + id);
+  window.scrollTo({ top: 0 });
+}
+
+function setView(mode) {
+  document.querySelectorAll("#viewToggle button").forEach((b, i) => b.classList.toggle("on", i === mode));
+  document.body.classList.toggle("cmds-only", mode === 1);
+}
+
+(function init() {
+  const nav = document.getElementById("nav"), main = document.getElementById("main");
+  TABS.forEach((t, i) => {
+    const b = document.createElement("button");
+    b.innerHTML = `<span class="n">${i + 1}</span>${t.label}`; b.dataset.id = t.id; b.onclick = () => go(t.id);
+    nav.appendChild(b);
+    const s = document.createElement("section");
+    s.className = "tab"; s.id = "tab-" + t.id; s.innerHTML = RENDER[t.id]();
+    main.appendChild(s);
+  });
+  document.getElementById("chips").innerHTML = SUGGESTIONS.slice(0, 3).map(q => `<button onclick="askChip('${esc(q).replace(/'/g,"\\'")}')">${esc(q)}</button>`).join("");
+  go(location.hash.replace("#", "") || "tool");
+})();
+
+/* ---- copilot ---- */
+function togglePanel(forceOpen) {
+  const p = document.getElementById("copilot-panel");
+  p.classList.toggle("open", forceOpen === true ? true : forceOpen === false ? false : !p.classList.contains("open"));
+  if (p.classList.contains("open")) document.getElementById("chatq").focus();
+}
+function openAndAsk(q) { togglePanel(true); document.getElementById("chatq").value = q; ask(); }
+function askChip(q) { document.getElementById("chatq").value = q; ask(); }
+
+function addMsg(who, cls, text, withFeedback) {
+  const log = document.getElementById("chatlog");
+  const d = document.createElement("div");
+  d.className = "msg " + cls;
+  d.innerHTML = `<div class="who">${who}</div><div class="body"></div>`;
+  d.querySelector(".body").textContent = text;
+  if (withFeedback) {
+    const fb = document.createElement("div");
+    fb.className = "fb";
+    fb.innerHTML = `<button onclick="feedback(this,'up')">👍</button><button onclick="feedback(this,'down')">👎</button>`;
+    d.appendChild(fb);
+  }
+  log.appendChild(d); log.scrollTop = log.scrollHeight;
+}
+
+function feedback(btn, dir) {
+  btn.parentElement.querySelectorAll("button").forEach(b => b.classList.remove("picked"));
+  btn.classList.add("picked");
+  const msg = btn.closest(".msg");
+  const entry = { dir, q: (msg.previousElementSibling?.querySelector(".body")?.textContent || "").slice(0, 200), a: msg.querySelector(".body").textContent.slice(0, 200), at: new Date().toISOString() };
+  const key = "fdeos-master-feedback";
+  const all = JSON.parse(localStorage.getItem(key) || "[]"); all.push(entry);
+  localStorage.setItem(key, JSON.stringify(all));
+}
+
+function localRetrieve(q) {
+  const words = q.toLowerCase().split(/\W+/).filter(w => w.length > 3);
+  const scored = D.corpus.map(p => ({ p, s: words.reduce((s, w) => s + (p.toLowerCase().includes(w) ? 1 : 0), 0) }))
+    .filter(x => x.s > 0).sort((a, b) => b.s - a.s).slice(0, 3);
+  if (!scored.length) return "No matching passage in the corpus. Try terms like install, gate, hub, MCP, outcome, knowledge graph, runtime, or exit code.";
+  return "[offline retrieval — no LLM behind this answer, these are the corpus's closest passages]\n\n" + scored.map(x => "• " + x.p).join("\n\n");
+}
+
+async function ask() {
+  const inp = document.getElementById("chatq"), btn = document.getElementById("chatbtn");
+  const q = inp.value.trim(); if (!q) return;
+  inp.value = ""; btn.disabled = true;
+  togglePanel(true);
+  addMsg("You", "user", q);
+  try {
+    const r = await fetch("/api/chat", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ question: q }) });
+    if (!r.ok) throw new Error("api " + r.status);
+    const j = await r.json();
+    addMsg("Copilot", "bot", j.answer, true);
+  } catch (e) {
+    addMsg("Copilot (offline)", "bot", localRetrieve(q), true);
+  }
+  btn.disabled = false; inp.focus();
+}
+</script>
+</body>
+</html>
