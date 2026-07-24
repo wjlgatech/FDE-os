@@ -1,0 +1,3 @@
+# fetched PDFs/HTMs are regenerable via scripts/fetch_filings.py — not repo content
+archive/
+runs/
