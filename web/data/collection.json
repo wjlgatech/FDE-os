@@ -342,5 +342,31 @@
         "evidence": "26.5KB curated block (golden ledger + reasoner + graph + eval source) between deloitte-pack markers; same pattern as the repo's own sync-fmos-kb.py"
       }
     ]
+  },
+  {
+    "id": "rc0017",
+    "delivery": "Take-home #2 (SEC Filing Intelligence) shipped + both take-homes converted to case studies: public de-branded, private vault created, founding-member hook live on the community page",
+    "objective": "Ship assignment 2 term-by-term; turn both into a gated community-growth asset",
+    "created_at": "2026-07-24T15:33:20Z",
+    "key_results": [
+      {
+        "text": "SEC pipeline vs acceptance criteria",
+        "target": "every term mapped",
+        "score": 1.0,
+        "evidence": "ACCEPTANCE.md; 26-case golden eval 4 gates all 1.0; reconcile.py exact on real cross-filing identities; suite 216\u2192223 (PR #62)"
+      },
+      {
+        "text": "company name removed from public surfaces",
+        "target": "swept + redeployed",
+        "score": 0.9,
+        "evidence": "dir renamed, enterprise-triage-brief.vercel.app live (playground verified), old project deleted (404); historical report-card JSON + git history retain the name \u2014 noted honestly"
+      },
+      {
+        "text": "private vault + no-brainer hook",
+        "target": "live",
+        "score": 1.0,
+        "evidence": "fde-case-studies PRIVATE (verified); contribute.html vault section + prefilled founding-member issue CTA (rendered, zero console errors)"
+      }
+    ]
   }
 ]
