@@ -1,10 +1,10 @@
 # Instance spec for this brief (template: anyagent docs/templates/agentic-brief.spec.yaml)
 meta:
-  name: deloitte-triage-brief
+  name: enterprise-triage-brief
   title: Agentic Triage — a take-home answered term by term
   brand: { chip: AT, label: Agentic Triage, descriptor: "· a take-home answered term by term · with receipts" }
-  audience: interviewers + technical reviewers of the Deloitte Agentic AI Engineer take-home
-  confidentiality: "Personal interview-preparation artifact by Paul Wu — not affiliated with or endorsed by Deloitte."
+  audience: interviewers + technical reviewers of the enterprise Agentic AI Engineer take-home
+  confidentiality: "Personal interview-preparation artifact by Paul Wu — not affiliated with or endorsed by a Big-Four consulting firm (name withheld)."
   data_date: 2026-07-21
 theme: { preset: anthropic-paper }
 stack: static
@@ -26,4 +26,4 @@ quality_gates_passed_2026_07_21:
   - coverage toggle switches state (85% → 100%)
   - offline fallback labeled "[offline retrieval — no LLM behind this answer]"
   - all 8 external citation URLs fetched 200 before publication
-deploy: { host: vercel, scope: wjlgatechs-projects, project: deloitte-triage-brief, alias: deloitte-triage-brief.vercel.app, env: [ANTHROPIC_API_KEY] }
+deploy: { host: vercel, scope: wjlgatechs-projects, project: enterprise-triage-brief, alias: enterprise-triage-brief.vercel.app, env: [ANTHROPIC_API_KEY] }

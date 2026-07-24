@@ -40,7 +40,7 @@ MCP (any client):    python3 skills/fde-mcp-server/scripts/server.py   (stdio JS
 | **Improve an artifact iteratively, revert on regression** | `eval-loop` skill — git is the memory |
 | **Map an org's invisible decision workflow** | `invisible-workflow-mapper` skill |
 | **Compose gates into one verdict** | `workflows/engagement-readiness/run.py <engagement.json>` |
-| **Run/inspect the reference agent runtime** (durable graph, HITL, verifiable citations) | `take-home/deloitte-agentic-triage/scripts/run.py` then `eval.py` |
+| **Run/inspect the reference agent runtime** (durable graph, HITL, verifiable citations) | `take-home/enterprise-agentic-triage/scripts/run.py` then `eval.py` |
 | **Expose all of it to an MCP client** | `fde-mcp-server` — 8 tools incl. `hub_find`, `true_score`, `rag_eval` |
 
 ## 2. Verified demos (run from the repo root — each is CI-tested)
@@ -98,12 +98,12 @@ printf '{"jsonrpc":"2.0","id":1,"method":"tools/list"}\n' | python3 skills/fde-m
 
 ```bash
 # 12 requests through the durable triage graph (checkpoints, HITL pauses, traces)
-python3 take-home/deloitte-agentic-triage/scripts/run.py --out /tmp/fdeos-demo-run  # exit 0
+python3 take-home/enterprise-agentic-triage/scripts/run.py --out /tmp/fdeos-demo-run  # exit 0
 # Grade it against labeled ground truth: five metrics, escalation recall gated at 1.0
-python3 take-home/deloitte-agentic-triage/scripts/eval.py --run-dir /tmp/fdeos-demo-run  # exit 0
+python3 take-home/enterprise-agentic-triage/scripts/eval.py --run-dir /tmp/fdeos-demo-run  # exit 0
 # The GOLDEN set: 47 cases, 11 tag families — found a missing policy rule on day one
-python3 take-home/deloitte-agentic-triage/scripts/run.py --requests take-home/deloitte-agentic-triage/data/golden/golden-requests.jsonl --out /tmp/fdeos-golden-run  # exit 0
-python3 take-home/deloitte-agentic-triage/scripts/eval.py --run-dir /tmp/fdeos-golden-run --ground-truth take-home/deloitte-agentic-triage/data/golden/golden-truth.json  # exit 0
+python3 take-home/enterprise-agentic-triage/scripts/run.py --requests take-home/enterprise-agentic-triage/data/golden/golden-requests.jsonl --out /tmp/fdeos-golden-run  # exit 0
+python3 take-home/enterprise-agentic-triage/scripts/eval.py --run-dir /tmp/fdeos-golden-run --ground-truth take-home/enterprise-agentic-triage/data/golden/golden-truth.json  # exit 0
 ```
 
 ## 3. Report results faithfully
@@ -117,4 +117,4 @@ hub (`hub_query.py find …`) or at `AGENTS.md` — never improvise a fake capab
 `AGENTS.md` (the backbone + conventions) · `knowledge/hub/` (compiled external toolsets) ·
 `docs/field-notes/` (what real engagements taught) · live surfaces:
 https://fde-os-journey.vercel.app (graded delivery history) ·
-https://deloitte-triage-brief.vercel.app (the runtime, presented).
+https://enterprise-triage-brief.vercel.app (the runtime, presented).
