@@ -1,0 +1,11 @@
+{
+  "Maple Office Supply": {"tier": "Standard", "dpa_on_file": false, "soc2": false},
+  "Northfield Consulting": {"tier": "Standard", "dpa_on_file": true, "soc2": false},
+  "Redline Data Brokers": {"tier": "Prohibited", "dpa_on_file": false, "soc2": false},
+  "CloudMetric": {"tier": "Standard", "dpa_on_file": true, "soc2": true},
+  "HelioCRM": {"tier": "Standard", "dpa_on_file": false, "soc2": true},
+  "Brightline Catering": {"tier": "Preferred", "dpa_on_file": false, "soc2": false},
+  "Volga Analytics": {"tier": "High-Risk", "dpa_on_file": true, "soc2": false},
+  "Cedar Interiors": {"tier": "Standard", "dpa_on_file": false, "soc2": false},
+  "SketchFlow": {"tier": "Standard", "dpa_on_file": false, "soc2": true}
+}
