@@ -101,6 +101,9 @@ printf '{"jsonrpc":"2.0","id":1,"method":"tools/list"}\n' | python3 skills/fde-m
 python3 take-home/deloitte-agentic-triage/scripts/run.py --out /tmp/fdeos-demo-run  # exit 0
 # Grade it against labeled ground truth: five metrics, escalation recall gated at 1.0
 python3 take-home/deloitte-agentic-triage/scripts/eval.py --run-dir /tmp/fdeos-demo-run  # exit 0
+# The GOLDEN set: 47 cases, 11 tag families — found a missing policy rule on day one
+python3 take-home/deloitte-agentic-triage/scripts/run.py --requests take-home/deloitte-agentic-triage/data/golden/golden-requests.jsonl --out /tmp/fdeos-golden-run  # exit 0
+python3 take-home/deloitte-agentic-triage/scripts/eval.py --run-dir /tmp/fdeos-golden-run --ground-truth take-home/deloitte-agentic-triage/data/golden/golden-truth.json  # exit 0
 ```
 
 ## 3. Report results faithfully

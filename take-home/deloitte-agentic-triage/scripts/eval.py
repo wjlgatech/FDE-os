@@ -44,6 +44,7 @@ def evaluate(decisions: dict, truth: dict, traces: list[dict],
     decision_traced = {t.get("request_id") for t in traces
                        if t.get("kind") == "decision"}
 
+    tag_stats: dict[str, list[int]] = {}
     for rid, gt in sorted(truth.items()):
         got = decisions.get(rid)
         if got is None:
@@ -51,10 +52,14 @@ def evaluate(decisions: dict, truth: dict, traces: list[dict],
             per_request[rid] = {"ok": False, "why": "missing"}
             continue
         ok = got["decision"] == gt["decision"]
-        correct += ok
         if gt["decision"] == "escalate":
             esc_needed += 1
             esc_caught += got["decision"] == "escalate"
+            if ok and gt.get("escalate_to") and got.get("escalate_to") != gt["escalate_to"]:
+                ok = False  # right verdict, wrong human — that's still a routing failure
+                mismatches.append(f"{rid}: escalated to '{got.get('escalate_to')}', "
+                                  f"expected '{gt['escalate_to']}'")
+        correct += ok if got["decision"] == gt["decision"] else 0
         cited_docs = {c["doc"] for c in got.get("citations", [])}
         for doc in gt.get("required_citation_docs", []):
             cov_total += 1
@@ -66,11 +71,19 @@ def evaluate(decisions: dict, truth: dict, traces: list[dict],
             if flag not in got.get("guard_flags", []):
                 ok = False
                 mismatches.append(f"{rid}: expected guard flag '{flag}' missing")
+        for flag in gt.get("forbid_guard_flags", []):
+            if flag in got.get("guard_flags", []):
+                ok = False
+                mismatches.append(f"{rid}: guard flag '{flag}' is a FALSE POSITIVE here")
         if got["decision"] != gt["decision"]:
             mismatches.append(f"{rid}: expected {gt['decision']}, "
                               f"got {got['decision']} ({got.get('escalate_to')})")
         per_request[rid] = {"ok": bool(ok), "expected": gt["decision"],
                             "got": got["decision"]}
+        for tag in gt.get("tags", ["untagged"]):
+            tag_stats.setdefault(tag, [0, 0])
+            tag_stats[tag][1] += 1
+            tag_stats[tag][0] += bool(ok)
 
     n = len(truth)
     trace_complete = sum(1 for rid in truth
@@ -86,9 +99,11 @@ def evaluate(decisions: dict, truth: dict, traces: list[dict],
     }
     gate_failures = [f"{k} {metrics[k]} < required {v}"
                      for k, v in GATES.items() if metrics[k] < v]
+    by_tag = {t: {"ok": v[0], "total": v[1], "rate": round(v[0] / v[1], 4)}
+              for t, v in sorted(tag_stats.items())}
     return {"metrics": metrics, "gates": GATES, "gate_failures": gate_failures,
             "verdict": "PASS" if not gate_failures else "FAIL",
-            "mismatches": mismatches, "per_request": per_request}
+            "mismatches": mismatches, "per_request": per_request, "by_tag": by_tag}
 
 
 def main(argv=None) -> int:
@@ -114,6 +129,11 @@ def main(argv=None) -> int:
 
     report = evaluate(decisions, truth, traces, args.corpus)
     print(json.dumps(report["metrics"], indent=2))
+    if report.get("by_tag"):
+        print("by tag:")
+        for tag, s in report["by_tag"].items():
+            mark = "✓" if s["ok"] == s["total"] else "✗"
+            print(f"  {mark} {tag:12s} {s['ok']}/{s['total']}")
     for miss in report["mismatches"]:
         print(f"  ✗ {miss}")
     print(f"VERDICT: {report['verdict']}")

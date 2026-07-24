@@ -21,7 +21,9 @@ DELEGATION = chunk("delegation-of-authority.md",
                    "- Managers: up to and including $10,000.\n"
                    "- Directors: up to and including $100,000.\n"
                    "Any purchase request above $250,000 must be referred to the "
-                   "Spend Committee.")
+                   "Spend Committee.\n"
+                   "Purchases above $75,000 require evidence of at least two "
+                   "competitive bids, except for vendors on the Preferred tier.")
 REQ = {"id": "R-T", "date": "2026-05-10", "role": "Manager", "vendor": "V",
        "category": "goods", "amount_usd": 8000, "description": "d"}
 TOOLS = {"vendor": {"known": True, "tier": "Standard", "dpa_on_file": False,
@@ -41,7 +43,9 @@ class TestGroundedThresholds(unittest.TestCase):
         tighter = chunk("delegation-of-authority.md",
                         "- Managers: up to and including $5,000.\n"
                         "Any purchase request above $250,000 must be referred to "
-                        "the Spend Committee.")
+                        "the Spend Committee.\n"
+                        "Purchases above $75,000 require evidence of at least two "
+                        "competitive bids, except for vendors on the Preferred tier.")
         d = decide(REQ, [tighter])
         self.assertEqual(d.outcome, "escalate")
         self.assertEqual(d.escalate_to, "authority-chain")
@@ -91,6 +95,23 @@ class TestSeverityAndMemory(unittest.TestCase):
                             "soc2": False}, "catalog": None}
         d = decide({**REQ, "amount_usd": 300000}, [DELEGATION, risk], tools=tools)
         self.assertEqual(d.outcome, "deny")
+
+    def test_competitive_bids_rule_is_grounded_and_tier_aware(self):
+        big = {**REQ, "role": "Director", "amount_usd": 80000}
+        sole_source = decide(big, [DELEGATION])
+        self.assertEqual((sole_source.outcome, sole_source.escalate_to),
+                         ("escalate", "competitive-bids"))
+        with_bids = decide({**big, "bids_on_file": True}, [DELEGATION])
+        self.assertEqual(with_bids.outcome, "approve")
+        preferred = decide(big, [DELEGATION], tools={
+            "vendor": {"known": True, "tier": "Preferred", "dpa_on_file": False,
+                       "soc2": False}, "catalog": None})
+        self.assertEqual(preferred.outcome, "approve", "Preferred tier is exempt")
+
+    def test_authority_outranks_bids_as_escalation_target(self):
+        d = decide({**REQ, "role": "Director", "amount_usd": 120000}, [DELEGATION])
+        self.assertEqual((d.outcome, d.escalate_to), ("escalate", "authority-chain"))
+        self.assertIn("competitive-bids-missing", [r["rule"] for r in d.reasons])
 
     def test_cumulative_spend_flips_an_otherwise_fine_request(self):
         ok = decide(REQ, [DELEGATION], cumulative=0)
