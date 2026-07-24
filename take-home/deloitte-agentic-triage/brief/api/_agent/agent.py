@@ -75,7 +75,8 @@ class TriageAgent:
     def _queries(self, state: dict) -> list[str]:
         req, vendor = state["request"], state["tools"]["vendor"]
         qs = ["approval limits by role Managers Directors Vice Presidents Spend Committee",
-              "cumulative spend same vendor rolling 30-day window split orders"]
+              "cumulative spend same vendor rolling 30-day window split orders",
+              "competitive bids evidence purchases above Preferred tier exempt"]
         if not vendor["known"]:
             qs.append("unknown vendors escalated vendor onboarding master database")
         elif vendor["tier"] in ("Prohibited", "High-Risk"):
@@ -187,7 +188,10 @@ class TriageAgent:
 
     def _finalize(self, state: dict) -> dict:
         req, decision = state["request"], state["decision"]
-        self.memory.record(req, decision["outcome"])
+        if decision["outcome"] != "invalid":
+            # An invalid request was never processed — recording it would also
+            # crash on whichever required field it is missing (e.g. no vendor).
+            self.memory.record(req, decision["outcome"])
         state["final"] = {
             "id": req["id"],
             "decision": decision["outcome"],

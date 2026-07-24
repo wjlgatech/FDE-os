@@ -134,6 +134,19 @@ class PolicyReasoner:
             escalations.append("authority-chain")
             outcomes.append("escalate")
 
+        # Policy §3: competitive bids above a threshold, Preferred tier exempt.
+        # Checked last so authority/committee outrank it as the escalation target.
+        if vendor.get("tier") != "Preferred" and not request.get("bids_on_file"):
+            bids_limit, b_chunk, b_m = self._parse_amount(
+                chunks, r"above \$([\d,]+) require evidence of at least two "
+                        r"competitive bids")
+            if bids_limit is None:
+                ungrounded.append("bids-threshold")
+            elif amount > bids_limit:
+                reasons.append(reason("competitive-bids-missing", b_chunk, b_m))
+                escalations.append("competitive-bids")
+                outcomes.append("escalate")
+
         if ungrounded:
             # A governing clause could not be found in the retrieved evidence.
             # Guessing here is how ungrounded approvals happen — refuse instead.
