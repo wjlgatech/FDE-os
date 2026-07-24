@@ -316,5 +316,31 @@
         "evidence": "FDE-os PR #58 merged; upload requires the OpenAI key in Loop (embeddings) \u2014 one manual minute, honest gap"
       }
     ]
+  },
+  {
+    "id": "rc0016",
+    "delivery": "Loop rebuilt from default branch (Deloitte playbook baked in, app running pid-verified); loop-pack: KB upload blocked by OpenAI quota (both keys insufficient_quota) \u2192 deep layer injected into playbook.md between managed markers; 7-tab TALKING_POINTS.md opened in VS Code",
+    "objective": "Loop fully armed for the Deloitte interview",
+    "created_at": "2026-07-24T13:46:44Z",
+    "key_results": [
+      {
+        "text": "rebuild + install + relaunch",
+        "target": "new build running",
+        "score": 1.0,
+        "evidence": "release build 1m55s from c6842e3 (PR #33); TCC blocked mv, Finder route worked; build stamp 2026-07-24 08:44; pid verified"
+      },
+      {
+        "text": "loop-pack in the RAG KB",
+        "target": "embedded upload",
+        "score": 0.0,
+        "evidence": "HONEST FAIL: text-embedding-3-small returns 429 insufficient_quota on BOTH env and Loop-settings keys \u2014 no embeddings possible today; DB backed up, untouched"
+      },
+      {
+        "text": "deep grounding available anyway",
+        "target": "playbook.md injection",
+        "score": 1.0,
+        "evidence": "26.5KB curated block (golden ledger + reasoner + graph + eval source) between deloitte-pack markers; same pattern as the repo's own sync-fmos-kb.py"
+      }
+    ]
   }
 ]
