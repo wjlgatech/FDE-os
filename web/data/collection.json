@@ -368,5 +368,31 @@
         "evidence": "fde-case-studies PRIVATE (verified); contribute.html vault section + prefilled founding-member issue CTA (rendered, zero console errors)"
       }
     ]
+  },
+  {
+    "id": "rc0018",
+    "delivery": "Case study #2 live as an agentic webapp: sec-filing-brief.vercel.app \u2014 5 tabs + Playground running the REAL SEC pipeline via /api/ask (PR #66); portfolio entry merged (PR #120)",
+    "objective": "Show the 2nd case study in the agentic webapp, anonymized, with a playable real pipeline",
+    "created_at": "2026-07-24T17:00:02Z",
+    "key_results": [
+      {
+        "text": "live playground = real pipeline, drift-gated",
+        "target": "verified on prod",
+        "score": 1.0,
+        "evidence": "/api/ask: Apple $416,161M exact; headline question refuses; vendored copy byte-equality-tested (suite 223\u2192225)"
+      },
+      {
+        "text": "copilot honest on anonymity + embeddings",
+        "target": "probed live",
+        "score": 1.0,
+        "evidence": "names no company (vault-only); explains coordinate-parsing over embeddings from corpus"
+      },
+      {
+        "text": "portfolio linked with live cover",
+        "target": "merged",
+        "score": 1.0,
+        "evidence": "agentic-portfolio PR #120, top of Writing"
+      }
+    ]
   }
 ]
