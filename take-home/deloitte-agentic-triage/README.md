@@ -16,22 +16,37 @@ deterministically, and is gated by the repo's `make check`.
 > prohibited vendor must never be approved. Ship the agent AND the evidence
 > that it works.
 
-12 labeled requests exercise the edges: a split purchase only session memory
-can catch, a policy-version conflict only effective-date reasoning resolves,
-a prompt injection embedded in a description field, an exact-boundary
-amount, and a malformed request.
+**59 labeled cases** exercise the edges: the original 12 requests plus a
+**47-case golden dataset** (`data/golden/`) across 11 tag families — common,
+exact-dollar boundaries, vendor tiers, PII, the v3→v4 supersede, memory
+windows, injection (including a benign phrase that must NOT be flagged),
+invalid inputs, competitive bids, and multi-rule combos.
 
 ## Run it
 
 ```bash
-python3 scripts/run.py --out runs/latest    # batch → decisions + traces + checkpoints
+python3 scripts/run.py --out runs/latest        # the original 12 → decisions + traces
 python3 scripts/eval.py --run-dir runs/latest   # grade vs ground truth; exit 0/2
-python3 -m unittest discover -s tests -p 'test_*.py'   # 48 tests, offline
+python3 scripts/run.py --requests data/golden/golden-requests.jsonl --out runs/golden
+python3 scripts/eval.py --run-dir runs/golden --ground-truth data/golden/golden-truth.json
+python3 -m unittest discover -s tests -p 'test_*.py'   # 56 tests, offline
 ```
 
-Current scoreboard (deterministic, reproduce with the two commands above):
-decision_accuracy **1.0** · escalation_recall **1.0** · citation_doc_coverage
-**1.0** · citation_validity **1.0** · trace_completeness **1.0** → PASS.
+Or just play with it live — the **Playground** runs the real agent behind
+`/api/triage`: https://deloitte-triage-brief.vercel.app/#play
+
+Current scoreboard (deterministic, reproduce with the commands above), on
+both the 12-case set and the 47-case golden set: decision_accuracy **1.0** ·
+escalation_recall **1.0** (gated at exactly 1.0) · citation_doc_coverage
+**1.0** · citation_validity **1.0** · trace_completeness **1.0** → PASS, and
+the golden run is a permanent CI gate (`tests/test_golden_eval.py`).
+
+**Honest history the scoreboard earned:** the golden set's FIRST run failed
+(exit 2, escalation recall 0.889) — it exposed an unimplemented policy rule
+(v3 §3: competitive bids above $75k, Preferred exempt) and a crash on
+vendor-less invalid requests. Both were fixed the same day, the bids
+threshold parsed from retrieved policy text like every other rule. A golden
+set that can't fail you isn't measuring anything.
 
 ## Head-to-head: JD term → artifact
 
