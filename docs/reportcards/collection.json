@@ -394,5 +394,25 @@
         "evidence": "agentic-portfolio PR #120, top of Writing"
       }
     ]
+  },
+  {
+    "id": "rc0019",
+    "delivery": "sec-filing-brief.vercel.app password-gated (edge middleware, env-held secret, HMAC cookie); gate page doubles as the founding-member funnel",
+    "objective": "Case study #2 private until the interview / member access",
+    "created_at": "2026-07-24T17:38:54Z",
+    "key_results": [
+      {
+        "text": "everything locked without password",
+        "target": "page+data+APIs 401",
+        "score": 1.0,
+        "evidence": "live curls: 401/401/401; wrong pw 401"
+      },
+      {
+        "text": "password opens everything",
+        "target": "verified",
+        "score": 1.0,
+        "evidence": "unlock 204 \u2192 page 200, data.js served, /api/ask answers; secret only in Vercel env, not in the public repo"
+      }
+    ]
   }
 ]
