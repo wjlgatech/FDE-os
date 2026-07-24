@@ -290,5 +290,31 @@
         "evidence": "prod probe: copilot explains the exit-2 first run and both defects from the corpus"
       }
     ]
+  },
+  {
+    "id": "rc0015",
+    "delivery": "Loop wired to the take-home in 3 layers: live playbook.md cheat-sheet (applies to every request now), built-in 'Deloitte Agentic AI Take-Home' playbook (loop PR #33, exact existing format, cargo-check clean), RAG knowledge pack (11 files, FDE-os PR #58)",
+    "objective": "Any interview question about the take-home answerable near-real-time from Loop",
+    "created_at": "2026-07-24T13:39:51Z",
+    "key_results": [
+      {
+        "text": "durable playbook in existing format",
+        "target": "merged",
+        "score": 1.0,
+        "evidence": "loop PR #33 \u2192 default branch feature/loop-ai-assistant; compiles (Finished dev profile)"
+      },
+      {
+        "text": "live channel active without rebuild",
+        "target": "playbook.md",
+        "score": 1.0,
+        "evidence": "delimited DELOITTE-TAKEHOME block appended (57.1\u219260.7KB), removable in one cut"
+      },
+      {
+        "text": "deep-RAG pack ready",
+        "target": "11 curated files",
+        "score": 0.8,
+        "evidence": "FDE-os PR #58 merged; upload requires the OpenAI key in Loop (embeddings) \u2014 one manual minute, honest gap"
+      }
+    ]
   }
 ]
