@@ -1,4 +1,4 @@
-# Talking points — deloitte-triage-brief.vercel.app, tab by tab
+# Talking points — enterprise-triage-brief.vercel.app, tab by tab
 
 7 tabs · 1–2 minutes each · simple enough for a 15-year-old, evidenced enough for a tech lead.
 Rule of thumb per tab: one-sentence opener → the picture → the evidence → the closing line.

@@ -34,7 +34,7 @@ from facts import CANONICALS, find_metric, load_facts
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 _TRIAGE = os.path.abspath(os.path.join(_HERE, "..", "..",
-                                       "deloitte-agentic-triage", "scripts"))
+                                       "enterprise-agentic-triage", "scripts"))
 
 
 def _load(name: str, path: str):

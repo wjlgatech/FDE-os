@@ -1,9 +1,9 @@
-# Field note — the Deloitte take-home as a gap audit (2026-07-21)
+# Field note — the enterprise take-home as a gap audit (2026-07-21)
 
-**What happened:** took the Deloitte "Agentic AI Engineer" JD, derived the
+**What happened:** took the enterprise "Agentic AI Engineer" JD, derived the
 realistic take-home it implies (a procurement-triage agent over fragmented,
 conflicting policy docs), and built it head-to-head in `take-home/
-deloitte-agentic-triage/` — term by term, stdlib-only, eval-gated. 12/12
+enterprise-agentic-triage/` — term by term, stdlib-only, eval-gated. 12/12
 decisions matched ground truth on the first full run; 48 new tests; repo
 suite 158 → 206, both harness modes green.
 

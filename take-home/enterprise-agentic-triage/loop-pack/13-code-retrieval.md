@@ -1,4 +1,4 @@
-# Source: take-home/deloitte-agentic-triage/scripts/retrieval.py
+# Source: take-home/enterprise-agentic-triage/scripts/retrieval.py
 
 ```python
 #!/usr/bin/env python3

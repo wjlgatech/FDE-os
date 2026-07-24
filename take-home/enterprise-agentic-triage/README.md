@@ -1,7 +1,7 @@
 # Take-home: Procurement Triage Agent
 
 A realistic Agentic AI Engineer take-home, derived term-by-term from the
-Deloitte JD ("Agentic AI Engineer — Senior Consultant / Consultant") and
+a Big-Four consulting firm (name withheld) JD ("Agentic AI Engineer — Senior Consultant / Consultant") and
 built head-to-head against it. Everything below runs offline, stdlib-only,
 deterministically, and is gated by the repo's `make check`.
 
@@ -33,7 +33,7 @@ python3 -m unittest discover -s tests -p 'test_*.py'   # 56 tests, offline
 ```
 
 Or just play with it live — the **Playground** runs the real agent behind
-`/api/triage`: https://deloitte-triage-brief.vercel.app/#play
+`/api/triage`: https://enterprise-triage-brief.vercel.app/#play
 
 Current scoreboard (deterministic, reproduce with the commands above), on
 both the 12-case set and the 47-case golden set: decision_accuracy **1.0** ·
