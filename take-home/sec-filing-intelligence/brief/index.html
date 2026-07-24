@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEC Filing Intelligence — case study #2, live</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f0ede4; --paper2: #f7f5ee; --card: #faf8f2;
+    --ink: #46423a; --ink-dim: #7d776b; --ink-faint: #a39c8e;
+    --accent: #cc785c; --accent-deep: #b5654a; --accent-soft: #f3e2da;
+    --dark: #46423a; --ok: #4a7c59; --warn: #b08430; --kill: #b0452f;
+    --serif: "Newsreader", Georgia, serif;
+    --sans: "Hanken Grotesk", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--paper); color: var(--ink); font-family: var(--sans); line-height: 1.65; font-size: 15.5px; }
+  a { color: var(--accent-deep); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  header { position: sticky; top: 0; z-index: 60; background: rgba(240,237,228,.94); backdrop-filter: blur(8px); border-bottom: 1px solid #e2ddd0; }
+  .head-inner { max-width: 1020px; margin: 0 auto; padding: 10px 24px 12px; }
+  .brand { display: flex; align-items: center; gap: 9px; font-size: 13px; color: var(--ink-dim); flex-wrap: wrap; }
+  .brand .chip { width: 24px; height: 24px; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 700; font-size: 12px; display: flex; align-items: center; justify-content: center; }
+  .brand b { color: var(--ink); font-size: 14.5px; }
+  nav { display: flex; gap: 8px; margin-top: 10px; overflow-x: auto; }
+  nav button { display: flex; align-items: center; gap: 7px; background: var(--card); border: 1px solid #e2ddd0; color: var(--ink); font-family: var(--sans); font-size: 13px; font-weight: 600; padding: 7px 15px 7px 8px; cursor: pointer; border-radius: 999px; white-space: nowrap; }
+  nav button .n { width: 19px; height: 19px; border-radius: 50%; background: var(--paper); border: 1px solid #ddd7c8; font-size: 11px; display: flex; align-items: center; justify-content: center; color: var(--ink-dim); }
+  nav button.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+  nav button.active .n { background: rgba(255,255,255,.25); border-color: transparent; color: #fff; }
+  main { max-width: 1020px; margin: 0 auto; padding: 46px 24px 90px; }
+  section.tab { display: none; }
+  section.tab.active { display: block; animation: fade .3s ease; }
+  @keyframes fade { from { opacity: 0; transform: translateY(8px);} to { opacity: 1; transform: none;} }
+  .kicker { font-size: 11.5px; font-weight: 700; letter-spacing: 2.2px; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+  h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(34px, 5vw, 52px); line-height: 1.12; margin-bottom: 18px; max-width: 820px; }
+  h1 em { font-style: italic; color: var(--accent); }
+  .lede { color: var(--ink-dim); font-size: 16.5px; max-width: 700px; margin-bottom: 34px; }
+  h2.sec { font-family: var(--serif); font-weight: 500; font-size: 27px; margin: 46px 0 6px; }
+  .sec-sub { color: var(--ink-dim); font-size: 14px; margin-bottom: 16px; }
+  .card { background: var(--card); border: 1px solid #e6e1d3; border-radius: 14px; padding: 20px 24px; margin-bottom: 16px; }
+  .grid3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+  @media (max-width: 800px){ .grid3 { grid-template-columns: 1fr; } }
+  .metric { text-align: center; padding: 20px 10px; }
+  .metric .num { font-family: var(--serif); font-size: 40px; color: var(--accent); line-height: 1; }
+  .metric .lbl { font-size: 12.5px; color: var(--ink-dim); margin-top: 8px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; background: var(--paper2); }
+  .tablewrap { border-radius: 12px; overflow: hidden; border: 1px solid #e2ddd0; margin-bottom: 16px; }
+  th { text-align: left; background: var(--dark); color: #f0ede4; font-weight: 600; padding: 12px 14px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+  td { padding: 12px 14px; border-bottom: 1px solid #e6e1d3; vertical-align: top; background: var(--paper2); }
+  tr:last-child td { border-bottom: none; }
+  code { font-family: var(--mono); font-size: 12.5px; background: var(--accent-soft); border-radius: 5px; padding: 1px 6px; color: var(--accent-deep); }
+  .badge { display: inline-block; font-size: 10.5px; font-weight: 700; padding: 3px 10px; border-radius: 999px; letter-spacing: .6px; }
+  .b-ok { background: #e4ecdf; color: var(--ok); }
+  .b-warn { background: #f2e8d2; color: var(--warn); }
+  .b-bad { background: #f4ded6; color: var(--kill); }
+  .lens { border-left: 3px solid var(--accent); padding: 12px 18px; background: var(--paper2); border-radius: 0 12px 12px 0; margin-bottom: 12px; font-size: 14px; }
+  .lens .who { font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--accent-deep); margin-bottom: 4px; }
+  .aha { background: linear-gradient(135deg, #f7f2e7, #f5e7dd); border: 1px solid #ecdcc9; border-radius: 16px; padding: 26px 30px; margin: 30px 0; }
+  .aha .k { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  .aha p { font-family: var(--serif); font-size: 20px; line-height: 1.5; }
+  .aha p em { font-style: italic; color: var(--accent-deep); }
+  .cta { display: inline-block; margin-top: 30px; background: var(--accent); color: #fff !important; font-weight: 600; font-size: 14.5px; padding: 11px 22px; border-radius: 999px; border: none; cursor: pointer; }
+  .cta:hover { background: var(--accent-deep); text-decoration: none; }
+  .smallprint { color: var(--ink-faint); font-size: 12px; }
+  .term { background: var(--dark); border-radius: 12px; padding: 14px 18px; margin: 10px 0 6px; font-family: var(--mono); font-size: 12.5px; line-height: 1.55; overflow-x: auto; color: #cfc9bb; white-space: pre-wrap; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chips button { background: var(--paper2); border: 1px solid #e2ddd0; border-radius: 999px; font-size: 12px; padding: 5px 12px; cursor: pointer; color: var(--ink); font-family: var(--sans); }
+  .chips button:hover { border-color: var(--accent); }
+  #copilot-pill { position: fixed; right: 22px; bottom: 22px; z-index: 90; background: var(--accent); color: #fff; border: none; font-weight: 700; font-size: 14px; padding: 13px 20px; border-radius: 999px; cursor: pointer; box-shadow: 0 6px 24px rgba(70,66,58,.25); font-family: var(--sans); }
+  #copilot-panel { position: fixed; right: 22px; bottom: 84px; z-index: 95; width: min(430px, calc(100vw - 44px)); max-height: min(600px, calc(100vh - 120px)); background: var(--card); border: 1px solid #ddd7c8; border-radius: 18px; box-shadow: 0 18px 60px rgba(70,66,58,.3); display: none; flex-direction: column; overflow: hidden; }
+  #copilot-panel.open { display: flex; }
+  .cp-head { padding: 14px 18px 12px; background: var(--dark); color: #f0ede4; position: relative; }
+  .cp-head .tag { display: block; font-size: 11.5px; color: #cfc9bb; margin-top: 2px; }
+  .cp-close { position: absolute; right: 14px; top: 12px; background: none; border: none; color: #cfc9bb; font-size: 16px; cursor: pointer; }
+  .chat-log { flex: 1; overflow-y: auto; padding: 16px 18px; min-height: 160px; }
+  .msg { margin-bottom: 14px; font-size: 13.5px; }
+  .msg .who { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--ink-faint); margin-bottom: 3px; }
+  .msg .body { white-space: pre-wrap; }
+  .chat-input { display: flex; gap: 8px; padding: 12px 14px; border-top: 1px solid #e6e1d3; background: var(--paper2); }
+  .chat-input input { flex: 1; background: #fff; border: 1px solid #ddd7c8; border-radius: 999px; padding: 10px 16px; font-size: 13.5px; font-family: var(--sans); }
+  .chat-input button { background: var(--accent); color: #fff; border: none; border-radius: 999px; padding: 10px 18px; font-weight: 700; cursor: pointer; }
+  footer { border-top: 1px solid #e2ddd0; color: var(--ink-faint); font-size: 12px; padding: 24px; text-align: center; }
+</style>
+</head>
+<body>
+<header><div class="head-inner">
+  <div class="brand"><span class="chip">SF</span> <b>SEC Filing Intelligence</b> · case study #2 · the pipeline on this page is real</div>
+  <nav id="nav"></nav>
+</div></header>
+<main id="main"></main>
+
+<button id="copilot-pill" onclick="togglePanel()">💬 Ask the case study</button>
+<div id="copilot-panel">
+  <div class="cp-head"><b>Case-study copilot</b><span class="tag">grounded in the shipped artifacts + honest weaknesses · it won't bluff</span>
+    <button class="cp-close" onclick="togglePanel()">✕</button></div>
+  <div class="chat-log" id="chatlog"><div class="msg bot"><div class="who">Copilot</div><div class="body">Ask why embeddings were rejected for tables, how correctness is proven without XBRL, or what's honestly weak. If the corpus doesn't cover it, I'll say so.</div></div></div>
+  <div class="chips" id="cp-chips" style="padding:0 18px 8px"></div>
+  <div class="chat-input"><input id="chatq" placeholder="e.g. Why not embeddings?" onkeydown="if(event.key==='Enter')cpAsk()"><button onclick="cpAsk()">Ask</button></div>
+  <div class="smallprint" style="padding:7px 18px 10px">Claude-backed when deployed · labeled offline fallback — never a faked answer.</div>
+</div>
+
+<footer>Case study from a real Big-Four consulting interview loop (company name withheld publicly — the named layer lives in the founding-members vault). Filings are public SEC documents; extraction provenance is SHA-pinned. Code: <a href="https://github.com/wjlgatech/FDE-os/tree/main/take-home/sec-filing-intelligence">github.com/wjlgatech/FDE-os</a> · Case study #1: <a href="https://enterprise-triage-brief.vercel.app">enterprise-triage-brief.vercel.app</a></footer>
+
+<script src="data.js"></script>
+<script>
+const TABS = [
+  { id: "assignment", label: "The Assignment" },
+  { id: "play",       label: "Playground" },
+  { id: "method",     label: "The Method" },
+  { id: "receipts",   label: "The Receipts" },
+  { id: "lab",        label: "Ask the Brief" },
+];
+const D = window.BRIEF_DATA;
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;" }[c]));
+const hero = (k, h, l) => `<div class="kicker">${k}</div><h1>${h}</h1><p class="lede">${l}</p>`;
+
+function renderAssignment() {
+  return `${hero("case study #2 · natural-language answers over SEC filings",
+    `The archive is PDF. The API is scarce. <em>Earn the trust anyway.</em>`,
+    `The scenario: a leadership team stopped trusting an AI financial assistant that hallucinated values, mixed periods, and gave answers nobody could verify. The assignment: rebuild the direction — with PDFs as the primary source (not the clean XBRL the EDGAR API hands you), an explicit demand for traceability, and grading focused on fundamentals: what embeddings actually optimize, where arithmetic belongs, and how you know a number is right.`)}
+  <div class="grid3">
+    <div class="card metric"><div class="num">${D.stats.cases}</div><div class="lbl">hand-verified golden cases, exact — incl. mandatory refusals</div></div>
+    <div class="card metric"><div class="num">${D.stats.gates}</div><div class="lbl">CI gates, all at 1.0 (accuracy, refusal recall + precision, citation validity)</div></div>
+    <div class="card metric"><div class="num">${D.stats.filings}</div><div class="lbl">real filings: Tesla 10-K + Q1/Q2 10-Qs, Apple 10-K</div></div>
+  </div>
+  <h2 class="sec">The wrinkle, honored not dodged</h2>
+  <div class="tablewrap"><table><tr><th style="width:26%">Constraint</th><th>How it's honored</th><th style="width:34%">Receipt</th></tr>
+    ${D.wrinkle.map(w => `<tr><td><b>${esc(w[0])}</b></td><td>${esc(w[1])}</td><td class="smallprint">${esc(w[2])}</td></tr>`).join("")}
+  </table></div>
+  <div class="aha"><div class="k">The stance</div><p>The system that lost executive trust did two things: it let a model do arithmetic, and it gave answers without receipts. Here both are <em>structurally impossible</em> — numbers only come from parsed table coordinates with verbatim quotes; math only from deterministic code.</p></div>
+  <a class="cta" href="#" onclick="go('play');return false;">Ask it something real →</a>`;
+}
+
+const PLAY_EXAMPLES = [
+  "What was Apple's total revenue in 2025?",
+  "What is Tesla's net income growth between 2025 and 2026?",
+  "What was Tesla's Q2 revenue change year-over-year?",
+  "What was Tesla's net income in 2025?",
+  "Calculate Tesla's gross margin for 2025",
+  "What was Microsoft's net income in the latest annual filing?",
+  "How much cash and cash equivalents did Tesla report in 2025?",
+];
+
+function renderPlay() {
+  return `${hero("playground · the REAL pipeline, live",
+    `Ask the filings. <em>Get receipts.</em>`,
+    `This form posts to /api/ask — the same Python modules the CI gates run (the vendored copy is byte-equality-tested). Answers carry verbatim quotes, page anchors, SEC source URLs, calc steps, and near-miss disclosures. Unanswerable questions refuse with reasons — try the second chip: it's the assignment's own headline example, and it's unanswerable.`)}
+  <div class="card"><b>Try these:</b><div class="chips" style="padding:10px 0 0">
+    ${PLAY_EXAMPLES.map(q => `<button onclick="playAsk('${esc(q).replace(/'/g,"\\'")}')">${esc(q)}</button>`).join("")}
+  </div></div>
+  <div class="card"><div style="display:flex;gap:10px">
+    <input id="p-q" style="flex:1;padding:11px 16px;border:1px solid #ddd7c8;border-radius:999px;font-family:inherit;font-size:14px" placeholder="Ask a financial question about Tesla or Apple…" onkeydown="if(event.key==='Enter')playAsk()">
+    <button class="cta" style="margin:0" id="p-btn" onclick="playAsk()">Ask →</button>
+  </div></div>
+  <div id="p-result"></div>`;
+}
+
+async function playAsk(q) {
+  const inp = document.getElementById("p-q"), btn = document.getElementById("p-btn"), box = document.getElementById("p-result");
+  if (q) inp.value = q;
+  const question = inp.value.trim(); if (!question) return;
+  btn.disabled = true; btn.textContent = "Running…";
+  try {
+    const r = await fetch("/api/ask", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ question }) });
+    const j = await r.json();
+    if (!r.ok) throw new Error(j.error || "api " + r.status);
+    box.innerHTML = playResult(j);
+  } catch (e) {
+    box.innerHTML = `<div class="card" style="border-color:var(--kill)"><b>Playground unavailable:</b> <span class="smallprint">${esc(String(e))} — the live pipeline needs the deployed /api/ask; nothing is faked client-side.</span></div>`;
+  }
+  btn.disabled = false; btn.textContent = "Ask →";
+  box.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function playResult(j) {
+  const tone = j.type === "numeric" ? "b-ok" : j.type === "prose" ? "b-warn" : "b-bad";
+  const cites = (j.citations || []).map(c =>
+    `<div class="lens"><div class="who">${esc(c.doc_id)} · p.${esc(c.page)}${c.period ? " · " + esc(c.period) : ""}</div>${esc(String(c.quote).slice(0, 220))}<div class="smallprint" style="margin-top:4px"><a href="${esc(c.source_url)}" target="_blank" rel="noopener">source filing ↗</a></div></div>`).join("") || "";
+  return `<div class="card">
+    <span class="badge ${tone}">${esc(j.type.toUpperCase())}</span>
+    <div style="font-family:var(--serif);font-size:19px;margin:10px 0;white-space:pre-wrap">${esc(j.answer)}</div>
+    ${(j.calc || []).length ? `<div class="term">${esc(j.calc.join("\n"))}</div>` : ""}
+    ${cites}
+    ${(j.reasons || []).map(r => `<div class="smallprint">▣ ${esc(r)}</div>`).join("")}
+    <div class="smallprint" style="margin-top:8px">confidence: ${esc(j.confidence)}</div>
+  </div>`;
+}
+
+function renderMethod() {
+  return `${hero("the method · six decisions, mechanism first",
+    `Fundamentals, <em>not buzzwords</em>.`,
+    `The assignment says it grades the depth of understanding under the choices — what an embedding actually optimizes, where an LLM is reliable, what "correct" should mean. Each decision below carries its mechanism and its implementation.`)}
+  ${D.decisions.map(d => `<div class="card"><b style="color:var(--accent-deep)">${esc(d.title)}</b>
+    <div style="font-size:14px;margin-top:6px"><b class="smallprint" style="letter-spacing:1px">WHY</b> ${esc(d.why)}</div>
+    <div style="font-size:14px;margin-top:6px"><b class="smallprint" style="letter-spacing:1px">HOW</b> ${esc(d.how)}</div></div>`).join("")}
+  <a class="cta" href="#" onclick="go('receipts');return false;">Inspect the receipts →</a>`;
+}
+
+function renderReceipts() {
+  return `${hero("the receipts · measured, gated, reproducible",
+    `Numbers that <em>survive the room</em>.`,
+    `Every metric is a CI gate (exit non-zero on failure); the golden set was hand-verified against the source filings before the system existed. The parser's own history is part of the receipt: its first probe run scored 13/19 — three real bugs, fixed and documented — before reaching 26/26.`)}
+  <h2 class="sec">The gates</h2>
+  <div class="tablewrap"><table><tr><th>Metric</th><th>Result</th><th>Meaning</th></tr>
+    ${D.scoreboard.map(s => `<tr><td><b>${esc(s.label)}</b></td><td style="color:var(--accent-deep);font-weight:700">${esc(s.value)}</td><td class="smallprint">${esc(s.note)}</td></tr>`).join("")}
+  </table></div>
+  <h2 class="sec">Golden cases, sampled</h2>
+  <p class="sec-sub">All 26 are in the repo (data/golden/golden-qa.json) with the correctness definition spelled out: exact value + unit + period; refusals graded both ways.</p>
+  <div class="tablewrap"><table><tr><th style="width:38%">Question</th><th>Expected (and delivered)</th><th style="width:20%">Kind</th></tr>
+    ${D.golden_sample.map(g => `<tr><td>${esc(g[0])}</td><td>${esc(g[1])}</td><td class="smallprint">${esc(g[2])}</td></tr>`).join("")}
+  </table></div>
+  <div class="aha"><div class="k">The trust mechanism</div><p>Q1's 10-Q says 22,387. Q2's 10-Q says 28,236 — and its six-month column says 50,623. Two documents, three extractions, one identity: <em>22,387 + 28,236 = 50,623, exact.</em> That's double-entry bookkeeping for an extraction pipeline — correctness you build when XBRL isn't there to give it to you.</p></div>
+  <a class="cta" href="#" onclick="go('lab');return false;">Interrogate the case study →</a>`;
+}
+
+const CP_SUGGESTIONS = [
+  "Why not embeddings for the tables?",
+  "How do you know a number is right without XBRL?",
+  "What's honestly weak?",
+  "What breaks first at 30,000 filings?",
+  "Where would an LLM go, and how does it earn the seam?",
+];
+
+function renderLab() {
+  return `${hero("ask the brief · the case study answers back",
+    `Interrogate it <em>yourself</em>.`,
+    `The copilot (bottom right) is grounded in this page's corpus — the shipped artifacts, the honest history (13/19 before 26/26), and the weaknesses. If the corpus doesn't cover your question, it says so.`)}
+  <div class="card"><b>Try these:</b><div class="chips" style="padding:12px 0 0">
+    ${CP_SUGGESTIONS.map(q => `<button onclick="cpOpenAsk('${esc(q).replace(/'/g,"\\'")}')">${esc(q)}</button>`).join("")}
+  </div></div>
+  <div class="card smallprint"><b style="color:var(--ink)">Two live surfaces, one discipline.</b> The Playground runs the real pipeline (/api/ask, deterministic); this copilot answers ABOUT the case study (/api/chat, corpus-restricted Claude with a labeled offline fallback). Neither will bluff.</div>`;
+}
+
+const RENDER = { assignment: renderAssignment, play: renderPlay, method: renderMethod, receipts: renderReceipts, lab: renderLab };
+function go(id) {
+  document.querySelectorAll("nav button").forEach(b => b.classList.toggle("active", b.dataset.id === id));
+  document.querySelectorAll("section.tab").forEach(s => s.classList.toggle("active", s.id === "tab-" + id));
+  history.replaceState(null, "", "#" + id); window.scrollTo({ top: 0 });
+}
+(function init() {
+  const nav = document.getElementById("nav"), main = document.getElementById("main");
+  TABS.forEach((t, i) => {
+    const b = document.createElement("button");
+    b.innerHTML = `<span class="n">${i + 1}</span>${t.label}`; b.dataset.id = t.id; b.onclick = () => go(t.id);
+    nav.appendChild(b);
+    const s = document.createElement("section");
+    s.className = "tab"; s.id = "tab-" + t.id; s.innerHTML = RENDER[t.id]();
+    main.appendChild(s);
+  });
+  document.getElementById("cp-chips").innerHTML = CP_SUGGESTIONS.slice(0, 2).map(q => `<button onclick="cpAskQ('${esc(q).replace(/'/g,"\\'")}')">${esc(q)}</button>`).join("");
+  go(location.hash.replace("#", "") || "assignment");
+})();
+
+/* copilot */
+function togglePanel(force) {
+  const p = document.getElementById("copilot-panel");
+  p.classList.toggle("open", force === true ? true : force === false ? false : !p.classList.contains("open"));
+}
+function cpOpenAsk(q) { togglePanel(true); document.getElementById("chatq").value = q; cpAsk(); }
+function cpAskQ(q) { document.getElementById("chatq").value = q; cpAsk(); }
+function addMsg(who, text) {
+  const log = document.getElementById("chatlog"), d = document.createElement("div");
+  d.className = "msg"; d.innerHTML = `<div class="who">${who}</div><div class="body"></div>`;
+  d.querySelector(".body").textContent = text;
+  log.appendChild(d); log.scrollTop = log.scrollHeight;
+}
+function localRetrieve(q) {
+  const words = q.toLowerCase().split(/\W+/).filter(w => w.length > 3);
+  const scored = D.corpus.map(p => ({ p, s: words.reduce((s, w) => s + (p.toLowerCase().includes(w) ? 1 : 0), 0) }))
+    .filter(x => x.s > 0).sort((a, b) => b.s - a.s).slice(0, 2);
+  if (!scored.length) return "No matching passage in the corpus. Try embeddings, reconciliation, refusal, scale, or weaknesses.";
+  return "[offline retrieval — no LLM behind this answer]\n\n" + scored.map(x => "• " + x.p).join("\n\n");
+}
+async function cpAsk() {
+  const inp = document.getElementById("chatq"); const q = inp.value.trim(); if (!q) return;
+  inp.value = ""; togglePanel(true); addMsg("You", q);
+  try {
+    const r = await fetch("/api/chat", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ question: q }) });
+    if (!r.ok) throw new Error("api " + r.status);
+    addMsg("Copilot", (await r.json()).answer);
+  } catch (e) { addMsg("Copilot (offline)", localRetrieve(q)); }
+}
+</script>
+</body>
+</html>
