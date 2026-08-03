@@ -414,5 +414,52 @@
         "evidence": "unlock 204 \u2192 page 200, data.js served, /api/ask answers; secret only in Vercel env, not in the public repo"
       }
     ]
+  },
+  {
+    "id": "rc0020",
+    "delivery": "snowflake-os: learn.snowflake.com -> provenance-pinned snapshot (58 courses/430.25h, 12 exams from 19 pages, 5 tracks, 12 roles, 94 records w/ url+sha256+fetched_at) + 7 stdlib engines (catalog/pathfinder/readiness/graph/gate/build/sync) + /snowflake-os super tool + snowflake-enablement workflow + 3 MCP tools + 6 SHA-pinned satellites (2 licence-quarantined). FDE-os#71, portfolio#216 (longform).",
+    "objective": "Turn learn.snowflake.com into a knowledge base + agentic tooling, with a /snowflake-os super tool and a portfolio longform",
+    "created_at": "2026-08-03T10:52:55-05:00",
+    "key_results": [
+      {
+        "text": "knowledge base is provenance-complete",
+        "target": "every scraped record carries url+sha256+fetched_at",
+        "score": 1.0,
+        "evidence": "gate check provenance-complete: all 94 records pass"
+      },
+      {
+        "text": "the gate can actually fail",
+        "target": "integrity gate catches real defects, not just green-lights",
+        "score": 1.0,
+        "evidence": "first run 8/9 caught orphan competency migration-modernization; 5 negative tests assert dangling-ref/fake-pass/unlicensed-satellite/curated-ceiling all FAIL when injected"
+      },
+      {
+        "text": "claimed evidence cannot pass",
+        "target": "a candidate claiming all 58 courses with no badge scores 0.0",
+        "score": 1.0,
+        "evidence": "readiness.py coverage 0.0 across all 5 core competencies, NO-GO, exit 2; both GO and NO-GO branches CI-tested"
+      },
+      {
+        "text": "unmeasured is declared, not hidden",
+        "target": "upstream gaps counted rather than guessed",
+        "score": 1.0,
+        "evidence": "0/12 role course-lists, 4 exam costs, 1 track sequence reported UNMEASURED; parser refuses to borrow the 175/375 USD boilerplate for Specialty exams (pinned by test)"
+      },
+      {
+        "text": "curation is capped, not unbounded",
+        "target": "curated share under a machine ceiling",
+        "score": 1.0,
+        "evidence": "22/71 mappings curated (31 pct) vs 40 pct ceiling; gate fails the build if exceeded"
+      },
+      {
+        "text": "ships green in CI",
+        "target": "make check plus the new gate job pass",
+        "score": 1.0,
+        "evidence": "268 tests passed (43 new); snowflake-os-gate PASS 10/10; all FDE-os#71 checks green"
+      }
+    ],
+    "request": "use our playbook to turn https://learn.snowflake.com/en/ online courses into knowledge-base and agentic tooling (skills, plugins, workflows, <you-name-others>). Create super tool /snowflake-os and write longform article to publish in my portfolio.",
+    "headline": "The curriculum layer nobody had built",
+    "brief": "Snowflake's course catalogue was a menu, not a map: 58 courses with no machine-readable path from a role to its courses. snowflake-os compiles it into a knowledge base where every fact carries the URL and hash it came from, plans the shortest route to a role, and refuses to certify anyone on a claim nobody can check. Its own gate failed my work three times before it passed."
   }
 ]

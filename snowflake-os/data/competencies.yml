@@ -1,0 +1,247 @@
+# snowflake-os — the competency layer. CURATED, and labelled as such everywhere.
+#
+# WHY THIS FILE EXISTS
+# The 2026-08-03 sync proved that Snowflake publishes no machine-readable path
+# from a role to its courses: all 12 role-journey pages describe the role in
+# prose and link the *catalogue*, not individual courses (see
+# snapshot/catalog.json → roles[].courses_note). One of five learning tracks
+# has no published sequence either. So the "which courses make me competent at
+# X?" edge does not exist upstream. This file supplies it — as OUR judgment,
+# never laundered as Snowflake's.
+#
+# THE PROVENANCE RULE
+# Every mapping carries a `basis`, and the gate (scripts/gate.py) enforces it:
+#   title     — the course/exam title literally names the competency. Checkable.
+#   objective — a certification objective bullet in the snapshot names it. Checkable.
+#   curated   — our judgment. Honest, weakest, and counted separately so a
+#               reader can see exactly how much of the map is opinion.
+# The gate additionally fails on any course/exam code not present in the
+# snapshot, so this file cannot drift away from the real catalogue.
+
+schema: snowflake-os/competencies@1
+basis_legend:
+  title: course or exam title literally names this competency
+  objective: a published certification objective names this competency
+  curated: snowflake-os judgment, not stated upstream
+
+# ALTERNATIVES — why they exist.
+# Snowflake teaches the same material in several delivery modes: "Snowflake
+# Platform Training" ships as both OD-SPT (on-demand, 4h) and ILT-SPT
+# (instructor-led, 4h); Fundamentals ships as ILT-FUND (32h) and OD-FOUND (5h).
+# Counting both sides of such a pair as separate requirements inflates a
+# competency's hours and makes any coverage percentage meaningless — the first
+# version of the readiness gate scored a well-prepared candidate at 21% purely
+# because of this. So: within a competency, an `alternatives` group means ANY
+# ONE member satisfies the requirement, and the requirement costs the CHEAPEST
+# member's hours. Groups are listed only where the overlap is a real
+# same-content-different-delivery pair, never to make a number look better.
+alternatives:
+  platform-foundations:
+    - [OD-SPT, ILT-SPT]      # identical "Snowflake Platform Training", OD vs ILT
+    - [OD-FOUND, ILT-FUND]   # Foundations on-demand vs the 4-day instructor-led
+  data-science-ml:
+    - [ILT-DS, OD-ESS-DSCW]  # Data Science instructor-led vs the Badge 6 workshop
+  sql-analytics:
+    - [ILT-DA, ILT-AA]       # Data Analyst vs Advanced Analytics — one analytics track
+  performance-tuning:
+    - [ILT-PERF, ILT-ADV]    # Performance 3-day vs Advanced; overlapping tuning content
+
+competencies:
+  - id: platform-foundations
+    name: Platform foundations & architecture
+    why: "The shared vocabulary. Without it every later conversation with a customer stalls on terms."
+    courses:
+      - {code: OD-LVLUP-101, basis: title}
+      - {code: OD-LVLUP-102, basis: title}
+      - {code: OD-LVLUP-103, basis: title}
+      - {code: OD-LVLUP-105, basis: title}
+      - {code: OD-SPT, basis: title}
+      - {code: ILT-SPT, basis: title}
+      - {code: ILT-FUND, basis: curated}
+      - {code: OD-FOUND, basis: curated}
+    exams: [{code: COF-C03, basis: curated}]
+
+  - id: data-loading-ingestion
+    name: Data loading & ingestion
+    why: "The first thing that breaks in a real deployment is the pipe, not the model."
+    courses:
+      - {code: OD-LVLUP-106, basis: title}
+      - {code: OD-ESS-DWW, basis: curated}
+      - {code: OD-ESS-DLKW, basis: curated}
+    exams: [{code: COF-C03, basis: curated}, {code: DEA-C02, basis: curated}]
+
+  - id: sql-analytics
+    name: SQL & analytics
+    why: "The lingua franca of the warehouse; every agentic text-to-SQL claim bottoms out here."
+    courses:
+      - {code: ILT-DA, basis: title}
+      - {code: ILT-AA, basis: title}
+      - {code: OD-LVLUP-202, basis: curated}
+      - {code: ILT-BU, basis: curated}
+    exams: [{code: DAA-C01, basis: curated}]
+
+  - id: data-engineering-pipelines
+    name: Data engineering & pipelines
+    why: "Where FDE work actually lives: the customer's data does not arrive clean."
+    courses:
+      - {code: ILT-DE, basis: title}
+      - {code: ILT-DE2, basis: title}
+      - {code: ILT-PDE, basis: title}
+      - {code: OD-ESS-DNGW, basis: title}
+    exams: [{code: DEA-C02, basis: title}]
+
+  - id: python-snowpark
+    name: Python & Snowpark
+    why: "Push compute to the data. The alternative — pandas on a laptop — leaks governance."
+    courses:
+      - {code: OD-LVLUP-301, basis: title}
+      - {code: OD-LVLUP-303, basis: title}
+      - {code: OD-LVLUP-304, basis: title}
+      - {code: OD-LVLUP-305, basis: title}
+      - {code: OD-LVLUP-307, basis: title}
+      - {code: ILT-SNWPRK, basis: title}
+      - {code: ILT-SPAD, basis: title}
+    exams: [{code: SPS-C01, basis: title}]
+
+  - id: performance-tuning
+    name: Performance & tuning
+    why: "A demo that is slow in production is a demo that gets cancelled."
+    courses:
+      - {code: ILT-PERF, basis: title}
+      - {code: OD-LVLUP-201, basis: title}
+      - {code: ILT-ADV, basis: curated}
+    exams: [{code: ARA-C01, basis: curated}]
+
+  - id: cost-finops
+    name: Cost & FinOps
+    why: "The second question every enterprise buyer asks, and the one most pilots fail."
+    courses:
+      - {code: OD-FINOPS, basis: title}
+      - {code: OD-LVLUP-107, basis: title}
+      - {code: OD-ESS-CMCW, basis: title}
+      - {code: OD-SWA, basis: curated}
+    exams: [{code: ADA-C02, basis: curated}]
+
+  - id: security-access-control
+    name: Security & access control
+    why: "The gate every agentic deployment must pass before it touches real data."
+    courses:
+      - {code: ILT-SS, basis: title}
+      - {code: OD-MFA, basis: title}
+      - {code: OD-LVLUP-104, basis: curated}
+    exams: [{code: SEA-C01, basis: title}]
+
+  - id: governance-horizon
+    name: Governance (Horizon)
+    why: "Lineage, classification and policy — what turns a pilot into something auditable."
+    courses:
+      - {code: ILT-DG, basis: title}
+      - {code: OD-LVLUP-108, basis: curated}
+    exams: [{code: ADA-C02, basis: curated}, {code: SEA-C01, basis: curated}]
+
+  - id: sharing-collaboration
+    name: Sharing, Marketplace & collaboration
+    why: "Zero-copy sharing is the capability customers most often do not know they already bought."
+    courses:
+      - {code: OD-ESS-CMCW, basis: title}
+      - {code: OD-ESS-DABW, basis: curated}
+    exams: [{code: COF-C03, basis: curated}]
+
+  - id: data-science-ml
+    name: Data science & ML
+    why: "Feature engineering and training where the data already is."
+    courses:
+      - {code: ILT-DS, basis: title}
+      - {code: OD-ESS-DSCW, basis: title}
+    exams: [{code: DSA-C03, basis: title}]
+
+  - id: mlops-productionization
+    name: MLOps & productionisation
+    why: "The gap between a notebook that works and a model that is still working next quarter."
+    courses:
+      - {code: ILT-DS, basis: curated}
+      - {code: ILT-SCS, basis: curated}
+    exams: [{code: MLA-B01, basis: title}]
+
+  - id: genai-cortex
+    name: Gen AI & Cortex
+    why: "The layer every 2026 customer conversation opens with."
+    courses:
+      - {code: ILT-GENAI, basis: title}
+      - {code: OD-SXGA, basis: title}
+      - {code: OD-SXGA2, basis: title}
+      - {code: OD-SXGA3, basis: title}
+    exams: [{code: GES-C02, basis: title}, {code: GES-C01, basis: title}]
+
+  - id: native-apps-containers
+    name: Native Apps & containers
+    why: "How an agent ships INSIDE the customer's account instead of calling out of it."
+    courses:
+      - {code: ILT-NAF, basis: title}
+      - {code: OD-LVLUP-308, basis: title}
+      - {code: ILT-SCS, basis: title}
+    exams: [{code: NAS-C02, basis: title}]
+
+  - id: migration-modernization
+    name: Migration & modernisation
+    why: "Most engagements start as somebody else's legacy stack."
+    courses:
+      - {code: OD-SC-AI, basis: title}
+      - {code: OD-SC-SMA, basis: title}
+    exams: []
+
+  - id: agentic-coding
+    name: Agentic coding on Snowflake (CoCo / Cortex Code)
+    why: "The newest surface, and the one snowflake-os's satellites all plug into."
+    courses:
+      - {code: OD-COCOESS, basis: title}
+    exams: []
+
+# ─────────────────────────────────────────────────────────────────────────────
+# ROLE → COMPETENCY. Entirely curated: Snowflake publishes the roles but not
+# their course lists, so nothing here can claim upstream authority.
+# `core` = you cannot do the job without it. `supporting` = expected depth.
+roles:
+  data-engineer-python:
+    core: [platform-foundations, data-engineering-pipelines, python-snowpark, data-loading-ingestion]
+    supporting: [performance-tuning, cost-finops]
+  data-engineer-sql:
+    core: [platform-foundations, data-engineering-pipelines, sql-analytics, data-loading-ingestion]
+    supporting: [performance-tuning, governance-horizon]
+  ml-engineer:
+    core: [platform-foundations, python-snowpark, data-science-ml, mlops-productionization]
+    supporting: [native-apps-containers, cost-finops]
+  data-scientist:
+    core: [platform-foundations, python-snowpark, data-science-ml]
+    supporting: [sql-analytics, genai-cortex]
+  citizen-data-scientist:
+    core: [platform-foundations, sql-analytics, data-science-ml]
+    supporting: [sharing-collaboration]
+  data-analyst:
+    core: [platform-foundations, sql-analytics]
+    supporting: [sharing-collaboration, cost-finops]
+  sql-analyst:
+    core: [platform-foundations, sql-analytics]
+    supporting: [performance-tuning]
+  administrator:
+    core: [platform-foundations, security-access-control, cost-finops, governance-horizon]
+    supporting: [performance-tuning]
+  app-developer:
+    core: [platform-foundations, native-apps-containers, python-snowpark]
+    supporting: [sharing-collaboration]
+  it-app-developer:
+    core: [platform-foundations, native-apps-containers]
+    supporting: [security-access-control]
+  engineer-developer:
+    core: [platform-foundations, python-snowpark, native-apps-containers]
+    supporting: [agentic-coding]
+  business-user:
+    core: [platform-foundations]
+    supporting: [sql-analytics, sharing-collaboration]
+  # Not one of Snowflake's twelve. This is FDE-os's own role, and the reason
+  # snowflake-os exists: the embedded builder who has to ship an agent inside
+  # the customer's Snowflake account and prove it is safe, cheap and auditable.
+  forward-deployed-engineer:
+    core: [platform-foundations, genai-cortex, native-apps-containers, security-access-control, cost-finops]
+    supporting: [data-engineering-pipelines, python-snowpark, governance-horizon, agentic-coding,
+                 migration-modernization]

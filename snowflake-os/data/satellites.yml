@@ -1,0 +1,138 @@
+# snowflake-os — the satellite registry. Pointers, never forks.
+#
+# THE BOUNDARY THAT DEFINES THIS SUBSYSTEM.
+# Snowflake's own org already ships a strong agentic toolchain for OPERATING a
+# warehouse: MCP servers, Cortex Code plugins, agent skills for data engineering.
+# snowflake-os does not rebuild any of it. It occupies the layer none of them
+# touch — the CURRICULUM: what a person has to learn, in what order, at what
+# cost, and how you'd prove they learned it.
+#
+#   their layer:  DOING     — run SQL, build pipelines, ship an agent
+#   our layer:    BECOMING  — which 58 courses make someone able to do that
+#
+# Each entry is a pointer + a pinned SHA + an honest note. Nothing is vendored,
+# so nothing can silently rot into a stale copy. Freshness is MEASURED by
+# scripts/satellites.py (which re-reads HEAD and flags STALE), never promised.
+#
+# NAMING NOTE, recorded so nobody has to rediscover it: Snowflake-Labs/cocoplus
+# already calls itself "an Agentic Operating System for Snowflake". snowflake-os
+# is not a competitor to it and must not be described as one — different layer,
+# and cocoplus is registered below as a satellite.
+
+schema: snowflake-os/satellites@1
+pinned_at: "2026-08-03"
+verified_via: GitHub REST API
+
+satellites:
+  - slug: snowflake-mcp
+    repo: Snowflake-Labs/mcp
+    sha: 662cb486395d79ab1ad0b3538f933fe6a686ce7c
+    stars: 294
+    license: Apache-2.0
+    pushed: "2026-05-15"
+    layer: doing
+    why_cited: >-
+      The reference MCP server for Snowflake — Cortex AI, object management, SQL
+      orchestration, semantic views. This is what an agent CALLS once a person
+      knows what to ask it for.
+    relates_to: [agentic-coding, genai-cortex]
+    not_good_at: >-
+      Knows nothing about learning. It can run a query; it cannot tell you which
+      of 58 courses teaches you to write that query.
+    vendorable: true
+
+  - slug: cocoplus
+    repo: Snowflake-Labs/cocoplus
+    sha: 19e48d7525ea019d3452bd191b9d7c76e469f414
+    stars: 712
+    license: MIT
+    pushed: "2026-08-03"
+    layer: doing
+    why_cited: >-
+      The most-starred agentic layer over Cortex Code — structured multi-agent
+      workflows for data-engineering projects. The closest thing to a "Snowflake
+      agent OS" that exists, and the reason snowflake-os defines itself by layer.
+    relates_to: [agentic-coding, data-engineering-pipelines]
+    not_good_at: >-
+      Operates on a project, not on a person. No notion of competency, sequence,
+      effort or evidence of learning.
+    vendorable: true
+
+  - slug: ai-ready-data
+    repo: Snowflake-Labs/ai-ready-data
+    sha: df35e70180da4c688a2816297a645b8da87f8b8f
+    stars: 81
+    license: Apache-2.0
+    pushed: "2026-05-11"
+    layer: doing
+    why_cited: >-
+      A framework plus agent skills for assessing whether data is AI-ready. The
+      closest sibling in spirit to our gates — it scores a thing rather than
+      asserting it.
+    relates_to: [governance-horizon, data-engineering-pipelines]
+    not_good_at: "Scores the DATA's readiness, never the engineer's."
+    vendorable: true
+
+  - slug: subagent-cortex-code
+    repo: Snowflake-Labs/subagent-cortex-code
+    sha: f3557faf20581ece1c46ab1a10b8041a4bb88532
+    stars: 56
+    license: NOASSERTION
+    pushed: "2026-05-05"
+    layer: doing
+    why_cited: >-
+      Routes Snowflake operations from Claude Code / Cursor / Codex into the
+      Cortex Code CLI. The clearest prior art for "one skill, many runtimes",
+      which is the same shape FDE-os uses.
+    relates_to: [agentic-coding]
+    not_good_at: "Routing, not teaching. And its licence is unresolved — see caution."
+    # NOASSERTION means GitHub found a licence file it could not identify.
+    # Treated as "read the file yourself before depending on it", not as permissive.
+    caution: unresolved-license
+    vendorable: false
+
+  - slug: snowflake-ai-kit
+    repo: Snowflake-Labs/snowflake-ai-kit
+    sha: ba58365fed931f6c83337058628b7b81f099b421
+    stars: 33
+    license: Apache-2.0
+    pushed: "2026-07-30"
+    layer: doing
+    why_cited: >-
+      Cortex Code plugin with envelope-based permission policy — a real, shipped
+      example of gating what an agent is allowed to do inside a Snowflake account.
+    relates_to: [security-access-control, agentic-coding]
+    not_good_at: "Permissions for an agent, not competency for a human."
+    vendorable: true
+
+  - slug: coco-skills
+    repo: Snowflake-Labs/coco-skills
+    sha: a80f61daefc1e87840a56d160e7248c894e40a51
+    stars: 9
+    license: NONE
+    pushed: "2026-07-15"
+    layer: doing
+    why_cited: >-
+      Snowflake's own curated Agent Skills for Cortex Code (check-agent-access,
+      dcr-v1-to-v2, manage-zerocopy-sapbdc, mlops) — the nearest published
+      analogue to the skills snowflake-os ships.
+    relates_to: [agentic-coding, mlops-productionization, security-access-control]
+    not_good_at: "Warehouse operations only; no curriculum surface."
+    # QUARANTINE. The repo ships NO licence at all. Absent a licence, default
+    # copyright applies: we may link to it and describe it, and must not copy,
+    # vendor or adapt its files. Index-only until Snowflake adds one.
+    caution: no-license
+    vendorable: false
+
+# Not a repo, so not a satellite in the same sense — but it is the piece a
+# reader will ask about, so it is recorded rather than omitted.
+managed_services:
+  - name: Snowflake-managed MCP server
+    docs: https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp
+    layer: doing
+    note: >-
+      Hosted MCP endpoint exposing Cortex Analyst / Search / Agents, capped at 50
+      tools per server. Nothing to install. Referenced, not measured — snowflake-os
+      has no Snowflake account under test, so any claim about its behaviour here
+      would be repetition, not verification.
+    verified: false

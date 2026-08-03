@@ -41,7 +41,8 @@ MCP (any client):    python3 skills/fde-mcp-server/scripts/server.py   (stdio JS
 | **Map an org's invisible decision workflow** | `invisible-workflow-mapper` skill |
 | **Compose gates into one verdict** | `workflows/engagement-readiness/run.py <engagement.json>` |
 | **Run/inspect the reference agent runtime** (durable graph, HITL, verifiable citations) | `take-home/enterprise-agentic-triage/scripts/run.py` then `eval.py` |
-| **Expose all of it to an MCP client** | `fde-mcp-server` — 8 tools incl. `hub_find`, `true_score`, `rag_eval` |
+| **Expose all of it to an MCP client** | `fde-mcp-server` — 11 tools incl. `hub_find`, `true_score`, `snowflake_plan` |
+| **Plan/prove Snowflake competence** (58 courses, 12 exams, evidence-gated) | `/snowflake-os` — `catalog.py` · `pathfinder.py` · `readiness.py` |
 
 ## 2. Verified demos (run from the repo root — each is CI-tested)
 

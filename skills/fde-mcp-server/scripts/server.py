@@ -153,6 +153,68 @@ def _tool_doc_gate(args: dict) -> str:
     return head + "\nVERDICT: " + ("GO" if ok else "NO-GO — " + "; ".join(reasons))
 
 
+def _sfos(mod_name: str) -> ModuleType:
+    """Load a snowflake-os engine. Its modules import each other by sys.path."""
+    scripts = os.path.join(_ROOT, "snowflake-os", "scripts")
+    if scripts not in sys.path:
+        sys.path.insert(0, scripts)
+    return _load(f"snowflake-os/scripts/{mod_name}.py", f"sfos_{mod_name}")
+
+
+def _tool_snowflake_plan(args: dict) -> str:
+    """Ordered, costed Snowflake learning path for a role, exam, or competency set."""
+    pathfinder = _sfos("pathfinder")
+    cat = _sfos("catalog").Catalog()
+
+    class _A:
+        role = args.get("role")
+        exam = args.get("exam")
+        competency = args.get("competency")
+        have = args.get("have", "")
+        free_only = bool(args.get("free_only"))
+        core_only = bool(args.get("core_only"))
+        max_hours = args.get("max_hours")
+        json = False
+
+    if not (_A.role or _A.exam or _A.competency):
+        raise ValueError("provide one of 'role', 'exam' or 'competency'")
+    return pathfinder.render(pathfinder.build_plan(cat, _A))
+
+
+def _tool_snowflake_readiness(args: dict) -> str:
+    """GO/NO-GO on a candidate's Snowflake readiness. Claimed completions score zero."""
+    readiness = _sfos("readiness")
+    cat = _sfos("catalog").Catalog()
+    contract = args.get("contract")
+    if isinstance(contract, str):
+        contract = json.loads(contract)
+    if not isinstance(contract, dict):
+        raise ValueError("provide 'contract' as a JSON object with 'role' and 'completions'")
+    return readiness.render(readiness.score(cat, contract, float(args.get("threshold", 0.6))))
+
+
+def _tool_snowflake_catalog(args: dict) -> str:
+    """Search the 58-course Snowflake catalogue, or show one course with provenance."""
+    catalog = _sfos("catalog")
+    cat = catalog.Catalog()
+    if code := args.get("code"):
+        c = cat.course(code)
+        if not c:
+            raise ValueError(f"unknown course code {code!r}")
+        hrs = c["effort_hours"] if c["effort_hours"] is not None else catalog.UNMEASURED
+        return (f"{c['code']} · {c['title']}\n{c['delivery']} · "
+                f"{'free' if c['free'] else 'paid'} · {hrs}h · {c['difficulty']}\n"
+                f"{c['url']}\n\n{c.get('summary') or ''}")
+    terms = args.get("query", "").split()
+    if not terms:
+        raise ValueError("provide 'query' (search terms) or 'code' (a course code)")
+    hits = cat.search(terms, free_only=bool(args.get("free_only")))
+    if not hits:
+        return (f"no course matches {' '.join(terms)!r}. "
+                f"catalogue vocabulary: {', '.join(cat.vocabulary())}")
+    return "\n".join(catalog.fmt_course(c) for c in hits[: int(args.get("top", 10))])
+
+
 def _tool_hub_find(args: dict) -> str:
     """Query the hub's compiled external toolsets (top-rated cited repos) for a capability."""
     hq = _load("skills/repo-compiler/scripts/hub_query.py", "hub_query")
@@ -167,6 +229,55 @@ def _tool_hub_find(args: dict) -> str:
 
 
 TOOLS = {
+    "snowflake_plan": {
+        "description": "Build an ordered, costed Snowflake learning path from the real "
+                       "learn.snowflake.com catalogue (58 courses, 12 exams). Give a role, an exam "
+                       "code, or competency ids. Returns the sequence, total hours, free/paid split, "
+                       "and what share of the mapping is curated judgment rather than published fact.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "role": {"type": "string", "description": "role slug, e.g. 'forward-deployed-engineer'"},
+                "exam": {"type": "string", "description": "SnowPro exam code, e.g. 'GES-C02'"},
+                "competency": {"type": "string", "description": "comma-separated competency ids"},
+                "have": {"type": "string", "description": "comma-separated course codes already done"},
+                "free_only": {"type": "boolean", "description": "exclude paid courses"},
+                "core_only": {"type": "boolean", "description": "core competencies only"},
+                "max_hours": {"type": "number", "description": "budget in hours"},
+            },
+        },
+        "handler": _tool_snowflake_plan,
+    },
+    "snowflake_readiness": {
+        "description": "GO/NO-GO on whether someone is ready for a Snowflake role, scored on "
+                       "EVIDENCE: a completion counts only with a badge_url, completion_id or "
+                       "verifier. Self-reported and planned completions are reported but score zero.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "contract": {"type": "object",
+                             "description": "{role, completions:[{course, badge_url|completion_id|verifier|status}]}"},
+                "threshold": {"type": "number", "description": "coverage threshold per competency (default 0.6)"},
+            },
+            "required": ["contract"],
+        },
+        "handler": _tool_snowflake_readiness,
+    },
+    "snowflake_catalog": {
+        "description": "Search or inspect the offline snapshot of learn.snowflake.com: 58 courses "
+                       "with effort hours, difficulty, free/paid, and the source URL each was "
+                       "parsed from. Zero results returns the catalogue's vocabulary, never silence.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "query": {"type": "string", "description": "search terms, e.g. 'snowpark python'"},
+                "code": {"type": "string", "description": "a course code for full detail, e.g. 'OD-ESS-DWW'"},
+                "free_only": {"type": "boolean"},
+                "top": {"type": "integer", "description": "max results (default 10)"},
+            },
+        },
+        "handler": _tool_snowflake_catalog,
+    },
     "hub_find": {
         "description": "Find which external toolset (compiled from the hub's top-rated cited repos) "
                        "covers a capability — returns the integration recipe (skill/plugin/workflow), "

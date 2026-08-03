@@ -19,11 +19,14 @@ prompts. That's it — no clone, no pip.
 
 - **Skills** (auto-discovered from `skills/`): `true-scorer`, `criteria-scorer`, `rag-eval-harness`,
   `eval-loop`, `knowledgefy`, `jd-compiler`, `invisible-workflow-mapper`, `doc-understanding`,
-  `field-kit-generator`, `fde-mcp-server`.
-- **MCP server** (`fde-os`, auto-started): seven callable tools — `true_score`, `rag_eval`,
-  `criteria_score`, `eval_loop`, `invisible_workflow_map`, `jd_compile`, `doc_gate`. Needs **Python 3.11+** on
+  `field-kit-generator`, `fde-mcp-server`, `snowflake-os`.
+- **MCP server** (`fde-os`, auto-started): eleven callable tools — `true_score`, `rag_eval`,
+  `criteria_score`, `eval_loop`, `invisible_workflow_map`, `jd_compile`, `doc_gate`, `hub_find`,
+  `snowflake_plan`, `snowflake_readiness`, `snowflake_catalog`. Needs **Python 3.11+** on
   your PATH (the server is dependency-free stdlib).
-- **Workflow**: `workflows/engagement-readiness` — composes adoption-fit + eval into one GO/NO-GO.
+- **Workflows**: `workflows/engagement-readiness` (adoption-fit + eval → GO/NO-GO) and
+  `workflows/snowflake-enablement` (KB integrity + readiness → STAFF/NOT-YET, with the
+  remediation plan attached to any refusal).
 
 ## How it's wired
 

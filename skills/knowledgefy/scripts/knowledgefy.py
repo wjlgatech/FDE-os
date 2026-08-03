@@ -159,7 +159,12 @@ _PAGE_CSS = """<style>
 
 def render_html(graph: dict) -> str:
     """Self-contained, no external scripts. Deterministic layered layout (x by level, y by order)."""
-    data = html.escape(json.dumps(graph), quote=True)
+    # The payload lives in <script type="application/json">, and a browser does
+    # NOT decode HTML entities inside a script element. html.escape() turned every
+    # `"` into `&quot;`, so JSON.parse() received literal entities and threw — the
+    # page rendered blank with no visible error (the const stayed in its temporal
+    # dead zone). Only `</` needs neutralising, to stop the tag closing early.
+    data = json.dumps(graph, ensure_ascii=False).replace("</", "<\\/")
     return f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -172,7 +177,7 @@ def render_html(graph: dict) -> str:
 <script>
 const G = JSON.parse(document.getElementById('g').textContent);
 document.getElementById('meta').textContent =
-  G.counts.concepts + ' concepts &middot; ' + G.counts.evidence + ' sources';
+  G.counts.concepts + ' concepts · ' + G.counts.evidence + ' sources';
 const byId = Object.fromEntries(G.nodes.map(n => [n.id, n]));
 const concepts = G.nodes.filter(n => n.type === 'concept');
 const cites = G.edges.filter(e => e.type === 'cites');

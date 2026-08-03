@@ -1,0 +1,72 @@
+{
+  "candidate": "Ada (FDE candidate)",
+  "role": "forward-deployed-engineer",
+  "_note": "A deliberately mixed contract: real badges, a screenshot, and an intention. Only the badges count.",
+  "completions": [
+    {
+      "course": "OD-LVLUP-101",
+      "badge_url": "https://achieve.snowflake.com/badge/example-101"
+    },
+    {
+      "course": "OD-LVLUP-102",
+      "badge_url": "https://achieve.snowflake.com/badge/example-102"
+    },
+    {
+      "course": "OD-LVLUP-103",
+      "badge_url": "https://achieve.snowflake.com/badge/example-103"
+    },
+    {
+      "course": "OD-LVLUP-105",
+      "badge_url": "https://achieve.snowflake.com/badge/example-105"
+    },
+    {
+      "course": "OD-SPT",
+      "completion_id": "SF-OD-SPT-44812"
+    },
+    {
+      "course": "ILT-SPT",
+      "verifier": "delivery-lead@example.com"
+    },
+    {
+      "course": "OD-SXGA",
+      "badge_url": "https://achieve.snowflake.com/badge/example-sxga"
+    },
+    {
+      "course": "OD-SXGA2",
+      "badge_url": "https://achieve.snowflake.com/badge/example-sxga2"
+    },
+    {
+      "course": "OD-SXGA3",
+      "completed_on": "2026-06-02"
+    },
+    {
+      "course": "OD-LVLUP-308",
+      "badge_url": "https://achieve.snowflake.com/badge/example-308"
+    },
+    {
+      "course": "OD-MFA",
+      "completed_on": "2026-05-11",
+      "_evidence": "screenshot in Slack"
+    },
+    {
+      "course": "OD-LVLUP-104",
+      "status": "planned"
+    },
+    {
+      "course": "OD-FINOPS",
+      "badge_url": "https://achieve.snowflake.com/badge/example-finops"
+    },
+    {
+      "course": "OD-LVLUP-107",
+      "status": "planned"
+    },
+    {
+      "course": "OD-NOT-A-REAL-COURSE",
+      "badge_url": "https://example.com/nope"
+    }
+  ],
+  "constraints": {
+    "free_only": true,
+    "max_hours": 20
+  }
+}
