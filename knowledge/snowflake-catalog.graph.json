@@ -1,0 +1,2028 @@
+{
+  "schema": "snowflake-os/graph@1",
+  "source": {
+    "catalogue": "https://learn.snowflake.com/en/",
+    "fetched_at": "2026-08-03T15:10:30+00:00",
+    "competency_spec": "snowflake-os/data/competencies.yml",
+    "built_by": "snowflake-os/scripts/graph.py"
+  },
+  "counts": {
+    "role": 13,
+    "competency": 16,
+    "course": 58,
+    "exam": 12,
+    "track": 5,
+    "edges": 157
+  },
+  "nodes": [
+    {
+      "id": "comp:agentic-coding",
+      "type": "competency",
+      "label": "Agentic coding on Snowflake (CoCo / Cortex Code)",
+      "why": "The newest surface, and the one snowflake-os's satellites all plug into.",
+      "required_hours": 4
+    },
+    {
+      "id": "comp:cost-finops",
+      "type": "competency",
+      "label": "Cost & FinOps",
+      "why": "The second question every enterprise buyer asks, and the one most pilots fail.",
+      "required_hours": 9.0
+    },
+    {
+      "id": "comp:data-engineering-pipelines",
+      "type": "competency",
+      "label": "Data engineering & pipelines",
+      "why": "Where FDE work actually lives: the customer's data does not arrive clean.",
+      "required_hours": 70
+    },
+    {
+      "id": "comp:data-loading-ingestion",
+      "type": "competency",
+      "label": "Data loading & ingestion",
+      "why": "The first thing that breaks in a real deployment is the pipe, not the model.",
+      "required_hours": 12.5
+    },
+    {
+      "id": "comp:data-science-ml",
+      "type": "competency",
+      "label": "Data science & ML",
+      "why": "Feature engineering and training where the data already is.",
+      "required_hours": 6
+    },
+    {
+      "id": "comp:genai-cortex",
+      "type": "competency",
+      "label": "Gen AI & Cortex",
+      "why": "The layer every 2026 customer conversation opens with.",
+      "required_hours": 22.5
+    },
+    {
+      "id": "comp:governance-horizon",
+      "type": "competency",
+      "label": "Governance (Horizon)",
+      "why": "Lineage, classification and policy — what turns a pilot into something auditable.",
+      "required_hours": 8.5
+    },
+    {
+      "id": "comp:migration-modernization",
+      "type": "competency",
+      "label": "Migration & modernisation",
+      "why": "Most engagements start as somebody else's legacy stack.",
+      "required_hours": 2.75
+    },
+    {
+      "id": "comp:mlops-productionization",
+      "type": "competency",
+      "label": "MLOps & productionisation",
+      "why": "The gap between a notebook that works and a model that is still working next quarter.",
+      "required_hours": 32
+    },
+    {
+      "id": "comp:native-apps-containers",
+      "type": "competency",
+      "label": "Native Apps & containers",
+      "why": "How an agent ships INSIDE the customer's account instead of calling out of it.",
+      "required_hours": 16.5
+    },
+    {
+      "id": "comp:performance-tuning",
+      "type": "competency",
+      "label": "Performance & tuning",
+      "why": "A demo that is slow in production is a demo that gets cancelled.",
+      "required_hours": 24.5
+    },
+    {
+      "id": "comp:platform-foundations",
+      "type": "competency",
+      "label": "Platform foundations & architecture",
+      "why": "The shared vocabulary. Without it every later conversation with a customer stalls on terms.",
+      "required_hours": 11.0
+    },
+    {
+      "id": "comp:python-snowpark",
+      "type": "competency",
+      "label": "Python & Snowpark",
+      "why": "Push compute to the data. The alternative — pandas on a laptop — leaks governance.",
+      "required_hours": 18.5
+    },
+    {
+      "id": "comp:security-access-control",
+      "type": "competency",
+      "label": "Security & access control",
+      "why": "The gate every agentic deployment must pass before it touches real data.",
+      "required_hours": 17.0
+    },
+    {
+      "id": "comp:sharing-collaboration",
+      "type": "competency",
+      "label": "Sharing, Marketplace & collaboration",
+      "why": "Zero-copy sharing is the capability customers most often do not know they already bought.",
+      "required_hours": 12
+    },
+    {
+      "id": "comp:sql-analytics",
+      "type": "competency",
+      "label": "SQL & analytics",
+      "why": "The lingua franca of the warehouse; every agentic text-to-SQL claim bottoms out here.",
+      "required_hours": 24.5
+    },
+    {
+      "id": "course:ILT-AA",
+      "type": "course",
+      "label": "Snowflake Advanced Analytics Training",
+      "code": "ILT-AA",
+      "hours": 16,
+      "difficulty": "Moderate",
+      "free": false,
+      "delivery": "instructor-led",
+      "url": "https://learn.snowflake.com/en/courses/ILT-AA/"
+    },
+    {
+      "id": "course:ILT-ADMIN",
+      "type": "course",
+      "label": "Administering Snowflake Training",
+      "code": "ILT-ADMIN",
+      "hours": 24,
+      "difficulty": "Hard",
+      "free": false,
+      "delivery": "instructor-led",
+      "url": "https://learn.snowflake.com/en/courses/ILT-ADMIN/"
+    },
+    {
+      "id": "course:ILT-ADMIN2",
+      "type": "course",
+      "label": "Administering Snowflake II Training",
+      "code": "ILT-ADMIN2",
+      "hours": 16,
+      "difficulty": "Moderate",
+      "free": false,
+      "delivery": "instructor-led",
+      "url": "https://learn.snowflake.com/en/courses/ILT-ADMIN2/"
+    },
+    {
+      "id": "course:ILT-ADV",
+      "type": "course",
+      "label": "Snowflake Advanced Training",
+      "code": "ILT-ADV",
+      "hours": 24,
+      "difficulty": "Hard",
+      "free": false,
+      "delivery": "instructor-led",
+      "url": "https://learn.snowflake.com/en/courses/ILT-ADV/"
+    },
+    {
+      "id": "course:ILT-ARCH",
+      "type": "course",
+      "label": "Snowflake Architect Training",
+      "code": "ILT-ARCH",
+      "hours": 24,
+      "difficulty": "Hard",
+      "free": false,
+      "delivery": "instructor-led",
+      "url": "https://learn.snowflake.com/en/courses/ILT-ARCH/"
+    },
+    {
+      "id": "course:ILT-BU",
+      "type": "course",
+      "label": "Snowflake Business User Training",
+      "code": "ILT-BU",
+      "hours": 8,
+      "difficulty": "Easy",
+      "free": false,
+      "delivery": "instructor-led",
+      "url": "https://learn.snowflake.com/en/courses/ILT-BU/"
+    },
+    {
+      "id": "course:ILT-DA",
+      "type": "course",
+      "label": "Snowflake Data Analyst Training",
+      "code": "ILT-DA",
+      "hours": 16,
+      "difficulty": "Moderate",
+      "free": false,
+      "delivery": "instructor-led",
+      "url": "https://learn.snowflake.com/en/courses/ILT-DA/"
+    },
+    {
+      "id": "course:ILT-DE",
+      "type": "course",
+      "label": "Snowflake Data Engineer Training",
+      "code": "ILT-DE",
+      "hours": 24,
+      "difficulty": "Hard",
+      "free": false,
+      "delivery": "instructor-led",
+      "url": "https://learn.snowflake.com/en/courses/ILT-DE/"
+    },
+    {
+      "id": "course:ILT-DE2",
+      "type": "course",
+      "label": "Snowflake Data Engineer II Training",
+      "code": "ILT-DE2",
+      "hours": 16,
+      "difficulty": "Moderate",
+      "free": false,
+      "delivery": "instructor-led",
+      "url": "https://learn.snowflake.com/en/courses/ILT-DE2/"
+    },
+    {
+      "id": "course:ILT-DG",
+      "type": "course",
+      "label": "Snowflake Data Governance Training",
+      "code": "ILT-DG",
+      "hours": 8,
+      "difficulty": "Easy",
+      "free": false,
+      "delivery": "instructor-led",
+      "url": "https://learn.snowflake.com/en/courses/ILT-DG/"
+    },
+    {
+      "id": "course:ILT-DS",
+      "type": "course",
+      "label": "Data Science Training",
+      "code": "ILT-DS",
+      "hours": 24,
+      "difficulty": "Hard",
+      "free": false,
+      "delivery": "instructor-led",
+      "url": "https://learn.snowflake.com/en/courses/ILT-DS/"
+    },
+    {
+      "id": "course:ILT-FUND",
+      "type": "course",
+      "label": "Snowflake Fundamentals 4-Day",
+      "code": "ILT-FUND",
+      "hours": 32,
+      "difficulty": "Rigorous",
+      "free": false,
+      "delivery": "instructor-led",
+      "url": "https://learn.snowflake.com/en/courses/ILT-FUND/"
+    },
+    {
+      "id": "course:ILT-GENAI",
+      "type": "course",
+      "label": "Snowflake GenAI Training",
+      "code": "ILT-GENAI",
+      "hours": 16,
+      "difficulty": "Moderate",
+      "free": false,
+      "delivery": "instructor-led",
+      "url": "https://learn.snowflake.com/en/courses/ILT-GENAI/"
+    },
+    {
+      "id": "course:ILT-NAF",
+      "type": "course",
+      "label": "Snowflake Native App Framework Training",
+      "code": "ILT-NAF",
+      "hours": 8,
+      "difficulty": "Easy",
+      "free": false,
+      "delivery": "instructor-led",
+      "url": "https://learn.snowflake.com/en/courses/ILT-NAF/"
+    },
+    {
+      "id": "course:ILT-NEW-FEAT",
+      "type": "course",
+      "label": "Snowflake New Features Training",
+      "code": "ILT-NEW-FEAT",
+      "hours": 8,
+      "difficulty": "Easy",
+      "free": false,
+      "delivery": "instructor-led",
+      "url": "https://learn.snowflake.com/en/courses/ILT-NEW-FEAT/"
+    },
+    {
+      "id": "course:ILT-PDE",
+      "type": "course",
+      "label": "Snowflake Python Data Engineering Training",
+      "code": "ILT-PDE",
+      "hours": 24,
+      "difficulty": "Hard",
+      "free": false,
+      "delivery": "instructor-led",
+      "url": "https://learn.snowflake.com/en/courses/ILT-PDE/"
+    },
+    {
+      "id": "course:ILT-PERF",
+      "type": "course",
+      "label": "Snowflake Performance Automation and Tuning 3-Day Training",
+      "code": "ILT-PERF",
+      "hours": 24,
+      "difficulty": "Hard",
+      "free": false,
+      "delivery": "instructor-led",
+      "url": "https://learn.snowflake.com/en/courses/ILT-PERF/"
+    },
+    {
+      "id": "course:ILT-SCS",
+      "type": "course",
+      "label": "Snowflake Snowpark Container Services Training",
+      "code": "ILT-SCS",
+      "hours": 8,
+      "difficulty": "Easy",
+      "free": false,
+      "delivery": "instructor-led",
+      "url": "https://learn.snowflake.com/en/courses/ILT-SCS/"
+    },
+    {
+      "id": "course:ILT-SNWPRK",
+      "type": "course",
+      "label": "Snowflake Snowpark DataFrame Programming Training",
+      "code": "ILT-SNWPRK",
+      "hours": 8,
+      "difficulty": "Easy",
+      "free": false,
+      "delivery": "instructor-led",
+      "url": "https://learn.snowflake.com/en/courses/ILT-SNWPRK/"
+    },
+    {
+      "id": "course:ILT-SPAD",
+      "type": "course",
+      "label": "Snowflake Snowpark Application Developer Training",
+      "code": "ILT-SPAD",
+      "hours": 8,
+      "difficulty": "Easy",
+      "free": false,
+      "delivery": "instructor-led",
+      "url": "https://learn.snowflake.com/en/courses/ILT-SPAD/"
+    },
+    {
+      "id": "course:ILT-SPT",
+      "type": "course",
+      "label": "Snowflake Platform Training",
+      "code": "ILT-SPT",
+      "hours": 4,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "instructor-led",
+      "url": "https://learn.snowflake.com/en/courses/ILT-SPT/"
+    },
+    {
+      "id": "course:ILT-SS",
+      "type": "course",
+      "label": "Snowflake Security Training",
+      "code": "ILT-SS",
+      "hours": 16,
+      "difficulty": "Moderate",
+      "free": false,
+      "delivery": "instructor-led",
+      "url": "https://learn.snowflake.com/en/courses/ILT-SS/"
+    },
+    {
+      "id": "course:OD-COCOESS",
+      "type": "course",
+      "label": "CoCo Essentials",
+      "code": "OD-COCOESS",
+      "hours": 4,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-COCOESS/"
+    },
+    {
+      "id": "course:OD-COREPREP",
+      "type": "course",
+      "label": "SnowPro Core Certification Prep Course",
+      "code": "OD-COREPREP",
+      "hours": 4,
+      "difficulty": "Easy",
+      "free": false,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-COREPREP/"
+    },
+    {
+      "id": "course:OD-ESS-CMCW",
+      "type": "course",
+      "label": "Collaboration, Marketplace & Cost Estimation Workshop (Badge 2)",
+      "code": "OD-ESS-CMCW",
+      "hours": 6,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-ESS-CMCW/"
+    },
+    {
+      "id": "course:OD-ESS-DABW",
+      "type": "course",
+      "label": "Data Application Builders Workshop (Badge 3)",
+      "code": "OD-ESS-DABW",
+      "hours": 6,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-ESS-DABW/"
+    },
+    {
+      "id": "course:OD-ESS-DLKW",
+      "type": "course",
+      "label": "Data Lake Workshop (Badge 4)",
+      "code": "OD-ESS-DLKW",
+      "hours": 6,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-ESS-DLKW/"
+    },
+    {
+      "id": "course:OD-ESS-DNGW",
+      "type": "course",
+      "label": "Data Engineering Workshop (Badge 5)",
+      "code": "OD-ESS-DNGW",
+      "hours": 6,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-ESS-DNGW/"
+    },
+    {
+      "id": "course:OD-ESS-DSCW",
+      "type": "course",
+      "label": "Data Science Workshop (Badge 6)",
+      "code": "OD-ESS-DSCW",
+      "hours": 6,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-ESS-DSCW/"
+    },
+    {
+      "id": "course:OD-ESS-DWW",
+      "type": "course",
+      "label": "Data Warehousing Workshop (Badge 1)",
+      "code": "OD-ESS-DWW",
+      "hours": 6,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-ESS-DWW/"
+    },
+    {
+      "id": "course:OD-FINOPS",
+      "type": "course",
+      "label": "FinOps for Snowflake",
+      "code": "OD-FINOPS",
+      "hours": 1.5,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-FINOPS/"
+    },
+    {
+      "id": "course:OD-FOUND",
+      "type": "course",
+      "label": "Snowflake Foundations On-Demand Training",
+      "code": "OD-FOUND",
+      "hours": 5,
+      "difficulty": "Easy",
+      "free": false,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-FOUND/"
+    },
+    {
+      "id": "course:OD-LVLUP-101",
+      "type": "course",
+      "label": "Level Up: First Concepts",
+      "code": "OD-LVLUP-101",
+      "hours": 0.5,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-101/"
+    },
+    {
+      "id": "course:OD-LVLUP-102",
+      "type": "course",
+      "label": "Level Up: Snowflake Key Concepts and Architecture",
+      "code": "OD-LVLUP-102",
+      "hours": 0.5,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-102/"
+    },
+    {
+      "id": "course:OD-LVLUP-103",
+      "type": "course",
+      "label": "Level Up: Snowflake Ecosystem",
+      "code": "OD-LVLUP-103",
+      "hours": 0.5,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-103/"
+    },
+    {
+      "id": "course:OD-LVLUP-104",
+      "type": "course",
+      "label": "Level Up: Accounts and Assurances",
+      "code": "OD-LVLUP-104",
+      "hours": 0.5,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-104/"
+    },
+    {
+      "id": "course:OD-LVLUP-105",
+      "type": "course",
+      "label": "Level Up: Object Hierarchy",
+      "code": "OD-LVLUP-105",
+      "hours": 0.5,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-105/"
+    },
+    {
+      "id": "course:OD-LVLUP-106",
+      "type": "course",
+      "label": "Level Up: Data Loading",
+      "code": "OD-LVLUP-106",
+      "hours": 0.5,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-106/"
+    },
+    {
+      "id": "course:OD-LVLUP-107",
+      "type": "course",
+      "label": "Level Up: Resource Monitors",
+      "code": "OD-LVLUP-107",
+      "hours": 0.5,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-107/"
+    },
+    {
+      "id": "course:OD-LVLUP-108",
+      "type": "course",
+      "label": "Level Up: Backup and Recovery",
+      "code": "OD-LVLUP-108",
+      "hours": 0.5,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-108/"
+    },
+    {
+      "id": "course:OD-LVLUP-109",
+      "type": "course",
+      "label": "Level Up: Final Exam",
+      "code": "OD-LVLUP-109",
+      "hours": 0.5,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-109/"
+    },
+    {
+      "id": "course:OD-LVLUP-110",
+      "type": "course",
+      "label": "Level Up: Snowflake Workspaces",
+      "code": "OD-LVLUP-110",
+      "hours": 0.5,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-110/"
+    },
+    {
+      "id": "course:OD-LVLUP-201",
+      "type": "course",
+      "label": "Level Up: Query History and Caching",
+      "code": "OD-LVLUP-201",
+      "hours": 0.5,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-201/"
+    },
+    {
+      "id": "course:OD-LVLUP-202",
+      "type": "course",
+      "label": "Level Up: Context in Snowflake",
+      "code": "OD-LVLUP-202",
+      "hours": 0.5,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-202/"
+    },
+    {
+      "id": "course:OD-LVLUP-301",
+      "type": "course",
+      "label": "Level Up: Getting Started with Snowpark for Python",
+      "code": "OD-LVLUP-301",
+      "hours": 0.5,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-301/"
+    },
+    {
+      "id": "course:OD-LVLUP-303",
+      "type": "course",
+      "label": "Level Up: DataFrames in Snowpark",
+      "code": "OD-LVLUP-303",
+      "hours": 0.5,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-303/"
+    },
+    {
+      "id": "course:OD-LVLUP-304",
+      "type": "course",
+      "label": "Level Up: Connect to Snowflake with Snowpark",
+      "code": "OD-LVLUP-304",
+      "hours": 0.5,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-304/"
+    },
+    {
+      "id": "course:OD-LVLUP-305",
+      "type": "course",
+      "label": "Level Up: Snowpark in Python Worksheets",
+      "code": "OD-LVLUP-305",
+      "hours": 0.5,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-305/"
+    },
+    {
+      "id": "course:OD-LVLUP-307",
+      "type": "course",
+      "label": "Level Up: Python User-Defined Functions in Snowpark",
+      "code": "OD-LVLUP-307",
+      "hours": 0.5,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-307/"
+    },
+    {
+      "id": "course:OD-LVLUP-308",
+      "type": "course",
+      "label": "Level Up: Native App Development for Beginners",
+      "code": "OD-LVLUP-308",
+      "hours": 0.5,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-308/"
+    },
+    {
+      "id": "course:OD-MFA",
+      "type": "course",
+      "label": "Snowflake Multi-Factor Authentication Essentials (MFA)",
+      "code": "OD-MFA",
+      "hours": 0.5,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-MFA/"
+    },
+    {
+      "id": "course:OD-SC-AI",
+      "type": "course",
+      "label": "SnowConvert AI Essentials",
+      "code": "OD-SC-AI",
+      "hours": 2,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-SC-AI/"
+    },
+    {
+      "id": "course:OD-SC-SMA",
+      "type": "course",
+      "label": "Spark to Snowpark with the SMA",
+      "code": "OD-SC-SMA",
+      "hours": 0.75,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-SC-SMA/"
+    },
+    {
+      "id": "course:OD-SPT",
+      "type": "course",
+      "label": "Snowflake Platform On-Demand Training",
+      "code": "OD-SPT",
+      "hours": 4,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-SPT/"
+    },
+    {
+      "id": "course:OD-SWA",
+      "type": "course",
+      "label": "Snowflake Well Architected On-Demand Training",
+      "code": "OD-SWA",
+      "hours": 1,
+      "difficulty": "Easy",
+      "free": false,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-SWA/"
+    },
+    {
+      "id": "course:OD-SXGA",
+      "type": "course",
+      "label": "Snowflake x Gen AI: A Cool Collab",
+      "code": "OD-SXGA",
+      "hours": 2,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-SXGA/"
+    },
+    {
+      "id": "course:OD-SXGA2",
+      "type": "course",
+      "label": "Snowflake X GenAI: LLM Functions",
+      "code": "OD-SXGA2",
+      "hours": 4,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-SXGA2/"
+    },
+    {
+      "id": "course:OD-SXGA3",
+      "type": "course",
+      "label": "Generative and Agentic AI for Executives",
+      "code": "OD-SXGA3",
+      "hours": 0.5,
+      "difficulty": "Easy",
+      "free": true,
+      "delivery": "on-demand",
+      "url": "https://learn.snowflake.com/en/courses/OD-SXGA3/"
+    },
+    {
+      "id": "exam:ADA-C02",
+      "type": "exam",
+      "label": "SnowPro® Advanced: Administrator",
+      "code": "ADA-C02",
+      "tier": "advanced",
+      "cost_usd": 375,
+      "cost_measured": true,
+      "objectives": [
+        "Manage and administer Snowflake accounts, data security, and governance",
+        "Manage and maintain database objects and virtual warehouses",
+        "Perform database monitoring, tuning, and optimization",
+        "Perform data sharing and use the Snowflake Marketplace",
+        "Implement disaster recovery, perform backups, and replicate data"
+      ],
+      "url": "https://learn.snowflake.com/en/certifications/snowpro-advanced-administrator-c02/"
+    },
+    {
+      "id": "exam:ARA-C01",
+      "type": "exam",
+      "label": "SnowPro® Advanced: Architect",
+      "code": "ARA-C01",
+      "tier": "advanced",
+      "cost_usd": 375,
+      "cost_measured": true,
+      "objectives": [
+        "Design an end-to-end data flow from source to consumption using the Snowflake Platform",
+        "Design and deploy a data architecture that meets business, security, and compliance requirements",
+        "Select appropriate Snowflake and third-party tools to optimize architecture performance",
+        "Design and deploy a shared data set using the Snowflake Marketplace and Data Exchange"
+      ],
+      "url": "https://learn.snowflake.com/en/certifications/snowpro-advanced-architect/"
+    },
+    {
+      "id": "exam:COF-C03",
+      "type": "exam",
+      "label": "SnowPro® Core Certification",
+      "code": "COF-C03",
+      "tier": "core",
+      "cost_usd": 175,
+      "cost_measured": true,
+      "objectives": [
+        "Use the Snowflake AI Data Cloud architecture",
+        "Manage Snowflake accounts and virtual warehouses",
+        "Perform data loading, unloading, and transformation",
+        "Use structured, semi-structured, and unstructured data",
+        "Monitor and optimize performance",
+        "Enable data collaboration and protection",
+        "Establish Snowflake connectivity SNOWPRO CORE"
+      ],
+      "url": "https://learn.snowflake.com/en/certifications/snowpro-core-c03/"
+    },
+    {
+      "id": "exam:DAA-C01",
+      "type": "exam",
+      "label": "SnowPro® Advanced: Data Analyst",
+      "code": "DAA-C01",
+      "tier": "advanced",
+      "cost_usd": 375,
+      "cost_measured": true,
+      "objectives": [
+        "Perform simple data transformations for data analysis",
+        "Build and troubleshoot advanced SQL queries in Snowflake",
+        "Use Snowflake built-in functions and create User-Defined Functions (UDFs)",
+        "Perform descriptive and diagnostic data analyses",
+        "Perform predictive data analysis",
+        "Prepare and present data to meet business requirements"
+      ],
+      "url": "https://learn.snowflake.com/en/certifications/snowpro-advanced-dataanalyst/"
+    },
+    {
+      "id": "exam:DEA-C02",
+      "type": "exam",
+      "label": "SnowPro® Advanced: Data Engineer",
+      "code": "DEA-C02",
+      "tier": "advanced",
+      "cost_usd": 375,
+      "cost_measured": true,
+      "objectives": [
+        "Source data from Data Lakes, APIs, and on-premises",
+        "Transform, replicate, and share data across cloud platforms",
+        "Design end-to-end near real-time streams",
+        "Design scalable compute solutions for Data Engineer workloads",
+        "Evaluate performance metrics"
+      ],
+      "url": "https://learn.snowflake.com/en/certifications/snowpro-advanced-dataengineer-C02/"
+    },
+    {
+      "id": "exam:DSA-C03",
+      "type": "exam",
+      "label": "SnowPro® Advanced: Data Scientist",
+      "code": "DSA-C03",
+      "tier": "advanced",
+      "cost_usd": 375,
+      "cost_measured": true,
+      "objectives": [
+        "Outline data science concepts",
+        "Implement Snowflake data science best practices",
+        "Prepare data and use feature engineering in Snowflake",
+        "Train and use machine learning models",
+        "Use GenAI and LLM capabilities in Snowflake"
+      ],
+      "url": "https://learn.snowflake.com/en/certifications/snowpro-advanced-datascientistC03/"
+    },
+    {
+      "id": "exam:GES-C01",
+      "type": "exam",
+      "label": "SnowPro® Specialty: Gen AI (GES-C01)",
+      "code": "GES-C01",
+      "tier": "specialty",
+      "cost_usd": null,
+      "cost_measured": false,
+      "objectives": [
+        "Define and implement Snowflake Gen AI principles, capabilities, and best practices",
+        "Leverage Snowflake Cortex AI features, LLMs, and offerings to meet customer use cases",
+        "Build open-source models with Snowpark Container Services and Snowflake Model Registry"
+      ],
+      "url": "https://learn.snowflake.com/en/certifications/snowpro-GenAI/"
+    },
+    {
+      "id": "exam:GES-C02",
+      "type": "exam",
+      "label": "SnowPro® Specialty: Gen AI (GES-C02)",
+      "code": "GES-C02",
+      "tier": "specialty",
+      "cost_usd": null,
+      "cost_measured": false,
+      "objectives": [
+        "Define and implement Snowflake Gen AI principles, capabilities, and best practices",
+        "Use Snowflake Cortex AI features and functions, including LLMs, to meet customer use cases",
+        "Build and fine-tune open-source models with Snowpark Container Services and Snowflake Model Registry",
+        "Use Snowflake document processing functions to build, manage, and optimize document parsing pipelines"
+      ],
+      "url": "https://learn.snowflake.com/en/certifications/snowpro-GenAI-C02/"
+    },
+    {
+      "id": "exam:MLA-B01",
+      "type": "exam",
+      "label": "SnowPro® Advanced: MLOps Engineer",
+      "code": "MLA-B01",
+      "tier": "advanced",
+      "cost_usd": 375,
+      "cost_measured": true,
+      "objectives": [
+        "Operationalize, scale, and automate machine learning workflows within the Snowflake AI Data Cloud",
+        "Architect and manage ML infrastructure, including feature engineering, model training, and deployment pipelines",
+        "Deploy, monitor, and govern ML models across production environments using Snowflake-native capabilities",
+        "Implement CI/CD and pipeline orchestration to automate end-to-end ML lifecycle management",
+        "Apply governance, security, and cost management practices throughout ML workflows"
+      ],
+      "url": "https://learn.snowflake.com/en/certifications/snowpro-advanced-mlopsengineer/"
+    },
+    {
+      "id": "exam:NAS-C02",
+      "type": "exam",
+      "label": "SnowPro® Specialty: Native Apps (C02)",
+      "code": "NAS-C02",
+      "tier": "specialty",
+      "cost_usd": null,
+      "cost_measured": false,
+      "objectives": [
+        "Design Native App architectures based on business and technical requirements",
+        "Build Native App components including manifests, setup scripts, and application logic",
+        "Deploy apps to Snowflake Marketplace and support installation and troubleshooting",
+        "Manage version release workflows, release management privileges, and application upgrades"
+      ],
+      "url": "https://learn.snowflake.com/en/certifications/snowpro-nativeapps-c02/"
+    },
+    {
+      "id": "exam:SEA-C01",
+      "type": "exam",
+      "label": "SnowPro® Advanced: Security Engineer",
+      "code": "SEA-C01",
+      "tier": "advanced",
+      "cost_usd": 375,
+      "cost_measured": true,
+      "objectives": [
+        "Design and enforce data protection, privacy, and governance across Snowflake",
+        "Implement and manage user identity and access control mechanisms",
+        "Audit and monitor security policies, controls, and regulatory compliance requirements",
+        "Assess threats and risks, and execute robust security incident response protocols",
+        "Leverage Snowflake AI/ML capabilities to enhance security posture"
+      ],
+      "url": "https://learn.snowflake.com/en/certifications/snowpro-advanced-securityengineer/"
+    },
+    {
+      "id": "exam:SPS-C01",
+      "type": "exam",
+      "label": "SnowPro® Specialty: Snowpark",
+      "code": "SPS-C01",
+      "tier": "specialty",
+      "cost_usd": null,
+      "cost_measured": false,
+      "objectives": [
+        "Perform data transformations using Snowpark DataFrame functions",
+        "Query data sources as Snowpark DataFrame objects",
+        "Connect to Snowflake using a Snowpark session object",
+        "Process results client-side or persist results in Snowflake through Snowpark DataFrame actions",
+        "Design a sequence of operations or conditional logic with Snowpark stored procedures"
+      ],
+      "url": "https://learn.snowflake.com/en/certifications/snowpro-snowpark/"
+    },
+    {
+      "id": "role:administrator",
+      "type": "role",
+      "label": "Database Administrator",
+      "upstream": true
+    },
+    {
+      "id": "role:app-developer",
+      "type": "role",
+      "label": "Application Developer",
+      "upstream": true
+    },
+    {
+      "id": "role:business-user",
+      "type": "role",
+      "label": "Business User",
+      "upstream": true
+    },
+    {
+      "id": "role:citizen-data-scientist",
+      "type": "role",
+      "label": "Citizen Data Scientist",
+      "upstream": true
+    },
+    {
+      "id": "role:data-analyst",
+      "type": "role",
+      "label": "Data Analyst",
+      "upstream": true
+    },
+    {
+      "id": "role:data-engineer-python",
+      "type": "role",
+      "label": "Data Engineer Python",
+      "upstream": true
+    },
+    {
+      "id": "role:data-engineer-sql",
+      "type": "role",
+      "label": "Data Engineer SQL",
+      "upstream": true
+    },
+    {
+      "id": "role:data-scientist",
+      "type": "role",
+      "label": "Data Scientist",
+      "upstream": true
+    },
+    {
+      "id": "role:engineer-developer",
+      "type": "role",
+      "label": "Software Engineer Developer",
+      "upstream": true
+    },
+    {
+      "id": "role:forward-deployed-engineer",
+      "type": "role",
+      "label": "Forward Deployed Engineer",
+      "upstream": false
+    },
+    {
+      "id": "role:it-app-developer",
+      "type": "role",
+      "label": "IT Application Developer",
+      "upstream": true
+    },
+    {
+      "id": "role:ml-engineer",
+      "type": "role",
+      "label": "ML Engineer",
+      "upstream": true
+    },
+    {
+      "id": "role:sql-analyst",
+      "type": "role",
+      "label": "SQL Analyst/BI Manager",
+      "upstream": true
+    },
+    {
+      "id": "track:hands-on-essentials",
+      "type": "track",
+      "label": "Hands-On Essentials",
+      "published": true,
+      "url": "https://learn.snowflake.com/en/pages/hands-on-essentials-track/"
+    },
+    {
+      "id": "track:level-up-first-concepts",
+      "type": "track",
+      "label": "Level Up: First Concepts",
+      "published": true,
+      "url": "https://learn.snowflake.com/en/pages/level-up-track/"
+    },
+    {
+      "id": "track:level-up-performance",
+      "type": "track",
+      "label": "Level Up: Performance",
+      "published": true,
+      "url": "https://learn.snowflake.com/en/pages/level-up-performance-track/"
+    },
+    {
+      "id": "track:level-up-snowpark-essentials",
+      "type": "track",
+      "label": "Level Up: Snowpark & Python Essentials",
+      "published": true,
+      "url": "https://learn.snowflake.com/en/pages/level-up-snowpark-essentials-track/"
+    },
+    {
+      "id": "track:snowpro-core-study",
+      "type": "track",
+      "label": "SnowPro Core Study Track",
+      "published": false,
+      "url": "https://learn.snowflake.com/en/pages/snowpro-track/"
+    }
+  ],
+  "edges": [
+    {
+      "source": "comp:agentic-coding",
+      "target": "course:OD-COCOESS",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:cost-finops",
+      "target": "course:OD-ESS-CMCW",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:cost-finops",
+      "target": "course:OD-FINOPS",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:cost-finops",
+      "target": "course:OD-LVLUP-107",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:cost-finops",
+      "target": "course:OD-SWA",
+      "type": "builds",
+      "basis": "curated"
+    },
+    {
+      "source": "comp:data-engineering-pipelines",
+      "target": "course:ILT-DE",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:data-engineering-pipelines",
+      "target": "course:ILT-DE2",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:data-engineering-pipelines",
+      "target": "course:ILT-PDE",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:data-engineering-pipelines",
+      "target": "course:OD-ESS-DNGW",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:data-loading-ingestion",
+      "target": "course:OD-ESS-DLKW",
+      "type": "builds",
+      "basis": "curated"
+    },
+    {
+      "source": "comp:data-loading-ingestion",
+      "target": "course:OD-ESS-DWW",
+      "type": "builds",
+      "basis": "curated"
+    },
+    {
+      "source": "comp:data-loading-ingestion",
+      "target": "course:OD-LVLUP-106",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:data-science-ml",
+      "target": "course:ILT-DS",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:data-science-ml",
+      "target": "course:OD-ESS-DSCW",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:genai-cortex",
+      "target": "course:ILT-GENAI",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:genai-cortex",
+      "target": "course:OD-SXGA",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:genai-cortex",
+      "target": "course:OD-SXGA2",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:genai-cortex",
+      "target": "course:OD-SXGA3",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:governance-horizon",
+      "target": "course:ILT-DG",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:governance-horizon",
+      "target": "course:OD-LVLUP-108",
+      "type": "builds",
+      "basis": "curated"
+    },
+    {
+      "source": "comp:migration-modernization",
+      "target": "course:OD-SC-AI",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:migration-modernization",
+      "target": "course:OD-SC-SMA",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:mlops-productionization",
+      "target": "course:ILT-DS",
+      "type": "builds",
+      "basis": "curated"
+    },
+    {
+      "source": "comp:mlops-productionization",
+      "target": "course:ILT-SCS",
+      "type": "builds",
+      "basis": "curated"
+    },
+    {
+      "source": "comp:native-apps-containers",
+      "target": "course:ILT-NAF",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:native-apps-containers",
+      "target": "course:ILT-SCS",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:native-apps-containers",
+      "target": "course:OD-LVLUP-308",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:performance-tuning",
+      "target": "course:ILT-ADV",
+      "type": "builds",
+      "basis": "curated"
+    },
+    {
+      "source": "comp:performance-tuning",
+      "target": "course:ILT-PERF",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:performance-tuning",
+      "target": "course:OD-LVLUP-201",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:platform-foundations",
+      "target": "course:ILT-FUND",
+      "type": "builds",
+      "basis": "curated"
+    },
+    {
+      "source": "comp:platform-foundations",
+      "target": "course:ILT-SPT",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:platform-foundations",
+      "target": "course:OD-FOUND",
+      "type": "builds",
+      "basis": "curated"
+    },
+    {
+      "source": "comp:platform-foundations",
+      "target": "course:OD-LVLUP-101",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:platform-foundations",
+      "target": "course:OD-LVLUP-102",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:platform-foundations",
+      "target": "course:OD-LVLUP-103",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:platform-foundations",
+      "target": "course:OD-LVLUP-105",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:platform-foundations",
+      "target": "course:OD-SPT",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:python-snowpark",
+      "target": "course:ILT-SNWPRK",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:python-snowpark",
+      "target": "course:ILT-SPAD",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:python-snowpark",
+      "target": "course:OD-LVLUP-301",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:python-snowpark",
+      "target": "course:OD-LVLUP-303",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:python-snowpark",
+      "target": "course:OD-LVLUP-304",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:python-snowpark",
+      "target": "course:OD-LVLUP-305",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:python-snowpark",
+      "target": "course:OD-LVLUP-307",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:security-access-control",
+      "target": "course:ILT-SS",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:security-access-control",
+      "target": "course:OD-LVLUP-104",
+      "type": "builds",
+      "basis": "curated"
+    },
+    {
+      "source": "comp:security-access-control",
+      "target": "course:OD-MFA",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:sharing-collaboration",
+      "target": "course:OD-ESS-CMCW",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:sharing-collaboration",
+      "target": "course:OD-ESS-DABW",
+      "type": "builds",
+      "basis": "curated"
+    },
+    {
+      "source": "comp:sql-analytics",
+      "target": "course:ILT-AA",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:sql-analytics",
+      "target": "course:ILT-BU",
+      "type": "builds",
+      "basis": "curated"
+    },
+    {
+      "source": "comp:sql-analytics",
+      "target": "course:ILT-DA",
+      "type": "builds",
+      "basis": "title"
+    },
+    {
+      "source": "comp:sql-analytics",
+      "target": "course:OD-LVLUP-202",
+      "type": "builds",
+      "basis": "curated"
+    },
+    {
+      "source": "comp:cost-finops",
+      "target": "exam:ADA-C02",
+      "type": "certifies",
+      "basis": "curated"
+    },
+    {
+      "source": "comp:data-engineering-pipelines",
+      "target": "exam:DEA-C02",
+      "type": "certifies",
+      "basis": "title"
+    },
+    {
+      "source": "comp:data-loading-ingestion",
+      "target": "exam:COF-C03",
+      "type": "certifies",
+      "basis": "curated"
+    },
+    {
+      "source": "comp:data-loading-ingestion",
+      "target": "exam:DEA-C02",
+      "type": "certifies",
+      "basis": "curated"
+    },
+    {
+      "source": "comp:data-science-ml",
+      "target": "exam:DSA-C03",
+      "type": "certifies",
+      "basis": "title"
+    },
+    {
+      "source": "comp:genai-cortex",
+      "target": "exam:GES-C01",
+      "type": "certifies",
+      "basis": "title"
+    },
+    {
+      "source": "comp:genai-cortex",
+      "target": "exam:GES-C02",
+      "type": "certifies",
+      "basis": "title"
+    },
+    {
+      "source": "comp:governance-horizon",
+      "target": "exam:ADA-C02",
+      "type": "certifies",
+      "basis": "curated"
+    },
+    {
+      "source": "comp:governance-horizon",
+      "target": "exam:SEA-C01",
+      "type": "certifies",
+      "basis": "curated"
+    },
+    {
+      "source": "comp:mlops-productionization",
+      "target": "exam:MLA-B01",
+      "type": "certifies",
+      "basis": "title"
+    },
+    {
+      "source": "comp:native-apps-containers",
+      "target": "exam:NAS-C02",
+      "type": "certifies",
+      "basis": "title"
+    },
+    {
+      "source": "comp:performance-tuning",
+      "target": "exam:ARA-C01",
+      "type": "certifies",
+      "basis": "curated"
+    },
+    {
+      "source": "comp:platform-foundations",
+      "target": "exam:COF-C03",
+      "type": "certifies",
+      "basis": "curated"
+    },
+    {
+      "source": "comp:python-snowpark",
+      "target": "exam:SPS-C01",
+      "type": "certifies",
+      "basis": "title"
+    },
+    {
+      "source": "comp:security-access-control",
+      "target": "exam:SEA-C01",
+      "type": "certifies",
+      "basis": "title"
+    },
+    {
+      "source": "comp:sharing-collaboration",
+      "target": "exam:COF-C03",
+      "type": "certifies",
+      "basis": "curated"
+    },
+    {
+      "source": "comp:sql-analytics",
+      "target": "exam:DAA-C01",
+      "type": "certifies",
+      "basis": "curated"
+    },
+    {
+      "source": "role:administrator",
+      "target": "comp:cost-finops",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:administrator",
+      "target": "comp:governance-horizon",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:administrator",
+      "target": "comp:performance-tuning",
+      "type": "requires",
+      "tier": "supporting"
+    },
+    {
+      "source": "role:administrator",
+      "target": "comp:platform-foundations",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:administrator",
+      "target": "comp:security-access-control",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:app-developer",
+      "target": "comp:native-apps-containers",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:app-developer",
+      "target": "comp:platform-foundations",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:app-developer",
+      "target": "comp:python-snowpark",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:app-developer",
+      "target": "comp:sharing-collaboration",
+      "type": "requires",
+      "tier": "supporting"
+    },
+    {
+      "source": "role:business-user",
+      "target": "comp:platform-foundations",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:business-user",
+      "target": "comp:sharing-collaboration",
+      "type": "requires",
+      "tier": "supporting"
+    },
+    {
+      "source": "role:business-user",
+      "target": "comp:sql-analytics",
+      "type": "requires",
+      "tier": "supporting"
+    },
+    {
+      "source": "role:citizen-data-scientist",
+      "target": "comp:data-science-ml",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:citizen-data-scientist",
+      "target": "comp:platform-foundations",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:citizen-data-scientist",
+      "target": "comp:sharing-collaboration",
+      "type": "requires",
+      "tier": "supporting"
+    },
+    {
+      "source": "role:citizen-data-scientist",
+      "target": "comp:sql-analytics",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:data-analyst",
+      "target": "comp:cost-finops",
+      "type": "requires",
+      "tier": "supporting"
+    },
+    {
+      "source": "role:data-analyst",
+      "target": "comp:platform-foundations",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:data-analyst",
+      "target": "comp:sharing-collaboration",
+      "type": "requires",
+      "tier": "supporting"
+    },
+    {
+      "source": "role:data-analyst",
+      "target": "comp:sql-analytics",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:data-engineer-python",
+      "target": "comp:cost-finops",
+      "type": "requires",
+      "tier": "supporting"
+    },
+    {
+      "source": "role:data-engineer-python",
+      "target": "comp:data-engineering-pipelines",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:data-engineer-python",
+      "target": "comp:data-loading-ingestion",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:data-engineer-python",
+      "target": "comp:performance-tuning",
+      "type": "requires",
+      "tier": "supporting"
+    },
+    {
+      "source": "role:data-engineer-python",
+      "target": "comp:platform-foundations",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:data-engineer-python",
+      "target": "comp:python-snowpark",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:data-engineer-sql",
+      "target": "comp:data-engineering-pipelines",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:data-engineer-sql",
+      "target": "comp:data-loading-ingestion",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:data-engineer-sql",
+      "target": "comp:governance-horizon",
+      "type": "requires",
+      "tier": "supporting"
+    },
+    {
+      "source": "role:data-engineer-sql",
+      "target": "comp:performance-tuning",
+      "type": "requires",
+      "tier": "supporting"
+    },
+    {
+      "source": "role:data-engineer-sql",
+      "target": "comp:platform-foundations",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:data-engineer-sql",
+      "target": "comp:sql-analytics",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:data-scientist",
+      "target": "comp:data-science-ml",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:data-scientist",
+      "target": "comp:genai-cortex",
+      "type": "requires",
+      "tier": "supporting"
+    },
+    {
+      "source": "role:data-scientist",
+      "target": "comp:platform-foundations",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:data-scientist",
+      "target": "comp:python-snowpark",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:data-scientist",
+      "target": "comp:sql-analytics",
+      "type": "requires",
+      "tier": "supporting"
+    },
+    {
+      "source": "role:engineer-developer",
+      "target": "comp:agentic-coding",
+      "type": "requires",
+      "tier": "supporting"
+    },
+    {
+      "source": "role:engineer-developer",
+      "target": "comp:native-apps-containers",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:engineer-developer",
+      "target": "comp:platform-foundations",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:engineer-developer",
+      "target": "comp:python-snowpark",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:forward-deployed-engineer",
+      "target": "comp:agentic-coding",
+      "type": "requires",
+      "tier": "supporting"
+    },
+    {
+      "source": "role:forward-deployed-engineer",
+      "target": "comp:cost-finops",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:forward-deployed-engineer",
+      "target": "comp:data-engineering-pipelines",
+      "type": "requires",
+      "tier": "supporting"
+    },
+    {
+      "source": "role:forward-deployed-engineer",
+      "target": "comp:genai-cortex",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:forward-deployed-engineer",
+      "target": "comp:governance-horizon",
+      "type": "requires",
+      "tier": "supporting"
+    },
+    {
+      "source": "role:forward-deployed-engineer",
+      "target": "comp:migration-modernization",
+      "type": "requires",
+      "tier": "supporting"
+    },
+    {
+      "source": "role:forward-deployed-engineer",
+      "target": "comp:native-apps-containers",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:forward-deployed-engineer",
+      "target": "comp:platform-foundations",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:forward-deployed-engineer",
+      "target": "comp:python-snowpark",
+      "type": "requires",
+      "tier": "supporting"
+    },
+    {
+      "source": "role:forward-deployed-engineer",
+      "target": "comp:security-access-control",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:it-app-developer",
+      "target": "comp:native-apps-containers",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:it-app-developer",
+      "target": "comp:platform-foundations",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:it-app-developer",
+      "target": "comp:security-access-control",
+      "type": "requires",
+      "tier": "supporting"
+    },
+    {
+      "source": "role:ml-engineer",
+      "target": "comp:cost-finops",
+      "type": "requires",
+      "tier": "supporting"
+    },
+    {
+      "source": "role:ml-engineer",
+      "target": "comp:data-science-ml",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:ml-engineer",
+      "target": "comp:mlops-productionization",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:ml-engineer",
+      "target": "comp:native-apps-containers",
+      "type": "requires",
+      "tier": "supporting"
+    },
+    {
+      "source": "role:ml-engineer",
+      "target": "comp:platform-foundations",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:ml-engineer",
+      "target": "comp:python-snowpark",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:sql-analyst",
+      "target": "comp:performance-tuning",
+      "type": "requires",
+      "tier": "supporting"
+    },
+    {
+      "source": "role:sql-analyst",
+      "target": "comp:platform-foundations",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "role:sql-analyst",
+      "target": "comp:sql-analytics",
+      "type": "requires",
+      "tier": "core"
+    },
+    {
+      "source": "track:hands-on-essentials",
+      "target": "course:OD-ESS-CMCW",
+      "type": "sequences",
+      "ordinal": 2
+    },
+    {
+      "source": "track:hands-on-essentials",
+      "target": "course:OD-ESS-DABW",
+      "type": "sequences",
+      "ordinal": 3
+    },
+    {
+      "source": "track:hands-on-essentials",
+      "target": "course:OD-ESS-DLKW",
+      "type": "sequences",
+      "ordinal": 4
+    },
+    {
+      "source": "track:hands-on-essentials",
+      "target": "course:OD-ESS-DNGW",
+      "type": "sequences",
+      "ordinal": 5
+    },
+    {
+      "source": "track:hands-on-essentials",
+      "target": "course:OD-ESS-DSCW",
+      "type": "sequences",
+      "ordinal": 6
+    },
+    {
+      "source": "track:hands-on-essentials",
+      "target": "course:OD-ESS-DWW",
+      "type": "sequences",
+      "ordinal": 1
+    },
+    {
+      "source": "track:level-up-first-concepts",
+      "target": "course:OD-LVLUP-101",
+      "type": "sequences",
+      "ordinal": 1
+    },
+    {
+      "source": "track:level-up-first-concepts",
+      "target": "course:OD-LVLUP-102",
+      "type": "sequences",
+      "ordinal": 2
+    },
+    {
+      "source": "track:level-up-first-concepts",
+      "target": "course:OD-LVLUP-103",
+      "type": "sequences",
+      "ordinal": 5
+    },
+    {
+      "source": "track:level-up-first-concepts",
+      "target": "course:OD-LVLUP-104",
+      "type": "sequences",
+      "ordinal": 6
+    },
+    {
+      "source": "track:level-up-first-concepts",
+      "target": "course:OD-LVLUP-105",
+      "type": "sequences",
+      "ordinal": 7
+    },
+    {
+      "source": "track:level-up-first-concepts",
+      "target": "course:OD-LVLUP-106",
+      "type": "sequences",
+      "ordinal": 3
+    },
+    {
+      "source": "track:level-up-first-concepts",
+      "target": "course:OD-LVLUP-107",
+      "type": "sequences",
+      "ordinal": 4
+    },
+    {
+      "source": "track:level-up-first-concepts",
+      "target": "course:OD-LVLUP-108",
+      "type": "sequences",
+      "ordinal": 8
+    },
+    {
+      "source": "track:level-up-first-concepts",
+      "target": "course:OD-LVLUP-109",
+      "type": "sequences",
+      "ordinal": 9
+    },
+    {
+      "source": "track:level-up-performance",
+      "target": "course:OD-LVLUP-201",
+      "type": "sequences",
+      "ordinal": 1
+    },
+    {
+      "source": "track:level-up-performance",
+      "target": "course:OD-LVLUP-202",
+      "type": "sequences",
+      "ordinal": 2
+    },
+    {
+      "source": "track:level-up-snowpark-essentials",
+      "target": "course:OD-LVLUP-301",
+      "type": "sequences",
+      "ordinal": 1
+    },
+    {
+      "source": "track:level-up-snowpark-essentials",
+      "target": "course:OD-LVLUP-303",
+      "type": "sequences",
+      "ordinal": 3
+    },
+    {
+      "source": "track:level-up-snowpark-essentials",
+      "target": "course:OD-LVLUP-304",
+      "type": "sequences",
+      "ordinal": 2
+    },
+    {
+      "source": "track:level-up-snowpark-essentials",
+      "target": "course:OD-LVLUP-305",
+      "type": "sequences",
+      "ordinal": 4
+    },
+    {
+      "source": "track:level-up-snowpark-essentials",
+      "target": "course:OD-LVLUP-307",
+      "type": "sequences",
+      "ordinal": 5
+    },
+    {
+      "source": "track:level-up-snowpark-essentials",
+      "target": "course:OD-LVLUP-308",
+      "type": "sequences",
+      "ordinal": 6
+    }
+  ]
+}

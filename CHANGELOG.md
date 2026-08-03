@@ -6,6 +6,47 @@ All notable changes to FDE-os are recorded here. Format follows
 ## [Unreleased]
 
 ### Added
+- **`snowflake-os/` — the curriculum layer for Snowflake, plus the `/snowflake-os` super tool.**
+  Every agentic Snowflake tool that exists operates on the *warehouse* (`Snowflake-Labs/mcp`,
+  `cocoplus`, `coco-skills`, `snowflake-ai-kit`, `ai-ready-data`, `subagent-cortex-code`); none
+  operates on the *curriculum*. `learn.snowflake.com` is now compiled into a provenance-pinned
+  offline snapshot — **58 courses (430.25h, 68.25h free) · 12 distinct exams from 19 pages ·
+  5 tracks · 12 role journeys · 94 records**, each carrying the source URL, the sha256 of the
+  bytes parsed, and a timestamp. On top of it: `catalog.py` (query; a zero-result exits 2 and
+  names the vocabulary), `pathfinder.py` (goal → ordered costed plan, ordered by Snowflake's OWN
+  published track order where it exists), `readiness.py` (**GO/NO-GO where claimed completions
+  score zero** — a `badge_url`/`completion_id`/`verifier` counts, a screenshot does not),
+  `graph.py` (a deterministic navigable spine → `knowledge/snowflake-catalog.{graph.json,html}`),
+  `gate.py` (**10 integrity checks**, CI-gated), `build.py` (YAML→JSON so the offline engines stay
+  stdlib-only, sha256-pinned to source) and `sync.py` (the ONLY networked component; `drift`
+  exits 3). Surfaces: `skills/snowflake-os/SKILL.md`, `workflows/snowflake-enablement/`
+  (KB-integrity AND readiness → STAFF/NOT-YET, a refusal always ships the remediation plan), and
+  three new MCP tools (`snowflake_plan`, `snowflake_readiness`, `snowflake_catalog`).
+  **43 new tests**; `make check` is green at 268.
+  _Honest edges, all machine-declared rather than glossed:_ Snowflake publishes **no** role→course
+  mapping (0 of 12 role pages), so `data/competencies.yml` supplies it as labelled judgment with a
+  **40% curated ceiling enforced by the gate** (currently 31%); Specialty exam pricing is
+  unpublished, so the parser refuses to borrow the $175/$375 boilerplate sitting beside it; one of
+  five tracks publishes no sequence; `coco-skills` (no licence) and `subagent-cortex-code`
+  (unidentified licence) are **quarantined as unvendorable**, enforced by a check.
+  _Two findings worth recording:_ curated track pages link legacy slugs (`uni-essdww101`) that 301
+  to the canonical code — matching the literal slug produced a silently EMPTY track sequence, so
+  the sync now follows the redirect and records the alias map; and the first coverage formula
+  scored a well-prepared candidate 21% because it counted the same course twice across delivery
+  modes (`OD-SPT`/`ILT-SPT`), fixed by explicit `alternatives` groups (→ 55% on identical evidence).
+
+### Fixed
+- **Eleven shipped knowledge viewers had been rendering blank.** `knowledgefy.render_html`
+  HTML-escaped the graph payload inside `<script type="application/json">`; browsers do not decode
+  entities inside a script element, so `JSON.parse` received literal `&quot;` and threw during
+  initialisation — leaving the `const` in its temporal dead zone and producing a blank page with
+  **no console error**. One-line fix (escape only `</`), plus the `&middot;` that `textContent`
+  rendered literally in the header. All 11 affected artifacts regenerated:
+  `knowledge/{fde-spine,jd-competency-spine,mlops-rbac-migration-spine,snowflake-summit-2026}.html`
+  and `knowledge/hub/*.html`. Pinned by a test that parses the payload out of the rendered HTML.
+  _Caught only by opening the page in a real browser — generation success is not rendering success._
+
+### Added
 - **`playground.html` — the toolkit as an agentic webapp: three skills running client-side in the
   browser.** Paste a JD → `jd-compiler` clusters + named-tool extraction; paste a draft →
   `true-scorer` heuristic bars + the ship gate; paste meeting notes → `invisible-workflow-mapper`

@@ -39,7 +39,8 @@ class TestProtocol(unittest.TestCase):
         names = {t["name"] for t in resp["result"]["tools"]}
         self.assertEqual(names, {"true_score", "rag_eval", "criteria_score",
                                  "eval_loop", "invisible_workflow_map", "jd_compile", "doc_gate",
-                                 "hub_find"})
+                                 "hub_find",
+                                 "snowflake_plan", "snowflake_readiness", "snowflake_catalog"})
         for t in resp["result"]["tools"]:
             self.assertEqual(t["inputSchema"]["type"], "object")
             self.assertTrue(t["description"])

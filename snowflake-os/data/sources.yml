@@ -1,0 +1,90 @@
+# snowflake-os — the ingest spec. SINGLE SOURCE OF TRUTH for what gets synced.
+#
+# Everything downstream (snapshot/catalog.json, the knowledge graph, every skill)
+# is GENERATED from this file plus the pages it names. Never hand-edit the outputs.
+#
+# DOM discipline (playbook: "key off stable signals, never CSS class names"):
+# learn.snowflake.com is a Gatsby build whose class names are styled-components
+# hashes (`Text-sc-1nh70ss-0 kzGcbW`) that change on every deploy. So the parser
+# anchors ONLY on:
+#   1. URL path codes   — /en/courses/OD-ESS-DWW/  -> the course's stable identity
+#   2. visible label text — "Course Number", "Estimated Effort (hours)"
+#   3. document landmarks — the single <h1>
+# If Snowflake reskins the site, this still parses. If they rename a LABEL, the
+# gate reports the field as "not measured" rather than silently emitting null.
+
+origin: https://learn.snowflake.com/en/
+# HONEST EDGE, probed 2026-08-03: learn.snowflake.com serves NO robots.txt
+# (HTTP 530 / Cloudflare 1016 at /robots.txt), and www.snowflake.com bot-walls
+# curl entirely (Cloudflare challenge). So there is no crawl directive to obey
+# and none to claim cover from. What we do instead: serial requests, 1 req/sec,
+# read-only GETs of public unauthenticated marketing pages, weekly at most,
+# never from the offline gate. If Snowflake later publishes a directive, this
+# key is where it gets honoured.
+robots: "not served (HTTP 530, probed 2026-08-03)"
+# Politeness: one request at a time, delay between them. This is a ~100-page
+# read of a public marketing catalogue, run weekly at most, never in the gate.
+fetch:
+  delay_seconds: 1.0
+  timeout_seconds: 30
+  user_agent: "snowflake-os/0.1 (+https://github.com/wjlgatech/FDE-os) catalog-sync"
+
+entry_points:
+  courses: https://learn.snowflake.com/en/courses/
+  certifications: https://learn.snowflake.com/en/certifications/
+  home: https://learn.snowflake.com/en/
+
+# Detail-page fields, each keyed to the visible label that precedes the value.
+# A label that no longer appears yields UNMEASURED, never a guess.
+course_fields:
+  effort_hours:
+    label: "Estimated Effort (hours)"
+    kind: number
+  difficulty:
+    label: "Estimated Effort (hours)"   # rendered as "6 (Easy)" beside the number
+    kind: parenthetical
+  code:
+    label: "Course Number"
+    kind: text
+
+# Learning tracks are curated ordered sequences. The ordinal comes from the
+# page's own numbering ("1 Badge 1: ..."), not from our opinion.
+tracks:
+  - slug: hands-on-essentials
+    url: https://learn.snowflake.com/en/pages/hands-on-essentials-track/
+    title: Hands-On Essentials
+  - slug: level-up-first-concepts
+    url: https://learn.snowflake.com/en/pages/level-up-track/
+    title: "Level Up: First Concepts"
+  - slug: level-up-performance
+    url: https://learn.snowflake.com/en/pages/level-up-performance-track/
+    title: "Level Up: Performance"
+  - slug: level-up-snowpark-essentials
+    url: https://learn.snowflake.com/en/pages/level-up-snowpark-essentials-track/
+    title: "Level Up: Snowpark & Python Essentials"
+  - slug: snowpro-core-study
+    url: https://learn.snowflake.com/en/pages/snowpro-track/
+    title: SnowPro Core Study Track
+
+# The twelve role-based learning journeys Snowflake publishes.
+roles:
+  - {slug: data-engineer-sql,     url: "https://learn.snowflake.com/en/data-engineer-sql/"}
+  - {slug: data-engineer-python,  url: "https://learn.snowflake.com/en/data-engineer-python/"}
+  - {slug: sql-analyst,           url: "https://learn.snowflake.com/en/sql-analyst/"}
+  - {slug: ml-engineer,           url: "https://learn.snowflake.com/en/ml-engineer/"}
+  - {slug: app-developer,         url: "https://learn.snowflake.com/en/app-developer/"}
+  - {slug: it-app-developer,      url: "https://learn.snowflake.com/en/it-app-developer/"}
+  - {slug: business-user,         url: "https://learn.snowflake.com/en/business-user/"}
+  - {slug: administrator,         url: "https://learn.snowflake.com/en/administrator/"}
+  - {slug: data-analyst,          url: "https://learn.snowflake.com/en/data-analyst/"}
+  - {slug: data-scientist,        url: "https://learn.snowflake.com/en/data-scientist/"}
+  - {slug: citizen-data-scientist,url: "https://learn.snowflake.com/en/citizen-data-scientist/"}
+  - {slug: engineer-developer,    url: "https://learn.snowflake.com/en/engineer-developer/"}
+
+# Certification tiers are NOT visible as a field on each exam page; they are the
+# grouping headings on the certifications index. Recorded here as curation, and
+# marked as such in the snapshot so a reader can tell curated from scraped.
+certification_tiers:
+  core: [COF-C03]
+  specialty: [GES-C02, GES-C01, SPS-C01, NAS-C02]
+  advanced: [MLA-B01, SEA-C01, ARA-C01, DEA-C02, DSA-C03, ADA-C02, DAA-C01]

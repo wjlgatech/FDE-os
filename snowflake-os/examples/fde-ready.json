@@ -1,0 +1,35 @@
+{
+  "candidate": "Bo (staffed FDE)",
+  "role": "forward-deployed-engineer",
+  "_note": "Every completion below carries verifiable evidence \u2014 this is what a GO looks like.",
+  "completions": [
+    {
+      "course": "OD-FOUND",
+      "badge_url": "https://achieve.snowflake.com/badge/od-found"
+    },
+    {
+      "course": "OD-SPT",
+      "badge_url": "https://achieve.snowflake.com/badge/od-spt"
+    },
+    {
+      "course": "ILT-GENAI",
+      "badge_url": "https://achieve.snowflake.com/badge/ilt-genai"
+    },
+    {
+      "course": "ILT-NAF",
+      "badge_url": "https://achieve.snowflake.com/badge/ilt-naf"
+    },
+    {
+      "course": "ILT-SCS",
+      "badge_url": "https://achieve.snowflake.com/badge/ilt-scs"
+    },
+    {
+      "course": "ILT-SS",
+      "badge_url": "https://achieve.snowflake.com/badge/ilt-ss"
+    },
+    {
+      "course": "OD-ESS-CMCW",
+      "badge_url": "https://achieve.snowflake.com/badge/od-ess-cmcw"
+    }
+  ]
+}

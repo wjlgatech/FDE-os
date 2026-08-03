@@ -1,0 +1,1704 @@
+{
+  "schema": "snowflake-os/catalog@1",
+  "source": {
+    "origin": "https://learn.snowflake.com/en/",
+    "robots": "not served (HTTP 530, probed 2026-08-03)",
+    "fetched_at": "2026-08-03T15:10:30+00:00",
+    "sync_tool": "snowflake-os/scripts/sync.py",
+    "partial": false
+  },
+  "counts": {
+    "courses": 58,
+    "certification_pages": 19,
+    "distinct_exams": 12,
+    "tracks": 5,
+    "tracks_with_published_sequence": 4,
+    "roles": 12,
+    "roles_with_published_courses": 0,
+    "courses_with_measured_effort": 58,
+    "courses_effort_unmeasured": 0,
+    "exams_with_measured_cost": 14,
+    "exams_cost_unmeasured": 4,
+    "fetch_failures": 0
+  },
+  "failures": [],
+  "courses": [
+    {
+      "code": "ILT-AA",
+      "title": "Snowflake Advanced Analytics Training",
+      "url": "https://learn.snowflake.com/en/courses/ILT-AA/",
+      "delivery": "instructor-led",
+      "free": false,
+      "effort_hours": 16,
+      "difficulty": "Moderate",
+      "code_confirmed_on_page": true,
+      "summary": "This two-day, role-specific course introduces participants to the advanced analytic capabilities provided by the Snowflake Data Cloud. Participants learn how to employ these analytical capabilities to derive deeper insights, discover patterns, and pinpoint trends. This course will provide participants with the skills to begin accessing information that supports a more predictive approach to identifying what could happen instead of only looking at what has happened. The course consists of lectures, labs, demonstrations, and discussions. Enroll now Review the Course Datasheet to learn about: • O",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/ILT-AA/",
+        "sha256": "db602bd02a8d1682283ddfeba3bfa094e0883d2d2b38e8701fe79c25dc7640be",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "ILT-ADMIN",
+      "title": "Administering Snowflake Training",
+      "url": "https://learn.snowflake.com/en/courses/ILT-ADMIN/",
+      "delivery": "instructor-led",
+      "free": false,
+      "effort_hours": 24,
+      "difficulty": "Hard",
+      "code_confirmed_on_page": true,
+      "summary": "This three‐day, role‐specific course provides an in‐depth exploration of database administrator duties and responsibilities in the Snowflake AI Data Cloud. This course covers data loading performance, security, role hierarchy design, and performance tuning. The course consists of lectures, labs, demonstrations, and discussions. Enroll now Review the Course Datasheet to learn about: • Overview of Topic • Course Objectives • Who Should Attend • Prerequisites Setup Requirements Learners will need... • to bring a laptop • a Snowflake compatible browser (see options HERE ) Please review our Terms a",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/ILT-ADMIN/",
+        "sha256": "58642ee74369592fc56a29b13b3d5010635042bb255e32e60a2773c35f848a96",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "ILT-ADMIN2",
+      "title": "Administering Snowflake II Training",
+      "url": "https://learn.snowflake.com/en/courses/ILT-ADMIN2/",
+      "delivery": "instructor-led",
+      "free": false,
+      "effort_hours": 16,
+      "difficulty": "Moderate",
+      "code_confirmed_on_page": true,
+      "summary": "This two-day, role-specific course continues the study and practical lab experience of database and account administration. This course includes data recovery scenarios, database and account replication, and advanced performance tuning strategies. The course consists of lectures, labs, demonstrations, and discussions. Enroll now Review the Course Datasheet to learn about: • Overview of Topic • Course Objectives • Who Should Attend • Prerequisites Setup Requirements Learners will need... • to bring a laptop • a Snowflake compatible browser (see options HERE ) Please review our Terms and Conditi",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/ILT-ADMIN2/",
+        "sha256": "4a892b511c227b69c5b87a011764114e3072572682179420dd5406ea88724a85",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "ILT-ADV",
+      "title": "Snowflake Advanced Training",
+      "url": "https://learn.snowflake.com/en/courses/ILT-ADV/",
+      "delivery": "instructor-led",
+      "free": false,
+      "effort_hours": 24,
+      "difficulty": "Hard",
+      "code_confirmed_on_page": true,
+      "summary": "This three‐day course covers advanced Snowflake data manipulation and movement features, using specialty table types, advanced query constructs, performance, and Snowflake‐recommended operational best practices. It consists of lectures, demonstrations, and labs. Enroll now Review the Course Datasheet to learn about: • Overview of Topic • Course Objectives • Who Should Attend • Prerequisites Other languages: • Datasheet (日本語版) • 교육 과정 안내서 • 课程数据表 Setup Requirements Learners will need... • to bring a laptop • a Snowflake compatible browser (see options HERE ) Please review our Terms and Conditio",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/ILT-ADV/",
+        "sha256": "5923e1513ef4413b10f7dbb59dc37b665f8b205d40aaf386a8269d48c1ca669a",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "ILT-ARCH",
+      "title": "Snowflake Architect Training",
+      "url": "https://learn.snowflake.com/en/courses/ILT-ARCH/",
+      "delivery": "instructor-led",
+      "free": false,
+      "effort_hours": 24,
+      "difficulty": "Hard",
+      "code_confirmed_on_page": true,
+      "summary": "This three‐day course for Architects and Technical Leaders provides the skills, knowledge, and Snowflake‐recommended best practices to deploy and operate Snowflake, insights and recommendations based upon real‐world customer experiences, and the confidence to get the most out of Snowflake’s technology. Enroll now Review the Course Datasheet to learn about: • Overview of Topic • Course Objectives • Who Should Attend • Prerequisites Setup Requirements Learners will need... • to bring a laptop • a Snowflake compatible browser (see options HERE ) Please review our Terms and Conditions for more inf",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/ILT-ARCH/",
+        "sha256": "43388f90f745bac7ecfdf93f808059d12c82d107332dfb7bbae2623450f4876d",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "ILT-BU",
+      "title": "Snowflake Business User Training",
+      "url": "https://learn.snowflake.com/en/courses/ILT-BU/",
+      "delivery": "instructor-led",
+      "free": false,
+      "effort_hours": 8,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "This one‐day, role‐specific course introduces business users to the Snowflake AI Data Cloud and its architecture. Participants learn how to connect to Snowflake, access the data they need, use that data, augment the data, and report data insights from Snowflake. The course consists of lectures, labs, demonstrations, and discussions. Enroll now Review the Course Datasheet to learn about: • Overview of Topic • Course Objectives • Who Should Attend • Prerequisites Setup Requirements Learners will need... • to bring a laptop • a Snowflake compatible browser (see options HERE ) Please review our Te",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/ILT-BU/",
+        "sha256": "8a69ea2a5ca60a996ff8b3b275051cc92a49e46ba74fb4bff0013e0b3aa16179",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "ILT-DA",
+      "title": "Snowflake Data Analyst Training",
+      "url": "https://learn.snowflake.com/en/courses/ILT-DA/",
+      "delivery": "instructor-led",
+      "free": false,
+      "effort_hours": 16,
+      "difficulty": "Moderate",
+      "code_confirmed_on_page": true,
+      "summary": "This two‐day, role‐specific course introduces data analysts to how the Snowflake AI Data Cloud enables them to deliver actionable insights and reports to their organization to drive business value. The course is structured around a data analysis lifecycle, placing each capability Snowflake provides in the context of a data analyst. The course begins with how to connect to the Snowflake Data Cloud. It then covers how to analyze, ingest, enrich, report, and diagnose data insights with Snowflake. The course consists of lectures, labs, demonstrations, and discussions. Enroll now Review the Course ",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/ILT-DA/",
+        "sha256": "94d161d1cd8f0c14cc5bdb3e6fc64275a3d564032f7c4d5b1aff9174465077e5",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "ILT-DE",
+      "title": "Snowflake Data Engineer Training",
+      "url": "https://learn.snowflake.com/en/courses/ILT-DE/",
+      "delivery": "instructor-led",
+      "free": false,
+      "effort_hours": 24,
+      "difficulty": "Hard",
+      "code_confirmed_on_page": true,
+      "summary": "This three‐day, role‐specific course immerses you in the data engineering workflow within Snowflake. You’ll apply key concepts, essential features, critical considerations, and Snowflake‐recommended best practices necessary for success. Designed for professionals who will access, develop, and query large datasets for analytic tasks, this course focuses on building robust data pipelines. Expect a high‐impact learning experience delivered through expert lectures, practical demonstrations, experiential labs, and focused discussions. Enroll now Review the Course Datasheet to learn about: • Overvie",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/ILT-DE/",
+        "sha256": "35fccf959e3f22b66d14d8cc21897be217bf25ce1cd352931974d14ecf2aedda",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "ILT-DE2",
+      "title": "Snowflake Data Engineer II Training",
+      "url": "https://learn.snowflake.com/en/courses/ILT-DE2/",
+      "delivery": "instructor-led",
+      "free": false,
+      "effort_hours": 16,
+      "difficulty": "Moderate",
+      "code_confirmed_on_page": true,
+      "summary": "This two-day, role-specific course presents additional topics and a deep dive into select subjects for the Data Engineer through the lens of the data engineering lifecycle. The course covers Snowflake concepts, features, considerations, and best practices intended for stakeholders who will be accessing, developing, and querying datasets for analytic tasks, and building data pipelines in Snowflake. This course consists of data engineering concepts delivered through lectures, demos, labs, and discussions. Enroll now Review the Course Datasheet to learn about: • Overview of Topic • Course Objecti",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/ILT-DE2/",
+        "sha256": "6edfd215151f981df2dda57a0eeb8b1e452ce6ffb3e4ae04c339301736241701",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "ILT-DG",
+      "title": "Snowflake Data Governance Training",
+      "url": "https://learn.snowflake.com/en/courses/ILT-DG/",
+      "delivery": "instructor-led",
+      "free": false,
+      "effort_hours": 8,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "This one‐day Snowflake Data Governance add‐on course provides participants with skills and practice to successfully use Snowflake data governance features to support an organization’s data governance program. You will apply data governance techniques to ensure trustworthy data while making it available to different types of users. You will use features that identify and protect sensitive information and track the data to enable regulatory compliance. This course consists of lectures, demos, and labs. Enroll now Review the Course Datasheet to learn about: • Overview of Topic • Course Objectives",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/ILT-DG/",
+        "sha256": "1a276fe6c13405c59f51b9aca35ae51919bc5d1be87abd253410d2c68a08f25f",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "ILT-DS",
+      "title": "Data Science Training",
+      "url": "https://learn.snowflake.com/en/courses/ILT-DS/",
+      "delivery": "instructor-led",
+      "free": false,
+      "effort_hours": 24,
+      "difficulty": "Hard",
+      "code_confirmed_on_page": true,
+      "summary": "This three‐day, role‐specific course is intended for participants interested in developing skills and experience using Snowflake AI Data Cloud for data science workloads. The participant will gain exposure to the rich features of Snowflake, diverse machine learning datasets, relevant and popular open source ML frameworks and libraries, and model deployment practices that will provide practical skills applicable to data science jobs. This course consists of lectures, demos, labs, and discussions. Enroll now Review the Course Datasheet to learn about: • Overview of Topic • Course Objectives • Wh",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/ILT-DS/",
+        "sha256": "8ced794cbf278e98fedb6edb7879676214361a964049c5432e91ef3bd4913b15",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "ILT-FUND",
+      "title": "Snowflake Fundamentals 4-Day",
+      "url": "https://learn.snowflake.com/en/courses/ILT-FUND/",
+      "delivery": "instructor-led",
+      "free": false,
+      "effort_hours": 32,
+      "difficulty": "Rigorous",
+      "code_confirmed_on_page": true,
+      "summary": "This four‐day course covers the core concepts, design considerations, and Snowflake recommended best practices intended for critical stakeholders who will be working on the Snowflake AI Data Cloud. The course consists of lectures, demos, and labs covering a wide range of essential topics. Enroll now Review the Course Datasheet to learn about: • Overview of Topic • Course Objectives • Who Should Attend • Prerequisites Other languages: • Datasheet (日本語版) • 교육 과정 안내서 • 课程数据表 Setup Requirements Learners will need... • to bring a laptop • a Snowflake compatible browser (see options HERE ) Please re",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/ILT-FUND/",
+        "sha256": "bf4c02343b3070b167adc5605e74ddd41fe8ea439f11af67e4b8053c12968a7f",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "ILT-GENAI",
+      "title": "Snowflake GenAI Training",
+      "url": "https://learn.snowflake.com/en/courses/ILT-GENAI/",
+      "delivery": "instructor-led",
+      "free": false,
+      "effort_hours": 16,
+      "difficulty": "Moderate",
+      "code_confirmed_on_page": true,
+      "summary": "In this two-day course, participants will learn how to seamlessly integrate cutting-edge AI capabilities into their daily work, even if they’re not data scientists or Machine Learning engineers. They will extract insights at scale, interact with applications using natural language, drive coding productivity, and produce new content. Participants will also learn about empowering business users to make faster, data-driven decisions while enabling data teams and developers to build and deploy specialized, governed AI agents rapidly. Participants will walk away with experience using these capabili",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/ILT-GENAI/",
+        "sha256": "0db5d106bf0919f292299b9d9c576488a7fe784b286147735a914e545b4a737d",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "ILT-NAF",
+      "title": "Snowflake Native App Framework Training",
+      "url": "https://learn.snowflake.com/en/courses/ILT-NAF/",
+      "delivery": "instructor-led",
+      "free": false,
+      "effort_hours": 8,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "In this one-day course, learners explore the Snowflake Native App Framework and learn essential skills for creating and publishing applications in the Snowflake App Marketplace. This course takes learners through the different phases of the application development lifecycle to illustrate features, configuration, and Snowflake best practices when using the Snowflake Native App Framework. Enroll now Review the Course Datasheet to learn about: • Overview of Topic • Course Objectives • Who Should Attend • Prerequisites Setup Requirements Learners will need... • to bring a laptop • a Snowflake comp",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/ILT-NAF/",
+        "sha256": "3ed6567231ffd934d34e82d652a16ed7e078b29ac0b5d7a771b7f29e71647468",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "ILT-NEW-FEAT",
+      "title": "Snowflake New Features Training",
+      "url": "https://learn.snowflake.com/en/courses/ILT-NEW-FEAT/",
+      "delivery": "instructor-led",
+      "free": false,
+      "effort_hours": 8,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "As an experienced Snowflake professional, build on your existing Snowflake skills! Engage in a full day of focused time to level up on numerous new features released in the past 12 months. In this fast‐paced workshop, you will expand your Snowflake palette and broaden your working knowledge of the platform. With lectures, demos, and labs designed to give you practical, working knowledge, here’s your chance to immerse yourself in features introduced to the Snowflake AI Data Cloud over the past year. Enroll now Review the Course Datasheet to learn about: • Overview of Topic • Course Objectives •",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/ILT-NEW-FEAT/",
+        "sha256": "6a159121c1a28e2d350dd378e5c71e29524bd59a80ce2f5776c5e50f919e565f",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "ILT-PDE",
+      "title": "Snowflake Python Data Engineering Training",
+      "url": "https://learn.snowflake.com/en/courses/ILT-PDE/",
+      "delivery": "instructor-led",
+      "free": false,
+      "effort_hours": 24,
+      "difficulty": "Hard",
+      "code_confirmed_on_page": true,
+      "summary": "This three‐day course is designed for professionals new to Snowflake. It introduces the fundamental concepts of the Snowflake AI Data Cloud and gradually builds toward implementing data engineering workflows using Python. You begin with the basics—learning how Snowflake works, its architecture, and core features—before progressing to experiential activities with the Snowflake Python API and Snowpark. The course blends instructor‐led lectures, demonstrations, interactive labs, and real‐world discussions to ensure a practical and accessible learning experience. Enroll now Review the Course Datas",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/ILT-PDE/",
+        "sha256": "aa059c160f57b9a5e96afc971eedef682e793c209977ed7fb293a1b094c1b2d4",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "ILT-PERF",
+      "title": "Snowflake Performance Automation and Tuning 3-Day Training",
+      "url": "https://learn.snowflake.com/en/courses/ILT-PERF/",
+      "delivery": "instructor-led",
+      "free": false,
+      "effort_hours": 24,
+      "difficulty": "Hard",
+      "code_confirmed_on_page": true,
+      "summary": "This three‐day accelerated course presents key performance capabilities, Snowflake‐recommended best practices, and tuning techniques to help participants use the Snowflake AI Data Cloud to develop diverse, high‐performance workloads. The course illustrates Snowflake‐recommended performance design best practices and how to identify pitfalls so participants can apply the methodology and features to their varied workloads. The course is delivered on the latest version of the Snowflake AI Data Cloud, including new performance features and emerging features in public preview. This course consists o",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/ILT-PERF/",
+        "sha256": "71ee4d1981e9b5973bd2d227fd6b66f63d66b78287b2931c8e9fc94bb6595ca6",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "ILT-SCS",
+      "title": "Snowflake Snowpark Container Services Training",
+      "url": "https://learn.snowflake.com/en/courses/ILT-SCS/",
+      "delivery": "instructor-led",
+      "free": false,
+      "effort_hours": 8,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "In this one‐day course, learners explore Snowpark Container Services and learn about running container‐based workloads in Snowflake. This course outlines Snowflake‐recommended best practices, and learners will walk away with experience building their own container‐based Snowflake assets within the Snowflake training environment. Enroll now Review the Course Datasheet to learn about: • Overview of Topic • Course Objectives • Who Should Attend • Prerequisites Setup Requirements Learners will need... • to bring a laptop • a Snowflake compatible browser (see options HERE ) Please review our Terms ",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/ILT-SCS/",
+        "sha256": "33ffb0dc58f1db2af2551df5b93efe047099f92fd91b98644ad8e0573cfb60c2",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "ILT-SNWPRK",
+      "title": "Snowflake Snowpark DataFrame Programming Training",
+      "url": "https://learn.snowflake.com/en/courses/ILT-SNWPRK/",
+      "delivery": "instructor-led",
+      "free": false,
+      "effort_hours": 8,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "This one‐day course covers key Snowpark concepts, features, and programming constructs. It is intended for practitioners who will be building DataFrame data solutions in Snowflake. The course consists of lectures, demos, labs, and discussions. Enroll now Review the Course Datasheet to learn about: • Overview of Topic • Couse Objectives • Who Should Attend • Prerequisites Setup Requirements Learners will need... • to bring a laptop • a Snowflake compatible browser (see options HERE ) Please review our Terms and Conditions for more information on our rescheduling and cancellation policy. Private",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/ILT-SNWPRK/",
+        "sha256": "109d827efb65f3e92efe57be1f8d1a7666202f66f0ce49fe6bfbc2ff4ee9a0de",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "ILT-SPAD",
+      "title": "Snowflake Snowpark Application Developer Training",
+      "url": "https://learn.snowflake.com/en/courses/ILT-SPAD/",
+      "delivery": "instructor-led",
+      "free": false,
+      "effort_hours": 8,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "This one‐day course covers key Snowpark features for developing applications in Snowflake and is intended for practitioners who will be building Snowpark application solutions in Snowflake. The emphasis of this course is on a variety of application developer capabilities rather than core programming skills. The course consists of lectures, demonstrations, labs, and discussions. Enroll now Review the Course Datasheet to learn about: • Overview of Topic • Course Objectives • Who Should Attend • Prerequisites Setup Requirements Learners will need... • to bring a laptop • a Snowflake compatible br",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/ILT-SPAD/",
+        "sha256": "55668422b58d79e258b579787c7799fa361ddfdfd314e720c89e34b903e77b9b",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "ILT-SPT",
+      "title": "Snowflake Platform Training",
+      "url": "https://learn.snowflake.com/en/courses/ILT-SPT/",
+      "delivery": "instructor-led",
+      "free": true,
+      "effort_hours": 4,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "“Snowflake Platform Training” is a live, step-by-step training seminar on the AI Data Cloud led by Snowflake’s expert instructors. They will explain the Snowflake AI Data Cloud architecture, while interactive labs provide guided experience in unifying, integrating, and sharing previously siloed data with virtually unlimited scalability and concurrency. You will follow the training with access to a curated Snowflake account and have the opportunity to get your questions answered by the instructors. Enroll now IMPORTANT UPDATE: The Snowflake University Platform Assessment and Badge is available ",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/ILT-SPT/",
+        "sha256": "727faec24bddef083d23848e79629161d1e928dba659f3b44aa03b8dcedd6e96",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "ILT-SS",
+      "title": "Snowflake Security Training",
+      "url": "https://learn.snowflake.com/en/courses/ILT-SS/",
+      "delivery": "instructor-led",
+      "free": false,
+      "effort_hours": 16,
+      "difficulty": "Moderate",
+      "code_confirmed_on_page": true,
+      "summary": "Snowflake Security is a two‐day, hands‐on, instructor‐led course that teaches you how to design, implement, and operate a secure Snowflake environment at scale. Through lectures, guided demos, and practical labs, you’ll build a defense‐in‐depth approach across identity, access, and monitoring, using native Snowflake capabilities and recommended best practices. Enroll now Review the Course Datasheet to learn about: • Overview of Topic • Course Objectives • Who Should Attend • Prerequisites Setup Requirements Learners will need... • to bring a laptop • a Snowflake compatible browser (see options",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/ILT-SS/",
+        "sha256": "3b2e166c7b9862844af5a8a158a28d96b391566fe720c6e806de691135399d35",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-COCOESS",
+      "title": "CoCo Essentials",
+      "url": "https://learn.snowflake.com/en/courses/OD-COCOESS/",
+      "delivery": "on-demand",
+      "free": true,
+      "effort_hours": 4,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "In this course, you will discover how Snowflake CoCo, Snowflake's AI-driven intelligent agent, can revolutionize the way you explore data, write queries, and build out your data infrastructure. In the accompanying hands-on lab exercises, you will use CoCo to gain insights into your data, understand and fix complex code, and create data pipelines and applications – all without writing a single line of code. By the end, you'll be ready to harness Snowflake CoCo to drive productivity and insight in your own Snowflake environment. Enroll now Overview of Topic This course gives you an overview of S",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-COCOESS/",
+        "sha256": "9cb26f702de787da8652a1a7d254381b95354e36c33a59954b16545a1ff9efa0",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-COREPREP",
+      "title": "SnowPro Core Certification Prep Course",
+      "url": "https://learn.snowflake.com/en/courses/OD-COREPREP/",
+      "delivery": "on-demand",
+      "free": false,
+      "effort_hours": 4,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "The Snowflake SnowPro® Core Exam Preparation course is an on-demand review. It helps candidates prepare to take Snowflake’s foundational industry professional certification, the SnowPro® Core Certification. Designed to supplement your past training and experience, this self-paced course is a focused path through exam objectives and topics. It consists of relevant resource links for each topic within each exam objective, selected video clips, knowledge check questions, and additional study resources. The cost of this course does not cover the cost/terms related to the certification process itse",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-COREPREP/",
+        "sha256": "e8c086e0a40fc197f85314c65c108d88e87fc0df05b003fd7661b3325fcd675e",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-ESS-CMCW",
+      "title": "Collaboration, Marketplace & Cost Estimation Workshop (Badge 2)",
+      "url": "https://learn.snowflake.com/en/courses/OD-ESS-CMCW/",
+      "delivery": "on-demand",
+      "free": true,
+      "effort_hours": 6,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "This workshop is the second workshop in the Hands-On Badge Series. In this course, you deep dive into Snowflake's revolutionary collaboration technologies including the Marketplace and direct share listings. Start by exploring the inbound shares that come with every trial account. Understand how shared and local data can be used together. Create a listing to share with another Snowflake account, and accept a listing shared with your Trial. Shop for listings on the Snowflake Marketplace, add a free data set from WeatherSource and combine that data with local data to generate new insights. Under",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-ESS-CMCW/",
+        "sha256": "fff42cbe104f8336879b2c4c49e54a87babf0c720e2395e3cd5e881d73ade6db",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-ESS-DABW",
+      "title": "Data Application Builders Workshop (Badge 3)",
+      "url": "https://learn.snowflake.com/en/courses/OD-ESS-DABW/",
+      "delivery": "on-demand",
+      "free": true,
+      "effort_hours": 6,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "In this course, you'll learn to build end-user applications powered by Snowflake's backend capabilities. Master essential app development tools including Streamlit, Python, GitHub, and REST APIs, with no prior coding experience required. Follow along through an engaging journey of app development, from basic Streamlit applications to advanced data-driven interfaces. Work with Internal Named Stages, build increasingly complex apps, and create a capstone project that brings together all your new skills. Experience hands-on learning with immediate feedback from DORA, our automated grading system,",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-ESS-DABW/",
+        "sha256": "f5b2cb19b17fcfef397e84cafd80feadb36335f76a877d211856b3d3d86db904",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-ESS-DLKW",
+      "title": "Data Lake Workshop (Badge 4)",
+      "url": "https://learn.snowflake.com/en/courses/OD-ESS-DLKW/",
+      "delivery": "on-demand",
+      "free": true,
+      "effort_hours": 6,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "This workshop is the fourth workshop in the Hands-On Badge Series. In this course, you explore Snowflake's powerful data lake capabilities and learn to work with data beyond traditional loaded tables. Master the handling of non-loaded data, unstructured data, and GeoSpatial data formats. Get hands-on experience with Parquet and GeoJSON files, work with image data, and create custom functions. Join Zena and Mel as they discover how to leverage Snowflake's tools for accessing and analyzing diverse data types. Learn to execute GeoSpatial functions and understand the exciting possibilities of upco",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-ESS-DLKW/",
+        "sha256": "0e676a2770d74102a0858696f9df29366c43a416a19eaf70d1f86badc6f5732a",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-ESS-DNGW",
+      "title": "Data Engineering Workshop (Badge 5)",
+      "url": "https://learn.snowflake.com/en/courses/OD-ESS-DNGW/",
+      "delivery": "on-demand",
+      "free": true,
+      "effort_hours": 6,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "This workshop is the fifth workshop in the Hands-On Badge Series. In this course, you'll dive deep into the role of Data Engineers in modern data-driven organizations. Master essential data engineering concepts including date and time data types, tasks, pipes, and merge statements. Follow along with Kishore and Agnieszka as they pursue their tech dreams, learning to set up data pipelines and automate data workflows. Get hands-on experience with real-world data engineering scenarios while building practical skills that showcase the power of Snowflake's data engineering capabilities. Enroll now ",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-ESS-DNGW/",
+        "sha256": "64279742eff637b3a25fcb9c66332c0eaf57040a31ab89107c1ba2daa46795ba",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-ESS-DSCW",
+      "title": "Data Science Workshop (Badge 6)",
+      "url": "https://learn.snowflake.com/en/courses/OD-ESS-DSCW/",
+      "delivery": "on-demand",
+      "free": true,
+      "effort_hours": 6,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "Our Data Science Workshop (DSCW) introduces the exciting world of Artificial Intelligence and Machine Learning within Snowflake. Learners get hands-on experience with Cortex Playground, Cortex Analyst, various Large Language Models (LLMs), prompt engineering, forecasting, classification, and other advanced analytics features. You'll master the practical application of these AI/ML techniques to derive meaningful insights from your data. This highly interactive workshop features hands-on lab work, automated DORA checks, and scenario-based learning in a fast-paced, informative style. Enroll now C",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-ESS-DSCW/",
+        "sha256": "b70e989968397290b92ae63a610ca43faf7370191165a12e1f795a64e4bdef70",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-ESS-DWW",
+      "title": "Data Warehousing Workshop (Badge 1)",
+      "url": "https://learn.snowflake.com/en/courses/OD-ESS-DWW/",
+      "delivery": "on-demand",
+      "free": true,
+      "effort_hours": 6,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "This workshop is the first workshop in the Hands-On Badge Series. In this course, you'll start your Snowflake journey by mastering fundamental database concepts. Learn about cloud-based databases, account setup, and security basics. Get hands-on experience creating databases, loading data using various methods including SQL and COPY INTO, and working with semi-structured data formats like JSON and XML. Practice essential SQL skills as you follow along with Tsai Yang and her Uncle Yer, who demonstrate how intuitive Snowflake can be, even for complete beginners. No prerequisites required - just ",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-ESS-DWW/",
+        "sha256": "2f6006b2a78d7b5094e9934d481d622086b22c18648d0a86c237ada33c8b8fb6",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-FINOPS",
+      "title": "FinOps for Snowflake",
+      "url": "https://learn.snowflake.com/en/courses/OD-FINOPS/",
+      "delivery": "on-demand",
+      "free": true,
+      "effort_hours": 1.5,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "The FinOps for Snowflake on-demand course provides participants with a high-level overview of the FinOps framework within Snowflake. The course details which Snowflake features support FinOps practices, enhancing their ability to manage and optimize cloud financial operations effectively. Participants will also gain foundational insights into aligning Snowflake usage and costs with the FinOps framework, preparing them to explore more advanced topics in the future. Enroll now Overview of Topic The course covers key features and basic best practices for implementing FinOps within Snowflake. It h",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-FINOPS/",
+        "sha256": "f1837f4a82819d12079ddd75abf8b98cd7ed023ebd55542bce594fbb45041d70",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-FOUND",
+      "title": "Snowflake Foundations On-Demand Training",
+      "url": "https://learn.snowflake.com/en/courses/OD-FOUND/",
+      "delivery": "on-demand",
+      "free": false,
+      "effort_hours": 5,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "This Snowflake on-demand course covers the foundational concepts, design considerations, and Snowflake best practices intended for stakeholders who will be working on the Snowflake Data Cloud. This course is a pre-requisite for the role-based courses Administering Snowflake, Snowflake Data Engineering, or Snowflake Data Science. Enroll now Review the Course Datasheet to learn about: • Overview of Topic • Course Objectives • Who Should Attend • Prerequisites Course Enrollment Instructions • For assistance signing into Snowflake Community: Getting Access to Snowflake University. Course Access Te",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-FOUND/",
+        "sha256": "7e66202eb88355878ba58a6929c29f0bc78de5b32bd982e315f50af44fe2e6dc",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-LVLUP-101",
+      "title": "Level Up: First Concepts",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-101/",
+      "delivery": "on-demand",
+      "free": true,
+      "effort_hours": 0.5,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "The Level Up—First Concepts module introduces Snowflake through three key sections. It begins with an overview of Snowflake's founders, highlighting their visionary contributions. Then, it delves into the platform's five-layer architecture, offering a foundational understanding of its design. The final section explores Snowflake's AI Data Cloud Platform, emphasizing its global reach, versatility, and ability to enable seamless data collaboration for businesses. Enroll now This course is part of our Level Up: First Concepts Track for the Level Up Series. Explore the different learning tracks be",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-101/",
+        "sha256": "2ada95ffd40afde2a52527cab3239e8b50526ca8581dbf9ada89403c19e42c1b",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-LVLUP-102",
+      "title": "Level Up: Snowflake Key Concepts and Architecture",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-102/",
+      "delivery": "on-demand",
+      "free": true,
+      "effort_hours": 0.5,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "The Level Up—Snowflake Key Concepts and Architecture explores the distinct architecture of Snowflake, compared with typical data warehousing solutions, and explore its unique features that ensure both scalable and efficient data storage and processing. Enroll now This course is part of our Level Up: First Concepts Track for the Level Up Series. Explore the different learning tracks below and take the next step in your Snowflake journey! Level Up: First Concepts Series The Level Up: First Concepts Series covers Snowflake's origins, architecture, data loading, resource management, ecosystem, acc",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-102/",
+        "sha256": "cbfe3cc29a8256d24ede259caf77ef4bbc55da990ceea1659b661e9a95b375f9",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-LVLUP-103",
+      "title": "Level Up: Snowflake Ecosystem",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-103/",
+      "delivery": "on-demand",
+      "free": true,
+      "effort_hours": 0.5,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "The Level Up—Snowflake Ecosystem introduces a variety of partner solutions, tools, and technologies that facilitate seamless connections with Snowflake. It includes certified cloud and on-premises solutions, third-party tools, and Snowflake's own clients such as SnowSQL, Python connectors, and drivers for Node.js, JDBC, and ODBC. The ecosystem supports data integration, business intelligence, machine learning, security, and more. Snowflake also offers a network of Solution Partners for custom integrations. Enroll now This course is part of our Level Up: First Concepts Track for the Level Up Se",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-103/",
+        "sha256": "7c8d9048b68f19ec71213a415d888e1c5e0df8cee7b214122d06f2e0cac16d77",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-LVLUP-104",
+      "title": "Level Up: Accounts and Assurances",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-104/",
+      "delivery": "on-demand",
+      "free": true,
+      "effort_hours": 0.5,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "The Level Up—Account and Assurances focuses on the process for signing up for a Snowflake account—Cloud Platform Provider, Geographic Region, and Snowflake Edition—and what to consider when making your choices. Enroll now This course is part of our Level Up: First Concepts Track for the Level Up Series. Explore the different learning tracks below and take the next step in your Snowflake journey! Level Up: First Concepts Series The Level Up: First Concepts Series covers Snowflake's origins, architecture, data loading, resource management, ecosystem, account setup, object hierarchy, and backup. ",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-104/",
+        "sha256": "5c04816730e1c6fb833a1b05cc159297f49675e8749f9379f74d4fcb04378bd6",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-LVLUP-105",
+      "title": "Level Up: Object Hierarchy",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-105/",
+      "delivery": "on-demand",
+      "free": true,
+      "effort_hours": 0.5,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "The Level Up—Object Hierarchy focuses on the Snowflake's data structure, from top to bottom, from organizations to accounts, databases, schemas, and objects. Enroll now This course is part of our Level Up: First Concepts Track for the Level Up Series. Explore the different learning tracks below and take the next step in your Snowflake journey! Level Up: First Concepts Series The Level Up: First Concepts Series covers Snowflake's origins, architecture, data loading, resource management, ecosystem, account setup, object hierarchy, and backup. It comprises nine bite-sized elearning modules and co",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-105/",
+        "sha256": "d0155031b77cc838cd304297f407b8d82d950713ee6b28bb3f543928a5b789e3",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-LVLUP-106",
+      "title": "Level Up: Data Loading",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-106/",
+      "delivery": "on-demand",
+      "free": true,
+      "effort_hours": 0.5,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "The Level Up—Data Loading module focuses on options for high-performing data loads that take advantage of the unique Snowflake architecture. You will learn about the different options for loading data into Snowflake AI Data Cloud, such as Snowsight, SQL and SnowSQL, Snowpipe, and third-party ETL tools. Enroll now This course is part of our Level Up: First Concepts Track for the Level Up Series. Explore the different learning tracks below and take the next step in your Snowflake journey! Level Up: First Concepts Series The Level Up: First Concepts Series covers Snowflake's origins, architecture",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-106/",
+        "sha256": "3fce2364d1ea024461c5fb263a4dc8670c5c20ed2e1e75ce575c68967f90d30a",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-LVLUP-107",
+      "title": "Level Up: Resource Monitors",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-107/",
+      "delivery": "on-demand",
+      "free": true,
+      "effort_hours": 0.5,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "The Level Up—Resource Monitors focuses on the tools provided by Snowflake for overseeing virtual warehouse consumption, manage costs, and avoid unexpected credit usage. Enroll now This course is part of our Level Up: First Concepts Track for the Level Up Series. Explore the different learning tracks below and take the next step in your Snowflake journey! Level Up: First Concepts Series The Level Up: First Concepts Series covers Snowflake's origins, architecture, data loading, resource management, ecosystem, account setup, object hierarchy, and backup. It comprises nine bite-sized elearning mod",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-107/",
+        "sha256": "424bfb054db1882dd82ac7cae4bdbf15e368a7287be943ae155823c346946f3d",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-LVLUP-108",
+      "title": "Level Up: Backup and Recovery",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-108/",
+      "delivery": "on-demand",
+      "free": true,
+      "effort_hours": 0.5,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "The Level Up—Backup and Recovery explains Snowflake's backup and recovery features, which keep your data safe and easily accessible when things go wrong and help you be prepared for unforeseeable events and emergencies. Enroll now This course is part of our Level Up: First Concepts Track for the Level Up Series. Explore the different learning tracks below and take the next step in your Snowflake journey! Level Up: First Concepts Series The Level Up: First Concepts Series covers Snowflake's origins, architecture, data loading, resource management, ecosystem, account setup, object hierarchy, and",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-108/",
+        "sha256": "4e82eef68e38321b3b2777d83ab96e5435174ddb577a52212b65e34adee73f4e",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-LVLUP-109",
+      "title": "Level Up: Final Exam",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-109/",
+      "delivery": "on-demand",
+      "free": true,
+      "effort_hours": 0.5,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "The Level Up—Final Exam is a comprehensive test that covers all the topics encountered throughout the modules in the Level Up—First Concepts Series. Its purpose is to give you an additional opportunity to assess your knowledge. Enroll now This course is part of our Level Up: First Concepts Track for the Level Up Series. Explore the different learning tracks below and take the next step in your Snowflake journey! Level Up: First Concepts Series The Level Up: First Concepts Series covers Snowflake's origins, architecture, data loading, resource management, ecosystem, account setup, object hierar",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-109/",
+        "sha256": "960ca5cc8735b16af5027f7d15a8426a1caac9b1e8c65d3fd6266b71d38dc9a9",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-LVLUP-110",
+      "title": "Level Up: Snowflake Workspaces",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-110/",
+      "delivery": "on-demand",
+      "free": true,
+      "effort_hours": 0.5,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "Level Up—Snowflake Workspaces are designed to enhance productivity and streamline project management. This microlearning new format is perfect for busy individuals eager to grasp Snowflake's latest innovations in less than 10 minutes. Enroll now This course is part of our Level Up: First Concepts Track for the Level Up Series. Explore the different learning tracks below and take the next step in your Snowflake journey! Level Up: First Concepts Series The Level Up: First Concepts Series covers Snowflake's origins, architecture, data loading, resource management, ecosystem, account setup, object",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-110/",
+        "sha256": "ab5b815912c28a58497e4a38596984e9ff01c4d4eda2fb08c4ded1b0691dd429",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-LVLUP-201",
+      "title": "Level Up: Query History and Caching",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-201/",
+      "delivery": "on-demand",
+      "free": true,
+      "effort_hours": 0.5,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "The Level Up—Query History and Caching explores the Query History area in Snowsight, highlighting available information and useful features, and also introduces Snowflake’s caching mechanisms, which can help speed up queries and reduce virtual warehouse costs by avoiding redundant computation. Enroll now This course is part of our Level Up: Performance Series Track for the Level Up Series. Explore the different learning tracks below and take the next step in your Snowflake journey! Level Up: First Concepts Series The Level Up: First Concepts Series covers Snowflake's origins, architecture, dat",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-201/",
+        "sha256": "0d083c1ef951cbadcd4ca79885d5493688f78919cb31621b9eede2c37bc3cb69",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-LVLUP-202",
+      "title": "Level Up: Context in Snowflake",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-202/",
+      "delivery": "on-demand",
+      "free": true,
+      "effort_hours": 0.5,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "The Level Up—Context in Snowflake introduces commands and functions related to context. You’ll go beyond the four context parameters you’re accustomed to encountering associated with each worksheet in Snowsight. You’ll learn about additional context functions and parameters and explore them further. Enroll now This course is part of our Level Up: Performance Series Track for the Level Up Series. Explore the different learning tracks below and take the next step in your Snowflake journey! Level Up: First Concepts Series The Level Up: First Concepts Series covers Snowflake's origins, architectur",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-202/",
+        "sha256": "b9ef45fae1551673da43c7ae25de2e896d512f4210ed742aa4aa1ad6590da400",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-LVLUP-301",
+      "title": "Level Up: Getting Started with Snowpark for Python",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-301/",
+      "delivery": "on-demand",
+      "free": true,
+      "effort_hours": 0.5,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "The Level Up—Getting Started with Snowpark for Python is an introductory course that explains Snowpark's functions and capabilities. It also references how to choose and install your development environment. Enroll now This course is part of our Level Up: Snowpark and Python Essentials Track for the Level Up Series. Explore the different learning tracks below and take the next step in your Snowflake journey! Level Up: First Concepts Series The Level Up: First Concepts Series covers Snowflake's origins, architecture, data loading, resource management, ecosystem, account setup, object hierarchy,",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-301/",
+        "sha256": "a623270f02f286102a9e68c6bca7e4726fd128184e31f1395406956ef9ebeed7",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-LVLUP-303",
+      "title": "Level Up: DataFrames in Snowpark",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-303/",
+      "delivery": "on-demand",
+      "free": true,
+      "effort_hours": 0.5,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "The Level Up—DataFrames in Snowpark module focuses on the essentials and practical applications of DataFrames. It explores their structure and components and describes the process of creating DataFrames from Snowflake tables and performing basic operations. Enroll now This course is part of our Level Up: Snowpark and Python Essentials Track for the Level Up Series. Explore the different learning tracks below and take the next step in your Snowflake journey! Level Up: First Concepts Series The Level Up: First Concepts Series covers Snowflake's origins, architecture, data loading, resource manag",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-303/",
+        "sha256": "fd07c0b154d7c4305e90a19bf851c6bcb8c7e0a7851742d5388e87e93bfa8e29",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-LVLUP-304",
+      "title": "Level Up: Connect to Snowflake with Snowpark",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-304/",
+      "delivery": "on-demand",
+      "free": true,
+      "effort_hours": 0.5,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "The Level Up—Connect to Snowflake with Snowpark demonstrates how to connect to Snowpark, import necessary libraries, and initiate a session for connection. Enroll now This course is part of our Level Up: Snowpark and Python Essentials Track for the Level Up Series. Explore the different learning tracks below and take the next step in your Snowflake journey! Level Up: First Concepts Series The Level Up: First Concepts Series covers Snowflake's origins, architecture, data loading, resource management, ecosystem, account setup, object hierarchy, and backup. It comprises nine bite-sized elearning ",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-304/",
+        "sha256": "f24d35a1692de346510faaf8ce07df81e1557d39d6ab03494f4b0f0fe354f666",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-LVLUP-305",
+      "title": "Level Up: Snowpark in Python Worksheets",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-305/",
+      "delivery": "on-demand",
+      "free": true,
+      "effort_hours": 0.5,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "The Level Up—Snowpark in Python Worksheets course explores Python worksheets within Snowflake. You will learn how to configure them, leverage built-in packages and multifaceted capabilities from data pipelines to ML insights, and learn about sharing and co-editing Python Worksheets for team-based development. The course also compares Python worksheets and Snowflake Notebooks and its applications. Enroll now This course is part of our Level Up: Snowpark and Python Essentials Track for the Level Up Series. Explore the different learning tracks below and take the next step in your Snowflake journ",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-305/",
+        "sha256": "db28b0a579f4caec04e651f42efc65553f6522991f0df9a8b0725dd04c43b4fb",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-LVLUP-307",
+      "title": "Level Up: Python User-Defined Functions in Snowpark",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-307/",
+      "delivery": "on-demand",
+      "free": true,
+      "effort_hours": 0.5,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "The Level Up—Python User-Defined Functions in Snowpark module introduces the concept and application of different types of Python UDFs in data processing and how they simplify and enhance data manipulation tasks. Enroll now This course is part of our Level Up: Snowpark and Python Essentials Track for the Level Up Series. Explore the different learning tracks below and take the next step in your Snowflake journey! Level Up: First Concepts Series The Level Up: First Concepts Series covers Snowflake's origins, architecture, data loading, resource management, ecosystem, account setup, object hiera",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-307/",
+        "sha256": "a0b7546dcd4a322a20ec07295cde2aba14a0a2504641c58641737e528963e4b9",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-LVLUP-308",
+      "title": "Level Up: Native App Development for Beginners",
+      "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-308/",
+      "delivery": "on-demand",
+      "free": true,
+      "effort_hours": 0.5,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "The Level Up—Native App Development for Beginners module will guide you through the process of creating a Snowflake Native application, illustrating through videos the three phases of the process: development, integration and deployment, and testing and implementation. Enroll now This course is part of our Level Up: Snowpark and Python Essentials Track for the Level Up Series. Explore the different learning tracks below and take the next step in your Snowflake journey! Level Up: First Concepts Series The Level Up: First Concepts Series covers Snowflake's origins, architecture, data loading, re",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-LVLUP-308/",
+        "sha256": "2405563706ae24c23be008815db7595ac3acc14dcc54addea5cabd298bc65590",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-MFA",
+      "title": "Snowflake Multi-Factor Authentication Essentials (MFA)",
+      "url": "https://learn.snowflake.com/en/courses/OD-MFA/",
+      "delivery": "on-demand",
+      "free": true,
+      "effort_hours": 0.5,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "This course will help you understand and adapt to Snowflake's planned move to default Multi-Factor Authentication (MFA). We'll cover why this shift is important for security, introduce new tools like the Trust Center, and show you how to use MFA policies and tools effectively. You'll also learn how to handle common issues and find resources to support you through the transition and beyond. Enroll now Overview of Course This course will help you understand and adapt to Snowflake's planned move to default Multi-Factor Authentication (MFA). We'll cover why this shift is important for security, in",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-MFA/",
+        "sha256": "15164e04b7164ad25a76e0a8ef1c60b0509e701a8ff29ea446cf614cd3a2a5cf",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-SC-AI",
+      "title": "SnowConvert AI Essentials",
+      "url": "https://learn.snowflake.com/en/courses/OD-SC-AI/",
+      "delivery": "on-demand",
+      "free": true,
+      "effort_hours": 2,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "This course provides participants with the core knowledge to understand how SnowConvert AI fits into the migration process and the skills to prepare, assess, and execute a code conversion with SnowConvert AI to accelerate their journey to Snowflake. Enroll now Course Overview This course provides participants with the core knowledge to understand how SnowConvert AI fits into the overall migration process. You will also discover how to extract, prepare, assess, convert, migrate, validate, and deploy code, leveraging Snowflake AI capabilities to accelerate your journey to Snowflake. Modules • In",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-SC-AI/",
+        "sha256": "7f4bcee4f73dcf41f54d3e0d20d9fd15ac724b38591c01598a117a99975786ea",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-SC-SMA",
+      "title": "Spark to Snowpark with the SMA",
+      "url": "https://learn.snowflake.com/en/courses/OD-SC-SMA/",
+      "delivery": "on-demand",
+      "free": true,
+      "effort_hours": 0.75,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "This on-demand Spark to Snowpark with the SMA course provides a solid foundation for using the Snowpark Migration Accelerator to migrate your data to Snowflake. You'll learn to plan your migration strategy meticulously, considering factors like source code volume, dependencies, resources, complexity, and desired outcomes. Also, you'll explore the SMA tool and how it can help you speed up your organization's migration process by assessing and converting your input code. Enroll now Course Objectives • Describe SMA's functions, supported file types, and limitations. • Identify the four stages of ",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-SC-SMA/",
+        "sha256": "ea63862296e3b100463a45f018707cd183fd41702221f930be7f89489395d02f",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-SPT",
+      "title": "Snowflake Platform On-Demand Training",
+      "url": "https://learn.snowflake.com/en/courses/OD-SPT/",
+      "delivery": "on-demand",
+      "free": true,
+      "effort_hours": 4,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "Snowflake Platform training provides an overview of the Snowflake platform. It will explain the Snowflake AI Data Cloud architecture, while interactive labs provide guided experience in unifying, integrating, and sharing previously siloed data with virtually unlimited scalability and concurrency. You will take the training with access to a curated Snowflake account to perform hands‐on labs. Enroll now IMPORTANT INFORMATION: The Snowflake University Platform Assessment and Badge is available for all learners that have completed the Snowflake Platform Training. Overview of Topic Snowflake Platfo",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-SPT/",
+        "sha256": "05bb9af25e0323de0223eb63e78ade42522bd25e192c36b7bd381e7aa7808235",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-SWA",
+      "title": "Snowflake Well Architected On-Demand Training",
+      "url": "https://learn.snowflake.com/en/courses/OD-SWA/",
+      "delivery": "on-demand",
+      "free": false,
+      "effort_hours": 1,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "The Snowflake Well Architected On-Demand Training provides participants with a comprehensive understanding of the Snowflake Well-Architected Framework (WAF) and the knowledge to perform regular reviews, create actionable results, and present them to audiences at all levels in an organization. Participants will learn how to assess the maturity of their Snowflake AI Data Cloud, identify strengths, weaknesses, opportunities, and threats, and define a roadmap for continuous improvement. Enroll now Review the Course Datasheet to learn about: • Overview of Topic • Course Objectives • Who Should Atte",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-SWA/",
+        "sha256": "4d9678642d44bb4dce15744f401f0803ce87fd7078a5f14f27cfbbedb7525d52",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-SXGA",
+      "title": "Snowflake x Gen AI: A Cool Collab",
+      "url": "https://learn.snowflake.com/en/courses/OD-SXGA/",
+      "delivery": "on-demand",
+      "free": true,
+      "effort_hours": 2,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "In this highly-interactive hands-on mini-workshop (or module) you will use an LLM API to generate original text responses. After getting familiar with ChatGPT, and OpenAI Playground, you will move to Snowflake where you'll set up a function that calls the OpenAI LLM API in order to return results directly in Snowflake. Finally, learners will build a simple Streamlit in Snowflake GUI interface so that users can interact with the GenAI LLM from within Snowflake. Enroll now Prior Knowledge & Experience No Experience with AI or ML is required. Some experience with Snowflake IS REQUIRED. If you do ",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-SXGA/",
+        "sha256": "ac2b930750cc2506afc90d719e61906d0a62cf86da79e6a050b5b4ea927f3187",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-SXGA2",
+      "title": "Snowflake X GenAI: LLM Functions",
+      "url": "https://learn.snowflake.com/en/courses/OD-SXGA2/",
+      "delivery": "on-demand",
+      "free": true,
+      "effort_hours": 4,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "This 2-4 hour module gives learners hands-on experience with Snowflake's Large Language Model functions and helps them build a simple Machine Learning model. Learners begin by exploring the TRANSLATE() function with exercises that explore English to Japanese and back again to check translation quality. Next, learners use the SENTIMENT() function and the SUMARIZE() function in simple exercises. After the high-level function introduction, learners build a simple Machine Learning model that processes pdf files of popular songs like \"99 Luftballons\" and \"Flashdance\" (in English AND Swedish)! After",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-SXGA2/",
+        "sha256": "0a555cafe5fb957f370fccef0203f9854a51a93493e89cddc38710f83c9dbd3f",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "code": "OD-SXGA3",
+      "title": "Generative and Agentic AI for Executives",
+      "url": "https://learn.snowflake.com/en/courses/OD-SXGA3/",
+      "delivery": "on-demand",
+      "free": true,
+      "effort_hours": 0.5,
+      "difficulty": "Easy",
+      "code_confirmed_on_page": true,
+      "summary": "This is your 30-minute executive playbook to harness generative AI—and convert strategy into measurable business value. This course equips executives and organizational leaders with the frameworks, strategies, and insights required to lead enterprise adoption of Generative and Agentic AI leveraging the Snowflake AI Data Cloud provides a bridge between high-level business strategy and the practical application of Snowflake's platform, showing leaders how to align data, processes, and technology to achieve measurable AI-driven outcomes. Enroll now Overview of Topic This short, executive-level co",
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/courses/OD-SXGA3/",
+        "sha256": "0c45091bfe5d6add970503fe390d76fa5d5efb949764790dd3bdea0738e6effc",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    }
+  ],
+  "certifications": [
+    {
+      "slug": "snowpro-GenAI",
+      "exam_code": "GES-C01",
+      "title": "SnowPro® Specialty: Gen AI (GES-C01)",
+      "url": "https://learn.snowflake.com/en/certifications/snowpro-GenAI/",
+      "kind": "certification",
+      "language": "en",
+      "tests": [
+        "Define and implement Snowflake Gen AI principles, capabilities, and best practices",
+        "Leverage Snowflake Cortex AI features, LLMs, and offerings to meet customer use cases",
+        "Build open-source models with Snowpark Container Services and Snowflake Model Registry"
+      ],
+      "tests_measured": true,
+      "candidate_profile": "1 or more years of Gen AI experience with Snowflake, in an enterprise environment. In addition, successful candidates may have experience with writing code in Python. Previous data engineering and SQL knowledge is assumed.",
+      "exam_cost_usd": null,
+      "exam_cost_measured": false,
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/certifications/snowpro-GenAI/",
+        "sha256": "92953819bf31e449538f53f3a37ffa2baa02e4eebfc0b307981575f2d1d0890a",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      },
+      "tier": "specialty",
+      "tier_source": "curated:data/sources.yml"
+    },
+    {
+      "slug": "snowpro-GenAI-C02",
+      "exam_code": "GES-C02",
+      "title": "SnowPro® Specialty: Gen AI (GES-C02)",
+      "url": "https://learn.snowflake.com/en/certifications/snowpro-GenAI-C02/",
+      "kind": "certification",
+      "language": "en",
+      "tests": [
+        "Define and implement Snowflake Gen AI principles, capabilities, and best practices",
+        "Use Snowflake Cortex AI features and functions, including LLMs, to meet customer use cases",
+        "Build and fine-tune open-source models with Snowpark Container Services and Snowflake Model Registry",
+        "Use Snowflake document processing functions to build, manage, and optimize document parsing pipelines"
+      ],
+      "tests_measured": true,
+      "candidate_profile": "1 or more years of Gen AI experience with Snowflake, in an enterprise environment. In addition, successful candidates may have proficiency writing code in Python. Previous data engineering and SQL knowledge is assumed.",
+      "exam_cost_usd": null,
+      "exam_cost_measured": false,
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/certifications/snowpro-GenAI-C02/",
+        "sha256": "6e22c06b449948261ee267eb36d1dfc30dd001cdf19bf171aaad945f5100989e",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      },
+      "tier": "specialty",
+      "tier_source": "curated:data/sources.yml"
+    },
+    {
+      "slug": "snowpro-adv-ara-jpn",
+      "exam_code": "ARA-C01",
+      "title": "SnowPro® Advanced: Architect の概要",
+      "url": "https://learn.snowflake.com/en/certifications/snowpro-adv-ara-jpn/",
+      "kind": "certification",
+      "language": "ja",
+      "tests": [],
+      "tests_measured": false,
+      "candidate_profile": null,
+      "exam_cost_usd": 375,
+      "exam_cost_measured": true,
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/certifications/snowpro-adv-ara-jpn/",
+        "sha256": "622abd52988b4141965ac81f9788a3692133dd7da50bcfc7e8f617c76deab377",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      },
+      "tier": "advanced",
+      "tier_source": "curated:data/sources.yml"
+    },
+    {
+      "slug": "snowpro-adv-dea-jpn-C02",
+      "exam_code": "DEA-C02",
+      "title": "SnowPro® Advanced: Data Engineer 認定の概要",
+      "url": "https://learn.snowflake.com/en/certifications/snowpro-adv-dea-jpn-C02/",
+      "kind": "certification",
+      "language": "ja",
+      "tests": [],
+      "tests_measured": false,
+      "candidate_profile": null,
+      "exam_cost_usd": 375,
+      "exam_cost_measured": true,
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/certifications/snowpro-adv-dea-jpn-C02/",
+        "sha256": "2cf12a9d5edb6261fe5de16443f3f5ae171366ab92e46aac2b3b46386626ad51",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      },
+      "tier": "advanced",
+      "tier_source": "curated:data/sources.yml"
+    },
+    {
+      "slug": "snowpro-advanced-administrator-c02",
+      "exam_code": "ADA-C02",
+      "title": "SnowPro® Advanced: Administrator",
+      "url": "https://learn.snowflake.com/en/certifications/snowpro-advanced-administrator-c02/",
+      "kind": "certification",
+      "language": "en",
+      "tests": [
+        "Manage and administer Snowflake accounts, data security, and governance",
+        "Manage and maintain database objects and virtual warehouses",
+        "Perform database monitoring, tuning, and optimization",
+        "Perform data sharing and use the Snowflake Marketplace",
+        "Implement disaster recovery, perform backups, and replicate data"
+      ],
+      "tests_measured": true,
+      "candidate_profile": "2 or more years of hands-on experience with Snowflake as an Administrator in a production environment. In addition, successful candidates may have fluency with ANSI and Snowflake advanced SQL.",
+      "exam_cost_usd": 375,
+      "exam_cost_measured": true,
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/certifications/snowpro-advanced-administrator-c02/",
+        "sha256": "4d3ac7f02c719f5bd2dcc6020c3315427b32b5185cd64853e06d4fb5f005a278",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      },
+      "tier": "advanced",
+      "tier_source": "curated:data/sources.yml"
+    },
+    {
+      "slug": "snowpro-advanced-architect",
+      "exam_code": "ARA-C01",
+      "title": "SnowPro® Advanced: Architect",
+      "url": "https://learn.snowflake.com/en/certifications/snowpro-advanced-architect/",
+      "kind": "certification",
+      "language": "en",
+      "tests": [
+        "Design an end-to-end data flow from source to consumption using the Snowflake Platform",
+        "Design and deploy a data architecture that meets business, security, and compliance requirements",
+        "Select appropriate Snowflake and third-party tools to optimize architecture performance",
+        "Design and deploy a shared data set using the Snowflake Marketplace and Data Exchange"
+      ],
+      "tests_measured": true,
+      "candidate_profile": "2 or more years of hands-on experience with Snowflake as an Architect in a production environment. In addition, successful candidates may have coding experience outside of SQL and DevOps/DataOps design experience.",
+      "exam_cost_usd": 375,
+      "exam_cost_measured": true,
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/certifications/snowpro-advanced-architect/",
+        "sha256": "523bd0a5fedec53fa6f3b83a01f5147599939ad32895af49515261d16ae6915f",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      },
+      "tier": "advanced",
+      "tier_source": "curated:data/sources.yml"
+    },
+    {
+      "slug": "snowpro-advanced-dataanalyst",
+      "exam_code": "DAA-C01",
+      "title": "SnowPro® Advanced: Data Analyst",
+      "url": "https://learn.snowflake.com/en/certifications/snowpro-advanced-dataanalyst/",
+      "kind": "certification",
+      "language": "en",
+      "tests": [
+        "Perform simple data transformations for data analysis",
+        "Build and troubleshoot advanced SQL queries in Snowflake",
+        "Use Snowflake built-in functions and create User-Defined Functions (UDFs)",
+        "Perform descriptive and diagnostic data analyses",
+        "Perform predictive data analysis",
+        "Prepare and present data to meet business requirements"
+      ],
+      "tests_measured": true,
+      "candidate_profile": "1 or more years of hands-on practical experience with Snowflake as a Data Analyst in a production environment. In addition, successful candidates may have fluency with advanced SQL and knowledge of an additional computer language.",
+      "exam_cost_usd": 375,
+      "exam_cost_measured": true,
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/certifications/snowpro-advanced-dataanalyst/",
+        "sha256": "e5ec64fcf481415ab510977d05044937afd630d681316f80a086d59aae895b77",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      },
+      "tier": "advanced",
+      "tier_source": "curated:data/sources.yml"
+    },
+    {
+      "slug": "snowpro-advanced-dataengineer-C02",
+      "exam_code": "DEA-C02",
+      "title": "SnowPro® Advanced: Data Engineer",
+      "url": "https://learn.snowflake.com/en/certifications/snowpro-advanced-dataengineer-C02/",
+      "kind": "certification",
+      "language": "en",
+      "tests": [
+        "Source data from Data Lakes, APIs, and on-premises",
+        "Transform, replicate, and share data across cloud platforms",
+        "Design end-to-end near real-time streams",
+        "Design scalable compute solutions for Data Engineer workloads",
+        "Evaluate performance metrics"
+      ],
+      "tests_measured": true,
+      "candidate_profile": "2 or more years of hands-on experience as a Data Engineer in a production environment.",
+      "exam_cost_usd": 375,
+      "exam_cost_measured": true,
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/certifications/snowpro-advanced-dataengineer-C02/",
+        "sha256": "6f8db00892742ef131342b1731afc4fadf33ebc5cb3f10eaa183157b98e8267c",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      },
+      "tier": "advanced",
+      "tier_source": "curated:data/sources.yml"
+    },
+    {
+      "slug": "snowpro-advanced-datascientistC03",
+      "exam_code": "DSA-C03",
+      "title": "SnowPro® Advanced: Data Scientist",
+      "url": "https://learn.snowflake.com/en/certifications/snowpro-advanced-datascientistC03/",
+      "kind": "certification",
+      "language": "en",
+      "tests": [
+        "Outline data science concepts",
+        "Implement Snowflake data science best practices",
+        "Prepare data and use feature engineering in Snowflake",
+        "Train and use machine learning models",
+        "Use GenAI and LLM capabilities in Snowflake"
+      ],
+      "tests_measured": true,
+      "candidate_profile": "2 or more years of hands-on experience with Snowflake as a Data Scientist in a production environment. In addition, successful candidates may have experience with one or more programming languages (for example, Python, R, SQL, PySpark).",
+      "exam_cost_usd": 375,
+      "exam_cost_measured": true,
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/certifications/snowpro-advanced-datascientistC03/",
+        "sha256": "a718377c58a1b9d2290a5e28396bd3d50924d91e2879d2c1b9bd5d07735fa7d0",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      },
+      "tier": "advanced",
+      "tier_source": "curated:data/sources.yml"
+    },
+    {
+      "slug": "snowpro-advanced-mlopsengineer",
+      "exam_code": "MLA-B01",
+      "title": "SnowPro® Advanced: MLOps Engineer",
+      "url": "https://learn.snowflake.com/en/certifications/snowpro-advanced-mlopsengineer/",
+      "kind": "certification",
+      "language": "en",
+      "tests": [
+        "Operationalize, scale, and automate machine learning workflows within the Snowflake AI Data Cloud",
+        "Architect and manage ML infrastructure, including feature engineering, model training, and deployment pipelines",
+        "Deploy, monitor, and govern ML models across production environments using Snowflake-native capabilities",
+        "Implement CI/CD and pipeline orchestration to automate end-to-end ML lifecycle management",
+        "Apply governance, security, and cost management practices throughout ML workflows"
+      ],
+      "tests_measured": true,
+      "candidate_profile": "2 or more years of experience architecting and operationalizing enterprise-scale ML lifecycles in cloud environments, including 1+ year using Snowflake Data Cloud functionality. Knowledge of general ML engineering concepts and cloud infrastructure is assumed but not tested.",
+      "exam_cost_usd": 375,
+      "exam_cost_measured": true,
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/certifications/snowpro-advanced-mlopsengineer/",
+        "sha256": "39914582e05c3e2624cadb984690462ae8e753dd8fa998183e11c47a6fd4bdad",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      },
+      "tier": "advanced",
+      "tier_source": "curated:data/sources.yml"
+    },
+    {
+      "slug": "snowpro-advanced-securityengineer",
+      "exam_code": "SEA-C01",
+      "title": "SnowPro® Advanced: Security Engineer",
+      "url": "https://learn.snowflake.com/en/certifications/snowpro-advanced-securityengineer/",
+      "kind": "certification",
+      "language": "en",
+      "tests": [
+        "Design and enforce data protection, privacy, and governance across Snowflake",
+        "Implement and manage user identity and access control mechanisms",
+        "Audit and monitor security policies, controls, and regulatory compliance requirements",
+        "Assess threats and risks, and execute robust security incident response protocols",
+        "Leverage Snowflake AI/ML capabilities to enhance security posture"
+      ],
+      "tests_measured": true,
+      "candidate_profile": "2 or more years of hands-on experience managing data governance and data security on a complex Snowflake account. In addition, successful candidates may have 2+ years of general IT cloud security, data governance experience, and basic SQL and Python knowledge.",
+      "exam_cost_usd": 375,
+      "exam_cost_measured": true,
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/certifications/snowpro-advanced-securityengineer/",
+        "sha256": "9da2e124652801a1eb367e75a7a3accdaea32ef09fe9412cbbb97a8c397a3715",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      },
+      "tier": "advanced",
+      "tier_source": "curated:data/sources.yml"
+    },
+    {
+      "slug": "snowpro-core-c03",
+      "exam_code": "COF-C03",
+      "title": "SnowPro® Core Certification",
+      "url": "https://learn.snowflake.com/en/certifications/snowpro-core-c03/",
+      "kind": "certification",
+      "language": "en",
+      "tests": [
+        "Use the Snowflake AI Data Cloud architecture",
+        "Manage Snowflake accounts and virtual warehouses",
+        "Perform data loading, unloading, and transformation",
+        "Use structured, semi-structured, and unstructured data",
+        "Monitor and optimize performance",
+        "Enable data collaboration and protection",
+        "Establish Snowflake connectivity SNOWPRO CORE"
+      ],
+      "tests_measured": true,
+      "candidate_profile": "6 or more months of experience using Snowflake",
+      "exam_cost_usd": 175,
+      "exam_cost_measured": true,
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/certifications/snowpro-core-c03/",
+        "sha256": "b81a9c42ebfda39c856e7ca6aeba017ebe761a1f170e771a0ad24e701906ae4b",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      },
+      "tier": "core",
+      "tier_source": "curated:data/sources.yml"
+    },
+    {
+      "slug": "snowpro-core-esp-c03",
+      "exam_code": "COF-C03",
+      "title": "SnowPro® Core Certificación Español (COF-C03)",
+      "url": "https://learn.snowflake.com/en/certifications/snowpro-core-esp-c03/",
+      "kind": "certification",
+      "language": "es",
+      "tests": [],
+      "tests_measured": false,
+      "candidate_profile": null,
+      "exam_cost_usd": 175,
+      "exam_cost_measured": true,
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/certifications/snowpro-core-esp-c03/",
+        "sha256": "543fc63b6dac33d907225cbcdf02e26aa4c22fe189d812f1a3ffb8cdcdd9c2eb",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      },
+      "tier": "core",
+      "tier_source": "curated:data/sources.yml"
+    },
+    {
+      "slug": "snowpro-core-fra-c03",
+      "exam_code": "COF-C03",
+      "title": "SnowPro® Core Certification Français (COF-C03)",
+      "url": "https://learn.snowflake.com/en/certifications/snowpro-core-fra-c03/",
+      "kind": "certification",
+      "language": "fr",
+      "tests": [],
+      "tests_measured": false,
+      "candidate_profile": null,
+      "exam_cost_usd": 175,
+      "exam_cost_measured": true,
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/certifications/snowpro-core-fra-c03/",
+        "sha256": "a3e58289565d07e81749e724fda89616952fbf8eb530a11d3fef485d136088d5",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      },
+      "tier": "core",
+      "tier_source": "curated:data/sources.yml"
+    },
+    {
+      "slug": "snowpro-core-jpn-C03",
+      "exam_code": "COF-C03",
+      "title": "SnowPro® Core認定の概要 (COF-C03)",
+      "url": "https://learn.snowflake.com/en/certifications/snowpro-core-jpn-C03/",
+      "kind": "certification",
+      "language": "ja",
+      "tests": [],
+      "tests_measured": false,
+      "candidate_profile": null,
+      "exam_cost_usd": 175,
+      "exam_cost_measured": true,
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/certifications/snowpro-core-jpn-C03/",
+        "sha256": "ef7cedbc45d94568e4b65e8e98c6882cc2392be1bda511bf9da6c63606ec2c0d",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      },
+      "tier": "core",
+      "tier_source": "curated:data/sources.yml"
+    },
+    {
+      "slug": "snowpro-core-kor-C03",
+      "exam_code": "COF-C03",
+      "title": "SnowPro® Core인증 (COF-C03)",
+      "url": "https://learn.snowflake.com/en/certifications/snowpro-core-kor-C03/",
+      "kind": "certification",
+      "language": "ko",
+      "tests": [],
+      "tests_measured": false,
+      "candidate_profile": null,
+      "exam_cost_usd": 175,
+      "exam_cost_measured": true,
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/certifications/snowpro-core-kor-C03/",
+        "sha256": "0d2a4151cdeee8370434a05ed27e793e19967f69758cebfb84f51e6ec913a325",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      },
+      "tier": "core",
+      "tier_source": "curated:data/sources.yml"
+    },
+    {
+      "slug": "snowpro-nativeapps-c02",
+      "exam_code": "NAS-C02",
+      "title": "SnowPro® Specialty: Native Apps (C02)",
+      "url": "https://learn.snowflake.com/en/certifications/snowpro-nativeapps-c02/",
+      "kind": "certification",
+      "language": "en",
+      "tests": [
+        "Design Native App architectures based on business and technical requirements",
+        "Build Native App components including manifests, setup scripts, and application logic",
+        "Deploy apps to Snowflake Marketplace and support installation and troubleshooting",
+        "Manage version release workflows, release management privileges, and application upgrades"
+      ],
+      "tests_measured": true,
+      "candidate_profile": "1+ years of experience with Snowflake in an enterprise environment with 6+ months of recent hands-on experience developing Native Applications. In addition, successful candidates may have: • Basic knowledge of Snowflake-supported languages (for example, Python) • Basic knowledge of development application release cycles (for example, SDLC)",
+      "exam_cost_usd": null,
+      "exam_cost_measured": false,
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/certifications/snowpro-nativeapps-c02/",
+        "sha256": "dc14dd8011332339e20e6d2e62e1221c004c25cbaea2ec1dea9cb7f5001bea57",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      },
+      "tier": "specialty",
+      "tier_source": "curated:data/sources.yml"
+    },
+    {
+      "slug": "snowpro-practice-exams",
+      "exam_code": null,
+      "title": "SnowPro Practice Exams",
+      "url": "https://learn.snowflake.com/en/certifications/snowpro-practice-exams/",
+      "kind": "practice-exam",
+      "language": "en",
+      "tests": [],
+      "tests_measured": false,
+      "candidate_profile": null,
+      "exam_cost_usd": null,
+      "exam_cost_measured": false,
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/certifications/snowpro-practice-exams/",
+        "sha256": "6b65260fd64a14be4642618a71aa1aca51197b484665cbc7d0d0dc8066540499",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      },
+      "tier": null,
+      "tier_source": "curated:data/sources.yml"
+    },
+    {
+      "slug": "snowpro-snowpark",
+      "exam_code": "SPS-C01",
+      "title": "SnowPro® Specialty: Snowpark",
+      "url": "https://learn.snowflake.com/en/certifications/snowpro-snowpark/",
+      "kind": "certification",
+      "language": "en",
+      "tests": [
+        "Perform data transformations using Snowpark DataFrame functions",
+        "Query data sources as Snowpark DataFrame objects",
+        "Connect to Snowflake using a Snowpark session object",
+        "Process results client-side or persist results in Snowflake through Snowpark DataFrame actions",
+        "Design a sequence of operations or conditional logic with Snowpark stored procedures"
+      ],
+      "tests_measured": true,
+      "candidate_profile": "1 or more years of hands-on Snowpark experience in a production environment. In addition, successful candidates may have: • Advanced proficiency writing code in Python • Advanced proficiency writing code in PySpark",
+      "exam_cost_usd": null,
+      "exam_cost_measured": false,
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/certifications/snowpro-snowpark/",
+        "sha256": "a8b5df6658dca84da4e4dce71f77fecec4bcbfbf300c05187ae679a691de7dc6",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      },
+      "tier": "specialty",
+      "tier_source": "curated:data/sources.yml"
+    }
+  ],
+  "tracks": [
+    {
+      "slug": "hands-on-essentials",
+      "title": "Hands-On Essentials",
+      "url": "https://learn.snowflake.com/en/pages/hands-on-essentials-track/",
+      "sequence": [
+        "OD-ESS-DWW",
+        "OD-ESS-CMCW",
+        "OD-ESS-DABW",
+        "OD-ESS-DLKW",
+        "OD-ESS-DNGW",
+        "OD-ESS-DSCW"
+      ],
+      "sequence_published": true,
+      "sequence_source": "site-curated order on the track page",
+      "sequence_note": null,
+      "legacy_slug_aliases": {
+        "uni-essdww101": "OD-ESS-DWW",
+        "uni-ess-cmcw": "OD-ESS-CMCW",
+        "uni-ess-dabw": "OD-ESS-DABW",
+        "uni-ess-dlkw": "OD-ESS-DLKW",
+        "uni-ess-dngw": "OD-ESS-DNGW"
+      },
+      "unresolved_links": [],
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/pages/hands-on-essentials-track/",
+        "sha256": "26d8ff36fa0bf60ad9fa9cfa411a21150f40defc6bf65bc3718b3e051ee9e2ef",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "slug": "level-up-first-concepts",
+      "title": "Level Up: First Concepts",
+      "url": "https://learn.snowflake.com/en/pages/level-up-track/",
+      "sequence": [
+        "OD-LVLUP-101",
+        "OD-LVLUP-102",
+        "OD-LVLUP-106",
+        "OD-LVLUP-107",
+        "OD-LVLUP-103",
+        "OD-LVLUP-104",
+        "OD-LVLUP-105",
+        "OD-LVLUP-108",
+        "OD-LVLUP-109"
+      ],
+      "sequence_published": true,
+      "sequence_source": "site-curated order on the track page",
+      "sequence_note": null,
+      "legacy_slug_aliases": {},
+      "unresolved_links": [],
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/pages/level-up-track/",
+        "sha256": "26199a4cc26740af4922ebb4168084a879200c006f37c30673aa9dc820b72b31",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "slug": "level-up-performance",
+      "title": "Level Up: Performance",
+      "url": "https://learn.snowflake.com/en/pages/level-up-performance-track/",
+      "sequence": [
+        "OD-LVLUP-201",
+        "OD-LVLUP-202"
+      ],
+      "sequence_published": true,
+      "sequence_source": "site-curated order on the track page",
+      "sequence_note": null,
+      "legacy_slug_aliases": {},
+      "unresolved_links": [],
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/pages/level-up-performance-track/",
+        "sha256": "e704eea92de0df4aaffe20e6ac6ccbe4a06cec70016a5585d8bfa756a5e42f86",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "slug": "level-up-snowpark-essentials",
+      "title": "Level Up: Snowpark & Python Essentials",
+      "url": "https://learn.snowflake.com/en/pages/level-up-snowpark-essentials-track/",
+      "sequence": [
+        "OD-LVLUP-301",
+        "OD-LVLUP-304",
+        "OD-LVLUP-303",
+        "OD-LVLUP-305",
+        "OD-LVLUP-307",
+        "OD-LVLUP-308"
+      ],
+      "sequence_published": true,
+      "sequence_source": "site-curated order on the track page",
+      "sequence_note": null,
+      "legacy_slug_aliases": {},
+      "unresolved_links": [],
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/pages/level-up-snowpark-essentials-track/",
+        "sha256": "e5f2790eaf162df35051240e9a9593d073e72258f929afd8ba277726795553fe",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "slug": "snowpro-core-study",
+      "title": "SnowPro Core Study Track",
+      "url": "https://learn.snowflake.com/en/pages/snowpro-track/",
+      "sequence": [],
+      "sequence_published": false,
+      "sequence_source": "site-curated order on the track page",
+      "sequence_note": "not published in HTML — the track page links the catalogue and exam registration, not its courses",
+      "legacy_slug_aliases": {},
+      "unresolved_links": [],
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/pages/snowpro-track/",
+        "sha256": "4082c3f8bfb219716be20bf46e4f3ae14df0f1f03b6f226a0c84e57838c8900b",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    }
+  ],
+  "roles": [
+    {
+      "slug": "data-engineer-sql",
+      "title": "Data Engineer SQL",
+      "url": "https://learn.snowflake.com/en/data-engineer-sql/",
+      "summary": "As a Data Engineer specializing in the Snowflake AI Data Cloud, you play a critical role in delivering high-quality data solutions. Your expertise lies in designing and implementing reliable, scalable data models and pipelines. Leveraging the power of Snowflake’s AI Data Cloud, you ensure that data flows reliably to meet evolving business requirements. Your meticulous approach to maintaining data integrity and optimizing processes enables organizations to leverage their data assets effectively, ",
+      "courses": [],
+      "courses_published": false,
+      "courses_note": "not published in HTML — page links the catalogue, not individual courses",
+      "certifications": [],
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/data-engineer-sql/",
+        "sha256": "96ac8efdb92304f5248882afe5890497da938f7b216dfc727fd219ad0388c065",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "slug": "data-engineer-python",
+      "title": "Data Engineer Python",
+      "url": "https://learn.snowflake.com/en/data-engineer-python/",
+      "summary": "As a Data Engineer specializing in the Snowflake AI Data Cloud, your expertise lies in creating and managing end-to-end data pipelines. You're responsible for data ingestion, transformation, and processing within the Snowflake environment. Your role involves building efficient pipelines to move and transform data, ensuring its accuracy and integrity. You leverage your Python programming skills to automate and optimize data processing tasks at scale. By streamlining these processes, you enable th",
+      "courses": [],
+      "courses_published": false,
+      "courses_note": "not published in HTML — page links the catalogue, not individual courses",
+      "certifications": [],
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/data-engineer-python/",
+        "sha256": "a1aaa75a5554cd493ab75087a47de326426b62d8d244bf4b4f7f92ea5ad39346",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "slug": "sql-analyst",
+      "title": "SQL Analyst/BI Manager",
+      "url": "https://learn.snowflake.com/en/sql-analyst/",
+      "summary": "As a SQL Analyst/BI Manager with deep expertise in SQL and data warehousing, you develop advanced analytics solutions tailored for Snowflake's AI Data Cloud. You integrate data from diverse sources, leveraging Snowflake’s powerful features such as ML functions, LLM functions, and Document AI to extract actionable insights. Collaborating with cross-functional teams, you transform business questions into data-driven solutions, delivering intuitive dashboards and reports that empower stakeholders. ",
+      "courses": [],
+      "courses_published": false,
+      "courses_note": "not published in HTML — page links the catalogue, not individual courses",
+      "certifications": [],
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/sql-analyst/",
+        "sha256": "015d2d47644e52c1f3c364080b9d96862c2d1f134b97fa0748c8e6e0ba300973",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "slug": "ml-engineer",
+      "title": "ML Engineer",
+      "url": "https://learn.snowflake.com/en/ml-engineer/",
+      "summary": "As an ML Engineer specializing in the Snowflake AI Data Cloud, you are pivotal in designing and maintaining the machine learning infrastructure that powers the organization’s data science initiatives. Leveraging Snowflake’s rich ML capabilities, you manage the end-to-end lifecycle of ML models, from data preprocessing and feature engineering to model training, tuning, and deployment. You collaborate closely with data scientists to streamline workflows, automate model deployment pipelines, and mo",
+      "courses": [],
+      "courses_published": false,
+      "courses_note": "not published in HTML — page links the catalogue, not individual courses",
+      "certifications": [],
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/ml-engineer/",
+        "sha256": "b383197512337d274f5d3a70207583ab289c984e14efc75ac727696331adf076",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "slug": "app-developer",
+      "title": "Application Developer",
+      "url": "https://learn.snowflake.com/en/app-developer/",
+      "summary": "As an Application Developer specializing in the Snowflake AI Data Cloud, your expertise is instrumental in designing, developing, and maintaining internal applications tailored specifically to leverage Snowflake’s capabilities. You're entrusted with translating organizational needs into robust software solutions that harness the power of Snowflake's data processing and analytics capabilities. From initial designs to ongoing maintenance, you ensure these applications operate seamlessly on ​​Snowf",
+      "courses": [],
+      "courses_published": false,
+      "courses_note": "not published in HTML — page links the catalogue, not individual courses",
+      "certifications": [],
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/app-developer/",
+        "sha256": "588164c902e8a37e26a9057460e65b5105212da3b6e630efef7fb3624a778da3",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "slug": "it-app-developer",
+      "title": "IT Application Developer",
+      "url": "https://learn.snowflake.com/en/it-app-developer/",
+      "summary": "As an IT Application Developer specializing in the Snowflake AI Data Cloud, you are responsible for designing and implementing advanced data solutions. Your role involves developing efficient data pipelines, optimizing queries, and integrating data from diverse sources. You create operational applications using hybrid tables and build interactive dashboards with Streamlit in Snowflake. By leveraging Snowflake Cortex, you enhance data capabilities while ensuring security and compliance. Your expe",
+      "courses": [],
+      "courses_published": false,
+      "courses_note": "not published in HTML — page links the catalogue, not individual courses",
+      "certifications": [],
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/it-app-developer/",
+        "sha256": "93392698bc379f1f4fc86392af26b98b5b8ac5a4071d4734286c152177ce500b",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "slug": "business-user",
+      "title": "Business User",
+      "url": "https://learn.snowflake.com/en/business-user/",
+      "summary": "As a Business User on Snowflake’s AI Data Cloud, you excel at harnessing data to improve customer experiences and drive growth. Your expertise includes pinpointing customer pain points and leveraging data insights to innovate products, surpass competitors, and foster organizational advancement. Through strategic data analysis, you significantly influence product development efforts and deliver exceptional value to customers. Free On Demand Training Hands On Badge Series Explore Snowflake by divi",
+      "courses": [],
+      "courses_published": false,
+      "courses_note": "not published in HTML — page links the catalogue, not individual courses",
+      "certifications": [],
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/business-user/",
+        "sha256": "8872b7f841f6c1511545611e45947265fd1e67f6af0c8c88937a6252d0b5e644",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "slug": "administrator",
+      "title": "Database Administrator",
+      "url": "https://learn.snowflake.com/en/administrator/",
+      "summary": "As a Database Administrator (DBA) specializing in the Snowflake AI Data Cloud, you are pivotal in maintaining the integrity and efficiency of the organization's data infrastructure. Your responsibilities begin with configuring the Snowflake environment to align with your organization's specific needs and requirements and managing access to these data assets. You are instrumental in designing and implementing database structures, optimizing them for performance, scalability, and cost-efficiency w",
+      "courses": [],
+      "courses_published": false,
+      "courses_note": "not published in HTML — page links the catalogue, not individual courses",
+      "certifications": [],
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/administrator/",
+        "sha256": "c8e7fae5f3aace620bdef45661312a33a5d15ae64fe67a51392d601fe6f84097",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "slug": "data-analyst",
+      "title": "Data Analyst",
+      "url": "https://learn.snowflake.com/en/data-analyst/",
+      "summary": "As a Data Analyst specializing in the Snowflake AI Data Cloud, you generate actionable insights for business teams. Your role involves creating reports and dashboards tailored to their needs, facilitating informed decision-making. You possess the agility to explore structured data ad hoc, uncovering hidden patterns. Your analyses empower teams to leverage data effectively, driving strategic initiatives. Free On Demand Training Hands On Badge Series Explore Snowflake by diving into our free on-de",
+      "courses": [],
+      "courses_published": false,
+      "courses_note": "not published in HTML — page links the catalogue, not individual courses",
+      "certifications": [],
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/data-analyst/",
+        "sha256": "00d228ef1772be9cd6d572a198e16f2c5a4a17661d202a47f996abcfc76b3de9",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "slug": "data-scientist",
+      "title": "Data Scientist",
+      "url": "https://learn.snowflake.com/en/data-scientist/",
+      "summary": "As a Data Scientist working with the Snowflake AI Data Cloud, your role involves leveraging SQL and Python to extract valuable insights from complex datasets. You develop and optimize machine learning models to support strategic decision-making and present your findings using tools like Streamlit. Your daily responsibilities include performing analytics, generating KPI reports, and ensuring data security for sensitive information. You are instrumental in converting data into actionable insights ",
+      "courses": [],
+      "courses_published": false,
+      "courses_note": "not published in HTML — page links the catalogue, not individual courses",
+      "certifications": [],
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/data-scientist/",
+        "sha256": "631d7791e293a6c0196b2c5aa3f76fb06787e5cff3969c1f4ebea6b765d43773",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "slug": "citizen-data-scientist",
+      "title": "Citizen Data Scientist",
+      "url": "https://learn.snowflake.com/en/citizen-data-scientist/",
+      "summary": "As a Citizen Data Scientist specializing in Snowflake’s AI Data Cloud, you empower business teams by defining, tracking, and predicting key performance indicators (KPIs). By harnessing Snowflake's advanced AI/ML and data capabilities, along with your expertise in predictive analytics, you generate actionable insights that drive strategic decisions. Using the Snowflake AI Data Cloud, you create intuitive dashboards and reports to communicate data trends and performance metrics effectively. Your r",
+      "courses": [],
+      "courses_published": false,
+      "courses_note": "not published in HTML — page links the catalogue, not individual courses",
+      "certifications": [],
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/citizen-data-scientist/",
+        "sha256": "2cb9030b8db3f5ca0e2a12184ac6b47400db3c5dc8d6a70ed5dc1a483e30eb73",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    },
+    {
+      "slug": "engineer-developer",
+      "title": "Software Engineer Developer",
+      "url": "https://learn.snowflake.com/en/engineer-developer/",
+      "summary": "As a Software Engineer Developer working with the Snowflake AI Data Cloud, you are responsible for designing, developing, and maintaining applications that deliver outstanding user experiences. Your role involves crafting intuitive, reliable, and high-performance software that aligns with user needs. Collaborating with cross-functional teams, you will gather user requirements, translate them into technical specifications, and build high-quality solutions. Your expertise in various programming la",
+      "courses": [],
+      "courses_published": false,
+      "courses_note": "not published in HTML — page links the catalogue, not individual courses",
+      "certifications": [],
+      "provenance": {
+        "url": "https://learn.snowflake.com/en/engineer-developer/",
+        "sha256": "7266b128aa63b166b6f4c870010895befe5b35dc16219ab700f0277bcdb64b8f",
+        "fetched_at": "2026-08-03T15:10:30+00:00"
+      }
+    }
+  ]
+}
