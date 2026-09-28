@@ -2,21 +2,21 @@
  "contractVersion": "1.0",
  "source": {
   "repo": "rohitg00/ai-engineering-from-scratch",
-  "sha": "c8b9b9244f3210b840776675175662dacf208264",
+  "sha": "bf7791e140768d8223d24e616bb60cbf07fea014",
   "url": "https://github.com/rohitg00/ai-engineering-from-scratch",
-  "pushed_at": "2026-06-25T19:43:11Z"
+  "pushed_at": "2026-09-28T19:45:54Z"
  },
  "nodes": [
   {
    "id": "repo-rohitg00-ai-engineering-from-scratch",
    "type": "repo",
    "label": "rohitg00/ai-engineering-from-scratch",
-   "stars": 39592,
+   "stars": 60260,
    "description": "Learn it. Build it. Ship it for others.",
    "license": "MIT",
    "kind": "learning-resource",
    "why_cited": "learn-build-ship curriculum \u2014 course-design comparable for Objective 1",
-   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/c8b9b9244f3210b840776675175662dacf208264"
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/bf7791e140768d8223d24e616bb60cbf07fea014"
   },
   {
    "id": "topic-agents",
@@ -143,154 +143,203 @@
    "type": "concept",
    "label": "From the creator of [Agent Memory - #1 Persistent memory \u2b50](https://github.com/rohitg00/agentmemory) <a href=\"https://github.com/rohitg00/agentmemory/stargazers\"><img src=\"https://img.shields.io/github/stars/rohitg00/agentmemory?style=flat-square&labelColor=fafaf5&color=3553ff\" alt=\"GitHub stars\"></a> which naturally works with any agents or chat assistants.",
    "level": 2,
-   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/bf7791e140768d8223d24e616bb60cbf07fea014/README.md"
+  },
+  {
+   "id": "c-start-here-choose-what-you-want-to-build",
+   "type": "concept",
+   "label": "Start here: choose what you want to build",
+   "level": 2,
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/bf7791e140768d8223d24e616bb60cbf07fea014/README.md"
+  },
+  {
+   "id": "c-sponsors",
+   "type": "concept",
+   "label": "Sponsors",
+   "level": 3,
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/bf7791e140768d8223d24e616bb60cbf07fea014/README.md"
+  },
+  {
+   "id": "c-use-every-lesson-the-same-way",
+   "type": "concept",
+   "label": "Use every lesson the same way",
+   "level": 3,
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/bf7791e140768d8223d24e616bb60cbf07fea014/README.md"
+  },
+  {
+   "id": "c-clone-it-and-produce-your-first-evidence",
+   "type": "concept",
+   "label": "Clone it and produce your first evidence",
+   "level": 3,
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/bf7791e140768d8223d24e616bb60cbf07fea014/README.md"
+  },
+  {
+   "id": "c-add-the-ai-tutor-in-30-seconds",
+   "type": "concept",
+   "label": "Add the AI tutor in 30 seconds",
+   "level": 2,
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/bf7791e140768d8223d24e616bb60cbf07fea014/README.md"
   },
   {
    "id": "c-how-this-works",
    "type": "concept",
    "label": "How this works",
    "level": 2,
-   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/bf7791e140768d8223d24e616bb60cbf07fea014/README.md"
   },
   {
    "id": "c-the-shape-of-the-curriculum",
    "type": "concept",
    "label": "The shape of the curriculum",
    "level": 2,
-   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/bf7791e140768d8223d24e616bb60cbf07fea014/README.md"
   },
   {
    "id": "c-the-shape-of-a-lesson",
    "type": "concept",
    "label": "The shape of a lesson",
    "level": 2,
-   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/bf7791e140768d8223d24e616bb60cbf07fea014/README.md"
   },
   {
    "id": "c-getting-started",
    "type": "concept",
    "label": "Getting started",
    "level": 2,
-   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/bf7791e140768d8223d24e616bb60cbf07fea014/README.md"
   },
   {
    "id": "c-prerequisites",
    "type": "concept",
    "label": "Prerequisites",
    "level": 3,
-   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/bf7791e140768d8223d24e616bb60cbf07fea014/README.md"
   },
   {
-   "id": "c-built-in-agent-skills-claude-cursor-codex-openclaw-hermes",
+   "id": "c-prepare-for-claude-certifications",
    "type": "concept",
-   "label": "Built-in agent skills (Claude, Cursor, Codex, OpenClaw, Hermes)",
+   "label": "Prepare for Claude certifications",
    "level": 3,
-   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/bf7791e140768d8223d24e616bb60cbf07fea014/README.md"
+  },
+  {
+   "id": "c-prepare-for-the-mcp-associate-mcpa-certification",
+   "type": "concept",
+   "label": "Prepare for the MCP Associate (MCPA) certification",
+   "level": 3,
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/bf7791e140768d8223d24e616bb60cbf07fea014/README.md"
+  },
+  {
+   "id": "c-the-learning-skills",
+   "type": "concept",
+   "label": "The learning skills",
+   "level": 3,
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/bf7791e140768d8223d24e616bb60cbf07fea014/README.md"
+  },
+  {
+   "id": "c-read-the-core-curriculum-as-a-book",
+   "type": "concept",
+   "label": "Read the core curriculum as a book",
+   "level": 2,
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/bf7791e140768d8223d24e616bb60cbf07fea014/README.md"
   },
   {
    "id": "c-every-lesson-ships-something",
    "type": "concept",
    "label": "Every lesson ships something",
    "level": 2,
-   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/bf7791e140768d8223d24e616bb60cbf07fea014/README.md"
   },
   {
    "id": "c-fig-002-a-worked-sample",
    "type": "concept",
    "label": "FIG_002 \u00b7 A worked sample",
    "level": 3,
-   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/bf7791e140768d8223d24e616bb60cbf07fea014/README.md"
   },
   {
    "id": "c-contents",
    "type": "concept",
    "label": "Contents",
    "level": 2,
-   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/bf7791e140768d8223d24e616bb60cbf07fea014/README.md"
   },
   {
    "id": "c-phase-0-setup-tooling-12-lessons",
    "type": "concept",
    "label": "Phase 0: Setup & Tooling `12 lessons`",
    "level": 3,
-   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/bf7791e140768d8223d24e616bb60cbf07fea014/README.md"
   },
   {
    "id": "c-the-toolkit",
    "type": "concept",
    "label": "The toolkit",
    "level": 2,
-   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/bf7791e140768d8223d24e616bb60cbf07fea014/README.md"
   },
   {
-   "id": "c-install-every-course-skill-into-your-agent",
+   "id": "c-install-course-skills-into-your-agent",
    "type": "concept",
-   "label": "Install every course skill into your agent",
+   "label": "Install course skills into your agent",
    "level": 3,
-   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/bf7791e140768d8223d24e616bb60cbf07fea014/README.md"
   },
   {
    "id": "c-drop-the-agent-workbench-into-your-own-repo",
    "type": "concept",
    "label": "Drop the agent workbench into your own repo",
    "level": 3,
-   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/bf7791e140768d8223d24e616bb60cbf07fea014/README.md"
   },
   {
    "id": "c-browse-the-entire-course-as-json",
    "type": "concept",
    "label": "Browse the entire course as JSON",
    "level": 3,
-   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/bf7791e140768d8223d24e616bb60cbf07fea014/README.md"
   },
   {
    "id": "c-smoke-check-every-lesson-s-python-code",
    "type": "concept",
    "label": "Smoke-check every lesson's Python code",
    "level": 3,
-   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/bf7791e140768d8223d24e616bb60cbf07fea014/README.md"
   },
   {
    "id": "c-where-to-start",
    "type": "concept",
    "label": "Where to start",
    "level": 2,
-   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/bf7791e140768d8223d24e616bb60cbf07fea014/README.md"
   },
   {
    "id": "c-why-this-matters-now",
    "type": "concept",
    "label": "Why this matters now",
    "level": 2,
-   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/bf7791e140768d8223d24e616bb60cbf07fea014/README.md"
   },
   {
    "id": "c-contributing",
    "type": "concept",
    "label": "Contributing",
    "level": 2,
-   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/bf7791e140768d8223d24e616bb60cbf07fea014/README.md"
   },
   {
    "id": "c-sponsor-the-work",
    "type": "concept",
    "label": "Sponsor the work",
    "level": 2,
-   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
-  },
-  {
-   "id": "c-star-history",
-   "type": "concept",
-   "label": "Star history",
-   "level": 2,
-   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/bf7791e140768d8223d24e616bb60cbf07fea014/README.md"
   },
   {
    "id": "c-license",
    "type": "concept",
    "label": "License",
    "level": 2,
-   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/c8b9b9244f3210b840776675175662dacf208264/README.md"
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/blob/bf7791e140768d8223d24e616bb60cbf07fea014/README.md"
   },
   {
    "id": "e-https-github-com-rohitg00-agentmemory",
@@ -299,16 +348,94 @@
    "source_url": "https://github.com/rohitg00/agentmemory"
   },
   {
+   "id": "e-https-aiengineeringfromscratch-com-lesson-path-phases-00-setup-and-tooling-01-de",
+   "type": "evidence",
+   "label": "Dev Environment",
+   "source_url": "https://aiengineeringfromscratch.com/lesson?path=phases/00-setup-and-tooling/01-dev-environment"
+  },
+  {
+   "id": "e-https-aiengineeringfromscratch-com-lesson-path-phases-01-math-foundations-01-lin",
+   "type": "evidence",
+   "label": "Linear Algebra Intuition",
+   "source_url": "https://aiengineeringfromscratch.com/lesson?path=phases/01-math-foundations/01-linear-algebra-intuition"
+  },
+  {
+   "id": "e-https-aiengineeringfromscratch-com-lesson-path-phases-11-llm-engineering-01-prom",
+   "type": "evidence",
+   "label": "Prompt Engineering",
+   "source_url": "https://aiengineeringfromscratch.com/lesson?path=phases/11-llm-engineering/01-prompt-engineering"
+  },
+  {
+   "id": "e-https-aiengineeringfromscratch-com-lesson-path-phases-14-agent-engineering-01-th",
+   "type": "evidence",
+   "label": "The Agent Loop",
+   "source_url": "https://aiengineeringfromscratch.com/lesson?path=phases/14-agent-engineering/01-the-agent-loop"
+  },
+  {
+   "id": "e-https-aiengineeringfromscratch-com-lesson-path-phases-14-agent-engineering-31-ag",
+   "type": "evidence",
+   "label": "Agent-Assisted Engineering",
+   "source_url": "https://aiengineeringfromscratch.com/lesson?path=phases/14-agent-engineering/31-agent-workbench-why-models-fail&learningPath=using-coding-agents"
+  },
+  {
+   "id": "e-https-aiengineeringfromscratch-com-lesson-path-phases-14-agent-engineering-47-ou",
+   "type": "evidence",
+   "label": "Product Judgment and Delivery",
+   "source_url": "https://aiengineeringfromscratch.com/lesson?path=phases/14-agent-engineering/47-outcomes-before-output&learningPath=shaping-the-build"
+  },
+  {
+   "id": "e-https-aiengineeringfromscratch-com-lesson-path-phases-13-tools-and-protocols-06-",
+   "type": "evidence",
+   "label": "Model Context Protocol (MCP) path",
+   "source_url": "https://aiengineeringfromscratch.com/lesson?path=phases/13-tools-and-protocols/06-mcp-fundamentals&learningPath=model-context-protocol"
+  },
+  {
+   "id": "e-https-aiengineeringfromscratch-com-lesson-path-phases-13-tools-and-protocols-22-",
+   "type": "evidence",
+   "label": "Agent Skills path",
+   "source_url": "https://aiengineeringfromscratch.com/lesson?path=phases/13-tools-and-protocols/22-skills-and-agent-sdks&learningPath=agent-skills"
+  },
+  {
+   "id": "e-https-aiengineeringfromscratch-com-certifications-html",
+   "type": "evidence",
+   "label": "Certification Academy",
+   "source_url": "https://aiengineeringfromscratch.com/certifications.html"
+  },
+  {
+   "id": "e-https-aiengineeringfromscratch-com-certification-id-mcpa-f",
+   "type": "evidence",
+   "label": "MCPA track",
+   "source_url": "https://aiengineeringfromscratch.com/certification?id=mcpa-f"
+  },
+  {
+   "id": "e-https-aiengineeringfromscratch-com-prereqs-html",
+   "type": "evidence",
+   "label": "website prerequisites guide",
+   "source_url": "https://aiengineeringfromscratch.com/prereqs.html"
+  },
+  {
+   "id": "e-https-aiengineeringfromscratch-com-learning-paths-html",
+   "type": "evidence",
+   "label": "AI Engineering Learning Paths",
+   "source_url": "https://aiengineeringfromscratch.com/learning-paths.html"
+  },
+  {
    "id": "e-https-aiengineeringfromscratch-com",
    "type": "evidence",
    "label": "aiengineeringfromscratch.com",
    "source_url": "https://aiengineeringfromscratch.com"
   },
   {
-   "id": "e-https-skills-sh",
+   "id": "e-https-github-com-rohitg00-ai-engineering-from-scratch-releases",
    "type": "evidence",
-   "label": "skills.sh",
-   "source_url": "https://skills.sh"
+   "label": "GitHub release",
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/releases"
+  },
+  {
+   "id": "e-https-github-com-rohitg00-ai-engineering-from-scratch-releases-latest-download-a",
+   "type": "evidence",
+   "label": "EPUB",
+   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch/releases/latest/download/aiefs-vol1-foundations.epub"
   },
   {
    "id": "e-https-x-com-karpathy-status-1617979122625712128",
@@ -317,21 +444,9 @@
    "source_url": "https://x.com/karpathy/status/1617979122625712128"
   },
   {
-   "id": "e-https-coderabbit-link-rohit-ghumare",
-   "type": "evidence",
-   "label": "CodeRabbit",
-   "source_url": "https://coderabbit.link/rohit-ghumare"
-  },
-  {
-   "id": "e-https-iii-dev-utm-source-ai-engineering-from-scratch-utm-medium-readme-utm-campa",
-   "type": "evidence",
-   "label": "iii",
-   "source_url": "https://iii.dev?utm_source=ai-engineering-from-scratch&utm_medium=readme&utm_campaign=sponsor"
-  },
-  {
    "id": "e-https-github-com-sponsors-rohitg00",
    "type": "evidence",
-   "label": "GitHub Sponsors",
+   "label": "sponsor on GitHub",
    "source_url": "https://github.com/sponsors/rohitg00"
   },
   {
@@ -448,6 +563,31 @@
    "rel": "part_of"
   },
   {
+   "from": "c-start-here-choose-what-you-want-to-build",
+   "to": "repo-rohitg00-ai-engineering-from-scratch",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-sponsors",
+   "to": "c-start-here-choose-what-you-want-to-build",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-use-every-lesson-the-same-way",
+   "to": "c-start-here-choose-what-you-want-to-build",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-clone-it-and-produce-your-first-evidence",
+   "to": "c-start-here-choose-what-you-want-to-build",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-add-the-ai-tutor-in-30-seconds",
+   "to": "repo-rohitg00-ai-engineering-from-scratch",
+   "rel": "part_of"
+  },
+  {
    "from": "c-how-this-works",
    "to": "repo-rohitg00-ai-engineering-from-scratch",
    "rel": "part_of"
@@ -473,8 +613,23 @@
    "rel": "part_of"
   },
   {
-   "from": "c-built-in-agent-skills-claude-cursor-codex-openclaw-hermes",
+   "from": "c-prepare-for-claude-certifications",
    "to": "c-getting-started",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-prepare-for-the-mcp-associate-mcpa-certification",
+   "to": "c-getting-started",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-the-learning-skills",
+   "to": "c-getting-started",
+   "rel": "part_of"
+  },
+  {
+   "from": "c-read-the-core-curriculum-as-a-book",
+   "to": "repo-rohitg00-ai-engineering-from-scratch",
    "rel": "part_of"
   },
   {
@@ -503,7 +658,7 @@
    "rel": "part_of"
   },
   {
-   "from": "c-install-every-course-skill-into-your-agent",
+   "from": "c-install-course-skills-into-your-agent",
    "to": "c-the-toolkit",
    "rel": "part_of"
   },
@@ -543,11 +698,6 @@
    "rel": "part_of"
   },
   {
-   "from": "c-star-history",
-   "to": "repo-rohitg00-ai-engineering-from-scratch",
-   "rel": "part_of"
-  },
-  {
    "from": "c-license",
    "to": "repo-rohitg00-ai-engineering-from-scratch",
    "rel": "part_of"
@@ -559,27 +709,82 @@
   },
   {
    "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "e-https-aiengineeringfromscratch-com-lesson-path-phases-00-setup-and-tooling-01-de",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "e-https-aiengineeringfromscratch-com-lesson-path-phases-01-math-foundations-01-lin",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "e-https-aiengineeringfromscratch-com-lesson-path-phases-11-llm-engineering-01-prom",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "e-https-aiengineeringfromscratch-com-lesson-path-phases-14-agent-engineering-01-th",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "e-https-aiengineeringfromscratch-com-lesson-path-phases-14-agent-engineering-31-ag",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "e-https-aiengineeringfromscratch-com-lesson-path-phases-14-agent-engineering-47-ou",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "e-https-aiengineeringfromscratch-com-lesson-path-phases-13-tools-and-protocols-06-",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "e-https-aiengineeringfromscratch-com-lesson-path-phases-13-tools-and-protocols-22-",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "e-https-aiengineeringfromscratch-com-certifications-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "e-https-aiengineeringfromscratch-com-certification-id-mcpa-f",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "e-https-aiengineeringfromscratch-com-prereqs-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "e-https-aiengineeringfromscratch-com-learning-paths-html",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
    "to": "e-https-aiengineeringfromscratch-com",
    "rel": "cites"
   },
   {
    "from": "repo-rohitg00-ai-engineering-from-scratch",
-   "to": "e-https-skills-sh",
+   "to": "e-https-github-com-rohitg00-ai-engineering-from-scratch-releases",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-rohitg00-ai-engineering-from-scratch",
+   "to": "e-https-github-com-rohitg00-ai-engineering-from-scratch-releases-latest-download-a",
    "rel": "cites"
   },
   {
    "from": "repo-rohitg00-ai-engineering-from-scratch",
    "to": "e-https-x-com-karpathy-status-1617979122625712128",
-   "rel": "cites"
-  },
-  {
-   "from": "repo-rohitg00-ai-engineering-from-scratch",
-   "to": "e-https-coderabbit-link-rohit-ghumare",
-   "rel": "cites"
-  },
-  {
-   "from": "repo-rohitg00-ai-engineering-from-scratch",
-   "to": "e-https-iii-dev-utm-source-ai-engineering-from-scratch-utm-medium-readme-utm-campa",
    "rel": "cites"
   },
   {
