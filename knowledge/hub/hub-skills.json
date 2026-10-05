@@ -6,7 +6,7 @@
    "name": "punkpeye/awesome-mcp-servers",
    "kind": "curated-index",
    "oneLine": "A collection of MCP servers.",
-   "stars": 90967,
+   "stars": 95845,
    "license": "MIT",
    "notGoodAt": [
     "running anything itself \u2014 an index of unvetted third-party code (popularity \u2260 safety; read before you install)"
@@ -22,7 +22,7 @@
    },
    "source": {
     "repo": "punkpeye/awesome-mcp-servers",
-    "sha": "79cca3e78c9f501fdb4925b907c04c0c4f68735d",
+    "sha": "3c30195615095be4f22ac120a7cee82f215cf547",
     "url": "https://github.com/punkpeye/awesome-mcp-servers"
    },
    "verified": true
@@ -32,7 +32,7 @@
    "name": "modelcontextprotocol/servers",
    "kind": "tool",
    "oneLine": "Model Context Protocol Servers",
-   "stars": 88636,
+   "stars": 91022,
    "license": "NOASSERTION",
    "notGoodAt": [
     "guarantees beyond its own README \u2014 verify against your workload before trusting"
@@ -46,7 +46,7 @@
    },
    "source": {
     "repo": "modelcontextprotocol/servers",
-    "sha": "d31124c982401739917fd817c2a59db344529c16",
+    "sha": "5abed86c5317b833dd59907492d56c65981642aa",
     "url": "https://github.com/modelcontextprotocol/servers"
    },
    "verified": true
@@ -56,7 +56,7 @@
    "name": "rohitg00/ai-engineering-from-scratch",
    "kind": "learning-resource",
    "oneLine": "Learn it. Build it. Ship it for others.",
-   "stars": 39592,
+   "stars": 64702,
    "license": "MIT",
    "notGoodAt": [
     "being load-bearing infrastructure \u2014 it teaches, it doesn't run"
@@ -75,7 +75,7 @@
    },
    "source": {
     "repo": "rohitg00/ai-engineering-from-scratch",
-    "sha": "c8b9b9244f3210b840776675175662dacf208264",
+    "sha": "5b5ab48cd63d7ae5b4002985d9ac9de4ed86c2c0",
     "url": "https://github.com/rohitg00/ai-engineering-from-scratch"
    },
    "verified": true
@@ -84,8 +84,8 @@
    "id": "skill-langfuse-langfuse",
    "name": "langfuse/langfuse",
    "kind": "platform",
-   "oneLine": "\ud83e\udea2 Open source AI engineering platform: LLM evals, observability, metrics, prompt management, playground, datasets. Integrates with OpenTelemetry, LangChain, OpenAI SDK, LiteLLM, and more. \ud83c\udf4aYC W23 ",
-   "stars": 31426,
+   "oneLine": "\ud83e\udea2 Open source agent evals & observability: Trace, evaluate, and improve LLM applications with one open platform.",
+   "stars": 35405,
    "license": "NOASSERTION",
    "notGoodAt": [
     "zero-ops adoption \u2014 a deployable platform carries real operational cost"
@@ -104,7 +104,7 @@
    },
    "source": {
     "repo": "langfuse/langfuse",
-    "sha": "1cb1bbcf6b269fd887a6667796f1a15417cca336",
+    "sha": "eadfff4d8d7b38e11c995b729977b8509fec74b3",
     "url": "https://github.com/langfuse/langfuse"
    },
    "verified": true
@@ -114,7 +114,7 @@
    "name": "PrefectHQ/fastmcp",
    "kind": "framework",
    "oneLine": "\ud83d\ude80 The fast, Pythonic way to build MCP servers and clients.",
-   "stars": 26292,
+   "stars": 27981,
    "license": "Apache-2.0",
    "notGoodAt": [
     "being a finished app \u2014 you still own design, evals, and deployment"
@@ -133,7 +133,7 @@
    },
    "source": {
     "repo": "PrefectHQ/fastmcp",
-    "sha": "717f3535f65d3937e5422895ed4a333d895369aa",
+    "sha": "5baeacfe20eca735cb949564b4915f93a622b916",
     "url": "https://github.com/PrefectHQ/fastmcp"
    },
    "verified": true
@@ -143,7 +143,7 @@
    "name": "modelcontextprotocol/registry",
    "kind": "registry",
    "oneLine": "A community driven registry service for Model Context Protocol (MCP) servers.",
-   "stars": 7048,
+   "stars": 7318,
    "license": "NOASSERTION",
    "notGoodAt": [
     "vouching for what it lists \u2014 distribution surface, not a review board"
@@ -159,7 +159,7 @@
    },
    "source": {
     "repo": "modelcontextprotocol/registry",
-    "sha": "29e32c39dcb5e0e2b43974089d959fcc4794eb6d",
+    "sha": "bf4e88cbe8d1a635c06144ccea1d24cb52fa6186",
     "url": "https://github.com/modelcontextprotocol/registry"
    },
    "verified": true
@@ -169,7 +169,7 @@
    "name": "mlrun/mlrun",
    "kind": "platform",
    "oneLine": "MLRun is an open source MLOps platform for quickly building and managing continuous ML applications across their lifecycle. MLRun integrates into your development and CI/CD environment and automates t",
-   "stars": 1686,
+   "stars": 1701,
    "license": "Apache-2.0",
    "notGoodAt": [
     "zero-ops adoption \u2014 a deployable platform carries real operational cost"
@@ -188,8 +188,37 @@
    },
    "source": {
     "repo": "mlrun/mlrun",
-    "sha": "7581637d5636b129fd45d89dd00dd017dfdede87",
+    "sha": "8224ec56d5814e095a391b7570fd8b2b955eb2dc",
     "url": "https://github.com/mlrun/mlrun"
+   },
+   "verified": true
+  },
+  {
+   "id": "skill-pierpaolo28-awesome-fde-roadmap",
+   "name": "pierpaolo28/Awesome-FDE-Roadmap",
+   "kind": "curated-index",
+   "oneLine": "\ud83d\ude80 The definitive roadmap to becoming a Forward Deployment Engineer (FDE). Master AI Agents, Enterprise Data Architecture, and Strategic Consulting. Bridging the gap between HQ and the field. Inspired ",
+   "stars": 1313,
+   "license": "MIT",
+   "notGoodAt": [
+    "running anything itself \u2014 an index of unvetted third-party code (popularity \u2260 safety; read before you install)"
+   ],
+   "useWhen": [
+    "the FDE career roadmap \u2014 course cross-reference",
+    "topic: ai-agents",
+    "topic: awesome-list",
+    "topic: forward-deployed-engineering",
+    "topic: gcp",
+    "topic: roadmap"
+   ],
+   "integration": {
+    "as": "discovery-source",
+    "how": "search it for candidate tools; read each SKILL/server before use; prefer ephemeral use over persistent install"
+   },
+   "source": {
+    "repo": "pierpaolo28/Awesome-FDE-Roadmap",
+    "sha": "24d652e6fb63b71a418276b91e755161d5c0debf",
+    "url": "https://github.com/pierpaolo28/Awesome-FDE-Roadmap"
    },
    "verified": true
   }

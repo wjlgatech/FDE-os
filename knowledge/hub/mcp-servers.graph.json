@@ -2,119 +2,119 @@
  "contractVersion": "1.0",
  "source": {
   "repo": "modelcontextprotocol/servers",
-  "sha": "d31124c982401739917fd817c2a59db344529c16",
+  "sha": "5abed86c5317b833dd59907492d56c65981642aa",
   "url": "https://github.com/modelcontextprotocol/servers",
-  "pushed_at": "2026-07-10T03:30:19Z"
+  "pushed_at": "2026-10-05T05:59:16Z"
  },
  "nodes": [
   {
    "id": "repo-modelcontextprotocol-servers",
    "type": "repo",
    "label": "modelcontextprotocol/servers",
-   "stars": 88636,
+   "stars": 91022,
    "description": "Model Context Protocol Servers",
    "license": "NOASSERTION",
    "kind": "tool",
    "why_cited": "the reference MCP server implementations \u2014 canonical patterns for fde-mcp-server",
-   "source_url": "https://github.com/modelcontextprotocol/servers/tree/d31124c982401739917fd817c2a59db344529c16"
+   "source_url": "https://github.com/modelcontextprotocol/servers/tree/5abed86c5317b833dd59907492d56c65981642aa"
   },
   {
    "id": "c-model-context-protocol-servers",
    "type": "concept",
    "label": "Model Context Protocol servers",
    "level": 1,
-   "source_url": "https://github.com/modelcontextprotocol/servers/blob/d31124c982401739917fd817c2a59db344529c16/README.md"
+   "source_url": "https://github.com/modelcontextprotocol/servers/blob/5abed86c5317b833dd59907492d56c65981642aa/README.md"
   },
   {
    "id": "c-reference-servers",
    "type": "concept",
    "label": "\ud83c\udf1f Reference Servers",
    "level": 2,
-   "source_url": "https://github.com/modelcontextprotocol/servers/blob/d31124c982401739917fd817c2a59db344529c16/README.md"
+   "source_url": "https://github.com/modelcontextprotocol/servers/blob/5abed86c5317b833dd59907492d56c65981642aa/README.md"
   },
   {
    "id": "c-archived",
    "type": "concept",
    "label": "Archived",
    "level": 3,
-   "source_url": "https://github.com/modelcontextprotocol/servers/blob/d31124c982401739917fd817c2a59db344529c16/README.md"
+   "source_url": "https://github.com/modelcontextprotocol/servers/blob/5abed86c5317b833dd59907492d56c65981642aa/README.md"
   },
   {
    "id": "c-getting-started",
    "type": "concept",
    "label": "\ud83d\ude80 Getting Started",
    "level": 2,
-   "source_url": "https://github.com/modelcontextprotocol/servers/blob/d31124c982401739917fd817c2a59db344529c16/README.md"
+   "source_url": "https://github.com/modelcontextprotocol/servers/blob/5abed86c5317b833dd59907492d56c65981642aa/README.md"
   },
   {
    "id": "c-using-mcp-servers-in-this-repository",
    "type": "concept",
    "label": "Using MCP Servers in this Repository",
    "level": 3,
-   "source_url": "https://github.com/modelcontextprotocol/servers/blob/d31124c982401739917fd817c2a59db344529c16/README.md"
+   "source_url": "https://github.com/modelcontextprotocol/servers/blob/5abed86c5317b833dd59907492d56c65981642aa/README.md"
   },
   {
    "id": "c-using-an-mcp-client",
    "type": "concept",
    "label": "Using an MCP Client",
    "level": 3,
-   "source_url": "https://github.com/modelcontextprotocol/servers/blob/d31124c982401739917fd817c2a59db344529c16/README.md"
+   "source_url": "https://github.com/modelcontextprotocol/servers/blob/5abed86c5317b833dd59907492d56c65981642aa/README.md"
   },
   {
    "id": "c-creating-your-own-server",
    "type": "concept",
    "label": "\ud83d\udee0\ufe0f Creating Your Own Server",
    "level": 2,
-   "source_url": "https://github.com/modelcontextprotocol/servers/blob/d31124c982401739917fd817c2a59db344529c16/README.md"
+   "source_url": "https://github.com/modelcontextprotocol/servers/blob/5abed86c5317b833dd59907492d56c65981642aa/README.md"
   },
   {
    "id": "c-learn-more",
    "type": "concept",
    "label": "\ud83d\udcda Learn More",
    "level": 2,
-   "source_url": "https://github.com/modelcontextprotocol/servers/blob/d31124c982401739917fd817c2a59db344529c16/README.md"
+   "source_url": "https://github.com/modelcontextprotocol/servers/blob/5abed86c5317b833dd59907492d56c65981642aa/README.md"
   },
   {
    "id": "c-contributing",
    "type": "concept",
    "label": "\ud83e\udd1d Contributing",
    "level": 2,
-   "source_url": "https://github.com/modelcontextprotocol/servers/blob/d31124c982401739917fd817c2a59db344529c16/README.md"
+   "source_url": "https://github.com/modelcontextprotocol/servers/blob/5abed86c5317b833dd59907492d56c65981642aa/README.md"
   },
   {
    "id": "c-releasing",
    "type": "concept",
    "label": "\ud83d\udce6 Releasing",
    "level": 2,
-   "source_url": "https://github.com/modelcontextprotocol/servers/blob/d31124c982401739917fd817c2a59db344529c16/README.md"
+   "source_url": "https://github.com/modelcontextprotocol/servers/blob/5abed86c5317b833dd59907492d56c65981642aa/README.md"
   },
   {
    "id": "c-security",
    "type": "concept",
    "label": "\ud83d\udd12 Security",
    "level": 2,
-   "source_url": "https://github.com/modelcontextprotocol/servers/blob/d31124c982401739917fd817c2a59db344529c16/README.md"
+   "source_url": "https://github.com/modelcontextprotocol/servers/blob/5abed86c5317b833dd59907492d56c65981642aa/README.md"
   },
   {
    "id": "c-license",
    "type": "concept",
    "label": "\ud83d\udcdc License",
    "level": 2,
-   "source_url": "https://github.com/modelcontextprotocol/servers/blob/d31124c982401739917fd817c2a59db344529c16/README.md"
+   "source_url": "https://github.com/modelcontextprotocol/servers/blob/5abed86c5317b833dd59907492d56c65981642aa/README.md"
   },
   {
    "id": "c-community",
    "type": "concept",
    "label": "\ud83d\udcac Community",
    "level": 2,
-   "source_url": "https://github.com/modelcontextprotocol/servers/blob/d31124c982401739917fd817c2a59db344529c16/README.md"
+   "source_url": "https://github.com/modelcontextprotocol/servers/blob/5abed86c5317b833dd59907492d56c65981642aa/README.md"
   },
   {
    "id": "c-support",
    "type": "concept",
    "label": "\u2b50 Support",
    "level": 2,
-   "source_url": "https://github.com/modelcontextprotocol/servers/blob/d31124c982401739917fd817c2a59db344529c16/README.md"
+   "source_url": "https://github.com/modelcontextprotocol/servers/blob/5abed86c5317b833dd59907492d56c65981642aa/README.md"
   },
   {
    "id": "e-https-modelcontextprotocol-io",
@@ -211,6 +211,12 @@
    "type": "evidence",
    "label": "official server",
    "source_url": "https://github.com/brave/brave-search-mcp-server"
+  },
+  {
+   "id": "e-https-www-npmjs-com-package-brave-brave-search-mcp-server",
+   "type": "evidence",
+   "label": "`@brave/brave-search-mcp-server`",
+   "source_url": "https://www.npmjs.com/package/@brave/brave-search-mcp-server"
   },
   {
    "id": "e-https-github-com-modelcontextprotocol-servers-archived-tree-main-src-everart",
@@ -470,6 +476,11 @@
   {
    "from": "repo-modelcontextprotocol-servers",
    "to": "e-https-github-com-brave-brave-search-mcp-server",
+   "rel": "cites"
+  },
+  {
+   "from": "repo-modelcontextprotocol-servers",
+   "to": "e-https-www-npmjs-com-package-brave-brave-search-mcp-server",
    "rel": "cites"
   },
   {

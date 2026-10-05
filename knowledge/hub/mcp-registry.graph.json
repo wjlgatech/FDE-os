@@ -2,21 +2,21 @@
  "contractVersion": "1.0",
  "source": {
   "repo": "modelcontextprotocol/registry",
-  "sha": "29e32c39dcb5e0e2b43974089d959fcc4794eb6d",
+  "sha": "bf4e88cbe8d1a635c06144ccea1d24cb52fa6186",
   "url": "https://github.com/modelcontextprotocol/registry",
-  "pushed_at": "2026-07-15T23:33:53Z"
+  "pushed_at": "2026-09-30T23:35:30Z"
  },
  "nodes": [
   {
    "id": "repo-modelcontextprotocol-registry",
    "type": "repo",
    "label": "modelcontextprotocol/registry",
-   "stars": 7048,
+   "stars": 7318,
    "description": "A community driven registry service for Model Context Protocol (MCP) servers.",
    "license": "NOASSERTION",
    "kind": "registry",
    "why_cited": "the community MCP registry service \u2014 distribution surface for hub tooling",
-   "source_url": "https://github.com/modelcontextprotocol/registry/tree/29e32c39dcb5e0e2b43974089d959fcc4794eb6d"
+   "source_url": "https://github.com/modelcontextprotocol/registry/tree/bf4e88cbe8d1a635c06144ccea1d24cb52fa6186"
   },
   {
    "id": "topic-mcp",
@@ -35,63 +35,63 @@
    "type": "concept",
    "label": "MCP Registry",
    "level": 1,
-   "source_url": "https://github.com/modelcontextprotocol/registry/blob/29e32c39dcb5e0e2b43974089d959fcc4794eb6d/README.md"
+   "source_url": "https://github.com/modelcontextprotocol/registry/blob/bf4e88cbe8d1a635c06144ccea1d24cb52fa6186/README.md"
   },
   {
    "id": "c-development-status",
    "type": "concept",
    "label": "Development Status",
    "level": 2,
-   "source_url": "https://github.com/modelcontextprotocol/registry/blob/29e32c39dcb5e0e2b43974089d959fcc4794eb6d/README.md"
+   "source_url": "https://github.com/modelcontextprotocol/registry/blob/bf4e88cbe8d1a635c06144ccea1d24cb52fa6186/README.md"
   },
   {
    "id": "c-contributing",
    "type": "concept",
    "label": "Contributing",
    "level": 2,
-   "source_url": "https://github.com/modelcontextprotocol/registry/blob/29e32c39dcb5e0e2b43974089d959fcc4794eb6d/README.md"
+   "source_url": "https://github.com/modelcontextprotocol/registry/blob/bf4e88cbe8d1a635c06144ccea1d24cb52fa6186/README.md"
   },
   {
    "id": "c-quick-start",
    "type": "concept",
    "label": "Quick start:",
    "level": 3,
-   "source_url": "https://github.com/modelcontextprotocol/registry/blob/29e32c39dcb5e0e2b43974089d959fcc4794eb6d/README.md"
+   "source_url": "https://github.com/modelcontextprotocol/registry/blob/bf4e88cbe8d1a635c06144ccea1d24cb52fa6186/README.md"
   },
   {
    "id": "c-architecture",
    "type": "concept",
    "label": "Architecture",
    "level": 2,
-   "source_url": "https://github.com/modelcontextprotocol/registry/blob/29e32c39dcb5e0e2b43974089d959fcc4794eb6d/README.md"
+   "source_url": "https://github.com/modelcontextprotocol/registry/blob/bf4e88cbe8d1a635c06144ccea1d24cb52fa6186/README.md"
   },
   {
    "id": "c-project-structure",
    "type": "concept",
    "label": "Project Structure",
    "level": 3,
-   "source_url": "https://github.com/modelcontextprotocol/registry/blob/29e32c39dcb5e0e2b43974089d959fcc4794eb6d/README.md"
+   "source_url": "https://github.com/modelcontextprotocol/registry/blob/bf4e88cbe8d1a635c06144ccea1d24cb52fa6186/README.md"
   },
   {
    "id": "c-authentication",
    "type": "concept",
    "label": "Authentication",
    "level": 3,
-   "source_url": "https://github.com/modelcontextprotocol/registry/blob/29e32c39dcb5e0e2b43974089d959fcc4794eb6d/README.md"
+   "source_url": "https://github.com/modelcontextprotocol/registry/blob/bf4e88cbe8d1a635c06144ccea1d24cb52fa6186/README.md"
   },
   {
    "id": "c-community-projects",
    "type": "concept",
    "label": "Community Projects",
    "level": 2,
-   "source_url": "https://github.com/modelcontextprotocol/registry/blob/29e32c39dcb5e0e2b43974089d959fcc4794eb6d/README.md"
+   "source_url": "https://github.com/modelcontextprotocol/registry/blob/bf4e88cbe8d1a635c06144ccea1d24cb52fa6186/README.md"
   },
   {
    "id": "c-more-documentation",
    "type": "concept",
    "label": "More documentation",
    "level": 2,
-   "source_url": "https://github.com/modelcontextprotocol/registry/blob/29e32c39dcb5e0e2b43974089d959fcc4794eb6d/README.md"
+   "source_url": "https://github.com/modelcontextprotocol/registry/blob/bf4e88cbe8d1a635c06144ccea1d24cb52fa6186/README.md"
   },
   {
    "id": "e-https-registry-modelcontextprotocol-io-docs",
@@ -124,16 +124,16 @@
    "source_url": "https://modelcontextprotocol.io/community/communication"
   },
   {
-   "id": "e-https-github-com-tadasant",
-   "type": "evidence",
-   "label": "@tadasant",
-   "source_url": "https://github.com/tadasant"
-  },
-  {
    "id": "e-https-github-com-rdimitrov",
    "type": "evidence",
    "label": "@rdimitrov",
    "source_url": "https://github.com/rdimitrov"
+  },
+  {
+   "id": "e-https-github-com-tadasant",
+   "type": "evidence",
+   "label": "@tadasant",
+   "source_url": "https://github.com/tadasant"
   },
   {
    "id": "e-https-github-com-bobdickinson",
@@ -267,12 +267,12 @@
   },
   {
    "from": "repo-modelcontextprotocol-registry",
-   "to": "e-https-github-com-tadasant",
+   "to": "e-https-github-com-rdimitrov",
    "rel": "cites"
   },
   {
    "from": "repo-modelcontextprotocol-registry",
-   "to": "e-https-github-com-rdimitrov",
+   "to": "e-https-github-com-tadasant",
    "rel": "cites"
   },
   {
