@@ -2,21 +2,21 @@
  "contractVersion": "1.0",
  "source": {
   "repo": "mlrun/mlrun",
-  "sha": "7581637d5636b129fd45d89dd00dd017dfdede87",
+  "sha": "8224ec56d5814e095a391b7570fd8b2b955eb2dc",
   "url": "https://github.com/mlrun/mlrun",
-  "pushed_at": "2026-07-19T17:59:54Z"
+  "pushed_at": "2026-10-05T14:21:53Z"
  },
  "nodes": [
   {
    "id": "repo-mlrun-mlrun",
    "type": "repo",
    "label": "mlrun/mlrun",
-   "stars": 1686,
+   "stars": 1701,
    "description": "MLRun is an open source MLOps platform for quickly building and managing continuous ML applications across their lifecycle. MLRun integrates into your development and CI/CD environment and automates the delivery of production data, ML pipelines, and online applications.",
    "license": "Apache-2.0",
    "kind": "platform",
    "why_cited": "open MLOps platform \u2014 enterprise-deploy cluster reference",
-   "source_url": "https://github.com/mlrun/mlrun/tree/7581637d5636b129fd45d89dd00dd017dfdede87"
+   "source_url": "https://github.com/mlrun/mlrun/tree/8224ec56d5814e095a391b7570fd8b2b955eb2dc"
   },
   {
    "id": "topic-data-engineering",
@@ -83,91 +83,91 @@
    "type": "concept",
    "label": "Using MLRun",
    "level": 1,
-   "source_url": "https://github.com/mlrun/mlrun/blob/7581637d5636b129fd45d89dd00dd017dfdede87/README.md"
+   "source_url": "https://github.com/mlrun/mlrun/blob/8224ec56d5814e095a391b7570fd8b2b955eb2dc/README.md"
   },
   {
    "id": "c-gen-ai-tasks",
    "type": "concept",
    "label": "Gen AI tasks",
    "level": 2,
-   "source_url": "https://github.com/mlrun/mlrun/blob/7581637d5636b129fd45d89dd00dd017dfdede87/README.md"
+   "source_url": "https://github.com/mlrun/mlrun/blob/8224ec56d5814e095a391b7570fd8b2b955eb2dc/README.md"
   },
   {
    "id": "c-data-management",
    "type": "concept",
    "label": "Data management",
    "level": 3,
-   "source_url": "https://github.com/mlrun/mlrun/blob/7581637d5636b129fd45d89dd00dd017dfdede87/README.md"
+   "source_url": "https://github.com/mlrun/mlrun/blob/8224ec56d5814e095a391b7570fd8b2b955eb2dc/README.md"
   },
   {
    "id": "c-development",
    "type": "concept",
    "label": "Development",
    "level": 3,
-   "source_url": "https://github.com/mlrun/mlrun/blob/7581637d5636b129fd45d89dd00dd017dfdede87/README.md"
+   "source_url": "https://github.com/mlrun/mlrun/blob/8224ec56d5814e095a391b7570fd8b2b955eb2dc/README.md"
   },
   {
    "id": "c-deployment",
    "type": "concept",
    "label": "Deployment",
    "level": 3,
-   "source_url": "https://github.com/mlrun/mlrun/blob/7581637d5636b129fd45d89dd00dd017dfdede87/README.md"
+   "source_url": "https://github.com/mlrun/mlrun/blob/8224ec56d5814e095a391b7570fd8b2b955eb2dc/README.md"
   },
   {
    "id": "c-live-ops",
    "type": "concept",
    "label": "Live Ops",
    "level": 3,
-   "source_url": "https://github.com/mlrun/mlrun/blob/7581637d5636b129fd45d89dd00dd017dfdede87/README.md"
+   "source_url": "https://github.com/mlrun/mlrun/blob/8224ec56d5814e095a391b7570fd8b2b955eb2dc/README.md"
   },
   {
    "id": "c-mlops-tasks",
    "type": "concept",
    "label": "MLOps tasks",
    "level": 2,
-   "source_url": "https://github.com/mlrun/mlrun/blob/7581637d5636b129fd45d89dd00dd017dfdede87/README.md"
+   "source_url": "https://github.com/mlrun/mlrun/blob/8224ec56d5814e095a391b7570fd8b2b955eb2dc/README.md"
   },
   {
    "id": "c-project-management-and-ci-cd-automation",
    "type": "concept",
    "label": "Project management and CI/CD automation",
    "level": 3,
-   "source_url": "https://github.com/mlrun/mlrun/blob/7581637d5636b129fd45d89dd00dd017dfdede87/README.md"
+   "source_url": "https://github.com/mlrun/mlrun/blob/8224ec56d5814e095a391b7570fd8b2b955eb2dc/README.md"
   },
   {
    "id": "c-ingest-and-process-data",
    "type": "concept",
    "label": "Ingest and process data",
    "level": 3,
-   "source_url": "https://github.com/mlrun/mlrun/blob/7581637d5636b129fd45d89dd00dd017dfdede87/README.md"
+   "source_url": "https://github.com/mlrun/mlrun/blob/8224ec56d5814e095a391b7570fd8b2b955eb2dc/README.md"
   },
   {
    "id": "c-develop-and-train-models",
    "type": "concept",
    "label": "Develop and train models",
    "level": 3,
-   "source_url": "https://github.com/mlrun/mlrun/blob/7581637d5636b129fd45d89dd00dd017dfdede87/README.md"
+   "source_url": "https://github.com/mlrun/mlrun/blob/8224ec56d5814e095a391b7570fd8b2b955eb2dc/README.md"
   },
   {
    "id": "c-deploy-models-and-applications",
    "type": "concept",
    "label": "Deploy models and applications",
    "level": 3,
-   "source_url": "https://github.com/mlrun/mlrun/blob/7581637d5636b129fd45d89dd00dd017dfdede87/README.md"
+   "source_url": "https://github.com/mlrun/mlrun/blob/8224ec56d5814e095a391b7570fd8b2b955eb2dc/README.md"
   },
   {
    "id": "c-model-monitoring",
    "type": "concept",
    "label": "Model Monitoring",
    "level": 3,
-   "source_url": "https://github.com/mlrun/mlrun/blob/7581637d5636b129fd45d89dd00dd017dfdede87/README.md"
+   "source_url": "https://github.com/mlrun/mlrun/blob/8224ec56d5814e095a391b7570fd8b2b955eb2dc/README.md"
   },
   {
    "id": "c-mlrun-core-components",
    "type": "concept",
    "label": "MLRun core components",
    "level": 2,
-   "source_url": "https://github.com/mlrun/mlrun/blob/7581637d5636b129fd45d89dd00dd017dfdede87/README.md"
+   "source_url": "https://github.com/mlrun/mlrun/blob/8224ec56d5814e095a391b7570fd8b2b955eb2dc/README.md"
   },
   {
    "id": "e-https-github-com-mlrun-mlrun-actions-workflows-build-yaml-badge-svg-branch-devel",
