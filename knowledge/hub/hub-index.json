@@ -5,68 +5,69 @@
   {
    "slug": "awesome-mcp-servers",
    "repo": "punkpeye/awesome-mcp-servers",
-   "stars": 90967,
-   "sha": "79cca3e78c9f501fdb4925b907c04c0c4f68735d",
+   "stars": 97756,
+   "sha": "f431a5cd95cebf038e587715635b9d1a0a4d0c02",
    "compiled": true
   },
   {
    "slug": "mcp-servers",
    "repo": "modelcontextprotocol/servers",
-   "stars": 88636,
-   "sha": "d31124c982401739917fd817c2a59db344529c16",
+   "stars": 92039,
+   "sha": "e1dc4b18dbb948921da37f3d4224a628730b43b0",
    "compiled": true
   },
   {
    "slug": "ai-engineering-from-scratch",
    "repo": "rohitg00/ai-engineering-from-scratch",
-   "stars": 39592,
-   "sha": "c8b9b9244f3210b840776675175662dacf208264",
+   "stars": 79115,
+   "sha": "151fe3f22bca88c665ccaaab3a55e10ed22f804c",
    "compiled": true
   },
   {
    "slug": "langfuse",
    "repo": "langfuse/langfuse",
-   "stars": 31426,
-   "sha": "1cb1bbcf6b269fd887a6667796f1a15417cca336",
+   "stars": 37486,
+   "sha": "544371c537aa2c9a46499fb2559822b1292f36c8",
    "compiled": true
   },
   {
    "slug": "fastmcp",
    "repo": "PrefectHQ/fastmcp",
-   "stars": 26292,
-   "sha": "717f3535f65d3937e5422895ed4a333d895369aa",
+   "stars": 28576,
+   "sha": "ffc65c7a8063bf66522fafd3d8db280d49a34e4e",
    "compiled": true
   },
   {
    "slug": "mcp-registry",
    "repo": "modelcontextprotocol/registry",
-   "stars": 7048,
-   "sha": "29e32c39dcb5e0e2b43974089d959fcc4794eb6d",
+   "stars": 7469,
+   "sha": "115f85225c9fac5281d8a2dc8551cf49b004d2f9",
    "compiled": true
   },
   {
    "slug": "mlrun",
    "repo": "mlrun/mlrun",
-   "stars": 1686,
-   "sha": "7581637d5636b129fd45d89dd00dd017dfdede87",
+   "stars": 1705,
+   "sha": "15b9466e1e905ec82046b0aa4adc3aef27bfe9ba",
    "compiled": true
   },
   {
    "slug": "awesome-fde-roadmap",
    "repo": "pierpaolo28/Awesome-FDE-Roadmap",
-   "stars": 620,
-   "compiled": false
+   "stars": 1562,
+   "sha": "24d652e6fb63b71a418276b91e755161d5c0debf",
+   "compiled": true
   },
   {
    "slug": "google-fde-interview-guide",
    "repo": "YagyanshB/google-fde-interview-guide",
-   "stars": 313,
+   "stars": 399,
    "compiled": false
   },
   {
    "slug": "pm-github-workflow-repo",
    "repo": "aakashg/pm-github-workflow-repo",
-   "stars": 2,
+   "stars": 5,
    "compiled": false
   }
  ]
